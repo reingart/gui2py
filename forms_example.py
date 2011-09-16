@@ -18,7 +18,7 @@ register_html = """
 """
 
 import sys
-sys.path.append(r"C:\web2py-src\web2py-hg")
+sys.path.append(r"/home/reingart/web2py")
 from gluon.sql import Field
 from gluon.sqlhtml import SQLFORM
 from gluon.html import INPUT, FORM

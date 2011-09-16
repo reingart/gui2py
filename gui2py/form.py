@@ -30,9 +30,9 @@ class HTMLForm(object):
             self.method = "GET"
             
     def hitSubmitButton(self):
-        import forms.input
+        from . import input
         for field in self.fields:
-            if isinstance(field, forms.input.SubmitButton):
+            if isinstance(field, input.SubmitButton):
                 field.OnClick(None)
                 return
                 
@@ -106,7 +106,7 @@ class FormTagHandler(wx.html.HtmlWinTagHandler):
     def HandleSELECT(self, tag):
         if tag.HasParam("MULTIPLE"):
             pass
-        from forms.select import SingleSelectControl
+        from .select import SingleSelectControl
         self.optionList = []
         #gather any/all nested options
         self.ParseInner(tag)

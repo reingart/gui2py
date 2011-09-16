@@ -69,10 +69,9 @@ class TextInput(wx.TextCtrl, FormControlMixin):
         self.SetMaxLength(ml)
         if ml and len(self.GetValue()) > ml:
             self.SetValue(self.GetValue()[:ml])
-        if tag.HasParam("SIZE"):
-            size = max(int(tag.GetParam("SIZE")), 5)
-            width = self.GetCharWidth() * size
-            self.SetSize((width, -1))
+        size = int(GetParam(tag, "SIZE", 40))
+        width = self.GetCharWidth() * size
+        self.SetSize((width, -1))
             
             
             
@@ -124,9 +123,9 @@ class TextAreaInput(wx.TextCtrl, FormControlMixin):
             src = ''
         self.SetFont(wx.SystemSettings.GetFont(wx.SYS_ANSI_FIXED_FONT))
         self.SetValue(src)
-        cols = GetParam(tag, "COLS", 22)
+        cols = int(GetParam(tag, "COLS", 22))
         width = self.GetCharWidth() * cols
-        rows = GetParam(tag, "ROWS", 3)
+        rows = int(GetParam(tag, "ROWS", 3))
         height = self.GetCharHeight() * rows
         self.SetSize((width, height))
 
