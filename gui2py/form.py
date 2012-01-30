@@ -50,6 +50,10 @@ class HTMLForm(object):
                 val = field.GetValue()
                 if val is None:
                     continue
+                elif isinstance(val, unicode):
+                    # web2py string processing
+                    # requires utf-8 encoded text
+                    val = val.encode("utf-8")                    
                 args[field.name] = val
         return args
 
