@@ -129,8 +129,3 @@ class TextAreaInput(wx.TextCtrl, FormControlMixin):
         height = self.GetCharHeight() * rows
         self.SetSize((width, height))
 
-
-        
-        
-        
-        

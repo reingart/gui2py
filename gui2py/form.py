@@ -61,6 +61,11 @@ class HTMLForm(object):
 
 class FormTagHandler(wx.html.HtmlWinTagHandler):
     typeregister = {}
+
+    # static inner form tag attribute names
+    attributes = ["href", "value", "class", "onclick",
+                  "type", "name", "id", "src", "action",
+                  "method"]
     
     @classmethod
     def registerType(klass, type, controlClass):
@@ -129,9 +134,9 @@ class FormTagHandler(wx.html.HtmlWinTagHandler):
             object.SetSize(select.GetSize())
         else:
             object = SingleSelectControl(parent, self.form, tag, self.GetParser(), self.optionList)
+
+        self.setObjectTag(object, tag)
         cell = self.GetParser().GetContainer()
-        
-        
         cell.InsertCell(
             wx.html.HtmlWidgetCell(object)
         )
@@ -145,15 +150,23 @@ class FormTagHandler(wx.html.HtmlWinTagHandler):
     def createControl(self, klass, tag):
         parent = self.GetParser().GetWindowInterface().GetHTMLWindow()
         object = klass(parent, self.form, tag, self.GetParser())
+        self.setObjectTag(object, tag)
         if not isinstance(object, wx.Window):
             return
         cell = self.GetParser().GetContainer()
         cell.InsertCell(
             wx.html.HtmlWidgetCell(object)
         )
-        
-        
-        
+
+    def setObjectTag(self, object, tag):
+        """ Add a tag attribute to the wx window """
+        object._attributes = {}
+        object._name = tag.GetName().lower()
+        for name in self.attributes:
+            object._attributes["_%s" % name] = tag.GetParam(name)
+            if object._attributes["_%s" % name] == "":
+                object._attributes["_%s" % name] = None
+
         
 wx.html.HtmlWinParser_AddTagHandler(FormTagHandler)
 
