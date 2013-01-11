@@ -56,6 +56,6 @@ if __name__ == "__main__":
     def my_action(evt):
         print evt.name
         print evt.target
-    b.bind("click", my_action)
+    b.attach("click", my_action)
     frame.Show()
     app.MainLoop()

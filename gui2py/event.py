@@ -16,31 +16,26 @@ class EventHandler:
         self.binding = binding          # wx.Event object
         self.kind = kind                # Event class
     
-    def __call__(self, wx_event):
-        "Actual handler, binded and called by wxPython, returns an Event"
-        return self.kind(name=self.name, wx_event=wx_event)
-
+    def __call__(self, action):
+        "Create the actual handler (binded and called by wxPython)"
+        # default handler will call the user action with the event instance
+        return lambda wx_event: action(self.kind(name=self.name, 
+                                                 wx_event=wx_event))
+        
 
 class Event:
     "Generic Event Object: holds actual event data (created by EventHandler)"
     
-    def __init__(self, target=None, timestamp=None, name="", wx_event=None):
+    def __init__(self, name="", wx_event=None):
         self.wx_event = wx_event
-        # retrieve wxPython event properties if not given
-        if wx_event:
-            wx_obj = self.wx_event.GetEventObject()
-        if not target and wx_obj:
-            target = wx_obj.reference
-        if not timestamp:
-            timestamp = wx_event.GetTimestamp()
-        self.target = target
-        self.timestamp = timestamp
+        # retrieve wxPython event properties:
+        wx_obj = self.wx_event.GetEventObject()
+        self.target = wx_obj.reference if wx_obj else None
+        self.timestamp = wx_event.GetTimestamp()
         self.name = name                  # name (type), i.e.: "click"
-        if wx_event:
-            self.wx_event.Skip(True)      # keep event processing (default)
 
-    def prevent_default(self):
-        self.wx_event.Skip(False)
+    def prevent_default(self, cancel=True):
+        self.wx_event.Skip(not cancel)
 
     def stop_propagation(self):
         self.wx_event.StopPropagation()
@@ -50,9 +45,8 @@ class UIEvent(Event):
     "General -window- related events (detail can hold additional data)"   
     names = ["load", "resize", "scroll", "paint", "unload"]
 
-    def __init__(self, target=None, timestamp=None, name="", detail=None, 
-                 wx_event=None):
-        Event.__init__(self, target, timestamp, name, wx_event)
+    def __init__(self, detail=None, wx_event=None):
+        Event.__init__(self, wx_event)
         self.detail = detail
 
     def prevent_default(self):
@@ -83,11 +77,8 @@ class MouseEvent(Event):
     names = ["click", "dblclick", "mousedown", "mousemove",
             "mouseout", "mouseover", "mouseup", "scroll"]
 
-    def __init__(self, target=None, timestamp=None, name=None, 
-                 screen_x=None, screen_y=None, client_x=None, client_y=None,
-                 ctrl_key=None, shift_key=None, alt_key=None, meta_key=None,
-                 button=None, wx_event=None):
-        Event.__init__(self, target, timestamp, name, wx_event)
+    def __init__(self, wx_event=None):
+        Event.__init__(self, wx_event)
         self.screen_x = screen_x
         self.screen_y = screen_y
         self.client_x = client_x
@@ -103,10 +94,8 @@ class KeyboardEvent(Event):
     
     names = "onkeypress", "onkeydown", "onkeyup",
     
-    def __init__(self, target=None, timestamp=None, name=None, 
-                 ctrl_key=None, shift_key=None, alt_key=None, meta_key=None,
-                 key=None, char=None, wx_event=None):
-        Event.__init__(self, target, timestamp, name, wx_event)
+    def __init__(self, wx_event=None):
+        Event.__init__(self, wx_event)
         self.ctrl_key = ctrl_key
         self.shift_key = shift_key
         self.alt_key = alt_key
@@ -119,9 +108,8 @@ class TimingEvent(Event):
     "Time interval events"   
     names = ["idle", "timer"]
 
-    def __init__(self, target=None, timestamp=None, name=None, interval=None, 
-                 wx_event=None):
-        Event.__init__(self, target, timestamp, name, wx_event)
+    def __init__(self, interval=None, wx_event=None):
+        Event.__init__(self, wx_event)
         self.interval = interval
 
     def request_more(self):

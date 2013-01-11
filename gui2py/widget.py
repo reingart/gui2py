@@ -69,11 +69,11 @@ class Widget(object):
         # store gui2py reference inside of wx object
         self.wx_obj.reference = self
     
-    def bind(self, event_name, action):
+    def attach(self, event_name, action):
+        "Add an event listener (map a event handler with the action)"
         for handler in self.handlers:
             if handler.name == event_name:
-                self.wx_obj.Bind(handler.binding, 
-                         lambda wx_event: action(handler(wx_event)))
+                self.wx_obj.Bind(handler.binding, handler(action))
                 break
         else:
             raise RuntimeError("%s is not a valid event name!" % event_name)
