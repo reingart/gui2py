@@ -88,23 +88,9 @@ class Widget(object):
     
     __metaclass__ = widget_metaclass
     
-    def __init__(self):
-        self.wx_obj = None            # wx object (i.e. wx.Button)
+    def __init__(self, parent=None, **kwargs):
         self._font = None
 
-    def __call__(self, field, value):
-        "Returns a HTML string representation of the widget (used by web2py)"
-        ## DAL usage: Field('comment', 'string', widget=my_string_widget)
-        return INPUT(_name=field.name,
-                 _id="%s_%s" % (field._tablename, field.name),
-                 _class=field.type,
-                 _value=value,
-                 requires=field.requires)
- 
-    # methods:
-    
-    def create(self, parent=None, **kwargs):
-        "Acutally create the GUI Button for 2-phase creation."
         # create dummy wxpython object (for testing)
         if parent:
             self.wx_obj = wx.Window(parent)
@@ -261,8 +247,7 @@ if __name__ == "__main__":
     # basic test until unit_test
     app = wx.App(redirect=False)
     frame = wx.Frame(None)
-    w = Widget()
-    w.create(frame)
+    w = Widget(frame, name="test")
     assert w.get_parent() is frame
     assert w.id != -1       # wx should have assigned a new id!
-    assert w.name == ""
+    assert w.name == "test"

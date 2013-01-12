@@ -9,12 +9,12 @@ class Button(Widget):
     
     __metaclass__ = widget_metaclass
     
-    def create(self, parent, **kwargs):
+    def __init__(self, parent, **kwargs):
         self.wx_obj = wx.Button(parent,
                     new_id(kwargs.get('id')),
                     style = wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS,
                    )
-        Widget.create(self, **kwargs)
+        Widget.__init__(self, **kwargs)
         ##self.wx_obj.SetLabel(kwargs['label'])
         ##  self._bindEvents(event.WIDGET_EVENTS + ButtonEvents)
 
@@ -42,15 +42,16 @@ if __name__ == "__main__":
     # basic test until unit_test
     app = wx.App(redirect=False)
     frame = wx.Frame(None)
-    b = Button()
-    b.create(frame, name="btnTest", label="click me!", default=True)
+    b = Button(frame, name="btnTest", label="click me!", default=True)
     assert b.get_parent() is frame
     assert b.name == "btnTest"
     assert b.default == True
     assert b.label == "click me!"
     from pprint import pprint
+    # assign some event handlers:
     b.onclick = lambda event: pprint(event.timestamp)
     b.onblur = b.onfocus = lambda event: pprint(event.name)
+    # remove an event handler:
     b.onblur = None
     frame.Show()
     app.MainLoop()
