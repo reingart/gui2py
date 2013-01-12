@@ -1,6 +1,7 @@
 import wx
 
-from . import event
+from .event import FocusEvent
+from . import registry
 
 def new_id(id=None):
     if id is None or id == -1:
@@ -9,37 +10,83 @@ def new_id(id=None):
         return id
 
 
-class Spec:
+class Spec(property):
     "Spec contains meta type information about widgets"
     
-    def __init__(self, name, optional=False, default=None):
-        self.name = name
+    def __init__(self, fget=None, fset=None, fdel=None, doc=None, 
+                 optional=True, default=None, _name=""):
+        if fget is None:
+            fget = lambda obj: getattr(obj, _name)
+            fset = lambda obj, value: setattr(obj, _name, value)
+        property.__init__(self, fget, fset, fdel, doc)
         self.optional = optional
         self.default = default
+    
 
+class EventSpec(Spec):
+    "Generic Event Handler: maps a wx.Event to a gui2py.Event"
+    
+    def __init__(self, event_name, binding, kind, doc=None):
+        getter = lambda obj: getattr(obj, "_" + event_name)
+        def setter(obj, action): 
+            print "setting event", event_name
+            # check if there is an event binded previously:
+            if hasattr(obj, "_" + event_name):
+                # disconnect the previous binded events
+                obj.wx_obj.Unbind(self.binding)
+            if action:
+                handler = lambda wx_event: action(self.kind(name=self.name, 
+                                                 wx_event=wx_event))
+                # connect the new action to the event:
+                obj.wx_obj.Bind(self.binding, handler)
+                # store the event handler
+            setattr(obj, "_" + event_name, action)
 
+        Spec.__init__(self, getter, setter, doc=doc)
+        self.name = event_name
+        self.binding = binding          # wx.Event object
+        self.kind = kind                # Event class
+    
+
+class WidgetMeta():
+    "Widget Metadata"
+    def __init__(self, name, specs):
+        self.name = name
+        self.specs = specs
+
+    
+def widget_metaclass(name, bases, attrs):
+    "Widget class constructor (creates metadata and register the widget)"
+    print "-" * 70
+    print name
+    print "bases", bases
+    print "attrs", attrs
+    
+    specs = {}
+    # get specs of the base class
+    for base in bases:
+        if hasattr(base, "_meta"):
+            specs.update(base._meta.specs)
+    # get all the specs
+    specs.update(dict([(attr_name, attr_value) 
+                    for attr_name, attr_value in attrs.items() 
+                    if isinstance(attr_value, Spec)]))
+    # insert a _meta attribute with the specs
+    attrs["_meta"] = WidgetMeta(name, specs)
+
+    # registry and return the new class:
+    new_class = type(name, bases, attrs)
+    registry.WIDGETS[name] = new_class
+    return new_class
+
+  
 class Widget(object):
     "The base class for all of our GUI controls"
     # Each Widget must bind itself to the wxPython event model.  
     # When it receives an event from wxPython, it will convert the event
     # to a gui2py.event.Event ( UIEvent, MouseEvent, etc ) and call the handler
     
-    specs = [ 
-            Spec('id', optional=True, default=-1),
-            Spec('name', optional=True, default=""),
-            Spec('enabled', optional=True, default=True),
-            Spec('visible', optional=True, default=True),
-            Spec('foregroundcolor', optional=True, default=None),
-            Spec('backgroundcolor', optional=True, default=None),
-            Spec('helptext', optional=True, default=''),
-            Spec('tooltip', optional=True, default=''),
-            Spec('font', optional=True, default=None),
-            Spec('position', optional=True, default=[ -1, -1]),
-            Spec('size', optional=True, default=[ -1, -1]),
-            Spec('userdata', optional=True, default=''),
-            ]
-    
-    handlers = [] # {'click': (wx.EVT_BUTTON, event.FormEvent)}
+    __metaclass__ = widget_metaclass
     
     def __init__(self):
         self.wx_obj = None            # wx object (i.e. wx.Button)
@@ -62,21 +109,21 @@ class Widget(object):
         if parent:
             self.wx_obj = wx.Window(parent)
         # load specs from kwargs, use default if available
-        for spec in self.specs:
+        for spec_name, spec in self._meta.specs.items():
+            print spec
             if True or DEBUG:
-                print "setting", spec.name, kwargs.get(spec.name, spec.default)
-            setattr(self, spec.name, kwargs.get(spec.name, spec.default))
+                print "setting", spec_name, kwargs.get(spec_name, spec.default)
+            # get the spec value for kwargs, if it is optional, get the default
+            value = kwargs.get(spec_name)
+            if not value and not spec.optional:
+                raise ValueError("%s: %s is not optional" % (self._meta.name,
+                                                             spec_name))
+            elif value is None:
+                value = spec.default
+            setattr(self, spec_name, value)
+                
         # store gui2py reference inside of wx object
         self.wx_obj.reference = self
-    
-    def attach(self, event_name, action):
-        "Add an event listener (map a event handler with the action)"
-        for handler in self.handlers:
-            if handler.name == event_name:
-                self.wx_obj.Bind(handler.binding, handler(action))
-                break
-        else:
-            raise RuntimeError("%s is not a valid event name!" % event_name)
         
     def redraw(self):
         "Force an immediate redraw without waiting for an event handler to finish."
@@ -111,8 +158,9 @@ class Widget(object):
     
     def _getFont(self):
         if self._font is None:
-            desc = font.fontDescription(self.GetFont())
-            self._font = font.Font(desc)
+            #desc = font.fontDescription(self.GetFont())
+            #self._font = font.Font(desc)
+            pass
         return self._font
 
     def _setForegroundColor( self, color ) :
@@ -121,7 +169,7 @@ class Widget(object):
         self.wx_obj.Refresh()   # KEA wxPython bug?
     
     def _setBackgroundColor( self, color ) :
-        color = _setBackgroundColor._getDefaultColor( color )
+        color = self._getDefaultColor( color )
         self.wx_obj.SetBackgroundColour( color )
         self.wx_obj.Refresh()   # KEA wxPython bug?
         
@@ -189,19 +237,26 @@ class Widget(object):
 
     def _getBackgroundColor(self):
         return self.wx_obj.GetBackgroundColour()
-        
-    background_color = property(_getBackgroundColor, _setBackgroundColor)
-    font = property(_getFont, _setFont)
-    foreground_color = property(_getForegroundColor, _setForegroundColor)
-    enabled = property(_getEnabled, _setEnabled)
-    id = property(_getId, _setId)
-    position = property(_getPosition, _setPosition)
-    size = property(_getSize, _setSize)
-    tooltip = property(_getToolTip, _setToolTip)
-    userdata = property(_getUserdata, _setUserdata)
-    visible = property(_getVisible, _setVisible)
     
+    name = Spec(optional=False, _name="_name")
+    background_color = Spec(_getBackgroundColor, _setBackgroundColor)
+    font = Spec(_getFont, _setFont)
+    foreground_color = Spec(_getForegroundColor, _setForegroundColor)
+    enabled = Spec(_getEnabled, _setEnabled, default=True)
+    id = Spec(_getId, _setId,  default=-1)
+    position = Spec(_getPosition, _setPosition, default=[ -1, -1])
+    size = Spec(_getSize, _setSize, default=[ -1, -1])
+    helptext = Spec(optional=True),
+    tooltip = Spec(_getToolTip, _setToolTip, default='')
+    userdata = Spec(_getUserdata, _setUserdata)
+    visible = Spec(_getVisible, _setVisible, default=True)
+    userdata = Spec(_name='_userdata')
+    
+    # Events:
+    onfocus = EventSpec('focus', binding=wx.EVT_SET_FOCUS, kind=FocusEvent)
+    onblur = EventSpec('blur', binding=wx.EVT_KILL_FOCUS, kind=FocusEvent)
 
+    
 if __name__ == "__main__":
     # basic test until unit_test
     app = wx.App(redirect=False)

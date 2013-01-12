@@ -1,19 +1,13 @@
 
 import wx
-from ..event import EventHandler, FormEvent
-from ..widget import Widget, Spec, new_id
+from ..event import FormEvent
+from ..widget import Widget, Spec, EventSpec, new_id, widget_metaclass
 
 
 class Button(Widget):
     "A simple push-button with a label"
-
-    specs = Widget.specs + [
-            Spec('label', optional=False, default='Button'),
-            Spec('default', optional=False, default=False),
-            ]
-    handlers = Widget.handlers + [
-            EventHandler('click', binding=wx.EVT_BUTTON, kind=FormEvent),
-        ]
+    
+    __metaclass__ = widget_metaclass
     
     def create(self, parent, **kwargs):
         self.wx_obj = wx.Button(parent,
@@ -36,9 +30,11 @@ class Button(Widget):
         if aBoolean:
             self.wx_obj.SetDefault()
 
-    default = property(_getDefault, _setDefault)
-    label = property(lambda self: self.wx_obj.GetLabel(), 
-                     lambda self, label: self.wx_obj.SetLabel(label))
+    default = Spec(_getDefault, _setDefault, default=False)
+    label = Spec(lambda self: self.wx_obj.GetLabel(), 
+                 lambda self, label: self.wx_obj.SetLabel(label),
+                 optional=False, default='Button')
+    onclick = EventSpec('click', binding=wx.EVT_BUTTON, kind=FormEvent)
 
 
 
@@ -51,11 +47,10 @@ if __name__ == "__main__":
     assert b.get_parent() is frame
     assert b.name == "btnTest"
     assert b.default == True
-    print b.label
     assert b.label == "click me!"
-    def my_action(evt):
-        print evt.name
-        print evt.target
-    b.attach("click", my_action)
+    from pprint import pprint
+    b.onclick = lambda event: pprint(event.timestamp)
+    b.onblur = b.onfocus = lambda event: pprint(event.name)
+    b.onblur = None
     frame.Show()
     app.MainLoop()

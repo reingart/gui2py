@@ -1,3 +1,4 @@
+import time
 
 #CallAfter
 #set_timeout = wx.CallLater
@@ -8,20 +9,6 @@
 # https://developer.mozilla.org/en-US/docs/Mozilla_event_reference
 # http://wxpython.org/docs/api/wx.Event-class.html
 
-class EventHandler:
-    "Generic Event Handler: maps a wx.Event to a gui2py.Event"
-    
-    def __init__(self, name, binding, kind):
-        self.name = name                # name (type), i.e.: "click"
-        self.binding = binding          # wx.Event object
-        self.kind = kind                # Event class
-    
-    def __call__(self, action):
-        "Create the actual handler (binded and called by wxPython)"
-        # default handler will call the user action with the event instance
-        return lambda wx_event: action(self.kind(name=self.name, 
-                                                 wx_event=wx_event))
-        
 
 class Event:
     "Generic Event Object: holds actual event data (created by EventHandler)"
@@ -32,6 +19,9 @@ class Event:
         wx_obj = self.wx_event.GetEventObject()
         self.target = wx_obj.reference if wx_obj else None
         self.timestamp = wx_event.GetTimestamp()
+        # check if timestamp (wx report it only for mouse or keyboard)
+        if not self.timestamp:
+            self.timestamp = time.time()  # create a new timestamp if not given
         self.name = name                  # name (type), i.e.: "click"
 
     def prevent_default(self, cancel=True):
