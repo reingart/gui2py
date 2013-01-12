@@ -67,18 +67,17 @@ class MouseEvent(Event):
     names = ["click", "dblclick", "mousedown", "mousemove",
             "mouseout", "mouseover", "mouseup", "scroll"]
 
-    def __init__(self, wx_event=None):
-        Event.__init__(self, wx_event)
-        self.screen_x = screen_x
-        self.screen_y = screen_y
-        self.client_x = client_x
-        self.client_y = client_y
-        self.ctrl_key = ctrl_key
-        self.shift_key = shift_key
-        self.alt_key = alt_key
-        self.meta_key = meta_key
-        self.button = button        # 0: left, 1: center, 2: right
-
+    def __init__(self, name, wx_event=None):
+        Event.__init__(self, name, wx_event)
+        self.x = wx_event.GetX()
+        self.y = wx_event.GetY()
+        self.alt_key = wx_event.AltDown()
+        self.ctrl_key = wx_event.ControlDown()
+        self.shift_key = wx_event.ShiftDown()
+        self.meta_key = None
+        self.left_button = wx_event.LeftIsDown()
+        self.right_button = wx_event.RightIsDown()
+        self.middle_button = wx_event.MiddleIsDown()
 
 class KeyboardEvent(Event):
     

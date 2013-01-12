@@ -1,6 +1,6 @@
 import wx
 
-from .event import FocusEvent
+from .event import FocusEvent, MouseEvent
 from . import registry
 
 def new_id(id=None):
@@ -14,13 +14,15 @@ class Spec(property):
     "Spec contains meta type information about widgets"
     
     def __init__(self, fget=None, fset=None, fdel=None, doc=None, 
-                 optional=True, default=None, _name=""):
+                 optional=True, default=None, values=None, _name=""):
         if fget is None:
             fget = lambda obj: getattr(obj, _name)
             fset = lambda obj, value: setattr(obj, _name, value)
         property.__init__(self, fget, fset, fdel, doc)
         self.optional = optional
         self.default = default
+        self.values = values
+        self.read_only = fset is None
     
 
 class EventSpec(Spec):
@@ -28,8 +30,7 @@ class EventSpec(Spec):
     
     def __init__(self, event_name, binding, kind, doc=None):
         getter = lambda obj: getattr(obj, "_" + event_name)
-        def setter(obj, action): 
-            print "setting event", event_name
+        def setter(obj, action):
             # check if there is an event binded previously:
             if hasattr(obj, "_" + event_name):
                 # disconnect the previous binded events
@@ -57,10 +58,6 @@ class WidgetMeta():
     
 def widget_metaclass(name, bases, attrs):
     "Widget class constructor (creates metadata and register the widget)"
-    print "-" * 70
-    print name
-    print "bases", bases
-    print "attrs", attrs
     
     specs = {}
     # get specs of the base class
@@ -96,7 +93,9 @@ class Widget(object):
             self.wx_obj = wx.Window(parent)
         # load specs from kwargs, use default if available
         for spec_name, spec in self._meta.specs.items():
-            print spec
+            if spec.read_only:
+                print "Cont", spec_name
+                continue
             if True or DEBUG:
                 print "setting", spec_name, kwargs.get(spec_name, spec.default)
             # get the spec value for kwargs, if it is optional, get the default
@@ -241,8 +240,9 @@ class Widget(object):
     # Events:
     onfocus = EventSpec('focus', binding=wx.EVT_SET_FOCUS, kind=FocusEvent)
     onblur = EventSpec('blur', binding=wx.EVT_KILL_FOCUS, kind=FocusEvent)
+    onmousemove = EventSpec('mousemove', binding=wx.EVT_MOTION, kind=MouseEvent) 
 
-    
+
 if __name__ == "__main__":
     # basic test until unit_test
     app = wx.App(redirect=False)
