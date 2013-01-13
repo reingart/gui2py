@@ -241,6 +241,18 @@ class Widget(object):
     onfocus = EventSpec('focus', binding=wx.EVT_SET_FOCUS, kind=FocusEvent)
     onblur = EventSpec('blur', binding=wx.EVT_KILL_FOCUS, kind=FocusEvent)
     onmousemove = EventSpec('mousemove', binding=wx.EVT_MOTION, kind=MouseEvent) 
+    onmouseover = EventSpec('mouseover', binding=wx.EVT_ENTER_WINDOW, kind=MouseEvent) 
+    onmouseout = EventSpec('mouseout', binding=wx.EVT_LEAVE_WINDOW, kind=MouseEvent) 
+    onmousewheel = EventSpec('mousewheel', binding=wx.EVT_MOUSEWHEEL, kind=MouseEvent) 
+    onmouseleftdown = EventSpec('mouseleftdown', binding=wx.EVT_LEFT_DOWN, kind=MouseEvent)
+    onmouseleftup = EventSpec('mouseleftup', binding=wx.EVT_LEFT_DOWN, kind=MouseEvent)
+    onmouseleftdclick = EventSpec('mouseleftdclick', binding=wx.EVT_LEFT_DCLICK, kind=MouseEvent)
+    onmousemiddledown = EventSpec('mousemiddledown', binding=wx.EVT_MIDDLE_DOWN, kind=MouseEvent)
+    onmousemiddleup = EventSpec('mousemiddleup', binding=wx.EVT_MIDDLE_DOWN, kind=MouseEvent)
+    onmousemiddledclick = EventSpec('mousemiddledclick', binding=wx.EVT_MIDDLE_DCLICK, kind=MouseEvent)
+    onmouserightdown = EventSpec('mouserightdown', binding=wx.EVT_RIGHT_DOWN, kind=MouseEvent)
+    onmouserightup = EventSpec('mouserightup', binding=wx.EVT_RIGHT_DOWN, kind=MouseEvent)
+    onmouserightdclick = EventSpec('mouserightdclick', binding=wx.EVT_RIGHT_DCLICK, kind=MouseEvent)
 
 
 if __name__ == "__main__":

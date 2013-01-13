@@ -55,5 +55,6 @@ if __name__ == "__main__":
     from pprint import pprint
     # assign some event handlers:
     t.onmousemove = lambda event: pprint("%s %s %s" % (event.name, event.x, event.y))
+    t.onmouseleftdown = lambda event: pprint("click!")
     frame.Show()
     app.MainLoop()

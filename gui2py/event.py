@@ -62,10 +62,10 @@ class FormEvent(Event):
     
 
 class MouseEvent(Event):
-    "Mouse related events"
+    "Mouse related events (wrapper for wx.MouseEvent)"
     
     names = ["click", "dblclick", "mousedown", "mousemove",
-            "mouseout", "mouseover", "mouseup", "scroll"]
+            "mouseout", "mouseover", "mouseup", "mousewheel"]
 
     def __init__(self, name, wx_event=None):
         Event.__init__(self, name, wx_event)
@@ -74,10 +74,12 @@ class MouseEvent(Event):
         self.alt_key = wx_event.AltDown()
         self.ctrl_key = wx_event.ControlDown()
         self.shift_key = wx_event.ShiftDown()
-        self.meta_key = None
+        self.meta_key = wx_event.MetaDown()
         self.left_button = wx_event.LeftIsDown()
         self.right_button = wx_event.RightIsDown()
         self.middle_button = wx_event.MiddleIsDown()
+        if name=="mousewheel":
+            self.wheel_delta = wx_event.GetWheelDelta()
 
 class KeyboardEvent(Event):
     
