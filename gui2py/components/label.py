@@ -4,7 +4,7 @@ from ..event import FormEvent
 from ..widget import Widget, Spec, EventSpec, new_id, widget_metaclass
 
 
-class StaticText(Widget):
+class Label(Widget):
     "An uneditable block of text"
 
     __metaclass__ = widget_metaclass
@@ -26,7 +26,7 @@ class StaticText(Widget):
         elif aString == 'right':
             return wx.ALIGN_RIGHT | wx.ST_NO_AUTORESIZE
         else:
-            raise 'invalid StaticText.alignment value: ', aString
+            raise 'invalid Label.alignment value: ', aString
 
     def _setText(self, aString):
         self.wx_obj.SetLabel(aString)
@@ -39,14 +39,14 @@ class StaticText(Widget):
     alignment = Spec(_getAlignment, None,
                      values=[ 'left', 'right', 'center'])
     text = Spec(lambda self: self.wx_obj.GetLabel(), _setText,
-                     default="StaticText")
+                     default="Label")
 
 
 if __name__ == "__main__":
     # basic test until unit_test
     app = wx.App(redirect=False)
     frame = wx.Frame(None)
-    t = StaticText(frame, name="lblTest", text="hello!")
+    t = Label(frame, name="lblTest", text="hello!")
     assert t.get_parent() is frame
     assert t.name == "lblTest"
     print "align", t.alignment
