@@ -56,25 +56,29 @@ class WidgetMeta():
         self.specs = specs
 
     
-def widget_metaclass(name, bases, attrs):
+class WidgetBase(type):
     "Widget class constructor (creates metadata and register the widget)"
+    def __new__(cls, name, bases, attrs):
+        super_new = super(WidgetBase, cls).__new__
     
-    specs = {}
-    # get specs of the base class
-    for base in bases:
-        if hasattr(base, "_meta"):
-            specs.update(base._meta.specs)
-    # get all the specs
-    specs.update(dict([(attr_name, attr_value) 
-                    for attr_name, attr_value in attrs.items() 
-                    if isinstance(attr_value, Spec)]))
-    # insert a _meta attribute with the specs
-    attrs["_meta"] = WidgetMeta(name, specs)
+        # Create the class.
+        new_class = super_new(cls, name, bases, attrs)
+        
+        specs = {}
+        # get specs of the base classes
+        for base in bases:
+            if hasattr(base, "_meta"):
+                specs.update(base._meta.specs)
+        # get all the specs
+        specs.update(dict([(attr_name, attr_value) 
+                        for attr_name, attr_value in attrs.items() 
+                        if isinstance(attr_value, Spec)]))
+        # insert a _meta attribute with the specs
+        new_class._meta = WidgetMeta(name, specs)
 
-    # registry and return the new class:
-    new_class = type(name, bases, attrs)
-    registry.WIDGETS[name] = new_class
-    return new_class
+        # registry and return the new class:
+        registry.WIDGETS[name] = new_class
+        return new_class
 
   
 class Widget(object):
@@ -83,7 +87,7 @@ class Widget(object):
     # When it receives an event from wxPython, it will convert the event
     # to a gui2py.event.Event ( UIEvent, MouseEvent, etc ) and call the handler
     
-    __metaclass__ = widget_metaclass
+    __metaclass__ = WidgetBase
     
     def __init__(self, parent=None, **kwargs):
         self._font = None

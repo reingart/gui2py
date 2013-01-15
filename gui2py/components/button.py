@@ -1,13 +1,11 @@
 
 import wx
 from ..event import FormEvent
-from ..widget import Widget, Spec, EventSpec, new_id, widget_metaclass
+from ..widget import Widget, Spec, EventSpec, new_id
 
 
 class Button(Widget):
     "A simple push-button with a label"
-    
-    __metaclass__ = widget_metaclass
     
     def __init__(self, parent, **kwargs):
         self.wx_obj = wx.Button(parent,

@@ -1,13 +1,13 @@
 
 import wx
 from ..event import FormEvent
-from ..widget import Widget, Spec, EventSpec, new_id, widget_metaclass
+from ..widget import Widget, Spec, EventSpec, new_id
 
 
 class Label(Widget):
     "An uneditable block of text"
 
-    __metaclass__ = widget_metaclass
+    ##__metaclass__ = widget_metaclass
 
     def __init__(self, parent, alignment=None, **kwargs):
         self.wx_obj = wx.StaticText(parent, 
