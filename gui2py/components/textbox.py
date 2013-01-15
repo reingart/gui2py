@@ -7,14 +7,13 @@ class TextBox(Widget):
     "A text field"
 
     def __init__(self, parent, alignment=None, border=None, **kwargs):
-        self._border = kwargs.get('border')
-
+        # required read-only specs:
+        self._border = border or self._meta.specs['border'].default
         if self._border == 'none':
             borderStyle = wx.NO_BORDER
         else:
             borderStyle = 0
-
-        self._alignment = kwargs.get("alignment", "left")
+        self._alignment = alignment or self._meta.specs['alignment'].default
 
         self.wx_obj = wx.TextCtrl(
             parent, 
@@ -26,14 +25,11 @@ class TextBox(Widget):
 
         Widget.__init__(self, **kwargs)
 
-        #if not kwargs.get(editable):
-        #    self.SetEditable(False)
-
-        if kwargs.get(border) == 'none':
+        if self._border == 'none':
             # the erase background event doesn't appear to make the control
             # transparent, so further investigation is required
             #EVT_ERASE_BACKGROUND(delegate, lambda evt: None)
-            self.SetBackgroundColour(self.GetParent().GetBackgroundColour())
+            self.wx_obj.SetBackgroundColour(parent.GetBackgroundColour())
 
     def _mapAlignment(self, aString):
         if aString == 'left':
@@ -214,7 +210,7 @@ if __name__ == "__main__":
     # basic test until unit_test
     app = wx.App(redirect=False)
     frame = wx.Frame(None)
-    t = TextBox(frame, name="txtTest", text="hello world!")
+    t = TextBox(frame, name="txtTest", border='none', text="hello world!")
     assert t.get_parent() is frame
     assert t.name == "txtTest"
     print "align", t.alignment
