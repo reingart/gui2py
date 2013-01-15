@@ -35,7 +35,6 @@ class TextBox(Widget):
             #EVT_ERASE_BACKGROUND(delegate, lambda evt: None)
             self.SetBackgroundColour(self.GetParent().GetBackgroundColour())
 
-        
     def _mapAlignment(self, aString):
         if aString == 'left':
             return wx.TE_LEFT
@@ -48,9 +47,6 @@ class TextBox(Widget):
         
     def _getAlignment(self):
         return self._alignment
-
-    def _setAlignment(self, aString):
-        raise AttributeError("alignment attribute is read-only")
 
     def clear_selection(self):
         if self.can_cut():
@@ -198,9 +194,6 @@ class TextBox(Widget):
     def _getBorder( self ) :
         return self._border
 
-    def _setBorder( self, aString ) :
-        raise AttributeError, "border attribute is read-only"
-
     get_string_selection = lambda self: self.wx_obj.GetStringSelection
     
     def get_string(self, aFrom, aTo):
@@ -230,7 +223,7 @@ if __name__ == "__main__":
     from pprint import pprint
     # assign some event handlers:
     t.onmousemove = lambda event: pprint("%s %s %s" % (event.name, event.x, event.y))
-    t.onmouseleftdown = lambda event: pprint("click!")
+    t.onmouseleftdown = lambda event: pprint(event.target.append_text("click!"))
     t.onchange = lambda event: pprint("change: %s" % event.target.text)
     frame.Show()
     app.MainLoop()
