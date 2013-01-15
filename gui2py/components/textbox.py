@@ -207,7 +207,7 @@ class TextBox(Widget):
         return self.GetValue()[aFrom:aTo]
 
     alignment = Spec(_getAlignment, default='left', values=['left', 'right', 'center'])
-    border = Spec(_getBorder)
+    border = Spec(_getBorder, default='3d', values=['3d', 'none'])
     editable = Spec(lambda self: self.wx_obj.IsEditable(), 
                     lambda self, value: self.wx_obj.SetEditable(value),
                     default=True)
@@ -216,15 +216,6 @@ class TextBox(Widget):
 
     onchange = EventSpec('focus', binding=wx.EVT_TEXT , kind=FormEvent)
     
-    #events = list(TextFieldEvents)       
-    ##attributes = {
-    #   'text' : {'presence' : 'optional', 'default' : ''},
-    ##    'editable' : {'presence' : 'optional', 'default' : 1},
-    #    'alignment' : {'presence' : 'optional', 'default' : 'left', 'values' :['left', 'right', 'center']},
-    #    'border' : {'presence' : 'optional', 'default' : '3d', 'values' : ['3d', 'none']}
-    #}                
-    #widget.WidgetSpec.__init__( self, 'TextField', 'Widget' , events, attributes )
-
 
 if __name__ == "__main__":
     # basic test until unit_test
