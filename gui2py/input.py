@@ -129,3 +129,21 @@ class TextAreaInput(wx.TextCtrl, FormControlMixin):
         height = self.GetCharHeight() * rows
         self.SetSize((width, height))
 
+        
+class Label(wx.StaticText, FormControlMixin):
+    __metaclass__ = TypeHandler("LABEL")
+    def __init__(self, parent, form, tag, parser, *args, **kwargs):
+        label = GetParam(tag, "VALUE", default="label")
+        kwargs["label"] = label
+        wx.StaticText.__init__(self, parent, *args, **kwargs)
+        FormControlMixin.__init__(self, form, tag)
+        self.SetSize((int(GetParam(tag, "SIZE", default=-1)), -1))
+        if tag.HasEnding():
+            src = parser.GetSource()[tag.GetBeginPos():tag.GetEndPos1()]
+        else:
+            src = ''
+        #self.SetFont(wx.SystemSettings.GetFont(wx.SYS_ANSI_FIXED_FONT))
+        self.SetLabel(src)
+        ##self.Bind(wx.EVT_BUTTON, self.OnClick)
+    def GetValue(self):
+        return None

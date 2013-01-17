@@ -76,7 +76,7 @@ class FormTagHandler(wx.html.HtmlWinTagHandler):
         wx.html.HtmlWinTagHandler.__init__(self)
     
     def GetSupportedTags(self):
-        return "FORM,INPUT,TEXTAREA,SELECT,OPTION"
+        return "FORM,INPUT,TEXTAREA,SELECT,OPTION,LABEL"
         
     def HandleTag(self, tag):
         try:
@@ -88,9 +88,20 @@ class FormTagHandler(wx.html.HtmlWinTagHandler):
         
     def HandleFORM(self, tag):
         self.form = HTMLForm(tag, self.GetParser().GetWindowInterface().GetHTMLWindow())
+        # to use the current container (same line) do:
+        ##self.cell = self.GetParser().GetContainer()
+        # to create a sibling container (same level) current one must be closed:
+        ##self.GetParser().CloseContainer()
+        # create a new child container (if current was not closed):
         self.cell = self.GetParser().OpenContainer()
+        # experimental highlight (to view final layout), sadly BR resets this
+        self.cell.SetBackgroundColour("yellow")
+        # Alignment does not work here (BR fault), so it is set in createControl
+        ##self.cell.SetAlignVer(wx.html.HTML_ALIGN_TOP)
         self.ParseInner(tag)
         self.GetParser().CloseContainer()
+        # OpenContainer and CloseContainer calls should be the same quantity
+        ##self.GetParser().OpenContainer()
         self.form = None
         self.optionList = []
         return True
@@ -146,17 +157,39 @@ class FormTagHandler(wx.html.HtmlWinTagHandler):
     def HandleOPTION(self, tag):
         self.optionList.append(tag)
         return True
-        
+    
+    def HandleLABEL(self, tag):
+        klass = self.typeregister["LABEL"]
+        self.createControl(klass, tag)
+        #Don't actually call ParseInner, but lie and said we did.
+        #This should skip us ahead to the next tag, and let us 
+        #retrieve the text verbatem from the text area
+        return True
+    
     def createControl(self, klass, tag):
         parent = self.GetParser().GetWindowInterface().GetHTMLWindow()
         object = klass(parent, self.form, tag, self.GetParser())
         self.setObjectTag(object, tag)
         if not isinstance(object, wx.Window):
             return
+        # get floatwidth
+        if tag.HasParam("WIDTH"):
+            w = tag.GetParam("WIDTH")
+            if w[-1] == '%':
+                w = int(w[:-1], 0)
+            else:
+                w = int(w)
+        else:
+            w = -1
         cell = self.GetParser().GetContainer()
-        cell.InsertCell(
-            wx.html.HtmlWidgetCell(object)
-        )
+        # middle-align controls (affects the whole line, up to the FORM)
+        cell.SetAlignVer(wx.html.HTML_ALIGN_CENTER)
+        # if no float width, don't use -1 as it seems to break layout
+        if w > 0:
+            wcell = wx.html.HtmlWidgetCell(object, w)   # w should be int!
+        else:
+            wcell = wx.html.HtmlWidgetCell(object)
+        cell.InsertCell(wcell)
 
     def setObjectTag(self, object, tag):
         """ Add a tag attribute to the wx window """
