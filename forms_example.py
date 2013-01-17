@@ -102,8 +102,9 @@ if __name__ == '__main__':
             print "errors", form.errors
             html.SetPage(form.xml())
     html.Bind(EVT_FORM_SUBMIT, on_form_submit)
-    import wx.lib.inspection
-    wx.lib.inspection.InspectionTool().Show()
+    if '--inspect' in sys.argv:
+        import wx.lib.inspection
+        wx.lib.inspection.InspectionTool().Show()
 
     f.Show()
     app.MainLoop()

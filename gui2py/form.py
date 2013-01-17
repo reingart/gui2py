@@ -73,6 +73,7 @@ class FormTagHandler(wx.html.HtmlWinTagHandler):
     
     def __init__(self):
         self.form = None
+        self.control_padding = 2    # this should be disabled inside tables
         wx.html.HtmlWinTagHandler.__init__(self)
     
     def GetSupportedTags(self):
@@ -168,10 +169,19 @@ class FormTagHandler(wx.html.HtmlWinTagHandler):
     
     def createControl(self, klass, tag):
         parent = self.GetParser().GetWindowInterface().GetHTMLWindow()
-        object = klass(parent, self.form, tag, self.GetParser())
+        # create a panel for sizing:
+        panel = wx.Panel(parent)
+        # instantiate the actual control:
+        object = klass(panel, self.form, tag, self.GetParser())
         self.setObjectTag(object, tag)
+        # if it isn't a window (i.e. OPTION), do not add it to the html cell
         if not isinstance(object, wx.Window):
             return
+        # create a sizer to fit the control with some padding
+        box = wx.BoxSizer(wx.HORIZONTAL)
+        box.Add(object, 1, wx.ALL, self.control_padding)
+        panel.SetSizer(box)
+        panel.Fit()
         # get floatwidth
         if tag.HasParam("WIDTH"):
             w = tag.GetParam("WIDTH")
@@ -186,9 +196,9 @@ class FormTagHandler(wx.html.HtmlWinTagHandler):
         cell.SetAlignVer(wx.html.HTML_ALIGN_CENTER)
         # if no float width, don't use -1 as it seems to break layout
         if w > 0:
-            wcell = wx.html.HtmlWidgetCell(object, w)   # w should be int!
+            wcell = wx.html.HtmlWidgetCell(panel, w)   # w should be int!
         else:
-            wcell = wx.html.HtmlWidgetCell(object)
+            wcell = wx.html.HtmlWidgetCell(panel)
         cell.InsertCell(wcell)
 
     def setObjectTag(self, object, tag):
