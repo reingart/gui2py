@@ -142,8 +142,10 @@ class Label(wx.StaticText, FormControlMixin):
             src = parser.GetSource()[tag.GetBeginPos():tag.GetEndPos1()]
         else:
             src = ''
+        #TODO: get actual font from HMTL Cell Parser
         #self.SetFont(wx.SystemSettings.GetFont(wx.SYS_ANSI_FIXED_FONT))
         self.SetLabel(src)
+        #TODO: Bind mouse click with the real control: GetParam("for")
         ##self.Bind(wx.EVT_BUTTON, self.OnClick)
     def GetValue(self):
         return None

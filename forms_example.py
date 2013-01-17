@@ -22,7 +22,7 @@ import sys
 sys.path.append(r"/home/reingart/web2py")
 from gluon.sql import Field
 from gluon.sqlhtml import SQLFORM
-from gluon.html import INPUT, FORM, LABEL, P, BR, SELECT, OPTION, A, CENTER
+from gluon.html import INPUT, FORM, LABEL, P, BR, SELECT, OPTION, A, CENTER, BODY
 from gluon.validators import IS_NOT_EMPTY, IS_EXPR
 from gluon.storage import Storage
 from gluon import current
@@ -87,7 +87,8 @@ if __name__ == '__main__':
         raise RuntimeError("please use\npython forms_example.py --login, --form or --sqlform")
         
     html = wx.html.HtmlWindow(f, style= wx.html.HW_DEFAULT_STYLE | wx.TAB_TRAVERSAL)
-    form_xml = form.xml()
+    form_xml = BODY(form, _text="#000000", _bgcolor="#007f00", _link="#0000FF",
+                         _vlink="#FF0000", _alink="#000088").xml()
     print form_xml
     html.SetPage(form_xml)
     #<form action="" enctype="multipart/form-data" method="post"><table><tr id="no_table_test__row"><td class="w2p_fl"><label for="no_table_test" id="no_table_test__label">Test: </label></td><td class="w2p_fw"><input class="string" id="no_table_test" name="test" type="text" value="" /></td><td class="w2p_fc">some data</td></tr><tr id="submit_record__row"><td class="w2p_fl"></td><td class="w2p_fw"><input type="submit" value="Submit" /></td><td class="w2p_fc"></td></tr></table></form>
@@ -102,8 +103,9 @@ if __name__ == '__main__':
             print "errors", form.errors
             html.SetPage(form.xml())
     html.Bind(EVT_FORM_SUBMIT, on_form_submit)
-    import wx.lib.inspection
-    wx.lib.inspection.InspectionTool().Show()
+    if '--inspect' in sys.argv:
+        import wx.lib.inspection
+        wx.lib.inspection.InspectionTool().Show()
 
     f.Show()
     app.MainLoop()
