@@ -6,20 +6,26 @@ from ..widget import Widget, Spec, EventSpec, new_id
 class TextBox(Widget):
     "A text field"
 
-    def __init__(self, parent, alignment=None, border=None, **kwargs):
+    def __init__(self, parent, alignment=None, border=None, password=False,
+                 multiline=False, **kwargs):
         # required read-only specs:
+        style = 0
         self._border = border or self._meta.specs['border'].default
+        self._password = password
         if self._border == 'none':
-            borderStyle = wx.NO_BORDER
-        else:
-            borderStyle = 0
+            style |= wx.NO_BORDER
+        if password:
+            style |= wx.TE_PASSWORD
+        if multiline:
+            multiline |= wx.TE_PASSWORD
+            
         self._alignment = alignment or self._meta.specs['alignment'].default
 
         self.wx_obj = wx.TextCtrl(
             parent, 
             new_id(kwargs.get('id')),
             #style = wxTE_PROCESS_ENTER | borderStyle | wxCLIP_SIBLINGS,
-            style = borderStyle | self._mapAlignment(self._alignment) | \
+            style = style | self._mapAlignment(self._alignment) | \
                 wx.CLIP_SIBLINGS | wx.NO_FULL_REPAINT_ON_RESIZE,
             name = kwargs.get('name'))
 
@@ -202,19 +208,24 @@ class TextBox(Widget):
                     default=True)
     text = Spec(lambda self: self.wx_obj.GetValue(), 
                 lambda self, value: self.wx_obj.SetValue(value))
+    password = Spec(lambda self: self._password, default=False)
 
     onchange = EventSpec('focus', binding=wx.EVT_TEXT , kind=FormEvent)
     
 
 if __name__ == "__main__":
+    import sys
     # basic test until unit_test
     app = wx.App(redirect=False)
     frame = wx.Frame(None)
-    t = TextBox(frame, name="txtTest", border='none', text="hello world!")
+    t = TextBox(frame, name="txtTest", border='none', text="hello world!",
+                password='--password' in sys.argv,
+                )
     assert t.get_parent() is frame
     assert t.name == "txtTest"
     print "align", t.alignment
     print "text", t.text
+    print "password", t.password
     assert t.text == "hello world!"
     from pprint import pprint
     # assign some event handlers:
