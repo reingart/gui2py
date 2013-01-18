@@ -7,17 +7,21 @@ class TextBox(Widget):
     "A text field"
 
     def __init__(self, parent, alignment=None, border=None, password=False,
-                 multiline=False, **kwargs):
+                 multiline=False, hscroll=False , **kwargs):
         # required read-only specs:
         style = 0
         self._border = border or self._meta.specs['border'].default
         self._password = password
+        self._multiline = multiline
+        self._hscroll = hscroll
         if self._border == 'none':
             style |= wx.NO_BORDER
         if password:
             style |= wx.TE_PASSWORD
         if multiline:
-            multiline |= wx.TE_PASSWORD
+            style |= wx.TE_MULTILINE
+            if hscroll:
+                style |= wx.HSCROLL
             
         self._alignment = alignment or self._meta.specs['alignment'].default
 
@@ -209,6 +213,8 @@ class TextBox(Widget):
     text = Spec(lambda self: self.wx_obj.GetValue(), 
                 lambda self, value: self.wx_obj.SetValue(value))
     password = Spec(lambda self: self._password, default=False)
+    multiline = Spec(lambda self: self._multiline, default=False)
+    hscroll = Spec(lambda self: self._hscroll, default=True)
 
     onchange = EventSpec('focus', binding=wx.EVT_TEXT , kind=FormEvent)
     
@@ -220,12 +226,16 @@ if __name__ == "__main__":
     frame = wx.Frame(None)
     t = TextBox(frame, name="txtTest", border='none', text="hello world!",
                 password='--password' in sys.argv,
+                multiline='--multiline' in sys.argv,
+                hscroll=True,
                 )
     assert t.get_parent() is frame
     assert t.name == "txtTest"
     print "align", t.alignment
     print "text", t.text
     print "password", t.password
+    print "multiline", t.multiline
+    print "hscroll", t.hscroll
     assert t.text == "hello world!"
     from pprint import pprint
     # assign some event handlers:
