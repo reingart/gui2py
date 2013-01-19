@@ -11,7 +11,7 @@ def new_id(id=None):
 
 
 class Spec(property):
-    "Spec contains meta type information about widgets"
+    "Spec contains meta type information about components"
     
     def __init__(self, fget=None, fset=None, fdel=None, doc=None, 
                  optional=True, default=None, values=None, _name=""):
@@ -49,17 +49,17 @@ class EventSpec(Spec):
         self.kind = kind                # Event class
     
 
-class WidgetMeta():
-    "Widget Metadata"
+class ComponentMeta():
+    "Component Metadata"
     def __init__(self, name, specs):
         self.name = name
         self.specs = specs
 
     
-class WidgetBase(type):
-    "Widget class constructor (creates metadata and register the widget)"
+class ComponentBase(type):
+    "Component class constructor (creates metadata and register the component)"
     def __new__(cls, name, bases, attrs):
-        super_new = super(WidgetBase, cls).__new__
+        super_new = super(ComponentBase, cls).__new__
     
         # Create the class.
         new_class = super_new(cls, name, bases, attrs)
@@ -74,20 +74,26 @@ class WidgetBase(type):
                         for attr_name, attr_value in attrs.items() 
                         if isinstance(attr_value, Spec)]))
         # insert a _meta attribute with the specs
-        new_class._meta = WidgetMeta(name, specs)
+        new_class._meta = ComponentMeta(name, specs)
 
         # registry and return the new class:
-        registry.WIDGETS[name] = new_class
+        if hasattr(new_class, "_registry"):
+            new_class._registry[name] = new_class
         return new_class
 
   
-class Widget(object):
-    "The base class for all of our GUI controls"
-    # Each Widget must bind itself to the wxPython event model.  
+class Component(object):
+    "The base class for all of our GUI elements"
+    
+    # Each Component must bind itself to the wxPython event model.  
     # When it receives an event from wxPython, it will convert the event
     # to a gui2py.event.Event ( UIEvent, MouseEvent, etc ) and call the handler
     
-    __metaclass__ = WidgetBase
+    # This is the base class wich all GUI Elements should derive 
+    # (TopLevelWindows -Frame, Dialog, etc.- and Controls)
+    # This object maps to wx.Window, but avoid that name as it can be confusing.
+    
+    __metaclass__ = ComponentBase
     
     def __init__(self, parent=None, **kwargs):
         self._font = None
@@ -172,7 +178,7 @@ class Widget(object):
             return
         if isinstance(aFont, dict):
             aFont = font.Font(aFont, aParent=self)
-        else: # Bind the font to this widget.
+        else: # Bind the font to this component.
             aFont._parent = self
         self._font = aFont
         aWxFont = aFont._getFont()
@@ -259,11 +265,22 @@ class Widget(object):
     onmouserightdclick = EventSpec('mouserightdclick', binding=wx.EVT_RIGHT_DCLICK, kind=MouseEvent)
 
 
+class Control(Component):
+    "This is the base class for a control"
+
+    # A control is generally a small window which processes user input and/or 
+    # displays one or more item of data (for more info see wx.Control)
+    # Avoid the term 'widget' as could be confusing (and it is already used in 
+    # web2py)
+    
+    _registry = registry.WIDGETS
+
+
 if __name__ == "__main__":
     # basic test until unit_test
     app = wx.App(redirect=False)
     frame = wx.Frame(None)
-    w = Widget(frame, name="test")
+    w = Component(frame, name="test")
     assert w.get_parent() is frame
     assert w.id != -1       # wx should have assigned a new id!
     assert w.name == "test"
