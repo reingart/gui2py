@@ -3,7 +3,7 @@
 
 import wx
 
-from gui2py.form import EVT_FORM_SUBMIT
+from gui2py.html.form import EVT_FORM_SUBMIT
 
 search_html = """
 <form method="get" action="/wiki/default/_pages"> 
