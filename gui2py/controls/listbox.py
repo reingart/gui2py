@@ -1,9 +1,9 @@
 import wx
 from ..event import FormEvent
-from ..widget import Widget, Spec, EventSpec, new_id
+from ..components import Control, Spec, EventSpec, new_id
 
 
-class ItemContainerWidget(Widget):
+class ItemContainerControl(Control):
     "Interface for all controls that have string subitems wich may be selected"
     
     # internally, uses _items_dict to map strings to client data
@@ -160,7 +160,7 @@ class ItemContainerWidget(Widget):
     data_selection = Spec(_get_data_selection, _set_data_selection)
 
 
-class ListBox(ItemContainerWidget):
+class ListBox(ItemContainerControl):
     "A list that only allows a single item (or multiple items) to be selected."
     
     def __init__(self, parent, multiselect=False, **kwargs):
@@ -180,7 +180,7 @@ class ListBox(ItemContainerWidget):
             name=kwargs.get('name'),
         )
 
-        Widget.__init__(self, **kwargs)
+        Control.__init__(self, **kwargs)
 
     def insert_items(self, aList, aPosition):
         self.wx_obj.InsertItems(a_list, a_position)

@@ -1,9 +1,9 @@
 import wx
 from ..event import FormEvent
-from ..widget import Widget, Spec, EventSpec, new_id
+from ..components import Control, Spec, EventSpec, new_id
 
 
-class CheckBox(Widget):
+class CheckBox(Control):
     "A check box."
 
     def __init__(self, parent, **kwargs):
@@ -13,7 +13,7 @@ class CheckBox(Widget):
             style = wx.CLIP_SIBLINGS | wx.NO_FULL_REPAINT_ON_RESIZE,
             name = kwargs.get('name'),
             )
-        Widget.__init__(self, **kwargs)
+        Control.__init__(self, **kwargs)
     
     checked = Spec(lambda self: self.wx_obj.GetValue(), 
                    lambda self, value: self.wx_obj.SetValue(value), 

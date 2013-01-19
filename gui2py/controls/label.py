@@ -1,13 +1,11 @@
 
 import wx
 from ..event import FormEvent
-from ..widget import Widget, Spec, EventSpec, new_id
+from ..components import Control, Spec, EventSpec, new_id
 
 
-class Label(Widget):
+class Label(Control):
     "An uneditable block of text"
-
-    ##__metaclass__ = widget_metaclass
 
     def __init__(self, parent, alignment=None, **kwargs):
         self.wx_obj = wx.StaticText(parent, 
@@ -16,7 +14,7 @@ class Label(Widget):
                         wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS,
                         name=kwargs.get("name"))
         self._alignment = alignment
-        Widget.__init__(self, **kwargs)
+        Control.__init__(self, **kwargs)
 
     def __getAlignment(self, aString):
         if not aString or aString == 'left':

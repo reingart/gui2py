@@ -1,10 +1,10 @@
 import wx
 from ..event import FormEvent
-from ..widget import Widget, Spec, EventSpec, new_id
-from .listbox import ItemContainerWidget
+from ..components import Control, Spec, EventSpec, new_id
+from .listbox import ItemContainerControl
 
 
-class ComboBox(ItemContainerWidget):
+class ComboBox(ItemContainerControl):
     "A combobox control (textbox + listbox)"
 
     def __init__(self, parent, readonly=False, **kwargs):
@@ -22,7 +22,7 @@ class ComboBox(ItemContainerWidget):
                   wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS,
             name=kwargs.get('name'),
         )
-        Widget.__init__(self, **kwargs)
+        Control.__init__(self, **kwargs)
 
     text = Spec(lambda self: self.wx_obj.GetValue(), 
                 lambda self, value: self.wx_obj.SetValue(value),

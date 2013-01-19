@@ -1,9 +1,9 @@
 import wx
 from ..event import FormEvent
-from ..widget import Widget, Spec, EventSpec, new_id
+from ..components import Control, Spec, EventSpec, new_id
 
 
-class TextBox(Widget):
+class TextBox(Control):
     "A text field"
 
     def __init__(self, parent, alignment=None, border=None, password=False,
@@ -33,7 +33,7 @@ class TextBox(Widget):
                 wx.CLIP_SIBLINGS | wx.NO_FULL_REPAINT_ON_RESIZE,
             name = kwargs.get('name'))
 
-        Widget.__init__(self, **kwargs)
+        Control.__init__(self, **kwargs)
 
         if self._border == 'none':
             # the erase background event doesn't appear to make the control
