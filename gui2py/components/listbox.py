@@ -35,7 +35,22 @@ class ItemContainerWidget(Widget):
             self.wx_obj.SetSelection(-1)
         else:
             self.wx_obj.SetStringSelection(s)
+    
+    def _get_data_selection(self):
+        if self._multiselect:
+            return [self.wx_obj.GetClientData(i) for i in 
+                    self.wx_obj.GetSelections()]
+        else:
+            i = self.wx_obj.GetSelection()
+            return self.wx_obj.GetClientData(i)
 
+    def _set_data_selection(self, s):
+        # an arg of None or empty string will remove the selection
+        if s is None or s == '':
+            self.wx_obj.SetSelection(-1)
+        else:
+            raise NotImplementedError
+            
     def _get_items(self):
         items = []
         for i in range(self.GetCount()):
@@ -45,8 +60,8 @@ class ItemContainerWidget(Widget):
     def _set_items(self, a_list):
         self.wx_obj.Set(a_list)
 
-    def append(self, a_string):
-        self.wx_obj.Append(a_string)
+    def append(self, a_string, data=None):
+        self.wx_obj.Append(a_string, data)
 
     def append_items(self, a_list):
         self.wx_obj.AppendItems(a_list)
@@ -66,6 +81,7 @@ class ItemContainerWidget(Widget):
     items = Spec(_get_items, _set_items)
     selection = Spec(_get_selection, _set_selection)
     string_selection = Spec(_get_string_selection, _set_string_selection)
+    data_selection = Spec(_get_data_selection, _set_data_selection)
 
 
 class ListBox(ItemContainerWidget):
@@ -122,9 +138,13 @@ if __name__ == "__main__":
     frame = wx.Frame(None)
     c = ListBox(frame, name="lstTest", border='none', items=['a', 'b', 'c'],
                 multiselect="--multiselect" in sys.argv)
+    c.append("d")
+    c.append("e", "datum1")
     from pprint import pprint
     # assign some event handlers:
     c.onclick = lambda event: pprint("selection: %s" % str(event.target.selection))
-    c.ondblclick = lambda event: pprint("selection: %s" % str(event.target.string_selection))
+    c.ondblclick = lambda event: pprint(
+        "stringselection: %s dataselection: %s" % 
+        (str(event.target.string_selection), str(event.target.data_selection)))
     frame.Show()
     app.MainLoop()
