@@ -65,8 +65,8 @@ class ItemContainerWidget(Widget):
             
     def _get_items(self):
         items = []
-        for i in range(self.GetCount()):
-            items.append(self.GetString(i))
+        for i in range(self.wx_obj.GetCount()):
+            items.append(self.wx_obj.GetString(i))
         return items
 
     def _set_items(self, a_iter):

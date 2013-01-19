@@ -216,7 +216,7 @@ class TextBox(Widget):
     multiline = Spec(lambda self: self._multiline, default=False)
     hscroll = Spec(lambda self: self._hscroll, default=True)
 
-    onchange = EventSpec('focus', binding=wx.EVT_TEXT , kind=FormEvent)
+    onchange = EventSpec('change', binding=wx.EVT_TEXT, kind=FormEvent)
     
 
 if __name__ == "__main__":
