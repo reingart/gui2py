@@ -36,11 +36,21 @@ class EventSpec(Spec):
                 # disconnect the previous binded events
                 obj.wx_obj.Unbind(self.binding)
             if action:
-                handler = lambda wx_event: action(self.kind(name=self.name, 
-                                                 wx_event=wx_event))
+                # create the event_handler for this action
+                def handler(wx_event):
+                    event = self.kind(name=self.name, wx_event=wx_event)
+                    if isinstance(action, basestring):
+                        # execute the user function with the event as context:
+                        exec action in {'event': event, 
+                                        'window': event.target.get_parent()}
+                    else: 
+                        action(event)   # just call the user function
+                    # check if default (generic) event handlers are allowed:
+                    if not event.cancel_default:
+                        wx_event.Skip()
                 # connect the new action to the event:
                 obj.wx_obj.Bind(self.binding, handler)
-                # store the event handler
+            # store the event handler
             setattr(obj, "_" + event_name, action)
 
         Spec.__init__(self, getter, setter, doc=doc)

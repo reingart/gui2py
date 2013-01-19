@@ -13,6 +13,8 @@ import time
 class Event:
     "Generic Event Object: holds actual event data (created by EventHandler)"
     
+    cancel_default = False # flag to avoid default (generic) handlers
+        
     def __init__(self, name="", wx_event=None):
         self.wx_event = wx_event
         # retrieve wxPython event properties:
@@ -26,6 +28,7 @@ class Event:
 
     def prevent_default(self, cancel=True):
         self.wx_event.Skip(not cancel)
+        self.cancel_default = cancel
 
     def stop_propagation(self):
         self.wx_event.StopPropagation()
@@ -59,6 +62,7 @@ class FormEvent(Event):
     "Form HTML-like events "
     
     names = ["select", "change", "reset", "submit", "invalid"]
+    cancel_default = True # command events should not escalate
     
 
 class MouseEvent(Event):
