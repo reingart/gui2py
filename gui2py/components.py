@@ -243,6 +243,14 @@ class Component(object):
     def _getBackgroundColor(self):
         return self.wx_obj.GetBackgroundColour()
     
+    def get_char_width(self):
+        "Returns the average character width for this window."
+        return self.wx_obj.GetCharWidth()
+    
+    def get_char_height(self):
+        "Returns the character height for this window."
+        return self.wx_obj.GetCharHeight()
+
     name = Spec(optional=False, _name="_name")
     background_color = Spec(_getBackgroundColor, _setBackgroundColor)
     font = Spec(_getFont, _setFont)

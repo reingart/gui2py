@@ -7,7 +7,7 @@ class TextBox(Control):
     "A text field"
 
     def __init__(self, parent, alignment=None, border=None, password=False,
-                 multiline=False, hscroll=False , **kwargs):
+                 multiline=False, hscroll=False, **kwargs):
         # required read-only specs:
         style = 0
         self._border = border or self._meta.specs['border'].default
@@ -124,6 +124,10 @@ class TextBox(Control):
 
     def get_number_of_lines( self ) :
         return self.wx_obj.GetNumberOfLines()
+        
+    def set_max_length(self, max):
+        "sets the maximum number of characters allowed into the control"
+        return self.wx_obj.SetMaxLength(max)
 
     # KEA rename to getModified?
     def is_modified( self ) :
@@ -211,7 +215,8 @@ class TextBox(Control):
                     lambda self, value: self.wx_obj.SetEditable(value),
                     default=True)
     text = Spec(lambda self: self.wx_obj.GetValue(), 
-                lambda self, value: self.wx_obj.SetValue(value))
+                lambda self, value: self.wx_obj.SetValue(value),
+                default="")
     password = Spec(lambda self: self._password, default=False)
     multiline = Spec(lambda self: self._multiline, default=False)
     hscroll = Spec(lambda self: self._hscroll, default=True)
