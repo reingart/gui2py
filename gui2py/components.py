@@ -114,10 +114,7 @@ class Component(object):
         # load specs from kwargs, use default if available
         for spec_name, spec in self._meta.specs.items():
             if spec.read_only:
-                print "Cont", spec_name
                 continue
-            if True or DEBUG:
-                print "setting", spec_name, kwargs.get(spec_name, spec.default)
             # get the spec value for kwargs, if it is optional, get the default
             value = kwargs.get(spec_name)
             if not value and not spec.optional:
