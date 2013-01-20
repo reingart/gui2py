@@ -1,29 +1,27 @@
 from . import GetParam, input
 from .input import FormControlMixin
 
-import wx
-import wx.combo
+from ..controls import ComboBox 
 
 
-class SingleSelectControl(wx.Choice, FormControlMixin):
-    def __init__(self, parent, form, tag, parser, optionList, **kwargs):
+class SingleSelectControl(ComboBox, FormControlMixin):
+    def __init__(self, parent, form, tag, parser, option_list, **kwargs):
+        kwargs["name"] = GetParam(tag, "NAME", "")
+        ComboBox.__init__(self, parent, readonly=True, **kwargs)
         FormControlMixin.__init__(self, form, tag)
-        self.values = []
-        contents = []
+        items = []
         selection = 0
-        for idx, option in enumerate(optionList):
-            contents.append(parser.GetSource()[option.GetBeginPos():option.GetEndPos1()])
-            self.values.append(GetParam(option, 'VALUE', ''))
+        for idx, option in enumerate(option_list):
+            text = parser.GetSource()[option.GetBeginPos():option.GetEndPos1()]
+            value = GetParam(option, 'VALUE', '')
+            items.append((value, text))
             if option.HasParam("SELECTED") and not selection:
                 selection = idx
-        wx.Choice.__init__(self, parent, 
-            choices = contents,
-        )
-        self.SetSelection(selection)
+        self.items = items
+        self.selection = selection
+        self.size = (int(GetParam(tag, "SIZE", default=-1)), -1)
         
-    def GetValue(self):
-        sel = self.GetSelection()
-        value = self.values[sel]
-        return value
+    def get_value(self):
+        return self.data_selection
         
         

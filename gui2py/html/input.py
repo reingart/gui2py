@@ -3,17 +3,18 @@
 """
 
 from . import GetParam, form
+from ..controls import TextBox, Button, CheckBox, Label
 
 import wx
 import wx.html
 
-def TypeHandler(typeName):
+def TypeHandler(type_name):
     """ A metaclass generator. Returns a metaclass which
     will register it's class as the class that handles input type=typeName
     """
     def metaclass(name, bases, dict):
         klass = type(name, bases, dict)
-        form.FormTagHandler.registerType(typeName.upper(), klass)
+        form.FormTagHandler.register_type(type_name.upper(), klass)
         return klass
     return metaclass
 
@@ -39,58 +40,61 @@ class FormControlMixin(object):
     def OnClick(self, evt):
         self.__form.submit(self)
 
-class SubmitButton(wx.Button, FormControlMixin):
+class SubmitButton(Button, FormControlMixin):
     __metaclass__ = TypeHandler("SUBMIT")
     def __init__(self, parent, form, tag, parser, *args, **kwargs):
         label = GetParam(tag, "VALUE", default="Submit Query")
         kwargs["label"] = label
-        wx.Button.__init__(self, parent, *args, **kwargs)
+        kwargs["name"] = GetParam(tag, "NAME", label)
+        Button.__init__(self, parent, *args, **kwargs)
         FormControlMixin.__init__(self, form, tag)
-        self.SetSize((int(GetParam(tag, "SIZE", default=-1)), -1))
-        self.Bind(wx.EVT_BUTTON, self.OnClick)
-    def GetValue(self):
+        self.size = (int(GetParam(tag, "SIZE", default=-1)), -1)
+        self.onclick = self.OnClick
+    def get_value(self):
         return None
         
 
-class TextInput(wx.TextCtrl, FormControlMixin):
+class TextInput(TextBox, FormControlMixin):
     __metaclass__ = TypeHandler("TEXT")
     def __init__(self, parent, form, tag, parser, *args, **kwargs):
-        style = kwargs.get("style", 0)
-        if tag.HasParam("READONLY"):
-                style |= wx.TE_READONLY
-        if form:
-            style |= wx.TE_PROCESS_ENTER
-        kwargs["style"] = style
-        wx.TextCtrl.__init__(self, parent, *args, **kwargs)
+        ##    style |= wx.TE_PROCESS_ENTER
+        kwargs["name"] = GetParam(tag, "NAME")
+        TextBox.__init__(self, parent, *args, **kwargs)
         FormControlMixin.__init__(self, form, tag)
-        self.Bind(wx.EVT_TEXT_ENTER, self.OnEnter)
-        self.SetValue(GetParam(tag, "VALUE", ''))
+        ##self.Bind(wx.EVT_TEXT_ENTER, self.OnEnter)
+        self.text = GetParam(tag, "VALUE", '')
         ml = int(GetParam(tag, "MAXLENGTH", 0))
-        self.SetMaxLength(ml)
-        if ml and len(self.GetValue()) > ml:
-            self.SetValue(self.GetValue()[:ml])
+        self.set_max_length(ml)
+        if ml and len(self.text) > ml:
+            self.text = self.text[:ml]
         size = int(GetParam(tag, "SIZE", 40))
-        width = self.GetCharWidth() * size
-        self.SetSize((width, -1))
-            
-            
+        width = self.get_char_width() * size
+        self.size = (width, -1)
+        if tag.HasParam("READONLY"):
+            self.editable = False
+    def get_value(self):
+        return self.text
             
 class PasswordInput(TextInput):
     __metaclass__ = TypeHandler("PASSWORD")
     def __init__(self, parent, form, tag, parser):
-        TextInput.__init__(self, parent, form, tag, parser, style=wx.TE_PASSWORD)
+        TextInput.__init__(self, parent, form, tag, parser, password=True)
         
         
-class Checkbox(wx.CheckBox, FormControlMixin):
+class Checkbox(CheckBox, FormControlMixin):
     __metaclass__ = TypeHandler("CHECKBOX")
+    
     def __init__(self, parent, form, tag, parser, *args, **kwargs):
-        wx.CheckBox.__init__(self, parent, *args, **kwargs)
+        kwargs["name"] = GetParam(tag, "NAME", "")
+        kwargs["label"] = "" # TODO: fix!
+        CheckBox.__init__(self, parent, *args, **kwargs)
         FormControlMixin.__init__(self, form, tag)
         self.value = GetParam(tag, "VALUE", "1")
         if tag.HasParam("checked"):
-            self.SetValue(True)
-    def GetValue(self):
-        if self.IsChecked():
+            self.checked = True
+
+    def get_value(self):
+        if self.checked:
             return self.value
         else:
             return None
@@ -102,50 +106,49 @@ class HiddenControl(wx.EvtHandler, FormControlMixin):
         FormControlMixin.__init__(self, form, tag)
         self.value = GetParam(tag, "VALUE", "")
         self.enabled = True
-    def GetValue(self):
+    def get_value(self):
         return self.value
-    def Disable(self):
+    def disable(self):
         self.enabled = False
-    def IsEnabled(self):
+    def is_enabled(self):
         return self.enabled
         
-class TextAreaInput(wx.TextCtrl, FormControlMixin):
+class TextAreaInput(TextBox, FormControlMixin):
     __metaclass__ = TypeHandler("TEXTAREA")
     def __init__(self, parent, form, tag, parser, *args, **kwargs):
-        style = wx.TE_MULTILINE
-        if tag.HasParam("READONLY"):
-            style |= wx.TE_READONLY
-        wx.TextCtrl.__init__(self, parent, style=style)
+        kwargs["name"] = GetParam(tag, "NAME", "")
+        TextBox.__init__(self, parent, multiline=True, *args, **kwargs)
         FormControlMixin.__init__(self, form, tag)
         if tag.HasEnding():
             src = parser.GetSource()[tag.GetBeginPos():tag.GetEndPos1()]
         else:
             src = ''
-        self.SetFont(wx.SystemSettings.GetFont(wx.SYS_ANSI_FIXED_FONT))
-        self.SetValue(src)
+        #self.SetFont(wx.SystemSettings.GetFont(wx.SYS_ANSI_FIXED_FONT))
+        self.text = src
         cols = int(GetParam(tag, "COLS", 22))
-        width = self.GetCharWidth() * cols
+        width = self.get_char_width() * cols
         rows = int(GetParam(tag, "ROWS", 3))
-        height = self.GetCharHeight() * rows
-        self.SetSize((width, height))
-
+        height = self.get_char_height() * rows
+        size = (width, height)
+    def get_value(self):
+        return self.text
         
-class Label(wx.StaticText, FormControlMixin):
+class FieldLabel(Label, FormControlMixin):
     __metaclass__ = TypeHandler("LABEL")
     def __init__(self, parent, form, tag, parser, *args, **kwargs):
         label = GetParam(tag, "VALUE", default="label")
-        kwargs["label"] = label
-        wx.StaticText.__init__(self, parent, *args, **kwargs)
+        kwargs["name"] = GetParam(tag, "NAME", str(id(self)))
+        Label.__init__(self, parent, *args, **kwargs)
         FormControlMixin.__init__(self, form, tag)
-        self.SetSize((int(GetParam(tag, "SIZE", default=-1)), -1))
+        self.size = (int(GetParam(tag, "SIZE", default=-1)), -1)
         if tag.HasEnding():
             src = parser.GetSource()[tag.GetBeginPos():tag.GetEndPos1()]
         else:
             src = ''
         #TODO: get actual font from HMTL Cell Parser
         #self.SetFont(wx.SystemSettings.GetFont(wx.SYS_ANSI_FIXED_FONT))
-        self.SetLabel(src)
+        self.text = src
         #TODO: Bind mouse click with the real control: GetParam("for")
         ##self.Bind(wx.EVT_BUTTON, self.OnClick)
-    def GetValue(self):
+    def get_value(self):
         return None

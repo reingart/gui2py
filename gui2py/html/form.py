@@ -29,7 +29,7 @@ class HTMLForm(object):
         if self.method not in ("GET", "POST"):
             self.method = "GET"
             
-    def hitSubmitButton(self):
+    def hit_submit_button(self):
         from . import input
         for field in self.fields:
             if isinstance(field, input.SubmitButton):
@@ -37,17 +37,17 @@ class HTMLForm(object):
                 return
                 
     def submit(self, btn=None):
-        args = self.createArguments()
+        args = self.create_arguments()
         if btn and btn.name:
-            args[btn.name] = btn.GetLabel()
+            args[btn.name] = btn.name
         evt = FormSubmitEvent(self, args)
         self.container.ProcessEvent(evt)
         
-    def createArguments(self):
+    def create_arguments(self):
         args = {}
         for field in self.fields:
-            if field.name and field.IsEnabled():
-                val = field.GetValue()
+            if field.name:# and field.enabled: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                val = field.get_value()
                 if val is None:
                     continue
                 elif isinstance(val, unicode):
@@ -68,8 +68,8 @@ class FormTagHandler(wx.html.HtmlWinTagHandler):
                   "method"]
     
     @classmethod
-    def registerType(klass, type, controlClass):
-        klass.typeregister[type] = controlClass
+    def register_type(klass, type, control_class):
+        klass.typeregister[type] = control_class
     
     def __init__(self):
         self.form = None
@@ -98,14 +98,14 @@ class FormTagHandler(wx.html.HtmlWinTagHandler):
         # experimental highlight (to view final layout), sadly BR resets this
         self.GetParser().SetActualColor("gray")
         self.GetParser().GetContainer().InsertCell(wx.html.HtmlColourCell("gray"))
-        # Alignment does not work here (BR fault), so it is set in createControl
+        # Alignment does not work here (BR fault), so it is set in create_control
         ##self.cell.SetAlignVer(wx.html.HTML_ALIGN_TOP)
         self.ParseInner(tag)
         self.GetParser().CloseContainer()
         # OpenContainer and CloseContainer calls should be the same quantity
         ##self.GetParser().OpenContainer()
         self.form = None
-        self.optionList = []
+        self.option_list = []
         return True
     
     def HandleINPUT(self, tag):
@@ -114,12 +114,12 @@ class FormTagHandler(wx.html.HtmlWinTagHandler):
         else:
             ttype = "TEXT"
         klass = self.typeregister[ttype]
-        self.createControl(klass, tag)
+        self.create_control(klass, tag)
         return False
         
     def HandleTEXTAREA(self, tag):
         klass = self.typeregister["TEXTAREA"]
-        self.createControl(klass, tag)
+        self.create_control(klass, tag)
         #Don't actually call ParseInner, but lie and said we did.
         #This should skip us ahead to the next tag, and let us 
         #retrieve the text verbatem from the text area
@@ -129,51 +129,36 @@ class FormTagHandler(wx.html.HtmlWinTagHandler):
         if tag.HasParam("MULTIPLE"):
             pass
         from .select import SingleSelectControl
-        self.optionList = []
+        self.option_list = []
         #gather any/all nested options
         self.ParseInner(tag)
-        parent = self.GetParser().GetWindowInterface().GetHTMLWindow()
-        if 'wxMSW' in wx.PlatformInfo:
-            #HAX: wxChoice has some bizarre SetSize semantics that
-            #interact poorly with HtmlWidgetCell. Most notably, resizing the control
-            #triggers a paint event (in the parent, I guess?) which in turn calls Layout()
-            #which calls SetSize again and so on. An extra "layer" between the control
-            #and the window keeps the recursion from happening.
-            object = wx.Panel(parent)
-            select = SingleSelectControl(object, self.form, tag, self.GetParser(), self.optionList)
-            sz = wx.BoxSizer()
-            sz.Add(select, 1, wx.EXPAND)
-            object.SetSizer(sz)
-            object.SetSize(select.GetSize())
-        else:
-            object = SingleSelectControl(parent, self.form, tag, self.GetParser(), self.optionList)
-
-        self.setObjectTag(object, tag)
-        cell = self.GetParser().GetContainer()
-        cell.InsertCell(
-            wx.html.HtmlWidgetCell(object)
-        )
-        self.optionList = []
+        self.create_control(SingleSelectControl, tag,
+                            option_list=self.option_list,)
+        self.option_list = []
         return True
         
     def HandleOPTION(self, tag):
-        self.optionList.append(tag)
+        self.option_list.append(tag)
         return True
     
     def HandleLABEL(self, tag):
         klass = self.typeregister["LABEL"]
-        self.createControl(klass, tag)
+        self.create_control(klass, tag)
         #Don't actually call ParseInner, but lie and said we did.
         #This should skip us ahead to the next tag, and let us 
         #retrieve the text verbatem from the text area
         return True
     
-    def createControl(self, klass, tag):
+    def create_control(self, klass, tag, **kwargs):
         parent = self.GetParser().GetWindowInterface().GetHTMLWindow()
         # create a panel for sizing:
         panel = wx.Panel(parent)
         # instantiate the actual control:
-        object = klass(panel, self.form, tag, self.GetParser())
+        control = klass(panel, self.form, tag, self.GetParser(), **kwargs)
+        if hasattr(control, "wx_obj"):
+            object = control.wx_obj
+        else:
+            object = control  # remove!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         self.setObjectTag(object, tag)
         # if it isn't a window (i.e. OPTION), do not add it to the html cell
         if not isinstance(object, wx.Window):

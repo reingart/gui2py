@@ -22,7 +22,7 @@ import sys
 sys.path.append(r"/home/reingart/web2py")
 from gluon.sql import Field
 from gluon.sqlhtml import SQLFORM
-from gluon.html import INPUT, FORM, LABEL, P, BR, SELECT, OPTION, A, CENTER, BODY
+from gluon.html import INPUT, FORM, LABEL, P, BR, SELECT, OPTION, A, CENTER, BODY, TEXTAREA
 from gluon.validators import IS_NOT_EMPTY, IS_EXPR
 from gluon.storage import Storage
 from gluon import current
@@ -60,7 +60,8 @@ if __name__ == '__main__':
             LABEL("hola2", _width="25%"),
             INPUT(_type='text', _name='myvar', requires=IS_NOT_EMPTY(), _width="25%"),
             LABEL("hola2", _width="25%"),
-            SELECT(OPTION("1"), OPTION("2"), OPTION("3"),_name='myvar2', _width="25%"),
+            SELECT(OPTION("1", _value="uno"), OPTION("2", _value="dos"), 
+                   OPTION("3", _value="tres"), _name='mysel', _width="25%"),
             LABEL("hola3", _width="25%"),
             INPUT(_type='text', _name='myvar', requires=IS_NOT_EMPTY(), _width="75%"),
             LABEL("Options:", _width="25%"),
@@ -72,6 +73,7 @@ if __name__ == '__main__':
             LABEL("", _width="25%"),
             INPUT(_type='checkbox', _name='myvar', _width="10%"),
             LABEL("check1", _width="65%"),
+            TEXTAREA("hola!", _name='mytextarea', _width="100%"),
             "hola3!",
             INPUT(_type='submit', _name='submit'),
             )
