@@ -1,21 +1,13 @@
 
 import wx
 from ..event import FormEvent
-from ..components import Control, Spec, EventSpec, new_id
+from ..components import Control, Spec, EventSpec
 
 
 class Button(Control):
     "A simple push-button with a label"
+    _wx_class = wx.Button
     
-    def __init__(self, parent, **kwargs):
-        self.wx_obj = wx.Button(parent,
-                    new_id(kwargs.get('id')),
-                    style = wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS,
-                   )
-        Control.__init__(self, **kwargs)
-        ##self.wx_obj.SetLabel(kwargs['label'])
-        ##  self._bindEvents(event.WIDGET_EVENTS + ButtonEvents)
-
     def _getDefault(self):
         #return self == self._parent.GetDefaultItem()
         # KEA 2002-03-26

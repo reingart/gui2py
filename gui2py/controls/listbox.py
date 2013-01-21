@@ -1,6 +1,6 @@
 import wx
 from ..event import FormEvent
-from ..components import Control, Spec, EventSpec, new_id
+from ..components import Control, Spec, EventSpec, StyleSpec
 
 
 class ItemContainerControl(Control):
@@ -10,7 +10,7 @@ class ItemContainerControl(Control):
     
     def _get_selection(self):
         "Returns the index of the selected item (list for multiselect) or None"
-        if self._multiselect:
+        if self.multiselect:
             return self.wx_obj.GetSelections()
         else:
             sel = self.wx_obj.GetSelection()
@@ -28,7 +28,7 @@ class ItemContainerControl(Control):
 
     def _get_string_selection(self):
         "Returns the label of the selected item or an empty string if none"
-        if self._multiselect:
+        if self.multiselect:
             return [self.wx_obj.GetString(i) for i in 
                     self.wx_obj.GetSelections()]
         else:
@@ -42,7 +42,7 @@ class ItemContainerControl(Control):
             self.wx_obj.SetStringSelection(s)
     
     def _get_data_selection(self):
-        if self._multiselect:
+        if self.multiselect:
             return [self.wx_obj.GetClientData(i) for i in 
                     self.wx_obj.GetSelections()]
         else:
@@ -54,7 +54,7 @@ class ItemContainerControl(Control):
         if data is None:
             self.wx_obj.SetSelection(-1)
         else:
-            if not self._multiselect:
+            if not self.multiselect:
                 data = [data]
             elif not isinstance(data, (tuple, list)):
                 raise ValueError("data must be a list of values!")
@@ -163,29 +163,14 @@ class ItemContainerControl(Control):
 class ListBox(ItemContainerControl):
     "A list that only allows a single item (or multiple items) to be selected."
     
-    def __init__(self, parent, multiselect=False, **kwargs):
-    
-        # required read-only specs:
-        style = 0
-        self._multiselect = multiselect
-        if multiselect:
-            style |= wx.LB_EXTENDED
-        else:
-            style |= wx.LB_SINGLE
-        
-        self.wx_obj = wx.ListBox(
-            parent, 
-            id=new_id(kwargs.get('id')),
-            style=style | wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS,
-            name=kwargs.get('name'),
-        )
-
-        Control.__init__(self, **kwargs)
+    _wx_class = wx.ListBox
+    _style = wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS
 
     def insert_items(self, aList, aPosition):
         self.wx_obj.InsertItems(a_list, a_position)
 
-    multiselect = Spec(lambda self: self._multiselect, default=False)
+    multiselect = StyleSpec({True: wx.LB_EXTENDED, False: wx.LB_SINGLE}, 
+                            default=False)
 
     onclick = onselect = EventSpec('click', 
                                    binding=wx.EVT_LISTBOX, kind=FormEvent)

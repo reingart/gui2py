@@ -23,6 +23,7 @@ class Spec(property):
         self.default = default
         self.values = values
         self.read_only = fset is None
+        self._name = _name              # internal name (usually, wx kwargs one)
     
 
 class EventSpec(Spec):
@@ -58,6 +59,44 @@ class EventSpec(Spec):
         self.binding = binding          # wx.Event object
         self.kind = kind                # Event class
     
+
+class InitSpec(Spec):
+    "Spec that is used in wx object instantiation (__init__)"
+
+
+class StyleSpec(Spec):
+    "Generic style specification to map wx windows styles to properties"
+
+    def __init__(self, wx_style_map, doc=None, default=False):
+        # wx_style_map should be a dict ({'left':wx.ALIGN_CENTER})
+        if not isinstance(wx_style_map, dict):
+            # for boolean styles, convert it to a dict:
+            self.wx_style_map = {True: wx_style_map, False: 0}
+        else:
+            self.wx_style_map = wx_style_map
+        if 'True' in self.wx_style_map and not 'False' in self.wx_style_map:
+            self.wx_style_map[False] = 0    # sane default
+        
+        def getter(obj): 
+            # reverse search the prop value for the wx_style:
+            wx_value = getattr(obj, "_style")
+            for key, value in self.wx_style_map.items():
+                if wx_value & value:
+                    return key
+            return None
+
+        def setter(obj, value):
+            if obj.wx_obj:
+                # fset is ignored by now, if object was created throw and error:
+                raise AttributeError("style is read-only!")
+            if value is None:
+                raise ValueError("this style spec is mandatory!")
+            if value not in self.wx_style_map:
+                raise ValueError("%s is not a valid value!" % value)
+            # convert the value to the wx style
+            obj._style |= self.wx_style_map[value]
+        Spec.__init__(self, getter, setter, doc=doc, default=default)
+
 
 class ComponentMeta():
     "Component Metadata"
@@ -104,16 +143,41 @@ class Component(object):
     # This object maps to wx.Window, but avoid that name as it can be confusing.
     
     __metaclass__ = ComponentBase
+    _wx_class = wx.Window       # wx object constructor
+    _style = 0                  # base style
     
     def __init__(self, parent=None, **kwargs):
         self._font = None
-
-        # create dummy wxpython object (for testing)
-        if parent:
-            self.wx_obj = wx.Window(parent)
+    
+        # create the wxpython kw arguments (based on specs and defaults)
+        wx_kwargs = dict(id=new_id(kwargs.get('id')))
+        self.wx_obj = None
+        for spec_name, spec in self._meta.specs.items():
+            value = kwargs.get(spec_name, spec.default)
+            if isinstance(spec, InitSpec):
+                print "INIT: setting ", spec_name, value
+                if spec._name:
+                    name = spec._name[1:]   # use the internal name
+                    setattr(self, spec._name, value)
+                else:
+                    name = spec_name        # use the spec attribute name
+                wx_kwargs[name] = value
+                if spec_name in kwargs:
+                    del kwargs[spec_name]
+            if isinstance(spec, StyleSpec):
+                print "setting", spec_name, value, spec
+                setattr(self, spec_name, value)
+                if spec_name in kwargs:
+                    del kwargs[spec_name]
+        
+        # create the actual wxpython object
+        wx_kwargs['style'] = style=self._style
+        print "WX KWARGS: ", wx_kwargs
+        print "creating", self._wx_class
+        self.wx_obj = self._wx_class(parent, **wx_kwargs)
         # load specs from kwargs, use default if available
         for spec_name, spec in self._meta.specs.items():
-            if spec.read_only:
+            if spec.read_only or isinstance(spec, (StyleSpec, InitSpec)):
                 continue
             # get the spec value for kwargs, if it is optional, get the default
             value = kwargs.get(spec_name)
@@ -126,7 +190,12 @@ class Component(object):
                 
         # store gui2py reference inside of wx object
         self.wx_obj.reference = self
-        
+
+    def _set_style(self, **kwargs):
+        for spec_name, spec in self._meta.specs.items():
+            if isinstance(spec, StyleSpec):
+                setattr(self, spec_name, value)
+
     def redraw(self):
         "Force an immediate redraw without waiting for an event handler to finish."
         self.wx_obj.Refresh()
@@ -248,17 +317,16 @@ class Component(object):
         "Returns the character height for this window."
         return self.wx_obj.GetCharHeight()
 
-    name = Spec(optional=False, _name="_name")
-    background_color = Spec(_getBackgroundColor, _setBackgroundColor)
+    name = InitSpec(optional=False, _name="_name")
+    bgcolor = Spec(_getBackgroundColor, _setBackgroundColor)
     font = Spec(_getFont, _setFont)
-    foreground_color = Spec(_getForegroundColor, _setForegroundColor)
+    fgcolor = Spec(_getForegroundColor, _setForegroundColor)
     enabled = Spec(_getEnabled, _setEnabled, default=True)
-    id = Spec(_getId, _setId,  default=-1)
-    position = Spec(_getPosition, _setPosition, default=[ -1, -1])
-    size = Spec(_getSize, _setSize, default=[ -1, -1])
+    id = InitSpec(_getId, _setId,  default=-1)
+    pos = InitSpec(_getPosition, _setPosition, default=[ -1, -1])
+    size = InitSpec(_getSize, _setSize, default=[ -1, -1])
     helptext = Spec(optional=True),
     tooltip = Spec(_getToolTip, _setToolTip, default='')
-    userdata = Spec(_getUserdata, _setUserdata)
     visible = Spec(_getVisible, _setVisible, default=True)
     userdata = Spec(_name='_userdata')
     
@@ -291,6 +359,7 @@ class Control(Component):
     _registry = registry.WIDGETS
 
 
+
 if __name__ == "__main__":
     # basic test until unit_test
     app = wx.App(redirect=False)
@@ -299,3 +368,4 @@ if __name__ == "__main__":
     assert w.get_parent() is frame
     assert w.id != -1       # wx should have assigned a new id!
     assert w.name == "test"
+    

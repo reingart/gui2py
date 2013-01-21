@@ -1,41 +1,24 @@
 
 import wx
 from ..event import FormEvent
-from ..components import Control, Spec, EventSpec, new_id
+from ..components import Control, Spec, EventSpec, InitSpec, StyleSpec
 
 
 class Label(Control):
     "An uneditable block of text"
 
-    def __init__(self, parent, alignment=None, **kwargs):
-        self.wx_obj = wx.StaticText(parent, 
-                                    new_id(kwargs.get('id')),
-                        style=self.__getAlignment(alignment) | \
-                        wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS,
-                        name=kwargs.get("name"))
-        self._alignment = alignment
-        Control.__init__(self, **kwargs)
-
-    def __getAlignment(self, aString):
-        if not aString or aString == 'left':
-            return wx.ALIGN_LEFT
-        elif aString == 'center':
-            return wx.ALIGN_CENTER | wx.ST_NO_AUTORESIZE
-        elif aString == 'right':
-            return wx.ALIGN_RIGHT | wx.ST_NO_AUTORESIZE
-        else:
-            raise 'invalid Label.alignment value: ', aString
+    _wx_class = wx.StaticText
+    _style = wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS
 
     def _setText(self, aString):
         self.wx_obj.SetLabel(aString)
         self.wx_obj.Refresh()
         self.wx_obj.Update()
 
-    def _getAlignment(self):
-        return self._alignment
-
-    alignment = Spec(_getAlignment, None,
-                     values=[ 'left', 'right', 'center'])
+    alignment = StyleSpec({'left': wx.ALIGN_LEFT, 
+                           'center': wx.ALIGN_CENTER | wx.ST_NO_AUTORESIZE,
+                           'right': wx.ALIGN_RIGHT | wx.ST_NO_AUTORESIZE},
+                           default='left')
     text = Spec(lambda self: self.wx_obj.GetLabel(), _setText,
                      default="Label")
 
@@ -44,7 +27,7 @@ if __name__ == "__main__":
     # basic test until unit_test
     app = wx.App(redirect=False)
     frame = wx.Frame(None)
-    t = Label(frame, name="lblTest", text="hello!")
+    t = Label(frame, name="lblTest", alignment="right", text="hello!")
     assert t.get_parent() is frame
     assert t.name == "lblTest"
     print "align", t.alignment

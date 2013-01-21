@@ -5,16 +5,10 @@ from ..components import Control, Spec, EventSpec, new_id
 
 class CheckBox(Control):
     "A check box."
-
-    def __init__(self, parent, **kwargs):
-        self.wx_obj = wx.CheckBox(
-            parent, 
-            new_id(kwargs.get('id')),            
-            style = wx.CLIP_SIBLINGS | wx.NO_FULL_REPAINT_ON_RESIZE,
-            name = kwargs.get('name'),
-            )
-        Control.__init__(self, **kwargs)
     
+    _wx_class = wx.CheckBox
+    _style = wx.CLIP_SIBLINGS | wx.NO_FULL_REPAINT_ON_RESIZE
+        
     checked = Spec(lambda self: self.wx_obj.GetValue(), 
                    lambda self, value: self.wx_obj.SetValue(value), 
                    default=False)
@@ -22,7 +16,8 @@ class CheckBox(Control):
                  lambda self, value: self.wx_obj.SetLabel(value))
 
     onclick = EventSpec('click', binding=wx.EVT_CHECKBOX, kind=FormEvent)
-    
+
+
 if __name__ == "__main__":
     # basic test until unit_test
     app = wx.App(redirect=False)

@@ -1,59 +1,14 @@
 import wx
 from ..event import FormEvent
-from ..components import Control, Spec, EventSpec, new_id
+from ..components import Control, Spec, EventSpec, InitSpec, StyleSpec
 
 
 class TextBox(Control):
     "A text field"
 
-    def __init__(self, parent, alignment=None, border=None, password=False,
-                 multiline=False, hscroll=False, **kwargs):
-        # required read-only specs:
-        style = 0
-        self._border = border or self._meta.specs['border'].default
-        self._password = password
-        self._multiline = multiline
-        self._hscroll = hscroll
-        if self._border == 'none':
-            style |= wx.NO_BORDER
-        if password:
-            style |= wx.TE_PASSWORD
-        if multiline:
-            style |= wx.TE_MULTILINE
-            if hscroll:
-                style |= wx.HSCROLL
-            
-        self._alignment = alignment or self._meta.specs['alignment'].default
-
-        self.wx_obj = wx.TextCtrl(
-            parent, 
-            new_id(kwargs.get('id')),
-            #style = wxTE_PROCESS_ENTER | borderStyle | wxCLIP_SIBLINGS,
-            style = style | self._mapAlignment(self._alignment) | \
-                wx.CLIP_SIBLINGS | wx.NO_FULL_REPAINT_ON_RESIZE,
-            name = kwargs.get('name'))
-
-        Control.__init__(self, **kwargs)
-
-        if self._border == 'none':
-            # the erase background event doesn't appear to make the control
-            # transparent, so further investigation is required
-            #EVT_ERASE_BACKGROUND(delegate, lambda evt: None)
-            self.wx_obj.SetBackgroundColour(parent.GetBackgroundColour())
-
-    def _mapAlignment(self, aString):
-        if aString == 'left':
-            return wx.TE_LEFT
-        elif aString == 'center':
-            return wx.TE_CENTRE
-        elif aString == 'right':
-            return wx.TE_RIGHT
-        else :
-            raise ValueError('invalid TextBox.alignment value: %s' % aString)
-        
-    def _getAlignment(self):
-        return self._alignment
-
+    _wx_class = wx.TextCtrl
+    _style = wx.CLIP_SIBLINGS | wx.NO_FULL_REPAINT_ON_RESIZE
+    
     def clear_selection(self):
         if self.can_cut():
             # delete the current selection,
@@ -201,25 +156,25 @@ class TextBox(Control):
     def xy_to_position( self, aX, aY ) :
         return self.XYToPosition( aX, aY )
 
-    def _getBorder( self ) :
-        return self._border
-
     get_string_selection = lambda self: self.wx_obj.GetStringSelection
     
     def get_string(self, aFrom, aTo):
         return self.GetValue()[aFrom:aTo]
 
-    alignment = Spec(_getAlignment, default='left', values=['left', 'right', 'center'])
-    border = Spec(_getBorder, default='3d', values=['3d', 'none'])
+    alignment = StyleSpec({'left': wx.TE_LEFT, 
+                           'center': wx.TE_CENTRE,
+                           'right': wx.TE_RIGHT},
+                           default='left')
+    border = StyleSpec({False: wx.NO_BORDER, True:0}, default=True)
     editable = Spec(lambda self: self.wx_obj.IsEditable(), 
                     lambda self, value: self.wx_obj.SetEditable(value),
                     default=True)
     text = Spec(lambda self: self.wx_obj.GetValue(), 
                 lambda self, value: self.wx_obj.SetValue(value),
                 default="")
-    password = Spec(lambda self: self._password, default=False)
-    multiline = Spec(lambda self: self._multiline, default=False)
-    hscroll = Spec(lambda self: self._hscroll, default=True)
+    password = StyleSpec(wx.TE_PASSWORD, default=False)
+    multiline = StyleSpec(wx.TE_MULTILINE, default=False)
+    hscroll = StyleSpec(wx.HSCROLL, default=False)
 
     onchange = EventSpec('change', binding=wx.EVT_TEXT, kind=FormEvent)
     
@@ -229,7 +184,7 @@ if __name__ == "__main__":
     # basic test until unit_test
     app = wx.App(redirect=False)
     frame = wx.Frame(None)
-    t = TextBox(frame, name="txtTest", border='none', text="hello world!",
+    t = TextBox(frame, name="txtTest", border=False, text="hello world!",
                 password='--password' in sys.argv,
                 multiline='--multiline' in sys.argv,
                 hscroll=True,
