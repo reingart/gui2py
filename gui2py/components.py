@@ -35,7 +35,8 @@ class EventSpec(Spec):
             # check if there is an event binded previously:
             if hasattr(obj, "_" + event_name):
                 # disconnect the previous binded events
-                obj.wx_obj.Unbind(self.binding)
+                for binding in self.bindings:
+                    obj.wx_obj.Unbind(binding)
             if action:
                 # create the event_handler for this action
                 def handler(wx_event):
@@ -50,13 +51,16 @@ class EventSpec(Spec):
                     if not event.cancel_default:
                         wx_event.Skip()
                 # connect the new action to the event:
-                obj.wx_obj.Bind(self.binding, handler)
+                for binding in self.bindings:
+                    obj.wx_obj.Bind(binding, handler)
             # store the event handler
             setattr(obj, "_" + event_name, action)
 
         Spec.__init__(self, getter, setter, doc=doc)
         self.name = event_name
-        self.binding = binding          # wx.Event object
+        if not isinstance(binding, (list, tuple)):
+            binding = (binding, )   # make it an iterable
+        self.bindings = binding  # wx.Event object
         self.kind = kind                # Event class
     
 
@@ -337,15 +341,18 @@ class Component(object):
     onmouseover = EventSpec('mouseover', binding=wx.EVT_ENTER_WINDOW, kind=MouseEvent) 
     onmouseout = EventSpec('mouseout', binding=wx.EVT_LEAVE_WINDOW, kind=MouseEvent) 
     onmousewheel = EventSpec('mousewheel', binding=wx.EVT_MOUSEWHEEL, kind=MouseEvent) 
-    onmouseleftdown = EventSpec('mouseleftdown', binding=wx.EVT_LEFT_DOWN, kind=MouseEvent)
-    onmouseleftup = EventSpec('mouseleftup', binding=wx.EVT_LEFT_DOWN, kind=MouseEvent)
-    onmouseleftdclick = EventSpec('mouseleftdclick', binding=wx.EVT_LEFT_DCLICK, kind=MouseEvent)
-    onmousemiddledown = EventSpec('mousemiddledown', binding=wx.EVT_MIDDLE_DOWN, kind=MouseEvent)
-    onmousemiddleup = EventSpec('mousemiddleup', binding=wx.EVT_MIDDLE_DOWN, kind=MouseEvent)
-    onmousemiddledclick = EventSpec('mousemiddledclick', binding=wx.EVT_MIDDLE_DCLICK, kind=MouseEvent)
-    onmouserightdown = EventSpec('mouserightdown', binding=wx.EVT_RIGHT_DOWN, kind=MouseEvent)
-    onmouserightup = EventSpec('mouserightup', binding=wx.EVT_RIGHT_DOWN, kind=MouseEvent)
-    onmouserightdclick = EventSpec('mouserightdclick', binding=wx.EVT_RIGHT_DCLICK, kind=MouseEvent)
+    onmousedown = EventSpec('mousedown', binding=(wx.EVT_LEFT_DOWN, 
+                                                  wx.EVT_MIDDLE_DOWN, 
+                                                  wx.EVT_RIGHT_DOWN), 
+                                        kind=MouseEvent)
+    onmouseup = EventSpec('mousedclick', binding=(wx.EVT_LEFT_DCLICK, 
+                                                  wx.EVT_MIDDLE_DCLICK,
+                                                  wx.EVT_RIGHT_DCLICK),
+                                         kind=MouseEvent)
+    onmouseup = EventSpec('mouseup', binding=(wx.EVT_LEFT_UP,
+                                              wx.EVT_MIDDLE_UP,
+                                              wx.EVT_RIGHT_UP), 
+                                     kind=MouseEvent)
 
 
 class Control(Component):
