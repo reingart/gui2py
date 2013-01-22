@@ -38,8 +38,8 @@ class UIEvent(Event):
     "General -window- related events (detail can hold additional data)"   
     names = ["load", "resize", "scroll", "paint", "unload"]
 
-    def __init__(self, detail=None, wx_event=None):
-        Event.__init__(self, wx_event)
+    def __init__(self, name, detail=None, wx_event=None):
+        Event.__init__(self, name, wx_event)
         self.detail = detail
 
     def prevent_default(self):

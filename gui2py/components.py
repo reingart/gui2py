@@ -178,7 +178,11 @@ class Component(object):
         wx_kwargs['style'] = style=self._style
         print "WX KWARGS: ", wx_kwargs
         print "creating", self._wx_class
-        self.wx_obj = self._wx_class(parent, **wx_kwargs)
+        if parent is None or isinstance(parent, wx.Object):
+            wx_parent = parent
+        else:
+            wx_parent = parent.wx_obj
+        self.wx_obj = self._wx_class(wx_parent, **wx_kwargs)
         # load specs from kwargs, use default if available
         for spec_name, spec in self._meta.specs.items():
             if spec.read_only or isinstance(spec, (StyleSpec, InitSpec)):
@@ -329,6 +333,8 @@ class Component(object):
     id = InitSpec(_getId, _setId,  default=-1)
     pos = InitSpec(_getPosition, _setPosition, default=[ -1, -1])
     size = InitSpec(_getSize, _setSize, default=[ -1, -1])
+    client_size = Spec(lambda self: self.wx_obj.GetClientSize(),
+                       lambda self, value: self.wx_obj.SetClientSize(value))
     helptext = Spec(optional=True),
     tooltip = Spec(_getToolTip, _setToolTip, default='')
     visible = Spec(_getVisible, _setVisible, default=True)
