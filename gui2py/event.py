@@ -111,4 +111,23 @@ class TimingEvent(Event):
         pass        #wx.RequestMore(needMore=True)
 
 
+class HtmlLinkEvent(UIEvent):
+    "Html hyperlink click event (href and target)"
+    
+    def __init__(self, name, detail=None, wx_event=None):
+        UIEvent.__init__(self, name, wx_event=wx_event, 
+                         detail=wx_event.GetLinkInfo().GetHtmlCell())
+        self.href = wx_event.GetLinkInfo().GetHref()
+        self.target = wx_event.GetLinkInfo().GetTarget()
+
+        
+class HtmlCellEvent(MouseEvent):
+    "Html Cell click / hover events"
+    
+    def __init__(self, name, detail=None, wx_event=None):
+        MouseEvent.__init__(self, name, wx_event.GetMouseEvent())
+        self.detail = wx_event.GetCell()
+        self.point = wx_event.GetPoint()
+
+
 WIDGET_EVENTS = MouseEvent, FocusEvent, TimingEvent
