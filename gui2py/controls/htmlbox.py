@@ -13,8 +13,9 @@ import wx
 import wx.html
 ##import wx.lib.wxpTag
 
-from ..event import HtmlCellEvent, HtmlLinkEvent
+from ..event import HtmlCellEvent, HtmlLinkEvent, SubmitEvent
 from ..components import Control, Spec, EventSpec, StyleSpec
+from ..html.form import EVT_FORM_SUBMIT
 
 
 class HtmlBox(Control):
@@ -65,13 +66,17 @@ class HtmlBox(Control):
     def load_file(self, filename):
         "Loads HTML page from file and displays it."
         self.wx_obj.LoadFile(filename)
+        
+    def write(self, source):
+        "Appends HTML fragment to currently displayed text and refreshes it."
+        self.wx_obj.AppendToPage(source)
 
     # properties:
     location = Spec(_get_location, load_page, doc="URL currently loaded")
     
     # styles:
     no_selection = StyleSpec(wx.html.HW_NO_SELECTION, 
-                             doc="Don’t allow the user to select text.")
+                             doc="Donâ€™t allow the user to select text.")
     scrollbars = StyleSpec({False: wx.html.HW_SCROLLBAR_NEVER,
                             True: wx.html.HW_SCROLLBAR_AUTO},
                             doc="Control how to display scrollbars",)
@@ -83,6 +88,8 @@ class HtmlBox(Control):
                         kind=HtmlCellEvent, doc="The mouse passed over a cell")
     onlinkclick = EventSpec('link', binding=wx.html.EVT_HTML_LINK_CLICKED,
                         kind=HtmlLinkEvent, doc="An hyperlink was clicked")
+    onsubmit = EventSpec('submit', binding=EVT_FORM_SUBMIT,
+                        kind=SubmitEvent, doc="A form was submitted")
 
                             
 if __name__ == '__main__':

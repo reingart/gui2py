@@ -65,6 +65,14 @@ class FormEvent(Event):
     cancel_default = True # command events should not escalate
     
 
+class SubmitEvent(FormEvent):
+    "Form submission handler (includes HTML form data and field contents)"
+    def __init__(self, name, wx_event=None):
+        Event.__init__(self, name, wx_event)
+        self.form = wx_event.form
+        self.data = wx_event.data
+
+
 class MouseEvent(Event):
     "Mouse related events (wrapper for wx.MouseEvent)"
     

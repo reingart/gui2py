@@ -14,11 +14,11 @@ class FormSubmitEvent(wx.PyEvent):
         form is the form object being submitted
         args is a dict of form arguments
     """
-    def __init__(self, form, args):
+    def __init__(self, form, data):
         wx.PyEvent.__init__(self)
         self.SetEventType(FormSubmitEventType)
         self.form = form
-        self.args = args
+        self.data = data
     
 class HTMLForm(object):
     def __init__(self, tag, container):
@@ -37,14 +37,16 @@ class HTMLForm(object):
                 return
                 
     def submit(self, btn=None):
-        args = self.create_arguments()
+        "Process form submission"
+        data = self.build_data_set()
         if btn and btn.name:
-            args[btn.name] = btn.name
-        evt = FormSubmitEvent(self, args)
+            data[btn.name] = btn.name
+        evt = FormSubmitEvent(self, data)
         self.container.ProcessEvent(evt)
         
-    def create_arguments(self):
-        args = {}
+    def build_data_set(self):
+        "Construct a sequence of name/value pairs from controls"
+        data = {}
         for field in self.fields:
             if field.name:# and field.enabled: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 val = field.get_value()
@@ -54,8 +56,8 @@ class HTMLForm(object):
                     # web2py string processing
                     # requires utf-8 encoded text
                     val = val.encode("utf-8")                    
-                args[field.name] = val
-        return args
+                data[field.name] = val
+        return data
 
 
 

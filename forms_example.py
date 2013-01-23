@@ -3,7 +3,7 @@
 
 import wx
 
-from gui2py.html.form import EVT_FORM_SUBMIT
+from gui2py.windows import HtmlWindow
 
 search_html = """
 <form method="get" action="/wiki/default/_pages"> 
@@ -34,7 +34,7 @@ current.T = lambda x: x
 
 if __name__ == '__main__':
     app = wx.App(False)
-    f = wx.Frame(None)
+    w = HtmlWindow(None, title="test html", visible=False, resizeable=True)
     if '--login' in sys.argv:
         form = FORM(
             LABEL("Username", _width="25%"),
@@ -88,26 +88,25 @@ if __name__ == '__main__':
     else:
         raise RuntimeError("please use\npython forms_example.py --login, --form or --sqlform")
         
-    html = wx.html.HtmlWindow(f, style= wx.html.HW_DEFAULT_STYLE | wx.TAB_TRAVERSAL)
-    form_xml = BODY(form, _text="#000000", _bgcolor="#007f00", _link="#0000FF",
+    form_xml = BODY(form, _text="#000000", _bgcolor="#bebec5", _link="#0000FF",
                          _vlink="#FF0000", _alink="#000088").xml()
     print form_xml
-    html.SetPage(form_xml)
+    w.html.write(form_xml)
     #<form action="" enctype="multipart/form-data" method="post"><table><tr id="no_table_test__row"><td class="w2p_fl"><label for="no_table_test" id="no_table_test__label">Test: </label></td><td class="w2p_fw"><input class="string" id="no_table_test" name="test" type="text" value="" /></td><td class="w2p_fc">some data</td></tr><tr id="submit_record__row"><td class="w2p_fl"></td><td class="w2p_fw"><input type="submit" value="Submit" /></td><td class="w2p_fc"></td></tr></table></form>
     #html.SetPage(search_html)
     #html.LoadFile(r"C:\htmlt.html")
 
     def on_form_submit(evt):
-        print "Submitting to %s via %s with args %s"% (evt.form.action, evt.form.method, evt.args)
-        if form.accepts(evt.args, formname=None, keepvalues=True):
+        print "Submitting to %s via %s with args %s"% (evt.form.action, evt.form.method, evt.data)
+        if form.accepts(evt.data, formname=None, keepvalues=True):
             print "accepted!"
         elif form.errors:
             print "errors", form.errors
-            html.SetPage(form.xml())
-    html.Bind(EVT_FORM_SUBMIT, on_form_submit)
+            w.html.set_page(form.xml())
+    w.html.onsubmit = on_form_submit
     if '--inspect' in sys.argv:
         import wx.lib.inspection
         wx.lib.inspection.InspectionTool().Show()
 
-    f.Show()
+    w.show()
     app.MainLoop()
