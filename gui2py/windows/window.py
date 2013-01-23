@@ -186,9 +186,9 @@ if __name__ == "__main__":
     # basic test until proper unit_test
     from ..controls import Button
     app = wx.App(redirect=False)
-    w = Window(title="hello world", name="frmTest", tool_window=True, 
+    w = Window(title="hello world", name="frmTest", tool_window=False, 
                resizeable=True, visible=False)
-    b = Button(parent=w, name="btnTest", label="click me!", default=True, size=w.client_size)
+    b = Button(parent=w, name="btnTest", label="click me!", default=True)
     assert w.get_parent() is None
     assert w.name == "frmTest"
     print "style", w._style
@@ -199,9 +199,6 @@ if __name__ == "__main__":
     w.onunload = "print 'unload', event.timestamp; event.prevent_default()"
     w.onblur = w.onfocus = lambda event: pprint(event.name)
     # remove an event handler:
-    w.onfocus = None
-    #b.wx_obj.FitInside()
-    w.wx_obj.Refresh()
-    w.layout()
+    #w.onfocus = None
     w.show()
     app.MainLoop()
