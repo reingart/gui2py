@@ -160,6 +160,9 @@ class Component(object):
             value = kwargs.get(spec_name, spec.default)
             if isinstance(spec, InitSpec):
                 print "INIT: setting ", spec_name, value
+                if not spec.optional and value is None:
+                    raise ValueError("%s: %s is not optional" % 
+                                        (self._meta.name, spec_name))
                 if spec._name:
                     name = spec._name[1:]   # use the internal name
                     setattr(self, spec._name, value)
@@ -325,7 +328,7 @@ class Component(object):
         "Returns the character height for this window."
         return self.wx_obj.GetCharHeight()
 
-    name = InitSpec(optional=False, _name="_name")
+    name = InitSpec(optional=False, default="", _name="_name")
     bgcolor = Spec(_getBackgroundColor, _setBackgroundColor)
     font = Spec(_getFont, _setFont)
     fgcolor = Spec(_getForegroundColor, _setForegroundColor)

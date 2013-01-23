@@ -148,7 +148,8 @@ class Window(Component):
     
     # non-inherited properties:
     title = InitSpec(lambda self: self.wx_obj.GetTitle(), 
-                     lambda self, value: self.wx_obj.SetTitle(value))
+                     lambda self, value: self.wx_obj.SetTitle(value),
+                     optional=False)
     maximized = Spec(lambda self: self.wx_obj.IsMaximized(), 
                      lambda self, value: self.wx_obj.Maximize(value),
                      doc="whether the window is maximized", default=False) 
