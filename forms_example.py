@@ -88,7 +88,7 @@ if __name__ == '__main__':
     elif '--object' in sys.argv:
         form = OBJECT(TAG.PARAM(_name='label', _value='"test"'), 
                       TAG.PARAM(_name='name', _value='"btnTest"'),
-                      _class="Button")
+                      _class="Button", _width="100%", _height="80%")
     else:
         raise RuntimeError("please use\npython forms_example.py --login, --form or --sqlform")
         
