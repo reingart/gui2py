@@ -15,14 +15,15 @@ def GetParam(tag, param, default=__SENTINEL):
             
 
 import form as form
-import input as input            
+import input as input
+import object
 
 if __name__ == '__main__':
     app = wx.App(False)
     f = wx.Frame(None)
     
     html = wx.html.HtmlWindow(f, style= wx.html.HW_DEFAULT_STYLE | wx.TAB_TRAVERSAL)
-    html.LoadFile(r"C:\htmlt.html")
+    html.SetPage(r"<object class='Button'><param name='label' value='hola'></object>")
     
     def OnFormSubmit(evt):
         print "Submitting to %s via %s with args %s"% (evt.form.action, evt.form.method, evt.args)

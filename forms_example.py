@@ -22,7 +22,7 @@ import sys
 sys.path.append(r"/home/reingart/web2py")
 from gluon.sql import Field
 from gluon.sqlhtml import SQLFORM
-from gluon.html import INPUT, FORM, LABEL, P, BR, SELECT, OPTION, A, CENTER, BODY, TEXTAREA
+from gluon.html import INPUT, FORM, LABEL, P, BR, SELECT, OPTION, A, CENTER, BODY, TEXTAREA, OBJECT, TAG
 from gluon.validators import IS_NOT_EMPTY, IS_EXPR
 from gluon.storage import Storage
 from gluon import current
@@ -85,6 +85,10 @@ if __name__ == '__main__':
             Field("test3","string", requires=IS_NOT_EMPTY(), comment="some data"),
             formname=None,
         )
+    elif '--object' in sys.argv:
+        form = OBJECT(TAG.PARAM(_name='label', _value='"test"'), 
+                      TAG.PARAM(_name='name', _value='"btnTest"'),
+                      _class="Button")
     else:
         raise RuntimeError("please use\npython forms_example.py --login, --form or --sqlform")
         
