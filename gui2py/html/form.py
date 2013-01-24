@@ -144,7 +144,8 @@ class FormTagHandler(wx.html.HtmlWinTagHandler):
         return True
     
     def HandleLABEL(self, tag):
-        klass = self.typeregister["LABEL"]
+        from .label import FormLabel
+        klass = FormLabel
         self.create_control(klass, tag)
         #Don't actually call ParseInner, but lie and said we did.
         #This should skip us ahead to the next tag, and let us 
