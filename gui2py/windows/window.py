@@ -168,7 +168,7 @@ class Window(Component):
     stay_on_top = StyleSpec(wx.STAY_ON_TOP, doc="Stay on top of all windows")
     system_menu = StyleSpec(wx.SYSTEM_MENU, doc="Displays a system menu",
                             default=True)
-    resizeable = StyleSpec(wx.RESIZE_BORDER, doc="Allow resize")
+    resizable = StyleSpec(wx.RESIZE_BORDER, doc="Allow resize")
     tool_window = StyleSpec(wx.FRAME_TOOL_WINDOW, doc="Small titlebar")
     no_taskbar = StyleSpec(wx.FRAME_NO_TASKBAR, doc="Not appear in the taskbar")
     float_on_parent = StyleSpec(wx.FRAME_FLOAT_ON_PARENT, 
@@ -188,7 +188,7 @@ if __name__ == "__main__":
     from ..controls import Button
     app = wx.App(redirect=False)
     w = Window(title="hello world", name="frmTest", tool_window=False, 
-               resizeable=True, visible=False)
+               resizable=True, visible=False)
     b = Button(parent=w, name="btnTest", label="click me!", default=True)
     assert w.get_parent() is None
     assert w.name == "frmTest"
