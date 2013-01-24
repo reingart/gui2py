@@ -2,6 +2,7 @@ import wx
 
 from ..components import Component, Spec, InitSpec, EventSpec, StyleSpec
 from ..event import UIEvent
+from .. import registry
 
 
 class Window(Component):
@@ -9,6 +10,7 @@ class Window(Component):
     # in PythonCard model.Background
     _wx_class = wx.Frame
     _style = wx.NO_FULL_REPAINT_ON_RESIZE
+    _registry = registry.WINDOWS
 
     def __init__(self, parent=None, **kwargs):
         "Initialize this instance."

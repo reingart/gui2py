@@ -372,7 +372,7 @@ class Control(Component):
     # Avoid the term 'widget' as could be confusing (and it is already used in 
     # web2py)
     
-    _registry = registry.WIDGETS
+    _registry = registry.CONTROLS
 
 
 
