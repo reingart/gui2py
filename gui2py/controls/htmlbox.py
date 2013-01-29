@@ -16,6 +16,7 @@ import wx.html
 from ..event import HtmlCellEvent, HtmlLinkEvent, SubmitEvent
 from ..components import Control, Spec, EventSpec, StyleSpec
 from ..html.form import EVT_FORM_SUBMIT
+from ..html.object import HTML_CTRL_CLICK
 
 
 class HtmlBox(Control):
@@ -24,7 +25,8 @@ class HtmlBox(Control):
     _wx_class = wx.html.HtmlWindow
     _style = wx.html.HW_DEFAULT_STYLE | wx.TAB_TRAVERSAL
     
-    def __init__(self, parent, **kwargs):
+    def __init__(self, parent, design=False, **kwargs):
+        self.design = design   # flag to enable designer mode
         Control.__init__(self, parent, **kwargs)
         if "gtk2" in wx.PlatformInfo:
             self.wx_obj.SetStandardFonts()
@@ -88,6 +90,8 @@ class HtmlBox(Control):
                         kind=HtmlCellEvent, doc="The mouse passed over a cell")
     onlinkclick = EventSpec('link', binding=wx.html.EVT_HTML_LINK_CLICKED,
                         kind=HtmlLinkEvent, doc="An hyperlink was clicked")
+    onclick = EventSpec('click', binding=HTML_CTRL_CLICK,
+                        kind=SubmitEvent, doc="A control was clicked")
     onsubmit = EventSpec('submit', binding=EVT_FORM_SUBMIT,
                         kind=SubmitEvent, doc="A form was submitted")
 

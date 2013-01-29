@@ -10,6 +10,18 @@ import  wx
 import  wx.html
 
 
+HtmlCtrlClickEventType = wx.NewEventType()
+HTML_CTRL_CLICK = wx.PyEventBinder(HtmlCtrlClickEventType)
+
+
+class HtmlCtrlClickEvent(wx.PyEvent):
+    "Event used in designer to"
+    def __init__(self, ctrl):
+        wx.PyEvent.__init__(self)
+        self.SetEventType(HtmlCtrlClickEventType)
+        self.ctrl = ctrl
+
+
 class ObjectTagHandler(wx.html.HtmlWinTagHandler):
     def __init__(self):
         wx.html.HtmlWinTagHandler.__init__(self)
@@ -36,7 +48,7 @@ class ObjectTagHandler(wx.html.HtmlWinTagHandler):
             raise AttributeError("OBJECT tag requires a CLASS attribute")
         class_name = tag.GetParam('CLASS')
         if class_name not in registry.CONTROLS:
-            raise TypeError("OBJECT tag attribute CLASS must name a class")
+            raise TypeError("OBJECT tag attribute CLASS must be registered")
         obj_class = registry.CONTROLS[class_name]
 
         parent = self.GetParser().GetWindowInterface().GetHTMLWindow()
@@ -76,8 +88,41 @@ class ObjectTagHandler(wx.html.HtmlWinTagHandler):
                 import pdb; pdb.set_trace()
             obj.visible = True
             # add it to the HtmlWindow
-            self.GetParser().GetContainer().InsertCell(
-                wx.html.HtmlWidgetCell(obj.wx_obj, float_width))
+            cell = wx.html.HtmlWidgetCell(obj.wx_obj, float_width)
+            cell.reference = obj    # store the gui2py object ref
+            self.GetParser().GetContainer().InsertCell(cell)
+
+            # designer-mode: "capture" mouse events and send fake click ones
+
+            if parent.reference.design:
+            
+                def OnMotion(evt):
+                    print "OnMotion!"
+                    evt_obj = evt.GetEventObject()
+                    x, y = evt_obj.Position
+                    fw, fh = evt_obj.Size
+                    print "Blit", x,y, fw, fh, x,y
+                    dc = wx.ClientDC(obj.get_parent())
+                    dc.Blit(x,y, fw, fh, dc, x,y, wx.SRC_INVERT)
+                    
+                    #evt.Skip()
+                    dc.DrawRectanglePointSize((x, y), (fw, fh))
+                    
+                    # simulate the cell event (they aren't for HtmlWidgetCell):
+                    if evt.GetEventType() == wx.EVT_MOTION.typeId:
+                        command_type = wx.html.EVT_HTML_CELL_HOVER.typeId
+                    else:
+                        command_type = wx.html.EVT_HTML_CELL_CLICKED.typeId
+                        #pt = x, y
+                        new_evt = HtmlCtrlClickEvent(obj)
+                        #new_evt.SetEventObject(evt_obj)
+                        print "evt cell ref", cell.reference
+                    #new_evt.SetId(cell.GetId()) 
+                    parent.GetEventHandler().ProcessEvent(evt) 
+
+                obj.wx_obj.Bind(wx.EVT_MOTION, OnMotion)
+                obj.wx_obj.Bind(wx.EVT_LEFT_DOWN, OnMotion)
+
         return True
 
 

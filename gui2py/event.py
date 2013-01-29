@@ -138,4 +138,12 @@ class HtmlCellEvent(MouseEvent):
         self.point = wx_event.GetPoint()
 
 
+class HtmlCtrlClickEvent(UIEvent):
+    "Html Control click "
+    
+    def __init__(self, name, detail=None, wx_event=None):
+        UIEvent.__init__(self, name, wx_event=wx_event, 
+                         detail=wx_event.ctrl)
+
+
 WIDGET_EVENTS = MouseEvent, FocusEvent, TimingEvent
