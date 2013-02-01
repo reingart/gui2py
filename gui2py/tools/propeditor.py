@@ -4,10 +4,9 @@ import wx
 _ = wx.GetTranslation
 import wx.propgrid as wxpg
 
-
 class TestPanel( wx.Panel ):
 
-    def __init__( self, parent, log ):
+    def __init__( self, parent, obj, log ):
         wx.Panel.__init__(self, parent, wx.ID_ANY)
         self.log = log
 
@@ -32,53 +31,79 @@ class TestPanel( wx.Panel ):
 
         ##pg.AddPage( "Page 1 - Testing All" )
 
-        pg.Append( wxpg.PropertyCategory("1 - Basic Properties") )
-        pg.Append( wxpg.StringProperty("String",value="Some Text") )
-        pg.Append( wxpg.IntProperty("Int",value=100) )
-        pg.Append( wxpg.FloatProperty("Float",value=100.0) )
-        pg.Append( wxpg.BoolProperty("Bool",value=True) )
-        pg.Append( wxpg.BoolProperty("Bool_with_Checkbox",value=True) )
-        pg.SetPropertyAttribute("Bool_with_Checkbox", "UseCheckbox", True)
+        from gui2py.components import InitSpec, StyleSpec, Spec, EventSpec
+        appended = set()
+        for i, (cat, class_) in enumerate((('Init Specs', InitSpec), 
+                                         ('Style Specs', StyleSpec), 
+                                         ('Basic Specs', Spec),
+                                         ('Events', EventSpec))): 
+            
+            pg.Append(wxpg.PropertyCategory("%s - %s" % (i+1, cat)))
+            specs = sorted(obj._meta.specs.items(), key=lambda it: it[0])
+            for name, spec in specs:
+                print spec, class_, spec.type
+                if isinstance(spec, class_):
+                    prop = {'string': wxpg.StringProperty,
+                            'integer': wxpg.IntProperty,
+                            'float': wxpg.FloatProperty,
+                            'boolean': wxpg.BoolProperty,
+                            'text': wxpg.LongStringProperty,
+                            'code': wxpg.LongStringProperty,
+                            #'font': wxpg.FontProperty,
+                            'colour': wxpg.ColourProperty}.get(spec.type)
+                    if prop and name not in appended:
+                        value = getattr(obj, name)
+                        if spec.type == "code" and value is None:
+                            value = "" 
+                        pg.Append(prop(name, value=value))
+                        appended.add(name)
+                            
+                   # pg.Append(  )
+                   # pg.Append( wxpg.IntProperty("Int",value=100) )
+                   # pg.Append( wxpg.FloatProperty("Float",value=100.0) )
+                    #pg.Append( wxpg.BoolProperty("Bool",value=True) )
+                    #pg.Append( wxpg.BoolProperty("Bool_with_Checkbox",value=True) )
+                    #pg.SetPropertyAttribute("Bool_with_Checkbox", "UseCheckbox", True)
 
-        pg.Append( wxpg.PropertyCategory("2 - More Properties") )
-        pg.Append( wxpg.LongStringProperty("LongString",
-            value="This is a\\nmulti-line string\\nwith\\ttabs\\nmixed\\tin."))
-        pg.Append( wxpg.DirProperty("Dir",value="C:\\Windows") )
-        pg.Append( wxpg.FileProperty("File",value="C:\\Windows\\system.ini") )
-        pg.Append( wxpg.ArrayStringProperty("ArrayString",value=['A','B','C']) )
+                    #pg.Append( wxpg.PropertyCategory("2 - More Properties") )
+                    #pg.Append( wxpg.LongStringProperty("LongString",
+                    #    value="This is a\\nmulti-line string\\nwith\\ttabs\\nmixed\\tin."))
+                    #pg.Append( wxpg.DirProperty("Dir",value="C:\\Windows") )
+                    #pg.Append( wxpg.FileProperty("File",value="C:\\Windows\\system.ini") )
+                    #pg.Append( wxpg.ArrayStringProperty("ArrayString",value=['A','B','C']) )
 
-        pg.Append( wxpg.EnumProperty("Enum","Enum",
-                                     ['wxPython Rules',
-                                      'wxPython Rocks',
-                                      'wxPython Is The Best'],
-                                     [10,11,12],
-                                     0) )
-        pg.Append( wxpg.EditEnumProperty("EditEnum","EditEnumProperty",
-                                         ['A','B','C'],
-                                         [0,1,2],
-                                         "Text Not in List") )
+                #pg.Append( wxpg.EnumProperty("Enum","Enum",
+                #                             ['wxPython Rules',
+                #                              'wxPython Rocks',
+                #                             'wxPython Is The Best'],
+                #                             [10,11,12],
+                #                             0) )
+                #pg.Append( wxpg.EditEnumProperty("EditEnum","EditEnumProperty",
+                #                                 ['A','B','C'],
+                #                                 [0,1,2],
+                #                                 "Text Not in List") )
 
-        pg.Append( wxpg.PropertyCategory("3 - Advanced Properties") )
-        pg.Append( wxpg.DateProperty("Date",value=wx.DateTime_Now()) )
-        pg.Append( wxpg.FontProperty("Font",value=panel.GetFont()) )
-        pg.Append( wxpg.ColourProperty("Colour",
-                                       value=panel.GetBackgroundColour()) )
-        pg.Append( wxpg.SystemColourProperty("SystemColour") )
-        pg.Append( wxpg.ImageFileProperty("ImageFile") )
-        pg.Append( wxpg.MultiChoiceProperty("MultiChoice",
-                    choices=['wxWidgets','QT','GTK+']) )
+                #pg.Append( wxpg.PropertyCategory("3 - Advanced Properties") )
+                #pg.Append( wxpg.DateProperty("Date",value=wx.DateTime_Now()) )
+                #pg.Append( wxpg.FontProperty("Font",value=panel.GetFont()) )
+                #pg.Append( wxpg.ColourProperty("Colour",
+                ##                               value=panel.GetBackgroundColour()) )
+                #pg.Append( wxpg.SystemColourProperty("SystemColour") )
+                #pg.Append( wxpg.ImageFileProperty("ImageFile") )
+                #pg.Append( wxpg.MultiChoiceProperty("MultiChoice",
+                #            choices=['wxWidgets','QT','GTK+']) )
 
-        pg.Append( wxpg.PropertyCategory("4 - Additional Properties") )
-        pg.Append( wxpg.IntProperty("IntWithSpin",value=256) )
-        pg.SetPropertyEditor("IntWithSpin","SpinCtrl")
+                #pg.Append( wxpg.PropertyCategory("4 - Additional Properties") )
+                #pg.Append( wxpg.IntProperty("IntWithSpin",value=256) )
+                #pg.SetPropertyEditor("IntWithSpin","SpinCtrl")
 
-        pg.SetPropertyAttribute( "File", wxpg.PG_FILE_SHOW_FULL_PATH, 0 )
-        pg.SetPropertyAttribute( "File", wxpg.PG_FILE_INITIAL_PATH,
-                                 "C:\\Program Files\\Internet Explorer" )
-        pg.SetPropertyAttribute( "Date", wxpg.PG_DATE_PICKER_STYLE,
-                                 wx.DP_DROPDOWN|wx.DP_SHOWCENTURY )
+                #pg.SetPropertyAttribute( "File", wxpg.PG_FILE_SHOW_FULL_PATH, 0 )
+                #pg.SetPropertyAttribute( "File", wxpg.PG_FILE_INITIAL_PATH,
+                ##                         "C:\\Program Files\\Internet Explorer" )
+                #pg.SetPropertyAttribute( "Date", wxpg.PG_DATE_PICKER_STYLE,
+                #                         wx.DP_DROPDOWN|wx.DP_SHOWCENTURY )
 
-        pg.Append( wxpg.ImageFileProperty("ImageFileWithLargeEditor") )
+                #pg.Append( wxpg.ImageFileProperty("ImageFileWithLargeEditor") )
 
         # When page is added, it will become the target page for AutoFill
         # calls (and for other property insertion methods as well)
@@ -133,8 +158,14 @@ if __name__ == '__main__':
     import sys,os
     app = wx.App()
     f = wx.Frame(None)
+    
+    from gui2py.controls import Button
+    frame = wx.Frame(None)
+    b = Button(frame, name="btnTest", label="click me!", default=True)
+
+
     log = sys.stdout
-    w = TestPanel(f, log)
+    w = TestPanel(f, b, log)
     f.Show()
     app.MainLoop()
 
