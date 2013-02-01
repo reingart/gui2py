@@ -1,84 +1,43 @@
+#!/usr/bin/env python
+# coding:utf-8
+
+"Queues(Pipe)-based independent remote client-server Python Debugger"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2011 Mariano Reingart"
+__license__ = "LGPL 3.0"
+__version__ = "1.03a"
+
 import wx
 import wx.html
 
+WIDGETS = {}
 
-from . import GetParam
+class ObjectTagHandler(wx.html.HtmlWinTagHandler):
 
-FormSubmitEventType = wx.NewEventType()
-
-EVT_FORM_SUBMIT = wx.PyEventBinder(FormSubmitEventType)
-
-class FormSubmitEvent(wx.PyEvent):
-    """
-        Event indication a form was submitted.
-        form is the form object being submitted
-        args is a dict of form arguments
-    """
-    def __init__(self, form, args):
-        wx.PyEvent.__init__(self)
-        self.SetEventType(FormSubmitEventType)
-        self.form = form
-        self.args = args
-    
-class HTMLForm(object):
-    def __init__(self, tag, container):
-        self.container = container
-        self.fields = []
-        self.action = GetParam(tag, "ACTION", default=None)
-        self.method = GetParam(tag, "METHOD", "GET")
-        if self.method not in ("GET", "POST"):
-            self.method = "GET"
-            
-    def hitSubmitButton(self):
-        from . import input
-        for field in self.fields:
-            if isinstance(field, input.SubmitButton):
-                field.OnClick(None)
-                return
-                
-    def submit(self, btn=None):
-        args = self.createArguments()
-        if btn and btn.name:
-            args[btn.name] = btn.GetLabel()
-        evt = FormSubmitEvent(self, args)
-        self.container.ProcessEvent(evt)
-        
-    def createArguments(self):
-        args = {}
-        for field in self.fields:
-            if field.name and field.IsEnabled():
-                val = field.GetValue()
-                if val is None:
-                    continue
-                args[field.name] = val
-        return args
-
-
-
-class FormTagHandler(wx.html.HtmlWinTagHandler):
-    typeregister = {}
-    
-    @classmethod
-    def registerType(klass, type, controlClass):
-        klass.typeregister[type] = controlClass
+    # static inner form tag attribute names
+    attributes = ["type", "data", "class",
+                  "height", "width", "id", ]
+    events = [    "onload", "onresize", "onunload",
+                  "onfocus", "onblur", "onselect", "onchange",
+                  "onkeypress", "onkeydown", "onkeyup",
+                  "onclick", "ondblclick", "onmousedown", "onmousemove",
+                  "onmouseout", "onmouseover", "onmouseup", "onscroll",
+                  ]
     
     def __init__(self):
-        self.form = None
         wx.html.HtmlWinTagHandler.__init__(self)
     
     def GetSupportedTags(self):
-        return "FORM,INPUT,TEXTAREA,SELECT,OPTION"
+        return "OBJECT"
         
     def HandleTag(self, tag):
-        try:
-            handler = getattr(self, "Handle"+tag.GetName().upper())
-            return handler(tag)
-        except:
-            import traceback
-            traceback.print_exc()
-        
-    def HandleFORM(self, tag):
-        self.form = HTMLForm(tag, self.GetParser().GetWindowInterface().GetHTMLWindow())
+        if tag.HasParam("class"):
+            _class = tag.GetParam("class").lower()
+        else:
+            _class = "window"
+        self.ctrl = HTMLForm(tag, 
+                    self.GetParser().GetWindowInterface().GetHTMLWindow())
         self.cell = self.GetParser().OpenContainer()
         self.ParseInner(tag)
         self.GetParser().CloseContainer()
@@ -125,9 +84,9 @@ class FormTagHandler(wx.html.HtmlWinTagHandler):
             object.SetSize(select.GetSize())
         else:
             object = SingleSelectControl(parent, self.form, tag, self.GetParser(), self.optionList)
+
+        self.setObjectTag(object, tag)
         cell = self.GetParser().GetContainer()
-        
-        
         cell.InsertCell(
             wx.html.HtmlWidgetCell(object)
         )
@@ -141,16 +100,19 @@ class FormTagHandler(wx.html.HtmlWinTagHandler):
     def createControl(self, klass, tag):
         parent = self.GetParser().GetWindowInterface().GetHTMLWindow()
         object = klass(parent, self.form, tag, self.GetParser())
+        self.setObjectTag(object, tag)
         if not isinstance(object, wx.Window):
             return
         cell = self.GetParser().GetContainer()
         cell.InsertCell(
             wx.html.HtmlWidgetCell(object)
         )
-        
-        
-        
-        
-wx.html.HtmlWinParser_AddTagHandler(FormTagHandler)
 
-
+    def setObjectTag(self, object, tag):
+        """ Add a tag attribute to the wx window """
+        object._attributes = {}
+        object._name = tag.GetName().lower()
+        for name in self.attributes:
+            object._attributes["_%s" % name] = tag.GetParam(name)
+            if object._attributes["_%s" % name] == "":
+                object._attributes["_%s" % name] = None
