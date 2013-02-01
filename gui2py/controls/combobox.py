@@ -13,7 +13,7 @@ class ComboBox(ItemContainerControl):
     
     text = InitSpec(lambda self: self.wx_obj.GetValue(), 
                 lambda self, value: self.wx_obj.SetValue(value),
-                default="", _name="_value")
+                default="", type="string", _name="_value")
     readonly = StyleSpec(wx.CB_READONLY, default=False)
 
     onclick = onselect = EventSpec('click', 

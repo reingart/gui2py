@@ -154,9 +154,10 @@ class ItemContainerControl(Control):
         """
         return self.wx_obj.IsSelected(a_position)        
         
-    items = Spec(_get_items, _set_items)
-    selection = Spec(_get_selection, _set_selection)
-    string_selection = Spec(_get_string_selection, _set_string_selection)
+    items = Spec(_get_items, _set_items, type="array")
+    selection = Spec(_get_selection, _set_selection, type="integer")
+    string_selection = Spec(_get_string_selection, _set_string_selection,
+                            type="string")
     data_selection = Spec(_get_data_selection, _set_data_selection)
 
 

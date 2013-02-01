@@ -52,6 +52,7 @@ class TestPanel( wx.Panel ):
                             'text': wxpg.LongStringProperty,
                             'code': wxpg.LongStringProperty,
                             'enum': wxpg.EnumProperty,
+                            'array': wxpg.ArrayStringProperty,
                             #'font': wxpg.FontProperty,
                             'colour': wxpg.ColourProperty}.get(spec.type)
                     if prop and name not in appended:
@@ -61,6 +62,8 @@ class TestPanel( wx.Panel ):
                             value = "" 
                         if spec.type == "boolean" and value is None:
                             value = False
+                        if spec.type == "integer" and value is None:
+                            value = -1
                         if spec.type == "enum":
                             pg.Append(prop(name, name, 
                                            spec.mapping.keys(), 
@@ -74,16 +77,8 @@ class TestPanel( wx.Panel ):
                             pg.SetPropertyHelpString(name, doc)
                         appended.add(name)
                             
-                   # pg.Append(  )
-                   # pg.Append( wxpg.IntProperty("Int",value=100) )
-                   # pg.Append( wxpg.FloatProperty("Float",value=100.0) )
-                    #pg.Append( wxpg.BoolProperty("Bool",value=True) )
-                    #pg.Append( wxpg.BoolProperty("Bool_with_Checkbox",value=True) )
-                    #pg.SetPropertyAttribute("Bool_with_Checkbox", "UseCheckbox", True)
 
                     #pg.Append( wxpg.PropertyCategory("2 - More Properties") )
-                    #pg.Append( wxpg.LongStringProperty("LongString",
-                    #    value="This is a\\nmulti-line string\\nwith\\ttabs\\nmixed\\tin."))
                     #pg.Append( wxpg.DirProperty("Dir",value="C:\\Windows") )
                     #pg.Append( wxpg.FileProperty("File",value="C:\\Windows\\system.ini") )
                     #pg.Append( wxpg.ArrayStringProperty("ArrayString",value=['A','B','C']) )
@@ -176,13 +171,19 @@ if __name__ == '__main__':
     app = wx.App()
     f = wx.Frame(None)
     
-    from gui2py.controls import Button, Label, TextBox, CheckBox
+    from gui2py.controls import Button, Label, TextBox, CheckBox, ListBox, ComboBox
     frame = wx.Frame(None)
     #o = Button(frame, name="btnTest", label="click me!", default=True)
     #o = Label(frame, name="lblTest", alignment="right", size=(-1, 500), text="hello!")
     #o = TextBox(frame, name="txtTest", border=False, text="hello world!")
-    o = CheckBox(frame, name="chkTest", border='none', label="Check me!")
-
+    #o = CheckBox(frame, name="chkTest", border='none', label="Check me!")
+    #o = ListBox(frame, name="lstTest", border='none', 
+    #            items={'datum1': 'a', 'datum2':'b', 'datum3':'c'},
+    #            multiselect="--multiselect" in sys.argv)
+    o = ComboBox(frame, name="cboTest",
+                items={'datum1': 'a', 'datum2':'b', 'datum3':'c'},
+                readonly='--readonly' in sys.argv,
+                )
     frame.Show()
 
     log = sys.stdout
