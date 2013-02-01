@@ -1,1 +1,0 @@
-gui2py/tools/propeditor.py

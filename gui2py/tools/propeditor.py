@@ -33,6 +33,7 @@ class TestPanel( wx.Panel ):
 
         from gui2py.components import InitSpec, StyleSpec, Spec, EventSpec
         appended = set()
+        self.obj = obj
         for i, (cat, class_) in enumerate((('Init Specs', InitSpec), 
                                          ('Style Specs', StyleSpec), 
                                          ('Basic Specs', Spec),
@@ -56,6 +57,8 @@ class TestPanel( wx.Panel ):
                         if spec.type == "code" and value is None:
                             value = "" 
                         pg.Append(prop(name, value=value))
+                        if spec.type == "boolean":
+                            pg.SetPropertyAttribute(name, "UseCheckbox", True)
                         appended.add(name)
                             
                    # pg.Append(  )
@@ -123,6 +126,7 @@ class TestPanel( wx.Panel ):
         p = event.GetProperty()
         if p:
             self.log.write('%s changed to "%s"\n' % (p.GetName(),p.GetValueAsString()))
+            setattr(self.obj, p.GetName(), p.GetValue())
 
     def OnPropGridSelect(self, event):
         p = event.GetProperty()
@@ -162,7 +166,7 @@ if __name__ == '__main__':
     from gui2py.controls import Button
     frame = wx.Frame(None)
     b = Button(frame, name="btnTest", label="click me!", default=True)
-
+    frame.Show()
 
     log = sys.stdout
     w = TestPanel(f, b, log)
