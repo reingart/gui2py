@@ -134,7 +134,10 @@ class TestPanel( wx.Panel ):
         p = event.GetProperty()
         if p:
             self.log.write('%s changed to "%s"\n' % (p.GetName(),p.GetValueAsString()))
-            setattr(self.obj, p.GetName(), p.GetValue())
+            # re-create the wx_object with the new property value
+            # (this is required at least to apply new styles and init specs)
+            kwargs = {p.GetName(): p.GetValue()}
+            wx.CallAfter(self.obj.__init__,  **kwargs)
 
     def OnPropGridSelect(self, event):
         p = event.GetProperty()
@@ -159,7 +162,6 @@ class TestPanel( wx.Panel ):
             self.log.write('%s right clicked\n' % (event.GetProperty().GetName()))
         else:
             self.log.write('Nothing right clicked\n')
-        wx.CallAfter(self.obj.create, rebuild=True)
         #self.obj.get_parent().Refresh()
 
     def OnPropGridPageChange(self, event):

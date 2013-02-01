@@ -99,12 +99,13 @@ class StyleSpec(Spec):
                 raise ValueError("%s is not a valid value!" % value)
             # convert the value to the wx style (if not already converted)
             if value in self.wx_style_map:
+                print "new value", value, self.wx_style_map[value]
                 value = self.wx_style_map[value]
-            else:
-                print "current style", obj._style
-                for reset_value in self.wx_style_map.values():
-                    obj._style &= ~ reset_value
-                print "cleaned style", obj._style
+            # clean posible styles
+            print "current style", obj._style
+            for reset_value in self.wx_style_map.values():
+                obj._style &= ~ reset_value
+            print "cleaned style", obj._style
             obj._style |= value
             if obj.wx_obj:
                 # fset is ignored by now, if object was created throw and error:
@@ -173,9 +174,33 @@ class Component(object):
     
         # create the wxpython kw arguments (based on specs and defaults)
         wx_kwargs = dict(id=new_id(kwargs.get('id')))
-        self.wx_obj = None
+        
+        # check if we are recreating the object (i.e., to apply a new style)
+        rebuild = hasattr(self, "wx_obj")
+        
+        # get current spec values (if we are re-creating the wx object)
+        if rebuild:
+            for spec_name, spec in self._meta.specs.items():
+                if spec_name in kwargs:
+                    continue    # use provided new value
+                if not isinstance(spec, (StyleSpec, InitSpec)):
+                    # get the current value and store it in kwargs
+                    kwargs[spec_name]  = getattr(self, spec_name)
+            self.wx_obj.Visible = False
+            self.wx_obj.reference = None
+            self.wx_obj.Destroy()
+            del self.wx_obj
+            print "kwargs", kwargs
+        else:
+            self._parent = parent       # store parent
+        
+        self.wx_obj = None      # set up a void wx object (needed by setters)
+        
         for spec_name, spec in self._meta.specs.items():
             value = kwargs.get(spec_name, spec.default)
+            # no not apply a spec if we are re-creating the wx object:
+            if rebuild and spec_name not in kwargs:
+                continue    # use previously _style
             if isinstance(spec, InitSpec):
                 print "INIT: setting ", spec_name, value
                 if not spec.optional and value is None:
@@ -195,20 +220,7 @@ class Component(object):
                 if spec_name in kwargs:
                     del kwargs[spec_name]
         self._wx_kwargs = wx_kwargs
-        self._parent = parent
-        self.create(**kwargs)
         
-    def create(self, rebuild=False, **kwargs):
-        if rebuild:
-            for spec_name, spec in self._meta.specs.items():
-                if not isinstance(spec, (StyleSpec, InitSpec)):
-                    # get the current value and store it in kwargs
-                    kwargs[spec_name]  = getattr(self, spec_name)
-            self.wx_obj.Visible = False
-            self.wx_obj.reference = None
-            self.wx_obj.Destroy()
-            self.wx_obj = None
-            
         # create the actual wxpython object
         self._wx_kwargs['style'] = style=self._style
         print "WX KWARGS: ", self._wx_kwargs
@@ -229,6 +241,7 @@ class Component(object):
                                                              spec_name))
             elif value is None:
                 value = spec.default
+            print "setting", spec_name, value
             setattr(self, spec_name, value)
                 
         # store gui2py reference inside of wx object
