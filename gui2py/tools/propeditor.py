@@ -159,6 +159,8 @@ class TestPanel( wx.Panel ):
             self.log.write('%s right clicked\n' % (event.GetProperty().GetName()))
         else:
             self.log.write('Nothing right clicked\n')
+        wx.CallAfter(self.obj.create, rebuild=True)
+        #self.obj.get_parent().Refresh()
 
     def OnPropGridPageChange(self, event):
         index = self.pg.GetSelectedPage()
@@ -175,15 +177,15 @@ if __name__ == '__main__':
     frame = wx.Frame(None)
     #o = Button(frame, name="btnTest", label="click me!", default=True)
     #o = Label(frame, name="lblTest", alignment="right", size=(-1, 500), text="hello!")
-    #o = TextBox(frame, name="txtTest", border=False, text="hello world!")
+    o = TextBox(frame, name="txtTest", border=False, text="hello world!")
     #o = CheckBox(frame, name="chkTest", border='none', label="Check me!")
     #o = ListBox(frame, name="lstTest", border='none', 
     #            items={'datum1': 'a', 'datum2':'b', 'datum3':'c'},
     #            multiselect="--multiselect" in sys.argv)
-    o = ComboBox(frame, name="cboTest",
-                items={'datum1': 'a', 'datum2':'b', 'datum3':'c'},
-                readonly='--readonly' in sys.argv,
-                )
+    #o = ComboBox(frame, name="cboTest",
+    #            items={'datum1': 'a', 'datum2':'b', 'datum3':'c'},
+    #            readonly='--readonly' in sys.argv,
+    #            )
     frame.Show()
 
     log = sys.stdout

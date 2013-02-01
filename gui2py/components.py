@@ -194,16 +194,30 @@ class Component(object):
                 setattr(self, spec_name, value)
                 if spec_name in kwargs:
                     del kwargs[spec_name]
+        self._wx_kwargs = wx_kwargs
+        self._parent = parent
+        self.create(**kwargs)
         
+    def create(self, rebuild=False, **kwargs):
+        if rebuild:
+            for spec_name, spec in self._meta.specs.items():
+                if not isinstance(spec, (StyleSpec, InitSpec)):
+                    # get the current value and store it in kwargs
+                    kwargs[spec_name]  = getattr(self, spec_name)
+            self.wx_obj.Visible = False
+            self.wx_obj.reference = None
+            self.wx_obj.Destroy()
+            self.wx_obj = None
+            
         # create the actual wxpython object
-        wx_kwargs['style'] = style=self._style
-        print "WX KWARGS: ", wx_kwargs
+        self._wx_kwargs['style'] = style=self._style
+        print "WX KWARGS: ", self._wx_kwargs
         print "creating", self._wx_class
-        if parent is None or isinstance(parent, wx.Object):
-            wx_parent = parent
+        if self._parent is None or isinstance(self._parent, wx.Object):
+            wx_parent = self._parent
         else:
-            wx_parent = parent.wx_obj
-        self.wx_obj = self._wx_class(wx_parent, **wx_kwargs)
+            wx_parent = self._parent.wx_obj
+        self.wx_obj = self._wx_class(wx_parent, **self._wx_kwargs)
         # load specs from kwargs, use default if available
         for spec_name, spec in self._meta.specs.items():
             if spec.read_only or isinstance(spec, (StyleSpec, InitSpec)):
