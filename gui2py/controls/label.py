@@ -18,9 +18,9 @@ class Label(Control):
     alignment = StyleSpec({'left': wx.ALIGN_LEFT, 
                            'center': wx.ALIGN_CENTER | wx.ST_NO_AUTORESIZE,
                            'right': wx.ALIGN_RIGHT | wx.ST_NO_AUTORESIZE},
-                           default='left')
+                           default='center')
     text = Spec(lambda self: self.wx_obj.GetLabel(), _setText,
-                     default="Label")
+                     default="Label", type="string")
 
 
 if __name__ == "__main__":

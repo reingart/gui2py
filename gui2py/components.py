@@ -14,14 +14,14 @@ class Spec(property):
     "Spec contains meta type information about components"
     
     def __init__(self, fget=None, fset=None, fdel=None, doc=None, 
-                 optional=True, default=None, values=None, type="", _name=""):
+                 optional=True, default=None, mapping=None, type="", _name=""):
         if fget is None:
             fget = lambda obj: getattr(obj, _name)
             fset = lambda obj, value: setattr(obj, _name, value)
         property.__init__(self, fget, fset, fdel, doc)
         self.optional = optional
         self.default = default
-        self.values = values
+        self.mapping = mapping
         self.read_only = fset is None
         self.type = type
         self._name = _name              # internal name (usually, wx kwargs one)
@@ -92,16 +92,32 @@ class StyleSpec(Spec):
             return None
 
         def setter(obj, value):
-            if obj.wx_obj:
-                # fset is ignored by now, if object was created throw and error:
-                raise AttributeError("style is read-only!")
             if value is None:
                 raise ValueError("this style spec is mandatory!")
-            if value not in self.wx_style_map:
+            if value not in self.wx_style_map \
+                 and not value in self.wx_style_map.values():
                 raise ValueError("%s is not a valid value!" % value)
-            # convert the value to the wx style
-            obj._style |= self.wx_style_map[value]
-        Spec.__init__(self, getter, setter, doc=doc, default=default)
+            # convert the value to the wx style (if not already converted)
+            if value in self.wx_style_map:
+                value = self.wx_style_map[value]
+            else:
+                print "current style", obj._style
+                for reset_value in self.wx_style_map.values():
+                    obj._style &= ~ reset_value
+                print "cleaned style", obj._style
+            obj._style |= value
+            if obj.wx_obj:
+                # fset is ignored by now, if object was created throw and error:
+                obj.wx_obj.SetWindowStyle(obj._style)          
+                print "changed style!! to ", obj._style
+                #raise AttributeError("style is read-only!")
+        # select the property editor: 
+        if True in self.wx_style_map:
+            type_ = 'boolean'
+        else:
+            type_ = 'enum'
+        Spec.__init__(self, getter, setter, doc=doc, default=default, 
+                      mapping=self.wx_style_map, type=type_)
 
 
 class ComponentMeta():

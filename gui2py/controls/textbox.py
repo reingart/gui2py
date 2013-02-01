@@ -168,10 +168,10 @@ class TextBox(Control):
     border = StyleSpec({False: wx.NO_BORDER, True:0}, default=True)
     editable = Spec(lambda self: self.wx_obj.IsEditable(), 
                     lambda self, value: self.wx_obj.SetEditable(value),
-                    default=True)
+                    default=True, type="boolean")
     text = Spec(lambda self: self.wx_obj.GetValue(), 
                 lambda self, value: self.wx_obj.SetValue(value),
-                default="")
+                default="", type="text")
     password = StyleSpec(wx.TE_PASSWORD, default=False)
     multiline = StyleSpec(wx.TE_MULTILINE, default=False)
     hscroll = StyleSpec(wx.HSCROLL, default=False)

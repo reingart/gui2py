@@ -51,13 +51,22 @@ class TestPanel( wx.Panel ):
                             'boolean': wxpg.BoolProperty,
                             'text': wxpg.LongStringProperty,
                             'code': wxpg.LongStringProperty,
+                            'enum': wxpg.EnumProperty,
                             #'font': wxpg.FontProperty,
                             'colour': wxpg.ColourProperty}.get(spec.type)
                     if prop and name not in appended:
                         value = getattr(obj, name)
+                        print "name", name, value
                         if spec.type == "code" and value is None:
                             value = "" 
-                        pg.Append(prop(name, value=value))
+                        if spec.type == "boolean" and value is None:
+                            value = False
+                        if spec.type == "enum":
+                            pg.Append(prop(name, name, 
+                                           spec.mapping.keys(), 
+                                           spec.mapping.values()))
+                        else:
+                            pg.Append(prop(name, value=value))
                         if spec.type == "boolean":
                             pg.SetPropertyAttribute(name, "UseCheckbox", True)
                         doc = spec.__doc__ 
@@ -167,13 +176,17 @@ if __name__ == '__main__':
     app = wx.App()
     f = wx.Frame(None)
     
-    from gui2py.controls import Button
+    from gui2py.controls import Button, Label, TextBox, CheckBox
     frame = wx.Frame(None)
-    b = Button(frame, name="btnTest", label="click me!", default=True)
+    #o = Button(frame, name="btnTest", label="click me!", default=True)
+    #o = Label(frame, name="lblTest", alignment="right", size=(-1, 500), text="hello!")
+    #o = TextBox(frame, name="txtTest", border=False, text="hello world!")
+    o = CheckBox(frame, name="chkTest", border='none', label="Check me!")
+
     frame.Show()
 
     log = sys.stdout
-    w = TestPanel(f, b, log)
+    w = TestPanel(f, o, log)
     f.Show()
     app.MainLoop()
 
