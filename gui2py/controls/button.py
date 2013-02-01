@@ -20,10 +20,10 @@ class Button(Control):
         if aBoolean:
             self.wx_obj.SetDefault()
 
-    default = Spec(_getDefault, _setDefault, default=False)
+    default = Spec(_getDefault, _setDefault, default=False, type="boolean")
     label = Spec(lambda self: self.wx_obj.GetLabel(), 
                  lambda self, label: self.wx_obj.SetLabel(label),
-                 optional=False, default='Button')
+                 optional=False, default='Button', type="string")
     onclick = EventSpec('click', binding=wx.EVT_BUTTON, kind=FormEvent)
 
 

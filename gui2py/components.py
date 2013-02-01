@@ -14,7 +14,7 @@ class Spec(property):
     "Spec contains meta type information about components"
     
     def __init__(self, fget=None, fset=None, fdel=None, doc=None, 
-                 optional=True, default=None, values=None, _name=""):
+                 optional=True, default=None, values=None, type="", _name=""):
         if fget is None:
             fget = lambda obj: getattr(obj, _name)
             fset = lambda obj, value: setattr(obj, _name, value)
@@ -23,6 +23,7 @@ class Spec(property):
         self.default = default
         self.values = values
         self.read_only = fset is None
+        self.type = type
         self._name = _name              # internal name (usually, wx kwargs one)
     
 
@@ -56,7 +57,7 @@ class EventSpec(Spec):
             # store the event handler
             setattr(obj, "_" + event_name, action)
 
-        Spec.__init__(self, getter, setter, doc=doc)
+        Spec.__init__(self, getter, setter, doc=doc, type="code")
         self.name = event_name
         if not isinstance(binding, (list, tuple)):
             binding = (binding, )   # make it an iterable
@@ -328,19 +329,19 @@ class Component(object):
         "Returns the character height for this window."
         return self.wx_obj.GetCharHeight()
 
-    name = InitSpec(optional=False, default="", _name="_name")
-    bgcolor = Spec(_getBackgroundColor, _setBackgroundColor)
-    font = Spec(_getFont, _setFont)
-    fgcolor = Spec(_getForegroundColor, _setForegroundColor)
-    enabled = Spec(_getEnabled, _setEnabled, default=True)
-    id = InitSpec(_getId, _setId,  default=-1)
+    name = InitSpec(optional=False, default="", _name="_name", type='string')
+    bgcolor = Spec(_getBackgroundColor, _setBackgroundColor, type='colour')
+    font = Spec(_getFont, _setFont, type='font')
+    fgcolor = Spec(_getForegroundColor, _setForegroundColor, type='colour')
+    enabled = Spec(_getEnabled, _setEnabled, default=True, type='boolean')
+    id = InitSpec(_getId, _setId,  default=-1, type="integer")
     pos = InitSpec(_getPosition, _setPosition, default=[ -1, -1])
     size = InitSpec(_getSize, _setSize, default=[ -1, -1])
     client_size = Spec(lambda self: self.wx_obj.GetClientSize(),
                        lambda self, value: self.wx_obj.SetClientSize(value))
-    helptext = Spec(optional=True),
-    tooltip = Spec(_getToolTip, _setToolTip, default='')
-    visible = Spec(_getVisible, _setVisible, default=True)
+    helptext = Spec(optional=True, type="string"),
+    tooltip = Spec(_getToolTip, _setToolTip, default='', type="string")
+    visible = Spec(_getVisible, _setVisible, default=True, type='boolean')
     userdata = Spec(_name='_userdata')
     
     # Events:
