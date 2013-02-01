@@ -60,6 +60,9 @@ class TestPanel( wx.Panel ):
                         pg.Append(prop(name, value=value))
                         if spec.type == "boolean":
                             pg.SetPropertyAttribute(name, "UseCheckbox", True)
+                        doc = spec.__doc__ 
+                        if doc:
+                            pg.SetPropertyHelpString(name, doc)
                         appended.add(name)
                             
                    # pg.Append(  )

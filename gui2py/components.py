@@ -25,6 +25,7 @@ class Spec(property):
         self.read_only = fset is None
         self.type = type
         self._name = _name              # internal name (usually, wx kwargs one)
+        self.__doc__ = doc
     
 
 class EventSpec(Spec):
