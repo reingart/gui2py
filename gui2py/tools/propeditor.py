@@ -34,12 +34,13 @@ class TestPanel( wx.Panel ):
         from gui2py.components import InitSpec, StyleSpec, Spec, EventSpec
         appended = set()
         self.obj = obj
-        for i, (cat, class_) in enumerate((('Init Specs', InitSpec), 
-                                         ('Style Specs', StyleSpec), 
-                                         ('Basic Specs', Spec),
-                                         ('Events', EventSpec))): 
+        for i, cat, class_ in ((1, 'Init Specs', InitSpec), 
+                               (2, 'Style Specs', StyleSpec), 
+                               (4, 'Events', EventSpec),
+                               (3, 'Basic Specs', Spec),
+                              ): 
             
-            pg.Append(wxpg.PropertyCategory("%s - %s" % (i+1, cat)))
+            pg.Append(wxpg.PropertyCategory("%s - %s" % (i, cat)))
             specs = sorted(obj._meta.specs.items(), key=lambda it: it[0])
             for name, spec in specs:
                 print spec, class_, spec.type
