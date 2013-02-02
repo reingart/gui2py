@@ -25,8 +25,13 @@ class Font(object):
                       self.underline,
                       self._face)
 
-    def set_wx_font(self, aFont):
-        raise AttributeError("font attribute is read-only")
+    def set_wx_font(self, font):
+        self._size = font.PointSize
+        self._family = font.Family
+        self._style = font.Style
+        self._weight = font.Weight
+        self.underline = font.Underlined
+        self._face = font.FaceName
 
     def _get_size(self):
         return self._size
@@ -121,9 +126,14 @@ if __name__ == "__main__":
     # basic test until unit_tests
     app = wx.App(redirect=False)
     #frame = wx.Frame(None)
-    f = Font(family="serif", style="italic", weight="bold")
-    assert f.family=="serif"
-    assert f.style=="italic"
-    assert f.weight=="bold"
-    print f.get_wx_font()
+    f = Font(family="serif", face="ubuntu", style="italic", weight="bold")
+    assert f.family == "serif"
+    assert f.style == "italic"
+    assert f.weight == "bold"
+    wf = f.get_wx_font()
+    wf.Style = wx.SLANT
+    f.set_wx_font(wf)
+    assert f.family == ""         # ubuntu face!
+    assert f.style == "slant"
+    assert f.weight == "bold"
 
