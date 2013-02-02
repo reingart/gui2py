@@ -27,8 +27,9 @@ def createtoolbar(self):
     tb5.AddSeparator()
     path = os.path.join(dirName, "gui2py", "icons")
     for filename in os.listdir(path):
-        bmp = wx.Bitmap(os.path.join(path, filename), wx.BITMAP_TYPE_XPM)
-        tb5.AddSimpleTool(ID_SampleItem+31, "Test", bmp)
+        if filename.endswith(".xpm"):
+            bmp = wx.Bitmap(os.path.join(path, filename), wx.BITMAP_TYPE_XPM)
+            tb5.AddSimpleTool(ID_SampleItem+31, "Test", bmp)
     #tb5.AddSimpleTool(ID_SampleItem+32, "Test", wx.ArtProvider.GetBitmap(wx.ART_INFORMATION))
     #tb5.AddSimpleTool(ID_SampleItem+33, "Test", wx.ArtProvider.GetBitmap(wx.ART_WARNING))
     #tb5.AddSimpleTool(ID_SampleItem+34, "Test", wx.ArtProvider.GetBitmap(wx.ART_MISSING_IMAGE))
