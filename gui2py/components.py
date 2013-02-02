@@ -13,7 +13,7 @@ def new_id(id=None):
 class Spec(property):
     "Spec contains meta type information about components"
     
-    def __init__(self, fget=None, fset=None, fdel=None, doc=None, 
+    def __init__(self, fget=None, fset=None, fdel=None, doc=None, group=None,
                  optional=True, default=None, mapping=None, type="", _name=""):
         if fget is None:
             fget = lambda obj: getattr(obj, _name)
@@ -26,6 +26,7 @@ class Spec(property):
         self.type = type
         self._name = _name              # internal name (usually, wx kwargs one)
         self.__doc__ = doc
+        self.group = group              # parent for tree-like struc (propedit)
     
 
 class EventSpec(Spec):
@@ -411,16 +412,16 @@ class Component(object):
     userdata = Spec(_name='_userdata')
     width = DimensionSpec(lambda self: str(self._get_size()[0]), 
                           lambda self, value: self._set_size([value, None]),
-                          type="string")
+                          type="string", group="size")
     height = DimensionSpec(lambda self: str(self._get_size()[1]), 
                            lambda self, value: self._set_size([None, value]),
-                           type="string")
+                           type="string", group="size")
     left = DimensionSpec(lambda self: str(self._get_pos()[0]), 
                            lambda self, value: self._set_pos([value, None]),
-                           type="string")
+                           type="string", group="position")
     top = DimensionSpec(lambda self: str(self._get_pos()[1]), 
                            lambda self, value: self._set_pos([None, value]),
-                           type="string")
+                           type="string", group="position")
                     
     # Events:
     onfocus = EventSpec('focus', binding=wx.EVT_SET_FOCUS, kind=FocusEvent)

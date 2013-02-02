@@ -4,6 +4,8 @@ import wx
 _ = wx.GetTranslation
 import wx.propgrid as wxpg
 
+from gui2py.components import InitSpec, StyleSpec, Spec, EventSpec, DimensionSpec
+
 class TestPanel( wx.Panel ):
 
     def __init__( self, parent, obj, log ):
@@ -28,16 +30,16 @@ class TestPanel( wx.Panel ):
         pg.Bind( wxpg.EVT_PG_SELECTED, self.OnPropGridSelect )
         pg.Bind( wxpg.EVT_PG_RIGHT_CLICK, self.OnPropGridRightClick )
 
-
         ##pg.AddPage( "Page 1 - Testing All" )
 
-        from gui2py.components import InitSpec, StyleSpec, Spec, EventSpec
         appended = set()
         self.obj = obj
+        self.groups = {}
         for i, cat, class_ in ((1, 'Init Specs', InitSpec), 
-                               (2, 'Style Specs', StyleSpec), 
-                               (4, 'Events', EventSpec),
-                               (3, 'Basic Specs', Spec),
+                               (2, 'Dimension Specs', DimensionSpec),
+                               (3, 'Style Specs', StyleSpec), 
+                               (5, 'Events', EventSpec),
+                               (4, 'Basic Specs', Spec),
                               ): 
             
             pg.Append(wxpg.PropertyCategory("%s - %s" % (i, cat)))
@@ -65,11 +67,26 @@ class TestPanel( wx.Panel ):
                         if spec.type == "integer" and value is None:
                             value = -1
                         if spec.type == "enum":
-                            pg.Append(prop(name, name, 
+                            prop = prop(name, name, 
                                            spec.mapping.keys(), 
-                                           spec.mapping.values()))
+                                           spec.mapping.values())
                         else:
-                            pg.Append(prop(name, value=value))
+                            prop = prop(name, value=value)
+                        
+                        if spec.group is None:
+                            pg.Append(prop)
+                        else:
+                            if spec.group in self.groups:
+                                prop_parent = self.groups[spec.group]
+                            else:
+                                prop_parent = wxpg.StringProperty(spec.group,
+                                        value="<composed>")
+                                self.groups[spec.group] = prop_parent
+                                pg.Append(prop_parent)
+                                pg.SetPropertyReadOnly(spec.group)
+                            pg.AppendIn(spec.group, prop)
+                            pg.Collapse(spec.group)
+                                          
                         if spec.type == "boolean":
                             pg.SetPropertyAttribute(name, "UseCheckbox", True)
                         doc = spec.__doc__ 
@@ -133,11 +150,17 @@ class TestPanel( wx.Panel ):
     def OnPropGridChange(self, event):
         p = event.GetProperty()
         if p:
-            self.log.write('%s changed to "%s"\n' % (p.GetName(),p.GetValueAsString()))
-            # re-create the wx_object with the new property value
-            # (this is required at least to apply new styles and init specs)
-            kwargs = {p.GetName(): p.GetValue()}
-            wx.CallAfter(self.obj.__init__,  **kwargs)
+            name = p.GetName()
+            value = p.GetValue()
+            self.log.write('%s changed to "%s"\n' % (p,p.GetValueAsString()))
+            # if it a property child (parent.child), extract its name
+            if "." in name:
+                group, name = name.split(".")
+            if not name in self.groups:                
+                # re-create the wx_object with the new property value
+                # (this is required at least to apply new styles and init specs)
+                kwargs = {name: value}
+                wx.CallAfter(self.obj.__init__,  **kwargs)
 
     def OnPropGridSelect(self, event):
         p = event.GetProperty()
