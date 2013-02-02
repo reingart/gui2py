@@ -5,6 +5,7 @@ _ = wx.GetTranslation
 import wx.propgrid as wxpg
 
 from gui2py.components import InitSpec, StyleSpec, Spec, EventSpec, DimensionSpec
+from gui2py.font import Font
 
 class TestPanel( wx.Panel ):
 
@@ -55,7 +56,7 @@ class TestPanel( wx.Panel ):
                             'code': wxpg.LongStringProperty,
                             'enum': wxpg.EnumProperty,
                             'array': wxpg.ArrayStringProperty,
-                            #'font': wxpg.FontProperty,
+                            'font': wxpg.FontProperty,
                             'colour': wxpg.ColourProperty}.get(spec.type)
                     if prop and name not in appended:
                         value = getattr(obj, name)
@@ -66,6 +67,8 @@ class TestPanel( wx.Panel ):
                             value = False
                         if spec.type == "integer" and value is None:
                             value = -1
+                        if spec.type == "font" and value is not None:
+                            value = value.get_wx_font()
                         if spec.type == "enum":
                             prop = prop(name, name, 
                                            spec.mapping.keys(), 
@@ -157,6 +160,11 @@ class TestPanel( wx.Panel ):
             if "." in name:
                 group, name = name.split(".")
             if not name in self.groups:                
+                if name == 'font':  # TODO: detect property type
+                    # create a gui2py font from the wx.Font
+                    font = Font()
+                    font.set_wx_font(value)
+                    value = font
                 # re-create the wx_object with the new property value
                 # (this is required at least to apply new styles and init specs)
                 kwargs = {name: value}

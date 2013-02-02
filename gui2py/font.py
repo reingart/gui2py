@@ -30,7 +30,7 @@ class Font(object):
         self._family = font.Family
         self._style = font.Style
         self._weight = font.Weight
-        self.underline = font.Underlined
+        self.underline = font.GetUnderlined()
         self._face = font.FaceName
 
     def _get_size(self):
