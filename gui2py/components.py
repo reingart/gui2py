@@ -179,6 +179,7 @@ class Component(object):
     
     def __init__(self, parent=None, **kwargs):
         self._font = None
+        self._children = {}    # container to hold children
     
         # create the wxpython kw arguments (based on specs and defaults)
         wx_kwargs = dict(id=new_id(kwargs.get('id')))
@@ -199,8 +200,12 @@ class Component(object):
             self.wx_obj.Destroy()
             del self.wx_obj
             print "kwargs", kwargs
+            if isinstance(self._parent, Component):
+                del self._parent[self._name]    # remove old child reference
         else:
             self._parent = parent       # store parent
+        if isinstance(self._parent, Component) and 'name' in kwargs:
+            self._parent[kwargs['name']] = self     # add child reference
         
         self.wx_obj = None      # set up a void wx object (needed by setters)
         
@@ -260,6 +265,22 @@ class Component(object):
             if isinstance(spec, StyleSpec):
                 setattr(self, spec_name, value)
 
+    # Container methods:
+
+    def __iter__(self):
+        return self._children.itervalues()
+    
+    def __setitem__(self, key, val):
+        self._children[key] = val
+        
+    def __getitem__(self, key):
+        return self._children[key]
+    
+    def __delitem__(self, key):
+        del self._children[key]
+        
+    # Public methods:
+    
     def redraw(self):
         "Force an immediate redraw without waiting for an event handler to finish."
         self.wx_obj.Refresh()
@@ -469,3 +490,12 @@ if __name__ == "__main__":
     assert w.name == "test"
     w.font = dict(face="ubuntu")
     assert w.font.face == "ubuntu"
+    # check container methods:
+    ct1 = Control(w, name="test_ctrl1")
+    ct2 = Control(w, name="test_ctrl2")
+    ct2.__init__(name="chau!")      # recreate the control (!= name)
+    names = []
+    for c in w:
+        names.append(c.name)
+    assert names == ["test_ctrl1", "chau!"]
+
