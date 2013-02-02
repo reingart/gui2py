@@ -70,6 +70,10 @@ class InitSpec(Spec):
     "Spec that is used in wx object instantiation (__init__)"
 
 
+class DimensionSpec(Spec):
+    "Special Spec to manage position and size"
+
+
 class StyleSpec(Spec):
     "Generic style specification to map wx windows styles to properties"
 
@@ -332,20 +336,38 @@ class Component(object):
                 return wx.Colour(color[0], color[1], color[2])
             else:
                 return color
-                
-    def _getPosition(self):
+
+    # Dimensions:
+    
+    def _get_pos(self):
         # get the actual position, not (-1, -1)
         return self.wx_obj.GetPositionTuple()  
 
-    def _setPosition(self, aPosition):
-        self.wx_obj.Move(aPosition)
+    def _set_pos(self, point):
+        if point[0] is None:
+            point[0] = self.wx_obj.GetPositionTuple()[0]
+        if point[1] is None:
+            point[1] = self.wx_obj.GetPositionTuple()[1]
+        if not isinstance(point[0], int):
+            point[0] = point[0] is not None and int(point[0]) or -1
+        if not isinstance(point[1], int):
+            point[1] = point[1] is not None and int(point[1]) or -1
+        self.wx_obj.Move(point)
 
-    def _getSize(self):
+    def _get_size(self):
         # return the actual size, not (-1, -1)
         return self.wx_obj.GetSizeTuple()
 
-    def _setSize(self, aSize):
-        self.wx_obj.SetSize(aSize)
+    def _set_size(self, size):
+        if size[0] is None:
+            size[0] = self.wx_obj.GetSizeTuple()[0]
+        if size[1] is None:
+            size[1] = self.wx_obj.GetSizeTuple()[1]
+        if not isinstance(size[0], int):
+            size[0] = size[0] is not None and int(size[0]) or -1
+        if not isinstance(size[1], int):
+            size[1] = size[1] is not None and int(size[1]) or -1
+        self.wx_obj.SetSize(size)
 
     def _getEnabled(self):
         return self.wx_obj.IsEnabled()
@@ -379,15 +401,27 @@ class Component(object):
     fgcolor = Spec(_getForegroundColor, _setForegroundColor, type='colour')
     enabled = Spec(_getEnabled, _setEnabled, default=True, type='boolean')
     id = InitSpec(_getId, _setId,  default=-1, type="integer")
-    pos = InitSpec(_getPosition, _setPosition, default=[ -1, -1])
-    size = InitSpec(_getSize, _setSize, default=[ -1, -1])
+    pos = InitSpec(_get_pos, _set_pos, default=[ -1, -1])
+    size = InitSpec(_get_size, _set_size, default=[ -1, -1])
     client_size = Spec(lambda self: self.wx_obj.GetClientSize(),
                        lambda self, value: self.wx_obj.SetClientSize(value))
     helptext = Spec(optional=True, type="string"),
     tooltip = Spec(_getToolTip, _setToolTip, default='', type="string")
     visible = Spec(_getVisible, _setVisible, default=True, type='boolean')
     userdata = Spec(_name='_userdata')
-    
+    width = DimensionSpec(lambda self: str(self._get_size()[0]), 
+                          lambda self, value: self._set_size([value, None]),
+                          type="string")
+    height = DimensionSpec(lambda self: str(self._get_size()[1]), 
+                           lambda self, value: self._set_size([None, value]),
+                           type="string")
+    left = DimensionSpec(lambda self: str(self._get_pos()[0]), 
+                           lambda self, value: self._set_pos([value, None]),
+                           type="string")
+    top = DimensionSpec(lambda self: str(self._get_pos()[1]), 
+                           lambda self, value: self._set_pos([None, value]),
+                           type="string")
+                    
     # Events:
     onfocus = EventSpec('focus', binding=wx.EVT_SET_FOCUS, kind=FocusEvent)
     onblur = EventSpec('blur', binding=wx.EVT_KILL_FOCUS, kind=FocusEvent)
