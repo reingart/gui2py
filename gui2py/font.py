@@ -8,7 +8,7 @@ class Font(object):
 
     def __init__(self, parent=None, **kwargs ) :
         self._parent = parent
-        self._family = ''
+        self._family = wx.DEFAULT
         self._face = ''
         self._size = wx.NORMAL_FONT.GetPointSize()
         self._style = wx.NORMAL

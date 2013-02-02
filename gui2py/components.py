@@ -1,7 +1,9 @@
 import wx
 
 from .event import FocusEvent, MouseEvent, KeyEvent
+from .font import Font
 from . import registry
+
 
 def new_id(id=None):
     if id is None or id == -1:
@@ -288,11 +290,10 @@ class Component(object):
         except:
             return ""
     
-    def _getFont(self):
+    def _get_font(self):
         if self._font is None:
-            #desc = font.fontDescription(self.GetFont())
-            #self._font = font.Font(desc)
-            pass
+            self._font = Font(parent=self)
+        self._font.set_wx_font(self.wx_obj.GetFont())
         return self._font
 
     def _setForegroundColor( self, color ) :
@@ -309,17 +310,16 @@ class Component(object):
         toolTip = wx.ToolTip(aString)
         self.wx_obj.SetToolTip(toolTip)
     
-    def _setFont(self, aFont):
-        if aFont is None:
+    def _set_font(self, value):
+        if value is None:
             self._font = None
             return
-        if isinstance(aFont, dict):
-            aFont = font.Font(aFont, aParent=self)
+        if isinstance(value, dict):
+            self._font = Font(parent=self, **value)
         else: # Bind the font to this component.
-            aFont._parent = self
-        self._font = aFont
-        aWxFont = aFont._getFont()
-        self.wx_obj.SetFont( aWxFont )
+            self._font = value
+            value._parent = self
+        self.wx_obj.SetFont( self._font.get_wx_font() )
 
     def _getUserdata(self):
         return self._userdata 
@@ -398,7 +398,7 @@ class Component(object):
 
     name = InitSpec(optional=False, default="", _name="_name", type='string')
     bgcolor = Spec(_getBackgroundColor, _setBackgroundColor, type='colour')
-    font = Spec(_getFont, _setFont, type='font')
+    font = Spec(_get_font, _set_font, type='font')
     fgcolor = Spec(_getForegroundColor, _setForegroundColor, type='colour')
     enabled = Spec(_getEnabled, _setEnabled, default=True, type='boolean')
     id = InitSpec(_getId, _setId,  default=-1, type="integer")
@@ -466,4 +466,5 @@ if __name__ == "__main__":
     assert w.get_parent() is frame
     assert w.id != -1       # wx should have assigned a new id!
     assert w.name == "test"
-    
+    w.font = dict(face="ubuntu")
+    assert w.font.face == "ubuntu"
