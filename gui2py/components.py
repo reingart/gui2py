@@ -175,6 +175,7 @@ class Component(object):
     __metaclass__ = ComponentBase
     _wx_class = wx.Window       # wx object constructor
     _style = 0                  # base style
+    _image = None               # default icon for toolbox
     
     def __init__(self, parent=None, **kwargs):
         self._font = None

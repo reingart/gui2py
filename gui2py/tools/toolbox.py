@@ -1,12 +1,10 @@
 import wx
 import os, sys
 
-try:
-    dirName = os.path.dirname(os.path.abspath(__file__))
-except:
-    dirName = os.path.dirname(os.path.abspath(sys.argv[0]))
+import gui2py.controls
 
-sys.path.append(os.path.split(dirName)[0])
+from gui2py import registry
+
 
 try:
     from agw import aui
@@ -25,11 +23,12 @@ def createtoolbar(self):
     tb5.SetToolBitmapSize(wx.Size(48, 48))
     tb5.AddSimpleTool(ID_SampleItem+30, "Test", wx.ArtProvider.GetBitmap(wx.ART_ERROR))
     tb5.AddSeparator()
-    path = os.path.join(dirName, "gui2py", "icons")
-    for filename in os.listdir(path):
-        if filename.endswith(".xpm"):
-            bmp = wx.Bitmap(os.path.join(path, filename), wx.BITMAP_TYPE_XPM)
-            tb5.AddSimpleTool(ID_SampleItem+31, "Test", bmp)
+    
+    for name, ctrl in registry.CONTROLS.items():
+        if ctrl._image:
+            print "load", name, ctrl
+            #bmp = wx.Bitmap(os.path.join(path, filename), wx.BITMAP_TYPE_XPM)
+            tb5.AddSimpleTool(ID_SampleItem+31, name, ctrl._image.GetBitmap()) ##, tooltipHelp=ctrl.__doc__
     #tb5.AddSimpleTool(ID_SampleItem+32, "Test", wx.ArtProvider.GetBitmap(wx.ART_INFORMATION))
     #tb5.AddSimpleTool(ID_SampleItem+33, "Test", wx.ArtProvider.GetBitmap(wx.ART_WARNING))
     #tb5.AddSimpleTool(ID_SampleItem+34, "Test", wx.ArtProvider.GetBitmap(wx.ART_MISSING_IMAGE))

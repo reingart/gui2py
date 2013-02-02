@@ -2,11 +2,13 @@
 import wx
 from ..event import FormEvent
 from ..components import Control, Spec, EventSpec
+from .. import images 
 
 
 class Button(Control):
     "A simple push-button with a label"
     _wx_class = wx.Button
+    _image = images.button
     
     def _getDefault(self):
         #return self == self._parent.GetDefaultItem()

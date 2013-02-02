@@ -4,6 +4,7 @@
 
 from . import GetParam, form
 from ..controls import TextBox, Button, CheckBox
+from .. import registry
 
 import wx
 import wx.html
@@ -27,6 +28,7 @@ class FormControlMixin(object):
         OnEnter and OnClick methods for binding by 
         the actual control
     """
+    _registry = None
     def __init__(self, form, tag):
         if not form:
             return
@@ -42,6 +44,7 @@ class FormControlMixin(object):
 
 class SubmitButton(Button, FormControlMixin):
     __metaclass__ = TypeHandler("SUBMIT")
+    _registry = registry.HTML
     def __init__(self, parent, form, tag, parser, *args, **kwargs):
         label = GetParam(tag, "VALUE", default="Submit Query")
         kwargs["label"] = label
@@ -56,6 +59,7 @@ class SubmitButton(Button, FormControlMixin):
 
 class TextInput(TextBox, FormControlMixin):
     __metaclass__ = TypeHandler("TEXT")
+    _registry = registry.HTML
     def __init__(self, parent, form, tag, parser, *args, **kwargs):
         ##    style |= wx.TE_PROCESS_ENTER
         kwargs["name"] = GetParam(tag, "NAME")
@@ -77,13 +81,14 @@ class TextInput(TextBox, FormControlMixin):
             
 class PasswordInput(TextInput):
     __metaclass__ = TypeHandler("PASSWORD")
+    _registry = registry.HTML
     def __init__(self, parent, form, tag, parser):
         TextInput.__init__(self, parent, form, tag, parser, password=True)
         
         
 class Checkbox(CheckBox, FormControlMixin):
     __metaclass__ = TypeHandler("CHECKBOX")
-    
+    _registry = registry.HTML
     def __init__(self, parent, form, tag, parser, *args, **kwargs):
         kwargs["name"] = GetParam(tag, "NAME", "")
         kwargs["label"] = "" # TODO: fix!
@@ -101,6 +106,7 @@ class Checkbox(CheckBox, FormControlMixin):
             
 class HiddenControl(wx.EvtHandler, FormControlMixin):
     __metaclass__ = TypeHandler("HIDDEN")
+    _registry = registry.HTML
     def __init__(self, parent, form, tag, parser, *args, **kwargs):
         wx.EvtHandler.__init__(self)
         FormControlMixin.__init__(self, form, tag)
@@ -115,6 +121,7 @@ class HiddenControl(wx.EvtHandler, FormControlMixin):
         
 class TextAreaInput(TextBox, FormControlMixin):
     __metaclass__ = TypeHandler("TEXTAREA")
+    _registry = registry.HTML
     def __init__(self, parent, form, tag, parser, *args, **kwargs):
         kwargs["name"] = GetParam(tag, "NAME", "")
         TextBox.__init__(self, parent, multiline=True, *args, **kwargs)

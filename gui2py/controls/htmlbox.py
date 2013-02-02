@@ -17,6 +17,7 @@ from ..event import HtmlCellEvent, HtmlLinkEvent, SubmitEvent
 from ..components import Control, Spec, EventSpec, StyleSpec
 from ..html.form import EVT_FORM_SUBMIT
 from ..html.object import HTML_CTRL_CLICK
+from .. import images
 
 
 class HtmlBox(Control):
@@ -24,6 +25,7 @@ class HtmlBox(Control):
 
     _wx_class = wx.html.HtmlWindow
     _style = wx.html.HW_DEFAULT_STYLE | wx.TAB_TRAVERSAL
+    _image = images.custom
     
     def __init__(self, parent, design=False, **kwargs):
         self.design = design   # flag to enable designer mode

@@ -2,6 +2,7 @@
 import wx
 from ..event import FormEvent
 from ..components import Control, Spec, EventSpec, InitSpec, StyleSpec
+from .. import images 
 
 
 class Label(Control):
@@ -9,6 +10,7 @@ class Label(Control):
 
     _wx_class = wx.StaticText
     _style = wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS
+    _image = images.label
 
     def _setText(self, aString):
         self.wx_obj.SetLabel(aString)

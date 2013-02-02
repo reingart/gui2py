@@ -1,6 +1,7 @@
 import wx
 from ..event import FormEvent
 from ..components import Control, Spec, EventSpec, InitSpec, StyleSpec
+from .. import images 
 
 
 class TextBox(Control):
@@ -8,6 +9,7 @@ class TextBox(Control):
 
     _wx_class = wx.TextCtrl
     _style = wx.CLIP_SIBLINGS | wx.NO_FULL_REPAINT_ON_RESIZE
+    _image = images.textbox
     
     def clear_selection(self):
         if self.can_cut():

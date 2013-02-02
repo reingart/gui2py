@@ -2,6 +2,7 @@ import wx
 from ..event import FormEvent
 from ..components import Control, Spec, EventSpec, InitSpec, StyleSpec
 from .listbox import ItemContainerControl
+from .. import images 
 
 
 class ComboBox(ItemContainerControl):
@@ -9,6 +10,8 @@ class ComboBox(ItemContainerControl):
 
     _wx_class = wx.ComboBox
     _style = wx.CB_DROPDOWN | wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS
+    _image = images.combobox
+    
     multiselect = False    # required by ItemContainerControl
     
     text = InitSpec(lambda self: self.wx_obj.GetValue(), 

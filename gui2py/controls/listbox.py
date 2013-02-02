@@ -1,6 +1,7 @@
 import wx
 from ..event import FormEvent
 from ..components import Control, Spec, EventSpec, StyleSpec
+from .. import images 
 
 
 class ItemContainerControl(Control):
@@ -166,6 +167,7 @@ class ListBox(ItemContainerControl):
     
     _wx_class = wx.ListBox
     _style = wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS
+    _image = images.listbox
 
     def insert_items(self, aList, aPosition):
         self.wx_obj.InsertItems(a_list, a_position)
