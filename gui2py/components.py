@@ -1,6 +1,6 @@
 import wx
 
-from .event import FocusEvent, MouseEvent
+from .event import FocusEvent, MouseEvent, KeyEvent
 from . import registry
 
 def new_id(id=None):
@@ -407,7 +407,9 @@ class Component(object):
                                               wx.EVT_MIDDLE_UP,
                                               wx.EVT_RIGHT_UP), 
                                      kind=MouseEvent)
-
+    onkeypress = EventSpec('keypress', binding=wx.EVT_CHAR, kind=KeyEvent)
+    onkeydown = EventSpec('keydown', binding=wx.EVT_KEY_DOWN, kind=KeyEvent)
+    onkeyup = EventSpec('keyup', binding=wx.EVT_KEY_UP, kind=KeyEvent)
 
 class Control(Component):
     "This is the base class for a control"

@@ -93,18 +93,20 @@ class MouseEvent(Event):
         if name=="mousewheel":
             self.wheel_delta = wx_event.GetWheelDelta()
 
-class KeyboardEvent(Event):
+class KeyEvent(Event):
+    "Keyboard related event (wrapper for wx.KeyEvent)"
+    # only sent to the widget that currently has the keyboard focus
     
     names = "onkeypress", "onkeydown", "onkeyup",
     
-    def __init__(self, wx_event=None):
-        Event.__init__(self, wx_event)
-        self.ctrl_key = ctrl_key
-        self.shift_key = shift_key
-        self.alt_key = alt_key
-        self.meta_key = meta_key
-        self.key = key              # virtual key code value
-        self.char = char            # Unicode character associated
+    def __init__(self, name, wx_event=None):
+        Event.__init__(self, name, wx_event)
+        self.ctrl_key = wx_event.ControlDown()
+        self.shift_key = wx_event.ShiftDown()
+        self.alt_key = wx_event.AltDown()
+        self.meta_key = wx_event.MetaDown()
+        self.key = wx_event.KeyCode                   # virtual key code value
+        self.char = unichr(wx_event.GetUnicodeKey())  # Unicode character
 
         
 class TimingEvent(Event):
