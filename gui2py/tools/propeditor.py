@@ -7,6 +7,8 @@ import wx.propgrid as wxpg
 from gui2py.components import InitSpec, StyleSpec, Spec, EventSpec, DimensionSpec
 from gui2py.font import Font
 
+DEBUG = False
+
 class TestPanel( wx.Panel ):
 
     def __init__( self, parent, obj, log ):
@@ -46,7 +48,7 @@ class TestPanel( wx.Panel ):
             pg.Append(wxpg.PropertyCategory("%s - %s" % (i, cat)))
             specs = sorted(obj._meta.specs.items(), key=lambda it: it[0])
             for name, spec in specs:
-                print spec, class_, spec.type
+                if DEBUG: print spec, class_, spec.type
                 if isinstance(spec, class_):
                     prop = {'string': wxpg.StringProperty,
                             'integer': wxpg.IntProperty,
@@ -60,7 +62,7 @@ class TestPanel( wx.Panel ):
                             'colour': wxpg.ColourProperty}.get(spec.type)
                     if prop and name not in appended:
                         value = getattr(obj, name)
-                        print "name", name, value
+                        if DEBUG: print "name", name, value
                         if spec.type == "code" and value is None:
                             value = "" 
                         if spec.type == "boolean" and value is None:

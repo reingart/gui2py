@@ -5,6 +5,7 @@ from .font import Font
 from .spec import Spec, EventSpec, InitSpec, DimensionSpec, StyleSpec
 from . import registry
 
+DEBUG = False
 
 def new_id(id=None):
     if id is None or id == -1:
@@ -84,7 +85,7 @@ class Component(object):
             self.wx_obj.reference = None
             self.wx_obj.Destroy()
             del self.wx_obj
-            print "kwargs", kwargs
+            if DEBUG: print "kwargs", kwargs
             if isinstance(self._parent, Component):
                 del self._parent[self._name]    # remove old child reference
         else:
@@ -100,7 +101,7 @@ class Component(object):
             if rebuild and spec_name not in kwargs:
                 continue    # use previously _style
             if isinstance(spec, InitSpec):
-                print "INIT: setting ", spec_name, value
+                if DEBUG: print "INIT: setting ", spec_name, value
                 if not spec.optional and value is None:
                     raise ValueError("%s: %s is not optional" % 
                                         (self._meta.name, spec_name))
@@ -113,7 +114,7 @@ class Component(object):
                 if spec_name in kwargs:
                     del kwargs[spec_name]
             if isinstance(spec, StyleSpec):
-                print "setting", spec_name, value, spec
+                if DEBUG: print "setting", spec_name, value, spec
                 setattr(self, spec_name, value)
                 if spec_name in kwargs:
                     del kwargs[spec_name]
@@ -121,8 +122,8 @@ class Component(object):
         
         # create the actual wxpython object
         self._wx_kwargs['style'] = style=self._style
-        print "WX KWARGS: ", self._wx_kwargs
-        print "creating", self._wx_class
+        if DEBUG: print "WX KWARGS: ", self._wx_kwargs
+        if DEBUG: print "creating", self._wx_class
         if self._parent is None or isinstance(self._parent, wx.Object):
             wx_parent = self._parent
         else:
@@ -139,7 +140,7 @@ class Component(object):
                                                              spec_name))
             elif value is None:
                 value = spec.default
-            print "setting", spec_name, value
+            if DEBUG: print "setting", spec_name, value
             setattr(self, spec_name, value)
                 
         # store gui2py reference inside of wx object
