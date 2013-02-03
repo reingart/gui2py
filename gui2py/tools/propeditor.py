@@ -186,7 +186,7 @@ class PropertyEditorPanel(wx.Panel):
                     value = font
                 # re-create the wx_object with the new property value
                 # (this is required at least to apply new styles and init specs)
-                kwargs = {name: value}
+                kwargs = {str(name): value}
                 wx.CallAfter(self.obj.__init__,  **kwargs)
 
     def OnPropGridSelect(self, event):
