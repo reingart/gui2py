@@ -11,16 +11,30 @@ RW_LENGTH = 12
 class BasicDesigner:
     "Simple point-and-click layout designer (support moving controls)"
 
-    def __init__(self, wx_objs):
-        self.parent = wx_objs[0]
+    def __init__(self, parent):
+        self.parent = parent.wx_obj
         self.current = {}
         self.resizing = False
         # bind all objects that can be controlled by this class
-        for wx_obj in wx_objs:
-            wx_obj.Bind(wx.EVT_LEFT_DOWN, self.mouse_down)
-            wx_obj.Bind(wx.EVT_MOTION, self.mouse_move)
-            wx_obj.Bind(wx.EVT_LEFT_UP, self.mouse_up)
-            wx_obj.Bind(wx.EVT_MOUSE_EVENTS, self.mouse_over)
+        self.capture(parent)
+
+    def capture(self, obj):
+        print "binding", obj.name
+        # remove all binded events:
+        obj.wx_obj.Unbind(wx.EVT_MOTION)
+        obj.wx_obj.Unbind(wx.EVT_LEFT_DOWN)
+        obj.wx_obj.Unbind(wx.EVT_LEFT_UP)
+        obj.wx_obj.Unbind(wx.EVT_LEFT_DCLICK)
+        obj.wx_obj.Unbind(wx.EVT_RIGHT_DOWN)
+        obj.wx_obj.Unbind(wx.EVT_RIGHT_UP)
+        obj.wx_obj.Unbind(wx.EVT_RIGHT_DCLICK)
+        obj.wx_obj.Unbind(wx.EVT_MOUSE_EVENTS)
+        obj.wx_obj.Unbind(wx.EVT_ENTER_WINDOW)
+        obj.wx_obj.Unbind(wx.EVT_LEAVE_WINDOW)
+        # connect our mouse event handler:
+        obj.wx_obj.Bind(wx.EVT_MOUSE_EVENTS, self.mouse_over)
+        for ctrl in obj:
+            self.capture(ctrl)
 
     def hit_test(self, wx_obj, pos):
         # is the position in the area to be used for the resize handle?
@@ -63,8 +77,9 @@ class BasicDesigner:
         self.current['start'] = (sx - dx, sy - dy)
         self.current['wx_obj'] = wx_obj
         self.resizing = self.hit_test(wx_obj, evt.GetPosition())
-        
-        wx_obj.CaptureMouse()
+        print "capture..."
+        # do not capture on TextCtrl, it will fail (blocking) at least in gtk
+        self.parent.CaptureMouse()
 
 
     def mouse_move(self, evt):
@@ -89,8 +104,14 @@ class BasicDesigner:
                 wx_obj.SetPosition(wx.Point(x + sx, y + sy))
 
     def mouse_over(self, evt):
+        print "over!"
         if self.current or evt.LeftIsDown():
-            evt.Skip()
+            if evt.LeftDown():
+                self.mouse_down(evt)
+            elif evt.LeftUp():
+                self.mouse_up(evt)
+            else:
+                self.mouse_move(evt)
         else:
             wx_obj = evt.GetEventObject()
             if wx_obj is not self.parent:
@@ -106,8 +127,8 @@ class BasicDesigner:
         print "up!"
         if self.current: 
             wx_obj = self.current['wx_obj']
-            if wx_obj.HasCapture():
-                wx_obj.ReleaseMouse()
+            if self.parent.HasCapture():
+                self.parent.ReleaseMouse()
             self.current = {}
 
     def OnLayoutNeeded(self, evt):
@@ -115,12 +136,18 @@ class BasicDesigner:
         
 
 if __name__ == "__main__":
+    from gui2py.controls import Button, Label, TextBox, CheckBox, ListBox, ComboBox
+    from gui2py.windows import Window
     
     app = wx.App()
-    f = wx.Frame(None, -1, 'designer.py')
-    b1 = wx.Button(f, -1, "foo")
-    b2 = wx.Button(f, -1, "bar")
-    d = BasicDesigner([f, b1, b2])
-    f.Show()
+    w = Window(title="hello world", name="frmTest", tool_window=False, 
+               resizable=True, visible=False)
+               
+    o = Button(w, name="btnTest1", label="click me!", default=True)
+    o = Button(w, name="btnTest2", label="click me!", default=True)
+    o = Label(w, name="lblTest", alignment="right", size=(-1, 500), text="hello!")
+    o = TextBox(w, name="txtTest", border=False, text="hello world!")
+    d = BasicDesigner(w)
+    w.show()
     app.MainLoop()
     
