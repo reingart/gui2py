@@ -37,6 +37,9 @@ class PropertyEditorPanel(wx.Panel):
         # store the property grid for future reference
         self.pg = pg
         
+        # load empty object (just draws categories)
+        self.load_object(None)
+        
         # sizing stuff:        
         topsizer.Add(pg, 1, wx.EXPAND)
         panel.SetSizer(topsizer)
@@ -67,6 +70,8 @@ class PropertyEditorPanel(wx.Panel):
                               ): 
             
             pg.Append(wxpg.PropertyCategory("%s - %s" % (i, cat)))
+            if obj is None:
+                continue
             specs = sorted(obj._meta.specs.items(), key=lambda it: it[0])
             for name, spec in specs:
                 if DEBUG: print spec, class_, spec.type

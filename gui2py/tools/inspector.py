@@ -17,7 +17,7 @@ class InspectorPanel(wx.Panel):
         self.tree = gizmos.TreeListCtrl(self, -1, style =
                                         wx.TR_DEFAULT_STYLE
                                         | wx.TR_HAS_BUTTONS
-                                        | wx.TR_TWIST_BUTTONS
+                                        #| wx.TR_TWIST_BUTTONS
                                         | wx.TR_ROW_LINES
                                         | wx.TR_COLUMN_LINES
                                         #| wx.TR_NO_LINES 
@@ -32,7 +32,6 @@ class InspectorPanel(wx.Panel):
         self.images_map = {}
         for name, ctrl in registry.CONTROLS.items() + registry.WINDOWS.items():
             if ctrl._image:
-                print "load", name, ctrl
                 #bmp = wx.Bitmap(os.path.join(path, filename), wx.BITMAP_TYPE_XPM)
                 self.images_map[name] = il.Add(ctrl._image.GetBitmap().ConvertToImage().Scale(16,16).ConvertToBitmap())             
  
