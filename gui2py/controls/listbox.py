@@ -94,7 +94,7 @@ class ItemContainerControl(Control):
             data_list = a_iter
 
         # set the strings
-        self.wx_obj.Set(string_list)
+        self.wx_obj.SetItems(string_list)
         # set the associated data
         for i, data in enumerate(data_list):
             self.set_data(i, data)
