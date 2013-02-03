@@ -63,3 +63,10 @@ custom = PyEmbeddedImage(
     "ZzN6WcZWSl6T5GS9lulVXQOw8X2dcj3TzWTC22jEbjjUgmqZ3sznDMKQ68VCC6pl2ho2nmcO"
     "uvF90JwnXPpBUcrYO/0NrarKGFRc4o/6BMuAaAwB5rcdAAAAAElFTkSuQmCC")
 
+#----------------------------------------------------------------------
+frame = PyEmbeddedImage(
+    "iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAABHNCSVQICAgIfAhkiAAAAIhJ"
+    "REFUOI3t1LENAyEMheHfd9TswUwMQhIo41FY6QZhAacISlKkSnzFSWfJMjSf9GTJIsuKdy3u"
+    "IhBu14t5gqUUAoAqGAoGIvVnsFaIMb7jixky32b3V3/+v9W2ZUDnnFat1TW+qj7j55xJKf0N"
+    "ttaAnbZ/oid6BDQA9N591TGGAa4th7n8u6APH3E8/05PRJIAAAAASUVORK5CYII=")
+

@@ -3,6 +3,7 @@ import wx
 from ..components import Component, Spec, InitSpec, EventSpec, StyleSpec
 from ..event import UIEvent
 from .. import registry
+from .. import images
 
 
 class Window(Component):
@@ -11,6 +12,7 @@ class Window(Component):
     _wx_class = wx.Frame
     _style = wx.NO_FULL_REPAINT_ON_RESIZE
     _registry = registry.WINDOWS
+    _image = images.frame
 
     def __init__(self, parent=None, **kwargs):
         "Initialize this instance."
