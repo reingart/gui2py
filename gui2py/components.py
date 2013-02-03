@@ -90,8 +90,6 @@ class Component(object):
                 del self._parent[self._name]    # remove old child reference
         else:
             self._parent = parent       # store parent
-        if isinstance(self._parent, Component) and 'name' in kwargs:
-            self._parent[kwargs['name']] = self     # add child reference
         
         self.wx_obj = None      # set up a void wx object (needed by setters)
         
@@ -145,7 +143,9 @@ class Component(object):
                 
         # store gui2py reference inside of wx object
         self.wx_obj.reference = self
-
+        if isinstance(self._parent, Component) and self._name:
+            self._parent[self._name] = self     # add child reference
+            
     def _set_style(self, **kwargs):
         for spec_name, spec in self._meta.specs.items():
             if isinstance(spec, StyleSpec):
