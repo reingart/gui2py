@@ -45,7 +45,7 @@ class ItemContainerControl(Control):
     def _get_data_selection(self):
         if self.multiselect:
             return [self.wx_obj.GetClientData(i) for i in 
-                    self.wx_obj.GetSelections()]
+                    self.wx_obj.GetSelections() if i>=0]
         else:
             i = self.wx_obj.GetSelection()
             return self.wx_obj.GetClientData(i)
