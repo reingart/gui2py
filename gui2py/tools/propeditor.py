@@ -9,9 +9,9 @@ from gui2py.font import Font
 
 DEBUG = False
 
-class TestPanel( wx.Panel ):
+class PropertyEditorPanel(wx.Panel):
 
-    def __init__( self, parent, obj, log ):
+    def __init__( self, parent, log ):
         wx.Panel.__init__(self, parent, wx.ID_ANY)
         self.log = log
 
@@ -34,10 +34,31 @@ class TestPanel( wx.Panel ):
         pg.Bind( wxpg.EVT_PG_RIGHT_CLICK, self.OnPropGridRightClick )
 
         ##pg.AddPage( "Page 1 - Testing All" )
+        # store the property grid for future reference
+        self.pg = pg
+        
+        # sizing stuff:        
+        topsizer.Add(pg, 1, wx.EXPAND)
+        panel.SetSizer(topsizer)
+        topsizer.SetSizeHints(panel)
 
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        sizer.Add(panel, 1, wx.EXPAND)
+        self.SetSizer(sizer)
+        self.SetAutoLayout(True)
+
+    def load_object(self, obj):
+        pg = self.pg    # get the property grid reference
+        
+        # delete all properties
+        pg.Clear()
+        
+        # clean references and aux structures
         appended = set()
         self.obj = obj
         self.groups = {}
+        
+        # loop on specs and append each property (categorized):
         for i, cat, class_ in ((1, 'Init Specs', InitSpec), 
                                (2, 'Dimension Specs', DimensionSpec),
                                (3, 'Style Specs', StyleSpec), 
@@ -142,15 +163,6 @@ class TestPanel( wx.Panel ):
         # calls (and for other property insertion methods as well)
         ##pg.AddPage( "Page 2 - Results of AutoFill will appear here" )
 
-        topsizer.Add(pg, 1, wx.EXPAND)
-
-        panel.SetSizer(topsizer)
-        topsizer.SetSizeHints(panel)
-
-        sizer = wx.BoxSizer(wx.VERTICAL)
-        sizer.Add(panel, 1, wx.EXPAND)
-        self.SetSizer(sizer)
-        self.SetAutoLayout(True)
 
     def OnPropGridChange(self, event):
         p = event.GetProperty()
@@ -224,7 +236,8 @@ if __name__ == '__main__':
     frame.Show()
 
     log = sys.stdout
-    w = TestPanel(f, o, log)
+    w = PropertyEditorPanel(f, log)
+    w.load_object(o)
     f.Show()
     app.MainLoop()
 
