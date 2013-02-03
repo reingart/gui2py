@@ -59,7 +59,7 @@ class BasicDesigner:
         print wx_obj
         sx, sy = wx_obj.ScreenToClient(wx_obj.GetPositionTuple())
         dx, dy = wx_obj.ScreenToClient(wx.GetMousePosition())
-        self.current['pos'] = evt.GetPosition()
+        self.current['pos'] = wx_obj.ScreenToClient(wx.GetMousePosition())
         self.current['start'] = (sx - dx, sy - dy)
         self.current['wx_obj'] = wx_obj
         self.resizing = self.hit_test(wx_obj, evt.GetPosition())
@@ -76,7 +76,8 @@ class BasicDesigner:
             x, y = wx.GetMousePosition()
             if self.resizing:
                 # calculate the pos (minus the offset, not in a panel like rw!)
-                pos = evt.GetPosition() - wx_obj.GetPositionTuple()
+                #dx, dy = wx_obj.ScreenToClient(wx.GetMousePosition())
+                pos = wx_obj.ScreenToClient(wx.GetMousePosition())
                 delta = self.current['pos'] - pos 
                 new_size = wx_obj.GetSize() - delta.Get()
                 self.adjust_new_size(wx_obj, new_size)
