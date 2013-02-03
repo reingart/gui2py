@@ -64,8 +64,6 @@ class Component(object):
     _image = None               # default icon for toolbox
     
     def __init__(self, parent=None, **kwargs):
-        self._font = None
-        self._children = {}    # container to hold children
     
         # create the wxpython kw arguments (based on specs and defaults)
         wx_kwargs = dict(id=new_id(kwargs.get('id')))
@@ -90,6 +88,8 @@ class Component(object):
                 del self._parent[self._name]    # remove old child reference
         else:
             self._parent = parent       # store parent
+            self._font = None
+            self._children = {}    # container to hold children
         
         self.wx_obj = None      # set up a void wx object (needed by setters)
         
@@ -145,6 +145,12 @@ class Component(object):
         self.wx_obj.reference = self
         if isinstance(self._parent, Component) and self._name:
             self._parent[self._name] = self     # add child reference
+        
+        # re-associate childrens (wx objects hierachy): 
+        if rebuild:
+            for ctrl in self:
+                print "reparenting", ctrl.name 
+                ctrl.wx_obj.Reparent(self.wx_obj)
             
     def _set_style(self, **kwargs):
         for spec_name, spec in self._meta.specs.items():
