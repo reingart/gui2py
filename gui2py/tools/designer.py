@@ -55,16 +55,19 @@ class BasicDesigner:
         "Get the selected object and store start position"
         print "down!"
         wx_obj = evt.GetEventObject()
-        print wx_obj
-        sx, sy = wx_obj.ScreenToClient(wx_obj.GetPositionTuple())
-        dx, dy = wx_obj.ScreenToClient(wx.GetMousePosition())
-        self.current['pos'] = wx_obj.ScreenToClient(wx.GetMousePosition())
-        self.current['start'] = (sx - dx, sy - dy)
-        self.current['wx_obj'] = wx_obj
-        self.resizing = self.hit_test(wx_obj, evt.GetPosition())
-        print "capture..."
-        # do not capture on TextCtrl, it will fail (blocking) at least in gtk
-        self.parent.CaptureMouse()
+        if wx_obj.Parent is None:
+            evt.Skip()
+        else:
+            print wx_obj
+            sx, sy = wx_obj.ScreenToClient(wx_obj.GetPositionTuple())
+            dx, dy = wx_obj.ScreenToClient(wx.GetMousePosition())
+            self.current['pos'] = wx_obj.ScreenToClient(wx.GetMousePosition())
+            self.current['start'] = (sx - dx, sy - dy)
+            self.current['wx_obj'] = wx_obj
+            self.resizing = self.hit_test(wx_obj, evt.GetPosition())
+            print "capture..."
+            # do not capture on TextCtrl, it will fail (blocking) at least in gtk
+            self.parent.CaptureMouse()
 
 
     def mouse_move(self, evt):
@@ -105,7 +108,7 @@ class BasicDesigner:
                 else:
                     wx_obj.SetCursor(wx.StockCursor(wx.CURSOR_SIZING))
             else: 
-                pass        
+                pass
 
     def mouse_up(self, evt):
         "Release the selected object"
