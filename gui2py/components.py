@@ -216,7 +216,7 @@ class Component(object):
                 if not isinstance(spec, InternalSpec) 
                    and getattr(self, k) != spec.default
                    and isinstance(getattr(self, k), 
-                                  (basestring, int, long, bool, dict, Font))                
+                         (basestring, int, long, bool, dict, list, Font))                
                 ]))
 
     # properties:
