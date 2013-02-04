@@ -99,10 +99,13 @@ class StyleSpec(Spec):
         def getter(obj): 
             # reverse search the prop value for the wx_style:
             wx_value = getattr(obj, "_style")
+            zero = None     # key when not setted (zero value)
             for key, value in self.wx_style_map.items():
                 if wx_value & value:
                     return key
-            return None
+                elif not value:
+                    zero = key
+            return zero
 
         def setter(obj, value):
             if value is None:
