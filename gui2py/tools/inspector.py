@@ -49,6 +49,7 @@ class InspectorPanel(wx.Panel):
         self.tree.Bind(wx.EVT_TREE_ITEM_ACTIVATED, self.OnActivate)
 
     def load_object(self, obj):
+        "Add the object and all their childs"
         self.tree.DeleteAllItems()
         self.root = self.tree.AddRoot("application")
         self.tree.SetItemText(self.root, "App", 1)
@@ -59,6 +60,17 @@ class InspectorPanel(wx.Panel):
         self.build_tree(self.root, obj)
         self.tree.Expand(self.root)
 
+    def inspect(self, obj):
+        "Select the object and show its properties"
+        child = self.tree.FindItem(self.root, obj.name)
+        print "inspect child", child
+        if child:
+            self.tree.ScrollTo(child)
+            self.tree.SetCurrentItem(child)
+            self.tree.SelectItem(child)
+            child.Selected = True
+            self.activate_item(child)
+            
 
     def build_tree(self, parent, obj):
         child = self.tree.AppendItem(parent, obj.name)
@@ -75,6 +87,9 @@ class InspectorPanel(wx.Panel):
         child = evt.GetItem()
         print('OnActivate: %s' % self.tree.GetItemText(child))
         f = wx.Frame(self)
+    
+    def activate_item(self, child):
+        "load the selected item in the property editor"
         o = self.tree.GetItemData(child).GetData()
         self.propeditor.load_object(o)
         self.propeditor.Parent.SetFocus()
@@ -134,7 +149,7 @@ if __name__ == '__main__':
     f2.Show()
     
     from gui2py.tools.designer import BasicDesigner
-    d = BasicDesigner(w)
+    d = BasicDesigner(w, inspector)
     
     #import wx.lib.inspection
     #wx.lib.inspection.InspectionTool().Show()

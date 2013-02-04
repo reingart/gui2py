@@ -11,13 +11,14 @@ RW_LENGTH = 12
 class BasicDesigner:
     "Simple point-and-click layout designer (support moving controls)"
 
-    def __init__(self, parent):
+    def __init__(self, parent, inspector=None):
         self.parent = parent.wx_obj
         self.current = {}
         self.resizing = False
         # bind all objects that can be controlled by this class
         print "binding", parent.name
         parent.designer = self.mouse_over
+        self.inspector = inspector
         
 
     def hit_test(self, wx_obj, pos):
@@ -114,6 +115,8 @@ class BasicDesigner:
             if self.parent.HasCapture():
                 self.parent.ReleaseMouse()
             self.current = {}
+            if self.inspector:
+                self.inspector.inspect(wx_obj.reference)
 
     def OnLayoutNeeded(self, evt):
         self.parent.Layout()
