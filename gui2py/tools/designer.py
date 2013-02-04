@@ -122,43 +122,96 @@ class BasicDesigner:
 
     def OnLayoutNeeded(self, evt):
         self.parent.wx_obj.Layout()
-        
 
-if __name__ == "__main__":
-    from gui2py.controls import Button, Label, TextBox, CheckBox, ListBox, ComboBox
+
+def save(evt):
+    "Basic save functionality: just replaces the gui code"
+    w = evt.target
+    print "saving..."
+    # make a backup:
+    fin = open("sample.pyw", "ru")
+    fout = open("sample.pyw.bak", "w")
+    fout.write(fin.read())
+    fout.close()
+    fin.close()
+    # reopen the files to proccess them
+    fin = open("sample.pyw.bak", "ru")
+    fout = open("sample.pyw", "w")
+    copy = True
+    newlines = fin.newlines or "\n"
+    for line in fin:
+        if line.startswith("# --- gui2py designer start ---"):
+            fout.write(line)
+            fout.write(newlines)
+            fout.write(str(w))
+            fout.write(newlines)
+            for ctl in w:
+                fout.write(str(ctl))
+                fout.write(newlines)
+            fout.write(newlines)
+            copy = False
+        if line.startswith("# --- gui2py designer end ---"):
+            copy = True
+        if copy:
+            fout.write(line)
+            #fout.write("\n\r")
+    fout.close()
+    fin.close()
+    exit()
+
+
+if __name__ == '__main__':
+    # basic proof-of-concept visual gui2py designer
+    
+    import sys,os
+    app = wx.App(redirect=None)    
+
+    # import controls (fill the registry!)
     from gui2py.windows import Window
+    import gui2py.controls
+
+    # import tools used by the designer
+    from gui2py.tools.inspector import InspectorPanel
+    from gui2py.tools.propeditor import PropertyEditorPanel
+    from gui2py.tools.designer import BasicDesigner
+    from gui2py.tools.toolbox import ToolBox, ToolBoxDropTarget
+
+    # create the windows and the property editor / inspector
+    log = sys.stdout
+    f1 = wx.Frame(None, pos=(600,0), size=(300, 300))
+    f2 = wx.Frame(None, pos=(600,350), size=(300, 300))
+    propeditor = PropertyEditorPanel(f2, log)
+    inspector = InspectorPanel(f1, propeditor, log)
+    f1.Show()
+    f2.Show()
     
-    app = wx.App(redirect=False)
-    w = Window(title="hello world", name="frmTest", tool_window=False, 
-               resizable=True, visible=False)
-               
-    o = Button(w, name="btnTest1", label="click me!", default=True)
-    o = Button(w, name="btnTest2", label="click me!", default=True)
-    o = Label(w, name="lblTest", alignment="right", size=(-1, 500), text="hello!")
-    o = TextBox(w, name="txtTest", border=False, text="hello world!")
-    o = CheckBox(w, name="chkTest", border='none', label="Check me!")
-    o = ListBox(w, name="lstTest", border='none', 
-                items={'datum1': 'a', 'datum2':'b', 'datum3':'c'},
-                )
-    o = ComboBox(w, name="cboTest",
-                items={'datum1': 'a', 'datum2':'b', 'datum3':'c'},
-                readonly=True,
-                )
-    
-    # associate designer functionality to the window and childs:
-    d = BasicDesigner(w)    # NOTE: it will disable some custom event handlers
-    
-    # create a toolbox and associate the window with it
-    # (this will allow to drop new controls on the window)
-    from toolbox import ToolBox, ToolBoxDropTarget
-    frame = wx.Frame(None)
+    # create a toolbox 
+    frame = wx.Frame(None, pos=(0, 0), size=(100, 400))
     tb = ToolBox(frame)
-    dt = ToolBoxDropTarget(w.wx_obj, designer=d)
-    w.wx_obj.SetDropTarget(dt)
+
+    filename = "sample.pyw"
+    vars = {}
+    execfile(filename, vars)
+    w = None
+    for name, value in vars.items():
+        if not isinstance(value, Window):
+            continue
+        w = value       # TODO: support many windows
+        # load the window in the widget inspector
+        inspector.load_object(w)
+        # associate the window with the designer: 
+        # (override mouse events to allow moving and resizing)
+        designer = BasicDesigner(w, inspector)
+        # associate the window with the toolbox:
+        # (this will allow to drop new controls on the window)
+        dt = ToolBoxDropTarget(w, designer=designer, inspector=inspector)
+        w.drop_target = dt
+        w.show()
+
+    w.onunload = save 
+    
     frame.Show()
     tb.Show()
-
-    w.show()
-
-    app.MainLoop()
     
+    app.MainLoop()
+
