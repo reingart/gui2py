@@ -48,7 +48,8 @@ class ItemContainerControl(Control):
                     self.wx_obj.GetSelections() if i>=0]
         else:
             i = self.wx_obj.GetSelection()
-            return self.wx_obj.GetClientData(i)
+            if i >= 0:
+                return self.wx_obj.GetClientData(i)
 
     def _set_data_selection(self, data):
         # an arg of None or empty string will remove the selection
