@@ -131,7 +131,7 @@ class InspectorPanel(wx.Panel):
 
     def highlight(self, win):
         if win:
-            rect = win.GetRect()
+            rect = win.GetClientRect()
             tlw = win.GetTopLevelParent()
             pos = win.ClientToScreen((0,0))
             rect.SetPosition(pos)
@@ -143,7 +143,7 @@ class InspectorPanel(wx.Panel):
         d = self.tree.GetItemData(child)
         if d:
             o = d.GetData()
-            self.highlight(o.wx_obj)
+            self.highlight(o.wx_obj if o else None)
 
 
     def OnRightUp(self, evt):
