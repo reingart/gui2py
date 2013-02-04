@@ -76,7 +76,7 @@ class Component(object):
             for spec_name, spec in self._meta.specs.items():
                 if spec_name in kwargs:
                     continue    # use provided new value
-                if not isinstance(spec, (StyleSpec, InitSpec, InternalSpec)):
+                if not isinstance(spec, (InternalSpec)):
                     # get the current value and store it in kwargs
                     kwargs[spec_name]  = getattr(self, spec_name)
             self.wx_obj.Visible = False
