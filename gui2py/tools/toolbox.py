@@ -127,12 +127,13 @@ class ToolBoxDropTarget(wx.PyDropTarget):
             ctrl_name = self.data.GetData()
             ctrl = registry.CONTROLS[ctrl_name]
             # create the control on the parent:
-            ctrl(self.dv.reference, 
-                 name="%s_%s_%s" % (ctrl_name.lower(), x, y), 
-                 pos=(x, y), designer=self.designer)
+            obj = ctrl(self.dv.reference, 
+                       name="%s_%s_%s" % (ctrl_name.lower(), x, y), 
+                       pos=(x, y), designer=self.designer)
             # update the object at the inspector (to show the new control)
             if self.inspector:
                 self.inspector.load_object(self.dv.reference)
+                self.inspector.inspect(obj)
 
         # what is returned signals the source what to do
         # with the original data (move, copy, etc.)  In this
