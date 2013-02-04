@@ -207,7 +207,7 @@ if __name__ == '__main__':
     from toolbox import ToolBox, ToolBoxDropTarget
     frame = wx.Frame(None, pos=(0, 0), size=(100, 400))
     tb = ToolBox(frame)
-    dt = ToolBoxDropTarget(w.wx_obj, designer=designer, inspector=inspector)
+    dt = ToolBoxDropTarget(w, designer=designer, inspector=inspector)
     w.drop_target = dt
     frame.Show()
     tb.Show()

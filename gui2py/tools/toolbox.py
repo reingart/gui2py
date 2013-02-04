@@ -112,7 +112,7 @@ class ToolBoxDropTarget(wx.PyDropTarget):
         # which is based on whether the Ctrl key is pressed.
                 
         if self.inspector:
-            self.inspector.highlight(self.dv)   # show the possible drop target
+            self.inspector.highlight(self.dv.wx_obj)   # show the possible drop target
 
         return d
 
@@ -127,12 +127,12 @@ class ToolBoxDropTarget(wx.PyDropTarget):
             ctrl_name = self.data.GetData()
             ctrl = registry.CONTROLS[ctrl_name]
             # create the control on the parent:
-            obj = ctrl(self.dv.reference, 
+            obj = ctrl(self.dv, 
                        name="%s_%s_%s" % (ctrl_name.lower(), x, y), 
                        pos=(x, y), designer=self.designer)
             # update the object at the inspector (to show the new control)
             if self.inspector:
-                self.inspector.load_object(self.dv.reference)
+                self.inspector.load_object(self.dv)
                 self.inspector.inspect(obj)
 
         # what is returned signals the source what to do
