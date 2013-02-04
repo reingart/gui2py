@@ -79,10 +79,11 @@ class ToolBox(aui.AuiToolBar):
 class ToolBoxDropTarget(wx.PyDropTarget):
     "Target of Drag&Drop operation (will create the dropped control)"
     
-    def __init__(self, window, designer=None):
+    def __init__(self, window, designer=None, inspector=None):
         wx.PyDropTarget.__init__(self)
         self.dv = window
         self.designer = designer  # used in design mode (set special handlers)
+        self.inspector = inspector
 
         # specify the type of data we will accept
         self.data = wx.CustomDataObject("gui2py")
@@ -109,6 +110,10 @@ class ToolBoxDropTarget(wx.PyDropTarget):
         # moves.  You can use the passed in (x,y) to determine what kind
         # of feedback to give.  In this case we return the suggested value
         # which is based on whether the Ctrl key is pressed.
+                
+        if self.inspector:
+            self.inspector.highlight(self.dv)   # show the possible drop target
+
         return d
 
     # Called when OnDrop returns True.  We need to get the data and

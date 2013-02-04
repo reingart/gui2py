@@ -200,10 +200,18 @@ if __name__ == '__main__':
     f2.Show()
     
     from gui2py.tools.designer import BasicDesigner
-    d = BasicDesigner(w, inspector)
+    designer = BasicDesigner(w, inspector)
+
+    # create a toolbox and associate the window with it
+    # (this will allow to drop new controls on the window)
+    from toolbox import ToolBox, ToolBoxDropTarget
+    frame = wx.Frame(None)
+    tb = ToolBox(frame)
+    dt = ToolBoxDropTarget(w.wx_obj, designer=designer, inspector=inspector)
+    w.wx_obj.SetDropTarget(dt)
+    frame.Show()
+    tb.Show()
     
-    #import wx.lib.inspection
-    #wx.lib.inspection.InspectionTool().Show()
     
     app.MainLoop()
 
