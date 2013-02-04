@@ -11,6 +11,8 @@ class InspectorPanel(wx.Panel):
     def __init__(self, parent, propeditor, log):
         self.log = log
         self.propeditor = propeditor
+        self.highlighting = None
+        
         wx.Panel.__init__(self, parent, -1)
         self.Bind(wx.EVT_SIZE, self.OnSize)
 
@@ -47,6 +49,8 @@ class InspectorPanel(wx.Panel):
 
         self.tree.GetMainWindow().Bind(wx.EVT_RIGHT_UP, self.OnRightUp)
         self.tree.Bind(wx.EVT_TREE_ITEM_ACTIVATED, self.OnActivate)
+        self.tree.Bind(wx.EVT_TREE_SEL_CHANGED, self.OnSelect)
+
 
     def load_object(self, obj):
         "Add the object and all their childs"
@@ -90,10 +94,57 @@ class InspectorPanel(wx.Panel):
     
     def activate_item(self, child):
         "load the selected item in the property editor"
-        o = self.tree.GetItemData(child).GetData()
-        self.propeditor.load_object(o)
-        self.propeditor.Parent.SetFocus()
-        
+        d = self.tree.GetItemData(child)
+        if d:
+            o = d.GetData()
+            self.propeditor.load_object(o)
+            self.propeditor.Parent.SetFocus()
+    
+    def do_highlight(self, tlw, rect, colour, pen_width=2):
+        if not self.highlighting:
+            self.highlighting = tlw
+            if not tlw.IsFrozen():
+                tlw.Freeze()
+
+            dc = wx.ScreenDC()
+            dco = None
+                
+            dc.SetPen(wx.Pen(colour, pen_width))
+            dc.SetBrush(wx.TRANSPARENT_BRUSH)
+
+            drawRect = wx.Rect(*rect)
+            dc.DrawRectangleRect(drawRect)
+
+            drawRect.Inflate(2,2)
+            pos = tlw.ScreenToClient(drawRect.GetPosition())
+            drawRect.SetPosition(pos)
+            wx.CallLater(300, self.do_unhighlight, tlw, drawRect)
+            return dc, dco
+    
+    def do_unhighlight(self, tlw, rect):
+        if not tlw:
+            return
+        if tlw.IsFrozen():
+            tlw.Thaw()
+        tlw.RefreshRect(rect)
+        self.highlighting = None
+
+    def highlight(self, win):
+        if win:
+            rect = win.GetRect()
+            tlw = win.GetTopLevelParent()
+            pos = win.ClientToScreen((0,0))
+            rect.SetPosition(pos)
+            self.do_highlight(tlw, rect, 'red')
+
+    def OnSelect(self, evt):
+        child = evt.GetItem()
+        print('OnSelect: %s' % self.tree.GetItemText(child))
+        d = self.tree.GetItemData(child)
+        if d:
+            o = d.GetData()
+            self.highlight(o.wx_obj)
+
 
     def OnRightUp(self, evt):
         pos = evt.GetPosition()
@@ -118,7 +169,7 @@ def runTest(frame, nb, log):
 
 if __name__ == '__main__':
     import sys,os
-    app = wx.App()
+    app = wx.App(redirect=None)
     
     from gui2py.controls import Button, Label, TextBox, CheckBox, ListBox, ComboBox
     from gui2py.windows import Window
