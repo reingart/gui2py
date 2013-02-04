@@ -149,14 +149,14 @@ class Component(object):
         # re-associate childrens (wx objects hierachy): 
         if rebuild:
             for ctrl in self:
-                print "reparenting", ctrl.name 
+                if DEBUG: print "reparenting", ctrl.name 
                 ctrl.wx_obj.Reparent(self.wx_obj)
                 
         # finally, set special internal spec (i.e. designer)
         # (this must be done at last to overwrite other event handlers)
         for spec_name, spec in self._meta.specs.items():
-            print "resetting internal specs (rebound...):", spec_name, self.name
             if isinstance(spec, InternalSpec):
+                if DEBUG: print "resetting internal specs (rebound...):", spec_name, self.name
                 value = kwargs.get(spec_name, getattr(self, spec_name, None))
                 setattr(self, spec_name, value)
 
@@ -315,7 +315,7 @@ class Component(object):
         return self.wx_obj.GetCharHeight()
 
     def set_designer(self, func):
-        print "binding designer handler...", func, self._meta.name
+        if DEBUG: print "binding designer handler...", func, self._meta.name
         if func:
             # remove all binded events:
             self.wx_obj.Unbind(wx.EVT_MOTION)
