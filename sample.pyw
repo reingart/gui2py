@@ -1,6 +1,10 @@
 
 import wx
-app = wx.App()
+
+app = wx.GetApp()
+if app is None:
+    app = wx.App()
+
 from gui2py.windows import Window
 from gui2py.controls import Button, Label, TextBox, CheckBox, ListBox, ComboBox
 
