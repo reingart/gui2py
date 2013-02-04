@@ -1,6 +1,6 @@
 import wx
 from ..event import FormEvent
-from ..components import Control, Spec, EventSpec, new_id
+from ..components import Control, Spec, EventSpec, InitSpec
 from .. import images
 
 
@@ -14,9 +14,9 @@ class CheckBox(Control):
     checked = Spec(lambda self: self.wx_obj.GetValue(), 
                    lambda self, value: self.wx_obj.SetValue(value), 
                    default=False, type="boolean")
-    label = Spec(lambda self: self.wx_obj.GetLabel(), 
-                 lambda self, value: self.wx_obj.SetLabel(value),
-                 type="string", default="")
+    label = InitSpec(lambda self: self.wx_obj.GetLabel(), 
+                     lambda self, value: self.wx_obj.SetLabel(value),
+                     type="string", default="Option")
 
     onclick = EventSpec('click', binding=wx.EVT_CHECKBOX, kind=FormEvent)
 

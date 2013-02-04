@@ -1,7 +1,7 @@
 
 import wx
 from ..event import FormEvent
-from ..components import Control, Spec, EventSpec
+from ..components import Control, Spec, EventSpec, InitSpec
 from .. import images 
 
 
@@ -23,10 +23,10 @@ class Button(Control):
             self.wx_obj.SetDefault()
 
     default = Spec(_getDefault, _setDefault, default=False, type="boolean")
-    label = Spec(lambda self: self.wx_obj.GetLabel(), 
-                 lambda self, label: self.wx_obj.SetLabel(label),
-                 optional=False, default='Button', type="string", 
-                 doc="text to show as caption")
+    label = InitSpec(lambda self: self.wx_obj.GetLabel(), 
+                     lambda self, label: self.wx_obj.SetLabel(label),
+                     optional=False, default='Button', type="string", 
+                     doc="text to show as caption")
     onclick = EventSpec('click', binding=wx.EVT_BUTTON, kind=FormEvent)
 
 
