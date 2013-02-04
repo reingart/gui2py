@@ -135,13 +135,16 @@ class Component(object):
             if spec_name in kwargs:
                 # set the value passed to the constructor
                 setattr(self, spec_name, kwargs[spec_name])
-            elif spec.default is not None:
+            elif spec.default is not None or isinstance(spec, EventSpec):
                 # set the default value
                 setattr(self, spec_name, spec.default)
             elif not spec.optional:
                 raise ValueError("%s: %s is not optional" % (self._meta.name,
                                                              spec_name))
-                            
+            else:
+                # asign a empty value (just to set up internal properties)
+                setattr(self, spec_name, None)
+                    
         # store gui2py reference inside of wx object
         self.wx_obj.reference = self
         if isinstance(self._parent, Component) and self._name:
