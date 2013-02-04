@@ -2,7 +2,7 @@ import wx
 
 from .event import FocusEvent, MouseEvent, KeyEvent
 from .font import Font
-from .spec import Spec, EventSpec, InitSpec, DimensionSpec, StyleSpec
+from .spec import Spec, EventSpec, InitSpec, DimensionSpec, StyleSpec, InternalSpec
 from . import registry
 
 DEBUG = False
@@ -76,7 +76,7 @@ class Component(object):
             for spec_name, spec in self._meta.specs.items():
                 if spec_name in kwargs:
                     continue    # use provided new value
-                if not isinstance(spec, (StyleSpec, InitSpec)):
+                if not isinstance(spec, (StyleSpec, InitSpec, InternalSpec)):
                     # get the current value and store it in kwargs
                     kwargs[spec_name]  = getattr(self, spec_name)
             self.wx_obj.Visible = False
@@ -129,7 +129,7 @@ class Component(object):
         self.wx_obj = self._wx_class(wx_parent, **self._wx_kwargs)
         # load specs from kwargs, use default if available
         for spec_name, spec in self._meta.specs.items():
-            if spec.read_only or isinstance(spec, (StyleSpec, InitSpec)):
+            if spec.read_only or isinstance(spec, (StyleSpec, InitSpec, InternalSpec)):
                 continue
             # get the spec value for kwargs, if it is optional, get the default
             value = kwargs.get(spec_name)
@@ -138,7 +138,7 @@ class Component(object):
                                                              spec_name))
             elif value is None:
                 value = spec.default
-            if DEBUG: print "setting", spec_name, value
+            if DEBUG or spec_name=="designer": print "setting", spec_name, value
             setattr(self, spec_name, value)
                 
         # store gui2py reference inside of wx object
@@ -151,11 +151,15 @@ class Component(object):
             for ctrl in self:
                 print "reparenting", ctrl.name 
                 ctrl.wx_obj.Reparent(self.wx_obj)
-            
-    def _set_style(self, **kwargs):
+                
+        # finally, set special internal spec (i.e. designer)
+        # (this must be done at last to overwrite other event handlers)
         for spec_name, spec in self._meta.specs.items():
-            if isinstance(spec, StyleSpec):
+            print "resetting internal specs (rebound...):", spec_name, self.name
+            if isinstance(spec, InternalSpec):
+                value = kwargs.get(spec_name, getattr(self, spec_name, None))
                 setattr(self, spec_name, value)
+
 
     # Container methods:
 
@@ -310,6 +314,26 @@ class Component(object):
         "Returns the character height for this window."
         return self.wx_obj.GetCharHeight()
 
+    def set_designer(self, func):
+        print "binding designer handler...", func, self._meta.name
+        if func:
+            # remove all binded events:
+            self.wx_obj.Unbind(wx.EVT_MOTION)
+            self.wx_obj.Unbind(wx.EVT_LEFT_DOWN)
+            self.wx_obj.Unbind(wx.EVT_LEFT_UP)
+            self.wx_obj.Unbind(wx.EVT_LEFT_DCLICK)
+            self.wx_obj.Unbind(wx.EVT_RIGHT_DOWN)
+            self.wx_obj.Unbind(wx.EVT_RIGHT_UP)
+            self.wx_obj.Unbind(wx.EVT_RIGHT_DCLICK)
+            self.wx_obj.Unbind(wx.EVT_MOUSE_EVENTS)
+            self.wx_obj.Unbind(wx.EVT_ENTER_WINDOW)
+            self.wx_obj.Unbind(wx.EVT_LEAVE_WINDOW)
+            # connect the mouse event handler of the designer:
+            self.wx_obj.Bind(wx.EVT_MOUSE_EVENTS, func)
+            self._designer = func
+            for child in self:
+                child.designer = func
+        
     name = InitSpec(optional=False, default="", _name="_name", type='string')
     bgcolor = Spec(_getBackgroundColor, _setBackgroundColor, type='colour')
     font = Spec(_get_font, _set_font, type='font')
@@ -336,6 +360,10 @@ class Component(object):
     top = DimensionSpec(lambda self: str(self._get_pos()[1]), 
                            lambda self, value: self._set_pos([None, value]),
                            type="string", group="position")
+    designer = InternalSpec(lambda self: self._designer, 
+                            lambda self, value: self.set_designer(value), 
+                            doc="function to handle events in design mode", 
+                            type='internal')
                     
     # Events:
     onfocus = EventSpec('focus', binding=wx.EVT_SET_FOCUS, kind=FocusEvent)

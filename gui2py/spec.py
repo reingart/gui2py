@@ -78,6 +78,11 @@ class DimensionSpec(Spec):
     "Special Spec to manage position and size"
 
 
+class InternalSpec(Spec):
+    "Special Spec to manage designer and other internal handlers"
+    # use only for handlers that must automatically rebound on rebuild
+
+
 class StyleSpec(Spec):
     "Generic style specification to map wx windows styles to properties"
 

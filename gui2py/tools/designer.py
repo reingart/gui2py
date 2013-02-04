@@ -16,25 +16,9 @@ class BasicDesigner:
         self.current = {}
         self.resizing = False
         # bind all objects that can be controlled by this class
-        self.capture(parent)
-
-    def capture(self, obj):
-        print "binding", obj.name
-        # remove all binded events:
-        obj.wx_obj.Unbind(wx.EVT_MOTION)
-        obj.wx_obj.Unbind(wx.EVT_LEFT_DOWN)
-        obj.wx_obj.Unbind(wx.EVT_LEFT_UP)
-        obj.wx_obj.Unbind(wx.EVT_LEFT_DCLICK)
-        obj.wx_obj.Unbind(wx.EVT_RIGHT_DOWN)
-        obj.wx_obj.Unbind(wx.EVT_RIGHT_UP)
-        obj.wx_obj.Unbind(wx.EVT_RIGHT_DCLICK)
-        obj.wx_obj.Unbind(wx.EVT_MOUSE_EVENTS)
-        obj.wx_obj.Unbind(wx.EVT_ENTER_WINDOW)
-        obj.wx_obj.Unbind(wx.EVT_LEAVE_WINDOW)
-        # connect our mouse event handler:
-        obj.wx_obj.Bind(wx.EVT_MOUSE_EVENTS, self.mouse_over)
-        for ctrl in obj:
-            self.capture(ctrl)
+        print "binding", parent.name
+        parent.designer = self.mouse_over
+        
 
     def hit_test(self, wx_obj, pos):
         # is the position in the area to be used for the resize handle?
@@ -104,7 +88,7 @@ class BasicDesigner:
                 wx_obj.SetPosition(wx.Point(x + sx, y + sy))
 
     def mouse_over(self, evt):
-        print "over!"
+        #print "over!"
         if self.current or evt.LeftIsDown():
             if evt.LeftDown():
                 self.mouse_down(evt)
@@ -139,7 +123,7 @@ if __name__ == "__main__":
     from gui2py.controls import Button, Label, TextBox, CheckBox, ListBox, ComboBox
     from gui2py.windows import Window
     
-    app = wx.App()
+    app = wx.App(redirect=False)
     w = Window(title="hello world", name="frmTest", tool_window=False, 
                resizable=True, visible=False)
                
@@ -147,6 +131,14 @@ if __name__ == "__main__":
     o = Button(w, name="btnTest2", label="click me!", default=True)
     o = Label(w, name="lblTest", alignment="right", size=(-1, 500), text="hello!")
     o = TextBox(w, name="txtTest", border=False, text="hello world!")
+    o = CheckBox(w, name="chkTest", border='none', label="Check me!")
+    o = ListBox(w, name="lstTest", border='none', 
+                items={'datum1': 'a', 'datum2':'b', 'datum3':'c'},
+                )
+    o = ComboBox(w, name="cboTest",
+                items={'datum1': 'a', 'datum2':'b', 'datum3':'c'},
+                readonly=True,
+                )
     d = BasicDesigner(w)
     w.show()
     app.MainLoop()

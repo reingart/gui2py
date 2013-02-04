@@ -132,5 +132,12 @@ if __name__ == '__main__':
     inspector.load_object(w)
     f1.Show()
     f2.Show()
+    
+    from gui2py.tools.designer import BasicDesigner
+    d = BasicDesigner(w)
+    
+    #import wx.lib.inspection
+    #wx.lib.inspection.InspectionTool().Show()
+    
     app.MainLoop()
 
