@@ -132,15 +132,16 @@ class Component(object):
             if spec.read_only or isinstance(spec, (StyleSpec, InitSpec, InternalSpec)):
                 continue
             # get the spec value for kwargs, if it is optional, get the default
-            value = kwargs.get(spec_name)
-            if not value and not spec.optional:
+            if spec_name in kwargs:
+                # set the value passed to the constructor
+                setattr(self, spec_name, kwargs[spec_name])
+            elif spec.default is not None:
+                # set the default value
+                setattr(self, spec_name, spec.default)
+            elif not spec.optional:
                 raise ValueError("%s: %s is not optional" % (self._meta.name,
                                                              spec_name))
-            elif value is None:
-                value = spec.default
-            if DEBUG or spec_name=="designer": print "setting", spec_name, value
-            setattr(self, spec_name, value)
-                
+                            
         # store gui2py reference inside of wx object
         self.wx_obj.reference = self
         if isinstance(self._parent, Component) and self._name:
