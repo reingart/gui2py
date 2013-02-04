@@ -16,7 +16,7 @@ class CheckBox(Control):
                    default=False, type="boolean")
     label = Spec(lambda self: self.wx_obj.GetLabel(), 
                  lambda self, value: self.wx_obj.SetLabel(value),
-                 type="string")
+                 type="string", default="")
 
     onclick = EventSpec('click', binding=wx.EVT_CHECKBOX, kind=FormEvent)
 

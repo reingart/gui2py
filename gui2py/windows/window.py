@@ -153,13 +153,15 @@ class Window(Component):
     # non-inherited properties:
     title = InitSpec(lambda self: self.wx_obj.GetTitle(), 
                      lambda self, value: self.wx_obj.SetTitle(value),
-                     optional=False)
+                     optional=False, default="", type="string")
     maximized = Spec(lambda self: self.wx_obj.IsMaximized(), 
                      lambda self, value: self.wx_obj.Maximize(value),
-                     doc="whether the window is maximized", default=False) 
+                     doc="whether the window is maximized", 
+                     default=False, type="boolean") 
     minimized = Spec(lambda self: self.wx_obj.IsIconized(), 
                      lambda self, value: self.wx_obj.Iconize(value), 
-                     doc="whether the window is minimized", default=False) 
+                     doc="whether the window is minimized", 
+                     default=False,type="boolean") 
 
     # styles:
     caption = StyleSpec(wx.CAPTION, doc="Puts a caption (title)", default=True)

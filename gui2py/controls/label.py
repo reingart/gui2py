@@ -12,8 +12,11 @@ class Label(Control):
     _style = wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS
     _image = images.label
 
-    def _setText(self, aString):
-        self.wx_obj.SetLabel(aString)
+    def _set_text(self, a_string):
+        self.wx_obj.SetLabel(a_string)
+        if self.size[0] <= 1:
+            # adjust default width (to actually show the label)
+            self.width = self.wx_obj.GetCharWidth() * len(a_string)
         self.wx_obj.Refresh()
         self.wx_obj.Update()
 
@@ -21,8 +24,8 @@ class Label(Control):
                            'center': wx.ALIGN_CENTER | wx.ST_NO_AUTORESIZE,
                            'right': wx.ALIGN_RIGHT | wx.ST_NO_AUTORESIZE},
                            default='center')
-    text = Spec(lambda self: self.wx_obj.GetLabel(), _setText,
-                     default="Label", type="string")
+    text = Spec(lambda self: self.wx_obj.GetLabel(), _set_text,
+                     default="sample text label...", type="string")
 
 
 if __name__ == "__main__":
