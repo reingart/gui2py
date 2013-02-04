@@ -17,7 +17,7 @@ class BasicDesigner:
         self.resizing = False
         # bind all objects that can be controlled by this class
         print "binding", parent.name
-        parent.designer = self.mouse_over
+        parent.designer = self
         self.inspector = inspector
         
 
@@ -91,8 +91,8 @@ class BasicDesigner:
             else:
                 wx_obj.SetPosition(wx.Point(x + sx, y + sy))
 
-    def mouse_over(self, evt):
-        #print "over!"
+    def __call__(self, evt):
+        "Handler for EVT_MOUSE_EVENTS (binded in design mode)"
         if self.current or evt.LeftIsDown():
             if evt.LeftDown():
                 self.mouse_down(evt)
@@ -145,7 +145,21 @@ if __name__ == "__main__":
                 items={'datum1': 'a', 'datum2':'b', 'datum3':'c'},
                 readonly=True,
                 )
-    d = BasicDesigner(w)
+    
+    # associate designer functionality to the window and childs:
+    d = BasicDesigner(w)    # NOTE: it will disable some custom event handlers
+    
+    # create a toolbox and associate the window with it
+    # (this will allow to drop new controls on the window)
+    from toolbox import ToolBox, ToolBoxDropTarget
+    frame = wx.Frame(None)
+    tb = ToolBox(frame)
+    dt = ToolBoxDropTarget(w.wx_obj, designer=d)
+    w.wx_obj.SetDropTarget(dt)
+    frame.Show()
+    tb.Show()
+
     w.show()
+
     app.MainLoop()
     

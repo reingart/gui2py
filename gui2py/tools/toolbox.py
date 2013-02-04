@@ -79,9 +79,10 @@ class ToolBox(aui.AuiToolBar):
 class ToolBoxDropTarget(wx.PyDropTarget):
     "Target of Drag&Drop operation (will create the dropped control)"
     
-    def __init__(self, window):
+    def __init__(self, window, designer=None):
         wx.PyDropTarget.__init__(self)
         self.dv = window
+        self.designer = designer  # used in design mode (set special handlers)
 
         # specify the type of data we will accept
         self.data = wx.CustomDataObject("gui2py")
@@ -121,7 +122,7 @@ class ToolBoxDropTarget(wx.PyDropTarget):
             ctrl_name = self.data.GetData()
             ctrl = registry.CONTROLS[ctrl_name]
             # create the control on the parent:
-            ctrl(self.dv, name="drag_drop", pos=(x, y))
+            ctrl(self.dv, name="drag_drop", pos=(x, y), designer=self.designer)
             
         # what is returned signals the source what to do
         # with the original data (move, copy, etc.)  In this
