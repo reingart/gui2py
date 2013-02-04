@@ -129,6 +129,10 @@ class Component(object):
             wx_parent = self._parent
         else:
             wx_parent = self._parent.wx_obj
+        # sanitize parameters
+        if 'id' in self._wx_kwargs and self._wx_kwargs['id'] <= 0:
+            self._wx_kwargs['id'] = -1
+            
         self.wx_obj = self._wx_class(wx_parent, **self._wx_kwargs)
         # load specs from kwargs, use default if available
         for spec_name, spec in self._meta.specs.items():
