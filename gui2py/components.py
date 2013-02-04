@@ -318,7 +318,7 @@ class Component(object):
         "Returns the character height for this window."
         return self.wx_obj.GetCharHeight()
 
-    def set_designer(self, func):
+    def _set_designer(self, func):
         if DEBUG: print "binding designer handler...", func, self._meta.name
         if func:
             # remove all binded events:
@@ -337,7 +337,12 @@ class Component(object):
             self._designer = func
             for child in self:
                 child.designer = func
-        
+   
+    def _set_drop_target(self, dt):
+        if dt:
+            self.wx_obj.SetDropTarget(dt)
+            # TODO: check if any children is a droptarget too (i.e panels)
+    
     name = InitSpec(optional=False, default="", _name="_name", type='string')
     bgcolor = Spec(_getBackgroundColor, _setBackgroundColor, type='colour')
     font = Spec(_get_font, _set_font, type='font')
@@ -365,10 +370,14 @@ class Component(object):
                            lambda self, value: self._set_pos([None, value]),
                            type="string", group="position")
     designer = InternalSpec(lambda self: self._designer, 
-                            lambda self, value: self.set_designer(value), 
+                            lambda self, value: self._set_designer(value), 
                             doc="function to handle events in design mode", 
                             type='internal')
-                    
+    drop_target = InternalSpec(lambda self: self.wx_obj.GetDropTarget(), 
+                               lambda self, value: self._set_drop_target(value), 
+                               doc="drag&drop handler (used in design mode)", 
+                               type='internal')
+                                            
     # Events:
     onfocus = EventSpec('focus', binding=wx.EVT_SET_FOCUS, kind=FocusEvent)
     onblur = EventSpec('blur', binding=wx.EVT_KILL_FOCUS, kind=FocusEvent)
