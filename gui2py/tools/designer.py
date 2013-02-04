@@ -12,11 +12,10 @@ class BasicDesigner:
     "Simple point-and-click layout designer (support moving controls)"
 
     def __init__(self, parent, inspector=None):
-        self.parent = parent.wx_obj
+        self.parent = parent
         self.current = {}
         self.resizing = False
         # bind all objects that can be controlled by this class
-        print "binding", parent.name
         parent.designer = self
         self.inspector = inspector
         
@@ -67,7 +66,7 @@ class BasicDesigner:
             self.resizing = self.hit_test(wx_obj, evt.GetPosition())
             print "capture..."
             # do not capture on TextCtrl, it will fail (blocking) at least in gtk
-            self.parent.CaptureMouse()
+            self.parent.wx_obj.CaptureMouse()
 
 
     def mouse_move(self, evt):
@@ -115,14 +114,14 @@ class BasicDesigner:
         print "up!"
         if self.current: 
             wx_obj = self.current['wx_obj']
-            if self.parent.HasCapture():
-                self.parent.ReleaseMouse()
+            if self.parent.wx_obj.HasCapture():
+                self.parent.wx_obj.ReleaseMouse()
             self.current = {}
             if self.inspector:
                 self.inspector.inspect(wx_obj.reference)
 
     def OnLayoutNeeded(self, evt):
-        self.parent.Layout()
+        self.parent.wx_obj.Layout()
         
 
 if __name__ == "__main__":
