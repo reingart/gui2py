@@ -102,8 +102,8 @@ class Font(object):
 
     def description(self):
         desc = {}
-        if self._family != '':
-            desc['family'] = self._family
+        if self._family != wx.DEFAULT:
+            desc['family'] = self.family
         if self._face != '':
             desc['face'] = self._face
         desc['size'] = self._size
