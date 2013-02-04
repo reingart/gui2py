@@ -175,7 +175,7 @@ if __name__ == '__main__':
     from gui2py.windows import Window
 
     w = Window(title="hello world", name="frmTest", tool_window=False, 
-               resizable=True, visible=False)
+               resizable=True, visible=False, pos=(180, 0))
                
     o = Button(w, name="btnTest", label="click me!", default=True)
     o = Label(w, name="lblTest", alignment="right", size=(-1, 500), text="hello!")
@@ -191,8 +191,8 @@ if __name__ == '__main__':
     w.show()
 
     log = sys.stdout
-    f1 = wx.Frame(None)
-    f2 = wx.Frame(None)
+    f1 = wx.Frame(None, pos=(600,0), size=(300, 300))
+    f2 = wx.Frame(None, pos=(600,350), size=(300, 300))
     propeditor = PropertyEditorPanel(f2, log)
     inspector = InspectorPanel(f1, propeditor, log)
     inspector.load_object(w)
@@ -205,7 +205,7 @@ if __name__ == '__main__':
     # create a toolbox and associate the window with it
     # (this will allow to drop new controls on the window)
     from toolbox import ToolBox, ToolBoxDropTarget
-    frame = wx.Frame(None)
+    frame = wx.Frame(None, pos=(0, 0), size=(100, 400))
     tb = ToolBox(frame)
     dt = ToolBoxDropTarget(w.wx_obj, designer=designer, inspector=inspector)
     w.wx_obj.SetDropTarget(dt)
