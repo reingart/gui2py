@@ -87,6 +87,9 @@ class Component(object):
             if isinstance(self._parent, Component):
                 del self._parent[self._name]    # remove old child reference
         else:
+            if isinstance(parent, basestring):
+                # find the object reference
+                parent = wx.FindWindowByName(parent).reference
             self._parent = parent       # store parent
             self._font = None
             self._children = {}    # container to hold children
@@ -190,11 +193,31 @@ class Component(object):
         self.wx_obj.SetFocus()
     
     def get_parent(self):
-        return self.wx_obj.GetParent()
+        parent = self.wx_obj.GetParent()
+        if hasattr(parent, "reference"):
+            return parent.reference  # return the gui2py object
+        else:
+            return parent            # return the wx object
+
+    def _get_parent_name(self):
+        "Return parent window name (used in __repr__ parent spec)"
+        parent = self.get_parent()
+        if isinstance(parent, Component):
+            return parent.name
+        else:
+            return None
 
     def __repr__(self):
-        return "%s(%s)" % (self.__class__.__name__, ', '.join(["%s=%s" % 
-                (k, repr(v)) for (k,v) in self.__dict__.items()]))
+        return "%s = %s(%s)" % (
+                self.name, self.__class__.__name__, 
+                ', '.join(["\n            %s=%s" % 
+                (k, repr(getattr(self, k))) 
+                for (k, spec) in sorted(self._meta.specs.items())
+                if not isinstance(spec, InternalSpec) 
+                   and getattr(self, k) != spec.default
+                   and isinstance(getattr(self, k), 
+                                  (basestring, int, long, bool, dict, Font))                
+                ]))
 
     # properties:
     
@@ -377,6 +400,9 @@ class Component(object):
                                lambda self, value: self._set_drop_target(value), 
                                doc="drag&drop handler (used in design mode)", 
                                type='internal')
+    parent = Spec(lambda self: self._get_parent_name(), 
+                      optional=False, default="",
+                      doc="parent window (used internally)")
                                             
     # Events:
     onfocus = EventSpec('focus', binding=wx.EVT_SET_FOCUS, kind=FocusEvent)
