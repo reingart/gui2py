@@ -19,7 +19,6 @@ class Window(Component):
         # call generic component initialization:
         Component.__init__(self, parent, **kwargs)
         self.app = wx.GetApp()
-        self.components = {}
         self.menubar = None     # this should be a Spec
         self.statusbar = None   # this should be a Spec
         
