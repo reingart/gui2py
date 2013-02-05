@@ -7,6 +7,11 @@ import wx
 RW_THICKNESS = 4
 RW_LENGTH = 12
 
+# colors for the handle (based on wx.lib.resizewidget)
+RW_PEN   = 'black'
+RW_FILL  = '#A0A0A0'
+RW_FILL2 = '#E0E0E0'
+
 
 class BasicDesigner:
     "Simple point-and-click layout designer (support moving controls)"
@@ -18,6 +23,7 @@ class BasicDesigner:
         # bind all objects that can be controlled by this class
         parent.designer = self
         self.inspector = inspector
+        self.last_wx_obj = None     # used to draw the resize handle
         
 
     def hit_test(self, wx_obj, pos):
@@ -90,6 +96,28 @@ class BasicDesigner:
             else:
                 wx_obj.SetPosition(wx.Point(x + sx, y + sy))
 
+    def draw_grip(self, wx_obj):
+        "draw the resize handle"
+        # TODO: draw a transparent panel over the widget (to catch all events)
+        if self.last_wx_obj and self.last_wx_obj != wx_obj:
+            self.last_wx_obj.Refresh()
+        if wx_obj:
+            dc = wx.ClientDC(wx_obj)
+            w,h = wx_obj.GetSize()
+            points = [ (w - 1,            h - RW_LENGTH),
+                       (w - RW_THICKNESS, h - RW_LENGTH),
+                       (w - RW_THICKNESS, h - RW_THICKNESS),
+                       (w - RW_LENGTH,    h - RW_THICKNESS),
+                       (w - RW_LENGTH,    h - 1),
+                       (w - 1,            h - 1),
+                       (w - 1,            h - RW_LENGTH),
+                       ]
+            dc.SetPen(wx.Pen(RW_PEN, 1))
+            fill = RW_FILL
+            dc.SetBrush(wx.Brush(fill))
+            dc.DrawPolygon(points)
+        self.last_wx_obj = wx_obj        
+
     def __call__(self, evt):
         "Handler for EVT_MOUSE_EVENTS (binded in design mode)"
         if self.current or evt.LeftIsDown():
@@ -101,13 +129,15 @@ class BasicDesigner:
                 self.mouse_move(evt)
         else:
             wx_obj = evt.GetEventObject()
-            if wx_obj is not self.parent:
+            if wx_obj is not self.parent.wx_obj:
                 if not self.hit_test(wx_obj, evt.GetPosition()):
                     wx_obj.SetCursor(wx.StockCursor(wx.CURSOR_CROSS))
                 else:
                     wx_obj.SetCursor(wx.StockCursor(wx.CURSOR_SIZING))
+                self.draw_grip(wx_obj)      # draw the resize handle (SW)
             else: 
-                pass
+                self.draw_grip(None)        # clear the resize handle
+            
 
     def mouse_up(self, evt):
         "Release the selected object"
