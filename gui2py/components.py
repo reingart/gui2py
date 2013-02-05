@@ -295,7 +295,7 @@ class Component(object):
 
     # Dimensions:
 
-    def _calc_dimension(self, dim_val, dim_max):
+    def _calc_dimension(self, dim_val, dim_max, font_dim):
         "Calculate final pos and size (auto, absolute in pixels & relativa)"
         if dim_val is None:
             return -1   # let wx automatic pos/size
@@ -306,6 +306,15 @@ class Component(object):
                 # percentaje, relative to parent max size:
                 dim_val = int(dim_val[:-1])
                 dim_val = dim_val / 100.0 * dim_max
+            elif dim_val.endswith("em"):
+                # use current font size (suport fractions):
+                dim_val = float(dim_val[:-2])
+                dim_val = dim_val * font_dim
+            elif dim_val.endswith("px"):
+                # fixed pixels
+                dim_val = dim_val[:-2]
+            elif dim_val == "":
+                dim_val = -1
             return int(dim_val)                        
     
     def _get_pos(self):
@@ -328,9 +337,12 @@ class Component(object):
             parent_size = self.wx_obj.Parent.Size
         else:
             parent_size = wx.DisplaySize()
+        # get font metrics for "em" unit
+        font_width = self.wx_obj.GetCharWidth()
+        font_height = self.wx_obj.GetCharHeight()
         # calculate actual position (auto, relative or absolute)
-        x = self._calc_dimension(point[0], parent_size[0]) + self.margin_left
-        y = self._calc_dimension(point[1], parent_size[1]) + self.margin_top
+        x = self._calc_dimension(point[0], parent_size[0], font_width) + self.margin_left
+        y = self._calc_dimension(point[1], parent_size[1], font_height) + self.margin_top
         self.wx_obj.Move((x, y))
 
     def _get_size(self):
@@ -355,9 +367,12 @@ class Component(object):
             parent_size = self.wx_obj.Parent.Size
         else:
             parent_size = wx.DisplaySize()
+        # get font metrics for "em" unit
+        font_width = self.wx_obj.GetCharWidth()
+        font_height = self.wx_obj.GetCharHeight()
         # calculate actual position (auto, relative or absolute)
-        w = self._calc_dimension(size[0], parent_size[0]) - self.margin_left - self.margin_right
-        h = self._calc_dimension(size[1], parent_size[1]) - self.margin_top - self.margin_bottom
+        w = self._calc_dimension(size[0], parent_size[0], font_width) - self.margin_left - self.margin_right
+        h = self._calc_dimension(size[1], parent_size[1], font_height) - self.margin_top - self.margin_bottom
         # on windows set the client size (ignore title bar)
         # note: don't do on controls (it doesn't work at least for textbox)
         if DEBUG: print "NEWSIZE", w, h
@@ -455,28 +470,28 @@ class Component(object):
     userdata = Spec(_name='_userdata')
     width = DimensionSpec(lambda self: self._width, 
                           lambda self, value: self._set_size([value, None]),
-                          type="string", group="size")
+                          default="", type="string", group="size")
     height = DimensionSpec(lambda self: self._height, 
                            lambda self, value: self._set_size([None, value]),
-                           type="string", group="size")
+                           default="", type="string", group="size")
     left = DimensionSpec(lambda self: self._left, 
                            lambda self, value: self._set_pos([value, None]),
-                           type="string", group="position")
+                           default="", type="string", group="position")
     top = DimensionSpec(lambda self: self._top, 
                            lambda self, value: self._set_pos([None, value]),
-                           type="string", group="position")
+                           default="", type="string", group="position")
     margin_left = DimensionSpec(lambda self: self._get_margin(0), 
                            lambda self, value: self._set_margin(value, 0),
-                           type="integer", group="margin")
+                           default=0, type="integer", group="margin")
     margin_top = DimensionSpec(lambda self: self._get_margin(1), 
                            lambda self, value: self._set_margin(value, 1),
-                           type="integer", group="margin")
+                           default=0, type="integer", group="margin")
     margin_right = DimensionSpec(lambda self: self._get_margin(2), 
                            lambda self, value: self._set_margin(value, 2),
-                           type="integer", group="margin")
+                           default=0, type="integer", group="margin")
     margin_bottom = DimensionSpec(lambda self: self._get_margin(3),
                            lambda self, value: self._set_margin(value, 3),
-                           type="integer", group="margin")
+                           default=0, type="integer", group="margin")
     designer = InternalSpec(lambda self: self._designer, 
                             lambda self, value: self._set_designer(value), 
                             doc="function to handle events in design mode", 
