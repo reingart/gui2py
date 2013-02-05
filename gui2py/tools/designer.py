@@ -90,6 +90,11 @@ class BasicDesigner:
                 new_size = wx_obj.GetSize() - delta.Get()
                 self.adjust_new_size(wx_obj, new_size)
                 if new_size != wx_obj.GetSize():
+                    # reset margins (TODO: avoid resizing recursion)
+                    wx_obj.reference.margin_left = 0
+                    wx_obj.reference.margin_right = 0
+                    wx_obj.reference.margin_top = 0
+                    wx_obj.reference.margin_bottom = 0
                     wx_obj.reference.size = new_size    # update gui2py specs
                     self.current['pos'] = pos
                     ##self._bestSize = new_size 

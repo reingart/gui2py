@@ -93,7 +93,9 @@ class Component(object):
             self._parent = parent       # store parent
             self._font = None
             self._children = {}    # container to hold children
+            # set safe initial dimensions
             self._left = self._top = self._width = self._height = None
+            self._margins = [0] * 4  # left, top, right, bottom
         
         self.wx_obj = None      # set up a void wx object (needed by setters)
         
@@ -327,8 +329,8 @@ class Component(object):
         else:
             parent_size = wx.DisplaySize()
         # calculate actual position (auto, relative or absolute)
-        x = self._calc_dimension(point[0], parent_size[0])
-        y = self._calc_dimension(point[1], parent_size[1])
+        x = self._calc_dimension(point[0], parent_size[0]) + self.margin_left
+        y = self._calc_dimension(point[1], parent_size[1]) + self.margin_top
         self.wx_obj.Move((x, y))
 
     def _get_size(self):
@@ -354,8 +356,8 @@ class Component(object):
         else:
             parent_size = wx.DisplaySize()
         # calculate actual position (auto, relative or absolute)
-        w = self._calc_dimension(size[0], parent_size[0])
-        h = self._calc_dimension(size[1], parent_size[1])
+        w = self._calc_dimension(size[0], parent_size[0]) - self.margin_left - self.margin_right
+        h = self._calc_dimension(size[1], parent_size[1]) - self.margin_top - self.margin_bottom
         # on windows set the client size (ignore title bar)
         # note: don't do on controls (it doesn't work at least for textbox)
         if DEBUG: print "NEWSIZE", w, h
@@ -363,6 +365,13 @@ class Component(object):
             self.wx_obj.SetClientSize((w, h))
         else:
             self.wx_obj.SetSize((w, h))
+
+    def _get_margin(self, index):
+        return self._margins[index] or 0
+    
+    def _set_margin(self, value, index):
+        self._margins[index] = value
+        self.resize()
 
     def resize(self, evt=None):
         "automatically adjust relative pos and size of children controls"
@@ -456,6 +465,18 @@ class Component(object):
     top = DimensionSpec(lambda self: self._top, 
                            lambda self, value: self._set_pos([None, value]),
                            type="string", group="position")
+    margin_left = DimensionSpec(lambda self: self._get_margin(0), 
+                           lambda self, value: self._set_margin(value, 0),
+                           type="integer", group="margin")
+    margin_top = DimensionSpec(lambda self: self._get_margin(1), 
+                           lambda self, value: self._set_margin(value, 1),
+                           type="integer", group="margin")
+    margin_right = DimensionSpec(lambda self: self._get_margin(2), 
+                           lambda self, value: self._set_margin(value, 2),
+                           type="integer", group="margin")
+    margin_bottom = DimensionSpec(lambda self: self._get_margin(3),
+                           lambda self, value: self._set_margin(value, 3),
+                           type="integer", group="margin")
     designer = InternalSpec(lambda self: self._designer, 
                             lambda self, value: self._set_designer(value), 
                             doc="function to handle events in design mode", 
