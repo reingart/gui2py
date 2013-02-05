@@ -29,11 +29,11 @@ class BasicDesigner:
     def hit_test(self, wx_obj, pos):
         # is the position in the area to be used for the resize handle?
         w, h = wx_obj.GetSize()
-        if ( w - RW_THICKNESS <= pos.x <= w 
-             and h - RW_LENGTH <= pos.y <= h ):
+        if ( w - RW_THICKNESS * 3 <= pos.x <= w 
+             and h - RW_LENGTH * 3 <= pos.y <= h ):
             return True
-        if ( w - RW_LENGTH <= pos.x <= w 
-             and h - RW_THICKNESS <= pos.y <= h ):
+        if ( w - RW_LENGTH * 3 <= pos.x <= w 
+             and h - RW_THICKNESS * 3 <= pos.y <= h ):
             return True
         return False
 
