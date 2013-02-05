@@ -317,7 +317,12 @@ class Component(object):
             size[0] = size[0] is not None and int(size[0]) or -1
         if not isinstance(size[1], int):
             size[1] = size[1] is not None and int(size[1]) or -1
-        self.wx_obj.SetSize(size)
+        # on windows set the client size (ignore title bar)
+        # note: don't do on controls (it doesn't work at least for textbox)
+        if isinstance(self.wx_obj, wx.TopLevelWindow):
+            self.wx_obj.SetClientSize(size)
+        else:
+            self.wx_obj.SetSize(size)
 
     def _getEnabled(self):
         return self.wx_obj.IsEnabled()
