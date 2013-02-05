@@ -3,5 +3,6 @@
 CONTROLS = {}
 HTML = {}       # tags
 WINDOWS = {}
+MENU = {}
 
 # TODO: register_type html tags / input types

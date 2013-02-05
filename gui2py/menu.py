@@ -2,15 +2,17 @@
 
 import wx
 from .event import FormEvent
-from .components import Component, Spec, StyleSpec, EventSpec, InitSpec
-from . import images 
+from .components import Component, Spec, StyleSpec, EventSpec, InitSpec, DimensionSpec
+from . import images
+from . import registry
 
 
-class DummyWindow:
+class wx_DummyWindow:
     "Class to emulate (and normalize) menues in wx whit gui2py object model"
     # if using custom-draw menues (agw.FlatMenu) this would not be necesary 
     # (so wx_Menu* could be replaced someday..)
     # note that wx ignores dimension and almost all event on menus
+    # Font and Background/Textcolour seems to work only on MSW
     
     def __init__(self, parent, *args, **kwargs):
         self._parent = parent
@@ -21,7 +23,7 @@ class DummyWindow:
     def GetSize(self):
         return [0, 0]
     
-    GetSizeTuple = GetSize
+    GetSizeTuple = GetClientSize = GetSize
     GetPositionTuple = GetSizeTuple
     
     def GetCharWidth(self):
@@ -33,13 +35,17 @@ class DummyWindow:
     def Dummy(self, *args, **kwargs):
         pass
     
-    Show = SetSize = SetBackgroundColour = Refresh = Move = SetToolTip = Dummy
-    SetClientSize = SetForegroundColour = Dummy
+    Show = SetSize = Refresh = Move = SetToolTip = Dummy
+    SetClientSize  = Dummy 	
+    IsShown = lambda self: True
     
     def Enable(self, value):
         pass    # should this do something else...?
         # TypeError: Required argument 'enable' (pos 3) not found
-        #wx.MenuBar.Enable(self, self.GetId(), enable=value)       
+        #wx.MenuBar.Enable(self, self.GetId(), enable=value)   
+    
+    def IsEnabled(self, *args, **kwargs):
+        return True    
 
     def Bind(self, evt, handler, id=None):
         # this should reach top level window:
@@ -55,9 +61,9 @@ class DummyWindow:
         self.parent.Unbind(evt, id=id or self.GetId())
 
 
-class wx_MenuItem(DummyWindow, wx.MenuItem):
+class wx_MenuItem(wx_DummyWindow, wx.MenuItem):
     def __init__(self, parent, *args, **kwargs):
-        DummyWindow.__init__(self, parent, *args, **kwargs)
+        wx_DummyWindow.__init__(self, parent, *args, **kwargs)
         wx.MenuItem.__init__(self, parentMenu=parent, 
                              id=kwargs['id'], 
                              text=kwargs['label'], 
@@ -73,17 +79,20 @@ class wx_MenuItem(DummyWindow, wx.MenuItem):
         if self.GetKind() & wx.ITEM_CHECK:
             wx.MenuItem.Check(self, value)
 
+    GetForegroundColour = wx.MenuItem.GetTextColour
+    SetForegroundColour = wx.MenuItem.SetTextColour
             
 
 class MenuItem(Component):
     "A MenuItem represents one selectable item in a Menu"
 
     _wx_class = wx_MenuItem
+    _registry = registry.MENU
 
     checkable = StyleSpec(wx.ITEM_CHECK, default=False)
     separator = StyleSpec(wx.ITEM_SEPARATOR, default=False)              
-    checked = Spec(lambda self: self.wx_obj.IsChecked(), 
-                   lambda self, value: self.wx_obj.Check(value),
+    checked = Spec(lambda self: self.checkable and self.wx_obj.IsChecked(), 
+                   lambda self, value: self.checkable and self.wx_obj.Check(value),
                    default=False, type="boolean")
     label = InitSpec(lambda self: self.wx_obj.GetText(), 
                      lambda self, label: self.wx_obj.SetText(label),
@@ -96,46 +105,72 @@ class MenuItem(Component):
     onclick = EventSpec('click', binding=wx.EVT_MENU, kind=FormEvent)
 
 
-class wx_Menu(DummyWindow, wx.Menu):
+class wx_Menu(wx_DummyWindow, wx.Menu):
     
     def __init__(self, parent, *args, **kwargs):
-        DummyWindow.__init__(self, parent, *args, **kwargs)
+        wx_DummyWindow.__init__(self, parent, *args, **kwargs)
         # if this is a popup menu, call constructor with:
         #   kwargs.get("label"), kwargs.get("style")
         wx.Menu.__init__(self)
         self.parent = parent
         self.GetId = lambda self=self: kwargs['id']
+        self.pos = self.parent.GetMenuCount()
         self.parent.Append(self, kwargs.get("label"))
 
-        
+    # unsupported methods:
+    
+    GetBackgroundColour = SetBackgroundColour = wx_DummyWindow.Dummy
+    SetFont = wx_DummyWindow.Dummy 
+    GetFont = lambda self: wx.SystemSettings.GetFont(wx.SYS_DEFAULT_GUI_FONT)
+    GetForegroundColour = lambda self: 'black'
+    SetForegroundColour = wx_DummyWindow.Dummy
+
         
 class Menu(Component):
     "A Menu contains 0..n MenuItem objects."
     
     _wx_class = wx_Menu
+    _registry = registry.MENU
 
-    label = InitSpec(lambda self: self.wx_obj.GetTitle(), 
-                     lambda self, value: self.wx_obj.SetTitle(value),
+    def _set_label(self, value):
+        # note that wx.Menu.SetTitle() does not work on gtk for menubars
+        pos = self.wx_obj.pos
+        self.wx_obj.parent.SetMenuLabel(pos, value)
+    
+    def _get_label(self):
+        # note that wx.Menu.GetTitle() does not work on windows for menubars
+        pos = self.wx_obj.pos
+        return self.wx_obj.parent.GetMenuLabel(pos)
+
+    label = InitSpec(_get_label,  _set_label,
                      optional=False, default='Menu', type="string", 
                      doc="text to show as caption")
                      
 
-class wx_MenuBar(DummyWindow, wx.MenuBar):
+class wx_MenuBar(wx_DummyWindow, wx.MenuBar):
 
     def __init__(self, parent, *args, **kwargs):
         # it should receive (self, parent, id, pos, size, style, name)
         # but it doesnt!
         # TypeError: new_MenuBar() takes at most 1 argument (7 given)
-        DummyWindow.__init__(self, parent, *args, **kwargs)
+        wx_DummyWindow.__init__(self, parent, *args, **kwargs)
         wx.MenuBar.__init__(self)
         self.parent = parent
-        self.parent.SetMenuBar(self)
-        
+        self.parent.SetMenuBar(self)    
+
+    # unsupported methods:
+    
+    GetBackgroundColour = SetBackgroundColour = wx_DummyWindow.Dummy
+    SetFont = wx_DummyWindow.Dummy 
+    GetFont = lambda self: wx.SystemSettings.GetFont(wx.SYS_DEFAULT_GUI_FONT)
+    GetForegroundColour = lambda self: 'black'
+    SetForegroundColour = wx_DummyWindow.Dummy
 
 
-class MenuBar(Menu):
+class MenuBar(Component):
 
     _wx_class = wx_MenuBar
+    _image = images.menubar
 
 
 # Unit Test
