@@ -74,7 +74,7 @@ class PropertyEditorPanel(wx.Panel):
                 continue
             specs = sorted(obj._meta.specs.items(), key=lambda it: it[0])
             for name, spec in specs:
-                if DEBUG: print spec, class_, spec.type
+                if DEBUG: print "setting prop", spec, class_, spec.type
                 if isinstance(spec, class_):
                     prop = {'string': wxpg.StringProperty,
                             'integer': wxpg.IntProperty,
@@ -97,6 +97,12 @@ class PropertyEditorPanel(wx.Panel):
                             value = -1
                         if spec.type == "font" and value is not None:
                             value = value.get_wx_font()
+                        if callable(value):
+                            # event binded at runtime cannot be modified:
+                            value = "<function %s>" % value.func_name
+                            readonly = True
+                        else:
+                            readonly = False
                         if spec.type == "enum":
                             prop = prop(name, name, 
                                            spec.mapping.keys(), 
@@ -106,6 +112,8 @@ class PropertyEditorPanel(wx.Panel):
                         
                         if spec.group is None:
                             pg.Append(prop)
+                            if readonly:
+                                pg.SetPropertyReadOnly(prop)
                         else:
                             if spec.group in self.groups:
                                 prop_parent = self.groups[spec.group]
