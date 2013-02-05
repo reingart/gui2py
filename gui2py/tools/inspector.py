@@ -159,10 +159,24 @@ class InspectorPanel(wx.Panel):
 
 #----------------------------------------------------------------------
 
-def runTest(frame, nb, log):
-    win = TestPanel(nb, log)
-    return win
+class InspectorTool:
 
+    def __init__(self, parent=None, log=None):
+        if log is None:
+            import sys
+            log = sys.stdout
+
+        self.f1 = wx.Frame(parent, pos=(600,0), size=(300, 300))
+        self.f2 = wx.Frame(parent, pos=(600,350), size=(300, 300))
+        self.propeditor = PropertyEditorPanel(self.f2, log)
+        self.inspector = InspectorPanel(self.f1, self.propeditor, log)
+    
+    def show(self, root_obj, visible=True):
+        self.inspector.load_object(root_obj)
+        self.f1.Show(visible)
+        self.f2.Show(visible)
+        
+        
 #----------------------------------------------------------------------
 
 
@@ -189,29 +203,8 @@ if __name__ == '__main__':
                 readonly='--readonly' in sys.argv,
                 )
     w.show()
-
-    log = sys.stdout
-    f1 = wx.Frame(None, pos=(600,0), size=(300, 300))
-    f2 = wx.Frame(None, pos=(600,350), size=(300, 300))
-    propeditor = PropertyEditorPanel(f2, log)
-    inspector = InspectorPanel(f1, propeditor, log)
-    inspector.load_object(w)
-    f1.Show()
-    f2.Show()
     
-    from gui2py.tools.designer import BasicDesigner
-    designer = BasicDesigner(w, inspector)
-
-    # create a toolbox and associate the window with it
-    # (this will allow to drop new controls on the window)
-    from toolbox import ToolBox, ToolBoxDropTarget
-    frame = wx.Frame(None, pos=(0, 0), size=(100, 400))
-    tb = ToolBox(frame)
-    dt = ToolBoxDropTarget(w, designer=designer, inspector=inspector)
-    w.drop_target = dt
-    frame.Show()
-    tb.Show()
-    
+    InspectorTool().show(w)
     
     app.MainLoop()
 
