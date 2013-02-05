@@ -288,21 +288,38 @@ class Component(object):
                 return color
 
     # Dimensions:
+
+    def _calc_dimension(self, dim_val, dim_max):
+        "Calculate final pos and size (auto, absolute in pixels & relativa)"
+        if dim_val is None:
+            return -1   # let wx automatic pos/size
+        elif isinstance(dim_val, int):
+            return dim_val  # use fixed pixel value (absolute)
+        elif isinstance(dim_val, basestring):
+            if dim_val.endswith("%"):
+                # percentaje, relative to parent max size:
+                dim_val = int(dim_val[:-1])
+                dim_val = dim_val / 100.0 * dim_max
+            return int(dim_val)                        
     
     def _get_pos(self):
         # get the actual position, not (-1, -1)
-        return self.wx_obj.GetPositionTuple()  
+        return self.wx_obj.GetPositionTuple()
 
     def _set_pos(self, point):
         if point[0] is None:
             point[0] = self.wx_obj.GetPositionTuple()[0]
         if point[1] is None:
             point[1] = self.wx_obj.GetPositionTuple()[1]
-        if not isinstance(point[0], int):
-            point[0] = point[0] is not None and int(point[0]) or -1
-        if not isinstance(point[1], int):
-            point[1] = point[1] is not None and int(point[1]) or -1
-        self.wx_obj.Move(point)
+        # get parent or screen size (used to calc the percent)
+        if self.parent:
+            parent_size = self.wx_obj.Parent.Size
+        else:
+            parent_size = wx.DisplaySize()
+        # calculate actual position (auto, relative or absolute)
+        x = self._calc_dimension(point[0], parent_size[0])
+        y = self._calc_dimension(point[1], parent_size[1])
+        self.wx_obj.Move((x, y))
 
     def _get_size(self):
         # return the actual size, not (-1, -1)
@@ -313,16 +330,20 @@ class Component(object):
             size[0] = self.wx_obj.GetSizeTuple()[0]
         if size[1] is None:
             size[1] = self.wx_obj.GetSizeTuple()[1]
-        if not isinstance(size[0], int):
-            size[0] = size[0] is not None and int(size[0]) or -1
-        if not isinstance(size[1], int):
-            size[1] = size[1] is not None and int(size[1]) or -1
+        # get parent or screen size (used to calc the percent)
+        if self.parent:
+            parent_size = self.wx_obj.Parent.Size
+        else:
+            parent_size = wx.DisplaySize()
+        # calculate actual position (auto, relative or absolute)
+        w = self._calc_dimension(size[0], parent_size[0])
+        h = self._calc_dimension(size[1], parent_size[1])
         # on windows set the client size (ignore title bar)
         # note: don't do on controls (it doesn't work at least for textbox)
         if isinstance(self.wx_obj, wx.TopLevelWindow):
-            self.wx_obj.SetClientSize(size)
+            self.wx_obj.SetClientSize((w, h))
         else:
-            self.wx_obj.SetSize(size)
+            self.wx_obj.SetSize((w, h))
 
     def _getEnabled(self):
         return self.wx_obj.IsEnabled()
