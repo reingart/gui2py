@@ -125,7 +125,10 @@ class Component(object):
         self._wx_kwargs = wx_kwargs
         
         # create the actual wxpython object
-        self._wx_kwargs['style'] = style=self._style
+        if hasattr(self, "_kind"):  # hack to support menu items (TODO: fix)
+            self._wx_kwargs['kind'] = self._kind
+        else:
+            self._wx_kwargs['style'] = style = self._style
         if DEBUG: print "WX KWARGS: ", self._wx_kwargs
         if DEBUG: print "creating", self._wx_class
         if self._parent is None or isinstance(self._parent, wx.Object):
@@ -333,8 +336,8 @@ class Component(object):
         else:
             self._top = str(point[1])  # use the new value
         # get parent or screen size (used to calc the percent)
-        if self.parent:
-            parent_size = self.wx_obj.Parent.Size
+        if self.parent and self.wx_obj.GetParent():
+            parent_size = self.wx_obj.GetParent().GetSize()
         else:
             parent_size = wx.DisplaySize()
         # get font metrics for "em" unit
@@ -363,8 +366,8 @@ class Component(object):
         # get parent or screen size (used to calc the percent)
         if new_size:
             parent_size = new_size  # use event size instead
-        elif self.parent:
-            parent_size = self.wx_obj.Parent.Size
+        elif self.parent and self.wx_obj.GetParent():
+            parent_size = self.wx_obj.GetParent().GetSize()
         else:
             parent_size = wx.DisplaySize()
         # get font metrics for "em" unit
