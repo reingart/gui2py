@@ -32,7 +32,7 @@ class InspectorPanel(wx.Panel):
         fldropenidx = il.Add(wx.ArtProvider_GetBitmap(wx.ART_FILE_OPEN,   wx.ART_OTHER, isz))
         fileidx     = il.Add(wx.ArtProvider_GetBitmap(wx.ART_NORMAL_FILE, wx.ART_OTHER, isz))
         self.images_map = {}
-        for name, ctrl in registry.CONTROLS.items() + registry.WINDOWS.items():
+        for name, ctrl in registry.CONTROLS.items() + registry.WINDOWS.items() + registry.MENU.items():
             if ctrl._image:
                 #bmp = wx.Bitmap(os.path.join(path, filename), wx.BITMAP_TYPE_XPM)
                 self.images_map[name] = il.Add(ctrl._image.GetBitmap().ConvertToImage().Scale(16,16).ConvertToBitmap())             
@@ -79,7 +79,8 @@ class InspectorPanel(wx.Panel):
     def build_tree(self, parent, obj):
         child = self.tree.AppendItem(parent, obj.name)
         self.tree.SetItemText(child, obj.__class__.__name__, 1)
-        self.tree.SetItemImage(child, self.images_map[obj.__class__.__name__])
+        if obj._meta.name in self.images_map:
+            self.tree.SetItemImage(child, self.images_map[obj._meta.name])
         self.tree.SetItemData(child, wx.TreeItemData(obj))
         #self.tree.SetItemImage(child, fldropenidx, which = wx.TreeItemIcon_Expanded)
         for ctrl in obj:
@@ -130,7 +131,7 @@ class InspectorPanel(wx.Panel):
         self.highlighting = None
 
     def highlight(self, win):
-        if win:
+        if win and isinstance(win, wx.Window):
             rect = win.GetClientRect()
             tlw = win.GetTopLevelParent()
             pos = win.ClientToScreen((0,0))
