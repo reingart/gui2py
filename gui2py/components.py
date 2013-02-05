@@ -92,7 +92,9 @@ class Component(object):
                 parent = wx.FindWindowByName(parent).reference
             self._parent = parent       # store parent
             self._font = None
-            self._children = {}    # container to hold children
+            # container to hold children:
+            self._children_dict = {}    # key and values for __setitem__
+            self._children_list = []    # ordered values for __iter__
             # set safe initial dimensions
             self._left = self._top = self._width = self._height = None
             self._margins = [0] * 4  # left, top, right, bottom
@@ -166,8 +168,9 @@ class Component(object):
         # re-associate childrens (wx objects hierachy): 
         if rebuild:
             for ctrl in self:
-                if DEBUG: print "reparenting", ctrl.name 
-                ctrl.wx_obj.Reparent(self.wx_obj)
+                if DEBUG: print "reparenting", ctrl.name
+                if isinstance(ctrl.wx_obj, wx.Window):
+                    ctrl.wx_obj.Reparent(self.wx_obj)
                 
         # finally, set special internal spec (i.e. designer)
         # (this must be done at last to overwrite other event handlers)
@@ -184,17 +187,19 @@ class Component(object):
     # Container methods:
 
     def __iter__(self):
-        return self._children.itervalues()
+        return self._children_list.__iter__()
     
     def __setitem__(self, key, val):
-        self._children[key] = val
+        self._children_dict[key] = val
+        self._children_list.append(val)
         
     def __getitem__(self, key):
-        return self._children[key]
+        return self._children_dict[key]
     
     def __delitem__(self, key):
-        del self._children[key]
-        
+        del self._children_list[self._children[key]]
+        del self._children_dict[key]
+                
     # Public methods:
     
     def redraw(self):
@@ -251,7 +256,11 @@ class Component(object):
     def _get_font(self):
         if self._font is None:
             self._font = Font(parent=self)
-        self._font.set_wx_font(self.wx_obj.GetFont())
+        wx_font = self.wx_obj.GetFont()
+        # sanity check: avoid assertion error:
+        if not wx_font.IsOk():
+            wx_font = wx.SystemSettings.GetFont(wx.SYS_DEFAULT_GUI_FONT)
+        self._font.set_wx_font(wx_font)
         return self._font
 
     def _setForegroundColor( self, color ) :
