@@ -93,6 +93,7 @@ class Component(object):
             self._parent = parent       # store parent
             self._font = None
             self._children = {}    # container to hold children
+            self._left = self._top = self._width = self._height = None
         
         self.wx_obj = None      # set up a void wx object (needed by setters)
         
@@ -170,6 +171,9 @@ class Component(object):
                 if DEBUG: print "resetting internal specs (rebound...):", spec_name, self.name
                 value = kwargs.get(spec_name, getattr(self, spec_name, None))
                 setattr(self, spec_name, value)
+
+        # Handle resize events to adjust absolute and relative dimensions
+        self.wx_obj.Bind(wx.EVT_SIZE, self.resize)
 
 
     # Container methods:
@@ -307,10 +311,16 @@ class Component(object):
         return self.wx_obj.GetPositionTuple()
 
     def _set_pos(self, point):
+        # check parameters (and store user values for resize)
+        point = list(point)
         if point[0] is None:
-            point[0] = self.wx_obj.GetPositionTuple()[0]
+            point[0] = self.wx_obj.GetPositionTuple()[0]  # no change
+        else:
+            self._left = str(point[0])  # use the new value
         if point[1] is None:
-            point[1] = self.wx_obj.GetPositionTuple()[1]
+            point[1] = self.wx_obj.GetPositionTuple()[1]  # no change
+        else:
+            self._top = str(point[1])  # use the new value
         # get parent or screen size (used to calc the percent)
         if self.parent:
             parent_size = self.wx_obj.Parent.Size
@@ -325,13 +335,21 @@ class Component(object):
         # return the actual size, not (-1, -1)
         return self.wx_obj.GetSizeTuple()
 
-    def _set_size(self, size):
+    def _set_size(self, size, new_size=None):
+        # check parameters (and store user values for resize)
+        size = list(size)
         if size[0] is None:
-            size[0] = self.wx_obj.GetSizeTuple()[0]
+            size[0] = self.wx_obj.GetSizeTuple()[0]  # no change
+        else:
+            self._width = str(size[0])  # use the new value
         if size[1] is None:
-            size[1] = self.wx_obj.GetSizeTuple()[1]
+            size[1] = self.wx_obj.GetSizeTuple()[1]  # no change
+        else:
+            self._height = str(size[1])  # use the new value
         # get parent or screen size (used to calc the percent)
-        if self.parent:
+        if new_size:
+            parent_size = new_size  # use event size instead
+        elif self.parent:
             parent_size = self.wx_obj.Parent.Size
         else:
             parent_size = wx.DisplaySize()
@@ -340,10 +358,26 @@ class Component(object):
         h = self._calc_dimension(size[1], parent_size[1])
         # on windows set the client size (ignore title bar)
         # note: don't do on controls (it doesn't work at least for textbox)
+        if DEBUG: print "NEWSIZE", w, h
         if isinstance(self.wx_obj, wx.TopLevelWindow):
             self.wx_obj.SetClientSize((w, h))
         else:
             self.wx_obj.SetSize((w, h))
+
+    def resize(self, evt=None):
+        "automatically adjust relative pos and size of children controls"
+        if DEBUG: print "RESIZE!", self.name, self.width, self.height
+        if not isinstance(self.wx_obj, wx.TopLevelWindow):
+            # check that size and pos is relative, then resize/move
+            if self._left and self._left[-1] == "%" or \
+               self._top and self._top[-1] == "%":
+                self._set_pos((self._left, self._top))
+            if self._width and self._width[-1] == "%" or \
+               self._height and self._height[-1] == "%":
+                self._set_size((self._width, self._height))
+        for child in self:
+            child.resize(evt)
+        #self.redraw()
 
     def _getEnabled(self):
         return self.wx_obj.IsEnabled()
@@ -410,16 +444,16 @@ class Component(object):
     tooltip = Spec(_getToolTip, _setToolTip, default='', type="string")
     visible = Spec(_getVisible, _setVisible, default=True, type='boolean')
     userdata = Spec(_name='_userdata')
-    width = DimensionSpec(lambda self: str(self._get_size()[0]), 
+    width = DimensionSpec(lambda self: self._width, 
                           lambda self, value: self._set_size([value, None]),
                           type="string", group="size")
-    height = DimensionSpec(lambda self: str(self._get_size()[1]), 
+    height = DimensionSpec(lambda self: self._height, 
                            lambda self, value: self._set_size([None, value]),
                            type="string", group="size")
-    left = DimensionSpec(lambda self: str(self._get_pos()[0]), 
+    left = DimensionSpec(lambda self: self._left, 
                            lambda self, value: self._set_pos([value, None]),
                            type="string", group="position")
-    top = DimensionSpec(lambda self: str(self._get_pos()[1]), 
+    top = DimensionSpec(lambda self: self._top, 
                            lambda self, value: self._set_pos([None, value]),
                            type="string", group="position")
     designer = InternalSpec(lambda self: self._designer, 

@@ -90,11 +90,12 @@ class BasicDesigner:
                 new_size = wx_obj.GetSize() - delta.Get()
                 self.adjust_new_size(wx_obj, new_size)
                 if new_size != wx_obj.GetSize():
-                    wx_obj.SetSize(new_size)
+                    wx_obj.reference.size = new_size    # update gui2py specs
                     self.current['pos'] = pos
                     ##self._bestSize = new_size 
             else:
-                wx_obj.SetPosition(wx.Point(x + sx, y + sy))
+                # update gui2py specs (this will overwrite relative dimensions):
+                wx_obj.reference.pos = (wx.Point(x + sx, y + sy))
 
     def draw_grip(self, wx_obj):
         "draw the resize handle"
