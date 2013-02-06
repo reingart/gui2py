@@ -12,6 +12,8 @@ RW_PEN   = 'black'
 RW_FILL  = '#A0A0A0'
 RW_FILL2 = '#E0E0E0'
 
+GRID_SIZE = (10, 10)
+
 
 class BasicDesigner:
     "Simple point-and-click layout designer (support moving controls)"
@@ -134,6 +136,12 @@ class BasicDesigner:
                     wx_obj = wx_obj.GetMenuBar()    # wx28/MSW
                 obj = wx_obj.reference.find(evt.GetId())
                 self.inspector.inspect(obj)
+        elif evt.GetEventType() == wx.EVT_PAINT.typeId:
+            wx_obj = evt.GetEventObject()
+            if isinstance(wx_obj, wx.Frame):
+                self.draw_grid(evt)
+            else:
+                evt.Skip()  # call the default handler
         elif self.current or evt.LeftIsDown():
             if evt.LeftDown():
                 self.mouse_down(evt)
@@ -163,6 +171,31 @@ class BasicDesigner:
             self.current = {}
             if self.inspector:
                 self.inspector.inspect(wx_obj.reference)
+
+    def draw_grid(self, event):
+        wx_obj = event.GetEventObject()
+        dc = wx.PaintDC(wx_obj)
+        #if not dc :
+        #    dc = wx.ClientDC(self.panel)
+        #    r = self.panel.GetUpdateRegion().GetBox()
+        #    dc.SetClippingRegion(r.x, r.y, r.width, r.height)
+        # need to set the background color to the default panel color
+        brush = dc.GetBackground()
+        brush.SetColour(wx_obj.GetBackgroundColour())
+        dc.SetBackground(brush)
+        dc.Clear()
+        # should the color be settable by the user and then save
+        # that in the prefs?
+        dc.SetPen(wx.Pen('darkgray', 1, wx.SOLID))
+        w, h = wx_obj.GetClientSize()
+        xgrid, ygrid = GRID_SIZE
+        nx = w / xgrid
+        ny = h / ygrid
+        for x in range(1, nx + 1):
+            #dc.DrawLine(x * xgrid, 0, x * xgrid, h)
+            for y in range(1, ny + 1):
+                #dc.DrawLine(0, y * ygrid, w, y * ygrid)
+                dc.DrawPoint(x * xgrid, y * ygrid)
 
     def OnLayoutNeeded(self, evt):
         self.parent.wx_obj.Layout()

@@ -475,6 +475,8 @@ class Component(object):
             self.wx_obj.Bind(wx.EVT_MOUSE_EVENTS, func)
             # link menu selection (click) to the designer
             self.wx_obj.Bind(wx.EVT_MENU, func)
+            # link repaint event (refresh) to the designer (draw grid)
+            self.wx_obj.Bind(wx.EVT_PAINT, func)
             self._designer = func
             for child in self:
                 child.designer = func
