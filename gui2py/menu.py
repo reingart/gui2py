@@ -39,14 +39,6 @@ class wx_DummyWindow:
     SetClientSize  = Dummy 	
     IsShown = lambda self: True
     
-    def Enable(self, value):
-        pass    # should this do something else...?
-        # TypeError: Required argument 'enable' (pos 3) not found
-        #wx.MenuBar.Enable(self, self.GetId(), enable=value)   
-    
-    def IsEnabled(self, *args, **kwargs):
-        return True    
-
     def Bind(self, evt, handler, id=None):
         # this should reach top level window:
         if evt == wx.EVT_SIZE:
@@ -131,6 +123,20 @@ class wx_Menu(wx_DummyWindow, wx.Menu):
     GetForegroundColour = lambda self: 'black'
     SetForegroundColour = wx_DummyWindow.Dummy
 
+    def Enable(self, value):
+        "enable or disable all menu items"
+        for i in range(self.GetMenuItemCount()):
+            it = self.FindItemByPosition(i) 
+            it.Enable(value)
+    
+    def IsEnabled(self, *args, **kwargs):
+        "check if all menu items are enabled"
+        for i in range(self.GetMenuItemCount()):
+            it = self.FindItemByPosition(i) 
+            if not it.IsEnabled():
+                return False
+        return True
+
         
 class Menu(Component):
     "A Menu contains 0..n MenuItem objects."
@@ -176,6 +182,18 @@ class wx_MenuBar(wx_DummyWindow, wx.MenuBar):
     GetForegroundColour = lambda self: 'black'
     SetForegroundColour = wx_DummyWindow.Dummy
 
+    def Enable(self, value):
+        "enable or disable all top menus"
+        for i in range(self.GetMenuCount()):
+            self.EnableTop(i, value)
+    
+    def IsEnabled(self, *args, **kwargs):
+        "check if all top menus are enabled"
+        for i in range(self.GetMenuCount()):
+            if not self.IsEnabledTop(i):
+                return False
+        return True
+
 
 class MenuBar(Component):
 
@@ -186,7 +204,10 @@ class MenuBar(Component):
 # Unit Test
 
 if __name__ == '__main__' :
-    import sys
+    import sys, os
+    
+    # disable ubuntu unity menubar
+    os.environ['UBUNTU_MENUPROXY'] = '0'
     
     app = wx.App(redirect=False)
         
@@ -198,7 +219,7 @@ if __name__ == '__main__' :
     mb = MenuBar(w, name="menubar") 
     m1 = Menu(mb, label='File', name="mnu_file")
     mi11 = MenuItem(m1, label='Open', name='menu_file_open')
-    mi12 = MenuItem(m1, label='Save', name='menu_file_save')
+    mi12 = MenuItem(m1, label='Save', name='menu_file_save', enabled=False)
     mi13 = MenuItem(m1, label='Quit', name='menu_file_quit')
     m11 = Menu(m1, label='Recent files', name="mnu_recent_file")
     mi111 = MenuItem(m11, label='file1', name='menu_recent_file1')
@@ -209,7 +230,21 @@ if __name__ == '__main__' :
     mi22 = MenuItem(m2, label='Cut', name='menu_edit_cut')
     mi23 = MenuItem(m2, label='Paste', name='menu_edit_paste')
 
-    mi13.onclick = "exit()"
+    m2.enabled = False  # disable a whole menu
+
+    def disable_all(event):
+        mb.enabled = False  # disable the menubar
+
+    def enable_edit(event):
+        m2.enabled = not m2.enabled
+        mi11.label = "Close" if m2.enabled else "Open" 
+        mi12.enabled = not mi12.enabled
+
+    mi11.onclick = enable_edit
+    mi13.onclick = disable_all
+
+    from gui2py.tools.inspector import InspectorTool
+    InspectorTool().show(w)
 
     w.show()
     app.MainLoop()
