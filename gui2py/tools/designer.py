@@ -88,6 +88,11 @@ class BasicDesigner:
                 # calculate the pos (minus the offset, not in a panel like rw!)
                 #dx, dy = wx_obj.ScreenToClient(wx.GetMousePosition())
                 pos = wx_obj.ScreenToClient(wx.GetMousePosition())
+                x, y = pos
+                if evt.ShiftDown():     # snap to grid:
+                    x = x / GRID_SIZE[0] * GRID_SIZE[0]
+                    y = y / GRID_SIZE[1] * GRID_SIZE[1]
+                pos = wx.Point(x, y)
                 delta = self.current['pos'] - pos 
                 new_size = wx_obj.GetSize() - delta.Get()
                 self.adjust_new_size(wx_obj, new_size)
@@ -102,7 +107,11 @@ class BasicDesigner:
                     ##self._bestSize = new_size 
             else:
                 # update gui2py specs (this will overwrite relative dimensions):
-                wx_obj.reference.pos = (wx.Point(x + sx, y + sy))
+                x, y = (x + sx, y + sy)
+                if evt.ShiftDown():     # snap to grid:
+                    x = x / GRID_SIZE[0] * GRID_SIZE[0]
+                    y = y / GRID_SIZE[1] * GRID_SIZE[1]
+                wx_obj.reference.pos = (wx.Point(x, y))
 
     def draw_grip(self, wx_obj):
         "draw the resize handle"
