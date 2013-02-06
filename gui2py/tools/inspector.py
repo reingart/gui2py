@@ -54,6 +54,7 @@ class InspectorPanel(wx.Panel):
 
     def load_object(self, obj):
         "Add the object and all their childs"
+        self.root_obj = obj
         self.tree.DeleteAllItems()
         self.root = self.tree.AddRoot("application")
         self.tree.SetItemText(self.root, "App", 1)
@@ -151,9 +152,53 @@ class InspectorPanel(wx.Panel):
         pos = evt.GetPosition()
         item, flags, col = self.tree.HitTest(pos)
         if item:
-            self.log.write('Flags: %s, Col:%s, Text: %s' %
-                           (flags, col, self.tree.GetItemText(item, col)))
+            d = self.tree.GetItemData(item)
+            if d:
+                o = d.GetData()
+                if o:
+                    # highligh and store the selected object:
+                    self.highlight(o.wx_obj)
+                    self.obj = o
+                    
+                    # make the context menu
+                    menu = wx.Menu()
+                    id_del, id_dup, id_raise, id_lower = [wx.NewId() for i
+                                                            in range(4)]
+                    menu.Append(id_del, "Delete")
+                    menu.Append(id_dup, "Duplicate")
+                    menu.Append(id_raise, "Bring to Front")
+                    menu.Append(id_lower, "Send to Back")
 
+                    # make submenu!
+                    ##sm = wx.Menu()
+                    ##sm.Append(wx.NewId(), "sub item 1")
+                    ##sm.Append(wx.NewId(), "sub item 1")
+                    ##menu.AppendMenu(wx.NewId(), "Add child", sm)
+
+                    self.Bind(wx.EVT_MENU, self.delete, id=id_del)
+                    self.Bind(wx.EVT_MENU, self.duplicate, id=id_dup)
+                    self.Bind(wx.EVT_MENU, self.bring_to_front, id=id_raise)
+                    self.Bind(wx.EVT_MENU, self.send_to_back, id=id_lower)
+
+                    self.PopupMenu(menu)
+                    menu.Destroy()
+                    self.load_object(self.root_obj)     # reload the tree
+    
+    def delete(self, evt):
+        # remove the object from parent and destroy it:
+        self.obj.destroy()
+        del self.obj
+
+    def duplicate(self, evt):
+        # create a similar copy of the object
+        obj2 = self.obj.duplicate()
+
+    def bring_to_front(self, evt):
+        self.obj.z_order(1)
+
+    def send_to_back(self, evt):
+        self.obj.z_order(0)
+    
     def OnSize(self, evt):
         self.tree.SetSize(self.GetSize())
 

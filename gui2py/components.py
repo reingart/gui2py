@@ -191,15 +191,60 @@ class Component(object):
         # Handle resize events to adjust absolute and relative dimensions
         self.wx_obj.Bind(wx.EVT_SIZE, self.resize)
 
+    
 
     def __del__(self):
         "Destructor: clean-up all references"
+        self.destroy()
+    
+    def destroy(self):
+        "Remove event references and destroy wx object"
+        if self.wx_obj:
+            self.wx_obj.Destroy()
+            for child in self:
+                print "destroying child", 
+                child.destroy()
         if self._name:
             del COMPONENTS[self._name]
+            print "deleted from components!"
             if isinstance(self._parent, Component):
-                del self._parent[self._name]    
+                del self._parent[self._name]
+                print "deleted from parent!"
 
+    def duplicate(self):
+        "Create a new object exactly similar to self"
+        kwargs = {}
+        for spec_name, spec in self._meta.specs.items():
+            kwargs[spec_name] = getattr(self, spec_name)
+        del kwargs['parent'] 
+        new_id = wx.NewId()
+        kwargs['id'] = new_id
+        kwargs['name'] = "%s_%s" % (kwargs['name'], new_id)
+        return self.__class__(self.get_parent(), **kwargs)
 
+    def z_order(self, z=0):
+        "Raises/lower the window to the top of the window hierarchy (Z-order)"
+        # z=0: lowers, z=-1: raises
+        if z:
+            self.wx_obj.Raise()
+        else:
+            self.wx_obj.Lower()
+        if isinstance(self._parent, Component):
+            # get the current index (z-order)
+            i = self._parent._children_list.index(self)
+            # delete the element reference from the list
+            del self._parent._children_list[i]
+            # insert as last element
+            if z:
+                self._parent._children_list.append(self)
+            else:
+                self._parent._children_list.insert(0, self)
+            # rebuild in order:
+            for child in self._parent:
+                if isinstance(child, Control):
+                    child.__init__()
+
+            
     # Container methods:
 
     def __iter__(self):
@@ -213,7 +258,7 @@ class Component(object):
         return self._children_dict[key]
     
     def __delitem__(self, key):
-        del self._children_list[self._children[key]]
+        del self._children_list[self._children_list.index(self._children_dict[key])]
         del self._children_dict[key]
                 
     # Public methods:
