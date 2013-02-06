@@ -114,8 +114,14 @@ class wx_Menu(wx_DummyWindow, wx.Menu):
         wx.Menu.__init__(self)
         self.parent = parent
         self.GetId = lambda self=self: kwargs['id']
-        self.pos = self.parent.GetMenuCount()
-        self.parent.Append(self, kwargs.get("label"))
+        if isinstance(parent, wx.MenuBar):
+            self.pos = self.parent.GetMenuCount()
+            self.parent.Append(self, kwargs.get("label"))
+        else:
+            self.pos = self.parent.GetMenuItemCount()
+            self.parent.AppendSubMenu(submenu=self, 
+                                   text=kwargs.get("label"),
+                                   help=kwargs.get("label"))
 
     # unsupported methods:
     
@@ -145,7 +151,11 @@ class Menu(Component):
     label = InitSpec(_get_label,  _set_label,
                      optional=False, default='Menu', type="string", 
                      doc="text to show as caption")
-                     
+    help = InitSpec(lambda self: self.wx_obj.GetText(), 
+                 lambda self, label: self.wx_obj.SetText(label),
+                 optional=True, default='', type="string", 
+                 doc="text to show as help in the status bar?")               
+
 
 class wx_MenuBar(wx_DummyWindow, wx.MenuBar):
 
@@ -185,11 +195,15 @@ if __name__ == '__main__' :
     w = Window(title="hello world", name="frmTest", tool_window=False, 
                resizable=True, visible=False, pos=(180, 0))
 
-    mb = MenuBar(w) 
+    mb = MenuBar(w, name="menubar") 
     m1 = Menu(mb, label='File', name="mnu_file")
     mi11 = MenuItem(m1, label='Open', name='menu_file_open')
     mi12 = MenuItem(m1, label='Save', name='menu_file_save')
     mi13 = MenuItem(m1, label='Quit', name='menu_file_quit')
+    m11 = Menu(m1, label='Recent files', name="mnu_recent_file")
+    mi111 = MenuItem(m11, label='file1', name='menu_recent_file1')
+    mi112 = MenuItem(m11, label='file2', name='menu_recent_file2')
+    mi113 = MenuItem(m11, label='file3', name='menu_recent_file3')
     m2 = Menu(mb, label='Edit', name="mnu_edit")
     mi21 = MenuItem(m2, label='Copy', name='menu_edit_copy')
     mi22 = MenuItem(m2, label='Cut', name='menu_edit_cut')
