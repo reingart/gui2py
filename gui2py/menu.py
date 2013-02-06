@@ -215,6 +215,12 @@ class MenuBar(Component):
             mi = MenuItem(m, label='MenuItem', name='menu_item_%s' % id, id=id)
             mi.designer = self.designer
 
+    def find(self, item_id=None):
+        "Recursively find a menu item by its id (useful for event handlers)"
+        for it in self:
+            found = it.find(item_id)
+            if found:
+                return found 
 
 # Unit Test
 

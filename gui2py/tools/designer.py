@@ -130,8 +130,9 @@ class BasicDesigner:
             # menu clicked
             if self.inspector:
                 wx_obj = evt.GetEventObject()
+                if isinstance(wx_obj, wx.Frame):
+                    wx_obj = wx_obj.GetMenuBar()    # wx28/MSW
                 obj = wx_obj.reference.find(evt.GetId())
-                print "selected", obj.name, obj.id, evt.GetId()
                 self.inspector.inspect(obj)
         elif self.current or evt.LeftIsDown():
             if evt.LeftDown():
