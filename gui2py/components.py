@@ -477,6 +477,9 @@ class Component(object):
             self.wx_obj.Bind(wx.EVT_MENU, func)
             # link repaint event (refresh) to the designer (draw grid)
             self.wx_obj.Bind(wx.EVT_PAINT, func)
+            # link key press event to the designer (move)
+            self.wx_obj.Bind(wx.EVT_KEY_DOWN, func)
+            self.wx_obj.Bind(wx.EVT_KEY_UP, func)
             self._designer = func
             for child in self:
                 child.designer = func

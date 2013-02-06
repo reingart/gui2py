@@ -99,7 +99,7 @@ class InspectorPanel(wx.Panel):
         if d:
             o = d.GetData()
             self.propeditor.load_object(o)
-            self.propeditor.Parent.SetFocus()
+            ##self.propeditor.Parent.SetFocus()
     
     def do_highlight(self, tlw, rect, colour, pen_width=2):
         if not self.highlighting:

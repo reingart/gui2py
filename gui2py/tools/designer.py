@@ -21,6 +21,7 @@ class BasicDesigner:
     def __init__(self, parent, inspector=None):
         self.parent = parent
         self.current = {}
+        self.selection = []
         self.resizing = False
         # bind all objects that can be controlled by this class
         parent.designer = self
@@ -64,6 +65,8 @@ class BasicDesigner:
         wx_obj = evt.GetEventObject()
         if wx_obj.Parent is None:
             evt.Skip()
+            if not evt.ControlDown():
+                self.selection = []  # clear previous selection
         else:
             print wx_obj
             sx, sy = wx_obj.ScreenToClient(wx_obj.GetPositionTuple())
@@ -151,6 +154,11 @@ class BasicDesigner:
                 self.draw_grid(evt)
             else:
                 evt.Skip()  # call the default handler
+        elif evt.GetEventType() == wx.EVT_KEY_DOWN.typeId:
+            self.key_press(evt)
+        elif evt.GetEventType() == wx.EVT_KEY_UP.typeId:
+            if not evt.ControlDown():
+                self.selection = []     # clear selection
         elif self.current or evt.LeftIsDown():
             if evt.LeftDown():
                 self.mouse_down(evt)
@@ -180,6 +188,41 @@ class BasicDesigner:
             self.current = {}
             if self.inspector:
                 self.inspector.inspect(wx_obj.reference)
+            # keep selected object (for keypress)
+            self.selection.append(wx_obj)
+            print "SELECTION", self.selection
+
+    def key_press(self, event):
+        "support cursor keys to move components one pixel at a time"
+        key = event.GetKeyCode()
+        if key in (wx.WXK_LEFT, wx.WXK_UP, wx.WXK_RIGHT, wx.WXK_DOWN):
+            for wx_obj in self.selection:
+                x, y = wx_obj.GetPosition()
+                if event.ShiftDown():     # snap to grid:
+                    # for now I'm only going to align to grid
+                    # in the direction of the cursor movement 
+                    if key == wx.WXK_LEFT:
+                        x = (x - GRID_SIZE[0]) / GRID_SIZE[0] * GRID_SIZE[0]
+                    elif key == wx.WXK_RIGHT:
+                        x = (x + GRID_SIZE[0]) / GRID_SIZE[0] * GRID_SIZE[0]
+                    elif key == wx.WXK_UP:
+                        y = (y - GRID_SIZE[1]) / GRID_SIZE[1] * GRID_SIZE[1]
+                    elif key == wx.WXK_DOWN:
+                        y = (y + GRID_SIZE[1]) / GRID_SIZE[1] * GRID_SIZE[1]
+                else:
+                    if key == wx.WXK_LEFT:
+                        x = x - 1
+                    elif key == wx.WXK_RIGHT:
+                        x = x + 1
+                    elif key == wx.WXK_UP:
+                        y = y - 1
+                    elif key == wx.WXK_DOWN:
+                        y = y + 1
+                wx_obj.SetPosition((x, y))
+                # make sure sizing handles follow component
+                ##self.showSizingHandles(name)
+                # update the position on the propertyEditor status bar
+                ##self.setToolTipDrag(name, (x, y), self.components[name].size)
 
     def draw_grid(self, event):
         wx_obj = event.GetEventObject()
