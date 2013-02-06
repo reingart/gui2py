@@ -107,7 +107,7 @@ class InspectorPanel(wx.Panel):
             ##self.propeditor.Parent.SetFocus()
     
     def do_highlight(self, tlw, rect, colour, pen_width=2):
-        if not self.highlighting:
+        if not self.highlighting and tlw:
             self.highlighting = tlw
             if not tlw.IsFrozen():
                 tlw.Freeze()
