@@ -50,7 +50,11 @@ class InspectorPanel(wx.Panel):
         self.tree.GetMainWindow().Bind(wx.EVT_RIGHT_UP, self.OnRightUp)
         self.tree.Bind(wx.EVT_TREE_ITEM_ACTIVATED, self.OnActivate)
         self.tree.Bind(wx.EVT_TREE_SEL_CHANGED, self.OnSelect)
+        self.desginer = None
 
+    def set_designer(self, designer):
+        "track designer for context menu"
+        self.designer = designer
 
     def load_object(self, obj):
         "Add the object and all their childs"
@@ -154,11 +158,11 @@ class InspectorPanel(wx.Panel):
         if item:
             d = self.tree.GetItemData(item)
             if d:
-                o = d.GetData()
-                if o:
+                obj = d.GetData()
+                if obj:
                     # highligh and store the selected object:
-                    self.highlight(o.wx_obj)
-                    self.obj = o
+                    self.highlight(obj.wx_obj)
+                    self.obj = obj
                     
                     # make the context menu
                     menu = wx.Menu()
@@ -170,10 +174,15 @@ class InspectorPanel(wx.Panel):
                     menu.Append(id_lower, "Send to Back")
 
                     # make submenu!
-                    ##sm = wx.Menu()
-                    ##sm.Append(wx.NewId(), "sub item 1")
-                    ##sm.Append(wx.NewId(), "sub item 1")
-                    ##menu.AppendMenu(wx.NewId(), "Add child", sm)
+                    sm = wx.Menu()
+                    for ctrl in obj._meta.valid_children:
+                        new_id = wx.NewId()
+                        sm.Append(new_id, ctrl._meta.name)
+                        self.Bind(wx.EVT_MENU, 
+                                  lambda evt, ctrl=ctrl: self.add_child(ctrl), 
+                                  id=new_id)
+                        
+                    menu.AppendMenu(wx.NewId(), "Add child", sm)
 
                     self.Bind(wx.EVT_MENU, self.delete, id=id_del)
                     self.Bind(wx.EVT_MENU, self.duplicate, id=id_dup)
@@ -198,6 +207,15 @@ class InspectorPanel(wx.Panel):
 
     def send_to_back(self, evt):
         self.obj.z_order(0)
+    
+    def add_child(self, ctrl):
+        new_id = wx.NewId()
+        obj = ctrl(self.obj, 
+               name="%s_%s" % (ctrl._meta.name.lower(), new_id),
+               id=new_id, 
+               designer=self.designer)
+        # update the object at the inspector (to show the new control)
+        wx.CallAfter(self.inspect, obj)
     
     def OnSize(self, evt):
         self.tree.SetSize(self.GetSize())

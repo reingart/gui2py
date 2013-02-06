@@ -99,7 +99,7 @@ class PropertyEditorPanel(wx.Panel):
                             value = value.get_wx_font()
                         if callable(value):
                             # event binded at runtime cannot be modified:
-                            value = "<function %s>" % value.func_name
+                            value = str(value)
                             readonly = True
                         else:
                             readonly = False
@@ -108,7 +108,10 @@ class PropertyEditorPanel(wx.Panel):
                                            spec.mapping.keys(), 
                                            spec.mapping.values())
                         else:
-                            prop = prop(name, value=value)
+                            try:
+                                prop = prop(name, value=value)
+                            except Exception, e:
+                                print "CANNOT LOAD", name, value, e
                         
                         if spec.group is None:
                             pg.Append(prop)

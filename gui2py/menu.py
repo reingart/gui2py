@@ -145,12 +145,18 @@ class Menu(Component):
     def _set_label(self, value):
         # note that wx.Menu.SetTitle() does not work on gtk for menubars
         pos = self.wx_obj.pos
-        self.wx_obj.parent.SetMenuLabel(pos, value)
-    
+        if isinstance(self.wx_obj.parent, wx.MenuBar):
+            self.wx_obj.parent.SetMenuLabel(pos, value)
+        else:
+           self.wx_obj.parent.SetTitle(pos, value)
+                
     def _get_label(self):
         # note that wx.Menu.GetTitle() does not work on windows for menubars
         pos = self.wx_obj.pos
-        return self.wx_obj.parent.GetMenuLabel(pos)
+        if isinstance(self.wx_obj.parent, wx.MenuBar):
+            return self.wx_obj.parent.GetMenuLabel(pos)
+        else:
+            return self.wx_obj.parent.GetTitle(pos)
 
     def find(self, item_id=None):
         "Recursively find a menu item by its id (useful for event handlers)"
@@ -221,6 +227,10 @@ class MenuBar(Component):
             found = it.find(item_id)
             if found:
                 return found 
+
+# update metadata for context menu
+MenuBar._meta.valid_children = [Menu, ] 
+Menu._meta.valid_children = [MenuItem, Menu] 
 
 # Unit Test
 

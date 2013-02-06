@@ -20,6 +20,7 @@ class ComponentMeta():
     def __init__(self, name, specs):
         self.name = name
         self.specs = specs
+        self.valid_children = []
 
     
 class ComponentBase(type):

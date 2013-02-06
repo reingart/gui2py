@@ -338,6 +338,8 @@ if __name__ == '__main__':
         # (this will allow to drop new controls on the window)
         dt = ToolBoxDropTarget(w, designer=designer, inspector=inspector)
         w.drop_target = dt
+        # link the designer (context menu)
+        inspector.set_designer(designer)
         w.show()
 
     w.onunload = save 
