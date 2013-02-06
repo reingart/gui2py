@@ -184,11 +184,6 @@ class BasicDesigner:
     def draw_grid(self, event):
         wx_obj = event.GetEventObject()
         dc = wx.PaintDC(wx_obj)
-        #if not dc :
-        #    dc = wx.ClientDC(self.panel)
-        #    r = self.panel.GetUpdateRegion().GetBox()
-        #    dc.SetClippingRegion(r.x, r.y, r.width, r.height)
-        # need to set the background color to the default panel color
         brush = dc.GetBackground()
         brush.SetColour(wx_obj.GetBackgroundColour())
         dc.SetBackground(brush)
@@ -201,9 +196,7 @@ class BasicDesigner:
         nx = w / xgrid
         ny = h / ygrid
         for x in range(1, nx + 1):
-            #dc.DrawLine(x * xgrid, 0, x * xgrid, h)
             for y in range(1, ny + 1):
-                #dc.DrawLine(0, y * ygrid, w, y * ygrid)
                 dc.DrawPoint(x * xgrid, y * ygrid)
 
     def OnLayoutNeeded(self, evt):
