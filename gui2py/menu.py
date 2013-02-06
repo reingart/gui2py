@@ -42,7 +42,6 @@ class wx_DummyWindow:
     def Bind(self, evt, handler, id=None):
         # this should reach top level window:
         if evt == wx.EVT_SIZE:
-            print "ignoring resize event!"
             pass
         else:
             print "binding MENU", self.__class__.__name__, id, handler
@@ -112,8 +111,7 @@ class wx_Menu(wx_DummyWindow, wx.Menu):
         else:
             self.pos = self.parent.GetMenuItemCount()
             self.parent.AppendSubMenu(submenu=self, 
-                                   text=kwargs.get("label"),
-                                   help=kwargs.get("label"))
+                                   text=kwargs.get("label"))
 
     # unsupported methods:
     
@@ -154,13 +152,19 @@ class Menu(Component):
         pos = self.wx_obj.pos
         return self.wx_obj.parent.GetMenuLabel(pos)
 
+    def find(self, item_id=None):
+        "Recursively find a menu item by its id (useful for event handlers)"
+        for it in self:
+            if it.id == item_id:
+                return it
+            elif isinstance(it, Menu):
+                found = it.find(item_id)
+                if found:
+                    return found 
+
     label = InitSpec(_get_label,  _set_label,
                      optional=False, default='Menu', type="string", 
-                     doc="text to show as caption")
-    help = InitSpec(lambda self: self.wx_obj.GetText(), 
-                 lambda self, label: self.wx_obj.SetText(label),
-                 optional=True, default='', type="string", 
-                 doc="text to show as help in the status bar?")               
+                     doc="text to show as caption")         
 
 
 class wx_MenuBar(wx_DummyWindow, wx.MenuBar):
@@ -199,6 +203,17 @@ class MenuBar(Component):
 
     _wx_class = wx_MenuBar
     _image = images.menubar
+    _registry = registry.CONTROLS
+    
+    def __init__(self, *args, **kwargs):
+        Component.__init__(self, *args, **kwargs)
+        if hasattr(self, "_designer") and self.designer:
+            # create a basic event
+            id = wx.NewId()
+            m = Menu(self, label='Menu', name="menu_%s" % id, id=id)
+            id = wx.NewId()
+            mi = MenuItem(m, label='MenuItem', name='menu_item_%s' % id, id=id)
+            mi.designer = self.designer
 
 
 # Unit Test

@@ -6,6 +6,7 @@ from .spec import Spec, EventSpec, InitSpec, DimensionSpec, StyleSpec, InternalS
 from . import registry
 
 DEBUG = False
+COMPONENTS = {}        # map all created objects (used to search parents) 
 
 def new_id(id=None):
     if id is None or id == -1:
@@ -64,7 +65,7 @@ class Component(object):
     _image = None               # default icon for toolbox
     
     def __init__(self, parent=None, **kwargs):
-    
+        
         # create the wxpython kw arguments (based on specs and defaults)
         wx_kwargs = dict(id=new_id(kwargs.get('id')))
         
@@ -89,7 +90,13 @@ class Component(object):
         else:
             if isinstance(parent, basestring):
                 # find the object reference
-                parent = wx.FindWindowByName(parent).reference
+                wx_obj = wx.FindWindowByName(parent)
+                if wx_obj:
+                    parent = wx_obj.reference  # store gui2py object
+                else:
+                    # try to find parent in globals variables
+                    parent = COMPONENTS[parent]
+                    # TODO: only useful for designer, get a better way
             self._parent = parent       # store parent
             self._font = None
             # container to hold children:
@@ -164,6 +171,7 @@ class Component(object):
         self.wx_obj.reference = self
         if isinstance(self._parent, Component) and self._name:
             self._parent[self._name] = self     # add child reference
+            COMPONENTS[self._name] = self  # keep track for future reference
         
         # re-associate childrens (wx objects hierachy): 
         if rebuild:
@@ -182,6 +190,14 @@ class Component(object):
 
         # Handle resize events to adjust absolute and relative dimensions
         self.wx_obj.Bind(wx.EVT_SIZE, self.resize)
+
+
+    def __del__(self):
+        "Destructor: clean-up all references"
+        if self._name:
+            del COMPONENTS[self._name]
+            if isinstance(self._parent, Component):
+                del self._parent[self._name]    
 
 
     # Container methods:
@@ -457,6 +473,8 @@ class Component(object):
             self.wx_obj.Unbind(wx.EVT_LEAVE_WINDOW)
             # connect the mouse event handler of the designer:
             self.wx_obj.Bind(wx.EVT_MOUSE_EVENTS, func)
+            # link menu selection (click) to the designer
+            self.wx_obj.Bind(wx.EVT_MENU, func)
             self._designer = func
             for child in self:
                 child.designer = func

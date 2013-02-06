@@ -126,7 +126,14 @@ class BasicDesigner:
 
     def __call__(self, evt):
         "Handler for EVT_MOUSE_EVENTS (binded in design mode)"
-        if self.current or evt.LeftIsDown():
+        if evt.IsCommandEvent():
+            # menu clicked
+            if self.inspector:
+                wx_obj = evt.GetEventObject()
+                obj = wx_obj.reference.find(evt.GetId())
+                print "selected", obj.name, obj.id, evt.GetId()
+                self.inspector.inspect(obj)
+        elif self.current or evt.LeftIsDown():
             if evt.LeftDown():
                 self.mouse_down(evt)
             elif evt.LeftUp():
@@ -175,15 +182,21 @@ def save(evt):
     fout = open("sample.pyw", "w")
     copy = True
     newlines = fin.newlines or "\n"
+
+    def dump(obj):
+        "recursive convert object to string"
+        for ctl in obj:
+            fout.write(str(ctl))
+            fout.write(newlines)
+            dump(ctl)
+
     for line in fin:
         if line.startswith("# --- gui2py designer start ---"):
             fout.write(line)
             fout.write(newlines)
             fout.write(str(w))
             fout.write(newlines)
-            for ctl in w:
-                fout.write(str(ctl))
-                fout.write(newlines)
+            dump(w)
             fout.write(newlines)
             copy = False
         if line.startswith("# --- gui2py designer end ---"):
@@ -200,11 +213,15 @@ if __name__ == '__main__':
     # basic proof-of-concept visual gui2py designer
     
     import sys,os
+    
+    #    
+    os.environ['UBUNTU_MENUPROXY'] = '0'
     app = wx.App(redirect=None)    
 
     # import controls (fill the registry!)
     from gui2py.windows import Window
     import gui2py.controls
+    import gui2py.menu
 
     # import tools used by the designer
     from gui2py.tools.inspector import InspectorPanel

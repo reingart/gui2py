@@ -6,6 +6,7 @@ if app is None:
     app = wx.App()
 
 from gui2py.windows import Window
+from gui2py.menu import MenuBar, Menu, MenuItem
 from gui2py.controls import Button, Label, TextBox, CheckBox, ListBox, ComboBox
 
 # --- gui2py designer start ---
@@ -23,7 +24,7 @@ mywin = Window(
 btnClose = Button(
             font={'size': 11, 'face': u'Ubuntu'}, 
             height='29', 
-            id=-2017, 
+            id=-2018, 
             label=u'Quit', 
             left='232', 
             name=u'btnClose', 
@@ -33,7 +34,7 @@ btnClose = Button(
 chkTest = CheckBox(
             font={'size': 11, 'face': u'Ubuntu'}, 
             height='24', 
-            id=-2021, 
+            id=-2019, 
             label=u'Check me!', 
             left='98', 
             name='chkTest', 
@@ -44,7 +45,7 @@ lblTest = Label(
             alignment='right', 
             font={'size': 11, 'face': u'Ubuntu'}, 
             height='500', 
-            id=-2019, 
+            id=-2020, 
             left='38', 
             name='lblTest', 
             parent='mywin', 
@@ -54,7 +55,7 @@ lblTest = Label(
 txtTest = TextBox(
             font={'size': 11, 'face': u'Ubuntu'}, 
             height='25', 
-            id=-2020, 
+            id=-2021, 
             left='99', 
             name='txtTest', 
             parent='mywin', 
@@ -65,7 +66,7 @@ btnTest = Button(
             default=True, 
             font={'size': 11, 'face': u'Ubuntu'}, 
             height='29', 
-            id=-2018, 
+            id=-2022, 
             label=u'click me!', 
             left='126', 
             name='btnTest', 
@@ -86,7 +87,7 @@ cboTest = ComboBox(
 lstTest = ListBox(
             font={'size': 11, 'face': u'Ubuntu'}, 
             height='96', 
-            id=-2022, 
+            id=-2024, 
             items=[u'one', u'two', u'tree'], 
             left='277', 
             name='lstTest', 
@@ -94,6 +95,33 @@ lstTest = ListBox(
             string_selection=u'', 
             top='28', 
             width='103')
+menubar_83_155 = MenuBar(
+            client_size=[0, 0], 
+            fgcolor='black', 
+            font={'size': 11, 'face': u'Ubuntu'}, 
+            id=-2025, 
+            name='menubar_83_155', 
+            parent='mywin', 
+            pos=[0, 0], 
+            size=[0, 0])
+menu_114 = Menu(
+            client_size=[0, 0], 
+            fgcolor='black', 
+            font={'size': 11, 'face': u'Ubuntu'}, 
+            id=114, 
+            name='menu_114', 
+            parent='menubar_83_155', 
+            pos=[0, 0], 
+            size=[0, 0])
+menu_item_115 = MenuItem(
+            client_size=[0, 0], 
+            font={'size': 11, 'face': u'Ubuntu'}, 
+            help=u'MenuItem', 
+            id=115, 
+            name='menu_item_115', 
+            parent='menu_114', 
+            pos=[0, 0], 
+            size=[0, 0])
 
 # --- gui2py designer end ---
 
