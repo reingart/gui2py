@@ -105,11 +105,11 @@ class BasicDesigner:
                 self.adjust_new_size(wx_obj, new_size)
                 if new_size != wx_obj.GetSize():
                     # reset margins (TODO: avoid resizing recursion)
-                    wx_obj.reference.margin_left = 0
-                    wx_obj.reference.margin_right = 0
-                    wx_obj.reference.margin_top = 0
-                    wx_obj.reference.margin_bottom = 0
-                    wx_obj.reference.size = new_size    # update gui2py specs
+                    wx_obj.obj.margin_left = 0
+                    wx_obj.obj.margin_right = 0
+                    wx_obj.obj.margin_top = 0
+                    wx_obj.obj.margin_bottom = 0
+                    wx_obj.obj.size = new_size    # update gui2py specs
                     self.current['pos'] = pos
                     ##self._bestSize = new_size 
             else:
@@ -118,7 +118,7 @@ class BasicDesigner:
                 if evt.ShiftDown():     # snap to grid:
                     x = x / GRID_SIZE[0] * GRID_SIZE[0]
                     y = y / GRID_SIZE[1] * GRID_SIZE[1]
-                wx_obj.reference.pos = (wx.Point(x, y))
+                wx_obj.obj.pos = (wx.Point(x, y))
                     
     def draw_grip(self, wx_obj):
         "draw the resize handle"
@@ -150,7 +150,7 @@ class BasicDesigner:
                 wx_obj = evt.GetEventObject()
                 if isinstance(wx_obj, wx.Frame):
                     wx_obj = wx_obj.GetMenuBar()    # wx28/MSW
-                obj = wx_obj.reference.find(evt.GetId())
+                obj = wx_obj.obj.find(evt.GetId())
                 self.inspector.inspect(obj)
         elif evt.GetEventType() == wx.EVT_PAINT.typeId:
             wx_obj = evt.GetEventObject()
@@ -191,7 +191,7 @@ class BasicDesigner:
                 self.parent.wx_obj.ReleaseMouse()
             self.current = {}
             if self.inspector:
-                self.inspector.inspect(wx_obj.reference)
+                self.inspector.inspect(wx_obj.obj)
             # keep selected object (for keypress)
             self.selection.append(wx_obj)
             if DEBUG: print "SELECTION", self.selection
@@ -253,7 +253,7 @@ class BasicDesigner:
 def save(evt):
     "Basic save functionality: just replaces the gui code"
     wx_obj = evt.GetEventObject()
-    w = wx_obj.reference
+    w = wx_obj.obj
     if DEBUG: print "saving..."
     # make a backup:
     fin = open("sample.pyw", "ru")

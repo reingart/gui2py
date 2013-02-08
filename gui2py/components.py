@@ -82,7 +82,7 @@ class Component(object):
                     # get the current value and store it in kwargs
                     kwargs[spec_name]  = getattr(self, spec_name)
             self.wx_obj.Visible = False
-            self.wx_obj.reference = None
+            self.wx_obj.obj = None
             self.wx_obj.Destroy()
             del self.wx_obj
             if DEBUG: print "kwargs", kwargs
@@ -93,7 +93,7 @@ class Component(object):
                 # find the object reference
                 wx_obj = wx.FindWindowByName(parent)
                 if wx_obj:
-                    parent = wx_obj.reference  # store gui2py object
+                    parent = wx_obj.obj  # store gui2py object
                 else:
                     # try to find parent in globals variables
                     parent = COMPONENTS[parent]
@@ -169,7 +169,7 @@ class Component(object):
                 setattr(self, spec_name, None)
                     
         # store gui2py reference inside of wx object
-        self.wx_obj.reference = self
+        self.wx_obj.obj = self
         if isinstance(self._parent, Component) and self._name:
             self._parent[self._name] = self     # add child reference
             COMPONENTS[self._name] = self  # keep track for future reference
@@ -274,8 +274,8 @@ class Component(object):
     
     def get_parent(self):
         parent = self.wx_obj.GetParent()
-        if hasattr(parent, "reference"):
-            return parent.reference  # return the gui2py object
+        if hasattr(parent, "obj"):
+            return parent.obj  # return the gui2py object
         else:
             return parent            # return the wx object
 

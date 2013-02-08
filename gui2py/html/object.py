@@ -89,12 +89,12 @@ class ObjectTagHandler(wx.html.HtmlWinTagHandler):
             obj.visible = True
             # add it to the HtmlWindow
             cell = wx.html.HtmlWidgetCell(obj.wx_obj, float_width)
-            cell.reference = obj    # store the gui2py object ref
+            cell.obj = obj    # store the gui2py object ref
             self.GetParser().GetContainer().InsertCell(cell)
 
             # designer-mode: "capture" mouse events and send fake click ones
 
-            if parent.reference.design:
+            if parent.obj.design:
             
                 def OnMotion(evt):
                     print "OnMotion!"
@@ -116,7 +116,7 @@ class ObjectTagHandler(wx.html.HtmlWinTagHandler):
                         #pt = x, y
                         new_evt = HtmlCtrlClickEvent(obj)
                         #new_evt.SetEventObject(evt_obj)
-                        print "evt cell ref", cell.reference
+                        print "evt cell ref", cell.obj
                     #new_evt.SetId(cell.GetId()) 
                     parent.GetEventHandler().ProcessEvent(evt) 
 

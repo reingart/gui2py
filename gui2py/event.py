@@ -19,7 +19,7 @@ class Event:
         self.wx_event = wx_event
         # retrieve wxPython event properties:
         wx_obj = self.wx_event.GetEventObject()
-        self.target = wx_obj.reference if wx_obj else None
+        self.target = wx_obj.obj if wx_obj else None
         self.timestamp = wx_event.GetTimestamp()
         # check if timestamp (wx report it only for mouse or keyboard)
         if not self.timestamp:

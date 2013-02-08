@@ -205,7 +205,7 @@ class Component(object):
                     # get the current value and store it in kwargs
                     kwargs[spec_name]  = getattr(self, spec_name)
             self.wx_obj.Visible = False
-            self.wx_obj.reference = None
+            self.wx_obj.obj = None
             self.wx_obj.Destroy()
             del self.wx_obj
             if DEBUG: print "kwargs", kwargs
@@ -267,7 +267,7 @@ class Component(object):
             setattr(self, spec_name, value)
                 
         # store gui2py reference inside of wx object
-        self.wx_obj.reference = self
+        self.wx_obj.obj = self
 
     def _set_style(self, **kwargs):
         for spec_name, spec in self._meta.specs.items():
