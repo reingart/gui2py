@@ -87,11 +87,6 @@ class MenuItem(Component):
     _wx_class = wx_MenuItem
     _registry = registry.MENU
 
-    checkable = StyleSpec(wx.ITEM_CHECK, default=False)
-    separator = StyleSpec(wx.ITEM_SEPARATOR, default=False)              
-    checked = Spec(lambda self: self.checkable and self.wx_obj.IsChecked(), 
-                   lambda self, value: self.checkable and self.wx_obj.Check(value),
-                   default=False, type="boolean")
     label = InitSpec(lambda self: self.wx_obj.GetText(), 
                      lambda self, label: self.wx_obj.SetText(label),
                      optional=False, default='MenuItem', type="string", 
@@ -105,6 +100,23 @@ class MenuItem(Component):
     def rebuild(self, **kwargs):
         # avoid recreating the object (not supported yet!)
         Component.rebuild(self, False, **kwargs)
+
+
+class MenuItemCheckable(MenuItem):
+    "A MenuItem represents one selectable item in a Menu"
+
+    _wx_class = wx_MenuItem
+    _registry = registry.MENU
+    _style = wx.ITEM_CHECK
+    
+    checked = Spec(lambda self: self.wx_obj.IsChecked(), 
+                   lambda self, value: self.wx_obj.Check(value),
+                   default=False, type="boolean")
+
+
+class MenuItemSeparator(MenuItem):
+
+    _style = wx.ITEM_SEPARATOR              
 
 
 class wx_Menu(wx_DummyWindow, wx.Menu):
@@ -291,7 +303,7 @@ class MenuBar(Component):
 
 # update metadata for context menu
 MenuBar._meta.valid_children = [Menu, ] 
-Menu._meta.valid_children = [MenuItem, Menu] 
+Menu._meta.valid_children = [MenuItem, MenuItemCheckable, MenuItemSeparator, Menu] 
 
 # Unit Test
 

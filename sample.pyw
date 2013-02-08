@@ -6,7 +6,7 @@ if app is None:
     app = wx.App()
 
 from gui2py.windows import Window
-from gui2py.menu import MenuBar, Menu, MenuItem
+from gui2py.menu import MenuBar, Menu, MenuItem, MenuItemCheckable, MenuItemSeparator
 from gui2py.controls import Button, Label, TextBox, CheckBox, ListBox, ComboBox
 
 # --- gui2py designer start ---
@@ -104,14 +104,33 @@ menubar_83_155 = MenuBar(
 menu_114 = Menu(
             fgcolor='black', 
             font={'size': 11, 'face': u'Ubuntu'}, 
-            id=114, 
             name='menu_114', 
             parent='menubar_83_155')
-menu_item_115 = MenuItem(
+menuitem_127 = MenuItem(
             font={'size': 11, 'face': u'Ubuntu'}, 
             help=u'MenuItem', 
-            id=115, 
-            name='menu_item_115', 
+            id=127, 
+            name='menuitem_127', 
+            parent='menu_114')
+menuitemcheckable_120 = MenuItemCheckable(
+            checked=True, 
+            font={'size': 11, 'face': u'Ubuntu'}, 
+            help=u'MenuItemCheck', 
+            id=120, 
+            label=u'MenuItemCheck', 
+            name='menuitemcheckable_120', 
+            parent='menu_114')
+menuitemseparator_130 = MenuItemSeparator(
+            font={'size': 11, 'face': u'Ubuntu'}, 
+            help=u'MenuItem', 
+            id=130, 
+            name='menuitemseparator_130', 
+            parent='menu_114')
+menuitem_140 = MenuItem(
+            font={'size': 11, 'face': u'Ubuntu'}, 
+            help=u'MenuItem', 
+            id=140, 
+            name='menuitem_140', 
             parent='menu_114')
 
 # --- gui2py designer end ---
