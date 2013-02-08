@@ -252,7 +252,8 @@ class BasicDesigner:
 
 def save(evt):
     "Basic save functionality: just replaces the gui code"
-    w = evt.target
+    wx_obj = evt.GetEventObject()
+    w = wx_obj.reference
     if DEBUG: print "saving..."
     # make a backup:
     fin = open("sample.pyw", "ru")
@@ -350,7 +351,7 @@ if __name__ == '__main__':
         inspector.set_designer(designer)
         w.show()
 
-    w.onunload = save 
+    w.wx_obj.Bind(wx.EVT_CLOSE, save) 
     
     frame.Show()
     tb.Show()
