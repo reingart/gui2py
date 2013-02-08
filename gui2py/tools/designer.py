@@ -14,6 +14,9 @@ RW_FILL2 = '#E0E0E0'
 
 GRID_SIZE = (10, 10)
 
+CURSOR_HAND = wx.CURSOR_HAND
+CURSOR_MOVING = wx.CURSOR_RIGHT_ARROW
+CURSOR_SIZING = wx.CURSOR_SIZENWSE
 
 class BasicDesigner:
     "Simple point-and-click layout designer (support moving controls)"
@@ -115,7 +118,7 @@ class BasicDesigner:
                     x = x / GRID_SIZE[0] * GRID_SIZE[0]
                     y = y / GRID_SIZE[1] * GRID_SIZE[1]
                 wx_obj.reference.pos = (wx.Point(x, y))
-
+                    
     def draw_grip(self, wx_obj):
         "draw the resize handle"
         # TODO: draw a transparent panel over the widget (to catch all events)
@@ -170,9 +173,9 @@ class BasicDesigner:
             wx_obj = evt.GetEventObject()
             if wx_obj is not self.parent.wx_obj:
                 if not self.hit_test(wx_obj, evt.GetPosition()):
-                    wx_obj.SetCursor(wx.StockCursor(wx.CURSOR_CROSS))
+                    wx_obj.SetCursor(wx.StockCursor(CURSOR_HAND))
                 else:
-                    wx_obj.SetCursor(wx.StockCursor(wx.CURSOR_SIZING))
+                    wx_obj.SetCursor(wx.StockCursor(CURSOR_SIZING))
                 self.draw_grip(wx_obj)      # draw the resize handle (SW)
             else: 
                 self.draw_grip(None)        # clear the resize handle
