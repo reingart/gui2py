@@ -313,7 +313,11 @@ if __name__ == '__main__':
     from gui2py.tools.toolbox import ToolBox, ToolBoxDropTarget
 
     # create the windows and the property editor / inspector
-    log = sys.stdout
+    if DEBUG:
+        log = sys.stdout
+    else:
+        log = open(os.devnull, 'w')
+        
     f1 = wx.Frame(None, pos=(600,0), size=(300, 300))
     f2 = wx.Frame(None, pos=(600,350), size=(300, 300))
     propeditor = PropertyEditorPanel(f2, log)

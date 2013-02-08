@@ -14,6 +14,9 @@ except ImportError: # if it's not there locally, try the wxPython lib.
     from wx.lib.agw.aui import aui_switcherdialog as ASD
 
 
+DEBUG = False
+
+
 class ToolBox(aui.AuiToolBar):
     "AUI ToolBar showing gui2py controls, capable of Drag & Drop"
     
@@ -67,12 +70,12 @@ class ToolBox(aui.AuiToolBar):
         # and drop opperation
         dropSource = wx.DropSource(self)
         dropSource.SetData(data)
-        print("Begining DragDrop\n")
+        if DEBUG: print("Begining DragDrop\n")
         result = dropSource.DoDragDrop(wx.Drag_AllowMove)
-        print("DragDrop completed: %d\n" % result)
+        if DEBUG: print("DragDrop completed: %d\n" % result)
 
         if result == wx.DragMove:
-            print "dragmove!"
+            if DEBUG: print "dragmove!"
             self.Refresh()
 
 
@@ -91,14 +94,14 @@ class ToolBoxDropTarget(wx.PyDropTarget):
 
     # some virtual methods that track the progress of the drag
     def OnEnter(self, x, y, d):
-        print("OnEnter: %d, %d, %d\n" % (x, y, d))
+        if DEBUG: print("OnEnter: %d, %d, %d\n" % (x, y, d))
         return d
 
     def OnLeave(self):
-        print("OnLeave\n")
+        if DEBUG: print("OnLeave\n")
 
     def OnDrop(self, x, y):
-        print("OnDrop: %d %d\n" % (x, y))
+        if DEBUG: print("OnDrop: %d %d\n" % (x, y))
         return True
 
     def OnDragOver(self, x, y, d):
@@ -119,7 +122,7 @@ class ToolBoxDropTarget(wx.PyDropTarget):
     # Called when OnDrop returns True.  We need to get the data and
     # do something with it.
     def OnData(self, x, y, d):
-        print("OnData: %d, %d, %d\n" % (x, y, d))
+        if DEBUG: print("OnData: %d, %d, %d\n" % (x, y, d))
 
         # copy the data from the drag source to our data object
         if self.GetData():
