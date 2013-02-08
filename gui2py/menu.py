@@ -68,6 +68,10 @@ class wx_MenuItem(wx_DummyWindow, wx.MenuItem):
         self.parent = parent
         self.parent.AppendItem(self)
 
+    def Destroy(self):
+        self.parent.RemoveItem(self)
+        wx.MenuItem.Destroy(self)
+
     def Check(self, value):
         # avoid assertion in Check(): invalid menu item
         if self.GetKind() & wx.ITEM_CHECK:
@@ -111,15 +115,25 @@ class wx_Menu(wx_DummyWindow, wx.Menu):
         #   kwargs.get("label"), kwargs.get("style")
         wx.Menu.__init__(self)
         self.parent = parent
-        self.GetId = lambda self=self: kwargs['id']
         if isinstance(parent, wx.MenuBar):
-            self.pos = self.parent.GetMenuCount()
             self.parent.Append(self, kwargs.get("label"))
         else:
-            self.pos = self.parent.GetMenuItemCount()
             self.parent.AppendSubMenu(submenu=self, 
                                    text=kwargs.get("label"))
+        id = self.parent.GetLastId()
+        self.GetId = lambda: id
 
+    def Destroy(self):
+        if isinstance(self.parent, wx.MenuBar):
+            self.parent.RemoveItem(self)
+        else:
+            self.parent.Remove(self.GetId())
+        try:
+            wx.Menu.Destroy(self)
+        except TypeError:
+            # we were removed! ignore "got _wxPyDeadObject instance instead"
+            pass
+            
     # unsupported methods:
     
     GetBackgroundColour = SetBackgroundColour = wx_DummyWindow.Dummy
@@ -142,7 +156,25 @@ class wx_Menu(wx_DummyWindow, wx.Menu):
                 return False
         return True
 
-        
+    def SetItemLabel(self, menu):
+        #return #return menu.GetTitle()
+        id = menu.GetId()
+        print "MENUID", id
+        self.SetLabel(id, menu.GetTitle())
+        #menu.SetLabel(menu.GetTitle())
+        pass
+
+    def GetItemLabel(self, menu):
+        #return menu.GetTitle()
+        try:
+            return self.GetLabel(menu.GetId())
+        except:
+            import pdb; pdb.set_trace()    
+
+    def GetLastId(self):
+        return list(self.GetMenuItems())[-1].GetId()
+
+
 class Menu(Component):
     "A Menu contains 0..n MenuItem objects."
     
@@ -151,19 +183,12 @@ class Menu(Component):
 
     def _set_label(self, value):
         # note that wx.Menu.SetTitle() does not work on gtk for menubars
-        pos = self.wx_obj.pos
-        if isinstance(self.wx_obj.parent, wx.MenuBar):
-            self.wx_obj.parent.SetMenuLabel(pos, value)
-        else:
-           self.wx_obj.parent.SetTitle(pos, value)
+       self.wx_obj.SetTitle(value)
+       self.wx_obj.parent.SetItemLabel(self.wx_obj)
                 
     def _get_label(self):
         # note that wx.Menu.GetTitle() does not work on windows for menubars
-        pos = self.wx_obj.pos
-        if isinstance(self.wx_obj.parent, wx.MenuBar):
-            return self.wx_obj.parent.GetMenuLabel(pos)
-        else:
-            return self.wx_obj.parent.GetTitle(pos)
+        return self.wx_obj.parent.GetItemLabel(self.wx_obj)
 
     def find(self, item_id=None):
         "Recursively find a menu item by its id (useful for event handlers)"
@@ -214,6 +239,26 @@ class wx_MenuBar(wx_DummyWindow, wx.MenuBar):
             if not self.IsEnabledTop(i):
                 return False
         return True
+
+    def RemoveItem(self, menu):
+        "Helper method to remove a menu avoiding using its position"
+        menus = self.GetMenus()     # get the list of (menu, title)
+        menus = [submenu for submenu in menus if submenu[0] != menu]
+        self.SetMenus(menus)
+        
+    def SetItemLabel(self, menu):
+        menus = self.GetMenus()     # get the list of (menu, title)
+        pos = [submenu[0] for submenu in menus].index(menu)
+        self.SetMenuLabel(pos, menu.GetTitle())
+
+    def GetItemLabel(self, menu):
+        menus = self.GetMenus()     # get the list of (menu, title)
+        for submenu, title in menus:
+            if submenu == menu:
+                return title
+
+    def GetLastId(self):
+        return -1 #self.GetMenus()[-1][0].GetId()
 
 
 class MenuBar(Component):
