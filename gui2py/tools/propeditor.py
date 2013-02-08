@@ -198,14 +198,9 @@ class PropertyEditorPanel(wx.Panel):
                 # re-create the wx_object with the new property value
                 # (this is required at least to apply new styles and init specs)
                 if DEBUG: print "changed", self.obj.name
-                if isinstance(self.obj.wx_obj, wx.Window):
-                    if DEBUG: print "window!"
-                    kwargs = {str(name): value}
-                    wx.CallAfter(self.obj.__init__,  **kwargs)
-                else:
-                    if DEBUG: print "menu!"
-                    # menues and other abstract objects no need rebuild
-                    wx.CallAfter(setattr, self.obj, name, value)
+                print "********************************************************"
+                kwargs = {str(name): value}
+                wx.CallAfter(self.obj.rebuild,  **kwargs)
 
     def OnPropGridSelect(self, event):
         p = event.GetProperty()

@@ -192,7 +192,23 @@ class Component(object):
         # Handle resize events to adjust absolute and relative dimensions
         self.wx_obj.Bind(wx.EVT_SIZE, self.resize)
 
-    
+
+    def rebuild(self, recreate=True, **kwargs):
+        "Recreate (if needed) the wx_obj and apply new properties"
+        # detect if this involves a spec that needs to recreate the wx_obj:
+        needs_rebuild = any([isinstance(spec, (StyleSpec, InitSpec)) 
+                             for spec_name, spec in self._meta.specs.items()
+                             if spec_name in kwargs])
+        # validate if this gui object needs and support recreation
+        if needs_rebuild and recreate:
+            if DEBUG: print "rebuilding window!"
+            # recreate the wx_obj! warning: it will call Destroy()
+            self.__init__(**kwargs)       
+        else:
+            if DEBUG: print "just setting attr!"
+            for name, value in kwargs.items():
+                setattr(self, name, value)
+
 
     def __del__(self):
         "Destructor: clean-up all references"

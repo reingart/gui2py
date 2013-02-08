@@ -98,6 +98,10 @@ class MenuItem(Component):
                  doc="text to show as help in the status bar?")
     onclick = EventSpec('click', binding=wx.EVT_MENU, kind=FormEvent)
 
+    def rebuild(self, **kwargs):
+        # avoid recreating the object (not supported yet!)
+        Component.rebuild(self, False, **kwargs)
+
 
 class wx_Menu(wx_DummyWindow, wx.Menu):
     
@@ -171,6 +175,10 @@ class Menu(Component):
                 if found:
                     return found 
 
+    def rebuild(self, **kwargs):
+        # avoid recreating the object (not supported yet!)
+        Component.rebuild(self, False, **kwargs)
+    
     label = InitSpec(_get_label,  _set_label,
                      optional=False, default='Menu', type="string", 
                      doc="text to show as caption")         
@@ -230,6 +238,11 @@ class MenuBar(Component):
             found = it.find(item_id)
             if found:
                 return found 
+
+    def rebuild(self, **kwargs):
+        # avoid recreating the object (not supported yet!)
+        Component.rebuild(self, False, **kwargs)
+
 
 # update metadata for context menu
 MenuBar._meta.valid_children = [Menu, ] 
