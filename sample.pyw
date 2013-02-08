@@ -96,32 +96,23 @@ lstTest = ListBox(
             top='28', 
             width='103')
 menubar_83_155 = MenuBar(
-            client_size=[0, 0], 
             fgcolor='black', 
             font={'size': 11, 'face': u'Ubuntu'}, 
             id=-2025, 
             name='menubar_83_155', 
-            parent='mywin', 
-            pos=[0, 0], 
-            size=[0, 0])
+            parent='mywin')
 menu_114 = Menu(
-            client_size=[0, 0], 
             fgcolor='black', 
             font={'size': 11, 'face': u'Ubuntu'}, 
             id=114, 
             name='menu_114', 
-            parent='menubar_83_155', 
-            pos=[0, 0], 
-            size=[0, 0])
+            parent='menubar_83_155')
 menu_item_115 = MenuItem(
-            client_size=[0, 0], 
             font={'size': 11, 'face': u'Ubuntu'}, 
             help=u'MenuItem', 
             id=115, 
             name='menu_item_115', 
-            parent='menu_114', 
-            pos=[0, 0], 
-            size=[0, 0])
+            parent='menu_114')
 
 # --- gui2py designer end ---
 

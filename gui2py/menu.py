@@ -24,7 +24,7 @@ class wx_DummyWindow:
         return self._parent
     
     def GetSize(self):
-        return [0, 0]
+        return [-1, -1]
     
     GetSizeTuple = GetClientSize = GetSize
     GetPositionTuple = GetSizeTuple

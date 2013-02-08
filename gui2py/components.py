@@ -560,7 +560,8 @@ class Component(object):
     pos = InitSpec(_get_pos, _set_pos, default=[ -1, -1])
     size = InitSpec(_get_size, _set_size, default=[ -1, -1])
     client_size = Spec(lambda self: self.wx_obj.GetClientSize(),
-                       lambda self, value: self.wx_obj.SetClientSize(value))
+                       lambda self, value: self.wx_obj.SetClientSize(value),
+                       default=[ -1, -1])
     helptext = Spec(optional=True, type="string"),
     tooltip = Spec(_getToolTip, _setToolTip, default='', type="string")
     visible = Spec(_getVisible, _setVisible, default=True, type='boolean')
