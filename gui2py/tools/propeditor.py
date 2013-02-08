@@ -111,7 +111,7 @@ class PropertyEditorPanel(wx.Panel):
                             try:
                                 prop = prop(name, value=value)
                             except Exception, e:
-                                print "CANNOT LOAD", name, value, e
+                                print "CANNOT LOAD PROPERTY", name, value, e
                         
                         if spec.group is None:
                             pg.Append(prop)
@@ -197,13 +197,13 @@ class PropertyEditorPanel(wx.Panel):
                     value = font
                 # re-create the wx_object with the new property value
                 # (this is required at least to apply new styles and init specs)
-                print "changed", self.obj.name
+                if DEBUG: print "changed", self.obj.name
                 if isinstance(self.obj.wx_obj, wx.Window):
-                    print "window!"
+                    if DEBUG: print "window!"
                     kwargs = {str(name): value}
                     wx.CallAfter(self.obj.__init__,  **kwargs)
                 else:
-                    print "menu!"
+                    if DEBUG: print "menu!"
                     # menues and other abstract objects no need rebuild
                     wx.CallAfter(setattr, self.obj, name, value)
 

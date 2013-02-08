@@ -5,6 +5,8 @@ import  wx.gizmos   as  gizmos
 from gui2py import registry
 from gui2py.tools.propeditor import PropertyEditorPanel
 
+
+DEBUG = False
 #----------------------------------------------------------------------
 
 class InspectorPanel(wx.Panel):
@@ -72,7 +74,7 @@ class InspectorPanel(wx.Panel):
     def inspect(self, obj):
         "Select the object and show its properties"
         child = self.tree.FindItem(self.root, obj.name)
-        print "inspect child", child
+        if DEBUG: print "inspect child", child
         if child:
             self.tree.ScrollTo(child)
             self.tree.SetCurrentItem(child)
@@ -145,7 +147,7 @@ class InspectorPanel(wx.Panel):
 
     def OnSelect(self, evt):
         child = evt.GetItem()
-        print('OnSelect: %s' % self.tree.GetItemText(child))
+        if DEBUG: print('OnSelect: %s' % self.tree.GetItemText(child))
         d = self.tree.GetItemData(child)
         if d:
             o = d.GetData()

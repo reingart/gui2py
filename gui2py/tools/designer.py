@@ -2,6 +2,7 @@ import wx
 
 "Visual Layout Designers"
 
+DEBUG = False
 
 # dimensions used for the handle (based on wx.lib.resizewidget)
 RW_THICKNESS = 4
@@ -64,28 +65,28 @@ class BasicDesigner:
 
     def mouse_down(self, evt): 
         "Get the selected object and store start position"
-        print "down!"
+        if DEBUG: print "down!"
         wx_obj = evt.GetEventObject()
         if wx_obj.Parent is None:
             evt.Skip()
             if not evt.ControlDown():
                 self.selection = []  # clear previous selection
         else:
-            print wx_obj
+            if DEBUG: print wx_obj
             sx, sy = wx_obj.ScreenToClient(wx_obj.GetPositionTuple())
             dx, dy = wx_obj.ScreenToClient(wx.GetMousePosition())
             self.current['pos'] = wx_obj.ScreenToClient(wx.GetMousePosition())
             self.current['start'] = (sx - dx, sy - dy)
             self.current['wx_obj'] = wx_obj
             self.resizing = self.hit_test(wx_obj, evt.GetPosition())
-            print "capture..."
+            if DEBUG: print "capture..."
             # do not capture on TextCtrl, it will fail (blocking) at least in gtk
             self.parent.wx_obj.CaptureMouse()
 
 
     def mouse_move(self, evt):
         "Move the selected object"
-        print "move!"
+        if DEBUG: print "move!"
         if self.current:
             wx_obj = self.current['wx_obj']
             sx, sy = self.current['start']
@@ -183,7 +184,7 @@ class BasicDesigner:
 
     def mouse_up(self, evt):
         "Release the selected object"
-        print "up!"
+        if DEBUG: print "up!"
         if self.current: 
             wx_obj = self.current['wx_obj']
             if self.parent.wx_obj.HasCapture():
@@ -193,7 +194,7 @@ class BasicDesigner:
                 self.inspector.inspect(wx_obj.reference)
             # keep selected object (for keypress)
             self.selection.append(wx_obj)
-            print "SELECTION", self.selection
+            if DEBUG: print "SELECTION", self.selection
 
     def key_press(self, event):
         "support cursor keys to move components one pixel at a time"
@@ -252,7 +253,7 @@ class BasicDesigner:
 def save(evt):
     "Basic save functionality: just replaces the gui code"
     w = evt.target
-    print "saving..."
+    if DEBUG: print "saving..."
     # make a backup:
     fin = open("sample.pyw", "ru")
     fout = open("sample.pyw.bak", "w")

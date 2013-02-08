@@ -7,6 +7,9 @@ from . import images
 from . import registry
 
 
+DEBUG = False
+
+
 class wx_DummyWindow:
     "Class to emulate (and normalize) menues in wx whit gui2py object model"
     # if using custom-draw menues (agw.FlatMenu) this would not be necesary 
@@ -44,11 +47,11 @@ class wx_DummyWindow:
         if evt == wx.EVT_SIZE:
             pass
         else:
-            print "binding MENU", self.__class__.__name__, id, handler
+            if DEBUG: print "binding MENU", self.__class__.__name__, id, handler
             self.parent.Bind(evt, handler, id=id or self.GetId())
     
     def Unbind(self, evt, id=None):
-        #print "unbinding MENU", self.Text, self.GetId()
+        if DEBUG: print "unbinding MENU", self.Text, self.GetId()
         self.parent.Unbind(evt, id=id or self.GetId())
 
 
