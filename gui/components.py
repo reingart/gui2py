@@ -139,7 +139,8 @@ class Component(object):
             
         self.wx_obj = self._wx_class(wx_parent, **self._wx_kwargs)
         # load specs from kwargs, use default if available
-        for spec_name, spec in self._meta.specs.items():
+        for spec_name, spec in sorted(self._meta.specs.items(),
+                                      key= lambda it: it[1].order):
             if spec.read_only or isinstance(spec, (StyleSpec, InitSpec, InternalSpec)):
                 continue
             # get the spec value for kwargs, if it is optional, get the default

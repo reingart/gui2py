@@ -5,6 +5,7 @@ from .font import Font
 from . import registry
 
 DEBUG = False
+DEF_ORDER_COUNTER = 0       # used to init spec in definition order
 
 def new_id(id=None):
     if id is None or id == -1:
@@ -30,6 +31,9 @@ class Spec(property):
         self._name = _name              # internal name (usually, wx kwargs one)
         self.__doc__ = doc
         self.group = group              # parent for tree-like struc (propedit)
+        global DEF_ORDER_COUNTER
+        DEF_ORDER_COUNTER += 1
+        self.order = DEF_ORDER_COUNTER
     
 
 class EventSpec(Spec):
