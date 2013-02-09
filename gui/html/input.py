@@ -57,7 +57,7 @@ class SubmitButton(Button, FormControlMixin):
         return None
         
 
-class TextInput(TextBox, FormControlMixin):
+class FormTextInput(TextBox, FormControlMixin):
     __metaclass__ = TypeHandler("TEXT")
     _registry = registry.HTML
     def __init__(self, parent, form, tag, parser, *args, **kwargs):
@@ -79,14 +79,14 @@ class TextInput(TextBox, FormControlMixin):
     def get_value(self):
         return self.text
             
-class PasswordInput(TextInput):
+class FormPasswordInput(FormTextInput):
     __metaclass__ = TypeHandler("PASSWORD")
     _registry = registry.HTML
     def __init__(self, parent, form, tag, parser):
-        TextInput.__init__(self, parent, form, tag, parser, password=True)
+        FormTextInput.__init__(self, parent, form, tag, parser, password=True)
         
         
-class Checkbox(CheckBox, FormControlMixin):
+class FormCheckbox(CheckBox, FormControlMixin):
     __metaclass__ = TypeHandler("CHECKBOX")
     _registry = registry.HTML
     def __init__(self, parent, form, tag, parser, *args, **kwargs):
@@ -104,7 +104,7 @@ class Checkbox(CheckBox, FormControlMixin):
         else:
             return None
             
-class HiddenControl(wx.EvtHandler, FormControlMixin):
+class FormHiddenControl(wx.EvtHandler, FormControlMixin):
     __metaclass__ = TypeHandler("HIDDEN")
     _registry = registry.HTML
     def __init__(self, parent, form, tag, parser, *args, **kwargs):
@@ -119,7 +119,7 @@ class HiddenControl(wx.EvtHandler, FormControlMixin):
     def is_enabled(self):
         return self.enabled
         
-class TextAreaInput(TextBox, FormControlMixin):
+class FormTextArea(TextBox, FormControlMixin):
     __metaclass__ = TypeHandler("TEXTAREA")
     _registry = registry.HTML
     def __init__(self, parent, form, tag, parser, *args, **kwargs):

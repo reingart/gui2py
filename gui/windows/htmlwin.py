@@ -11,7 +11,10 @@ class HtmlWindow(Window):
 
     def __init__(self, parent=None, **kwargs):
         Window.__init__(self, parent=parent, **kwargs)
-        self.html = HtmlBox(self, name="document", scrollbars=True)
+        self.html = HtmlBox(self, name="document", scrollbars=True, 
+                            left="0", top="0", bgcolor="black", resizable=False,
+                            width="auto", height="auto")
+        self.html.visible = True
     
     def open(self, location=None):
         if not location:
@@ -27,6 +30,7 @@ class HtmlWindow(Window):
 
     def write(self, text):
         self.html.write(text)
+        self.html.redraw()
  
 
 if __name__ == "__main__":

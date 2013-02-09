@@ -3,7 +3,7 @@
 
 import wx
 
-from gui.windows import HtmlWindow
+import gui
 
 search_html = """
 <form method="get" action="/wiki/default/_pages"> 
@@ -34,7 +34,7 @@ current.T = lambda x: x
 
 if __name__ == '__main__':
     app = wx.App(False)
-    w = HtmlWindow(None, title="test html", visible=False, resizeable=True)
+    w = gui.HtmlWindow(None, title="test html", visible=False, resizable=True)
     if '--login' in sys.argv:
         form = FORM(
             LABEL("Username", _width="25%"),

@@ -29,6 +29,8 @@ class HtmlBox(Control):
     
     def __init__(self, parent, design=False, **kwargs):
         self.design = design   # flag to enable designer mode
+        # set resizable to False to avoid gui2py auto layout on children
+        # (EVT_SIZE it is already handled by wx.HtmlWindow) 
         Control.__init__(self, parent, **kwargs)
         if "gtk2" in wx.PlatformInfo:
             self.wx_obj.SetStandardFonts()
@@ -110,7 +112,7 @@ if __name__ == '__main__':
 
     app = wx.App(redirect=False)
     f = wx.Frame(None)
-    html = HtmlBox(f, name="html")
+    html = HtmlBox(f, name="html", visible=True, width="100px")
     html.set_page("<a href='hola'>hello</a> <b>world!</b>")
     html.onlinkclick = on_click
     html.oncellhover = on_cell

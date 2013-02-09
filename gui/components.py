@@ -74,6 +74,7 @@ class Component(object):
         rebuild = hasattr(self, "wx_obj")
         
         # get current spec values (if we are re-creating the wx object)
+        self._resizable = kwargs.get('resizable', True)
         if rebuild:
             for spec_name, spec in self._meta.specs.items():
                 if spec_name in kwargs:
@@ -190,7 +191,8 @@ class Component(object):
                 setattr(self, spec_name, value)
 
         # Handle resize events to adjust absolute and relative dimensions
-        self.wx_obj.Bind(wx.EVT_SIZE, self.resize)
+        if self._resizable:
+            self.wx_obj.Bind(wx.EVT_SIZE, self.resize)
 
 
     def rebuild(self, recreate=True, **kwargs):
@@ -304,16 +306,20 @@ class Component(object):
             return None
 
     def __repr__(self, prefix="gui"):
-        return "%s = %s.%s(%s)" % (
-                self.name, prefix, self.__class__.__name__, 
+        try:
+            return "%s = %s.%s(%s)" % (
+                getattr(self, "name", ""), prefix, self.__class__.__name__, 
                 ', '.join(["\n            %s=%s" % 
                 (k, repr(getattr(self, k))) 
                 for (k, spec) in sorted(self._meta.specs.items())
                 if not isinstance(spec, InternalSpec) 
-                   and getattr(self, k) != spec.default
+                   and getattr(self, k, "") != spec.default
                    and isinstance(getattr(self, k), 
                          (basestring, int, long, bool, dict, list, Font))                
                 ]))
+        except:
+            # uninitialized, use standard representation to not break debuggers
+            return object.__repr__(self)
 
     # properties:
     
@@ -403,7 +409,7 @@ class Component(object):
             elif dim_val.endswith("px"):
                 # fixed pixels
                 dim_val = dim_val[:-2]
-            elif dim_val == "":
+            elif dim_val == "" or dim_val == "auto":
                 dim_val = -1
             return int(dim_val)                        
     
@@ -485,13 +491,17 @@ class Component(object):
             # check that size and pos is relative, then resize/move
             if self._left and self._left[-1] == "%" or \
                self._top and self._top[-1] == "%":
+                print "RESIZING", self.name, self._width
                 self._set_pos((self._left, self._top))
             if self._width and self._width[-1] == "%" or \
                self._height and self._height[-1] == "%":
+                print "RESIZING", self.name, self._width
                 self._set_size((self._width, self._height))
         for child in self:
             child.resize(evt)
-        #self.redraw()
+        # call original handler (wx.HtmlWindow)
+        if evt:
+            evt.Skip()  
 
     def _getEnabled(self):
         return self.wx_obj.IsEnabled()
