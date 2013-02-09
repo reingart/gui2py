@@ -1,6 +1,7 @@
 import wx
 
-from ..components import Component, Spec, InitSpec, EventSpec, StyleSpec
+from ..components import Component, Control
+from ..spec import Spec, InitSpec, EventSpec, StyleSpec
 from ..event import UIEvent
 from .. import registry
 from .. import images
@@ -179,8 +180,10 @@ class Window(Component):
     float_on_parent = StyleSpec(wx.FRAME_FLOAT_ON_PARENT, 
                         doc="Always be on top of its parent (parent=None)")
     shaped = StyleSpec(wx.FRAME_SHAPED, doc="Allow shape change (set_shape)")
+    border = Control.border
     # ex_metal wx.FRAME_EX_METAL  # On Mac OS X, frames with this style will be 
                         #shown with a metallic look. This is an extra style.
+
 
     # events:
     onload = EventSpec('load', binding=wx.EVT_INIT_DIALOG, kind=UIEvent)

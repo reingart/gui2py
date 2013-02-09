@@ -167,7 +167,6 @@ class TextBox(Control):
                            'center': wx.TE_CENTRE,
                            'right': wx.TE_RIGHT},
                            default='left')
-    border = StyleSpec({False: wx.NO_BORDER, True:0}, default=True)
     editable = Spec(lambda self: self.wx_obj.IsEditable(), 
                     lambda self, value: self.wx_obj.SetEditable(value),
                     default=True, type="boolean")

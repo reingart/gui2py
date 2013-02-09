@@ -646,6 +646,16 @@ class Control(Component):
     
     _registry = registry.CONTROLS
 
+    border = StyleSpec({'default': wx.BORDER_DEFAULT,
+                        'simple': wx.BORDER_SIMPLE,
+                        'sunken': wx.BORDER_SUNKEN,
+                        'raised': wx.BORDER_RAISED,
+                        'static': wx.BORDER_STATIC,
+                        'theme': wx.BORDER_THEME, # native
+                        'none': wx.BORDER_NONE, },
+                       doc="Kind of border to show (some will have no effect"
+                           " depending on control and platform)",
+                       default='default')
 
 
 if __name__ == "__main__":
