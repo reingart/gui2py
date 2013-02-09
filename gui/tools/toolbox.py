@@ -132,7 +132,8 @@ class ToolBoxDropTarget(wx.PyDropTarget):
             # create the control on the parent:
             obj = ctrl(self.dv, 
                        name="%s_%s_%s" % (ctrl_name.lower(), x, y), 
-                       pos=(x, y), designer=self.designer)
+                       pos=(x, y), left=str(x), top=str(y), 
+                       designer=self.designer)
             # update the object at the inspector (to show the new control)
             if self.inspector:
                 self.inspector.load_object(self.dv)
