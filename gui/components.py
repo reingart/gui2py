@@ -303,9 +303,9 @@ class Component(object):
         else:
             return None
 
-    def __repr__(self):
-        return "%s = %s(%s)" % (
-                self.name, self.__class__.__name__, 
+    def __repr__(self, prefix="gui"):
+        return "%s = %s.%s(%s)" % (
+                self.name, prefix, self.__class__.__name__, 
                 ', '.join(["\n            %s=%s" % 
                 (k, repr(getattr(self, k))) 
                 for (k, spec) in sorted(self._meta.specs.items())
