@@ -275,7 +275,7 @@ def save(evt):
             dump(ctl)
 
     for line in fin:
-        if line.startswith("# --- gui designer start ---"):
+        if line.startswith("# --- gui2py designer start ---"):
             fout.write(line)
             fout.write(newlines)
             fout.write(str(w))
@@ -283,7 +283,7 @@ def save(evt):
             dump(w)
             fout.write(newlines)
             copy = False
-        if line.startswith("# --- gui designer end ---"):
+        if line.startswith("# --- gui2py designer end ---"):
             copy = True
         if copy:
             fout.write(line)

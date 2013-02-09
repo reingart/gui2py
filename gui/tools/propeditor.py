@@ -198,7 +198,6 @@ class PropertyEditorPanel(wx.Panel):
                 # re-create the wx_object with the new property value
                 # (this is required at least to apply new styles and init specs)
                 if DEBUG: print "changed", self.obj.name
-                print "********************************************************"
                 kwargs = {str(name): value}
                 wx.CallAfter(self.obj.rebuild,  **kwargs)
 
