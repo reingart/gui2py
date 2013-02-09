@@ -89,16 +89,7 @@ class Component(object):
             if isinstance(self._parent, Component):
                 del self._parent[self._name]    # remove old child reference
         else:
-            if isinstance(parent, basestring):
-                # find the object reference
-                wx_obj = wx.FindWindowByName(parent)
-                if wx_obj:
-                    parent = wx_obj.obj  # store gui object
-                else:
-                    # try to find parent in globals variables
-                    parent = COMPONENTS[parent]
-                    # TODO: only useful for designer, get a better way
-            self._parent = parent       # store parent
+            self.set_parent(parent, init=True)
             self._font = None
             # container to hold children:
             self._children_dict = {}    # key and values for __setitem__
@@ -174,9 +165,7 @@ class Component(object):
         # re-associate childrens (wx objects hierachy): 
         if rebuild:
             for ctrl in self:
-                if DEBUG: print "reparenting", ctrl.name
-                if isinstance(ctrl.wx_obj, wx.Window):
-                    ctrl.wx_obj.Reparent(self.wx_obj)
+                ctrl.set_parent(self)
                 
         # finally, set special internal spec (i.e. designer)
         # (this must be done at last to overwrite other event handlers)
@@ -283,7 +272,27 @@ class Component(object):
     def set_focus(self):
         self.wx_obj.SetFocus()
     
+    def set_parent(self, new_parent, init=False):
+        "Store the gui/wx object parent for this component"
+        # set init=True if this is called from the constructor
+        wx_parent = None
+        # check if new_parent is given as string (useful for designer!)
+        if isinstance(new_parent, basestring):
+            # find the object reference in the already created gui2py objects
+            # TODO: only useful for designer, get a better way
+            obj_parent = COMPONENTS.get(new_parent)
+            if not obj_parent:
+                # try to find window (it can be a plain wx frame/control)
+                wx_parent = wx.FindWindowByName(new_parent)
+                if wx_parent:
+                    # store gui object (if any)
+                    obj_parent = getattr(wx_parent, "obj") 
+        else:
+            obj_parent = new_parent     # use the provided parent (as is)
+        self._parent = obj_parent or wx_parent       # store new parent
+    
     def get_parent(self):
+        "Return the object parent for this component (either gui or wx)"
         parent = self.wx_obj.GetParent()
         if hasattr(parent, "obj"):
             return parent.obj  # return the gui object
@@ -438,6 +447,15 @@ class Control(Component):
         if self._resizable:
             self.wx_obj.Bind(wx.EVT_SIZE, self.resize)
 
+    def set_parent(self, new_parent, init=False):
+        "Re-parent a child control with the new wx_obj parent"
+        Component.set_parent(self, new_parent, init)
+        # if not called from constructor, we must also reparent in wx:
+        if not init:
+            if DEBUG: print "reparenting", ctrl.name
+            if isinstance(self.wx_obj, wx.Window):
+                self.wx_obj.Reparent(self._parent.wx_obj)
+
     # Dimensions:
 
     def _calc_dimension(self, dim_val, dim_max, font_dim):
@@ -547,7 +565,8 @@ class Control(Component):
                 print "RESIZING", self.name, self._width
                 self._set_size((self._width, self._height))
         for child in self:
-            child.resize(evt)
+            if isinstance(child, Control):
+                child.resize(evt)
         # call original handler (wx.HtmlWindow)
         if evt:
             evt.Skip()
