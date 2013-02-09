@@ -121,3 +121,23 @@ gauge = PyEmbeddedImage(
     "sJgyNRQAQgi3h8wMEUEp5RH03iOmfDU9U2t92fVIP0P1g7ahmFkfFRE1lMhYrMus8vzGOmqo"
     "dvpZ/+PoDjvxFwVp8EfYAAAAAElFTkSuQmCC")
 
+#----------------------------------------------------------------------
+html = PyEmbeddedImage(
+    "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0"
+    "RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAL2SURBVDjLVdNNaBx1GMfx78zO"
+    "7Lu765qQWIPteqiH+IKCjTmkClIVPHi0pVDSXBT0sGhLUOvJl0OL4AuVBC+CLXpoD1KqweBB"
+    "WFFajOChSTU20q2h6e66nX2Znfm/ejCJ8Qff6+fy8DjWWgCmz9f3AR/cV0pPhtIQSoM0hoEy"
+    "AdAFmoAG2kAL+Bz41mNzRqmJh0fzk689MczO9YUphsIU25EeExK6sebPZo9v/ugfAKo7gZFC"
+    "0gGgflvjOw6eAwkPUr7LvSmXhOviJ+CRsQy7irnyp5fW33e3AC1loWQilIGucAgkdDoRQQRB"
+    "BK0B3OppAF4/e53JSo4HhvzhbSAfBiP7v5pHHZ2mH2kqJ2cZ+uxjwqBPNzb0IstAgAEc3eGn"
+    "a22WrgfrLoA4Ol2eXfrimZw3QDoeYWyRePh0GZ0/RdTu0o8NfWnAwkYn5sPF1Y4WYtoVR44c"
+    "NGH01+iwXzT1FvVj76CApUNVxI2ApNNn77EZUrXviZSDsaB9jRKicv7lxxZdM4jm433jabO0"
+    "Asdn6eTLOC7oQpnfX3gFfrmKnBjnnrmTuFJiLag4RotYA7gmHLyY+LoWmcounBNvYm81cLEk"
+    "gyaVuXdRe+7GuVijPlPFSfpIren1Q6WE6AC42YsXvjy9e//EtdXbyHyKyqszYOH+946TKHiE"
+    "bcOVuXMEUwfI+NDqxahYbCy89awFcAEWhvaKj6YO48WQaDTAcXGbDcIA1k6cQuaKYCHruTTa"
+    "A7SI17eu501Vzw4Bbz84OU6veobvlgW5rubHTy6Q9i2+B8nEvxWysFoPUUJsbANaiKeA535e"
+    "XqM98OjFFqktsXQQyqC0wVhLuVjkpadHudkK0UI0/gOkfPT5Jx/KvHH48f/9gLYgtUUowMLp"
+    "hXWyPnR7IVrK1k5g7WYz4MziMqV8hlIhTSmXophLcUc2SSrpkvJcDk2NkPKg8XcXLeWNbcAo"
+    "da52eWWsdnllN3DXZnduVkwnfT+d9inkMpQKWX69Wv8N+GEL+AdfSH+n2ppttwAAAABJRU5E"
+    "rkJggg==")
+
