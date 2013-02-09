@@ -132,6 +132,16 @@ menuitem_140 = gui.MenuItem(
             id=140, 
             name='menuitem_140', 
             parent='menu_114')
+gauge_43_128 = gui.Gauge(
+            font={'size': 11, 'face': u'Ubuntu'}, 
+            height='18', 
+            id=-2026, 
+            left='13', 
+            name='gauge_43_128', 
+            parent='mywin', 
+            top='130', 
+            value=50, 
+            width='367')
 
 # --- gui2py designer end ---
 

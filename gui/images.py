@@ -114,3 +114,10 @@ image = PyEmbeddedImage(
     "L/355RPDly9fGP7+ZQApZOAWFANa8IPhFyhMgGmfGRh4T56/+gQQYADZtXRJ8ecNFwAAAABJ"
     "RU5ErkJggg==")
 
+#----------------------------------------------------------------------
+gauge = PyEmbeddedImage(
+    "iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAABHNCSVQICAgIfAhkiAAAAHRJ"
+    "REFUOI3t0jsOgCAQBNBZ4DLcUM2WLHBCWi7irzBiY2zchujUm5dJZomMhXaMuvijDgCmcdg0"
+    "sJgyNRQAQgi3h8wMEUEp5RH03iOmfDU9U2t92fVIP0P1g7ahmFkfFRE1lMhYrMus8vzGOmqo"
+    "dvpZ/+PoDjvxFwVp8EfYAAAAAElFTkSuQmCC")
+
