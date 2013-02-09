@@ -133,6 +133,9 @@ class ToolBoxDropTarget(wx.PyDropTarget):
             obj = ctrl(self.dv, 
                        name="%s_%s_%s" % (ctrl_name.lower(), x, y), 
                        pos=(x, y), designer=self.designer)
+            # set default dimensions (width and height determined by wx):
+            obj.left, obj.top = ["%spx" % dim for dim in obj.pos] 
+            obj.width, obj.height = ["%spx" % dim for dim in obj.size]
             # update the object at the inspector (to show the new control)
             if self.inspector:
                 self.inspector.load_object(self.dv)
