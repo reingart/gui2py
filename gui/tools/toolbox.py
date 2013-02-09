@@ -1,9 +1,9 @@
 import wx
 import os, sys
 
-import gui2py.controls
+import gui.controls
 
-from gui2py import registry
+from gui import registry
 
 
 try:
@@ -18,7 +18,7 @@ DEBUG = False
 
 
 class ToolBox(aui.AuiToolBar):
-    "AUI ToolBar showing gui2py controls, capable of Drag & Drop"
+    "AUI ToolBar showing gui controls, capable of Drag & Drop"
     
     def __init__(self, parent):
         aui.AuiToolBar.__init__(self, parent, -1, wx.DefaultPosition, wx.DefaultSize,
@@ -29,7 +29,7 @@ class ToolBox(aui.AuiToolBar):
         #self.AddSimpleTool(ID_SampleItem+30, "Test", wx.ArtProvider.GetBitmap(wx.ART_ERROR))
         #self.AddSeparator()
         
-        # store assoc of wx ID -> gui2py control (for drag&drop)
+        # store assoc of wx ID -> gui control (for drag&drop)
         self.menu_ctrl_map = {}
         
         # create a toolbar item for each control (ignore those that have no image)
@@ -53,7 +53,7 @@ class ToolBox(aui.AuiToolBar):
         ctrl = self.menu_ctrl_map[evt.GetToolId()]
 
         # create our own data format and use it in a custom data object
-        ldata = wx.CustomDataObject("gui2py")
+        ldata = wx.CustomDataObject("gui")
         ldata.SetData(ctrl._meta.name)      # only strings are allowed!
 
         # Also create a Bitmap version of the drawing
@@ -89,7 +89,7 @@ class ToolBoxDropTarget(wx.PyDropTarget):
         self.inspector = inspector
 
         # specify the type of data we will accept
-        self.data = wx.CustomDataObject("gui2py")
+        self.data = wx.CustomDataObject("gui")
         self.SetDataObject(self.data)
 
     # some virtual methods that track the progress of the drag
@@ -153,8 +153,8 @@ if __name__ == '__main__':
     tb = ToolBox(frame)     # create the toolbar
     tb.Show()
 
-    # create a sample gui2py window
-    from gui2py.windows import Window
+    # create a sample gui window
+    from gui.windows import Window
     w = Window(title="hello world", name="frmTest", tool_window=False, 
                resizable=True, visible=False)
     w.show()

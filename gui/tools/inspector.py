@@ -2,8 +2,8 @@
 import  wx
 import  wx.gizmos   as  gizmos
 
-from gui2py import registry
-from gui2py.tools.propeditor import PropertyEditorPanel
+from gui import registry
+from gui.tools.propeditor import PropertyEditorPanel
 
 
 DEBUG = False
@@ -251,8 +251,8 @@ if __name__ == '__main__':
     import sys,os
     app = wx.App(redirect=None)
     
-    from gui2py.controls import Button, Label, TextBox, CheckBox, ListBox, ComboBox
-    from gui2py.windows import Window
+    from gui.controls import Button, Label, TextBox, CheckBox, ListBox, ComboBox
+    from gui.windows import Window
 
     w = Window(title="hello world", name="frmTest", tool_window=False, 
                resizable=True, visible=False, pos=(180, 0))

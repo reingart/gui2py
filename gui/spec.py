@@ -33,7 +33,7 @@ class Spec(property):
     
 
 class EventSpec(Spec):
-    "Generic Event Handler: maps a wx.Event to a gui2py.Event"
+    "Generic Event Handler: maps a wx.Event to a gui.Event"
     
     def __init__(self, event_name, binding, kind, doc=None):
         getter = lambda obj: getattr(obj, "_" + event_name)
@@ -175,7 +175,7 @@ class Component(object):
     
     # Each Component must bind itself to the wxPython event model.  
     # When it receives an event from wxPython, it will convert the event
-    # to a gui2py.event.Event ( UIEvent, MouseEvent, etc ) and call the handler
+    # to a gui.event.Event ( UIEvent, MouseEvent, etc ) and call the handler
     
     # This is the base class wich all GUI Elements should derive 
     # (TopLevelWindows -Frame, Dialog, etc.- and Controls)
@@ -266,7 +266,7 @@ class Component(object):
             if DEBUG: print "setting", spec_name, value
             setattr(self, spec_name, value)
                 
-        # store gui2py reference inside of wx object
+        # store gui reference inside of wx object
         self.wx_obj.obj = self
 
     def _set_style(self, **kwargs):

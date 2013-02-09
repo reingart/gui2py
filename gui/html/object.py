@@ -89,7 +89,7 @@ class ObjectTagHandler(wx.html.HtmlWinTagHandler):
             obj.visible = True
             # add it to the HtmlWindow
             cell = wx.html.HtmlWidgetCell(obj.wx_obj, float_width)
-            cell.obj = obj    # store the gui2py object ref
+            cell.obj = obj    # store the gui object ref
             self.GetParser().GetContainer().InsertCell(cell)
 
             # designer-mode: "capture" mouse events and send fake click ones

@@ -5,9 +5,9 @@ app = wx.GetApp()
 if app is None:
     app = wx.App()
 
-from gui2py.windows import Window
-from gui2py.menu import MenuBar, Menu, MenuItem, MenuItemCheckable, MenuItemSeparator
-from gui2py.controls import Button, Label, TextBox, CheckBox, ListBox, ComboBox
+from gui.windows import Window
+from gui.menu import MenuBar, Menu, MenuItem, MenuItemCheckable, MenuItemSeparator
+from gui.controls import Button, Label, TextBox, CheckBox, ListBox, ComboBox
 
 # --- gui2py designer start ---
 

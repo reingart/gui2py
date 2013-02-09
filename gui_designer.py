@@ -14,8 +14,8 @@ import wx.lib.agw.flatnotebook as fnb
 import wx.html
 import wx.py
 
-from gui2py.controls import HtmlBox
-import gui2py.html.object
+from gui.controls import HtmlBox
+import gui.html.object
 
 
 SAMPLE_GUI_WXHTML = """

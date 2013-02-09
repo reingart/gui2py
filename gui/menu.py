@@ -11,7 +11,7 @@ DEBUG = False
 
 
 class wx_DummyWindow:
-    "Class to emulate (and normalize) menues in wx whit gui2py object model"
+    "Class to emulate (and normalize) menues in wx whit gui object model"
     # if using custom-draw menues (agw.FlatMenu) this would not be necesary 
     # (so wx_Menu* could be replaced someday..)
     # note that wx ignores dimension and almost all event on menus
@@ -315,7 +315,7 @@ if __name__ == '__main__' :
     
     app = wx.App(redirect=False)
         
-    from gui2py.windows import Window
+    from gui.windows import Window
 
     w = Window(title="hello world", name="frmTest", tool_window=False, 
                resizable=True, visible=False, pos=(180, 0))
@@ -347,7 +347,7 @@ if __name__ == '__main__' :
     mi11.onclick = enable_edit
     mi13.onclick = disable_all
 
-    from gui2py.tools.inspector import InspectorTool
+    from gui.tools.inspector import InspectorTool
     InspectorTool().show(w)
 
     w.show()

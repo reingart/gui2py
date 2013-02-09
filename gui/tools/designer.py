@@ -109,11 +109,11 @@ class BasicDesigner:
                     wx_obj.obj.margin_right = 0
                     wx_obj.obj.margin_top = 0
                     wx_obj.obj.margin_bottom = 0
-                    wx_obj.obj.size = new_size    # update gui2py specs
+                    wx_obj.obj.size = new_size    # update gui specs
                     self.current['pos'] = pos
                     ##self._bestSize = new_size 
             else:
-                # update gui2py specs (this will overwrite relative dimensions):
+                # update gui specs (this will overwrite relative dimensions):
                 x, y = (x + sx, y + sy)
                 if evt.ShiftDown():     # snap to grid:
                     x = x / GRID_SIZE[0] * GRID_SIZE[0]
@@ -275,7 +275,7 @@ def save(evt):
             dump(ctl)
 
     for line in fin:
-        if line.startswith("# --- gui2py designer start ---"):
+        if line.startswith("# --- gui designer start ---"):
             fout.write(line)
             fout.write(newlines)
             fout.write(str(w))
@@ -283,7 +283,7 @@ def save(evt):
             dump(w)
             fout.write(newlines)
             copy = False
-        if line.startswith("# --- gui2py designer end ---"):
+        if line.startswith("# --- gui designer end ---"):
             copy = True
         if copy:
             fout.write(line)
@@ -294,7 +294,7 @@ def save(evt):
 
 
 if __name__ == '__main__':
-    # basic proof-of-concept visual gui2py designer
+    # basic proof-of-concept visual gui designer
     
     import sys,os
     
@@ -303,15 +303,15 @@ if __name__ == '__main__':
     app = wx.App(redirect=None)    
 
     # import controls (fill the registry!)
-    from gui2py.windows import Window
-    import gui2py.controls
-    import gui2py.menu
+    from gui.windows import Window
+    import gui.controls
+    import gui.menu
 
     # import tools used by the designer
-    from gui2py.tools.inspector import InspectorPanel
-    from gui2py.tools.propeditor import PropertyEditorPanel
-    from gui2py.tools.designer import BasicDesigner
-    from gui2py.tools.toolbox import ToolBox, ToolBoxDropTarget
+    from gui.tools.inspector import InspectorPanel
+    from gui.tools.propeditor import PropertyEditorPanel
+    from gui.tools.designer import BasicDesigner
+    from gui.tools.toolbox import ToolBox, ToolBoxDropTarget
 
     # create the windows and the property editor / inspector
     if DEBUG:

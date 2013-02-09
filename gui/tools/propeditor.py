@@ -4,8 +4,8 @@ import wx
 _ = wx.GetTranslation
 import wx.propgrid as wxpg
 
-from gui2py.components import InitSpec, StyleSpec, Spec, EventSpec, DimensionSpec
-from gui2py.font import Font
+from gui.components import InitSpec, StyleSpec, Spec, EventSpec, DimensionSpec
+from gui.font import Font
 
 DEBUG = False
 
@@ -191,7 +191,7 @@ class PropertyEditorPanel(wx.Panel):
                 group, name = name.split(".")
             if not name in self.groups:                
                 if name == 'font':  # TODO: detect property type
-                    # create a gui2py font from the wx.Font
+                    # create a gui font from the wx.Font
                     font = Font()
                     font.set_wx_font(value)
                     value = font
@@ -238,7 +238,7 @@ if __name__ == '__main__':
     app = wx.App()
     f = wx.Frame(None)
     
-    from gui2py.controls import Button, Label, TextBox, CheckBox, ListBox, ComboBox
+    from gui.controls import Button, Label, TextBox, CheckBox, ListBox, ComboBox
     frame = wx.Frame(None)
     #o = Button(frame, name="btnTest", label="click me!", default=True)
     #o = Label(frame, name="lblTest", alignment="right", size=(-1, 500), text="hello!")

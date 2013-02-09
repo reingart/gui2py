@@ -54,7 +54,7 @@ class Component(object):
     
     # Each Component must bind itself to the wxPython event model.  
     # When it receives an event from wxPython, it will convert the event
-    # to a gui2py.event.Event ( UIEvent, MouseEvent, etc ) and call the handler
+    # to a gui.event.Event ( UIEvent, MouseEvent, etc ) and call the handler
     
     # This is the base class wich all GUI Elements should derive 
     # (TopLevelWindows -Frame, Dialog, etc.- and Controls)
@@ -93,7 +93,7 @@ class Component(object):
                 # find the object reference
                 wx_obj = wx.FindWindowByName(parent)
                 if wx_obj:
-                    parent = wx_obj.obj  # store gui2py object
+                    parent = wx_obj.obj  # store gui object
                 else:
                     # try to find parent in globals variables
                     parent = COMPONENTS[parent]
@@ -168,7 +168,7 @@ class Component(object):
                 # asign a empty value (just to set up internal properties)
                 setattr(self, spec_name, None)
                     
-        # store gui2py reference inside of wx object
+        # store gui reference inside of wx object
         self.wx_obj.obj = self
         if isinstance(self._parent, Component) and self._name:
             self._parent[self._name] = self     # add child reference
@@ -291,7 +291,7 @@ class Component(object):
     def get_parent(self):
         parent = self.wx_obj.GetParent()
         if hasattr(parent, "obj"):
-            return parent.obj  # return the gui2py object
+            return parent.obj  # return the gui object
         else:
             return parent            # return the wx object
 

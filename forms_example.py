@@ -3,7 +3,7 @@
 
 import wx
 
-from gui2py.windows import HtmlWindow
+from gui.windows import HtmlWindow
 
 search_html = """
 <form method="get" action="/wiki/default/_pages"> 
