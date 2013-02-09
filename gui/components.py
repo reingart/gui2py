@@ -74,7 +74,6 @@ class Component(object):
         rebuild = hasattr(self, "wx_obj")
         
         # get current spec values (if we are re-creating the wx object)
-        self._resizable = kwargs.get('resizable', True)
         if rebuild:
             for spec_name, spec in self._meta.specs.items():
                 if spec_name in kwargs:
@@ -104,9 +103,6 @@ class Component(object):
             # container to hold children:
             self._children_dict = {}    # key and values for __setitem__
             self._children_list = []    # ordered values for __iter__
-            # set safe initial dimensions
-            self._left = self._top = self._width = self._height = None
-            self._margins = [0] * 4  # left, top, right, bottom
         
         self.wx_obj = None      # set up a void wx object (needed by setters)
         
@@ -190,9 +186,6 @@ class Component(object):
                 value = kwargs.get(spec_name, getattr(self, spec_name, None))
                 setattr(self, spec_name, value)
 
-        # Handle resize events to adjust absolute and relative dimensions
-        if self._resizable:
-            self.wx_obj.Bind(wx.EVT_SIZE, self.resize)
 
 
     def rebuild(self, recreate=True, **kwargs):
@@ -356,6 +349,12 @@ class Component(object):
         color = self._getDefaultColor( color )
         self.wx_obj.SetBackgroundColour( color )
         self.wx_obj.Refresh()   # KEA wxPython bug?
+
+    def _getForegroundColor(self):
+        return self.wx_obj.GetForegroundColour()
+
+    def _getBackgroundColor(self):
+        return self.wx_obj.GetBackgroundColour()
         
     def _setToolTip(self, aString):
         toolTip = wx.ToolTip(aString)
@@ -388,6 +387,56 @@ class Component(object):
                 return wx.Colour(color[0], color[1], color[2])
             else:
                 return color
+
+    def _getEnabled(self):
+        return self.wx_obj.IsEnabled()
+
+    def _setEnabled(self, aBoolean):
+        self.wx_obj.Enable(aBoolean)
+
+    def _getVisible(self):
+        return self.wx_obj.IsShown()
+
+    def _setVisible(self, aBoolean):
+        self.wx_obj.Show(aBoolean)
+    
+    name = InitSpec(optional=False, default="", _name="_name", type='string')
+    bgcolor = Spec(_getBackgroundColor, _setBackgroundColor, type='colour')
+    font = Spec(_get_font, _set_font, type='font')
+    fgcolor = Spec(_getForegroundColor, _setForegroundColor, type='colour')
+    enabled = Spec(_getEnabled, _setEnabled, default=True, type='boolean')
+    id = InitSpec(_getId, _setId,  default=-1, type="integer")
+    helptext = Spec(optional=True, type="string"),
+    tooltip = Spec(_getToolTip, _setToolTip, default='', type="string")
+    visible = Spec(_getVisible, _setVisible, default=True, type='boolean')
+    userdata = Spec(_name='_userdata')
+    parent = Spec(lambda self: self._get_parent_name(), 
+                      optional=False, default="",
+                      doc="parent window (used internally)")
+                                            
+    
+
+class Control(Component):
+    "This is the base class for a control"
+
+    # A control is generally a small window which processes user input and/or 
+    # displays one or more item of data (for more info see wx.Control)
+    # Avoid the term 'widget' as could be confusing (and it is already used in 
+    # web2py)
+    
+    _registry = registry.CONTROLS
+
+    def __init__(self, parent=None, **kwargs):        
+        # set safe initial dimensions
+        if not hasattr(self, '_resizable'):
+            self._resizable = kwargs.get('resizable', True)
+            self._left = self._top = self._width = self._height = None
+            self._margins = [0] * 4  # left, top, right, bottom
+        # call default contructor
+        Component.__init__(self, parent, **kwargs) 
+        # Handle resize events to adjust absolute and relative dimensions
+        if self._resizable:
+            self.wx_obj.Bind(wx.EVT_SIZE, self.resize)
 
     # Dimensions:
 
@@ -501,25 +550,7 @@ class Component(object):
             child.resize(evt)
         # call original handler (wx.HtmlWindow)
         if evt:
-            evt.Skip()  
-
-    def _getEnabled(self):
-        return self.wx_obj.IsEnabled()
-
-    def _setEnabled(self, aBoolean):
-        self.wx_obj.Enable(aBoolean)
-
-    def _getVisible(self):
-        return self.wx_obj.IsShown()
-
-    def _setVisible(self, aBoolean):
-        self.wx_obj.Show(aBoolean)
-
-    def _getForegroundColor(self):
-        return self.wx_obj.GetForegroundColour()
-
-    def _getBackgroundColor(self):
-        return self.wx_obj.GetBackgroundColour()
+            evt.Skip()
     
     def get_char_width(self):
         "Returns the average character width for this window."
@@ -551,6 +582,7 @@ class Component(object):
             self.wx_obj.Bind(wx.EVT_PAINT, func)
             # link key press event to the designer (move)
             self.wx_obj.Bind(wx.EVT_KEY_DOWN, func)
+
             self.wx_obj.Bind(wx.EVT_KEY_UP, func)
             self._designer = func
             for child in self:
@@ -560,22 +592,13 @@ class Component(object):
         if dt:
             self.wx_obj.SetDropTarget(dt)
             # TODO: check if any children is a droptarget too (i.e panels)
-    
-    name = InitSpec(optional=False, default="", _name="_name", type='string')
-    bgcolor = Spec(_getBackgroundColor, _setBackgroundColor, type='colour')
-    font = Spec(_get_font, _set_font, type='font')
-    fgcolor = Spec(_getForegroundColor, _setForegroundColor, type='colour')
-    enabled = Spec(_getEnabled, _setEnabled, default=True, type='boolean')
-    id = InitSpec(_getId, _setId,  default=-1, type="integer")
+
     pos = InitSpec(_get_pos, _set_pos, default=[ -1, -1])
     size = InitSpec(_get_size, _set_size, default=[ -1, -1])
     client_size = Spec(lambda self: self.wx_obj.GetClientSize(),
                        lambda self, value: self.wx_obj.SetClientSize(value),
                        default=[ -1, -1])
-    helptext = Spec(optional=True, type="string"),
-    tooltip = Spec(_getToolTip, _setToolTip, default='', type="string")
-    visible = Spec(_getVisible, _setVisible, default=True, type='boolean')
-    userdata = Spec(_name='_userdata')
+
     width = DimensionSpec(lambda self: self._width, 
                           lambda self, value: self._set_size([value, None]),
                           default="", type="string", group="size")
@@ -608,10 +631,18 @@ class Component(object):
                                lambda self, value: self._set_drop_target(value), 
                                doc="drag&drop handler (used in design mode)", 
                                type='internal')
-    parent = Spec(lambda self: self._get_parent_name(), 
-                      optional=False, default="",
-                      doc="parent window (used internally)")
-                                            
+
+    border = StyleSpec({'default': wx.BORDER_DEFAULT,
+                        'simple': wx.BORDER_SIMPLE,
+                        'sunken': wx.BORDER_SUNKEN,
+                        'raised': wx.BORDER_RAISED,
+                        'static': wx.BORDER_STATIC,
+                        'theme': wx.BORDER_THEME, # native
+                        'none': wx.BORDER_NONE, },
+                       doc="Kind of border to show (some will have no effect"
+                           " depending on control and platform)",
+                       default='default')
+
     # Events:
     onfocus = EventSpec('focus', binding=wx.EVT_SET_FOCUS, kind=FocusEvent)
     onblur = EventSpec('blur', binding=wx.EVT_KILL_FOCUS, kind=FocusEvent)
@@ -634,28 +665,6 @@ class Component(object):
     onkeypress = EventSpec('keypress', binding=wx.EVT_CHAR, kind=KeyEvent)
     onkeydown = EventSpec('keydown', binding=wx.EVT_KEY_DOWN, kind=KeyEvent)
     onkeyup = EventSpec('keyup', binding=wx.EVT_KEY_UP, kind=KeyEvent)
-
-
-class Control(Component):
-    "This is the base class for a control"
-
-    # A control is generally a small window which processes user input and/or 
-    # displays one or more item of data (for more info see wx.Control)
-    # Avoid the term 'widget' as could be confusing (and it is already used in 
-    # web2py)
-    
-    _registry = registry.CONTROLS
-
-    border = StyleSpec({'default': wx.BORDER_DEFAULT,
-                        'simple': wx.BORDER_SIMPLE,
-                        'sunken': wx.BORDER_SUNKEN,
-                        'raised': wx.BORDER_RAISED,
-                        'static': wx.BORDER_STATIC,
-                        'theme': wx.BORDER_THEME, # native
-                        'none': wx.BORDER_NONE, },
-                       doc="Kind of border to show (some will have no effect"
-                           " depending on control and platform)",
-                       default='default')
 
 
 if __name__ == "__main__":

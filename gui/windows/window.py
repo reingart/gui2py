@@ -7,7 +7,7 @@ from .. import registry
 from .. import images
 
 
-class Window(Component):
+class Window(Control):
     "A window that contains controls" 
     # in PythonCard model.Background
     _wx_class = wx.Frame
@@ -18,7 +18,7 @@ class Window(Component):
     def __init__(self, parent=None, **kwargs):
         "Initialize this instance."
         # call generic component initialization:
-        Component.__init__(self, parent, **kwargs)
+        Control.__init__(self, parent, **kwargs)
         self.app = wx.GetApp()
         self.menubar = None     # this should be a Spec
         self.statusbar = None   # this should be a Spec
