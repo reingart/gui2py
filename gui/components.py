@@ -349,20 +349,20 @@ class Component(object):
         self._font.set_wx_font(wx_font)
         return self._font
 
-    def _setForegroundColor( self, color ) :
-        color = self._getDefaultColor( color )
+    def _set_fgcolor( self, color ) :
+        color = self._get_default_color( color )
         self.wx_obj.SetForegroundColour( color )
         self.wx_obj.Refresh()   # KEA wxPython bug?
     
-    def _setBackgroundColor( self, color ) :
-        color = self._getDefaultColor( color )
+    def _set_bgcolor( self, color ) :
+        color = self._get_default_color( color )
         self.wx_obj.SetBackgroundColour( color )
         self.wx_obj.Refresh()   # KEA wxPython bug?
 
-    def _getForegroundColor(self):
+    def _get_fgcolor(self):
         return self.wx_obj.GetForegroundColour()
 
-    def _getBackgroundColor(self):
+    def _get_bgcolor(self):
         return self.wx_obj.GetBackgroundColour()
         
     def _setToolTip(self, aString):
@@ -386,7 +386,7 @@ class Component(object):
     def _setUserdata(self, aString):
         self._userdata = aString
 
-    def _getDefaultColor( self, color ) :
+    def _get_default_color( self, color ) :
         if color is None :
             return wx.NullColour
         else :
@@ -410,9 +410,9 @@ class Component(object):
         self.wx_obj.Show(aBoolean)
     
     name = InitSpec(optional=False, default="", _name="_name", type='string')
-    bgcolor = Spec(_getBackgroundColor, _setBackgroundColor, type='colour')
+    bgcolor = Spec(_get_bgcolor, _set_bgcolor, type='colour')
     font = Spec(_get_font, _set_font, type='font')
-    fgcolor = Spec(_getForegroundColor, _setForegroundColor, type='colour')
+    fgcolor = Spec(_get_fgcolor, _set_fgcolor, type='colour')
     enabled = Spec(_getEnabled, _setEnabled, default=True, type='boolean')
     id = InitSpec(_getId, _setId,  default=-1, type="integer")
     helptext = Spec(optional=True, type="string"),

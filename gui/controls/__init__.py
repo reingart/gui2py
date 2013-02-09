@@ -6,3 +6,4 @@ from .checkbox import CheckBox
 from .listbox import ListBox
 from .combobox import ComboBox
 from .htmlbox import HtmlBox
+from .image import Image

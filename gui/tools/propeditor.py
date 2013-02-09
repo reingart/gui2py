@@ -85,6 +85,7 @@ class PropertyEditorPanel(wx.Panel):
                             'enum': wxpg.EnumProperty,
                             'array': wxpg.ArrayStringProperty,
                             'font': wxpg.FontProperty,
+                            'image_file': wxpg.ImageFileProperty,
                             'colour': wxpg.ColourProperty}.get(spec.type)
                     if prop and name not in appended:
                         value = getattr(obj, name)
