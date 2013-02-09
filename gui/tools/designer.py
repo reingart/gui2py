@@ -319,15 +319,16 @@ if __name__ == '__main__':
     else:
         log = open(os.devnull, 'w')
         
-    f1 = wx.Frame(None, pos=(600,0), size=(300, 300))
-    f2 = wx.Frame(None, pos=(600,350), size=(300, 300))
+    f1 = wx.Frame(None, pos=(600, 0), size=(300, 300), 
+                        title="GUI Property Editor")
+    f2 = wx.Frame(None, pos=(600, 350), size=(300, 300), title="GUI Inspector")
     propeditor = PropertyEditorPanel(f2, log)
     inspector = InspectorPanel(f1, propeditor, log)
     f1.Show()
     f2.Show()
     
     # create a toolbox 
-    frame = wx.Frame(None, pos=(0, 0), size=(100, 400))
+    frame = wx.Frame(None, pos=(0, 0), size=(100, 400), title="GUI Toolbox")
     tb = ToolBox(frame)
 
     filename = "sample.pyw"
