@@ -275,14 +275,14 @@ def save(evt, designer):
     try:
         if DEBUG: print "saving..."
         # make a backup:
-        fin = open("sample.pyw", "ru")
-        fout = open("sample.pyw.bak", "w")
+        fin = open(designer.filename, "ru")
+        fout = open(designer.filename + ".bak", "w")
         fout.write(fin.read())
         fout.close()
         fin.close()
         # reopen the files to proccess them
-        fin = open("sample.pyw.bak", "ru")
-        fout = open("sample.pyw", "w")
+        fin = open(designer.filename + ".bak", "ru")
+        fout = open(designer.filename, "w")
         copy = True
         newlines = fin.newlines or "\n"
 
@@ -309,6 +309,7 @@ def save(evt, designer):
                 #fout.write("\n\r")
         fout.close()
         fin.close()
+        ok = True
     except Exception, e:
         import traceback
         print(traceback.print_exc())
@@ -359,7 +360,10 @@ if __name__ == '__main__':
     frame = wx.Frame(None, pos=(0, 0), size=(100, 400), title="GUI Toolbox")
     tb = ToolBox(frame)
 
-    filename = "sample.pyw"
+    if len(sys.argv) > 1:
+        filename = sys.argv[1]
+    else:
+        filename = "sample.pyw"
     vars = {}
     execfile(filename, vars)
     w = None
@@ -381,6 +385,7 @@ if __name__ == '__main__':
         w.show()
 
     designer.onclose = save 
+    designer.filename = filename
     
     frame.Show()
     tb.Show()
