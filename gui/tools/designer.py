@@ -31,7 +31,7 @@ class BasicDesigner:
         parent.designer = self
         self.inspector = inspector
         self.last_wx_obj = None     # used to draw the resize handle
-        
+        self.onclose = None
 
     def hit_test(self, wx_obj, pos):
         # is the position in the area to be used for the resize handle?
@@ -169,6 +169,13 @@ class BasicDesigner:
                     obj._width, obj._height = "%spx" % w, "%spx" % str(h)
                     wx.CallAfter(self.inspector.inspect, obj)
             evt.Skip()  # call the default handler
+        elif evt.GetEventType() == wx.EVT_CLOSE.typeId:
+            # call the external close handler (useful to save)
+            if self.onclose:
+                if not self.onclose(evt, self):
+                    evt.Veto()  # if onclose returns False, close is ignored
+                else:
+                    evt.Skip() 
         elif evt.GetEventType() == wx.EVT_KEY_DOWN.typeId:
             self.key_press(evt)
         elif evt.GetEventType() == wx.EVT_KEY_UP.typeId:
@@ -261,7 +268,7 @@ class BasicDesigner:
         self.parent.wx_obj.Layout()
 
 
-def save(evt):
+def save(evt, designer):
     "Basic save functionality: just replaces the gui code"
     wx_obj = evt.GetEventObject()
     w = wx_obj.obj
@@ -301,7 +308,9 @@ def save(evt):
             #fout.write("\n\r")
     fout.close()
     fin.close()
-    exit()
+    wx.CallAfter(exit)
+    return False        # ok to close and exit! 
+    
 
 
 if __name__ == '__main__':
@@ -363,7 +372,7 @@ if __name__ == '__main__':
         inspector.set_designer(designer)
         w.show()
 
-    w.wx_obj.Bind(wx.EVT_CLOSE, save) 
+    designer.onclose = save 
     
     frame.Show()
     tb.Show()
