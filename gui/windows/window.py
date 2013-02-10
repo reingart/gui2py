@@ -1,7 +1,7 @@
 import wx
 
 from ..components import Component, Control
-from ..spec import Spec, InitSpec, EventSpec, StyleSpec
+from ..spec import Spec, InitSpec, EventSpec, StyleSpec, InternalSpec
 from ..event import UIEvent
 from .. import registry
 from .. import images
@@ -165,10 +165,10 @@ class Window(Control):
     # ex_metal wx.FRAME_EX_METAL  # On Mac OS X, frames with this style will be 
                         #shown with a metallic look. This is an extra style.
 
-    menubar = Spec(lambda self: self._menubar,
+    menubar = InternalSpec(lambda self: self._menubar,
                    lambda self, value: self._set_menubar(value), default=None,
                    doc="Tells the frame to show the given menu bar")
-    statusbar = Spec(lambda self: self._statusbar,
+    statusbar = InternalSpec(lambda self: self._statusbar,
                    lambda self, value: self._set_statusbar(value), default=None,
                    doc="Associates a status bar with the frame.")
 
