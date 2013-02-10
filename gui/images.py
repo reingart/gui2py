@@ -141,3 +141,17 @@ html = PyEmbeddedImage(
     "da52eWWsdnllN3DXZnduVkwnfT+d9inkMpQKWX69Wv8N+GEL+AdfSH+n2ppttwAAAABJRU5E"
     "rkJggg==")
 
+#----------------------------------------------------------------------
+statusbar = PyEmbeddedImage(
+    "iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAABHNCSVQICAgIfAhkiAAAAfFJ"
+    "REFUOI3VlM9q20AQh79drWJpsRxwDDkl97xMXqftK7R9lzxMW+Ma3wK+hBxk2ZJW+2d6KHEj"
+    "iiEEU+jAwhxmvp2Z/e0opTPObfrsxH8CbQ97Wf9cyY/v3+Trl89yFujFxQUiQkqJ7Xb7XuYY"
+    "qpQihIDWmqqqzgN9bcMwvBuqXksqBi+r1QqAu7s7ALz39H3PdDpFKYWI4L0nhIC19k91mVEv"
+    "vjl123K5RESw1hJCIKWEUgrnHEVRoLXGOcd+v+fy8nKUexIaQkBEiDEej1Lq6IsIxhiur69p"
+    "2/Zt0IeHB4qiYLfbHdvP8xzvPd57JpMJz8/PWGu5urp6G7Tve+7v71ksFogIIkJd11hr0Voz"
+    "mUwQEbTWeO/58PHTMffk65dlyXw+ZxgG2rbFGENZllhriTHSdR0xRpqmIcvG++MvnTrn0Fpj"
+    "rWW73TKfz5lOp9R1jTEGpRTGGIwxOOeoqordbseY80pSru9kvV6TUuL29pbZbHaUUYwRYwwi"
+    "clQAQEoJrfVpSXVdR1VVDMOAc47NZkPXdRhjyPOclBIiQpZlNE3DbDbDe8/j4+Pp9l+C6rrm"
+    "6emJpmlGUnLOkVIiz3OKouBwOFCWJTc3NyPoqNKyLHHOIfJ7QWmtyfMcERl9gJe5DsOAtZaU"
+    "0umZnsv+n83/Cz+NDunR6H0/AAAAAElFTkSuQmCC")
+

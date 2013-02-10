@@ -128,6 +128,7 @@ class Window(Control):
     def rebuild(self, *args, **kwargs):
         # detach the menubar (if any) so it can be auto re-attached later
         self.wx_obj.SetMenuBar(None)
+        self.wx_obj.SetStatusBar(None)
         Control.rebuild(self, *args, **kwargs)
         
     

@@ -11,7 +11,7 @@ import gui
 
 mywin = gui.Window(
             font={'size': 11, 'face': u'Ubuntu'}, 
-            height='220px', 
+            height='248px', 
             id=-2017, 
             left='180', 
             name='mywin', 
@@ -142,6 +142,12 @@ gauge_43_128 = gui.Gauge(
             top='130', 
             value=50, 
             width='367')
+statusbar_15_91 = gui.StatusBar(
+            font={'size': 11, 'face': u'Ubuntu'}, 
+            id=-2027, 
+            name='statusbar_15_91', 
+            parent='mywin', 
+            text=u'hello world!')
 
 # --- gui2py designer end ---
 
