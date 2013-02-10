@@ -11,14 +11,14 @@ import gui
 
 mywin = gui.Window(
             font={'size': 11, 'face': u'Ubuntu'}, 
-            height='220', 
+            height='220px', 
             id=-2017, 
             left='180', 
             name='mywin', 
             resizable=True, 
             title=u'hello world', 
             top='24', 
-            width='400')
+            width='400px')
 btnClose = gui.Button(
             font={'size': 11, 'face': u'Ubuntu'}, 
             height='29', 

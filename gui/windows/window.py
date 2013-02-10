@@ -150,6 +150,11 @@ class Window(Control):
         "Generates a event whose handler usually tries to close the window"
         self.wx_obj.Close()
     
+    def rebuild(self, *args, **kwargs):
+        # detach the menubar (if any), it will be reattached by MenuBar
+        self.wx_obj.SetMenuBar(None)
+        Control.rebuild(self, *args, **kwargs)
+    
     # non-inherited properties:
     title = InitSpec(lambda self: self.wx_obj.GetTitle(), 
                      lambda self, value: self.wx_obj.SetTitle(value),

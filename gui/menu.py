@@ -230,7 +230,6 @@ class wx_MenuBar(wx_DummyWindow, wx.MenuBar):
         wx_DummyWindow.__init__(self, parent, *args, **kwargs)
         wx.MenuBar.__init__(self)
         self.parent = parent
-        self.parent.SetMenuBar(self)    
 
     # unsupported methods:
     
@@ -282,12 +281,14 @@ class MenuBar(Component):
     def __init__(self, *args, **kwargs):
         Component.__init__(self, *args, **kwargs)
         if hasattr(self, "_designer") and self.designer:
-            # create a basic event
+            # create a basic menu
             id = wx.NewId()
             m = Menu(self, label='Menu', name="menu_%s" % id, id=id)
             id = wx.NewId()
             mi = MenuItem(m, label='MenuItem', name='menu_item_%s' % id, id=id)
             mi.designer = self.designer
+
+        self._parent.wx_obj.SetMenuBar(self.wx_obj)
 
     def find(self, item_id=None):
         "Recursively find a menu item by its id (useful for event handlers)"
@@ -296,12 +297,18 @@ class MenuBar(Component):
             if found:
                 return found 
 
+    def set_parent(self, new_parent, init=False):
+        Component.set_parent(self, new_parent, init)
+        if not init:
+            new_parent.wx_obj.SetMenuBar(self.wx_obj)
+
     def rebuild(self, **kwargs):
         # avoid recreating the object (not supported yet!)
         Component.rebuild(self, False, **kwargs)
 
 
-# update metadata for context menu
+# update metadata for the add context menu at the designer:
+
 MenuBar._meta.valid_children = [Menu, ] 
 Menu._meta.valid_children = [MenuItem, MenuItemCheckable, MenuItemSeparator, Menu] 
 
