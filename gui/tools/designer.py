@@ -71,6 +71,8 @@ class BasicDesigner:
             evt.Skip()
             if not evt.ControlDown():
                 self.selection = []  # clear previous selection
+            if self.inspector and hasattr(wx_obj, "obj"):
+                self.inspector.inspect(wx_obj.obj)  # inspect top level window
         else:
             if DEBUG: print wx_obj
             sx, sy = wx_obj.ScreenToClient(wx_obj.GetPositionTuple())
