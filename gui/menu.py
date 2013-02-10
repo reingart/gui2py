@@ -66,7 +66,17 @@ class wx_MenuItem(wx_DummyWindow, wx.MenuItem):
                              #subMenu=None,
                              )
         self.parent = parent
-        self.parent.AppendItem(self)
+        if self.GetKind() == wx.ITEM_SEPARATOR:
+            self.parent.AppendSeparator()       # do not use AppendItem on MSW
+        #elif self.GetKind() == wx.ITEM_CHECK:
+        #    self.parent.AppendCheckItem(wx.NewId(), self.GetText())            
+        else:
+            self.parent.AppendItem(self)
+
+    def Enable(self, value):
+        # avoid assertion in Enable: invalid menu item
+        if not self.GetKind() == wx.ITEM_SEPARATOR:
+            wx.MenuItem.Enable(self, value)
 
     def Destroy(self):
         self.parent.RemoveItem(self)
@@ -74,7 +84,7 @@ class wx_MenuItem(wx_DummyWindow, wx.MenuItem):
 
     def Check(self, value):
         # avoid assertion in Check(): invalid menu item
-        if self.GetKind() & wx.ITEM_CHECK:
+        if self.GetKind() == wx.ITEM_CHECK:
             wx.MenuItem.Check(self, value)
 
     GetForegroundColour = wx.MenuItem.GetTextColour
@@ -116,7 +126,7 @@ class MenuItemCheckable(MenuItem):
 
 class MenuItemSeparator(MenuItem):
 
-    _style = wx.ITEM_SEPARATOR              
+    _style = wx.ITEM_SEPARATOR
 
 
 class wx_Menu(wx_DummyWindow, wx.Menu):
