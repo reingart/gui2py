@@ -168,11 +168,11 @@ class wx_Menu(wx_DummyWindow, wx.Menu):
                 return False
         return True
 
-    def SetItemLabel(self, menu):
+    def SetItemLabel(self, menu, label):
         #return #return menu.GetTitle()
         id = menu.GetId()
         print "MENUID", id
-        self.SetLabel(id, menu.GetTitle())
+        self.SetLabel(id, label)
         #menu.SetLabel(menu.GetTitle())
         pass
 
@@ -195,8 +195,8 @@ class Menu(Component):
 
     def _set_label(self, value):
         # note that wx.Menu.SetTitle() does not work on gtk for menubars
-       self.wx_obj.SetTitle(value)
-       self.wx_obj.parent.SetItemLabel(self.wx_obj)
+       #self.wx_obj.SetTitle(value)     # do not use SetTitle (in msw is shown)  
+       self.wx_obj.parent.SetItemLabel(self.wx_obj, value)
                 
     def _get_label(self):
         # note that wx.Menu.GetTitle() does not work on windows for menubars
@@ -257,10 +257,10 @@ class wx_MenuBar(wx_DummyWindow, wx.MenuBar):
         menus = [submenu for submenu in menus if submenu[0] != menu]
         self.SetMenus(menus)
         
-    def SetItemLabel(self, menu):
+    def SetItemLabel(self, menu, label):
         menus = self.GetMenus()     # get the list of (menu, title)
         pos = [submenu[0] for submenu in menus].index(menu)
-        self.SetMenuLabel(pos, menu.GetTitle())
+        self.SetMenuLabel(pos, label)
 
     def GetItemLabel(self, menu):
         menus = self.GetMenus()     # get the list of (menu, title)
