@@ -272,45 +272,53 @@ def save(evt, designer):
     "Basic save functionality: just replaces the gui code"
     wx_obj = evt.GetEventObject()
     w = wx_obj.obj
-    if DEBUG: print "saving..."
-    # make a backup:
-    fin = open("sample.pyw", "ru")
-    fout = open("sample.pyw.bak", "w")
-    fout.write(fin.read())
-    fout.close()
-    fin.close()
-    # reopen the files to proccess them
-    fin = open("sample.pyw.bak", "ru")
-    fout = open("sample.pyw", "w")
-    copy = True
-    newlines = fin.newlines or "\n"
+    try:
+        if DEBUG: print "saving..."
+        # make a backup:
+        fin = open("sample.pyw", "ru")
+        fout = open("sample.pyw.bak", "w")
+        fout.write(fin.read())
+        fout.close()
+        fin.close()
+        # reopen the files to proccess them
+        fin = open("sample.pyw.bak", "ru")
+        fout = open("sample.pyw", "w")
+        copy = True
+        newlines = fin.newlines or "\n"
 
-    def dump(obj):
-        "recursive convert object to string"
-        for ctl in obj:
-            fout.write(str(ctl))
-            fout.write(newlines)
-            dump(ctl)
+        def dump(obj):
+            "recursive convert object to string"
+            for ctl in obj:
+                fout.write(str(ctl))
+                fout.write(newlines)
+                dump(ctl)
 
-    for line in fin:
-        if line.startswith("# --- gui2py designer start ---"):
-            fout.write(line)
-            fout.write(newlines)
-            fout.write(str(w))
-            fout.write(newlines)
-            dump(w)
-            fout.write(newlines)
-            copy = False
-        if line.startswith("# --- gui2py designer end ---"):
-            copy = True
-        if copy:
-            fout.write(line)
-            #fout.write("\n\r")
-    fout.close()
-    fin.close()
-    wx.CallAfter(exit)
-    return False        # ok to close and exit! 
-    
+        for line in fin:
+            if line.startswith("# --- gui2py designer start ---"):
+                fout.write(line)
+                fout.write(newlines)
+                fout.write(str(w))
+                fout.write(newlines)
+                dump(w)
+                fout.write(newlines)
+                copy = False
+            if line.startswith("# --- gui2py designer end ---"):
+                copy = True
+            if copy:
+                fout.write(line)
+                #fout.write("\n\r")
+        fout.close()
+        fin.close()
+    except Exception, e:
+        import traceback
+        print(traceback.print_exc())
+        dlg = wx.MessageDialog(evt.GetEventObject(), str(e), 'Unable to save:',
+                               wx.OK | wx.CANCEL | wx.ICON_EXCLAMATION)
+        ok = dlg.ShowModal() == wx.ID_OK
+        dlg.Destroy()
+    if ok:
+        wx.CallAfter(exit)    # terminate the designer program
+    return ok                 # ok to close and exit! 
 
 
 if __name__ == '__main__':
