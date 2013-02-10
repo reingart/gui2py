@@ -160,6 +160,15 @@ class BasicDesigner:
                 self.draw_grid(evt)
             else:
                 evt.Skip()  # call the default handler
+        elif evt.GetEventType() == wx.EVT_SIZE.typeId:
+            # update the size in the propeditor (only for the top level window)
+            obj = evt.GetEventObject().obj
+            if not obj.get_parent():  
+                w, h = obj.size
+                if w and h:
+                    obj._width, obj._height = "%spx" % w, "%spx" % str(h)
+                    wx.CallAfter(self.inspector.inspect, obj)
+            evt.Skip()  # call the default handler
         elif evt.GetEventType() == wx.EVT_KEY_DOWN.typeId:
             self.key_press(evt)
         elif evt.GetEventType() == wx.EVT_KEY_UP.typeId:

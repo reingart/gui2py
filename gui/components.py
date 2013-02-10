@@ -602,8 +602,10 @@ class Control(Component):
             self.wx_obj.Bind(wx.EVT_PAINT, func)
             # link key press event to the designer (move)
             self.wx_obj.Bind(wx.EVT_KEY_DOWN, func)
-
             self.wx_obj.Bind(wx.EVT_KEY_UP, func)
+            # bind top level window resizing event:
+            if self._parent is None:
+                self.wx_obj.Bind(wx.EVT_SIZE, func)
             self._designer = func
             for child in self:
                 child.designer = func
