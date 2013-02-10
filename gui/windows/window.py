@@ -17,23 +17,24 @@ class Window(Control):
 
     def __init__(self, parent=None, **kwargs):
         "Initialize this instance."
+        
+        # sane defaults (do not overwrite them if rebuilding):
+        if not hasattr(self, "_menubar"):
+            self._menubar = None
+            self._statusbar = None
+        
         # call generic component initialization:
         Control.__init__(self, parent, **kwargs)
         self.app = wx.GetApp()
-        self.menubar = None     # this should be a Spec
-        self.statusbar = None   # this should be a Spec
         
-        #self._createMenus(aBgRsrc)
-        #self._createStatusBar(aBgRsrc)
-
         # AJT 20.11.2001
         # Add icon creation
         #self._setIcon(aBgRsrc)
 
         # 2001-11-08
         # hack to preserve the statusbar text
-        if self.statusbar is not None and self.menubar is not None:
-            wx.EVT_MENU_HIGHLIGHT_ALL(self, self.menu_highlight)
+        #if self.statusbar is not None and self.menubar is not None:
+        #    wx.EVT_MENU_HIGHLIGHT_ALL(self, self.menu_highlight)
 
         if parent is None:
             self.app.SetTopWindow(self.wx_obj)
@@ -41,53 +42,27 @@ class Window(Control):
         wx.CallAfter(self.wx_obj.InitDialog)
         wx.CallAfter(self.wx_obj.Layout)
 
-
-    def _create_mac_menu(self):
-        mnu = wx.Menu()
-        id = wx.NewId()
-        mnu.Append(id, 'E&xit\tAlt+X')
-
-        menubar = self.wx_obj.GetMenuBar()
-        if menubar is None:
-            menubar = wx.MenuBar()
-            self.wx_obj.SetMenuBar(menubar)
-        menubar.Append(mnu, 'File', wx.CLOSE)
-        #wx.EVT_MENU(self, id, lambda event: self.exit())
-
-    def _create_menus(self, menubar):
-        # RDS - Only create a menubar if one is defined
-        if menubar:
-            self.menubar = menu.MenuBar(self, menubar)
-        elif wx.Platform == '__WXMAC__' and self.GetParent() is None:
-            # always create at least a File menu with Quit on the Mac
-            # so we automatically get the Apple menu...
-            # KEA 2004-03-01
-            # the elif was updated to make sure we only create a menubar
-            # if the background has no parent, aka is the primary app window
-            self._create_mac_menu()
-
-
     # 2001-11-08
     # hack to keep the statusbar text from being wiped out
     def menu_highlight(self, event):
         self.statusbar.text = self.statusbar.text
-
-    # KEA 2004-04-14
-    # subclasses of Window can override this method
-    # if they want to have a different style of statusBar
-    def _create_statusbar(self, *args, **kwargs):
-        return statusbar.StatusBar(self, *args, **kwargs)
     
     def _set_statusbar(self, bar=None):
-        self.SetStatusBar(bar)
-        if self.statusbar is not None:
-            self.statusbar = bar.Destroy()
+        self.wx_obj.SetStatusBar(bar and bar.wx_obj or None)
+        if self._statusbar is not None and self._statusbar != bar:
+            self._statusbar.destroy()
             # the statusbar changes the window size
             # so this will for it back
             #self.SetSize(self.GetSizeTuple())
             self.wx_obj.Fit()
-        self.statusBar = None
-            
+        self._statusbar = bar
+
+    def _set_menubar(self, bar=None):
+        self.wx_obj.SetMenuBar(bar and bar.wx_obj or None)
+        if self._menubar is not None and self._menubar != bar:
+            self._menubar.destroy()
+            self.wx_obj.Fit()
+        self._menubar = bar            
 
     def _set_icon(self, icon=None):
         """Set icon based on resource values"""
@@ -151,9 +126,10 @@ class Window(Control):
         self.wx_obj.Close()
     
     def rebuild(self, *args, **kwargs):
-        # detach the menubar (if any), it will be reattached by MenuBar
+        # detach the menubar (if any) so it can be auto re-attached later
         self.wx_obj.SetMenuBar(None)
         Control.rebuild(self, *args, **kwargs)
+        
     
     # non-inherited properties:
     title = InitSpec(lambda self: self.wx_obj.GetTitle(), 
@@ -189,6 +165,12 @@ class Window(Control):
     # ex_metal wx.FRAME_EX_METAL  # On Mac OS X, frames with this style will be 
                         #shown with a metallic look. This is an extra style.
 
+    menubar = Spec(lambda self: self._menubar,
+                   lambda self, value: self._set_menubar(value), default=None,
+                   doc="Tells the frame to show the given menu bar")
+    statusbar = Spec(lambda self: self._statusbar,
+                   lambda self, value: self._set_statusbar(value), default=None,
+                   doc="Associates a status bar with the frame.")
 
     # events:
     onload = EventSpec('load', binding=wx.EVT_INIT_DIALOG, kind=UIEvent)

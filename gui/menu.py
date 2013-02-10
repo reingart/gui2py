@@ -288,7 +288,7 @@ class MenuBar(Component):
             mi = MenuItem(m, label='MenuItem', name='menu_item_%s' % id, id=id)
             mi.designer = self.designer
 
-        self._parent.wx_obj.SetMenuBar(self.wx_obj)
+        self._parent.menubar = self
 
     def find(self, item_id=None):
         "Recursively find a menu item by its id (useful for event handlers)"
@@ -297,14 +297,6 @@ class MenuBar(Component):
             if found:
                 return found 
 
-    def set_parent(self, new_parent, init=False):
-        Component.set_parent(self, new_parent, init)
-        if not init:
-            new_parent.wx_obj.SetMenuBar(self.wx_obj)
-
-    def rebuild(self, **kwargs):
-        # avoid recreating the object (not supported yet!)
-        Component.rebuild(self, False, **kwargs)
 
 
 # update metadata for the add context menu at the designer:
