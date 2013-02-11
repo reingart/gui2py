@@ -1,7 +1,7 @@
 
 
 import wx
-from ..components import Control, Spec, EventSpec, InitSpec, StyleSpec
+from ..component import Control, Spec, EventSpec, InitSpec, StyleSpec
 from .. import images
 
 

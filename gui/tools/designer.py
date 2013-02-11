@@ -244,7 +244,7 @@ class BasicDesigner:
                 # make sure sizing handles follow component
                 ##self.showSizingHandles(name)
                 # update the position on the propertyEditor status bar
-                ##self.setToolTipDrag(name, (x, y), self.components[name].size)
+                ##self.setToolTipDrag(name, (x, y), self.component[name].size)
 
     def draw_grid(self, event):
         wx_obj = event.GetEventObject()

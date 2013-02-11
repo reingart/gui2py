@@ -2,7 +2,7 @@
 
 import wx
 from .event import FormEvent
-from .components import Component, Spec, StyleSpec, EventSpec, InitSpec, DimensionSpec
+from .component import Component, Spec, StyleSpec, EventSpec, InitSpec, DimensionSpec
 from . import images
 from . import registry
 

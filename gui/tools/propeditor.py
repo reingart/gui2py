@@ -4,7 +4,7 @@ import wx
 _ = wx.GetTranslation
 import wx.propgrid as wxpg
 
-from gui.components import InitSpec, StyleSpec, Spec, EventSpec, DimensionSpec
+from gui.component import InitSpec, StyleSpec, Spec, EventSpec, DimensionSpec
 from gui.font import Font
 
 DEBUG = False

@@ -14,7 +14,7 @@ import wx.html
 ##import wx.lib.wxpTag
 
 from ..event import HtmlCellEvent, HtmlLinkEvent, SubmitEvent
-from ..components import Control, Spec, EventSpec, StyleSpec
+from ..component import Control, Spec, EventSpec, StyleSpec
 from ..html.form import EVT_FORM_SUBMIT
 from ..html.object import HTML_CTRL_CLICK
 from .. import images

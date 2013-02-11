@@ -1,6 +1,6 @@
 import wx
 
-from ..components import Component, Control
+from ..component import Component, Control
 from ..spec import Spec, InitSpec, EventSpec, StyleSpec, InternalSpec
 from ..event import UIEvent
 from .. import registry
@@ -104,7 +104,7 @@ class Window(Control):
         # if widgetWX is None:
             # return None
         # else:
-            # for widget in self.components.itervalues():
+            # for widget in self.component.itervalues():
                 # if widgetWX == widget:
                     # return widget
         # # is this even possible? focus in another window maybe?

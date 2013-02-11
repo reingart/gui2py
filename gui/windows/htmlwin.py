@@ -1,6 +1,6 @@
 import wx
 
-from ..components import Component, Spec, InitSpec, EventSpec, StyleSpec
+from ..component import Component, Spec, InitSpec, EventSpec, StyleSpec
 from ..controls import HtmlBox
 from ..windows import Window
 from ..event import UIEvent

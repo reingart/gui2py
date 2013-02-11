@@ -1,6 +1,6 @@
 import wx
 from ..event import FormEvent
-from ..components import Control, Spec, EventSpec, StyleSpec
+from ..component import Control, Spec, EventSpec, StyleSpec
 from .. import images 
 
 
