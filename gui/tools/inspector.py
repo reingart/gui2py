@@ -195,8 +195,10 @@ class InspectorPanel(wx.Panel):
                     menu.Destroy()
                     self.load_object(self.root_obj)     # reload the tree
     
-    def delete(self, evt):
+    def delete(self, evt, obj=None):
         # remove the object from parent and destroy it:
+        if obj:
+            self.obj = obj
         self.obj.destroy()
         del self.obj
 

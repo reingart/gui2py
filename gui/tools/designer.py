@@ -245,6 +245,16 @@ class BasicDesigner:
                 ##self.showSizingHandles(name)
                 # update the position on the propertyEditor status bar
                 ##self.setToolTipDrag(name, (x, y), self.component[name].size)
+        elif key == wx.WXK_DELETE:
+            print "DELETE!"
+            # get the selected objects (if any)
+            for wx_obj in self.selection:
+                obj = getattr(wx_obj, "obj")  
+                if obj:
+                    print "deleting", obj.name
+                    self.inspector.delete(event, obj)
+        else:
+            print "KEY:", key
 
     def draw_grid(self, event):
         wx_obj = event.GetEventObject()
