@@ -332,9 +332,7 @@ if __name__ == '__main__':
     app = wx.App(redirect=None)    
 
     # import controls (fill the registry!)
-    from gui.windows import Window
-    import gui.controls
-    import gui.menu
+    import gui
 
     # import tools used by the designer
     from gui.tools.inspector import InspectorPanel
@@ -357,7 +355,7 @@ if __name__ == '__main__':
     f2.Show()
     
     # create a toolbox 
-    frame = wx.Frame(None, pos=(0, 0), size=(100, 400), title="GUI Toolbox")
+    frame = wx.Frame(None, pos=(0, 0), size=(80, 600), title="GUI Toolbox")
     tb = ToolBox(frame)
 
     if len(sys.argv) > 1:
@@ -368,7 +366,7 @@ if __name__ == '__main__':
     execfile(filename, vars)
     w = None
     for name, value in vars.items():
-        if not isinstance(value, Window):
+        if not isinstance(value, gui.Window):
             continue
         w = value       # TODO: support many windows
         # load the window in the widget inspector
