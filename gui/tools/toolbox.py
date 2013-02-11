@@ -24,6 +24,8 @@ class ToolBox(aui.AuiToolBar):
         aui.AuiToolBar.__init__(self, parent, -1, wx.DefaultPosition, wx.DefaultSize,
                                  agwStyle=aui.AUI_TB_OVERFLOW | aui.AUI_TB_VERTICAL | aui.AUI_TB_TEXT)
 
+        self.default_tlw = None
+        self.desinger = self.inspector = None
         prepend_items, append_items = [],[]
         self.SetToolBitmapSize(wx.Size(48, 48))
         #self.AddSimpleTool(ID_SampleItem+30, "Test", wx.ArtProvider.GetBitmap(wx.ART_ERROR))
@@ -38,6 +40,7 @@ class ToolBox(aui.AuiToolBar):
                 menu_id = wx.NewId()
                 self.menu_ctrl_map[menu_id] = ctrl
                 self.AddSimpleTool(menu_id, name, ctrl._image.GetBitmap())
+                self.Bind(wx.EVT_MENU, self.tool_click, id=menu_id)
 
         # Handle "A drag operation involving a toolbar item has started"
         self.Bind(aui.EVT_AUITOOLBAR_BEGIN_DRAG, self.start_drag_opperation)
@@ -45,6 +48,22 @@ class ToolBox(aui.AuiToolBar):
         # this can be useful in the future (TODO: multiple columns or groups)
         self.SetCustomOverflowItems(prepend_items, append_items)
         self.Realize()
+
+    def tool_click(self, evt):
+        "Event handler tool selection (just add to default handler)"
+    
+        # get the control
+        ctrl = self.menu_ctrl_map[evt.GetId()]
+        # create the control on the parent:
+        if self.default_tlw:
+            obj = ctrl(self.default_tlw, 
+                       name="%s_%s" % (ctrl._meta.name.lower(), wx.NewId()), 
+                       pos=(0, 0), designer=self.designer)
+            # update the object at the inspector (to show the new control)
+        if self.inspector:
+            self.inspector.load_object(self.default_tlw)
+            self.inspector.inspect(obj)
+        
         
     def start_drag_opperation(self, evt):
         "Event handler for drag&drop functionality"
@@ -77,6 +96,12 @@ class ToolBox(aui.AuiToolBar):
         if result == wx.DragMove:
             if DEBUG: print "dragmove!"
             self.Refresh()
+
+    def set_default_tlw(self, tlw, designer, inspector):
+        "track default top level window for toolbox menu default action"
+        self.default_tlw = tlw
+        self.designer = designer
+        self.inspector = inspector
 
 
 class ToolBoxDropTarget(wx.PyDropTarget):
@@ -146,8 +171,8 @@ class ToolBoxDropTarget(wx.PyDropTarget):
         # with the original data (move, copy, etc.)  In this
         # case we just return the suggested value given to us.
         return d  
+               
         
-
 if __name__ == '__main__':
     import sys,os
     app = wx.App()
