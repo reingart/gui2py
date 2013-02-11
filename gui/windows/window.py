@@ -128,8 +128,13 @@ class Window(Control):
     def rebuild(self, *args, **kwargs):
         # detach the menubar (if any) so it can be auto re-attached later
         self.wx_obj.SetMenuBar(None)
-        self.wx_obj.SetStatusBar(None)
+        # statusbar needs special care:
+        if self._statusbar:
+            self.wx_obj.SetStatusBar(None)
+            self._statusbar.set_parent(None)    # just in case
         Control.rebuild(self, *args, **kwargs)
+        if self._statusbar:
+            self._statusbar.set_parent(self)
         
     
     # non-inherited properties:
