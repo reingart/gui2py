@@ -195,6 +195,12 @@ class ListView(Control):
                 self.wx_obj.SetColumnWidth(i, colwidth)
             self.wx_obj.resizeLastColumn(self.wx_obj.GetColumnWidth(numcols-1))
 
+    def delete(self, a_position):
+        "Deletes the item at the zero-based index 'n' from the control."
+        self.wx_obj.DeleteItem(a_position)
+        # FIX: this will fail if not the last item:
+        del self.item_data_map[a_position]
+
     def _set_column_headings(self, a_list):
         print "setting column headings", a_list
         if isinstance(a_list, ListType) or isinstance(a_list, TupleType) or isinstance(a_list, StringTypes):
@@ -512,6 +518,8 @@ if __name__ == "__main__":
         lv.virtual = True
         #lv.ongetitemdata = lambda item, col: "row %d, col %d" % (item, col)
         lv.item_count = 10000000
+    
+    lv.delete(4)
     
     from gui.tools.inspector import InspectorTool
     InspectorTool().show(w)
