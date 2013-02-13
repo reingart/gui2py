@@ -155,3 +155,10 @@ statusbar = PyEmbeddedImage(
     "6emJpmlGUnLOkVIiz3OKouBwOFCWJTc3NyPoqNKyLHHOIfJ7QWmtyfMcERl9gJe5DsOAtZaU"
     "0umZnsv+n83/Cz+NDunR6H0/AAAAAElFTkSuQmCC")
 
+#----------------------------------------------------------------------
+list_ctrl = PyEmbeddedImage(
+    "iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAABHNCSVQICAgIfAhkiAAAAF9J"
+    "REFUOI3tlDEKwDAMA+WSl+j/b8pX1KFkaaEWJN6szeYQhwcHAOFwBgDMOS2YZMqSxLXv9U1J"
+    "aaDqptK53oh4SteQRdIvt+TGe+EUZ2lT38Dl2tQ3cLk29Q1cruSf3mp5YBsYN8V7AAAAAElF"
+    "TkSuQmCC")
+
