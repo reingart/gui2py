@@ -107,7 +107,8 @@ class PropertyEditorPanel(wx.Panel):
                         if spec.type == "enum":
                             prop = prop(name, name, 
                                            spec.mapping.keys(), 
-                                           spec.mapping.values())
+                                           spec.mapping.values(),
+                                           value=spec.mapping[value])
                         else:
                             try:
                                 prop = prop(name, value=value)
