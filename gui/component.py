@@ -174,7 +174,7 @@ class Component(object):
                                       key=lambda it: it[1].order):
             if isinstance(spec, InternalSpec):
                 if DEBUG: print "resetting internal specs (rebound...):", spec_name, self.name
-                value = kwargs.get(spec_name, getattr(self, spec_name, None))
+                value = kwargs.get(spec_name, getattr(self, spec_name, spec.default))
                 setattr(self, spec_name, value)
 
 

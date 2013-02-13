@@ -15,6 +15,10 @@ class wx_ListCtrl(wx.ListCtrl, ColumnSorterMixin, ListCtrlAutoWidthMixin):
     def GetListCtrl(self):
         return self
 
+    def OnGetItemText(self, item, col):
+        if self.obj and self.obj._ongetitemdata:
+            return self.obj._ongetitemdata(item, col)
+
 
 class ListView(Control):
     "A multi-column list (wx.ListCtrl)"
@@ -422,6 +426,12 @@ class ListView(Control):
     item_selection = Spec(get_selected_items, set_selection)
     string_selection = Spec(get_string_selection, set_string_selection)
     
+    item_count = Spec(
+        lambda self: self.wx_obj.GetItemCount(),
+        lambda self, val: (val is not None and self.wx_obj.SetItemCount(val)),
+        default=None,
+        doc="indicate to the control the number of items it contains (virtual)")
+    
     sort_order = StyleSpec({'ascending': wx.LC_SORT_ASCENDING,
                             'descending': wx.LC_SORT_DESCENDING,
                             'none': 0}, default='none',
@@ -429,6 +439,9 @@ class ListView(Control):
     ##sort_column = InternalSpec(lambda self: self._sort_col, 
     ##                           lambda self, value: self._set_sort_column(value),
     ##                           doc="comparison callback")
+    ongetitemdata = InternalSpec(_name="_ongetitemdata",
+                    default=lambda item, col: "Item %d, column %d" % (item, col),
+                    doc="function that return the str for the given item/col")
 
     # events:
     onitemselected = EventSpec('item_selected', 
@@ -449,7 +462,7 @@ if __name__ == "__main__":
     import sys
     # basic test until unit_test
     import gui
-    app = wx.App(redirect=False)
+    app = wx.App(redirect=False)    
     w = gui.Window(title="hello world", name="frmTest", tool_window=False, 
                resizable=True, visible=False, pos=(180, 0))
     lv = ListView(w, name="listview", view="report", vrule=True, hrule=True,
@@ -477,6 +490,11 @@ if __name__ == "__main__":
     lv.append(["Hello!"])
     lv.set_string_selection("Hello!")
     assert lv.get_string_selection()[0][0] == "Hello!"
+
+    if '--virtual' in sys.argv:
+        lv.virtual = True
+        #lv.ongetitemdata = lambda item, col: "row %d, col %d" % (item, col)
+        lv.item_count = 10000000
     
     from gui.tools.inspector import InspectorTool
     InspectorTool().show(w)
