@@ -140,7 +140,7 @@ class Component(object):
         self.wx_obj = self._wx_class(wx_parent, **self._wx_kwargs)
         # load specs from kwargs, use default if available
         for spec_name, spec in sorted(self._meta.specs.items(),
-                                      key= lambda it: it[1].order):
+                                      key=lambda it: it[1].order):
             if spec.read_only or isinstance(spec, (StyleSpec, InitSpec, InternalSpec)):
                 continue
             # get the spec value for kwargs, if it is optional, get the default
@@ -170,7 +170,8 @@ class Component(object):
                 
         # finally, set special internal spec (i.e. designer)
         # (this must be done at last to overwrite other event handlers)
-        for spec_name, spec in self._meta.specs.items():
+        for spec_name, spec in sorted(self._meta.specs.items(),
+                                      key=lambda it: it[1].order):
             if isinstance(spec, InternalSpec):
                 if DEBUG: print "resetting internal specs (rebound...):", spec_name, self.name
                 value = kwargs.get(spec_name, getattr(self, spec_name, None))
