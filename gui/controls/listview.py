@@ -396,6 +396,9 @@ class ListView(Control):
             self.wx_obj.resizeLastColumn(self.wx_obj.GetColumnWidth(numcols-1))
         self.item_data_map = datamap
 
+    def _set_sort_column(self, col):
+        self.wx_obj.SortListItems(col, self.sort_order=='ascending')
+    
 
     view = StyleSpec({'report': wx.LC_REPORT,
                       'list': wx.LC_LIST,
@@ -409,11 +412,7 @@ class ListView(Control):
                 default=True)
     hide_headers = StyleSpec(wx.LC_NO_HEADER, default=False,
                         doc="No header in report mode")
-    sort_order = StyleSpec({'ascending': wx.LC_SORT_ASCENDING,
-                            'descending': wx.LC_SORT_DESCENDING,
-                            'none': 0}, default='none',
-                    doc="Sort order (must still supply a comparison callback")
-    sort_key = Spec(_name="_sort_key", doc="comparison callback")
+    
     virtual = StyleSpec(wx.LC_VIRTUAL, default=False,
             doc="The application provides items text on demand (report mode)")
     
@@ -422,6 +421,14 @@ class ListView(Control):
 
     item_selection = Spec(get_selected_items, set_selection)
     string_selection = Spec(get_string_selection, set_string_selection)
+    
+    sort_order = StyleSpec({'ascending': wx.LC_SORT_ASCENDING,
+                            'descending': wx.LC_SORT_DESCENDING,
+                            'none': 0}, default='none',
+                    doc="Sort order (must still supply a comparison callback")
+    ##sort_column = InternalSpec(lambda self: self._sort_col, 
+    ##                           lambda self, value: self._set_sort_column(value),
+    ##                           doc="comparison callback")
 
     # events:
     onitemselected = EventSpec('item_selected', 
