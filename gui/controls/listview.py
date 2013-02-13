@@ -11,6 +11,20 @@ from wx.lib.mixins.listctrl import ColumnSorterMixin, ListCtrlAutoWidthMixin
 
 class wx_ListCtrl(wx.ListCtrl, ColumnSorterMixin, ListCtrlAutoWidthMixin):
 
+    def __init__(self, *args,  **kwargs):
+        #if 'max_columns' in kwargs:
+        max_columns = kwargs.pop('max_columns')
+        item_data_map = kwargs.pop('item_data_map')
+        wx.ListCtrl.__init__(self, *args, **kwargs)
+        # Now that the list exists we can init the other base class,
+        # see wxPython/lib/mixins/listctrl.py
+        self.itemDataMap = item_data_map
+        ColumnSorterMixin.__init__(self, max_columns)
+
+        # Perform init for AutoWidth (resizes the last column to take up
+        # the remaining display width)
+        ListCtrlAutoWidthMixin.__init__(self)
+
     # Used by the wxColumnSorterMixin, see wxPython/lib/mixins/listctrl.py
     def GetListCtrl(self):
         return self
@@ -36,15 +50,6 @@ class ListView(Control):
             self.item_data_map = {}
 
         Control.__init__(self, parent, **kwargs)
-
-        # Now that the list exists we can init the other base class,
-        # see wxPython/lib/mixins/listctrl.py
-        ColumnSorterMixin.__init__(self.wx_obj, self._maxColumns)
-
-        # Perform init for AutoWidth (resizes the last column to take up
-        # the remaining display width)
-        ListCtrlAutoWidthMixin.__init__(self.wx_obj)
-
 
     # Emulate some listBox methods
     def clear(self):
@@ -253,11 +258,14 @@ class ListView(Control):
         if numcols == 1:
             self.wx_obj.SetColumnWidth(0, self.wx_obj.GetBestVirtualSize()[0])
  
-    def get_item_data_map(self, a_dict):
-        return self.item_data_map
+    def get_item_data_map(self):
+        return self._item_data_map
 
     def set_item_data_map(self, a_dict):
-        self.item_data_map = a_dict
+        self._item_data_map = a_dict
+        # update the reference int the wx obj (if already created)
+        if hasattr(self, "wx_obj"): 
+            self.wx_obj.itemDataMap = a_dict   
 
     def set_selection(self, itemidx, select=1):
         numitems = self.wx_obj.GetItemCount()
@@ -400,8 +408,13 @@ class ListView(Control):
             self.wx_obj.resizeLastColumn(self.wx_obj.GetColumnWidth(numcols-1))
         self.item_data_map = datamap
 
+    def _get_sort_column(self):
+        return self.wx_obj.GetSortState()[0]
+
     def _set_sort_column(self, col):
-        self.wx_obj.SortListItems(col, self.sort_order=='ascending')
+        order = self.sort_order=='ascending'
+        if col is not None:
+            self.wx_obj.SortListItems(col, order)
     
 
     view = StyleSpec({'report': wx.LC_REPORT,
@@ -420,6 +433,11 @@ class ListView(Control):
     virtual = StyleSpec(wx.LC_VIRTUAL, default=False,
             doc="The application provides items text on demand (report mode)")
     
+    max_columns = InitSpec(_get_max_columns, default=99, type="integer",
+                           doc="Maximum number of columns (for Sort mixin)")
+    item_data_map = InitSpec(get_item_data_map, set_item_data_map,
+                           doc="internal data (for Sort mixin)")
+    
     headers = InternalSpec(_get_column_headings, _set_column_headings)
     items = InternalSpec(_get_items, _set_items)
 
@@ -436,9 +454,8 @@ class ListView(Control):
                             'descending': wx.LC_SORT_DESCENDING,
                             'none': 0}, default='none',
                     doc="Sort order (must still supply a comparison callback")
-    ##sort_column = InternalSpec(lambda self: self._sort_col, 
-    ##                           lambda self, value: self._set_sort_column(value),
-    ##                           doc="comparison callback")
+    sort_column = Spec(_get_sort_column, _set_sort_column,
+                       doc="column used in sort mixin", type='integer')
     ongetitemdata = InternalSpec(_name="_ongetitemdata",
                     default=lambda item, col: "Item %d, column %d" % (item, col),
                     doc="function that return the str for the given item/col")
