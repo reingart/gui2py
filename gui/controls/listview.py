@@ -46,7 +46,7 @@ class ListView(Control):
         if not hasattr(self, "item_data_map"):
             self._max_columns = 99
             self._autoresize = 1
-            self.item_data_map = {}
+            self.item_data_map = ListModel(self)
             self._key = 0             # used to generate unique keys (ItemData)
 
         Control.__init__(self, parent, **kwargs)
@@ -54,7 +54,7 @@ class ListView(Control):
     # Emulate some listBox methods
     def clear(self):
         self.wx_obj.DeleteAllItems()
-        self.item_data_map = {}
+        self.item_data_map = ListModel(self)
 
     # Emulate some listBox methods
     def get_count(self):
@@ -111,24 +111,6 @@ class ListView(Control):
         numcols = self.wx_obj.GetColumnCount()
         numitems = self.wx_obj.GetItemCount()
 
-        # Convert our input into a list of list entries of the appropriate
-        # number of columns.
-        if isinstance(a_list[0], ListType) or isinstance(a_list[0], TupleType):
-            if isinstance(a_list[0], TupleType):
-                a_list = list(a_list)
-            if numcols == len(a_list[0]):
-                pass
-            elif numcols > len(a_list[0]):
-                blanks = [''] * (numcols - len(a_list[0]))
-                a_list = map(lambda x:x + blanks, a_list)
-            else:
-                a_list = map(lambda x:x[:numcols], a_list)
-        elif isinstance(a_list[0], StringTypes):
-            blanks = [''] * (numcols - 1)
-            a_list = map(lambda x:[x] + blanks, a_list)
-        else:
-            raise AttributeError, "unsupported type, list or string expected"
-
         # Allow negative indexing to mean from the end of the list
         if position < 0:
             position = numitems + position
@@ -137,37 +119,16 @@ class ListView(Control):
             position = numitems
 
         datamap = self.item_data_map
-        headers = self.headers
-        max = [0] * numcols
-        blanks = [''] * numcols
-        columnlist = range(1, numcols)
         for a_item in a_list:
-            key = self._new_key()
-            if len(a_item) < numcols:
-                # Not the same number of columns in entry.
-                # truncation is automatic, padding with
-                # blanks is done here.
-                a_item = a_item + blanks
-            # get the item text and convert it to str if required:
-            text = a_item[0]
-            if not isinstance(text, basestring):
-                text = headers[0].represent(text)
-            self.wx_obj.InsertStringItem(position, text)
-            for j in columnlist:
-                # get the subitem text and convert it to str if required:
-                text = a_item[j]
-                if not isinstance(text, basestring):
-                    text = headers[j].represent(text)
-                self.wx_obj.SetStringItem(position, j, text)
-            self.wx_obj.SetItemData(position, key)     # used by ColumnSorterMixin
+            key = self._new_key()           
             datamap[key] = a_item
-            position += 1
+            #position += 1
 
 
     def delete(self, a_position):
         "Deletes the item at the zero-based index 'n' from the control."
         key = self.wx_obj.GetItemData(a_position)
-        self.wx_obj.DeleteItem(a_position)
+        #self.wx_obj.DeleteItem(a_position)
         del self.item_data_map[key]
  
     def get_item_data_map(self):
@@ -177,7 +138,7 @@ class ListView(Control):
         self._item_data_map = a_dict
         # update the reference int the wx obj (if already created)
         if hasattr(self, "wx_obj"): 
-            self.wx_obj.itemDataMap = a_dict   
+            self.wx_obj.itemDataMap = a_dict
 
     def set_selection(self, itemidx, select=1):
         numitems = self.wx_obj.GetItemCount()
@@ -234,7 +195,7 @@ class ListView(Control):
         numitems = len(a_list)
         if numitems == 0:
             self.wx_obj.DeleteAllItems()
-            self.item_data_map = {}
+            self.item_data_map = ListModel(self)
             return
 
         # If just simple list of strings convert it to a single column list
@@ -245,7 +206,7 @@ class ListView(Control):
         else:
             raise AttributeError, "unsupported element type"
         self.wx_obj.DeleteAllItems()
-        self.item_data_map = {}
+        self.item_data_map = ListModel(self)
         self.insert_items(a_list)
     
     def _new_key(self):
@@ -369,6 +330,93 @@ class ColumnHeader(SubComponent):
                      doc="function to returns a representation for the subitem")
 
 
+class ListModel(dict):
+    "ListView Items model map"
+    
+    def __init__(self, _list_view):
+        self._list_view = _list_view
+        self._ordered_list = []
+
+    def __setitem__(self, key, kwargs):
+        # convert item to dict if given as list / str
+        if isinstance(kwargs, basestring):
+            kwargs = [kwargs]
+        if isinstance(kwargs, list):
+            kwargs = dict([(col.name, kwargs[col.index]) for col
+                          in self._list_view.headers if col.index<len(kwargs)])
+        # create the new item
+        item = ListItem(self, key, **kwargs)
+        dict.__setitem__(self, key, item)
+        # check if we should insert the item:
+        if key not in self._ordered_list:
+            self._ordered_list.append(key)
+            self.insert(key)
+        else:
+            self.update(key)
+        #return item
+
+    def __getitem__(self, key):
+        # if key is a column index, get the actual item key to look up:
+        if key < 0:     # TODO: support key > 0
+            key = self._ordered_list[key]
+        return dict.__getitem__(self, key)
+
+    def __delitem__(self, key):
+        dict.__delitem__(self, key)
+        position = self._ordered_list.index(key)
+        self._list_view.wx_obj.DeleteItem(position)
+        self._ordered_list.remove(key)
+
+    def insert(self, key, position=-1):
+        position = self._ordered_list.index(key)
+        for col in sorted(self._list_view.headers, key=lambda col:col.index):
+            if not col.name in self[key]:
+                continue
+            text = self[key][col.name]
+            if not isinstance(text, basestring):
+                text = col.represent(text)
+            if col.index == 0:
+                self._list_view.wx_obj.InsertStringItem(position, text)
+            else:
+                self._list_view.wx_obj.SetStringItem(position, col.index, text)
+        # update internal data, used by ColumnSorterMixin
+        self._list_view.wx_obj.SetItemData(position, key)
+    
+    def update(self, key, name):
+        position = self._ordered_list.index(key)
+        for col in sorted(self._list_view.headers, key=lambda col: col.index):
+            if not col.name in self[key]:
+                continue
+            text = self[key][col.name]
+            if not isinstance(text, basestring):
+                text = col.represent(text)
+            self._list_view.wx_obj.SetStringItem(position, col.index, text)
+
+
+class ListItem(dict):
+    "keys are column names, values are subitem values"
+
+    def __init__(self, _list_model, _key, **kwargs):
+        self._list_model = _list_model
+        self._key = _key
+        dict.__init__(self, **kwargs)
+
+    def __setitem__(self, key, value):
+        # if key is a column index, get the actual column name to look up:
+        if not isinstance(key, basestring):
+            key = self._list_model._list_view.headers[key].name
+        # store the value and notify our parent to refresh the item
+        dict.__setitem__(self, key, value)
+        self._list_model.update(self._key, key)
+
+    def __getitem__(self, key):
+        # if key is a column index, get the actual column name to look up:
+        if not isinstance(key, basestring):
+            key = self._list_model._list_view.headers[key].name
+        # return the data for the given column, None if nothing there
+        return dict.get(self, key)
+
+
 # update metadata for the add context menu at the designer:
 
 ListView._meta.valid_children = [ColumnHeader, ] 
@@ -386,7 +434,7 @@ if __name__ == "__main__":
 
     ch1 = ColumnHeader(lv, name="col1", text="Col 1", align="left", width=200)
     ch2 = ColumnHeader(lv, name="col2", text="Col 2", align="center")
-    ch3 = ColumnHeader(lv, name="col2", text="Col 3", align="right", width=100)
+    ch3 = ColumnHeader(lv, name="col3", text="Col 3", align="right", width=100)
     ch1.represent = ch2.represent = lambda value: str(value)
     ch3.represent = lambda value: "%0.2f" % value
 
@@ -418,6 +466,10 @@ if __name__ == "__main__":
         lv.item_count = 10000000
     
     lv.delete(0)
+
+    # basic test of item model (TODO: unify lv.items and lv.item_data_map)
+    lv.item_data_map[-1]['col3'] = "column 3!"
+    assert lv.items[-1][2] == "column 3!"
     
     ch1.text = "Hello!"
     ch2.align = "center"
