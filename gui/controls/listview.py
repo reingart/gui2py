@@ -14,11 +14,11 @@ class wx_ListCtrl(wx.ListCtrl, ColumnSorterMixin, ListCtrlAutoWidthMixin):
     def __init__(self, *args,  **kwargs):
         #if 'max_columns' in kwargs:
         max_columns = kwargs.pop('max_columns')
-        item_data_map = kwargs.pop('item_data_map')
+        _items = kwargs.pop('_items')
         wx.ListCtrl.__init__(self, *args, **kwargs)
         # Now that the list exists we can init the other base class,
         # see wxPython/lib/mixins/listctrl.py
-        self.itemDataMap = item_data_map
+        self.itemDataMap = _items
         ColumnSorterMixin.__init__(self, max_columns)
 
         # Perform init for AutoWidth (resizes the last column to take up
@@ -43,16 +43,16 @@ class ListView(Control):
 
     def __init__(self, parent=None, **kwargs):
         # default sane values (if not init'ed previously):
-        if not hasattr(self, "item_data_map"):
+        if not hasattr(self, "items"):
             self._max_columns = 99
-            self.item_data_map = kwargs['item_data_map'] = ListModel(self)
+            self._items = kwargs['_items'] = ListModel(self)
             self._key = 0             # used to generate unique keys (ItemData)
         Control.__init__(self, parent, **kwargs)
 
     # Emulate some listBox methods
 
     def clear(self):
-        self.item_data_map.clear()
+        self._items.clear()
 
     def get_count(self):
         "Get the item (row) count"
@@ -113,24 +113,24 @@ class ListView(Control):
 
         if isinstance(a_list, DictType):
             for key, a_item in a_list.items():
-                self.item_data_map[key] = a_item        # TODO: fix pos!
+                self._items[key] = a_item        # TODO: fix pos!
         else:
             for a_item in a_list:
                 key = self._new_key()           
-                self.item_data_map[key] = a_item        # TODO: fix pos!
+                self._items[key] = a_item        # TODO: fix pos!
                 #index += 1
 
     def delete(self, a_position):
         "Deletes the item at the zero-based index 'n' from the control."
         key = self.wx_obj.GetItemData(a_position)
         #self.wx_obj.DeleteItem(a_position)
-        del self.item_data_map[key]
+        del self._items[key]
  
-    def get_item_data_map(self):
-        return self._item_data_map
+    def get__items(self):
+        return self.__items
 
-    def set_item_data_map(self, a_dict):
-        self._item_data_map = a_dict
+    def set__items(self, a_dict):
+        self.__items = a_dict
         # update the reference int the wx obj (if already created)
         if hasattr(self, "wx_obj"): 
             self.wx_obj.itemDataMap = a_dict
@@ -167,7 +167,7 @@ class ListView(Control):
         return itemidx
 
     def _get_items(self):
-        return self.item_data_map
+        return self._items
 
     def _set_items(self, a_list):
         if isinstance(a_list, NoneType):
@@ -177,10 +177,10 @@ class ListView(Control):
 
         numitems = len(a_list)
         if numitems == 0:
-            self.item_data_map.clear()
+            self._items.clear()
             return
 
-        self.item_data_map.clear()
+        self._items.clear()
         self.insert_items(a_list)
     
     def _new_key(self):
@@ -220,7 +220,7 @@ class ListView(Control):
     
     max_columns = InitSpec(lambda self: self._max_columns, default=99, 
                            doc="Maximum number of columns (for Sort mixin)")
-    item_data_map = InitSpec(get_item_data_map, set_item_data_map,
+    _items = InitSpec(get__items, set__items,
                            doc="internal data (for Sort mixin)")
     
     headers = InternalSpec(_get_column_headings,
@@ -472,7 +472,7 @@ if __name__ == "__main__":
     
     lv.delete(0)
 
-    # basic test of item model (TODO: unify lv.items and lv.item_data_map)
+    # basic test of item model (TODO: unify lv.items and lv._items)
     lv.items[-1]['col3'] = "column 3!"
     assert lv.items[-1][2] == "column 3!"
     
