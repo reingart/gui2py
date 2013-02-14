@@ -423,8 +423,8 @@ class ListView(Control):
     def _get_sort_column(self):
         return self.wx_obj.GetSortState()[0]
 
-    def _set_sort_column(self, col):
-        order = self.sort_order=='ascending'
+    def _set_sort_column(self, col=None):
+        order = +1 if self.sort_order=='ascending' else -1
         if col is not None:
             self.wx_obj.SortListItems(col, order)
     
@@ -462,10 +462,11 @@ class ListView(Control):
         default=None,
         doc="indicate to the control the number of items it contains (virtual)")
     
-    sort_order = StyleSpec({'ascending': wx.LC_SORT_ASCENDING,
-                            'descending': wx.LC_SORT_DESCENDING,
-                            'none': 0}, default='none',
-                    doc="Sort order (must still supply a comparison callback")
+    sort_order = Spec(mapping={'ascending': wx.LC_SORT_ASCENDING,
+                               'descending': wx.LC_SORT_DESCENDING,
+                               'none': 0}, 
+                      default='none', _name="_sort_order", type="enum",
+                      doc="Sort order (must still supply a comparison callback")
     sort_column = Spec(_get_sort_column, _set_sort_column,
                        doc="column used in sort mixin", type='integer')
     ongetitemdata = InternalSpec(_name="_ongetitemdata",
