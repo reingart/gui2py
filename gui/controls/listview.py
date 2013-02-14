@@ -1,4 +1,3 @@
-
 import wx
 from ..event import FormEvent
 from ..component import Control, Spec, EventSpec, InitSpec, StyleSpec, InternalSpec
@@ -48,6 +47,7 @@ class ListView(Control):
             self._autoresize = 1
             self._column_headings = []
             self.item_data_map = {}
+            self._key = 0             # used to generate unique keys (ItemData)
 
         Control.__init__(self, parent, **kwargs)
 
@@ -163,6 +163,7 @@ class ListView(Control):
         max = [0] * numcols
         for i in xrange(len(a_list)):
             offset = position + i
+            key = self._new_key()
             l = len(a_list[i][0])
             if l > max[0]:
                 max[0] = l
@@ -175,8 +176,8 @@ class ListView(Control):
                 if l > max[j]:
                     max[j] = l
                 self.wx_obj.SetStringItem(offset, j, a_list[i][j])
-            self.wx_obj.SetItemData(offset, offset)
-            datamap[offset] = a_list[i]
+            self.wx_obj.SetItemData(offset, key)
+            datamap[key] = a_list[i]
         if self._autoresize:
             charwidth = self.wx_obj.GetCharWidth()
             maxwidth = self.wx_obj.GetBestVirtualSize()[0]*2
@@ -197,12 +198,11 @@ class ListView(Control):
 
     def delete(self, a_position):
         "Deletes the item at the zero-based index 'n' from the control."
+        key = self.wx_obj.GetItemData(a_position)
         self.wx_obj.DeleteItem(a_position)
-        # FIX: this will fail if not the last item:
-        del self.item_data_map[a_position]
+        del self.item_data_map[key]
 
     def _set_column_headings(self, a_list):
-        print "setting column headings", a_list
         if isinstance(a_list, ListType) or isinstance(a_list, TupleType) or isinstance(a_list, StringTypes):
             pass
         else:
@@ -328,7 +328,6 @@ class ListView(Control):
         return items
 
     def _set_items( self, a_list ) :
-        print "setting items", a_list
         if isinstance(a_list, NoneType):
             a_list = []
         elif not isinstance(a_list, ListType) and not isinstance(a_list, TupleType):
@@ -381,23 +380,25 @@ class ListView(Control):
         blanks = [''] * numcols
         columnlist = range(1, numcols)
         for i in xrange(numitems):
-            aItem = a_list[i]
-            if len(aItem) < numcols:
+            key = self._new_key()
+            a_item = a_list[i]
+            if len(a_item) < numcols:
                 # Not the same number of columns in entry.
                 # truncation is automatic, padding with
                 # blanks is done here.
-                aItem = aItem + blanks
-            l = len(aItem[0])
+                a_item = a_item + blanks
+            l = len(a_item[0])
             if l > max[0]:
                 max[0] = l
-            self.wx_obj.InsertStringItem(i, aItem[0])
+            self.wx_obj.InsertStringItem(i, a_item[0])
             for j in columnlist:
-                l = len(aItem[j])
+                l = len(a_item[j])
                 if l > max[j]:
                     max[j] = l
-                self.wx_obj.SetStringItem(i, j, aItem[j])
-            self.wx_obj.SetItemData(i, i)
-            datamap[i] = aItem
+                self.wx_obj.SetStringItem(i, j, a_item[j])
+            self.wx_obj.SetItemData(i, key)     # used by ColumnSorterMixin
+            datamap[key] = a_item
+
         if self._autoresize:
             charwidth = self.wx_obj.GetCharWidth()
             maxwidth = self.wx_obj.GetBestVirtualSize()[0]*2
@@ -413,6 +414,11 @@ class ListView(Control):
                 self.wx_obj.SetColumnWidth(i, colwidth)
             self.wx_obj.resizeLastColumn(self.wx_obj.GetColumnWidth(numcols-1))
         self.item_data_map = datamap
+    
+    def _new_key(self):
+        "Create a unique key for this list control (currently: just a counter)"
+        self._key += 1
+        return self._key
 
     def _get_sort_column(self):
         return self.wx_obj.GetSortState()[0]
@@ -519,7 +525,7 @@ if __name__ == "__main__":
         #lv.ongetitemdata = lambda item, col: "row %d, col %d" % (item, col)
         lv.item_count = 10000000
     
-    lv.delete(4)
+    lv.delete(0)
     
     from gui.tools.inspector import InspectorTool
     InspectorTool().show(w)
