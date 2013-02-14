@@ -45,18 +45,15 @@ class ListView(Control):
         # default sane values (if not init'ed previously):
         if not hasattr(self, "item_data_map"):
             self._max_columns = 99
-            self._autoresize = 1
-            self.item_data_map = ListModel(self)
+            self.item_data_map = kwargs['item_data_map'] = ListModel(self)
             self._key = 0             # used to generate unique keys (ItemData)
-
         Control.__init__(self, parent, **kwargs)
 
     # Emulate some listBox methods
-    def clear(self):
-        self.wx_obj.DeleteAllItems()
-        self.item_data_map = ListModel(self)
 
-    # Emulate some listBox methods
+    def clear(self):
+        self.item_data_map.clear()
+
     def get_count(self):
         "Get the item (row) count"
         return self.wx_obj.GetItemCount()
@@ -92,15 +89,12 @@ class ListView(Control):
                 items[i] = map(lambda x: GetItem(itemidx, x).GetText(), cols)
         return items
 
-    # Emulate some listBox methods
     def get_string_selection(self):
         return self.get_selected_items()
 
-    # Emulate some listBox methods
     def append(self, a_list):
         self.insert_items(a_list, self.wx_obj.GetItemCount())
 
-    # Emulate some listBox methods
     def insert_items(self, a_list, index=-1):
         if not isinstance(a_list, (ListType, TupleType, DictType)):
             raise AttributeError("unsupported type, list expected")
@@ -125,7 +119,6 @@ class ListView(Control):
                 key = self._new_key()           
                 self.item_data_map[key] = a_item        # TODO: fix pos!
                 #index += 1
-
 
     def delete(self, a_position):
         "Deletes the item at the zero-based index 'n' from the control."
@@ -184,12 +177,10 @@ class ListView(Control):
 
         numitems = len(a_list)
         if numitems == 0:
-            self.wx_obj.DeleteAllItems()
-            self.item_data_map = ListModel(self)
+            self.item_data_map.clear()
             return
 
-        self.wx_obj.DeleteAllItems()
-        self.item_data_map = ListModel(self)
+        self.item_data_map.clear()
         self.insert_items(a_list)
     
     def _new_key(self):
@@ -318,7 +309,7 @@ class ListModel(dict):
     
     def __init__(self, _list_view):
         self._list_view = _list_view
-        self._ordered_list = []
+        self.clear()
 
     def __setitem__(self, key, kwargs):
         # convert item to dict if given as list / str
@@ -377,6 +368,13 @@ class ListModel(dict):
             if not isinstance(text, basestring):
                 text = col.represent(text)
             self._list_view.wx_obj.SetStringItem(position, col.index, text)
+
+    def clear(self):
+        "Remove all items and reset internal structures"
+        dict.clear(self)
+        self._ordered_list = []
+        if hasattr(self._list_view, "wx_obj"):
+            self._list_view.wx_obj.DeleteAllItems()
 
 
 class ListItem(dict):
