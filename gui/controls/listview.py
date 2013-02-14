@@ -14,11 +14,9 @@ class wx_ListCtrl(wx.ListCtrl, ColumnSorterMixin, ListCtrlAutoWidthMixin):
     def __init__(self, *args,  **kwargs):
         #if 'max_columns' in kwargs:
         max_columns = kwargs.pop('max_columns')
-        _items = kwargs.pop('_items')
         wx.ListCtrl.__init__(self, *args, **kwargs)
         # Now that the list exists we can init the other base class,
         # see wxPython/lib/mixins/listctrl.py
-        self.itemDataMap = _items
         ColumnSorterMixin.__init__(self, max_columns)
 
         # Perform init for AutoWidth (resizes the last column to take up
@@ -43,10 +41,11 @@ class ListView(Control):
 
     def __init__(self, parent=None, **kwargs):
         # default sane values (if not init'ed previously):
-        if not hasattr(self, "items"):
+        if not hasattr(self, "_items"):
             self._max_columns = 99
-            self._items = kwargs['_items'] = ListModel(self)
+            self._items = ListModel(self)
         Control.__init__(self, parent, **kwargs)
+        self.wx_obj.itemDataMap = self._items
 
     # Emulate some listBox methods
 
@@ -88,18 +87,8 @@ class ListView(Control):
     def delete(self, a_position):
         "Deletes the item at the zero-based index 'n' from the control."
         key = self.wx_obj.GetItemData(a_position)
-        #self.wx_obj.DeleteItem(a_position)
         del self._items[key]
  
-    def get__items(self):
-        return self.__items
-
-    def set__items(self, a_dict):
-        self.__items = a_dict
-        # update the reference int the wx obj (if already created)
-        if hasattr(self, "wx_obj"): 
-            self.wx_obj.itemDataMap = a_dict
-
     def set_selection(self, itemidx, select=1):
         if itemidx is not None:
             self._items(itemidx).selected = select
@@ -123,6 +112,8 @@ class ListView(Control):
         return self._items
 
     def _set_items(self, a_list):
+        if not hasattr(self, "_items"):
+            self._items = self.wx_obj.itemDataMap
         if isinstance(a_list, NoneType):
             a_list = []
         elif not isinstance(a_list, (ListType, TupleType, DictType)):
@@ -142,7 +133,7 @@ class ListView(Control):
     def _set_sort_column(self, col=None):
         order = +1 if self.sort_order=='ascending' else -1
         if col is not None:
-            self.wx_obj.SortListItems(col, order)
+            wx.CallAfter(self.wx_obj.SortListItems, col, order)
 
     def _get_column_headings(self):
         "Return a list of children sub-components that are column headings"
@@ -168,8 +159,6 @@ class ListView(Control):
     
     max_columns = InitSpec(lambda self: self._max_columns, default=99, 
                            doc="Maximum number of columns (for Sort mixin)")
-    _items = InitSpec(get__items, set__items,
-                           doc="internal data (for Sort mixin)")
     
     headers = InternalSpec(_get_column_headings,
                            doc="Return a list of current column headers")
