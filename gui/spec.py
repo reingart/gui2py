@@ -20,8 +20,15 @@ class Spec(property):
     def __init__(self, fget=None, fset=None, fdel=None, doc=None, group=None,
                  optional=True, default=None, mapping=None, type="", _name=""):
         if fget is None:
-            fget = lambda obj: getattr(obj, _name)
-            fset = lambda obj, value: setattr(obj, _name, value)
+            if not mapping:
+                fget = lambda obj: getattr(obj, _name)
+                fset = lambda obj, value: setattr(obj, _name, value)
+            else:
+                # enums (mapping) stores value internally and returns its key
+                rev_mapping = dict([(v, k) for k, v in mapping.items()])
+                fget = lambda obj: rev_mapping[getattr(obj, _name)]
+                fset = lambda obj, value: setattr(obj, _name, mapping[value] 
+                                                if value in mapping else value)
         property.__init__(self, fget, fset, fdel, doc)
         self.optional = optional
         self.default = default
