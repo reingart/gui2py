@@ -4,7 +4,7 @@ from ..component import Control, SubComponent
 from ..spec import Spec, EventSpec, InitSpec, StyleSpec, InternalSpec
 from .listbox import ItemContainerControl
 from .. import images 
-from types import TupleType, ListType, StringTypes, NoneType, IntType
+from types import TupleType, ListType, StringTypes, NoneType, IntType, DictType
 
 from wx.lib.mixins.listctrl import ColumnSorterMixin, ListCtrlAutoWidthMixin
 
@@ -101,28 +101,30 @@ class ListView(Control):
         self.insert_items(a_list, self.wx_obj.GetItemCount())
 
     # Emulate some listBox methods
-    def insert_items(self, a_list, position=-1):
-        if not isinstance(a_list, (ListType, TupleType)):
-            raise AttributeError, "unsupported type, list expected"
+    def insert_items(self, a_list, index=-1):
+        if not isinstance(a_list, (ListType, TupleType, DictType)):
+            raise AttributeError("unsupported type, list expected")
             
-        if len(a_list) == 0:
+        if not a_list:
             return
 
-        numcols = self.wx_obj.GetColumnCount()
         numitems = self.wx_obj.GetItemCount()
 
         # Allow negative indexing to mean from the end of the list
-        if position < 0:
-            position = numitems + position
+        if index < 0:
+            index = numitems + index
         # But only allow from the start of the list on
-        if position < 0:
-            position = numitems
+        if index < 0:
+            index = numitems
 
-        datamap = self.item_data_map
-        for a_item in a_list:
-            key = self._new_key()           
-            datamap[key] = a_item
-            #position += 1
+        if isinstance(a_list, DictType):
+            for key, a_item in a_list.items():
+                self.item_data_map[key] = a_item        # TODO: fix pos!
+        else:
+            for a_item in a_list:
+                key = self._new_key()           
+                self.item_data_map[key] = a_item        # TODO: fix pos!
+                #index += 1
 
 
     def delete(self, a_position):
@@ -171,26 +173,14 @@ class ListView(Control):
             self.wx_obj.SetItemState(itemidx, 0, wx.LIST_STATE_SELECTED)
         return itemidx
 
-    def _get_items( self ) :
-        numitems = self.wx_obj.GetItemCount()
-        numcols = self.wx_obj.GetColumnCount()
-        items = [None] * numitems
-        if numcols == 1:
-            GetItemText = self.wx_obj.GetItemText
-            for i in xrange(numitems ) :
-                items[i] = GetItemText(i)
-        else:
-            GetItem = self.wx_obj.GetItem
-            cols = range(numcols)
-            for i in xrange(numitems) :
-                items[i] = map(lambda x: GetItem(i, x).GetText(), cols)
-        return items
+    def _get_items(self):
+        return self.item_data_map
 
     def _set_items(self, a_list):
         if isinstance(a_list, NoneType):
             a_list = []
-        elif not isinstance(a_list, ListType) and not isinstance(a_list, TupleType):
-            raise AttributeError, "unsupported type, list expected"
+        elif not isinstance(a_list, (ListType, TupleType, DictType)):
+            raise AttributeError("unsupported type, list/tuple/dict expected")
 
         numitems = len(a_list)
         if numitems == 0:
@@ -198,13 +188,6 @@ class ListView(Control):
             self.item_data_map = ListModel(self)
             return
 
-        # If just simple list of strings convert it to a single column list
-        if isinstance(a_list[0], StringTypes):
-            a_list = map(lambda x:[x], a_list)
-        elif isinstance(a_list[0], ListType) or isinstance(a_list[0], TupleType):
-            pass
-        else:
-            raise AttributeError, "unsupported element type"
         self.wx_obj.DeleteAllItems()
         self.item_data_map = ListModel(self)
         self.insert_items(a_list)
@@ -486,12 +469,12 @@ if __name__ == "__main__":
     lv.delete(0)
 
     # basic test of item model (TODO: unify lv.items and lv.item_data_map)
-    lv.item_data_map[-1]['col3'] = "column 3!"
+    lv.items[-1]['col3'] = "column 3!"
     assert lv.items[-1][2] == "column 3!"
     
-    lv.item_data_map[2].selected = True
-    lv.item_data_map[3].ensure_visible()
-    lv.item_data_map[3].focus()
+    lv.items[2].selected = True
+    lv.items[3].ensure_visible()
+    lv.items[3].focus()
     
     ch1.text = "Hello!"
     ch2.align = "center"
