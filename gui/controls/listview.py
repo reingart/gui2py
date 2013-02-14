@@ -101,8 +101,8 @@ class ListView(Control):
         self.insert_items(a_list, self.wx_obj.GetItemCount())
 
     # Emulate some listBox methods
-    def insert_items(self, a_list, position):
-        if not isinstance(a_list, ListType) and not isinstance(a_list, TupleType):
+    def insert_items(self, a_list, position=-1):
+        if not isinstance(a_list, (ListType, TupleType)):
             raise AttributeError, "unsupported type, list expected"
             
         if len(a_list) == 0:
@@ -110,11 +110,6 @@ class ListView(Control):
 
         numcols = self.wx_obj.GetColumnCount()
         numitems = self.wx_obj.GetItemCount()
-
-        # If the list is empty or uninitialized fake an assignment and return
-        if numitems == 0 or numcols == 0:
-            self._set_items(a_list)
-            return 
 
         # Convert our input into a list of list entries of the appropriate
         # number of columns.
@@ -139,35 +134,35 @@ class ListView(Control):
             position = numitems + position
         # But only allow from the start of the list on
         if position < 0:
-            postiion = 0
-
-        # If inserting within the current span of the list, we have
-        # to copy the portion below the insertion point
-        if position < numitems:
-            currentitems = self._get_items()[position:]
-            if isinstance(currentitems[0], StringTypes):
-                currentitems = map(lambda x:[x], currentitems)
-            a_list = a_list + currentitems
+            position = numitems
 
         datamap = self.item_data_map
+        headers = self.headers
         max = [0] * numcols
-        for i in xrange(len(a_list)):
-            offset = position + i
+        blanks = [''] * numcols
+        columnlist = range(1, numcols)
+        for a_item in a_list:
             key = self._new_key()
-            l = len(a_list[i][0])
-            if l > max[0]:
-                max[0] = l
-            if offset >= numitems:
-                self.wx_obj.InsertStringItem(offset, a_list[i][0])
-            else:
-                self.wx_obj.SetStringItem(offset, 0, a_list[i][0])
-            for j in range(1,numcols):
-                l = len(a_list[i][j])
-                if l > max[j]:
-                    max[j] = l
-                self.wx_obj.SetStringItem(offset, j, a_list[i][j])
-            self.wx_obj.SetItemData(offset, key)
-            datamap[key] = a_list[i]
+            if len(a_item) < numcols:
+                # Not the same number of columns in entry.
+                # truncation is automatic, padding with
+                # blanks is done here.
+                a_item = a_item + blanks
+            # get the item text and convert it to str if required:
+            text = a_item[0]
+            if not isinstance(text, basestring):
+                text = headers[0].represent(text)
+            self.wx_obj.InsertStringItem(position, text)
+            for j in columnlist:
+                # get the subitem text and convert it to str if required:
+                text = a_item[j]
+                if not isinstance(text, basestring):
+                    text = headers[j].represent(text)
+                self.wx_obj.SetStringItem(position, j, text)
+            self.wx_obj.SetItemData(position, key)     # used by ColumnSorterMixin
+            datamap[key] = a_item
+            position += 1
+
 
     def delete(self, a_position):
         "Deletes the item at the zero-based index 'n' from the control."
@@ -230,7 +225,7 @@ class ListView(Control):
                 items[i] = map(lambda x: GetItem(i, x).GetText(), cols)
         return items
 
-    def _set_items( self, a_list ) :
+    def _set_items(self, a_list):
         if isinstance(a_list, NoneType):
             a_list = []
         elif not isinstance(a_list, ListType) and not isinstance(a_list, TupleType):
@@ -249,69 +244,9 @@ class ListView(Control):
             pass
         else:
             raise AttributeError, "unsupported element type"
-        # Here we have a list of a list of values.
-        # If the number of values is greater than the maximum number
-        # of columns allowed, truncate it.  Similarly remove or add
-        # columns as necessary to accomodate the data up to the maximum
-        # allowed.  It could be thought to just throw an exception
-        # since the programmer flubbed it however I chose the
-        # 'do what you can' approach. Note that we depend on the
-        # first item in the list setting the number of columns for
-        # all remaining items in the list.
-        numcols = len(a_list[0])
-        if numcols > self._max_columns:
-            numcols = self._max_columns
-        if numcols != self.wx_obj.GetColumnCount():
-            if numcols == 1:
-                self.wx_obj.ClearAll()
-                self.wx_obj.InsertColumn(0,'List')
-                self._column_headings = ['List']
-            else:
-                c = self.wx_obj.GetColumnCount()
-                if c > numcols:
-                    for i in range(c-1,numcols-1,-1):
-                        self.wx_obj.DeleteColumn(i)
-                        self._column_headings = self._column_headings[:-1]
-                else:
-                    for i in range(c,numcols):
-                        colname = 'Col %d' % (i+1,)
-                        self.wx_obj.InsertColumn(i, colname)
-                        #self._column_headings.append(colname)
         self.wx_obj.DeleteAllItems()
-        datamap = {}
-        headers = self.headers
-        max = [0] * numcols
-        blanks = [''] * numcols
-        columnlist = range(1, numcols)
-        for i in xrange(numitems):
-            key = self._new_key()
-            a_item = a_list[i]
-            if len(a_item) < numcols:
-                # Not the same number of columns in entry.
-                # truncation is automatic, padding with
-                # blanks is done here.
-                a_item = a_item + blanks
-            # get the item text and convert it to str if required:
-            text = a_item[0]
-            if not isinstance(text, basestring):
-                text = headers[0].represent(text)
-            l = len(text)
-            if l > max[0]:
-                max[0] = l
-            self.wx_obj.InsertStringItem(i, text)
-            for j in columnlist:
-                # get the subitem text and convert it to str if required:
-                text = a_item[j]
-                if not isinstance(text, basestring):
-                    text = headers[j].represent(text)
-                l = len(text)
-                if l > max[j]:
-                    max[j] = l
-                self.wx_obj.SetStringItem(i, j, text)
-            self.wx_obj.SetItemData(i, key)     # used by ColumnSorterMixin
-            datamap[key] = a_item
-
-        self.item_data_map = datamap
+        self.item_data_map = {}
+        self.insert_items(a_list)
     
     def _new_key(self):
         "Create a unique key for this list control (currently: just a counter)"
@@ -468,7 +403,7 @@ if __name__ == "__main__":
     #wx.lib.inspection.InspectionTool().Show()
     
     #  basic tests
-    
+    print lv.get_count()
     assert lv.get_count() == 4
     lv.set_selection(1)
     assert lv.get_selected_items() == [[u'4', u'5', u'6.00']]
