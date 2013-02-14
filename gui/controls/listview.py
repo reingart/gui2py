@@ -279,6 +279,7 @@ class ListView(Control):
                         #self._column_headings.append(colname)
         self.wx_obj.DeleteAllItems()
         datamap = {}
+        headers = self.headers
         max = [0] * numcols
         blanks = [''] * numcols
         columnlist = range(1, numcols)
@@ -290,15 +291,23 @@ class ListView(Control):
                 # truncation is automatic, padding with
                 # blanks is done here.
                 a_item = a_item + blanks
-            l = len(a_item[0])
+            # get the item text and convert it to str if required:
+            text = a_item[0]
+            if not isinstance(text, basestring):
+                text = headers[0].represent(text)
+            l = len(text)
             if l > max[0]:
                 max[0] = l
-            self.wx_obj.InsertStringItem(i, a_item[0])
+            self.wx_obj.InsertStringItem(i, text)
             for j in columnlist:
-                l = len(a_item[j])
+                # get the subitem text and convert it to str if required:
+                text = a_item[j]
+                if not isinstance(text, basestring):
+                    text = headers[j].represent(text)
+                l = len(text)
                 if l > max[j]:
                     max[j] = l
-                self.wx_obj.SetStringItem(i, j, a_item[j])
+                self.wx_obj.SetStringItem(i, j, text)
             self.wx_obj.SetItemData(i, key)     # used by ColumnSorterMixin
             datamap[key] = a_item
 
@@ -316,6 +325,12 @@ class ListView(Control):
         order = +1 if self.sort_order=='ascending' else -1
         if col is not None:
             self.wx_obj.SortListItems(col, order)
+
+    def _get_column_headings(self):
+        "Return a list of children sub-components that are column headings"
+        # return it in the same order as inserted in the ListCtrl
+        headers = [ctrl for ctrl in self if isinstance(ctrl, ColumnHeader)]
+        return sorted(headers, key=lambda ch: ch.index)
 
     view = StyleSpec({'report': wx.LC_REPORT,
                       'list': wx.LC_LIST,
@@ -338,6 +353,8 @@ class ListView(Control):
     item_data_map = InitSpec(get_item_data_map, set_item_data_map,
                            doc="internal data (for Sort mixin)")
     
+    headers = InternalSpec(_get_column_headings,
+                           doc="Return a list of current column headers")
     items = InternalSpec(_get_items, _set_items)
 
     item_selection = Spec(get_selected_items, set_selection)
@@ -413,6 +430,8 @@ class ColumnHeader(SubComponent):
                      doc="Column Format")
     width = InitSpec(default=wx.LIST_AUTOSIZE, _name="_width", type="integer",
                      doc="Column width (default=autosize)")
+    represent = InitSpec(default=lambda v: v, _name="_represent", type='string',
+                     doc="function to returns a representation for the subitem")
 
 
 # update metadata for the add context menu at the designer:
@@ -433,7 +452,10 @@ if __name__ == "__main__":
     ch1 = ColumnHeader(lv, name="col1", text="Col 1", align="left", width=200)
     ch2 = ColumnHeader(lv, name="col2", text="Col 2", align="center")
     ch3 = ColumnHeader(lv, name="col2", text="Col 3", align="right", width=100)
-    lv.items = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']]
+    ch1.represent = ch2.represent = lambda value: str(value)
+    ch3.represent = lambda value: "%0.2f" % value
+
+    lv.items = [[1, 2, 3], ['4', '5', 6], ['7', '8', 9]]
     lv.insert_items([['a', 'b', 'c']], -1)
     #lv.append("d")
     #lv.append("e", "datum1")
@@ -449,7 +471,7 @@ if __name__ == "__main__":
     
     assert lv.get_count() == 4
     lv.set_selection(1)
-    assert lv.get_selected_items() == [[u'4', u'5', u'6']]
+    assert lv.get_selected_items() == [[u'4', u'5', u'6.00']]
     
     lv.append(["Hello!"])
     lv.set_string_selection("Hello!")
