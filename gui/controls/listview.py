@@ -392,7 +392,6 @@ class ColumnHeader(SubComponent):
     def __setattr__(self, name, value):
         "Hook to update the column information in wx"
         object.__setattr__(self, name, value)
-        print "setattr", name, value, getattr(self, "_name", None)
         if name not in ("_parent", "_created") and self._created:
             # get the internal column info (a.k.a. wx.ListItem)
             info = self._parent.wx_obj.GetColumn(self.index)
@@ -465,10 +464,8 @@ if __name__ == "__main__":
     
     ch1.text = "Hello!"
     ch2.align = "center"
-    print str(ch2)
-    
+   
     from gui.tools.inspector import InspectorTool
     InspectorTool().show(w)
-    print "VIEW MODE", lv.view
     app.MainLoop()
 
