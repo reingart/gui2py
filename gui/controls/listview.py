@@ -46,7 +46,6 @@ class ListView(Control):
         if not hasattr(self, "items"):
             self._max_columns = 99
             self._items = kwargs['_items'] = ListModel(self)
-            self._key = 0             # used to generate unique keys (ItemData)
         Control.__init__(self, parent, **kwargs)
 
     # Emulate some listBox methods
@@ -75,27 +74,16 @@ class ListView(Control):
     def insert_items(self, a_list, index=-1):
         if not isinstance(a_list, (ListType, TupleType, DictType)):
             raise AttributeError("unsupported type, list expected")
-            
-        if not a_list:
+        elif not a_list:
             return
-
-        numitems = self.wx_obj.GetItemCount()
-
-        # Allow negative indexing to mean from the end of the list
-        if index < 0:
-            index = numitems + index
-        # But only allow from the start of the list on
-        if index < 0:
-            index = numitems
-
+        # calculate the zero-based index position (-1 like python lists)
+        index = max(self.get_count() + index + 1, 0) if index < 0 else index
         if isinstance(a_list, DictType):
-            for key, a_item in a_list.items():
-                self._items[key] = a_item        # TODO: fix pos!
+            for i, (key, a_item) in enumerate(a_list.items()):
+                self._items.add(index + i, key, a_item)
         else:
-            for a_item in a_list:
-                key = self._new_key()           
-                self._items[key] = a_item        # TODO: fix pos!
-                #index += 1
+            for i, a_item in enumerate(a_list):
+                self._items.add(index + i, None, a_item)
 
     def delete(self, a_position):
         "Deletes the item at the zero-based index 'n' from the control."
@@ -113,20 +101,8 @@ class ListView(Control):
             self.wx_obj.itemDataMap = a_dict
 
     def set_selection(self, itemidx, select=1):
-        numitems = self.wx_obj.GetItemCount()
-        if numitems == 0:
-            return
-        if itemidx < 0:
-            itemidx = numitems + itemidx
-        if itemidx < 0:
-            itemidx = 0
-        elif itemidx >= numitems:
-            itemidx = numitems - 1
-
-        if select:
-            self.wx_obj.SetItemState(itemidx, wx.LIST_STATE_SELECTED, wx.LIST_STATE_SELECTED)
-        else:
-            self.wx_obj.SetItemState(itemidx, 0, wx.LIST_STATE_SELECTED)
+        if itemidx is not None:
+            self._items(itemidx).selected = select
 
     def set_string_selection(self, item, select=1):
         numitems = self.wx_obj.GetItemCount()
@@ -160,11 +136,6 @@ class ListView(Control):
         self._items.clear()
         self.insert_items(a_list)
     
-    def _new_key(self):
-        "Create a unique key for this list control (currently: just a counter)"
-        self._key += 1
-        return self._key
-
     def _get_sort_column(self):
         return self.wx_obj.GetSortState()[0]
 
@@ -290,21 +261,32 @@ class ListModel(dict):
 
     def __setitem__(self, key, kwargs):
         # convert item to dict if given as list / str
+        index = self._ordered_list.index(key)
+        self.add(index, key, kwargs)
+
+    def add(self, index=-1, key=None, kwargs=None):
+        if kwargs is None:
+            kwargs = {}
         if isinstance(kwargs, basestring):
             kwargs = [kwargs]
         if isinstance(kwargs, list):
             kwargs = dict([(col.name, kwargs[col.index]) for col
                           in self._list_view.headers if col.index<len(kwargs)])
+        if key is None:
+            key = self._new_key()
         # create the new item
         item = ListItem(self, key, **kwargs)
         dict.__setitem__(self, key, item)
         # check if we should insert the item:
         if key not in self._ordered_list:
-            self._ordered_list.append(key)
-            self.insert(key)
+            if index == -1:
+                self._ordered_list.append(key)
+            else:
+                self._ordered_list.insert(index, key)
+            self._insert(key)
         else:
-            self.update(key)
-        #return item
+            self._update(key)
+        return item
 
     def __getitem__(self, key):
         # if key is a column index, get the actual item key to look up:
@@ -318,10 +300,18 @@ class ListModel(dict):
         self._list_view.wx_obj.DeleteItem(position)
         self._ordered_list.remove(key)
 
-    def __call__(self):
-        return self.items()  # shortcut!
+    def __call__(self, index=None):
+        if index:
+            return self[self._ordered_list[index]]
+        else:
+            return self.items()  # shortcut!
 
-    def insert(self, key, position=-1):
+    def _new_key(self):
+        "Create a unique key for this list control (currently: just a counter)"
+        self._key += 1
+        return self._key
+
+    def _insert(self, key, position=-1):
         position = self._ordered_list.index(key)
         for col in sorted(self._list_view.headers, key=lambda col:col.index):
             if not col.name in self[key]:
@@ -336,7 +326,7 @@ class ListModel(dict):
         # update internal data, used by ColumnSorterMixin
         self._list_view.wx_obj.SetItemData(position, key)
     
-    def update(self, key, name):
+    def _update(self, key, name):
         position = self._ordered_list.index(key)
         for col in sorted(self._list_view.headers, key=lambda col: col.index):
             if not col.name in self[key]:
@@ -350,6 +340,7 @@ class ListModel(dict):
         "Remove all items and reset internal structures"
         dict.clear(self)
         self._ordered_list = []
+        self._key = 0
         if hasattr(self._list_view, "wx_obj"):
             self._list_view.wx_obj.DeleteAllItems()
 
@@ -368,7 +359,7 @@ class ListItem(dict):
             key = self._list_model._list_view.headers[key].name
         # store the value and notify our parent to refresh the item
         dict.__setitem__(self, key, value)
-        self._list_model.update(self._key, key)
+        self._list_model._update(self._key, key)
 
     def __getitem__(self, key):
         # if key is a column index, get the actual column name to look up:
@@ -418,7 +409,7 @@ if __name__ == "__main__":
     ch3.represent = lambda value: "%0.2f" % value
 
     lv.items = [[1, 2, 3], ['4', '5', 6], ['7', '8', 9]]
-    lv.insert_items([['a', 'b', 'c']], -1)
+    lv.insert_items([['a', 'b', 'c']])
     #lv.append("d")
     #lv.append("e", "datum1")
     #lv.data_selection = "datum2"
@@ -457,6 +448,9 @@ if __name__ == "__main__":
     
     ch1.text = "Hello!"
     ch2.align = "center"
+
+    lv.insert_items([['a', 'b', 'c']], 0)       # add as first item
+    lv.insert_items([['x', 'y', 'z']], -1)      # add as last item
    
     from gui.tools.inspector import InspectorTool
     InspectorTool().show(w)
