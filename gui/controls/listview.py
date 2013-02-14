@@ -43,9 +43,7 @@ class ListView(Control):
         # default sane values (if not init'ed previously):
         if not hasattr(self, "_items"):
             self._max_columns = 99
-            self._items = ListModel(self)
         Control.__init__(self, parent, **kwargs)
-        self.wx_obj.itemDataMap = self._items
 
     # Emulate some listBox methods
 
@@ -62,10 +60,7 @@ class ListView(Control):
             self.wx_obj.SetItemCount(value)
 
     def get_selected_items(self):
-        return [it for key, it in lv.items() if it.selected]
-
-    def get_string_selection(self):
-        return self.get_selected_items()
+        return [it for key, it in self.items() if it.selected]
 
     def append(self, a_list):
         self.insert_items(a_list, self.wx_obj.GetItemCount())
@@ -89,42 +84,18 @@ class ListView(Control):
         key = self.wx_obj.GetItemData(a_position)
         del self._items[key]
  
-    def set_selection(self, itemidx, select=1):
-        if itemidx is not None:
-            self._items(itemidx).selected = select
-
-    def set_string_selection(self, item, select=1):
-        numitems = self.wx_obj.GetItemCount()
-        if numitems == 0:
-            return -1
-        #TODO:  Expand search to all columns, for now it adds no functionality
-        itemidx = self.wx_obj.FindItem(-1, item, 1)
-        if itemidx < 0:
-            return itemidx
-
-        if select:
-            self.wx_obj.SetItemState(itemidx, wx.LIST_STATE_SELECTED, wx.LIST_STATE_SELECTED)
-        else:
-            self.wx_obj.SetItemState(itemidx, 0, wx.LIST_STATE_SELECTED)
-        return itemidx
-
     def _get_items(self):
         return self._items
 
     def _set_items(self, a_list):
-        if not hasattr(self, "_items"):
-            self._items = self.wx_obj.itemDataMap
         if isinstance(a_list, NoneType):
             a_list = []
         elif not isinstance(a_list, (ListType, TupleType, DictType)):
             raise AttributeError("unsupported type, list/tuple/dict expected")
 
-        numitems = len(a_list)
-        if numitems == 0:
-            self._items.clear()
-            return
+        self._items = ListModel(self)
+        self.wx_obj.itemDataMap = self._items
 
-        self._items.clear()
         self.insert_items(a_list)
     
     def _get_sort_column(self):
@@ -163,10 +134,7 @@ class ListView(Control):
     headers = InternalSpec(_get_column_headings,
                            doc="Return a list of current column headers")
     items = InternalSpec(_get_items, _set_items)
-
-    item_selection = Spec(get_selected_items, set_selection)
-    string_selection = Spec(get_string_selection, set_string_selection)
-    
+   
     item_count = Spec(get_count, set_count,
         default=None,
         doc="indicate to the control the number of items it contains (virtual)")
@@ -404,7 +372,7 @@ if __name__ == "__main__":
     #lv.data_selection = "datum2"
     from pprint import pprint
     # assign some event handlers:
-    lv.onitemselected = lambda event: pprint("selection: %s" % str(event.target.item_selection))
+    lv.onitemselected = lambda event: pprint("selection: %s" % str(event.target.get_selected_items()))
     w.show()
     #import wx.lib.inspection
     #wx.lib.inspection.InspectionTool().Show()
@@ -412,14 +380,10 @@ if __name__ == "__main__":
     #  basic tests
     print lv.get_count()
     assert lv.get_count() == 4
-    lv.set_selection(1)
+    lv.items(1).selected = True
     # check that internal selection match:
     assert lv.get_selected_items() == [{'col2': '5', 'col3': 6, 'col1': '4'}]
     
-    lv.append(["Hello!"])
-    lv.set_string_selection("Hello!")
-    assert lv.get_string_selection()[0][0] == "Hello!"
-
     if '--virtual' in sys.argv:
         lv.virtual = True
         #lv.ongetitemdata = lambda item, col: "row %d, col %d" % (item, col)
