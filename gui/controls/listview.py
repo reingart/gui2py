@@ -58,7 +58,13 @@ class ListView(Control):
 
     # Emulate some listBox methods
     def get_count(self):
+        "Get the item (row) count"
         return self.wx_obj.GetItemCount()
+    
+    def set_count(self, value):
+        "Set item (row) count -useful only in virtual mode-"
+        if self.view == "report" and self.virtual and value is not None:
+            self.wx_obj.SetItemCount(value)
 
     def get_selected_items(self):
         numcols = self.wx_obj.GetColumnCount()
@@ -337,9 +343,7 @@ class ListView(Control):
     item_selection = Spec(get_selected_items, set_selection)
     string_selection = Spec(get_string_selection, set_string_selection)
     
-    item_count = Spec(
-        lambda self: self.wx_obj.GetItemCount(),
-        lambda self, val: (val is not None and self.wx_obj.SetItemCount(val)),
+    item_count = Spec(get_count, set_count,
         default=None,
         doc="indicate to the control the number of items it contains (virtual)")
     
