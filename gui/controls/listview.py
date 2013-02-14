@@ -416,6 +416,24 @@ class ListItem(dict):
         # return the data for the given column, None if nothing there
         return dict.get(self, key)
 
+    @property
+    def index(self):
+        return self._list_model._ordered_list.index(self._key)
+
+    def _is_selected(self):
+        return self._list_model._list_view.wx_obj.IsSelected(self.index)
+    
+    def _select(self, on):
+        self._list_model._list_view.wx_obj.Select(self.index, on)
+
+    selected = property(_is_selected, _select)
+
+    def ensure_visible(self):
+        self._list_model._list_view.wx_obj.EnsureVisible(self.index)
+        
+    def focus(self):
+        self._list_model._list_view.wx_obj.Focus(self.index)
+
 
 # update metadata for the add context menu at the designer:
 
@@ -470,6 +488,10 @@ if __name__ == "__main__":
     # basic test of item model (TODO: unify lv.items and lv.item_data_map)
     lv.item_data_map[-1]['col3'] = "column 3!"
     assert lv.items[-1][2] == "column 3!"
+    
+    lv.item_data_map[2].selected = True
+    lv.item_data_map[3].ensure_visible()
+    lv.item_data_map[3].focus()
     
     ch1.text = "Hello!"
     ch2.align = "center"
