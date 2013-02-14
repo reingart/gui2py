@@ -709,8 +709,9 @@ class SubComponent(object):
     def __init__(self, parent=None, **kwargs):
         # set up the properties:
         for spec_name, spec in self._meta.specs.items():
-            value = kwargs.get(spec_name, spec.default)
-            setattr(self, spec_name, value)
+            if not spec.read_only:
+                value = kwargs.get(spec_name, spec.default)
+                setattr(self, spec_name, value)
         self.set_parent(parent, init=True)
 
     def set_parent(self, new_parent, init=False):
@@ -729,7 +730,6 @@ class SubComponent(object):
         return represent(self, prefix)
 
     parent = Spec(lambda self: self._parent.name, 
-                  lambda self, value: None,
                       optional=False, default="",
                       doc="parent window (used internally)")
 
