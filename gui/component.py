@@ -207,7 +207,7 @@ class Component(object):
         # (this must be done at last to overwrite other event handlers)
         for spec_name, spec in sorted(self._meta.specs.items(),
                                       key=lambda it: it[1].order):
-            if isinstance(spec, InternalSpec):
+            if isinstance(spec, InternalSpec) and not spec.read_only:
                 if DEBUG: print "resetting internal specs (rebound...):", spec_name, self.name
                 value = kwargs.get(spec_name, getattr(self, spec_name, spec.default))
                 setattr(self, spec_name, value)
