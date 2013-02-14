@@ -374,12 +374,15 @@ class ListView(Control):
 
 class ColumnHeader(SubComponent):
     "ListView sub-component to handle heading, align and width of columns"
-      
-    def set_parent(self, new_parent):
+
+    _created = False
+    
+    def set_parent(self, new_parent, init=False):
         "Associate the header to the control (it could be recreated)"
-        SubComponent.set_parent(self, new_parent)
+        self._created = False
+        SubComponent.set_parent(self, new_parent, init)
         # if index not given, append the column at the last position:
-        if self.index == -1:
+        if self.index == -1 or self.index > self._parent.wx_obj.GetColumnCount():
             self.index = self._parent.wx_obj.GetColumnCount()
         # insert the column in the listview:
         self._parent.wx_obj.InsertColumn(self.index, self.text, self._align, 
@@ -389,7 +392,8 @@ class ColumnHeader(SubComponent):
     def __setattr__(self, name, value):
         "Hook to update the column information in wx"
         object.__setattr__(self, name, value)
-        if hasattr(self, "_created"):
+        print "setattr", name, value, getattr(self, "_name", None)
+        if name not in ("_parent", "_created") and self._created:
             # get the internal column info (a.k.a. wx.ListItem)
             info = self._parent.wx_obj.GetColumn(self.index)
             if name == "_text":

@@ -212,8 +212,6 @@ class Component(object):
                 value = kwargs.get(spec_name, getattr(self, spec_name, spec.default))
                 setattr(self, spec_name, value)
 
-
-
     def rebuild(self, recreate=True, **kwargs):
         "Recreate (if needed) the wx_obj and apply new properties"
         # detect if this involves a spec that needs to recreate the wx_obj:
@@ -713,13 +711,14 @@ class SubComponent(object):
         for spec_name, spec in self._meta.specs.items():
             value = kwargs.get(spec_name, spec.default)
             setattr(self, spec_name, value)
-        self.set_parent(parent)
+        self.set_parent(parent, init=True)
 
-    def set_parent(self, new_parent):
+    def set_parent(self, new_parent, init=False):
         "Associate the component to the control (it could be recreated)"
         # store gui reference inside of wx object (this will enable rebuild...)
         self._parent = find_parent(new_parent, init=False)    # store new parent
-        self._parent[self._name] = self     # add child reference
+        if init:
+            self._parent[self._name] = self     # add child reference
 
     def rebuild(self, **kwargs):
         "Update a property value with (used by the designer)"
