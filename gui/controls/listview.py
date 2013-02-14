@@ -1,6 +1,7 @@
 import wx
 from ..event import FormEvent
-from ..component import Control, Spec, EventSpec, InitSpec, StyleSpec, InternalSpec
+from ..component import Control, SubComponent
+from ..spec import Spec, EventSpec, InitSpec, StyleSpec, InternalSpec
 from .listbox import ItemContainerControl
 from .. import images 
 from types import TupleType, ListType, StringTypes, NoneType, IntType
@@ -43,9 +44,8 @@ class ListView(Control):
     def __init__(self, parent=None, **kwargs):
         # default sane values (if not init'ed previously):
         if not hasattr(self, "item_data_map"):
-            self._maxColumns = 99
+            self._max_columns = 99
             self._autoresize = 1
-            self._column_headings = []
             self.item_data_map = {}
             self._key = 0             # used to generate unique keys (ItemData)
 
@@ -59,22 +59,6 @@ class ListView(Control):
     # Emulate some listBox methods
     def get_count(self):
         return self.wx_obj.GetItemCount()
-
-    def _get_column_headings(self):
-        return self._column_headings
-
-    def get_column_heading_info(self):
-        numcols = self.wx_obj.GetColumnCount()
-        result = [None] * numcols
-        if self._autoresize:
-            for i in xrange(numcols):
-                listItem = self.wx_obj.GetColumn(i)
-                result[i] = [listItem.GetText(), wx.LIST_AUTOSIZE, listItem.GetAlign()]
-        else:
-            for i in xrange(numcols):
-                listItem = self.wx_obj.GetColumn(i)
-                result[i] = [listItem.GetText(), listItem.GetWidth(), listItem.GetAlign()]
-        return result
 
     def get_selected_items(self):
         numcols = self.wx_obj.GetColumnCount()
@@ -178,91 +162,12 @@ class ListView(Control):
                 self.wx_obj.SetStringItem(offset, j, a_list[i][j])
             self.wx_obj.SetItemData(offset, key)
             datamap[key] = a_list[i]
-        if self._autoresize:
-            charwidth = self.wx_obj.GetCharWidth()
-            maxwidth = self.wx_obj.GetBestVirtualSize()[0]*2
-            for i in range(numcols):
-                hdrwidth = (len(self._column_headings[i])+1) * charwidth
-                colwidth = (max[i]+2) * charwidth
-                curcolwidth = self.wx_obj.GetColumnWidth(i)
-                if colwidth < curcolwidth:
-                    colwidth = curcolwidth
-                if colwidth < hdrwidth:
-                    colwidth = hdrwidth
-                if colwidth < 20:
-                    colwidth = 20
-                elif colwidth > maxwidth:
-                    colwidth = maxwidth
-                self.wx_obj.SetColumnWidth(i, colwidth)
-            self.wx_obj.resizeLastColumn(self.wx_obj.GetColumnWidth(numcols-1))
 
     def delete(self, a_position):
         "Deletes the item at the zero-based index 'n' from the control."
         key = self.wx_obj.GetItemData(a_position)
         self.wx_obj.DeleteItem(a_position)
         del self.item_data_map[key]
-
-    def _set_column_headings(self, a_list):
-        if isinstance(a_list, ListType) or isinstance(a_list, TupleType) or isinstance(a_list, StringTypes):
-            pass
-        else:
-            raise 'invalid MultiColumnList.SetHeading value: ', a_list
-
-        self.wx_obj.ClearAll()
-        self.item_data_map = {}
-        self._autoresize = 1
-
-        if isinstance(a_list, StringTypes):
-            self.wx_obj.InsertColumn(0, a_list, width=self.wx_obj.GetBestVirtualSize()[0])
-            self._column_headings = [a_list]
-            return
-        elif isinstance(a_list, TupleType):
-            a_list = list(a_list)
-
-        self._column_headings = a_list
-
-        numcols = len(a_list)
-        if numcols == 0:
-            return
-        elif numcols > self._maxColumns:
-            numcols = self._maxColumns
-            self._column_headings = a_list[:numcols]
-
-        if isinstance(a_list[0], StringTypes):
-            for i in xrange(numcols):
-                self.wx_obj.InsertColumn(i, a_list[i], width=wx.LIST_AUTOSIZE)
-        elif isinstance(a_list[0], ListType) or isinstance(a_list[0], TupleType):
-            w = len(a_list[0])
-            if w == 2 and isinstance(a_list[0][0], StringTypes) and isinstance(a_list[0][1], IntType):
-                flag = 0
-                for i in xrange(numcols):
-                    if a_list[i][1] != wx.LIST_AUTOSIZE:
-                        flag = 1
-                    self.wx_obj.InsertColumn(i, a_list[i][0], width=a_list[i][1])
-                if flag:
-                    self._autoresize = 0
-            elif w == 3 and \
-                   isinstance(a_list[0][0], StringTypes) and \
-                   isinstance(a_list[0][1], IntType) and \
-                   isinstance(a_list[0][2], IntType):
-                flag = 0
-                for i in xrange(numcols):
-                    if a_list[i][1] != wx.LIST_AUTOSIZE:
-                        flag = 1
-                    self.wx_obj.InsertColumn(i, a_list[i][0], format=a_list[i][2], width=a_list[i][1])
-                if flag:
-                    self._autoresize = 0
-            elif w == 1 and isinstance(a_list[0][0], StringTypes):
-                for i in xrange(numcols):
-                    self.wx_obj.InsertColumn(i, a_list[i][0], width=wx.LIST_AUTOSIZE)
-                self._autoresize = 1
-            else:
-                raise 'invalid MultiColumnList.SetHeading value: ', a_list
-        else:
-            raise 'invalid MultiColumnList.SetHeading value: ', a_list
-
-        if numcols == 1:
-            self.wx_obj.SetColumnWidth(0, self.wx_obj.GetBestVirtualSize()[0])
  
     def get_item_data_map(self):
         return self._item_data_map
@@ -303,14 +208,6 @@ class ListView(Control):
         else:
             self.wx_obj.SetItemState(itemidx, 0, wx.LIST_STATE_SELECTED)
         return itemidx
-
-    def _get_max_columns(self):
-        return self._maxColumns
-
-    def _set_max_columns(self, aString):
-        # Could perhaps call the mixin __init__ method again, doesn't look
-        # like it would cause harm.  For now however leave this a restriction.
-        raise AttributeError, "maxColumns attribute is read-only"
 
     def _get_items( self ) :
         numitems = self.wx_obj.GetItemCount()
@@ -356,8 +253,8 @@ class ListView(Control):
         # first item in the list setting the number of columns for
         # all remaining items in the list.
         numcols = len(a_list[0])
-        if numcols > self._maxColumns:
-            numcols = self._maxColumns
+        if numcols > self._max_columns:
+            numcols = self._max_columns
         if numcols != self.wx_obj.GetColumnCount():
             if numcols == 1:
                 self.wx_obj.ClearAll()
@@ -373,7 +270,7 @@ class ListView(Control):
                     for i in range(c,numcols):
                         colname = 'Col %d' % (i+1,)
                         self.wx_obj.InsertColumn(i, colname)
-                        self._column_headings.append(colname)
+                        #self._column_headings.append(colname)
         self.wx_obj.DeleteAllItems()
         datamap = {}
         max = [0] * numcols
@@ -399,20 +296,6 @@ class ListView(Control):
             self.wx_obj.SetItemData(i, key)     # used by ColumnSorterMixin
             datamap[key] = a_item
 
-        if self._autoresize:
-            charwidth = self.wx_obj.GetCharWidth()
-            maxwidth = self.wx_obj.GetBestVirtualSize()[0]*2
-            for i in range(numcols):
-                hdrwidth = (len(self._column_headings[i])+1) * charwidth
-                colwidth = int((max[i]+1) * charwidth)
-                if colwidth < hdrwidth:
-                    colwidth = hdrwidth
-                if colwidth < 20:
-                    colwidth = 20
-                elif colwidth > maxwidth:
-                    colwidth = maxwidth
-                self.wx_obj.SetColumnWidth(i, colwidth)
-            self.wx_obj.resizeLastColumn(self.wx_obj.GetColumnWidth(numcols-1))
         self.item_data_map = datamap
     
     def _new_key(self):
@@ -427,7 +310,6 @@ class ListView(Control):
         order = +1 if self.sort_order=='ascending' else -1
         if col is not None:
             self.wx_obj.SortListItems(col, order)
-    
 
     view = StyleSpec({'report': wx.LC_REPORT,
                       'list': wx.LC_LIST,
@@ -445,12 +327,11 @@ class ListView(Control):
     virtual = StyleSpec(wx.LC_VIRTUAL, default=False,
             doc="The application provides items text on demand (report mode)")
     
-    max_columns = InitSpec(_get_max_columns, default=99, 
+    max_columns = InitSpec(lambda self: self._max_columns, default=99, 
                            doc="Maximum number of columns (for Sort mixin)")
     item_data_map = InitSpec(get_item_data_map, set_item_data_map,
                            doc="internal data (for Sort mixin)")
     
-    headers = InternalSpec(_get_column_headings, _set_column_headings)
     items = InternalSpec(_get_items, _set_items)
 
     item_selection = Spec(get_selected_items, set_selection)
@@ -487,6 +368,53 @@ class ListView(Control):
                            binding=wx.EVT_LIST_COL_CLICK, kind=FormEvent)
 
 
+class ColumnHeader(SubComponent):
+    "ListView sub-component to handle heading, align and width of columns"
+      
+    def __init__(self, parent=None, **kwargs):
+        # if index not given, append the column at the last position:
+        if "index" not in kwargs:
+            kwargs["index"] = parent.wx_obj.GetColumnCount()
+        SubComponent.__init__(self, parent, **kwargs)
+
+    def set_parent(self, new_parent):
+        "Associate the header to the control (it could be recreated)"
+        SubComponent.set_parent(self, new_parent)
+        # insert the column in the listview:
+        self._parent.wx_obj.InsertColumn(self.index, self.text, self._align, 
+                                         self.width)
+
+    def __setattr__(self, name, value):
+        "Hook to update the column information in wx"
+        object.__setattr__(self, name, value)
+        if name not in ("index", "_parent") and hasattr(self, "_parent"):
+            # get the internal column info (a.k.a. wx.ListItem)
+            info = self._parent.wx_obj.GetColumn(self.index)
+            if name == "_text":
+                info.SetText(value)
+            elif name == "_width":
+                info.SetWidth(value)
+            elif name == "_align":
+                info.SetAlign(value)
+            self._parent.wx_obj.SetColumn(self.index, info)     # update it...
+
+    name = InitSpec(optional=False, default="", _name="_name", type='string')
+    text = InitSpec(optional=False, default="", _name="_text", type='string')
+    index = InitSpec(optional=False, default=-1, _name="_index", type='integer')
+    align = InitSpec(mapping={'left': wx.LIST_FORMAT_LEFT,
+                              'center': wx.LIST_FORMAT_CENTRE,
+                              'right': wx.LIST_FORMAT_RIGHT}, 
+                     default='left', _name="_align", type="enum",
+                     doc="Column Format")
+    width = InitSpec(default=wx.LIST_AUTOSIZE, _name="_width", type="integer",
+                     doc="Column width (default=autosize)")
+
+
+# update metadata for the add context menu at the designer:
+
+ListView._meta.valid_children = [ColumnHeader, ] 
+
+
 if __name__ == "__main__":
     import sys
     # basic test until unit_test
@@ -495,9 +423,12 @@ if __name__ == "__main__":
     w = gui.Window(title="hello world", name="frmTest", tool_window=False, 
                resizable=True, visible=False, pos=(180, 0))
     lv = ListView(w, name="listview", view="report", vrule=True, hrule=True,
-                  headers=['col1', 'col2', 'col3'],
-                  items=[['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']],
                   multiselect="--multiselect" in sys.argv)
+
+    ch1 = ColumnHeader(lv, name="col1", text="Col 1", align="left", width=200)
+    ch2 = ColumnHeader(lv, name="col2", text="Col 2", align="center")
+    ch3 = ColumnHeader(lv, name="col2", text="Col 3", align="right", width=100)
+    lv.items = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']]
     lv.insert_items([['a', 'b', 'c']], -1)
     #lv.append("d")
     #lv.append("e", "datum1")
@@ -511,7 +442,6 @@ if __name__ == "__main__":
     
     #  basic tests
     
-    print lv.get_column_heading_info()
     assert lv.get_count() == 4
     lv.set_selection(1)
     assert lv.get_selected_items() == [[u'4', u'5', u'6']]
@@ -526,6 +456,10 @@ if __name__ == "__main__":
         lv.item_count = 10000000
     
     lv.delete(0)
+    
+    ch1.text = "Hello!"
+    ch2.align = "center"
+    print str(ch2)
     
     from gui.tools.inspector import InspectorTool
     InspectorTool().show(w)
