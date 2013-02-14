@@ -350,6 +350,9 @@ class ListModel(dict):
         self._list_view.wx_obj.DeleteItem(position)
         self._ordered_list.remove(key)
 
+    def __call__(self):
+        return self.items()  # shortcut!
+
     def insert(self, key, position=-1):
         position = self._ordered_list.index(key)
         for col in sorted(self._list_view.headers, key=lambda col:col.index):
@@ -456,6 +459,9 @@ if __name__ == "__main__":
     assert lv.get_count() == 4
     lv.set_selection(1)
     assert lv.get_selected_items() == [[u'4', u'5', u'6.00']]
+    # check that internal selection match:
+    sel = [it for key, it in lv.items() if it.selected] 
+    assert sel == [{'col2': '5', 'col3': 6, 'col1': '4'}]
     
     lv.append(["Hello!"])
     lv.set_string_selection("Hello!")
