@@ -13,6 +13,7 @@ class InspectorPanel(wx.Panel):
     def __init__(self, parent, propeditor, log):
         self.log = log
         self.propeditor = propeditor
+        self.designer = None
         self.highlighting = None
         
         wx.Panel.__init__(self, parent, -1)
