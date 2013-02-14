@@ -728,6 +728,11 @@ class SubComponent(object):
     def __repr__(self, prefix="gui"):
         return represent(self, prefix)
 
+    parent = Spec(lambda self: self._parent.name, 
+                  lambda self, value: None,
+                      optional=False, default="",
+                      doc="parent window (used internally)")
+
 
 if __name__ == "__main__":
     # basic test until unit_test

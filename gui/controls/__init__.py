@@ -8,5 +8,5 @@ from .combobox import ComboBox
 from .htmlbox import HtmlBox
 from .image import Image
 from .gauge import Gauge
-from .listview import ListView
+from .listview import ListView, ColumnHeader
 

@@ -11,14 +11,14 @@ import gui
 
 mywin = gui.Window(
             font={'size': 11, 'face': u'Ubuntu'}, 
-            height='248px', 
+            height='609px', 
             id=-2017, 
             left='180', 
             name='mywin', 
             resizable=True, 
             title=u'hello world', 
             top='24', 
-            width='400px')
+            width='403px')
 btnClose = gui.Button(
             font={'size': 11, 'face': u'Ubuntu'}, 
             height='29', 
@@ -148,6 +148,30 @@ statusbar_15_91 = gui.StatusBar(
             name='statusbar_15_91', 
             parent='mywin', 
             text=u'hello world!')
+listview_23_211 = gui.ListView(
+            font={'size': 11, 'face': u'Ubuntu'}, 
+            height='344', 
+            id=-2028, 
+            item_count=0, 
+            item_data_map={}, 
+            item_selection=[], 
+            left='23px', 
+            name='listview_23_211', 
+            parent='mywin', 
+            sort_column=1, 
+            string_selection=[], 
+            top='211px', 
+            width='364')
+columnheader_129 = gui.ColumnHeader(
+            index=0, 
+            name='columnheader_129', 
+            parent='listview_23_211', 
+            text=u'Col A')
+columnheader_140 = gui.ColumnHeader(
+            index=1, 
+            name='columnheader_140', 
+            parent='listview_23_211', 
+            text=u'Col B')
 
 # --- gui2py designer end ---
 
