@@ -14,6 +14,23 @@ def new_id(id=None):
     else:
         return id
 
+def represent(obj, prefix):
+    "Construct a string representing the object"
+    try:
+        return "%s = %s.%s(%s)" % (
+            getattr(obj, "name", ""), prefix, obj.__class__.__name__, 
+            ', '.join(["\n            %s=%s" % 
+            (k, repr(getattr(obj, k))) 
+            for (k, spec) in sorted(obj._meta.specs.items())
+            if not isinstance(spec, InternalSpec) 
+               and getattr(obj, k, "") != spec.default
+               and isinstance(getattr(obj, k), 
+                     (basestring, int, long, bool, dict, list, Font))                
+            ]))
+    except:
+        # uninitialized, use standard representation to not break debuggers
+        return object.__repr__(obj)
+
 
 class ComponentMeta():
     "Component Metadata"
@@ -310,20 +327,7 @@ class Component(object):
             return None
 
     def __repr__(self, prefix="gui"):
-        try:
-            return "%s = %s.%s(%s)" % (
-                getattr(self, "name", ""), prefix, self.__class__.__name__, 
-                ', '.join(["\n            %s=%s" % 
-                (k, repr(getattr(self, k))) 
-                for (k, spec) in sorted(self._meta.specs.items())
-                if not isinstance(spec, InternalSpec) 
-                   and getattr(self, k, "") != spec.default
-                   and isinstance(getattr(self, k), 
-                         (basestring, int, long, bool, dict, list, Font))                
-                ]))
-        except:
-            # uninitialized, use standard representation to not break debuggers
-            return object.__repr__(self)
+        return represent(self, prefix)
 
     # properties:
     
@@ -424,8 +428,7 @@ class Component(object):
     parent = Spec(lambda self: self._get_parent_name(), 
                       optional=False, default="",
                       doc="parent window (used internally)")
-                                            
-    
+   
 
 class Control(Component):
     "This is the base class for a control"
@@ -689,6 +692,38 @@ class Control(Component):
     onkeypress = EventSpec('keypress', binding=wx.EVT_CHAR, kind=KeyEvent)
     onkeydown = EventSpec('keydown', binding=wx.EVT_KEY_DOWN, kind=KeyEvent)
     onkeyup = EventSpec('keyup', binding=wx.EVT_KEY_UP, kind=KeyEvent)
+
+
+
+class SubComponent(object):
+    "Base class to use in complex controls (like ListView)"
+    
+    __metaclass__ = ComponentBase
+    wx_obj = None               # no wx object is related
+    
+    def __iter__(self):
+        return [].__iter__()    # we have no children (designer!)
+    
+    def __init__(self, parent=None, **kwargs):
+        # set up the properties:
+        for spec_name, spec in self._meta.specs.items():
+            value = kwargs.get(spec_name, spec.default)
+            setattr(self, spec_name, value)
+        self.set_parent(parent)
+
+    def set_parent(self, new_parent):
+        "Associate the component to the control (it could be recreated)"
+        # store gui reference inside of wx object (this will enable rebuild...)
+        self._parent = new_parent
+        self._parent[self._name] = self     # add child reference
+
+    def rebuild(self, **kwargs):
+        "Update a property value with (used by the designer)"
+        for name, value in kwargs.items():
+            setattr(self, name, value)
+
+    def __repr__(self, prefix="gui"):
+        return represent(self, prefix)
 
 
 if __name__ == "__main__":
