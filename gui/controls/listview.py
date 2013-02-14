@@ -438,14 +438,14 @@ class ListView(Control):
     vrule = StyleSpec(wx.LC_VRULES, 
                 doc="Draws light vertical rules between rows (report mode).")
     multiselect = StyleSpec({True: 0, False: wx.LC_SINGLE_SEL}, 
-                default=True)
+                default=True, doc="Allow multiple selection")
     hide_headers = StyleSpec(wx.LC_NO_HEADER, default=False,
                         doc="No header in report mode")
     
     virtual = StyleSpec(wx.LC_VIRTUAL, default=False,
             doc="The application provides items text on demand (report mode)")
     
-    max_columns = InitSpec(_get_max_columns, default=99, type="integer",
+    max_columns = InitSpec(_get_max_columns, default=99, 
                            doc="Maximum number of columns (for Sort mixin)")
     item_data_map = InitSpec(get_item_data_map, set_item_data_map,
                            doc="internal data (for Sort mixin)")
@@ -463,15 +463,14 @@ class ListView(Control):
         doc="indicate to the control the number of items it contains (virtual)")
     
     sort_order = Spec(mapping={'ascending': wx.LC_SORT_ASCENDING,
-                               'descending': wx.LC_SORT_DESCENDING,
-                               'none': 0}, 
-                      default='none', _name="_sort_order", type="enum",
-                      doc="Sort order (must still supply a comparison callback")
+                               'descending': wx.LC_SORT_DESCENDING,}, 
+                      default='ascending', _name="_sort_order", type="enum",
+                      doc="Sort order (auto sort mixin)")
     sort_column = Spec(_get_sort_column, _set_sort_column,
-                       doc="column used in sort mixin", type='integer')
+                       doc="Column used in auto sort mixin", type='integer')
     ongetitemdata = InternalSpec(_name="_ongetitemdata",
-                    default=lambda item, col: "Item %d, column %d" % (item, col),
-                    doc="function that return the str for the given item/col")
+                    default=lambda row, col: "row %d column %d" % (row, col),
+                    doc="Function to get the str for item/col (virtual mode)")
 
     # events:
     onitemselected = EventSpec('item_selected', 
