@@ -64,30 +64,7 @@ class ListView(Control):
             self.wx_obj.SetItemCount(value)
 
     def get_selected_items(self):
-        numcols = self.wx_obj.GetColumnCount()
-        numitems = self.wx_obj.GetSelectedItemCount()
-        items = [None] * numitems
-        GetNextItem = self.wx_obj.GetNextItem
-        if numcols == 1:
-            GetItemText = self.wx_obj.GetItemText
-            itemidx = -1
-            for i in xrange(numitems):
-                itemidx = GetNextItem(itemidx, wx.LIST_NEXT_ALL, wx.LIST_STATE_SELECTED)
-                if itemidx == -1:
-                    #Odd, selection changed?
-                    break
-                items[i] = GetItemText(itemidx)
-        else:
-            GetItem = self.wx_obj.GetItem
-            cols = range(numcols)
-            itemidx = -1
-            for i in xrange(numitems):
-                itemidx = GetNextItem(itemidx, wx.LIST_NEXT_ALL, wx.LIST_STATE_SELECTED)
-                if itemidx == -1:
-                    #Odd, selection changed?
-                    break
-                items[i] = map(lambda x: GetItem(itemidx, x).GetText(), cols)
-        return items
+        return [it for key, it in lv.items() if it.selected]
 
     def get_string_selection(self):
         return self.get_selected_items()
@@ -456,10 +433,8 @@ if __name__ == "__main__":
     print lv.get_count()
     assert lv.get_count() == 4
     lv.set_selection(1)
-    assert lv.get_selected_items() == [[u'4', u'5', u'6.00']]
     # check that internal selection match:
-    sel = [it for key, it in lv.items() if it.selected] 
-    assert sel == [{'col2': '5', 'col3': 6, 'col1': '4'}]
+    assert lv.get_selected_items() == [{'col2': '5', 'col3': 6, 'col1': '4'}]
     
     lv.append(["Hello!"])
     lv.set_string_selection("Hello!")
