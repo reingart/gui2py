@@ -12,7 +12,7 @@ class StatusBar(Component):
     _image = images.statusbar
     _registry = registry.CONTROLS
     
-    def __init__(self, parent, **kwargs):        
+    def __init__(self, parent=None, **kwargs):        
         Component.__init__(self, parent, **kwargs)        
         
         if wx.Platform == '__WXMAC__':
