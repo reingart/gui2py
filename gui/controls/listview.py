@@ -60,7 +60,7 @@ class ListView(Control):
             self.wx_obj.SetItemCount(value)
 
     def get_selected_items(self):
-        return [it for key, it in self.items() if it.selected]
+        return [it for it in self.items if it.selected]
 
     def append(self, a_list):
         self.insert_items(a_list, self.wx_obj.GetItemCount())
@@ -262,6 +262,10 @@ class ListModel(dict):
             return self[self._ordered_list[index]]
         else:
             return self.items()  # shortcut!
+
+    def __iter__(self):
+        print "__iter__"
+        return self.itervalues()
 
     def _new_key(self):
         "Create a unique key for this list control (currently: just a counter)"
