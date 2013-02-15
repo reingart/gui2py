@@ -217,13 +217,10 @@ class ListModel(dict):
         self.clear()
 
     def __setitem__(self, key, kwargs):
-        # convert item to dict if given as list / str
-        index = self._ordered_list.index(key)
-        self.add(index, key, kwargs)
+        self.add(key, kwargs)
 
     def add(self, index=-1, key=None, kwargs=None):
-        if kwargs is None:
-            kwargs = {}
+        # convert item to dict if given as list / str
         if isinstance(kwargs, basestring):
             kwargs = [kwargs]
         if isinstance(kwargs, list):
@@ -231,40 +228,33 @@ class ListModel(dict):
                           in self._list_view.headers if col.index<len(kwargs)])
         if key is None:
             key = self._new_key()
+        # check if we have to update the ListCtrl:
+        update = key in self
         # create the new item
         item = ListItem(self, key, **kwargs)
-        dict.__setitem__(self, key, item)
-        # check if we should insert the item:
-        if key not in self._ordered_list:
-            if index == -1:
-                self._ordered_list.append(key)
-            else:
-                self._ordered_list.insert(index, key)
-            self._insert(key)
-        else:
+        dict.__setitem__(self, key, item)       # add the key/value to the dict
+        if update:
             self._update(key)
+        else:
+            self._insert(key, index)            # do the insert in the control
         return item
-
-    def __getitem__(self, key):
-        # if key is a column index, get the actual item key to look up:
-        if key < 0:     # TODO: support key > 0
-            key = self._ordered_list[key]
-        return dict.__getitem__(self, key)
 
     def __delitem__(self, key):
         dict.__delitem__(self, key)
-        position = self._ordered_list.index(key)
-        self._list_view.wx_obj.DeleteItem(position)
-        self._ordered_list.remove(key)
+        index = self._list_view.wx_obj.FindItemData(0, key)
+        if index >= 0:
+            self._list_view.wx_obj.DeleteItem(index)
 
     def __call__(self, index=None):
-        if index:
-            return self[self._ordered_list[index]]
+        if index is not None:
+            if index < 0:
+                index = max(len(self) + index, 0)
+            key = self._list_view.wx_obj.GetItemData(index)
+            return self[key]
         else:
             return self.items()  # shortcut!
 
     def __iter__(self):
-        print "__iter__"
         return self.itervalues()
 
     def _new_key(self):
@@ -272,35 +262,35 @@ class ListModel(dict):
         self._key += 1
         return self._key
 
-    def _insert(self, key, position=-1):
-        position = self._ordered_list.index(key)
-        for col in sorted(self._list_view.headers, key=lambda col:col.index):
-            if not col.name in self[key]:
-                continue
-            text = self[key][col.name]
-            if not isinstance(text, basestring):
-                text = col.represent(text)
-            if col.index == 0:
-                self._list_view.wx_obj.InsertStringItem(position, text)
-            else:
-                self._list_view.wx_obj.SetStringItem(position, col.index, text)
-        # update internal data, used by ColumnSorterMixin
-        self._list_view.wx_obj.SetItemData(position, key)
-    
-    def _update(self, key, name):
-        position = self._ordered_list.index(key)
+    def _insert(self, key, index=-1):
+        if index <0:
+            index = self._list_view.wx_obj.GetItemCount()   # append it
         for col in sorted(self._list_view.headers, key=lambda col: col.index):
             if not col.name in self[key]:
                 continue
             text = self[key][col.name]
             if not isinstance(text, basestring):
                 text = col.represent(text)
-            self._list_view.wx_obj.SetStringItem(position, col.index, text)
+            if col.index == 0:
+                self._list_view.wx_obj.InsertStringItem(index, text)
+            else:
+                self._list_view.wx_obj.SetStringItem(index, col.index, text)
+        # update internal data, used by ColumnSorterMixin
+        self._list_view.wx_obj.SetItemData(index, key)
+    
+    def _update(self, key, name=None):
+        index = self._list_view.wx_obj.FindItemData(0, key)
+        for col in sorted(self._list_view.headers, key=lambda col: col.index):
+            if not col.name in self[key]:
+                continue
+            text = self[key][col.name]
+            if not isinstance(text, basestring):
+                text = col.represent(text)
+            self._list_view.wx_obj.SetStringItem(index, col.index, text)
 
     def clear(self):
         "Remove all items and reset internal structures"
         dict.clear(self)
-        self._ordered_list = []
         self._key = 0
         if hasattr(self._list_view, "wx_obj"):
             self._list_view.wx_obj.DeleteAllItems()
@@ -331,7 +321,8 @@ class ListItem(dict):
 
     @property
     def index(self):
-        return self._list_model._ordered_list.index(self._key)
+        "Get the actual position (can vary due insertion/deletions and sorting)"
+        return self._list_model._list_view.wx_obj.FindItemData(0,self._key)
 
     def _is_selected(self):
         return self._list_model._list_view.wx_obj.IsSelected(self.index)
@@ -382,7 +373,6 @@ if __name__ == "__main__":
     #wx.lib.inspection.InspectionTool().Show()
     
     #  basic tests
-    print lv.get_count()
     assert lv.get_count() == 4
     lv.items(1).selected = True
     # check that internal selection match:
@@ -395,9 +385,10 @@ if __name__ == "__main__":
     
     lv.delete(0)
 
-    # basic test of item model (TODO: unify lv.items and lv._items)
-    lv.items[-1]['col3'] = "column 3!"
-    assert lv.items[-1][2] == "column 3!"
+    # basic test of item model
+    lv.items(-1)['col3'] = "column 3!"
+    assert lv.items(-1)[2] == "column 3!"
+    assert lv.items(2)[2] == "column 3!"
     
     lv.items[2].selected = True
     lv.items[3].ensure_visible()
@@ -408,7 +399,9 @@ if __name__ == "__main__":
 
     lv.insert_items([['a', 'b', 'c']], 0)       # add as first item
     lv.insert_items([['x', 'y', 'z']], -1)      # add as last item
-   
+    assert lv.items(0)[0] == "a"
+    assert lv.items(len(lv.items)-1)[0] == "x"
+    
     from gui.tools.inspector import InspectorTool
     InspectorTool().show(w)
     app.MainLoop()
