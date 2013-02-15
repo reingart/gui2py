@@ -265,7 +265,7 @@ class BasicDesigner:
         dc.Clear()
         # should the color be settable by the user and then save
         # that in the prefs?
-        dc.SetPen(wx.Pen('darkgray', 1, wx.SOLID))
+        dc.SetPen(wx.Pen('black', 1, wx.SOLID))
         w, h = wx_obj.GetClientSize()
         xgrid, ygrid = GRID_SIZE
         nx = w / xgrid
