@@ -24,9 +24,8 @@ class StatusBar(Component):
 
         #self.size_grip = self._parent.resizable
             
-        if not self._parent.statusbar:
-            self._parent.statusbar = self    # add the statusbar to the parent
-
+        self._parent.statusbar = self    # add the statusbar to the parent
+            
     def set_parent(self, new_parent, init=False):
         "Re-parent a child control with the new wx_obj parent"
         Component.set_parent(self, new_parent, init)
@@ -34,6 +33,7 @@ class StatusBar(Component):
         if not init:
             wx_obj = new_parent and new_parent.wx_obj
             self.wx_obj.Reparent(wx_obj)
+
                 
     grip = StyleSpec(wx.ST_SIZEGRIP, doc="resizing grip", default=False)
     text = Spec(lambda self: self.wx_obj.GetStatusText(), 
