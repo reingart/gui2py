@@ -265,7 +265,7 @@ class BasicDesigner:
         dc.Clear()
         # should the color be settable by the user and then save
         # that in the prefs?
-        dc.SetPen(wx.Pen('darkgray', 1, wx.SOLID))
+        dc.SetPen(wx.Pen('black', 1, wx.SOLID))
         w, h = wx_obj.GetClientSize()
         xgrid, ygrid = GRID_SIZE
         nx = w / xgrid
@@ -356,7 +356,7 @@ if __name__ == '__main__':
     else:
         log = open(os.devnull, 'w')
         
-    f1 = wx.Frame(None, pos=(600, 0), size=(300, 300), 
+    f1 = wx.Frame(None, pos=(600, 25), size=(300, 300), 
                         title="GUI Property Editor")
     f2 = wx.Frame(None, pos=(600, 350), size=(300, 300), title="GUI Inspector")
     propeditor = PropertyEditorPanel(f2, log)
@@ -365,7 +365,7 @@ if __name__ == '__main__':
     f2.Show()
     
     # create a toolbox 
-    frame = wx.Frame(None, pos=(0, 0), size=(80, 600), title="GUI Toolbox")
+    frame = wx.Frame(None, pos=(0, 25), size=(80, 600), title="GUI Toolbox")
     tb = ToolBox(frame)
 
     if len(sys.argv) > 1:

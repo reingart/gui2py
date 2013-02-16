@@ -10,6 +10,7 @@ import gui
 # --- gui2py designer start ---
 
 mywin = gui.Window(
+            bgcolor='gray',
             font={'size': 11, 'face': u'Ubuntu'}, 
             height='609px', 
             id=-2017, 
@@ -51,6 +52,7 @@ lblTest = gui.Label(
             top='37', 
             width='48')
 txtTest = gui.TextBox(
+            bgcolor='white',
             font={'size': 11, 'face': u'Ubuntu'}, 
             height='25', 
             id=-2021, 
@@ -73,7 +75,7 @@ btnTest = gui.Button(
             width='85')
 cboTest = gui.ComboBox(
             font={'size': 11, 'face': u'Ubuntu'}, 
-            height='29', 
+            height='22', 
             id=-2023, 
             items=[], 
             left='100', 
