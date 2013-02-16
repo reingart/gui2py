@@ -162,3 +162,10 @@ list_ctrl = PyEmbeddedImage(
     "aaDqptK53oh4SteQRdIvt+TGe+EUZ2lT38Dl2tQ3cLk29Q1cruSf3mp5YBsYN8V7AAAAAElF"
     "TkSuQmCC")
 
+#----------------------------------------------------------------------
+tree_ctrl = PyEmbeddedImage(
+    "iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAABHNCSVQICAgIfAhkiAAAAIpJ"
+    "REFUOI3Nk0EOgCAMBLfgnzU+wOijtR4UU6sEsJC4t4YwDJuUyHkAAG8r4ww5TzCku03MAB28"
+    "sR/47cK0zMkHqYWp0yArENDfF7GYP6ASJiou6vjqNACDlcXUxQ4sHUc71SkxT0IlDAwgo+No"
+    "p3quapoL+gT9d6fNTHNBWdB/734t0ya7H4VasgMCXmR71NBR7QAAAABJRU5ErkJggg==")
+
