@@ -33,15 +33,16 @@ class TreeView(Control):
     def _get_items(self):
         return self._items
 
-    def _set_items(self, a_list):
-        if isinstance(a_list, NoneType):
-            a_list = []
-        elif not isinstance(a_list, (ListType, TupleType, DictType)):
-            raise AttributeError("unsupported type, list/tuple/dict expected")
+    def _set_items(self, model=None):
+        if model is None:
+            model = TreeModel(self)
+        elif not isinstance(model, (TreeModel, )):
+            raise AttributeError("unsupported type, TreeMoel expected")
 
-        self._items = TreeModel(self)
+        self._items = model
 
-    
+    has_buttons = StyleSpec(wx.TR_HAS_BUTTONS, 
+                doc="Show + and - buttons to the left of parent items.")
     no_lines = StyleSpec(wx.TR_NO_LINES, 
                 doc="Hide vertical level connectors")
     row_lines = StyleSpec(wx.TR_ROW_LINES, 
@@ -50,6 +51,8 @@ class TreeView(Control):
                 default=True, doc="Allow multiple selection")
     hide_root = StyleSpec(wx.TR_HIDE_ROOT, default=False,
                         doc="Suppress the display of the root node")
+    default_style = StyleSpec(wx.TR_DEFAULT_STYLE, 
+                doc="Closest to the defaults for the native control")    
     
     items = InternalSpec(_get_items, _set_items)
    
@@ -181,8 +184,7 @@ if __name__ == "__main__":
     app = wx.App(redirect=False)    
     w = gui.Window(title="hello world", name="frmTest", tool_window=False, 
                resizable=True, visible=False, pos=(180, 0))
-    tv = TreeView(w, name="treeview")
-
+    tv = TreeView(w, name="treeview", has_buttons=True, default_style=True)
 
     root = tv.items.add(text="Root")
     child1 = tv.items.add(parent=root, text="Child 1")
@@ -195,8 +197,6 @@ if __name__ == "__main__":
     # assign some event handlers:
     #lv.onitemselected = lambda event: pprint("selection: %s" % str(event.target.get_selected_items()))
     w.show()
-    #import wx.lib.inspection
-    #wx.lib.inspection.InspectionTool().Show()
     
     # basic tests:
     
@@ -209,7 +209,6 @@ if __name__ == "__main__":
             assert nodx.get_children_count() == 1
     
     assert root.get_children_count() == 4
-
     
     from gui.tools.inspector import InspectorTool
     InspectorTool().show(w)
