@@ -22,14 +22,66 @@ class wx_ListCtrl(wx.ListCtrl, ColumnSorterMixin, ListCtrlAutoWidthMixin):
         # Perform init for AutoWidth (resizes the last column to take up
         # the remaining display width)
         ListCtrlAutoWidthMixin.__init__(self)
+        
+        # maps for PyData support (like TreeCtrl)
+        self._py_data_map = {}
+        self._wx_data_map = {}
 
     # Used by the wxColumnSorterMixin, see wxPython/lib/mixins/listctrl.py
     def GetListCtrl(self):
         return self
 
+    def GetColumnSorter(self):
+        """Returns a callable object to be used for comparing column values when sorting."""
+        return self.__ColumnSorter
+
     def OnGetItemText(self, item, col):
         if self.obj and self.obj._ongetitemdata:
             return self.obj._ongetitemdata(item, col)
+
+    # Allow to store arbitrary python data (like TreeCtrl PyData) 
+    # (ListCtrl supports only long as item data type)
+    # For more info see: http://wiki.wxpython.org/ListControls
+    
+    def GetPyData(self, item):
+        "Returns the pyth item data associated with the item"
+        wx_data = self.GetItemData(item)
+        py_data = self._py_data_map.get(wx_data)
+        return py_data
+
+    def SetPyData(self, item, py_data):
+        "Set the python item data associated wit the wx item"
+        wx_data = wx.NewId()                           # create a suitable key
+        self.SetItemData(item, wx_data)   # store it in wx 
+        self._py_data_map[wx_data] = py_data           # map it internally
+        self._wx_data_map[py_data] = wx_data           # reverse map
+        return wx_data
+
+    def FindPyData(self, start, py_data):
+        "Do a reverse look up for an item containing the requested data"
+        # first, look at our internal dict:
+        wx_data = self._wx_data_map[py_data]
+        # do the real search at the wx control:
+        return self.FindItemData(start, wx_data)
+
+    def DeleteItem(self, item):
+        "Remove the item from the list and unset the related data"
+        wx_data = self.GetItemData(item)
+        py_data = self._py_data_map[wx_data]
+        del self._py_data_map[wx_data]
+        del self._wx_data_map[py_data]
+        wx.ListCtrl.DeleteItem(self, item)
+
+    def DeleteAllItems(self):
+        "Remove all the item from the list and unset the related data"
+        self._py_data_map.clear()
+        self._wx_data_map.clear()
+        wx.ListCtrl.DeleteAllItems(self)
+
+    def __ColumnSorter(self, wx_key1, wx_key2):
+        py_key1 = self._py_data_map[wx_key1]
+        py_key2 = self._py_data_map[wx_key2]
+        return ColumnSorterMixin._ColumnSorterMixin__ColumnSorter(self, py_key1, py_key2)
 
 
 class ListView(Control):
@@ -81,7 +133,7 @@ class ListView(Control):
 
     def delete(self, a_position):
         "Deletes the item at the zero-based index 'n' from the control."
-        key = self.wx_obj.GetItemData(a_position)
+        key = self.wx_obj.GetPyData(a_position)
         del self._items[key]
  
     def _get_items(self):
@@ -217,7 +269,7 @@ class ListModel(dict):
         self.clear()
 
     def __setitem__(self, key, kwargs):
-        self.add(key, kwargs)
+        self.add(key=key, kwargs=kwargs)
 
     def add(self, index=-1, key=None, kwargs=None):
         # convert item to dict if given as list / str
@@ -241,7 +293,7 @@ class ListModel(dict):
 
     def __delitem__(self, key):
         dict.__delitem__(self, key)
-        index = self._list_view.wx_obj.FindItemData(0, key)
+        index = self._list_view.wx_obj.FindPyData(0, key)
         if index >= 0:
             self._list_view.wx_obj.DeleteItem(index)
 
@@ -249,7 +301,7 @@ class ListModel(dict):
         if index is not None:
             if index < 0:
                 index = max(len(self) + index, 0)
-            key = self._list_view.wx_obj.GetItemData(index)
+            key = self._list_view.wx_obj.GetPyData(index)
             return self[key]
         else:
             return self.items()  # shortcut!
@@ -276,10 +328,10 @@ class ListModel(dict):
             else:
                 self._list_view.wx_obj.SetStringItem(index, col.index, text)
         # update internal data, used by ColumnSorterMixin
-        self._list_view.wx_obj.SetItemData(index, key)
+        self._list_view.wx_obj.SetPyData(index, key)
     
     def _update(self, key, name=None):
-        index = self._list_view.wx_obj.FindItemData(0, key)
+        index = self._list_view.wx_obj.FindPyData(0, key)
         for col in sorted(self._list_view.headers, key=lambda col: col.index):
             if not col.name in self[key]:
                 continue
@@ -322,7 +374,7 @@ class ListItem(dict):
     @property
     def index(self):
         "Get the actual position (can vary due insertion/deletions and sorting)"
-        return self._list_model._list_view.wx_obj.FindItemData(0,self._key)
+        return self._list_model._list_view.wx_obj.FindPyData(0,self._key)
 
     def _is_selected(self):
         return self._list_model._list_view.wx_obj.IsSelected(self.index)
@@ -401,6 +453,10 @@ if __name__ == "__main__":
     lv.insert_items([['x', 'y', 'z']], -1)      # add as last item
     assert lv.items(0)[0] == "a"
     assert lv.items(len(lv.items)-1)[0] == "x"
+    
+    # test PyData keys:
+    lv.items['key'] = [99, 98, 97]
+    assert lv.items['key'] == {'col2': 98, 'col3': 97, 'col1': 99}
     
     from gui.tools.inspector import InspectorTool
     InspectorTool().show(w)
