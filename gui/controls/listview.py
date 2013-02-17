@@ -351,9 +351,9 @@ class ListModel(dict):
 class ListItem(dict):
     "keys are column names, values are subitem values"
 
-    def __init__(self, _list_model, _key, **kwargs):
-        self._list_model = _list_model
-        self._key = _key
+    def __init__(self, list_model, key, **kwargs):
+        self._list_model = list_model
+        self.key = key
         dict.__init__(self, **kwargs)
 
     def __setitem__(self, key, value):
@@ -362,7 +362,7 @@ class ListItem(dict):
             key = self._list_model._list_view.headers[key].name
         # store the value and notify our parent to refresh the item
         dict.__setitem__(self, key, value)
-        self._list_model._update(self._key, key)
+        self._list_model._update(self.key, key)
 
     def __getitem__(self, key):
         # if key is a column index, get the actual column name to look up:
@@ -374,7 +374,7 @@ class ListItem(dict):
     @property
     def index(self):
         "Get the actual position (can vary due insertion/deletions and sorting)"
-        return self._list_model._list_view.wx_obj.FindPyData(0,self._key)
+        return self._list_model._list_view.wx_obj.FindPyData(0,self.key)
 
     def _is_selected(self):
         return self._list_model._list_view.wx_obj.IsSelected(self.index)
