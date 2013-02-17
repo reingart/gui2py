@@ -1,5 +1,5 @@
 import wx
-from ..event import FormEvent
+from ..event import TreeEvent
 from ..component import Control, SubComponent
 from ..spec import Spec, EventSpec, InitSpec, StyleSpec, InternalSpec
 from .listbox import ItemContainerControl
@@ -61,17 +61,17 @@ class TreeView(Control):
    
     # events:
     onitemselected = EventSpec('item_selected', 
-                           binding=wx.EVT_TREE_SEL_CHANGED, kind=FormEvent)
+                           binding=wx.EVT_TREE_SEL_CHANGED, kind=TreeEvent)
     onitemactivated = EventSpec('item_activated', 
-                           binding=wx.EVT_TREE_ITEM_ACTIVATED, kind=FormEvent)
+                           binding=wx.EVT_TREE_ITEM_ACTIVATED, kind=TreeEvent)
     onitemcollapsed = EventSpec('item_collapsed', 
-                           binding=wx.EVT_TREE_ITEM_COLLAPSED, kind=FormEvent)
+                           binding=wx.EVT_TREE_ITEM_COLLAPSED, kind=TreeEvent)
     onitemcollapsing = EventSpec('item_collapsing', 
-                           binding=wx.EVT_TREE_ITEM_COLLAPSING, kind=FormEvent)
+                           binding=wx.EVT_TREE_ITEM_COLLAPSING, kind=TreeEvent)
     onitemexpanded = EventSpec('item_expanded', 
-                           binding=wx.EVT_TREE_ITEM_EXPANDED, kind=FormEvent)
+                           binding=wx.EVT_TREE_ITEM_EXPANDED, kind=TreeEvent)
     onitemexpanding = EventSpec('list_expanding', 
-                           binding=wx.EVT_TREE_ITEM_EXPANDING, kind=FormEvent)
+                           binding=wx.EVT_TREE_ITEM_EXPANDING, kind=TreeEvent)
 
 
 
@@ -110,6 +110,14 @@ class TreeModel(dict):
         dict.__delitem__(self, it)
         self._tree_view.wx_obj.DeleteItem(it)
 
+    def __call__(self, wx_item=None):
+        "Look for a item based on the wx_item or return a key/value pair"
+        if wx_item is not None:
+            key = self._tree_view.wx_obj.GetPyData(wx_item)
+            return self[key]
+        else:
+            return self.items()  # shortcut!
+                
     def __iter__(self):
         "Return a iterable for all the nodes"
         # This is not really useful except to perform global actions
@@ -163,6 +171,14 @@ class TreeItem(object):
 
     def get_children_count(self):
         return self._tree_model._tree_view.wx_obj.GetChildrenCount(self.wx_item)
+    
+    def set_has_children(self, has_children=True):
+        "Force appearance of the button next to the item"
+        # This is useful to allow the user to expand the items which don't have
+        # any children now, but instead adding them only when needed, thus 
+        # minimizing memory usage and loading time.
+        self._tree_model._tree_view.wx_obj.SetItemHasChildren(self.wx_item, 
+                                                              has_children)
 
     def __iter__(self):
         "look for children and convert them to TreeItem if any"
@@ -195,10 +211,18 @@ if __name__ == "__main__":
     child3 = tv.items.add(parent=root, text="Child 3")
     child11 = tv.items.add(parent=child1, text="Child 11")
     child11.ensure_visible()
+    child2.set_has_children()
 
-    from pprint import pprint
+    def expand_item(event):
+        "lazy evaluation example: virtually add children at runtime"
+        if not event.detail.get_children_count():
+            for i in range(5):
+                it = tv.items.add(parent=event.detail, text="lazy child %s" % i)
+                it.set_has_children()  # allow to lazy expand this child too
+            
     # assign some event handlers:
-    #lv.onitemselected = lambda event: pprint("selection: %s" % str(event.target.get_selected_items()))
+    tv.onitemexpanded = expand_item
+    tv.onitemselected = "print 'selected TreeItem:', event.detail.text"
     w.show()
     
     # basic tests:

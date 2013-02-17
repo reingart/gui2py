@@ -148,4 +148,18 @@ class HtmlCtrlClickEvent(UIEvent):
                          detail=wx_event.ctrl)
 
 
+class TreeEvent(UIEvent):
+    "Tree Control events (detail has the selected/extended/collapsed item)"
+    
+    def __init__(self, name, detail=None, wx_event=None):
+        wx_tree = wx_event.GetEventObject()
+        model = wx_tree.obj.items
+        wx_item = wx_event.GetItem()
+        if not wx_item.IsOk():
+            wx_item = wx_tree.GetSelection()
+        UIEvent.__init__(self, name, wx_event=wx_event, 
+                         detail=model(wx_item))
+
+
+
 WIDGET_EVENTS = MouseEvent, FocusEvent, TimingEvent
