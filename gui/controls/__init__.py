@@ -9,4 +9,5 @@ from .htmlbox import HtmlBox
 from .image import Image
 from .gauge import Gauge
 from .listview import ListView, ColumnHeader
+from .treeview import TreeView
 
