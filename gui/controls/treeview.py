@@ -38,6 +38,9 @@ class TreeView(Control):
             model = TreeModel(self)
         elif not isinstance(model, (TreeModel, )):
             raise AttributeError("unsupported type, TreeMoel expected")
+        else:
+            # TODO: rebuild the wx tree items
+            pass
 
         self._items = model
 
