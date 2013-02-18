@@ -357,15 +357,20 @@ class Component(object):
         self._font.set_wx_font(wx_font)
         return self._font
 
-    def _set_fgcolor( self, color ) :
-        color = self._get_default_color( color )
-        self.wx_obj.SetForegroundColour( color )
-        self.wx_obj.Refresh()   # KEA wxPython bug?
+    def _set_fgcolor(self, color):
+        print "SET FGCOLOR", color
+        color = self._get_default_color(color, "foreground")
+        # if not color given, avoid change it to wx.NullColor (fix for OSX)
+        if color is not wx.NullColour:
+            self.wx_obj.SetForegroundColour(color)
+            self.wx_obj.Refresh()   # KEA wxPython bug?
     
-    def _set_bgcolor( self, color ) :
-        color = self._get_default_color( color )
-        self.wx_obj.SetBackgroundColour( color )
-        self.wx_obj.Refresh()   # KEA wxPython bug?
+    def _set_bgcolor(self, color):
+        color = self._get_default_color(color, "background")
+        # if not color given, avoid change it to wx.NullColor (fix for OSX)
+        if color is not wx.NullColour:
+            self.wx_obj.SetBackgroundColour(color)
+            self.wx_obj.Refresh()   # KEA wxPython bug?
 
     def _get_fgcolor(self):
         return self.wx_obj.GetForegroundColour()
@@ -394,10 +399,12 @@ class Component(object):
     def _setUserdata(self, aString):
         self._userdata = aString
 
-    def _get_default_color( self, color ) :
-        if color is None :
+    def _get_default_color(self, color, context="background"):
+        if color is None:
+            # warning: NullColour is ignored as it doesn't work properly in OSX
+            # use wx.SystemSettings.GetColour(wx.SYS_COLOUR_BACKGROUND) instead
             return wx.NullColour
-        else :
+        else:
             # KEA 2001-07-27
             # is the right place for this check?
             if isinstance(color, tuple) and len(color) == 3:
