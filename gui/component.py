@@ -358,7 +358,6 @@ class Component(object):
         return self._font
 
     def _set_fgcolor(self, color):
-        print "SET FGCOLOR", color
         color = self._get_default_color(color, "foreground")
         # if not color given, avoid change it to wx.NullColor (fix for OSX)
         if color is not wx.NullColour:
