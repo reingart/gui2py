@@ -59,7 +59,14 @@ class ToolBox(aui.AuiToolBar):
             obj = ctrl(self.default_tlw, 
                        name="%s_%s" % (ctrl._meta.name.lower(), wx.NewId()), 
                        pos=(0, 0), designer=self.designer)
-            # update the object at the inspector (to show the new control)
+        # fix width and height if default is not visible
+        w, h = obj.size
+        if w < 10:
+            w = 100
+        if h < 10:
+            h = 10
+        obj.size = (w, h)
+        # update the object at the inspector (to show the new control)
         if self.inspector:
             self.inspector.load_object(self.default_tlw)
             self.inspector.inspect(obj)
