@@ -169,3 +169,11 @@ tree_ctrl = PyEmbeddedImage(
     "sR/47cK0zMkHqYWp0yArENDfF7GYP6ASJiou6vjqNACDlcXUxQ4sHUc71SkxT0IlDAwgo+No"
     "p3quapoL+gT9d6fNTHNBWdB/734t0ya7H4VasgMCXmR71NBR7QAAAABJRU5ErkJggg==")
 
+#----------------------------------------------------------------------
+notebook = PyEmbeddedImage(
+    "iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAABHNCSVQICAgIfAhkiAAAAMRJ"
+    "REFUOI3llEEKg0AMRX8SZzWix3Sjp3Hlem7lMdriQmHShYytUlEkXZQ+yCaEN+QzhIgF1rC5"
+    "8VtSEAt0h7quT/eIBamyJO/7/uOjXded6r3zO5lmRwNVVZ0StW2rIgIF0SJVVRDRarBpmt2s"
+    "t4QQEGMEsbzW3wqv4JwDYJzpNE320rStqbQsS3vpMAz20nEc7aWJ5Z+GEC4JmBkxRgBzprf7"
+    "Y75SADTPcwWgRVGo914BHJZzTolIAaj3XkVkvlb/ffmf+K16UdsoFpEAAAAASUVORK5CYII=")
+
