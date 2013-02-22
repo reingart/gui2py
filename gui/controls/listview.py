@@ -293,7 +293,7 @@ class ListModel(dict):
 
     def __delitem__(self, key):
         dict.__delitem__(self, key)
-        index = self._list_view.wx_obj.FindPyData(0, key)
+        index = self._list_view.wx_obj.FindPyData(-1, key)
         if index >= 0:
             self._list_view.wx_obj.DeleteItem(index)
 
@@ -331,7 +331,7 @@ class ListModel(dict):
         self._list_view.wx_obj.SetPyData(index, key)
     
     def _update(self, key, name=None):
-        index = self._list_view.wx_obj.FindPyData(0, key)
+        index = self._list_view.wx_obj.FindPyData(-1, key)
         for col in sorted(self._list_view.headers, key=lambda col: col.index):
             if not col.name in self[key]:
                 continue
@@ -374,7 +374,7 @@ class ListItem(dict):
     @property
     def index(self):
         "Get the actual position (can vary due insertion/deletions and sorting)"
-        return self._list_model._list_view.wx_obj.FindPyData(0,self.key)
+        return self._list_model._list_view.wx_obj.FindPyData(-1, self.key)
 
     def _is_selected(self):
         return self._list_model._list_view.wx_obj.IsSelected(self.index)
