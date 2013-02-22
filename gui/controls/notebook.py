@@ -83,7 +83,15 @@ class TabPanel(Component):
 
     selected = Spec(_get_selection, _set_selection, type='boolean')
 
-
+    def destroy(self):
+        # remove the page to the notebook
+        self._parent.wx_obj.RemovePage(self.index)
+        # reindex (maybe this should be moved to Notebook)
+        for page in self._parent.pages[self.index+1:]:
+            print "reindexing", page.name
+            page.index = page.index - 1
+        Component.destroy(self)
+        
 
 # update metadata for the add context menu at the designer:
 
