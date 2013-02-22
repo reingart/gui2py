@@ -221,7 +221,7 @@ if __name__ == "__main__":
                 it.set_has_children()  # allow to lazy expand this child too
             
     # assign some event handlers:
-    tv.onitemexpanded = expand_item
+    tv.onitemexpanding = expand_item
     tv.onitemselected = "print 'selected TreeItem:', event.detail.text"
     w.show()
     
