@@ -55,8 +55,13 @@ class ToolBox(aui.AuiToolBar):
         # get the control
         ctrl = self.menu_ctrl_map[evt.GetId()]
         # create the control on the parent:
-        if self.default_tlw:
-            obj = ctrl(self.default_tlw, 
+        if self.inspector.selected_obj:
+            # find the first parent drop target
+            parent = self.inspector.selected_obj
+            while parent.drop_target is None:
+                parent = parent.get_parent()
+            # create the new object
+            obj = ctrl(parent, 
                        name="%s_%s" % (ctrl._meta.name.lower(), wx.NewId()), 
                        pos=(0, 0), designer=self.designer)
         # fix width and height if default is not visible
@@ -68,7 +73,7 @@ class ToolBox(aui.AuiToolBar):
         obj.size = (w, h)
         # update the object at the inspector (to show the new control)
         if self.inspector:
-            self.inspector.load_object(self.default_tlw)
+            self.inspector.load_object(self.inspector.root_obj)  # refresh tree
             self.inspector.inspect(obj)
         
         
@@ -106,7 +111,6 @@ class ToolBox(aui.AuiToolBar):
 
     def set_default_tlw(self, tlw, designer, inspector):
         "track default top level window for toolbox menu default action"
-        self.default_tlw = tlw
         self.designer = designer
         self.inspector = inspector
 

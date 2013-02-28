@@ -15,6 +15,7 @@ class InspectorPanel(wx.Panel):
         self.propeditor = propeditor
         self.designer = None
         self.highlighting = None
+        self.selected_obj = None   # used by the toolbox as default drop target
         
         wx.Panel.__init__(self, parent, -1)
         self.Bind(wx.EVT_SIZE, self.OnSize)
@@ -53,7 +54,6 @@ class InspectorPanel(wx.Panel):
         self.tree.GetMainWindow().Bind(wx.EVT_RIGHT_UP, self.OnRightUp)
         self.tree.Bind(wx.EVT_TREE_ITEM_ACTIVATED, self.OnActivate)
         self.tree.Bind(wx.EVT_TREE_SEL_CHANGED, self.OnSelect)
-        self.desginer = None
 
     def set_designer(self, designer):
         "track designer for context menu"
@@ -107,8 +107,11 @@ class InspectorPanel(wx.Panel):
         d = self.tree.GetItemData(child)
         if d:
             o = d.GetData()
+            self.selected_obj = o
             self.propeditor.load_object(o)
             ##self.propeditor.Parent.SetFocus()
+        else:
+            self.selected_obj = None
     
     def do_highlight(self, tlw, rect, colour, pen_width=2):
         if not self.highlighting and tlw:
