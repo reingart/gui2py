@@ -378,20 +378,28 @@ if __name__ == '__main__':
     for name, value in vars.items():
         if not isinstance(value, gui.Window):
             continue
-        w = value       # TODO: support many windows
+        root = value       # TODO: support many windows
         # load the window in the widget inspector
-        inspector.load_object(w)
+        inspector.load_object(root)
         # associate the window with the designer: 
         # (override mouse events to allow moving and resizing)
-        designer = BasicDesigner(w, inspector)
+        designer = BasicDesigner(root, inspector)
         # associate the window with the toolbox:
         # (this will allow to drop new controls on the window)
-        dt = ToolBoxDropTarget(w, designer=designer, inspector=inspector)
-        w.drop_target = dt
+        obj = root
+        def set_drop_target(obj):
+            "Recursively create and set the drop target for obj and childs"
+            if isinstance(obj.wx_obj, (wx.Panel, wx.Frame)):
+                dt = ToolBoxDropTarget(obj, root, designer=designer, 
+                                                  inspector=inspector)
+                obj.drop_target = dt
+            for child in obj:
+                set_drop_target(child)
+        set_drop_target(root)
         # link the designer (context menu) and toolbox (tool click)
         inspector.set_designer(designer)
         tb.set_default_tlw(w, designer, inspector)
-        w.show()
+        root.show()
 
     designer.onclose = save 
     designer.filename = filename

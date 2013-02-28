@@ -114,9 +114,10 @@ class ToolBox(aui.AuiToolBar):
 class ToolBoxDropTarget(wx.PyDropTarget):
     "Target of Drag&Drop operation (will create the dropped control)"
     
-    def __init__(self, window, designer=None, inspector=None):
+    def __init__(self, window, root, designer=None, inspector=None):
         wx.PyDropTarget.__init__(self)
         self.dv = window
+        self.root = root                # root item to show at the inspector
         self.designer = designer  # used in design mode (set special handlers)
         self.inspector = inspector
 
@@ -171,7 +172,7 @@ class ToolBoxDropTarget(wx.PyDropTarget):
                 obj.width, obj.height = ["%spx" % dim for dim in obj.size]
             # update the object at the inspector (to show the new control)
             if self.inspector:
-                self.inspector.load_object(self.dv)
+                self.inspector.load_object(self.root)
                 self.inspector.inspect(obj)
 
         # what is returned signals the source what to do
