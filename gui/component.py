@@ -423,6 +423,10 @@ class Component(object):
     def _setVisible(self, aBoolean):
         self.wx_obj.Show(aBoolean)
     
+    def _set_drop_target(self, dt):
+        if dt:
+            self.wx_obj.SetDropTarget(dt)
+    
     name = InitSpec(optional=False, default="", _name="_name", type='string')
     bgcolor = Spec(_get_bgcolor, _set_bgcolor, type='colour')
     font = Spec(_get_font, _set_font, type='font')
@@ -436,6 +440,10 @@ class Component(object):
     parent = Spec(lambda self: self._get_parent_name(), 
                       optional=False, default="",
                       doc="parent window (used internally)")
+    drop_target = InternalSpec(lambda self: self.wx_obj.GetDropTarget(), 
+                               lambda self, value: self._set_drop_target(value), 
+                               doc="drag&drop handler (used in design mode)", 
+                               type='internal')
    
 
 class Control(Component):
@@ -623,10 +631,6 @@ class Control(Component):
             for child in self:
                 child.designer = func
    
-    def _set_drop_target(self, dt):
-        if dt:
-            self.wx_obj.SetDropTarget(dt)
-            # TODO: check if any children is a droptarget too (i.e panels)
 
     pos = InitSpec(_get_pos, _set_pos, default=[ -1, -1])
     size = InitSpec(_get_size, _set_size, default=[ -1, -1])
@@ -662,10 +666,6 @@ class Control(Component):
                             lambda self, value: self._set_designer(value), 
                             doc="function to handle events in design mode", 
                             type='internal')
-    drop_target = InternalSpec(lambda self: self.wx_obj.GetDropTarget(), 
-                               lambda self, value: self._set_drop_target(value), 
-                               doc="drag&drop handler (used in design mode)", 
-                               type='internal')
 
     border = StyleSpec({'default': wx.BORDER_DEFAULT,
                         'simple': wx.BORDER_SIMPLE,
