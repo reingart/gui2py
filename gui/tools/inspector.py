@@ -85,7 +85,7 @@ class InspectorPanel(wx.Panel):
             
 
     def build_tree(self, parent, obj):
-        print "building", obj.__class__.__name__
+        if DEBUG: print "building", obj.__class__.__name__
         child = self.tree.AppendItem(parent, obj.name)
         self.tree.SetItemText(child, obj.__class__.__name__, 1)
         if obj._meta.name in self.images_map:

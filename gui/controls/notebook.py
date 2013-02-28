@@ -47,7 +47,6 @@ class TabPanel(Component):
     _wx_class = wx.Panel
 
     def __init__(self, *args, **kwargs):
-        print "TabPanel.__init__", kwargs
         # caption is handled specially:
         if 'text' in kwargs:
             text = kwargs['text']
@@ -77,7 +76,6 @@ class TabPanel(Component):
         return self._parent.wx_obj.GetSelection() == self.index
     
     def _set_selection(self, on):
-        print "selected!", on, self._index, self._name
         if on and self._index:
             wx.CallAfter(self._parent.wx_obj.SetSelection, self.index)
 
