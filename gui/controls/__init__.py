@@ -12,5 +12,7 @@ from .listview import ListView, ColumnHeader
 from .treeview import TreeView
 
 # this should be the last as look for registered controls (valid children)
+from .panel import Panel
 from .notebook import Notebook, TabPanel
+
 

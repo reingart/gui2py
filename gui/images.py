@@ -177,3 +177,18 @@ notebook = PyEmbeddedImage(
     "t4QQEGMEsbzW3wqv4JwDYJzpNE320rStqbQsS3vpMAz20nEc7aWJ5Z+GEC4JmBkxRgBzprf7"
     "Y75SADTPcwWgRVGo914BHJZzTolIAaj3XkVkvlb/ffmf+K16UdsoFpEAAAAASUVORK5CYII=")
 
+#----------------------------------------------------------------------
+panel = PyEmbeddedImage(
+    "iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAABHNCSVQICAgIfAhkiAAAAg1J"
+    "REFUOI3t1D1OG0EYxvH/zoz3c/CXQELCDZblJFdxBY1PwQU4AzW1O27AEWjonIjCQsYI2eyK"
+    "ArGsP7RmdydFlHUSRVFk0SVPN6NXPz2jGY1lCcl7RwF8+Tw0vu9TFAVFUdDtdgGo1Wrc3NzQ"
+    "arWYTCZEUYTrugghqFarZFnG8/Mz7Xabp6cnKpUKHz5+shTAxcUFzWaTJEno9XoEQcBwOKTT"
+    "6ZAkCQCHh4c4jsP19TWXl5dMp1NqtRpFUZBlGXEcc3Z2tmkqhODk5ARjDGEYslgs6HQ6SClx"
+    "HIf9/X0GgwHHx8eMx2P6/T6+77NcLvF9H4Dz83PCMNygeZ7jOA7j8Zg4jtFaMxqNODg4YDqd"
+    "EkURR0dHpGnK7u4uq9WK2WzGcrmk0Wjw+vrKw8MD9Xp9g34/4svLC57ncXV1RRRFjEYjlFLc"
+    "399ze3vLzs4Oj4+PKKUwxpQttdZorcnzfIMGQVBeTJZl2LaNbdsURcF6vQag1WqVM78mDEO0"
+    "1liWBYAAykWWZVs9ISkl6/UaIcQGfe/8R/95NE1TAOI43gqRUuK6Lp7nbVDHcQBoNptboZ7n"
+    "oZQqnZ+auq67FTqfz6lUKmVT9WPT+Xy+Fbq3t0ee5+U/oQCq1Sqnp6ckSUKj0fgjIKUkz3PS"
+    "NMUYg1IKrTVBEGDb9rchS0hWq5X527y9vf12/+7uzhhjjCUkXwFLnhNYNDwt/QAAAABJRU5E"
+    "rkJggg==")
+
