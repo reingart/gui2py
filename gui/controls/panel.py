@@ -31,6 +31,18 @@ class Panel(Control):
         Control.__init__(self, *args, **kwargs)
         # sane default for tab caption (in designer)
 
+    def rebuild(self, recreate=True, **kwargs):
+        "Recreate (if needed) the wx_obj and apply new properties"
+        # check if we have children controls, if so, avoid recreating it
+        if list(self):
+            # just change the spec, this may not affect the visual wx_obj 
+            # TODO: proper handle init and style specs
+            for spec_name, value in kwargs.items():
+                setattr(self, spec_name, value)
+        else:
+            # warning: the wx_obj will be destroyed
+            Control.rebuild(self, recreate, **kwargs)
+
     def _get_label(self):
         return self.wx_obj.GetLabel()
 
@@ -55,7 +67,8 @@ if __name__ == "__main__":
     w = gui.Window(title="hello world", name="frmTest", tool_window=False, 
                resizable=True, visible=False, pos=(180, 0))
 
-    p = Panel(w, name="panel", label="hello!")
+    p = gui.Panel(w, name="panel", label="hello!")
+    b = gui.Button(p, name="test", label="click me!")
     
     w.show()
     
