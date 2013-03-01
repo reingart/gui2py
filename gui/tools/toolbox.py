@@ -64,6 +64,12 @@ class ToolBox(aui.AuiToolBar):
             obj = ctrl(parent, 
                        name="%s_%s" % (ctrl._meta.name.lower(), wx.NewId()), 
                        pos=(0, 0), designer=self.designer)
+            # associate the object with the toolbox:
+            if isinstance(obj.wx_obj, (wx.Panel, wx.Frame)):
+                dt = ToolBoxDropTarget(obj, self.inspector.root_obj, 
+                                       designer=self.designer, 
+                                       inspector=self.inspector)
+                obj.drop_target = dt
         # fix width and height if default is not visible
         w, h = obj.size
         if w < 10:
@@ -178,6 +184,12 @@ class ToolBoxDropTarget(wx.PyDropTarget):
             if self.inspector:
                 self.inspector.load_object(self.root)
                 self.inspector.inspect(obj)
+            # associate the object with the toolbox:
+            if isinstance(obj.wx_obj, (wx.Panel, wx.Frame)):
+                dt = ToolBoxDropTarget(obj, self.inspector.root_obj, 
+                                       designer=self.designer, 
+                                       inspector=self.inspector)
+                obj.drop_target = dt
 
         # what is returned signals the source what to do
         # with the original data (move, copy, etc.)  In this
