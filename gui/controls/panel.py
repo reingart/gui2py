@@ -7,30 +7,38 @@ from .. import registry
 from .. import images
 
 
+class wx_Panel(wx.Panel):
+    "Fake/simple staticbox replacement to group controls" 
+     
+    def __init__(self, parent, **kwargs):
+        if 'label' in kwargs:
+            del kwargs['label']
+        wx.Panel.__init__(self, parent, **kwargs)
+
+
 class Panel(Control):
     
-    _wx_class = wx.Panel
     _style = wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS
     _image = images.panel
     
     def __init__(self, *args, **kwargs):
-        # caption is handled specially:
-        if 'text' in kwargs:
-            text = kwargs['text']
-            del kwargs['text']
+        # for the caption, create a static box with a rectangle around
+        # (only in wx2.9, as previous version don't allow children):
+        if 'label' in kwargs and kwargs['label'] and wx.VERSION >= (2, 9):
+            self._wx_class = wx.StaticBox
         else:
-            text = None
+            self._wx_class = wx_Panel
         Control.__init__(self, *args, **kwargs)
         # sane default for tab caption (in designer)
 
     def _get_label(self):
-        return self._parent.wx_obj.GetPageText(self.index)
+        return self.wx_obj.GetLabel()
 
     def _set_label(self, new_text):
-        if self.index and new_text:
-            self._parent.wx_obj.SetPageText(self.index, new_text)
+        if new_text is not None:
+            self.wx_obj.SetLabel(new_text)
     
-    #label = Spec(_get_label, _set_label, doc="Title", type='string')
+    label = InitSpec(_get_label, _set_label, doc="Title", type='string')
 
 
 # update metadata for the add context menu at the designer:
@@ -47,11 +55,12 @@ if __name__ == "__main__":
     w = gui.Window(title="hello world", name="frmTest", tool_window=False, 
                resizable=True, visible=False, pos=(180, 0))
 
-    p = Panel(w, name="panel")
+    p = Panel(w, name="panel", label="hello!")
     
     w.show()
     
     from gui.tools.inspector import InspectorTool
     InspectorTool().show(w)
+    print wx.version()
     app.MainLoop()
 
