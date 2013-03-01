@@ -389,7 +389,7 @@ if __name__ == '__main__':
         obj = root
         def set_drop_target(obj):
             "Recursively create and set the drop target for obj and childs"
-            if isinstance(obj.wx_obj, (wx.Panel, wx.Frame)):
+            if isinstance(obj, (gui.Panel, gui.TabPanel, gui.Window)):
                 dt = ToolBoxDropTarget(obj, root, designer=designer, 
                                                   inspector=inspector)
                 obj.drop_target = dt

@@ -1,7 +1,7 @@
 import wx
 import os, sys
 
-import gui.controls
+import gui
 
 from gui import registry
 
@@ -65,7 +65,7 @@ class ToolBox(aui.AuiToolBar):
                        name="%s_%s" % (ctrl._meta.name.lower(), wx.NewId()), 
                        pos=(0, 0), designer=self.designer)
             # associate the object with the toolbox:
-            if isinstance(obj.wx_obj, (wx.Panel, wx.Frame)):
+            if isinstance(obj, (gui.Panel, gui.TabPanel, gui.Window)):
                 dt = ToolBoxDropTarget(obj, self.inspector.root_obj, 
                                        designer=self.designer, 
                                        inspector=self.inspector)
@@ -185,7 +185,7 @@ class ToolBoxDropTarget(wx.PyDropTarget):
                 self.inspector.load_object(self.root)
                 self.inspector.inspect(obj)
             # associate the object with the toolbox:
-            if isinstance(obj.wx_obj, (wx.Panel, wx.Frame)):
+            if isinstance(obj, (gui.Panel, gui.TabPanel, gui.Window)):
                 dt = ToolBoxDropTarget(obj, self.inspector.root_obj, 
                                        designer=self.designer, 
                                        inspector=self.inspector)

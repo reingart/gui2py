@@ -1,3 +1,6 @@
+##import wxversion
+##wxversion.select("2.9")
+
 # useful shortcuts:
 
 from .controls import Label, Button, TextBox, CheckBox, ListBox, ComboBox, \
