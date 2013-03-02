@@ -11,73 +11,21 @@ from .. import images
 
 class wx_Grid(gridlib.Grid):
     "Simple Grid control"
-    # initially based on GridSimple.py wxPython demo
+    # initially based on GridSimple.py / Grid_MegaExample.py wxPython demo
     
     def __init__(self, parent, *args, **kwargs):
+        # The base class must be initialized *first*
         gridlib.Grid.__init__(self, parent, -1)
         ##mixins.GridAutoEditMixin.__init__(self)
 
-        self.CreateGrid(25, 25)
-        ##self.EnableEditing(False)
+        self._table = GridTable(data, colnames, plugins={})
+        self.SetTable(self._table)
+        #self._plugins = plugins
 
-        # simple cell formatting
-        self.SetColSize(3, 200)
-        self.SetRowSize(4, 45)
-        self.SetCellValue(0, 0, "First cell")
-        self.SetCellValue(1, 1, "Another cell")
-        self.SetCellValue(2, 2, "Yet another cell")
-        self.SetCellValue(3, 3, "This cell is read-only")
-        self.SetCellFont(0, 0, wx.Font(12, wx.ROMAN, wx.ITALIC, wx.NORMAL))
-        self.SetCellTextColour(1, 1, wx.RED)
-        self.SetCellBackgroundColour(2, 2, wx.CYAN)
-        self.SetReadOnly(3, 3, True)
-
-        self.SetCellEditor(5, 0, gridlib.GridCellNumberEditor(1,1000))
-        self.SetCellValue(5, 0, "123")
-        self.SetCellEditor(6, 0, gridlib.GridCellFloatEditor())
-        self.SetCellValue(6, 0, "123.34")
-        self.SetCellEditor(7, 0, gridlib.GridCellNumberEditor())
-
-        self.SetCellValue(6, 3, "You can veto editing this cell")
-
-        #self.SetRowLabelSize(0)
-        #self.SetColLabelSize(0)
-
-        # attribute objects let you keep a set of formatting values
-        # in one spot, and reuse them if needed
-        attr = gridlib.GridCellAttr()
-        attr.SetTextColour(wx.BLACK)
-        attr.SetBackgroundColour(wx.RED)
-        attr.SetFont(wx.Font(10, wx.SWISS, wx.NORMAL, wx.BOLD))
-
-        # you can set cell attributes for the whole row (or column)
-        self.SetRowAttr(5, attr)
-
-        self.SetColLabelValue(0, "Custom")
-        self.SetColLabelValue(1, "column")
-        self.SetColLabelValue(2, "labels")
-
-        self.SetColLabelAlignment(wx.ALIGN_LEFT, wx.ALIGN_BOTTOM)
-
-        #self.SetDefaultCellOverflow(False)
-        #r = gridlib.GridCellAutoWrapStringRenderer()
-        #self.SetCellRenderer(9, 1, r)
-
-        # overflow cells
-        self.SetCellValue( 9, 1, "This default cell will overflow into neighboring cells, but not if you turn overflow off.");
-        self.SetCellSize(11, 1, 3, 3);
-        self.SetCellAlignment(11, 1, wx.ALIGN_CENTRE, wx.ALIGN_CENTRE);
-        self.SetCellValue(11, 1, "This cell is set to span 3 rows and 3 columns");
-
-
-        editor = gridlib.GridCellTextEditor()
-        editor.SetParameters('10')
-        self.SetCellEditor(0, 4, editor)
-        self.SetCellValue(0, 4, "Limited text")
-
-        renderer = gridlib.GridCellAutoWrapStringRenderer()
-        self.SetCellRenderer(15,0, renderer)
-        self.SetCellValue(15,0, "The text in this cell will be rendered with word-wrapping")
+    def Reset(self):
+        """reset the view based on the data in the table.  Call
+        this when rows are added or destroyed"""
+        self._table.ResetView(self)
 
 
 class GridView(Control):
@@ -115,6 +63,200 @@ class GridView(Control):
                        binding=gridlib.EVT_GRID_EDITOR_HIDDEN, kind=GridEvent)
     ongrideditorcreated = EventSpec('grid_editor_created', 
                        binding=gridlib.EVT_GRID_EDITOR_CREATED, kind=GridEvent)
+
+
+class GridTable(gridlib.PyGridTableBase):
+    "A custom wx.Grid Table using user supplied data"
+    
+    def __init__(self, data, colnames, plugins):
+        """data is a list of the form
+        [(rowname, dictionary),
+        dictionary.get(colname, None) returns the data for column
+        colname
+        """
+        # The base class must be initialized *first*
+        gridlib.PyGridTableBase.__init__(self)
+        self.data = data
+        self.colnames = colnames
+        self.plugins = plugins or {}
+        # XXX
+        # we need to store the row length and column length to
+        # see if the table has changed size
+        self._rows = self.GetNumberRows()
+        self._cols = self.GetNumberCols()
+
+    def GetNumberCols(self):
+        return len(self.colnames)
+
+    def GetNumberRows(self):
+        return len(self.data)
+
+    def GetColLabelValue(self, col):
+        return self.colnames[col]
+
+    def GetRowLabelValue(self, row):
+        return "row %03d" % int(self.data[row][0])
+
+    def GetValue(self, row, col):
+        return str(self.data[row][1].get(self.GetColLabelValue(col), ""))
+
+    def GetRawValue(self, row, col):
+        return self.data[row][1].get(self.GetColLabelValue(col), "")
+
+    def SetValue(self, row, col, value):
+        self.data[row][1][self.GetColLabelValue(col)] = value
+
+    def ResetView(self, grid):
+        """
+        (Grid) -> Reset the grid view.   Call this to
+        update the grid if rows and columns have been added or deleted
+        """
+        grid.BeginBatch()
+
+        for current, new, delmsg, addmsg in [
+            (self._rows, self.GetNumberRows(), Grid.GRIDTABLE_NOTIFY_ROWS_DELETED, Grid.GRIDTABLE_NOTIFY_ROWS_APPENDED),
+            (self._cols, self.GetNumberCols(), Grid.GRIDTABLE_NOTIFY_COLS_DELETED, Grid.GRIDTABLE_NOTIFY_COLS_APPENDED),
+        ]:
+
+            if new < current:
+                msg = Grid.GridTableMessage(self,delmsg,new,current-new)
+                grid.ProcessTableMessage(msg)
+            elif new > current:
+                msg = Grid.GridTableMessage(self,addmsg,new-current)
+                grid.ProcessTableMessage(msg)
+                self.UpdateValues(grid)
+
+        grid.EndBatch()
+
+        self._rows = self.GetNumberRows()
+        self._cols = self.GetNumberCols()
+        # update the column rendering plugins
+        self._updateColAttrs(grid)
+
+        # update the scrollbars and the displayed part of the grid
+        grid.AdjustScrollbars()
+        grid.ForceRefresh()
+
+
+    def UpdateValues(self, grid):
+        """Update all displayed values"""
+        # This sends an event to the grid table to update all of the values
+        msg = Grid.GridTableMessage(self, Grid.GRIDTABLE_REQUEST_VIEW_GET_VALUES)
+        grid.ProcessTableMessage(msg)
+
+    def _updateColAttrs(self, grid):
+        """
+        wx.Grid -> update the column attributes to add the
+        appropriate renderer given the column name.  (renderers
+        are stored in the self.plugins dictionary)
+
+        Otherwise default to the default renderer.
+        """
+        col = 0
+
+        for colname in self.colnames:
+            attr = Grid.GridCellAttr()
+            if colname in self.plugins:
+                renderer = self.plugins[colname](self)
+
+                if renderer.colSize:
+                    grid.SetColSize(col, renderer.colSize)
+
+                if renderer.rowSize:
+                    grid.SetDefaultRowSize(renderer.rowSize)
+
+                attr.SetReadOnly(True)
+                attr.SetRenderer(renderer)
+
+            grid.SetColAttr(col, attr)
+            col += 1
+
+    # ------------------------------------------------------
+    # begin the added code to manipulate the table (non wx related)
+    def AppendRow(self, row):
+        #print 'append'
+        entry = {}
+
+        for name in self.colnames:
+            entry[name] = "Appended_%i"%row
+
+        # XXX Hack
+        # entry["A"] can only be between 1..4
+        entry["A"] = random.choice(range(4))
+        self.data.insert(row, ["Append_%i"%row, entry])
+
+    def DeleteCols(self, cols):
+        """
+        cols -> delete the columns from the dataset
+        cols hold the column indices
+        """
+        # we'll cheat here and just remove the name from the
+        # list of column names.  The data will remain but
+        # it won't be shown
+        deleteCount = 0
+        cols = cols[:]
+        cols.sort()
+
+        for i in cols:
+            self.colnames.pop(i-deleteCount)
+            # we need to advance the delete count
+            # to make sure we delete the right columns
+            deleteCount += 1
+
+        if not len(self.colnames):
+            self.data = []
+
+    def DeleteRows(self, rows):
+        """
+        rows -> delete the rows from the dataset
+        rows hold the row indices
+        """
+        deleteCount = 0
+        rows = rows[:]
+        rows.sort()
+
+        for i in rows:
+            self.data.pop(i-deleteCount)
+            # we need to advance the delete count
+            # to make sure we delete the right rows
+            deleteCount += 1
+
+    def SortColumn(self, col):
+        """
+        col -> sort the data based on the column indexed by col
+        """
+        name = self.colnames[col]
+        _data = []
+
+        for row in self.data:
+            rowname, entry = row
+            _data.append((entry.get(name, None), row))
+
+        _data.sort()
+        self.data = []
+
+        for sortvalue, row in _data:
+            self.data.append(row)
+
+    # end table manipulation code
+    # ----------------------------------------------------------
+
+import random
+colnames = ["Row", "This", "Is", "A", "Test"]
+
+data = []
+
+for row in range(1000):
+    d = {}
+    for name in ["This", "Test", "Is"]:
+        d[name] = random.random()
+
+    d["Row"] = len(data)
+    # XXX
+    # the "A" column can only be between one and 4
+    d["A"] = random.choice(range(4))
+    data.append((str(row), d))
+
 
 
 if __name__ == "__main__":
