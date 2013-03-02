@@ -192,3 +192,10 @@ panel = PyEmbeddedImage(
     "NMUYg1IKrTVBEGDb9rchS0hWq5X527y9vf12/+7uzhhjjCUkXwFLnhNYNDwt/QAAAABJRU5E"
     "rkJggg==")
 
+#----------------------------------------------------------------------
+grid = PyEmbeddedImage(
+    "iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAABHNCSVQICAgIfAhkiAAAAGVJ"
+    "REFUOI1jZGBg+M9AZcDCwMDAkFO+FUUwNkCIYfGGd2SJTen0ZmCitisZGBgYGBkYGP6fPH6c"
+    "agaaW1pCvI/NW2YWFihip06cIEqMgYFh1Ps0AKPeH/X+qPepBWjmfUYGGtRRAKDwYA1GLAkm"
+    "AAAAAElFTkSuQmCC")
+
