@@ -3,10 +3,12 @@ import wx
 import wx.grid as gridlib
 
 from ..event import GridEvent
-from ..component import Control, Component
+from ..component import Control, Component, SubComponent
 from ..spec import Spec, EventSpec, InitSpec, StyleSpec, InternalSpec
 from .. import registry
 from .. import images
+
+from types import TupleType, ListType, StringTypes, NoneType, IntType, DictType
 
 
 class wx_Grid(gridlib.Grid):
@@ -18,7 +20,7 @@ class wx_Grid(gridlib.Grid):
         gridlib.Grid.__init__(self, parent, -1)
         ##mixins.GridAutoEditMixin.__init__(self)
 
-        self._table = GridTable(data, colnames, plugins={})
+        self._table = GridTable(self, plugins={})
         self.SetTable(self._table)
         #self._plugins = plugins
 
@@ -34,6 +36,28 @@ class GridView(Control):
     _wx_class = wx_Grid
     _image = images.grid
 
+    def _get_items(self):
+        return self._items
+
+    def _set_items(self, a_list):
+        if isinstance(a_list, NoneType):
+            a_list = []
+        elif not isinstance(a_list, (ListType, TupleType, DictType)):
+            raise AttributeError("unsupported type, list/tuple/dict expected")
+
+        self._items = a_list #GridModel(self)
+        #self.insert_items(a_list)
+        
+    def _get_column_headings(self):
+        "Return a list of children sub-components that are column headings"
+        # return it in the same order as inserted in the Grid
+        headers = [ctrl for ctrl in self if isinstance(ctrl, GridColumn)]
+        return sorted(headers, key=lambda ch: ch.index)
+    
+    columns = InternalSpec(_get_column_headings,
+                           doc="Return a list of current column headers")
+    items = InternalSpec(_get_items, _set_items)
+    
     # events:
     ongridmouseclick = EventSpec('grid_mouse_click', 
                        binding=gridlib.EVT_GRID_CELL_LEFT_CLICK, kind=GridEvent)
@@ -68,61 +92,72 @@ class GridView(Control):
 class GridTable(gridlib.PyGridTableBase):
     "A custom wx.Grid Table using user supplied data"
     
-    def __init__(self, data, colnames, plugins):
-        """data is a list of the form
-        [(rowname, dictionary),
-        dictionary.get(colname, None) returns the data for column
-        colname
-        """
+    def __init__(self, wx_grid, plugins):
+        "data is a list of the form {row_index: {col_name: value}"
         # The base class must be initialized *first*
         gridlib.PyGridTableBase.__init__(self)
-        self.data = data
-        self.colnames = colnames
+        self.wx_grid = wx_grid
         self.plugins = plugins or {}
-        # XXX
         # we need to store the row length and column length to
         # see if the table has changed size
-        self._rows = self.GetNumberRows()
-        self._cols = self.GetNumberCols()
+        self._rows = 0
+        self._cols = 0
+
+    # shortcuts to gui2py:
+    columns = property(lambda self: self.wx_grid.obj.columns)
+    data = property(lambda self: self.wx_grid.obj.items)
 
     def GetNumberCols(self):
-        return len(self.colnames)
+        if not hasattr(self.wx_grid, "obj"):
+            return 0  # not initialized yet!
+        else:
+            return len(self.columns)
 
     def GetNumberRows(self):
-        return len(self.data)
+        if not hasattr(self.wx_grid, "obj"):
+            return 0  # not initialized yet! 
+        else:
+            return len(self.data)
 
     def GetColLabelValue(self, col):
-        return self.colnames[col]
+        return self.columns[col].text
 
     def GetRowLabelValue(self, row):
-        return "row %03d" % int(self.data[row][0])
+        return "row %03d" % row
 
     def GetValue(self, row, col):
-        return str(self.data[row][1].get(self.GetColLabelValue(col), ""))
+        return str(self.data[row].get(self.columns[col].name, ""))
 
     def GetRawValue(self, row, col):
-        return self.data[row][1].get(self.GetColLabelValue(col), "")
+        return self.data[row].get(self.columns[col].name, "")
 
     def SetValue(self, row, col, value):
-        self.data[row][1][self.GetColLabelValue(col)] = value
+        self.data[row][self.GetColLabelValue(col)] = value
+
+    def InsertCols(self, *args, **kwargs):
+        pass
+
+    def AppendCols(self, *args, **kwargs):
+        pass
 
     def ResetView(self, grid):
-        """
-        (Grid) -> Reset the grid view.   Call this to
-        update the grid if rows and columns have been added or deleted
-        """
+        "Update the grid if rows and columns have been added or deleted"
         grid.BeginBatch()
 
         for current, new, delmsg, addmsg in [
-            (self._rows, self.GetNumberRows(), Grid.GRIDTABLE_NOTIFY_ROWS_DELETED, Grid.GRIDTABLE_NOTIFY_ROWS_APPENDED),
-            (self._cols, self.GetNumberCols(), Grid.GRIDTABLE_NOTIFY_COLS_DELETED, Grid.GRIDTABLE_NOTIFY_COLS_APPENDED),
+            (self._rows, self.GetNumberRows(), 
+             gridlib.GRIDTABLE_NOTIFY_ROWS_DELETED, 
+             gridlib.GRIDTABLE_NOTIFY_ROWS_APPENDED),
+            (self._cols, self.GetNumberCols(), 
+             gridlib.GRIDTABLE_NOTIFY_COLS_DELETED,
+             gridlib.GRIDTABLE_NOTIFY_COLS_APPENDED),
         ]:
 
             if new < current:
-                msg = Grid.GridTableMessage(self,delmsg,new,current-new)
+                msg = gridlib.GridTableMessage(self,delmsg,new,current-new)
                 grid.ProcessTableMessage(msg)
             elif new > current:
-                msg = Grid.GridTableMessage(self,addmsg,new-current)
+                msg = gridlib.GridTableMessage(self,addmsg,new-current)
                 grid.ProcessTableMessage(msg)
                 self.UpdateValues(grid)
 
@@ -139,9 +174,10 @@ class GridTable(gridlib.PyGridTableBase):
 
 
     def UpdateValues(self, grid):
-        """Update all displayed values"""
+        "Update all displayed values"
         # This sends an event to the grid table to update all of the values
-        msg = Grid.GridTableMessage(self, Grid.GRIDTABLE_REQUEST_VIEW_GET_VALUES)
+        msg = gridlib.GridTableMessage(self, 
+                                    gridlib.GRIDTABLE_REQUEST_VIEW_GET_VALUES)
         grid.ProcessTableMessage(msg)
 
     def _updateColAttrs(self, grid):
@@ -154,78 +190,22 @@ class GridTable(gridlib.PyGridTableBase):
         """
         col = 0
 
-        for colname in self.colnames:
-            attr = Grid.GridCellAttr()
-            if colname in self.plugins:
-                renderer = self.plugins[colname](self)
-
-                if renderer.colSize:
-                    grid.SetColSize(col, renderer.colSize)
-
-                if renderer.rowSize:
-                    grid.SetDefaultRowSize(renderer.rowSize)
-
-                attr.SetReadOnly(True)
+        for column in self.columns:
+            attr = gridlib.GridCellAttr()
+            if False:  # column.readonly
+                attr.SetReadOnly()
+            if False:  # column.renderer
                 attr.SetRenderer(renderer)
-
+            grid.SetColSize(col, column.width)
             grid.SetColAttr(col, attr)
             col += 1
-
-    # ------------------------------------------------------
-    # begin the added code to manipulate the table (non wx related)
-    def AppendRow(self, row):
-        #print 'append'
-        entry = {}
-
-        for name in self.colnames:
-            entry[name] = "Appended_%i"%row
-
-        # XXX Hack
-        # entry["A"] can only be between 1..4
-        entry["A"] = random.choice(range(4))
-        self.data.insert(row, ["Append_%i"%row, entry])
-
-    def DeleteCols(self, cols):
-        """
-        cols -> delete the columns from the dataset
-        cols hold the column indices
-        """
-        # we'll cheat here and just remove the name from the
-        # list of column names.  The data will remain but
-        # it won't be shown
-        deleteCount = 0
-        cols = cols[:]
-        cols.sort()
-
-        for i in cols:
-            self.colnames.pop(i-deleteCount)
-            # we need to advance the delete count
-            # to make sure we delete the right columns
-            deleteCount += 1
-
-        if not len(self.colnames):
-            self.data = []
-
-    def DeleteRows(self, rows):
-        """
-        rows -> delete the rows from the dataset
-        rows hold the row indices
-        """
-        deleteCount = 0
-        rows = rows[:]
-        rows.sort()
-
-        for i in rows:
-            self.data.pop(i-deleteCount)
-            # we need to advance the delete count
-            # to make sure we delete the right rows
-            deleteCount += 1
+        #grid.SetDefaultRowSize(renderer.rowSize)
 
     def SortColumn(self, col):
         """
         col -> sort the data based on the column indexed by col
         """
-        name = self.colnames[col]
+        name = self.columns[col].name
         _data = []
 
         for row in self.data:
@@ -241,23 +221,51 @@ class GridTable(gridlib.PyGridTableBase):
     # end table manipulation code
     # ----------------------------------------------------------
 
-import random
-colnames = ["Row", "This", "Is", "A", "Test"]
 
-data = []
+class GridColumn(SubComponent):
+    "Grid sub-component to handle heading, align, width and props of columns"
 
-for row in range(1000):
-    d = {}
-    for name in ["This", "Test", "Is"]:
-        d[name] = random.random()
+    _created = False
+    
+    def set_parent(self, new_parent, init=False):
+        "Associate the header to the control (it could be recreated)"
+        self._created = False
+        SubComponent.set_parent(self, new_parent, init)
+        # if index not given, append the column at the last position:
+        if self.index == -1 or self.index > self._parent.wx_obj.GetColumnCount():
+            self.index = len(self._parent.columns) - 1
+        # insert the column in the listview:
+        self._parent.wx_obj.AppendCols(1)
+        #self._parent.wx_obj.SetColLabelValue(self.index, self.text)
+        #self.SetColLabel(self.index, self.align)
+        #self._parent.wx_obj.SetColSize(self.index, self.width)
+        self._created = True    # enable setattr hook
 
-    d["Row"] = len(data)
-    # XXX
-    # the "A" column can only be between one and 4
-    d["A"] = random.choice(range(4))
-    data.append((str(row), d))
+    def __setattr__(self, name, value):
+        "Hook to update the column information in wx"
+        object.__setattr__(self, name, value)
+        if name not in ("_parent", "_created") and self._created:
+            if name == "_text":
+                self.SetColLabelValue(self.index, self.text)
+            elif name == "_width":
+                self.SetColSize(self.index, self.width)
+            elif name == "_align":
+                ##info.SetAlign(value)
+                pass #TODO: change all childs
 
-
+    name = InitSpec(optional=False, default="", _name="_name", type='string')
+    text = InitSpec(optional=False, default="", _name="_text", type='string')
+    index = InitSpec(optional=False, default=-1, _name="_index", type='integer')
+    align = InitSpec(mapping={'left': wx.ALIGN_LEFT,
+                              'center': wx.ALIGN_CENTRE,
+                              'right': wx.ALIGN_RIGHT}, 
+                     default='left', _name="_align", type="enum",
+                     doc="Grid Column Horizontal Alignment")
+    width = InitSpec(default=wx.LIST_AUTOSIZE, _name="_width", type="integer",
+                     doc="Column width (default=autosize)")
+    represent = InitSpec(default=lambda v: v, _name="_represent", type='string',
+                     doc="function to returns a representation for the subitem")
+                     
 
 if __name__ == "__main__":
     import sys
@@ -266,15 +274,26 @@ if __name__ == "__main__":
     app = wx.App(redirect=False)    
     w = gui.Window(title="hello world", name="frmTest", tool_window=False, 
                resizable=True, visible=False, pos=(180, 0))
-    lv = GridView(w, name="grid1", 
+    gv = GridView(w, name="grid1", 
                   #multiselect="--multiselect" in sys.argv,
                   )
 
-    #ch1 = ColumnHeader(lv, name="col1", text="Col 1", align="left", width=200)
-    #ch2 = ColumnHeader(lv, name="col2", text="Col 2", align="center")
-    #ch3 = ColumnHeader(lv, name="col3", text="Col 3", align="right", width=100)
+    ch1 = GridColumn(gv, name="col1", text="Col 1", align="left", width=200)
+    ch2 = GridColumn(gv, name="col2", text="Col 2", align="center")
+    ch3 = GridColumn(gv, name="col3", text="Col 3", align="right", width=100)
     #ch1.represent = ch2.represent = lambda value: str(value)
     #ch3.represent = lambda value: "%0.2f" % value
+
+    import random
+    data = []
+    for row in range(1000):
+        d = {}
+        for name in ["col1", "col2", "col3"]:
+            d[name] = random.random()
+        data.append(d)
+    gv.items = data
+    
+    gv.wx_obj._table.ResetView(gv.wx_obj)
 
     #lv.items = [[1, 2, 3], ['4', '5', 6], ['7', '8', 9]]
     #lv.insert_items([['a', 'b', 'c']])
