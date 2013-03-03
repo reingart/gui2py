@@ -8,7 +8,7 @@ from .combobox import ComboBox
 from .htmlbox import HtmlBox
 from .image import Image
 from .gauge import Gauge
-from .listview import ListView, ColumnHeader
+from .listview import ListView, ListColumn
 from .treeview import TreeView
 
 # this should be the last as look for registered controls (valid children)

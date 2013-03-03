@@ -161,7 +161,7 @@ class ListView(Control):
     def _get_column_headings(self):
         "Return a list of children sub-components that are column headings"
         # return it in the same order as inserted in the ListCtrl
-        headers = [ctrl for ctrl in self if isinstance(ctrl, ColumnHeader)]
+        headers = [ctrl for ctrl in self if isinstance(ctrl, ListColumn)]
         return sorted(headers, key=lambda ch: ch.index)
 
     view = StyleSpec({'report': wx.LC_REPORT,
@@ -183,7 +183,7 @@ class ListView(Control):
     max_columns = InitSpec(lambda self: self._max_columns, default=99, 
                            doc="Maximum number of columns (for Sort mixin)")
     
-    headers = InternalSpec(_get_column_headings,
+    columns = InternalSpec(_get_column_headings,
                            doc="Return a list of current column headers")
     items = InternalSpec(_get_items, _set_items)
    
@@ -216,7 +216,7 @@ class ListView(Control):
                            binding=wx.EVT_LIST_COL_CLICK, kind=FormEvent)
 
 
-class ColumnHeader(SubComponent):
+class ListColumn(SubComponent):
     "ListView sub-component to handle heading, align and width of columns"
 
     _created = False
@@ -277,7 +277,7 @@ class ListModel(dict):
             kwargs = [kwargs]
         if isinstance(kwargs, list):
             kwargs = dict([(col.name, kwargs[col.index]) for col
-                          in self._list_view.headers if col.index<len(kwargs)])
+                          in self._list_view.columns if col.index<len(kwargs)])
         if key is None:
             key = self._new_key()
         # check if we have to update the ListCtrl:
@@ -317,7 +317,7 @@ class ListModel(dict):
     def _insert(self, key, index=-1):
         if index <0:
             index = self._list_view.wx_obj.GetItemCount()   # append it
-        for col in sorted(self._list_view.headers, key=lambda col: col.index):
+        for col in sorted(self._list_view.columns, key=lambda col: col.index):
             if not col.name in self[key]:
                 continue
             text = self[key][col.name]
@@ -332,7 +332,7 @@ class ListModel(dict):
     
     def _update(self, key, name=None):
         index = self._list_view.wx_obj.FindPyData(-1, key)
-        for col in sorted(self._list_view.headers, key=lambda col: col.index):
+        for col in sorted(self._list_view.columns, key=lambda col: col.index):
             if not col.name in self[key]:
                 continue
             text = self[key][col.name]
@@ -359,7 +359,7 @@ class ListItem(dict):
     def __setitem__(self, key, value):
         # if key is a column index, get the actual column name to look up:
         if not isinstance(key, basestring):
-            key = self._list_model._list_view.headers[key].name
+            key = self._list_model._list_view.columns[key].name
         # store the value and notify our parent to refresh the item
         dict.__setitem__(self, key, value)
         self._list_model._update(self.key, key)
@@ -367,7 +367,7 @@ class ListItem(dict):
     def __getitem__(self, key):
         # if key is a column index, get the actual column name to look up:
         if not isinstance(key, basestring):
-            key = self._list_model._list_view.headers[key].name
+            key = self._list_model._list_view.columns[key].name
         # return the data for the given column, None if nothing there
         return dict.get(self, key)
 
@@ -393,7 +393,7 @@ class ListItem(dict):
 
 # update metadata for the add context menu at the designer:
 
-ListView._meta.valid_children = [ColumnHeader, ] 
+ListView._meta.valid_children = [ListColumn, ] 
 
 
 if __name__ == "__main__":
@@ -406,9 +406,9 @@ if __name__ == "__main__":
     lv = ListView(w, name="listview", view="report", vrule=True, hrule=True,
                   multiselect="--multiselect" in sys.argv)
 
-    ch1 = ColumnHeader(lv, name="col1", text="Col 1", align="left", width=200)
-    ch2 = ColumnHeader(lv, name="col2", text="Col 2", align="center")
-    ch3 = ColumnHeader(lv, name="col3", text="Col 3", align="right", width=100)
+    ch1 = ListColumn(lv, name="col1", text="Col 1", align="left", width=200)
+    ch2 = ListColumn(lv, name="col2", text="Col 2", align="center")
+    ch3 = ListColumn(lv, name="col3", text="Col 3", align="right", width=100)
     ch1.represent = ch2.represent = lambda value: str(value)
     ch3.represent = lambda value: "%0.2f" % value
 
