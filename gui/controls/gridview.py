@@ -45,7 +45,7 @@ class GridView(Control):
         elif not isinstance(a_list, (ListType, TupleType, DictType)):
             raise AttributeError("unsupported type, list/tuple/dict expected")
 
-        self._items = a_list #GridModel(self)
+        self._items = GridModel(self, a_list)
         self.wx_obj.Refresh()
         #self.insert_items(a_list)
         
@@ -133,14 +133,23 @@ class GridTable(gridlib.PyGridTableBase):
         return self.data[row].get(self.columns[col].name, "")
 
     def SetValue(self, row, col, value):
-        self.data[row][self.GetColLabelValue(col)] = value
+        self.data[row][self.columns[col].name] = value
 
     def InsertCols(self, *args, **kwargs):
         wx.CallAfter(self.ResetView, self.wx_grid)
 
     def AppendCols(self, *args, **kwargs):
         wx.CallAfter(self.ResetView, self.wx_grid)
-        
+
+    def InsertRows(self, *args, **kwargs):
+        wx.CallAfter(self.ResetView, self.wx_grid)
+
+    def AppendRows(self, *args, **kwargs):
+        wx.CallAfter(self.ResetView, self.wx_grid)
+
+    def DeleteRows(self, *args, **kwargs):
+        wx.CallAfter(self.ResetView, self.wx_grid)
+
     def ResetView(self, grid):
         "Update the grid if rows and columns have been added or deleted"
         grid.BeginBatch()
@@ -254,6 +263,108 @@ class GridColumn(SubComponent):
                      doc="function to returns a representation for the subitem")
                      
 
+
+class GridModel(list):
+    "GridView rows model (each element should be a dict-like {col_name: value})"
+    
+    def __init__(self, _grid_view, data):
+        list.__init__(self)
+        self._grid_view = _grid_view
+        self.clear()
+        for it in data:
+            self.append(it)
+
+    def insert(self, pos, values):
+        "Insert a number of rows into the grid (and associated table)"
+        row = GridRow(self, *values)
+        list.insert(self, pos, row)
+        self._grid_view.wx_obj.InsertRows(pos, numRows=1)
+
+    def append(self, values):
+        "Insert a number of rows into the grid (and associated table)"
+        row = GridRow(self, *values)
+        list.append(self, row)
+        self._grid_view.wx_obj.AppendRows(numRows=1)
+        
+    def __setitem__(self, pos, value):
+        row = GridRow(self, *value)
+        list.__setitem__(self, pos, row)
+        # update the grid (just the row affected):
+        # NOTE: if couses flicker, both should be enclosed in a grid batch
+        self._grid_view.wx_obj.DeleteRows(pos, numRows=1)
+        self._grid_view.wx_obj.InsertRows(pos, numRows=1)
+
+    def __delitem__(self, pos):
+        "Delete row from position pos"
+        list.__delitem__(self, pos)
+        self._grid_view.wx_obj.DeleteRows(pos, numRows=1)
+
+    def clear(self):
+        "Remove all rows and reset internal structures"
+        ## list has no clear ...
+        self._key = 0
+        if hasattr(self._grid_view, "wx_obj"):
+            self._grid_view.wx_obj.ClearGrid()
+
+
+class GridRow(dict):
+    "keys are column names, values are cell values"
+
+    def __init__(self, grid_model, *args, **kwargs):
+        self._grid_model = grid_model
+        # convert items to a key:value map (column names are keys)
+        if args:
+            columns = self._grid_model._grid_view.columns
+            for i, arg in enumerate(args):
+                kwargs[columns[i].name] = arg                
+        dict.__init__(self, **kwargs)
+
+    def __setitem__(self, key, value):
+        # if key is a column index, get the actual column name to look up:
+        if not isinstance(key, basestring):
+            col = key
+            key = self._grid_model._grid_view.columns[key].name
+        else:
+            for i, column in enumerate(self._grid_model._grid_view.columns):
+                if column.name == key:
+                    col = i
+                    break
+            else:
+                col = None  # raise an exception?
+        # store the value and notify the view to refresh the item
+        dict.__setitem__(self, key, value)
+        pos = self.index
+        if col is not None:
+            # refresh the value (usefull if value setted programatically)
+            self._grid_model._grid_view.wx_obj.SetCellValue(pos, col, value)
+
+    def __getitem__(self, key):
+        # if key is a column index, get the actual column name to look up:
+        if not isinstance(key, basestring):
+            key = self._grid_model._grid_view.columns[key].name
+        # return the data for the given column, None if nothing there
+        return dict.get(self, key)
+
+    @property
+    def index(self):
+        "Get the actual position (can vary due insertion/deletions and sorting)"
+        return self._grid_model.index(self)
+
+    def _is_selected(self):
+        return self._grid_model._grid_view.wx_obj.IsSelected(self.index)
+    
+    def _select(self, on):
+        self._grid_model._grid_view.wx_obj.Select(self.index, on)
+
+    selected = property(_is_selected, _select)
+
+    def ensure_visible(self):
+        self._grid_model._grid_view.wx_obj.EnsureVisible(self.index)
+        
+    def focus(self):
+        self._grid_model._grid_view.wx_obj.Focus(self.index)
+
+
 # update metadata for the add context menu at the designer:
 
 GridView._meta.valid_children = [GridColumn, ] 
@@ -276,18 +387,8 @@ if __name__ == "__main__":
     #ch1.represent = ch2.represent = lambda value: str(value)
     #ch3.represent = lambda value: "%0.2f" % value
 
-    import random
-    data = []
-    for row in range(1000):
-        d = {}
-        for name in ["col1", "col2", "col3"]:
-            d[name] = random.random()
-        data.append(d)
-    gv.items = data
+    gv.items = [[1, 2, 3], ['4', '5', 6], ['7', '8', 9]]
     
-    ##gv.wx_obj._table.ResetView(gv.wx_obj)
-
-    #lv.items = [[1, 2, 3], ['4', '5', 6], ['7', '8', 9]]
     #lv.insert_items([['a', 'b', 'c']])
     #lv.append("d")
     #lv.append("e", "datum1")
@@ -295,6 +396,15 @@ if __name__ == "__main__":
     # assign some event handlers:
     #lv.onitemselected = ""
     w.show()
+    
+    def update():
+        gv.items[0][0] = "hola!"            # just change a cell programatically
+        gv.items.insert(0, [10, 11, 12])    # insert a row as first position
+        gv.items[2] = [99, 98, 97]          # replace a complete row
+        del gv.items[-1]                     # delete the last row
+        print "updated!"
+    wx.CallLater(1000, update)
+        
     #import wx.lib.inspection
     #wx.lib.inspection.InspectionTool().Show()
     
