@@ -46,6 +46,7 @@ class GridView(Control):
             raise AttributeError("unsupported type, list/tuple/dict expected")
 
         self._items = a_list #GridModel(self)
+        self.wx_obj.Refresh()
         #self.insert_items(a_list)
         
     def _get_column_headings(self):
@@ -135,11 +136,11 @@ class GridTable(gridlib.PyGridTableBase):
         self.data[row][self.GetColLabelValue(col)] = value
 
     def InsertCols(self, *args, **kwargs):
-        pass
+        wx.CallAfter(self.ResetView, self.wx_grid)
 
     def AppendCols(self, *args, **kwargs):
-        pass
-
+        wx.CallAfter(self.ResetView, self.wx_grid)
+        
     def ResetView(self, grid):
         "Update the grid if rows and columns have been added or deleted"
         grid.BeginBatch()
@@ -181,13 +182,7 @@ class GridTable(gridlib.PyGridTableBase):
         grid.ProcessTableMessage(msg)
 
     def _updateColAttrs(self, grid):
-        """
-        wx.Grid -> update the column attributes to add the
-        appropriate renderer given the column name.  (renderers
-        are stored in the self.plugins dictionary)
-
-        Otherwise default to the default renderer.
-        """
+        "update the column attributes to add the appropriate renderer"
         col = 0
 
         for column in self.columns:
@@ -202,9 +197,7 @@ class GridTable(gridlib.PyGridTableBase):
         #grid.SetDefaultRowSize(renderer.rowSize)
 
     def SortColumn(self, col):
-        """
-        col -> sort the data based on the column indexed by col
-        """
+        "col -> sort the data based on the column indexed by col"
         name = self.columns[col].name
         _data = []
 
@@ -245,13 +238,7 @@ class GridColumn(SubComponent):
         "Hook to update the column information in wx"
         object.__setattr__(self, name, value)
         if name not in ("_parent", "_created") and self._created:
-            if name == "_text":
-                self.SetColLabelValue(self.index, self.text)
-            elif name == "_width":
-                self.SetColSize(self.index, self.width)
-            elif name == "_align":
-                ##info.SetAlign(value)
-                pass #TODO: change all childs
+            self._parent.wx_obj.Refresh()
 
     name = InitSpec(optional=False, default="", _name="_name", type='string')
     text = InitSpec(optional=False, default="", _name="_text", type='string')
@@ -266,6 +253,11 @@ class GridColumn(SubComponent):
     represent = InitSpec(default=lambda v: v, _name="_represent", type='string',
                      doc="function to returns a representation for the subitem")
                      
+
+# update metadata for the add context menu at the designer:
+
+GridView._meta.valid_children = [GridColumn, ] 
+
 
 if __name__ == "__main__":
     import sys
@@ -293,7 +285,7 @@ if __name__ == "__main__":
         data.append(d)
     gv.items = data
     
-    gv.wx_obj._table.ResetView(gv.wx_obj)
+    ##gv.wx_obj._table.ResetView(gv.wx_obj)
 
     #lv.items = [[1, 2, 3], ['4', '5', 6], ['7', '8', 9]]
     #lv.insert_items([['a', 'b', 'c']])
