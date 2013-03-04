@@ -127,21 +127,19 @@ class GridTable(gridlib.PyGridTableBase):
         return "row %03d" % row
 
     def GetValue(self, row, col):
-        return str(self.data[row].get(self.columns[col].name, ""))
+        return self.data[row].get(self.columns[col].name, "")
 
     def GetRawValue(self, row, col):
         return self.data[row].get(self.columns[col].name, "")
 
     def SetValue(self, row, col, value):
-        print "SetValue", row, col, value, type(value)
+        # if using types, do not convert to str (already done if needed)
         self.data[row][self.columns[col].name] = value
 
     def SetRawValue(self, row, col, value):
-        print "SetRawValue", row, col, value, type(value)
-        self.data[row][self.columns[col].name] = value
+        self.data[row][self.columns[col].name] = value      # TODO: = SetValue?
 
     def IsEmptyCell(self, row, col):
-        print "EmpryCell", row, col, self.columns[col].name not in self.data[row]
         return self.columns[col].name not in self.data[row]
 
     # Called to determine the kind of editor/renderer to use by
@@ -156,10 +154,8 @@ class GridTable(gridlib.PyGridTableBase):
     def CanGetValueAs(self, row, col, type_name):
         col_type = self.columns[col]._type #.split(':')[0]
         if col_type == type_name:
-            print "CanGetValueAs", row, col, type_name, True
             return True
         else:
-            print "CanGetValueAs", row, col, type_name, False
             return False
 
     def CanSetValueAs(self, row, col, type_name):
@@ -327,7 +323,11 @@ class GridModel(list):
         row = GridRow(self, *value)
         list.__setitem__(self, pos, row)
         # update the grid (just the row affected):
-        # NOTE: if couses flicker, both should be enclosed in a grid batch
+        self._refresh(pos)
+
+    def _refresh(self, pos, col=None):
+        # TODO: see if there is a specialized message to send to the table
+        # NOTE: if couses flicker, both calls should be enclosed in a grid batch
         self._grid_view.wx_obj.DeleteRows(pos, numRows=1)
         self._grid_view.wx_obj.InsertRows(pos, numRows=1)
 
@@ -360,7 +360,8 @@ class GridRow(dict):
         # if key is a column index, get the actual column name to look up:
         if not isinstance(key, basestring):
             col = key
-            key = self._grid_model._grid_view.columns[key].name
+            column = self._grid_model._grid_view.columns[key]
+            key = column.name
         else:
             for i, column in enumerate(self._grid_model._grid_view.columns):
                 if column.name == key:
@@ -368,13 +369,12 @@ class GridRow(dict):
                     break
             else:
                 col = None  # raise an exception?
-        # store the value and notify the view to refresh the item
-        dict.__setitem__(self, key, value)
-        pos = self.index
-        if col is not None:
+        if col is not None and self[key] != value:
+            # store the value and notify the view to refresh the item
+            dict.__setitem__(self, key, value)
+            pos = self.index
             # refresh the value (usefull if value setted programatically)
-            val = str(value)  # convert to str, TODO: check this
-            self._grid_model._grid_view.wx_obj.SetCellValue(pos, col, val)
+            self._grid_model._refresh(pos, col)
 
     def __getitem__(self, key):
         # if key is a column index, get the actual column name to look up:
@@ -426,7 +426,7 @@ if __name__ == "__main__":
     #ch1.represent = ch2.represent = lambda value: str(value)
     #ch3.represent = lambda value: "%0.2f" % value
 
-    gv.items = [[1, 2, 3], ['4', 5, 6], ['7', 8, 9]]
+    gv.items = [[1, 2, 3, 3.141516], ['4', 5, 6.], ['7', 8, 9]]
     
     #lv.insert_items([['a', 'b', 'c']])
     #lv.append("d")
@@ -436,13 +436,17 @@ if __name__ == "__main__":
     #lv.onitemselected = ""
     w.show()
     
-    def update():
-        gv.items[0][0] = "hola!"            # just change a cell programatically
-        gv.items.insert(0, [10, 11, 12])    # insert a row as first position
-        gv.items[2] = [99, 98, 97]          # replace a complete row
-        del gv.items[-1]                     # delete the last row
+    def update(p):
+        if p == 1:
+            gv.items[0][0] = "hola!"            # change a cell programatically
+            gv.items.insert(0, [10, 11, 12.])   # insert a row at first pos
+            gv.items[2] = [99, 98, 97, 96.543]  # replace a complete row
+            del gv.items[-1]                    # delete the last row
+        if p == 2:
+            gv.items[0][3] = 1/2.0
         print "updated!"
-    wx.CallLater(1000, update)
+    wx.CallLater(1000, update, 1)
+    wx.CallLater(2000, update, 2)
         
     #import wx.lib.inspection
     #wx.lib.inspection.InspectionTool().Show()
