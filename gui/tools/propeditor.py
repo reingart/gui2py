@@ -83,6 +83,7 @@ class PropertyEditorPanel(wx.Panel):
                             'text': wxpg.LongStringProperty,
                             'code': wxpg.LongStringProperty,
                             'enum': wxpg.EnumProperty,
+                            'edit_enum': wxpg.EditEnumProperty,
                             'array': wxpg.ArrayStringProperty,
                             'font': wxpg.FontProperty,
                             'image_file': wxpg.ImageFileProperty,
@@ -109,11 +110,18 @@ class PropertyEditorPanel(wx.Panel):
                                            spec.mapping.keys(), 
                                            spec.mapping.values(),
                                            value=spec.mapping[value])
+                        elif spec.type == "edit_enum":
+                            prop = prop(name, name, 
+                                           spec.mapping.keys(), 
+                                           range(len(spec.mapping.values())),
+                                           value=spec.mapping[value])
                         else:
                             try:
                                 prop = prop(name, value=value)
                             except Exception, e:
                                 print "CANNOT LOAD PROPERTY", name, value, e
+                        
+                        prop.SetPyClientData(spec)
                         
                         if spec.group is None:
                             pg.Append(prop)
@@ -186,7 +194,11 @@ class PropertyEditorPanel(wx.Panel):
         p = event.GetProperty()
         if p:
             name = p.GetName()
-            value = p.GetValue()
+            spec = p.GetPyClientData()
+            if 'enum' in spec.type:
+                value = p.GetValueAsString()
+            else:
+                value = p.GetValue()
             self.log.write('%s changed to "%s"\n' % (p,p.GetValueAsString()))
             # if it a property child (parent.child), extract its name
             if "." in name:

@@ -288,12 +288,16 @@ class GridColumn(SubComponent):
     represent = InitSpec(default=lambda v: v, _name="_represent", type='string',
                      doc="function to returns a representation for the subitem")
     type = InitSpec(mapping={'string': gridlib.GRID_VALUE_STRING,
+                             'text': gridlib.GRID_VALUE_TEXT,
                              'number': gridlib.GRID_VALUE_NUMBER,
                              'float': gridlib.GRID_VALUE_FLOAT,
+                             'long': gridlib.GRID_VALUE_LONG,
                              'bool': gridlib.GRID_VALUE_BOOL,
                              'choice': gridlib.GRID_VALUE_CHOICE,
+                             'choiceint': gridlib.GRID_VALUE_CHOICEINT,
+                             'datetime': gridlib.GRID_VALUE_DATETIME,
                              }, 
-                     default='string', _name="_type", type="enum",
+                     default='string', _name="_type", type="edit_enum",
                      doc="Type of value of a given cell")                     
 
 
@@ -445,8 +449,8 @@ if __name__ == "__main__":
         if p == 2:
             gv.items[0][3] = 1/2.0
         print "updated!"
-    wx.CallLater(1000, update, 1)
-    wx.CallLater(2000, update, 2)
+    wx.CallLater(2000, update, 1)
+    wx.CallLater(3000, update, 2)
         
     #import wx.lib.inspection
     #wx.lib.inspection.InspectionTool().Show()
