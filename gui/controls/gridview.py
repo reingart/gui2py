@@ -152,7 +152,7 @@ class GridTable(gridlib.PyGridTableBase):
     # editor and renderer.  This allows you to enforce some type-safety
     # in the grid.
     def CanGetValueAs(self, row, col, type_name):
-        col_type = self.columns[col]._type #.split(':')[0]
+        col_type = self.columns[col]._type.split(':')[0]
         if col_type == type_name:
             return True
         else:
@@ -290,7 +290,7 @@ class GridColumn(SubComponent):
     type = InitSpec(mapping={'string': gridlib.GRID_VALUE_STRING,
                              'text': gridlib.GRID_VALUE_TEXT,
                              'number': gridlib.GRID_VALUE_NUMBER,
-                             'float': gridlib.GRID_VALUE_FLOAT,
+                             'float': gridlib.GRID_VALUE_FLOAT,  # double?
                              'long': gridlib.GRID_VALUE_LONG,
                              'bool': gridlib.GRID_VALUE_BOOL,
                              'choice': gridlib.GRID_VALUE_CHOICE,
@@ -298,7 +298,9 @@ class GridColumn(SubComponent):
                              'datetime': gridlib.GRID_VALUE_DATETIME,
                              }, 
                      default='string', _name="_type", type="edit_enum",
-                     doc="Type of value of a given cell")                     
+                     doc="Type of value of a cell, use ':' for additional "
+                         "parameters: 'choice:all,MSW,GTK,MAC' or 'double:6,2'"
+                     )
 
 
 class GridModel(list):
