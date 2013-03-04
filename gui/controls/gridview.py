@@ -133,8 +133,38 @@ class GridTable(gridlib.PyGridTableBase):
         return self.data[row].get(self.columns[col].name, "")
 
     def SetValue(self, row, col, value):
+        print "SetValue", row, col, value, type(value)
         self.data[row][self.columns[col].name] = value
 
+    def SetRawValue(self, row, col, value):
+        print "SetRawValue", row, col, value, type(value)
+        self.data[row][self.columns[col].name] = value
+
+    def IsEmptyCell(self, row, col):
+        print "EmpryCell", row, col, self.columns[col].name not in self.data[row]
+        return self.columns[col].name not in self.data[row]
+
+    # Called to determine the kind of editor/renderer to use by
+    # default, doesn't necessarily have to be the same type used
+    # natively by the editor/renderer if they know how to convert.
+    def GetTypeName(self, row, col):
+        return self.columns[col]._type
+    
+    # Called to determine how the data can be fetched and stored by the
+    # editor and renderer.  This allows you to enforce some type-safety
+    # in the grid.
+    def CanGetValueAs(self, row, col, type_name):
+        col_type = self.columns[col]._type #.split(':')[0]
+        if col_type == type_name:
+            print "CanGetValueAs", row, col, type_name, True
+            return True
+        else:
+            print "CanGetValueAs", row, col, type_name, False
+            return False
+
+    def CanSetValueAs(self, row, col, type_name):
+        return self.CanGetValueAs(row, col, type_name)
+        
     def InsertCols(self, *args, **kwargs):
         wx.CallAfter(self.ResetView, self.wx_grid)
 
@@ -261,7 +291,14 @@ class GridColumn(SubComponent):
                      doc="Column width (default=autosize)")
     represent = InitSpec(default=lambda v: v, _name="_represent", type='string',
                      doc="function to returns a representation for the subitem")
-                     
+    type = InitSpec(mapping={'string': gridlib.GRID_VALUE_STRING,
+                             'number': gridlib.GRID_VALUE_NUMBER,
+                             'float': gridlib.GRID_VALUE_FLOAT,
+                             'bool': gridlib.GRID_VALUE_BOOL,
+                             'choice': gridlib.GRID_VALUE_CHOICE,
+                             }, 
+                     default='string', _name="_type", type="enum",
+                     doc="Type of value of a given cell")                     
 
 
 class GridModel(list):
@@ -336,7 +373,8 @@ class GridRow(dict):
         pos = self.index
         if col is not None:
             # refresh the value (usefull if value setted programatically)
-            self._grid_model._grid_view.wx_obj.SetCellValue(pos, col, value)
+            val = str(value)  # convert to str, TODO: check this
+            self._grid_model._grid_view.wx_obj.SetCellValue(pos, col, val)
 
     def __getitem__(self, key):
         # if key is a column index, get the actual column name to look up:
@@ -381,13 +419,14 @@ if __name__ == "__main__":
                   #multiselect="--multiselect" in sys.argv,
                   )
 
-    ch1 = GridColumn(gv, name="col1", text="Col 1", align="left", width=200)
+    ch1 = GridColumn(gv, name="col1", text="Col 1", align="left", width=100)
     ch2 = GridColumn(gv, name="col2", text="Col 2", align="center")
-    ch3 = GridColumn(gv, name="col3", text="Col 3", align="right", width=100)
+    ch3 = GridColumn(gv, name="col3", text="Col 3", align="right", width=100, type="number")
+    ch4 = GridColumn(gv, name="col4", text="Col 4", align="right", width=100, type="float")
     #ch1.represent = ch2.represent = lambda value: str(value)
     #ch3.represent = lambda value: "%0.2f" % value
 
-    gv.items = [[1, 2, 3], ['4', '5', 6], ['7', '8', 9]]
+    gv.items = [[1, 2, 3], ['4', 5, 6], ['7', 8, 9]]
     
     #lv.insert_items([['a', 'b', 'c']])
     #lv.append("d")
