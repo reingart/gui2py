@@ -167,6 +167,9 @@ class GridTable(gridlib.PyGridTableBase):
     def AppendCols(self, *args, **kwargs):
         wx.CallAfter(self.ResetView, self.wx_grid)
 
+    def DeleteCols(self, *args, **kwargs):
+        wx.CallAfter(self.ResetView, self.wx_grid)
+
     def InsertRows(self, *args, **kwargs):
         wx.CallAfter(self.ResetView, self.wx_grid)
 
@@ -268,6 +271,14 @@ class GridColumn(SubComponent):
         #self.SetColLabel(self.index, self.align)
         #self._parent.wx_obj.SetColSize(self.index, self.width)
         self._created = True    # enable setattr hook
+
+    def destroy(self):
+        self._parent.wx_obj.DeleteCols(self.index, 1)
+        # reindex (maybe this should be moved to GridView)
+        for column in self._parent.columns[self.index+1:]:
+            column.index = column.index - 1
+        del self._parent[self.name]
+        #SubComponent.destroy(self)
 
     def __setattr__(self, name, value):
         "Hook to update the column information in wx"
