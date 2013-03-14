@@ -6,7 +6,7 @@ __date__ = "$Date: 2004/11/01 01:11:22 $"
 
 import wx
 from ..event import FormEvent
-from ..component import Control, Component
+from ..component import Control, Component, DesignerMixin
 from ..spec import Spec, EventSpec, InitSpec, StyleSpec, InternalSpec
 from .. import registry
 from .. import images
@@ -41,7 +41,7 @@ class Notebook(Control):
                             
 
 
-class TabPanel(Component):
+class TabPanel(Component, DesignerMixin):
     "Represents a tab (page) in the Notebook"
 
     _wx_class = wx.Panel
@@ -89,7 +89,7 @@ class TabPanel(Component):
             print "reindexing", page.name
             page.index = page.index - 1
         Component.destroy(self)
-        
+    
 
 # update metadata for the add context menu at the designer:
 

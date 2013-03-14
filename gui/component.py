@@ -446,7 +446,48 @@ class Component(object):
                                type='internal')
    
 
-class Control(Component):
+class DesignerMixin(object):
+    "Designer support"
+
+    def _set_designer(self, func):
+        if DEBUG: print "binding designer handler...", func, self._meta.name
+        if func:
+            # remove all binded events:
+            self.wx_obj.Unbind(wx.EVT_MOTION)
+            self.wx_obj.Unbind(wx.EVT_LEFT_DOWN)
+            self.wx_obj.Unbind(wx.EVT_LEFT_UP)
+            self.wx_obj.Unbind(wx.EVT_LEFT_DCLICK)
+            self.wx_obj.Unbind(wx.EVT_RIGHT_DOWN)
+            self.wx_obj.Unbind(wx.EVT_RIGHT_UP)
+            self.wx_obj.Unbind(wx.EVT_RIGHT_DCLICK)
+            self.wx_obj.Unbind(wx.EVT_MOUSE_EVENTS)
+            self.wx_obj.Unbind(wx.EVT_ENTER_WINDOW)
+            self.wx_obj.Unbind(wx.EVT_LEAVE_WINDOW)
+            # connect the mouse event handler of the designer:
+            self.wx_obj.Bind(wx.EVT_MOUSE_EVENTS, func)
+            # link menu selection (click) to the designer
+            self.wx_obj.Bind(wx.EVT_MENU, func)
+            # link repaint event (refresh) to the designer (draw grid)
+            self.wx_obj.Bind(wx.EVT_PAINT, func)
+            # link key press event to the designer (move)
+            self.wx_obj.Bind(wx.EVT_KEY_DOWN, func)
+            self.wx_obj.Bind(wx.EVT_KEY_UP, func)
+            # bind top level window resizing and closing event:
+            if self._parent is None:
+                self.wx_obj.Bind(wx.EVT_SIZE, func)
+                self.wx_obj.Bind(wx.EVT_CLOSE, func)
+            self._designer = func
+            for child in self:
+                print "setting designer", child._name
+                child.designer = func
+
+    designer = InternalSpec(lambda self: self._designer, 
+                            lambda self, value: self._set_designer(value), 
+                            doc="function to handle events in design mode", 
+                            type='internal')
+
+   
+class Control(Component, DesignerMixin):
     "This is the base class for a control"
 
     # A control is generally a small window which processes user input and/or 
@@ -600,37 +641,6 @@ class Control(Component):
         "Returns the character height for this window."
         return self.wx_obj.GetCharHeight()
 
-    def _set_designer(self, func):
-        if DEBUG: print "binding designer handler...", func, self._meta.name
-        if func:
-            # remove all binded events:
-            self.wx_obj.Unbind(wx.EVT_MOTION)
-            self.wx_obj.Unbind(wx.EVT_LEFT_DOWN)
-            self.wx_obj.Unbind(wx.EVT_LEFT_UP)
-            self.wx_obj.Unbind(wx.EVT_LEFT_DCLICK)
-            self.wx_obj.Unbind(wx.EVT_RIGHT_DOWN)
-            self.wx_obj.Unbind(wx.EVT_RIGHT_UP)
-            self.wx_obj.Unbind(wx.EVT_RIGHT_DCLICK)
-            self.wx_obj.Unbind(wx.EVT_MOUSE_EVENTS)
-            self.wx_obj.Unbind(wx.EVT_ENTER_WINDOW)
-            self.wx_obj.Unbind(wx.EVT_LEAVE_WINDOW)
-            # connect the mouse event handler of the designer:
-            self.wx_obj.Bind(wx.EVT_MOUSE_EVENTS, func)
-            # link menu selection (click) to the designer
-            self.wx_obj.Bind(wx.EVT_MENU, func)
-            # link repaint event (refresh) to the designer (draw grid)
-            self.wx_obj.Bind(wx.EVT_PAINT, func)
-            # link key press event to the designer (move)
-            self.wx_obj.Bind(wx.EVT_KEY_DOWN, func)
-            self.wx_obj.Bind(wx.EVT_KEY_UP, func)
-            # bind top level window resizing and closing event:
-            if self._parent is None:
-                self.wx_obj.Bind(wx.EVT_SIZE, func)
-                self.wx_obj.Bind(wx.EVT_CLOSE, func)
-            self._designer = func
-            for child in self:
-                child.designer = func
-   
 
     pos = InitSpec(_get_pos, _set_pos, default=[ -1, -1])
     size = InitSpec(_get_size, _set_size, default=[ -1, -1])
@@ -662,10 +672,6 @@ class Control(Component):
     margin_bottom = DimensionSpec(lambda self: self._get_margin(3),
                            lambda self, value: self._set_margin(value, 3),
                            default=0, type="integer", group="margin")
-    designer = InternalSpec(lambda self: self._designer, 
-                            lambda self, value: self._set_designer(value), 
-                            doc="function to handle events in design mode", 
-                            type='internal')
 
     border = StyleSpec({'default': wx.BORDER_DEFAULT,
                         'simple': wx.BORDER_SIMPLE,
@@ -700,7 +706,6 @@ class Control(Component):
     onkeypress = EventSpec('keypress', binding=wx.EVT_CHAR, kind=KeyEvent)
     onkeydown = EventSpec('keydown', binding=wx.EVT_KEY_DOWN, kind=KeyEvent)
     onkeyup = EventSpec('keyup', binding=wx.EVT_KEY_UP, kind=KeyEvent)
-
 
 
 class SubComponent(object):
