@@ -285,13 +285,13 @@ def save(evt, designer):
     try:
         if DEBUG: print "saving..."
         # make a backup:
-        fin = open(designer.filename, "ru")
+        fin = open(designer.filename, "r")
         fout = open(designer.filename + ".bak", "w")
         fout.write(fin.read())
         fout.close()
         fin.close()
         # reopen the files to proccess them
-        fin = open(designer.filename + ".bak", "ru")
+        fin = open(designer.filename + ".bak", "r")
         fout = open(designer.filename, "w")
         copy = True
         newlines = fin.newlines or "\n"
