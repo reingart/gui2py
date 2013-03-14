@@ -449,6 +449,8 @@ class Component(object):
 class DesignerMixin(object):
     "Designer support"
 
+    __metaclass__ = ComponentBase
+
     def _set_designer(self, func):
         if DEBUG: print "binding designer handler...", func, self._meta.name
         if func:
@@ -478,7 +480,6 @@ class DesignerMixin(object):
                 self.wx_obj.Bind(wx.EVT_CLOSE, func)
             self._designer = func
             for child in self:
-                print "setting designer", child._name
                 child.designer = func
 
     designer = InternalSpec(lambda self: self._designer, 
