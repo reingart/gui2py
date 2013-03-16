@@ -14,20 +14,38 @@ def new_id(id=None):
     else:
         return id
 
-def represent(obj, prefix):
+sort_order_map = {InitSpec: 1, DimensionSpec: 3, StyleSpec: 2, EventSpec: 5, Spec: 4}
+
+def get_sort_key((name, spec)):
+    return sort_order_map.get(spec.__class__, 6), name
+
+
+def represent(obj, prefix, max_cols=79):
     "Construct a string representing the object"
     try:
-        return "%s = %s.%s(%s)" % (
-            getattr(obj, "name", ""), prefix, obj.__class__.__name__, 
-            ', '.join(["\n            %s=%s" % 
-            (k, repr(getattr(obj, k))) 
-            for (k, spec) in sorted(obj._meta.specs.items())
-            if not isinstance(spec, InternalSpec) 
-               and getattr(obj, k, "") != spec.default
-               and isinstance(getattr(obj, k), 
-                     (basestring, int, long, bool, dict, list, Font))                
-            ]))
+        name = getattr(obj, "name", "")
+        class_name = "%s.%s" % (prefix, obj.__class__.__name__)
+        padding = 4 + len(name) + len(class_name)
+        params = ["%s=%s" % 
+                (k, repr(getattr(obj, k))) 
+                for (k, spec) in sorted(obj._meta.specs.items(), key=get_sort_key)
+                if not isinstance(spec, InternalSpec) 
+                   and getattr(obj, k, "") != spec.default
+                   and isinstance(getattr(obj, k), 
+                         (basestring, int, long, bool, dict, list, Font))                
+                ]
+        param_lines = []
+        line = ""
+        for param in params:
+            if len(line + param) + 3 > max_cols - padding:
+                param_lines.append(line)
+                line = ""
+            line += param + ", "
+        param_lines.append(line)
+        param_str = ("\n%s" % (" " * padding)).join(param_lines)
+        return "%s = %s(%s)" % (name, class_name, param_str) 
     except:
+        raise
         # uninitialized, use standard representation to not break debuggers
         return object.__repr__(obj)
 
@@ -757,6 +775,8 @@ if __name__ == "__main__":
     app = wx.App(redirect=False)
     frame = wx.Frame(None)
     w = Component(frame, name="test")
+    # test representation:
+    print w
     assert w.get_parent() is frame
     assert w.id != -1       # wx should have assigned a new id!
     assert w.name == "test"
