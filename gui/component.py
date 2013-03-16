@@ -763,6 +763,9 @@ class SubComponent(object):
         for name, value in kwargs.items():
             setattr(self, name, value)
 
+    def destroy(self, **kwargs):
+        pass
+
     def __repr__(self, prefix="gui"):
         return represent(self, prefix)
 
