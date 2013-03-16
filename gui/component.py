@@ -272,7 +272,7 @@ class Component(object):
                 del self._parent[self._name]
                 print "deleted from parent!"
 
-    def duplicate(self):
+    def duplicate(self, new_parent=None):
         "Create a new object exactly similar to self"
         kwargs = {}
         for spec_name, spec in self._meta.specs.items():
@@ -281,7 +281,10 @@ class Component(object):
         new_id = wx.NewId()
         kwargs['id'] = new_id
         kwargs['name'] = "%s_%s" % (kwargs['name'], new_id)
-        return self.__class__(self.get_parent(), **kwargs)
+        new_obj = self.__class__(new_parent or self.get_parent(), **kwargs)
+        # recursively create a copy of each child (in the new parent!)
+        for child in self:
+            child.duplicate(new_obj)
 
     def z_order(self, z=0):
         "Raises/lower the window to the top of the window hierarchy (Z-order)"
