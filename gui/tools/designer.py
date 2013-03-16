@@ -83,7 +83,9 @@ class BasicDesigner:
             self.resizing = self.hit_test(wx_obj, evt.GetPosition())
             if DEBUG: print "capture..."
             # do not capture on TextCtrl, it will fail (blocking) at least in gtk
-            self.parent.wx_obj.CaptureMouse()
+            # seems to only be needed in some controls to move them smoothly
+            if isinstance(wx_obj, (wx.Button, wx.CheckBox)):
+                self.parent.wx_obj.CaptureMouse()
 
 
     def mouse_move(self, evt):
@@ -146,6 +148,7 @@ class BasicDesigner:
 
     def __call__(self, evt):
         "Handler for EVT_MOUSE_EVENTS (binded in design mode)"
+
         if evt.IsCommandEvent():
             # menu clicked
             if self.inspector:
@@ -198,7 +201,10 @@ class BasicDesigner:
                 self.draw_grip(wx_obj)      # draw the resize handle (SW)
             else: 
                 self.draw_grip(None)        # clear the resize handle
-            
+
+        # allow default behavior (set focus / tab change):
+        evt.Skip()        
+       
 
     def mouse_up(self, evt):
         "Release the selected object"
