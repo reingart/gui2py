@@ -199,7 +199,7 @@ class PropertyEditorPanel(wx.Panel):
                 value = p.GetValueAsString()
             else:
                 value = p.GetValue()
-            self.log.write('%s changed to "%s"\n' % (p,p.GetValueAsString()))
+            #self.log.write(u'%s changed to "%s"\n' % (p,p.GetValueAsString()))
             # if it a property child (parent.child), extract its name
             if "." in name:
                 group, name = name.split(".")
@@ -218,9 +218,9 @@ class PropertyEditorPanel(wx.Panel):
     def OnPropGridSelect(self, event):
         p = event.GetProperty()
         if p:
-            self.log.write('%s selected\n' % (event.GetProperty().GetName()))
+            self.log.write(u'%s selected\n' % (event.GetProperty().GetName()))
         else:
-            self.log.write('Nothing selected\n')
+            self.log.write(u'Nothing selected\n')
 
     def OnDeleteProperty(self, event):
         p = self.pg.GetSelectedProperty()
@@ -235,9 +235,9 @@ class PropertyEditorPanel(wx.Panel):
     def OnPropGridRightClick(self, event):
         p = event.GetProperty()
         if p:
-            self.log.write('%s right clicked\n' % (event.GetProperty().GetName()))
+            self.log.write(u'%s right clicked\n' % (event.GetProperty().GetName()))
         else:
-            self.log.write('Nothing right clicked\n')
+            self.log.write(u'Nothing right clicked\n')
         #self.obj.get_parent().Refresh()
 
     def OnPropGridPageChange(self, event):
