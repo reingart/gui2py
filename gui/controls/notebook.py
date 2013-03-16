@@ -1,9 +1,4 @@
 
-"""
-__version__ = "$Revision: 1.4 $"
-__date__ = "$Date: 2004/11/01 01:11:22 $"
-"""
-
 import wx
 from ..event import FormEvent
 from ..component import Control, Component, DesignerMixin

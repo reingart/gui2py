@@ -117,8 +117,8 @@ class Component(object):
                     # get the current value and store it in kwargs
                     kwargs[spec_name]  = getattr(self, spec_name)
             self.wx_obj.Visible = False
+            old_wx_obj = self.wx_obj
             self.wx_obj.obj = None
-            self.wx_obj.Destroy()
             del self.wx_obj
             if DEBUG: print "kwargs", kwargs
             if isinstance(self._parent, Component):
@@ -129,6 +129,7 @@ class Component(object):
             # container to hold children:
             self._children_dict = {}    # key and values for __setitem__
             self._children_list = []    # ordered values for __iter__
+            old_wx_obj = None
         
         self.wx_obj = None      # set up a void wx object (needed by setters)
         
@@ -202,6 +203,11 @@ class Component(object):
         if rebuild:
             for ctrl in self:
                 ctrl.set_parent(self)
+
+        # destroy previous wx object 
+        # (after reparent so children are not destroyed)
+        if old_wx_obj:
+            old_wx_obj.Destroy()
                 
         # finally, set special internal spec (i.e. designer)
         # (this must be done at last to overwrite other event handlers)
