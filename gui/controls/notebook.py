@@ -62,7 +62,7 @@ class TabPanel(Component, DesignerMixin):
         return self._parent.wx_obj.GetPageText(self.index)
 
     def _set_text(self, new_text):
-        if self.index and new_text:
+        if self.index is not None and new_text:
             self._parent.wx_obj.SetPageText(self.index, new_text)
     
     text = Spec(_get_text, _set_text, doc="Tab (page) caption", type='string')
