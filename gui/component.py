@@ -31,6 +31,7 @@ def represent(obj, prefix, max_cols=79):
                 for (k, spec) in sorted(obj._meta.specs.items(), key=get_sort_key)
                 if not isinstance(spec, InternalSpec) 
                    and getattr(obj, k, "") != spec.default
+                   and (k != 'id' or getattr(obj, k) > 0) 
                    and isinstance(getattr(obj, k), 
                          (basestring, int, long, bool, dict, list, Font))                
                 ]

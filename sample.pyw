@@ -9,38 +9,34 @@ import gui
 
 # --- gui2py designer start ---
 
-mywin = gui.Window(id=-2017, name='mywin', title=u'hello world', 
-                   resizable=True, height='617px', left='180', top='24', 
-                   width='400px', font={'size': 11, 'face': u'Ubuntu'}, )
-btnClose = gui.Button(id=-2018, label=u'Quit', name=u'btnClose', height='29', 
+mywin = gui.Window(name='mywin', title=u'hello world', resizable=True, 
+                   height='617px', left='180', top='24', width='400px', 
+                   font={'size': 11, 'face': u'Ubuntu'}, )
+btnClose = gui.Button(label=u'Quit', name=u'btnClose', height='29', 
                       left='232', top='156', width='85', 
                       font={'size': 11, 'face': u'Ubuntu'}, parent='mywin', )
-chkTest = gui.CheckBox(id=-2019, label=u'Check me!', name='chkTest', 
-                       height='24', left='98', top='99', width='94', 
+chkTest = gui.CheckBox(label=u'Check me!', name='chkTest', height='24', 
+                       left='98', top='99', width='94', 
                        font={'size': 11, 'face': u'Ubuntu'}, parent='mywin', )
-lblTest = gui.Label(id=-2020, name='lblTest', alignment='right', height='25', 
+lblTest = gui.Label(name='lblTest', alignment='right', height='25', 
                     left='38', top='37', width='48', 
                     font={'size': 11, 'face': u'Ubuntu'}, parent='mywin', 
                     text=u'hello!', )
-txtTest = gui.TextBox(id=-2021, name='txtTest', height='25', left='99', 
-                      top='31', width='152', 
-                      font={'size': 11, 'face': u'Ubuntu'}, parent='mywin', 
-                      text=u'greeting', )
-btnTest = gui.Button(id=-2022, label=u'click me!', name='btnTest', 
-                     height='29', left='126', top='157', width='85', 
-                     default=True, font={'size': 11, 'face': u'Ubuntu'}, 
-                     parent='mywin', )
-cboTest = gui.ComboBox(id=-2023, name='cboTest', height='22', left='100', 
-                       top='60', width='80', 
-                       font={'size': 11, 'face': u'Ubuntu'}, items=[], 
-                       parent='mywin', string_selection=u'', )
-lstTest = gui.ListBox(id=-2024, name='lstTest', height='96', left='277', 
-                      top='28', width='103', data_selection=u'two', 
+txtTest = gui.TextBox(name='txtTest', height='25', left='99', top='31', 
+                      width='152', font={'size': 11, 'face': u'Ubuntu'}, 
+                      parent='mywin', text=u'greeting', )
+btnTest = gui.Button(label=u'click me!', name='btnTest', height='29', 
+                     left='126', top='157', width='85', default=True, 
+                     font={'size': 11, 'face': u'Ubuntu'}, parent='mywin', )
+cboTest = gui.ComboBox(name='cboTest', height='22', left='100', top='60', 
+                       width='80', font={'size': 11, 'face': u'Ubuntu'}, 
+                       items=[], parent='mywin', string_selection=u'', )
+lstTest = gui.ListBox(name='lstTest', height='96', left='277', top='28', 
+                      width='103', data_selection=u'two', 
                       font={'size': 11, 'face': u'Ubuntu'}, 
                       items=[u'one', u'two', u'tree'], parent='mywin', 
                       selection=1, string_selection=u'two', )
-menubar_83_155 = gui.MenuBar(id=-2025, name='menubar_83_155', 
-                             fgcolor='black', 
+menubar_83_155 = gui.MenuBar(name='menubar_83_155', fgcolor='black', 
                              font={'size': 11, 'face': u'Ubuntu'}, 
                              parent='mywin', )
 menu_114 = gui.Menu(name='menu_114', fgcolor='black', 
@@ -62,14 +58,14 @@ menuitemseparator_130 = gui.MenuItemSeparator(help=u'MenuItem', id=130,
 menuitem_140 = gui.MenuItem(help=u'MenuItem', id=140, name='menuitem_140', 
                             font={'size': 11, 'face': u'Ubuntu'}, 
                             parent='menu_114', )
-gauge_43_128 = gui.Gauge(id=-2026, name='gauge_43_128', height='18', 
-                         left='13', top='130', width='367', 
+gauge_43_128 = gui.Gauge(name='gauge_43_128', height='18', left='13', 
+                         top='130', width='367', 
                          font={'size': 11, 'face': u'Ubuntu'}, 
                          parent='mywin', value=50, )
-statusbar_15_91 = gui.StatusBar(id=-2027, name='statusbar_15_91', 
+statusbar_15_91 = gui.StatusBar(name='statusbar_15_91', 
                                 font={'size': 11, 'face': u'Ubuntu'}, 
                                 parent='mywin', text=u'hello world!', )
-listview_23_211 = gui.ListView(id=-2028, name='listview_23_211', height='99', 
+listview_23_211 = gui.ListView(name='listview_23_211', height='99', 
                                left='23px', top='211px', width='354', 
                                font={'size': 11, 'face': u'Ubuntu'}, 
                                item_count=0, parent='mywin', sort_column=1, )
@@ -77,8 +73,8 @@ listcolumn_129 = gui.ListColumn(index=0, name='listcolumn_129',
                                 text=u'Col A', parent='listview_23_211', )
 listcolumn_140 = gui.ListColumn(index=1, name='listcolumn_140', 
                                 text=u'Col B', parent='listview_23_211', )
-notebook_121 = gui.Notebook(id=-2031, name='notebook_121', height='179', 
-                            left='21', top='330', width='355', 
+notebook_121 = gui.Notebook(name='notebook_121', height='179', left='21', 
+                            top='330', width='355', 
                             font={'size': 11, 'face': u'Ubuntu'}, 
                             parent='mywin', selection=0, )
 tabpanel_133 = gui.TabPanel(id=133, name='tabpanel_133', 
