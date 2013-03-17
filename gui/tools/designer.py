@@ -130,42 +130,53 @@ class BasicDesigner:
     def do_resize(self, evt, wx_obj, (n, w, s, e)):
         "Called by SelectionTag"
         # calculate the pos (minus the offset, not in a panel like rw!)
-        #dx, dy = wx_obj.ScreenToClient(wx.GetMousePosition())
-        print "Resizing!"
         pos = wx_obj.ScreenToClient(wx.GetMousePosition())
         x, y = pos
         if evt.ShiftDown():     # snap to grid:
             x = x / GRID_SIZE[0] * GRID_SIZE[0]
             y = y / GRID_SIZE[1] * GRID_SIZE[1]
         pos = wx.Point(x, y)
-        if not self.resizing:
-            self.pos = pos
-            self.resizing = True
+        if not self.resizing or self.resizing != (wx_obj, (n, w, s, e)):
+            self.pos = pos                              # store starting point
+            self.resizing = (wx_obj, (n, w, s, e))      # track obj and handle
         else:
-            delta = self.pos - pos 
-            new_size = wx_obj.GetSize() - delta.Get()
-            ##self.adjust_new_size(wx_obj, new_size)
-            if new_size != wx_obj.GetSize():
+            delta = pos - self.pos 
+            if DEBUG: print "RESIZING: n, w, s, e", n, w, s, e
+            if n or w or s or e:
+                # resize according the direction (n, w, s, e)
+                x = wx_obj.Position[0] + e * delta[0]
+                y = wx_obj.Position[1] + n * delta[1]
+                w = wx_obj.Size[0] + (w - e) * delta[0]
+                h = wx_obj.Size[1] + (s - n) * delta[1]
+            else:
+                # just move
+                x = wx_obj.Position[0] + delta[0]
+                y = wx_obj.Position[1] + delta[1]
+                w = wx_obj.Size[0]
+                h = wx_obj.Size[1]
+            new_pos = (x, y)
+            new_size = (w, h)
+            if new_size != wx_obj.GetSize() or new_pos != wx_obj.GetPosition():
                 # reset margins (TODO: avoid resizing recursion)
                 wx_obj.obj.margin_left = 0
                 wx_obj.obj.margin_right = 0
                 wx_obj.obj.margin_top = 0
                 wx_obj.obj.margin_bottom = 0
+                wx_obj.obj.pos = new_pos      # update gui specs
                 wx_obj.obj.size = new_size    # update gui specs
-                self.pos = pos
-                ##self._bestSize = new_size 
-            wx_obj.sel_marker.update()            
+                self.pos = pos                # store new starting point
+                wx_obj.sel_marker.update()
 
     def mouse_up(self, evt):
         "Release the selected object"
         if DEBUG: print "up!"
+        self.resizing = False
         if self.current: 
             wx_obj = self.current
             #del wx_obj.sel_marker
             if self.parent.wx_obj.HasCapture():
                 self.parent.wx_obj.ReleaseMouse()
             self.current = None
-            self.resizing = False
             if self.inspector:
                 self.inspector.inspect(wx_obj.obj)
             if DEBUG: print "SELECTION", self.selection
@@ -237,6 +248,13 @@ class BasicDesigner:
 
 class SelectionTag(wx.Window):
     "small black squares that appear at the corners of the active widgets"
+
+    names = ["top-left", "top-right", "bottom-right", "bottom-left", 
+             "top", "right", "left", "bottom", "middle"]
+    # map each size handle with cardinal points: (n, w, s, e)
+    direction = [(1, 0, 0, 1), (1, 1, 0, 0), (0, 1, 1, 0), (0, 0, 1, 1),
+                 (1, 0, 0, 0), (0, 0, 0, 1), (0, 1, 0, 0), (0, 0, 1, 0), 
+                 (0, 0, 0, 0)]
     
     def __init__(self, parent, owner, pos=None, index=None, designer=None):
         kwds = { 'size': (7, 7) }
@@ -249,11 +267,11 @@ class SelectionTag(wx.Window):
         self.Bind(wx.EVT_MOTION, self.motion)
         self.designer = designer
         self.owner = owner
+        self.index = index
     
     def motion(self, evt):
-        print "Motion!"
         if evt.LeftIsDown():
-            self.designer.do_resize(evt, self.owner, (0, 0, 0, 0))
+            self.designer.do_resize(evt, self.owner, self.direction[self.index])
 
 
 class SelectionMarker:
