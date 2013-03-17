@@ -83,9 +83,10 @@ class BasicDesigner:
         if not evt.ControlDown() and not evt.ShiftDown():
             for wx_obj in self.selection:
                 # clear marker
-                wx_obj.sel_marker.show(False)
-                wx_obj.sel_marker.destroy()
-                del wx_obj.sel_marker
+                if hasattr(wx_obj, "sel_marker"):
+                    wx_obj.sel_marker.show(False)
+                    wx_obj.sel_marker.destroy()
+                    del wx_obj.sel_marker
             self.selection = []  # clear previous selection
 
         wx_obj = evt.GetEventObject()
