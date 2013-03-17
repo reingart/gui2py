@@ -4,27 +4,19 @@ import wx
 
 DEBUG = False
 
-# dimensions used for the handle (based on wx.lib.resizewidget)
-RW_THICKNESS = 4
-RW_LENGTH = 12
-
-# colors for the handle (based on wx.lib.resizewidget)
-RW_PEN   = 'black'
-RW_FILL  = '#A0A0A0'
-RW_FILL2 = '#E0E0E0'
-
 GRID_SIZE = (10, 10)
 
 CURSOR_HAND = wx.CURSOR_HAND
 CURSOR_MOVING = wx.CURSOR_RIGHT_ARROW
 CURSOR_SIZING = wx.CURSOR_SIZENWSE
 
+
 class BasicDesigner:
     "Simple point-and-click layout designer (support moving controls)"
 
     def __init__(self, parent, inspector=None):
         self.parent = parent
-        self.current = {}
+        self.current = None
         self.selection = []
         self.resizing = False
         # bind all objects that can be controlled by this class
@@ -32,119 +24,6 @@ class BasicDesigner:
         self.inspector = inspector
         self.last_wx_obj = None     # used to draw the resize handle
         self.onclose = None
-
-    def hit_test(self, wx_obj, pos):
-        # is the position in the area to be used for the resize handle?
-        w, h = wx_obj.GetSize()
-        if ( w - RW_THICKNESS * 3 <= pos.x <= w 
-             and h - RW_LENGTH * 3 <= pos.y <= h ):
-            return True
-        if ( w - RW_LENGTH * 3 <= pos.x <= w 
-             and h - RW_THICKNESS * 3 <= pos.y <= h ):
-            return True
-        return False
-
-    def adjust_new_size(self, wx_obj, new_size):
-        if new_size.width < RW_LENGTH:
-            new_size.width = RW_LENGTH
-        if new_size.height < RW_LENGTH:
-            new_size.height = RW_LENGTH
-            
-        if wx_obj:
-            minsize = wx_obj.GetMinSize()
-            if minsize.width != -1 and new_size.width - RW_THICKNESS < minsize.width:
-                new_size.width = minsize.width + RW_THICKNESS
-            if minsize.height != -1 and new_size.height - RW_THICKNESS < minsize.height:
-                new_size.height = minsize.height + RW_THICKNESS
-            maxsize = wx_obj.GetMaxSize()
-            if maxsize.width != -1 and new_size.width - RW_THICKNESS > maxsize.width:
-                new_size.width = maxsize.width + RW_THICKNESS
-            if maxsize.height != -1 and new_size.height - RW_THICKNESS > maxsize.height:
-                new_size.height = maxsize.height + RW_THICKNESS
-    
-
-    def mouse_down(self, evt): 
-        "Get the selected object and store start position"
-        if DEBUG: print "down!"
-        wx_obj = evt.GetEventObject()
-        if wx_obj.Parent is None:
-            evt.Skip()
-            if not evt.ControlDown():
-                self.selection = []  # clear previous selection
-            if self.inspector and hasattr(wx_obj, "obj"):
-                self.inspector.inspect(wx_obj.obj)  # inspect top level window
-        else:
-            if DEBUG: print wx_obj
-            sx, sy = wx_obj.ScreenToClient(wx_obj.GetPositionTuple())
-            dx, dy = wx_obj.ScreenToClient(wx.GetMousePosition())
-            self.current['pos'] = wx_obj.ScreenToClient(wx.GetMousePosition())
-            self.current['start'] = (sx - dx, sy - dy)
-            self.current['wx_obj'] = wx_obj
-            self.resizing = self.hit_test(wx_obj, evt.GetPosition())
-            if DEBUG: print "capture..."
-            # do not capture on TextCtrl, it will fail (blocking) at least in gtk
-            # do not capture on wx.Notebook to allow selecting the tabs
-            if not isinstance(wx_obj, wx.Notebook):
-                self.parent.wx_obj.CaptureMouse()
-
-
-    def mouse_move(self, evt):
-        "Move the selected object"
-        if DEBUG: print "move!"
-        if self.current:
-            wx_obj = self.current['wx_obj']
-            sx, sy = self.current['start']
-            x, y = wx.GetMousePosition()
-            if self.resizing:
-                # calculate the pos (minus the offset, not in a panel like rw!)
-                #dx, dy = wx_obj.ScreenToClient(wx.GetMousePosition())
-                pos = wx_obj.ScreenToClient(wx.GetMousePosition())
-                x, y = pos
-                if evt.ShiftDown():     # snap to grid:
-                    x = x / GRID_SIZE[0] * GRID_SIZE[0]
-                    y = y / GRID_SIZE[1] * GRID_SIZE[1]
-                pos = wx.Point(x, y)
-                delta = self.current['pos'] - pos 
-                new_size = wx_obj.GetSize() - delta.Get()
-                self.adjust_new_size(wx_obj, new_size)
-                if new_size != wx_obj.GetSize():
-                    # reset margins (TODO: avoid resizing recursion)
-                    wx_obj.obj.margin_left = 0
-                    wx_obj.obj.margin_right = 0
-                    wx_obj.obj.margin_top = 0
-                    wx_obj.obj.margin_bottom = 0
-                    wx_obj.obj.size = new_size    # update gui specs
-                    self.current['pos'] = pos
-                    ##self._bestSize = new_size 
-            else:
-                # update gui specs (this will overwrite relative dimensions):
-                x, y = (x + sx, y + sy)
-                if evt.ShiftDown():     # snap to grid:
-                    x = x / GRID_SIZE[0] * GRID_SIZE[0]
-                    y = y / GRID_SIZE[1] * GRID_SIZE[1]
-                wx_obj.obj.pos = (wx.Point(x, y))
-                    
-    def draw_grip(self, wx_obj):
-        "draw the resize handle"
-        # TODO: draw a transparent panel over the widget (to catch all events)
-        if self.last_wx_obj and self.last_wx_obj != wx_obj:
-            self.last_wx_obj.Refresh()
-        if wx_obj:
-            dc = wx.ClientDC(wx_obj)
-            w,h = wx_obj.GetSize()
-            points = [ (w - 1,            h - RW_LENGTH),
-                       (w - RW_THICKNESS, h - RW_LENGTH),
-                       (w - RW_THICKNESS, h - RW_THICKNESS),
-                       (w - RW_LENGTH,    h - RW_THICKNESS),
-                       (w - RW_LENGTH,    h - 1),
-                       (w - 1,            h - 1),
-                       (w - 1,            h - RW_LENGTH),
-                       ]
-            dc.SetPen(wx.Pen(RW_PEN, 1))
-            fill = RW_FILL
-            dc.SetBrush(wx.Brush(fill))
-            dc.DrawPolygon(points)
-        self.last_wx_obj = wx_obj        
 
     def __call__(self, evt):
         "Handler for EVT_MOUSE_EVENTS (binded in design mode)"
@@ -181,50 +60,114 @@ class BasicDesigner:
                     evt.Skip() 
         elif evt.GetEventType() == wx.EVT_KEY_DOWN.typeId:
             self.key_press(evt)
-        elif evt.GetEventType() == wx.EVT_KEY_UP.typeId:
-            if not evt.ControlDown():
-                self.selection = []     # clear selection
-        elif self.current or evt.LeftIsDown():
-            if evt.LeftDown():
-                self.mouse_down(evt)
-            elif evt.LeftUp():
-                self.mouse_up(evt)
-            else:
-                self.mouse_move(evt)
+        elif evt.GetEventType() == wx.EVT_LEFT_DOWN.typeId:
+            self.mouse_down(evt)
+        elif evt.GetEventType() == wx.EVT_LEFT_UP.typeId:
+            self.mouse_up(evt)
+        elif evt.GetEventType() == wx.EVT_MOTION.typeId:
+            self.mouse_move(evt)
         elif evt.GetEventType() == wx.EVT_RIGHT_DOWN.typeId and self.inspector:
             # inspect and pop up the context menu
             # do this after this event to prevent reference issues (deletions!)
-            self.current = {}
+            self.current = None
             wx.CallAfter(self.inspector.inspect, 
                          getattr(evt.GetEventObject(), "obj"), True)
-        else:
-            wx_obj = evt.GetEventObject()
-            if wx_obj is not self.parent.wx_obj:
-                if not self.hit_test(wx_obj, evt.GetPosition()):
-                    wx_obj.SetCursor(wx.StockCursor(CURSOR_HAND))
-                else:
-                    wx_obj.SetCursor(wx.StockCursor(CURSOR_SIZING))
-                self.draw_grip(wx_obj)      # draw the resize handle (SW)
-            else: 
-                self.draw_grip(None)        # clear the resize handle
 
         # allow default behavior (set focus / tab change):
         if isinstance(evt.GetEventObject(), wx.Notebook):
             evt.Skip()        
        
+    def mouse_down(self, evt): 
+        "Get the selected object and store start position"
+        if DEBUG: print "down!"
+        if not evt.ControlDown():
+            for wx_obj in self.selection:
+                # clear marker
+                wx_obj.sel_marker.show(False)
+                wx_obj.sel_marker.destroy()
+                del wx_obj.sel_marker
+            self.selection = []  # clear previous selection
+
+        wx_obj = evt.GetEventObject()
+
+        if wx_obj.Parent is None:
+            evt.Skip()
+            if self.inspector and hasattr(wx_obj, "obj"):
+                self.inspector.inspect(wx_obj.obj)  # inspect top level window
+        else:
+            if not hasattr(wx_obj, "sel_marker"):
+                wx_obj.sel_marker = SelectionMarker(wx_obj, wx_obj.GetParent(), designer=self)
+            wx_obj.sel_marker.show(True)
+            if DEBUG: print wx_obj
+            sx, sy = wx_obj.ScreenToClient(wx_obj.GetPositionTuple())
+            dx, dy = wx_obj.ScreenToClient(wx.GetMousePosition())
+            self.pos = wx_obj.ScreenToClient(wx.GetMousePosition())
+            self.start = (sx - dx, sy - dy)
+            self.current = wx_obj
+            if DEBUG: print "capture..."
+            # do not capture on TextCtrl, it will fail (blocking) at least in gtk
+            # do not capture on wx.Notebook to allow selecting the tabs
+            if not isinstance(wx_obj, wx.Notebook):
+                self.parent.wx_obj.CaptureMouse()
+            self.selection.append(wx_obj)
+
+    def mouse_move(self, evt):
+        "Move the selected object"
+        if DEBUG: print "move!"
+        if self.current:
+            wx_obj = self.current
+            ##if  True or hasattr(wx_obj, "sel_maker"):
+            wx_obj.sel_marker.update()
+            sx, sy = self.start
+            x, y = wx.GetMousePosition()
+            # update gui specs (this will overwrite relative dimensions):
+            x, y = (x + sx, y + sy)
+            if evt.ShiftDown():     # snap to grid:
+                x = x / GRID_SIZE[0] * GRID_SIZE[0]
+                y = y / GRID_SIZE[1] * GRID_SIZE[1]
+            wx_obj.obj.pos = (wx.Point(x, y))
+
+    def do_resize(self, evt, wx_obj, (n, w, s, e)):
+        "Called by SelectionTag"
+        # calculate the pos (minus the offset, not in a panel like rw!)
+        #dx, dy = wx_obj.ScreenToClient(wx.GetMousePosition())
+        print "Resizing!"
+        pos = wx_obj.ScreenToClient(wx.GetMousePosition())
+        x, y = pos
+        if evt.ShiftDown():     # snap to grid:
+            x = x / GRID_SIZE[0] * GRID_SIZE[0]
+            y = y / GRID_SIZE[1] * GRID_SIZE[1]
+        pos = wx.Point(x, y)
+        if not self.resizing:
+            self.pos = pos
+            self.resizing = True
+        else:
+            delta = self.pos - pos 
+            new_size = wx_obj.GetSize() - delta.Get()
+            ##self.adjust_new_size(wx_obj, new_size)
+            if new_size != wx_obj.GetSize():
+                # reset margins (TODO: avoid resizing recursion)
+                wx_obj.obj.margin_left = 0
+                wx_obj.obj.margin_right = 0
+                wx_obj.obj.margin_top = 0
+                wx_obj.obj.margin_bottom = 0
+                wx_obj.obj.size = new_size    # update gui specs
+                self.pos = pos
+                ##self._bestSize = new_size 
+            wx_obj.sel_marker.update()            
 
     def mouse_up(self, evt):
         "Release the selected object"
         if DEBUG: print "up!"
         if self.current: 
-            wx_obj = self.current['wx_obj']
+            wx_obj = self.current
+            #del wx_obj.sel_marker
             if self.parent.wx_obj.HasCapture():
                 self.parent.wx_obj.ReleaseMouse()
-            self.current = {}
+            self.current = None
+            self.resizing = False
             if self.inspector:
                 self.inspector.inspect(wx_obj.obj)
-            # keep selected object (for keypress)
-            self.selection.append(wx_obj)
             if DEBUG: print "SELECTION", self.selection
 
     def key_press(self, event):
@@ -254,6 +197,7 @@ class BasicDesigner:
                     elif key == wx.WXK_DOWN:
                         y = y + 1
                 wx_obj.SetPosition((x, y))
+                wx_obj.sel_marker.update()
                 # make sure sizing handles follow component
                 ##self.showSizingHandles(name)
                 # update the position on the propertyEditor status bar
@@ -289,6 +233,89 @@ class BasicDesigner:
 
     def OnLayoutNeeded(self, evt):
         self.parent.wx_obj.Layout()
+
+
+class SelectionTag(wx.Window):
+    "small black squares that appear at the corners of the active widgets"
+    
+    def __init__(self, parent, owner, pos=None, index=None, designer=None):
+        kwds = { 'size': (7, 7) }
+        if pos:
+            kwds['position'] = pos
+        wx.Window.__init__(self, parent, -1, **kwds)
+        if index < 8:
+            self.SetBackgroundColour(wx.BLUE) #wx.BLACK)
+        self.Hide()
+        self.Bind(wx.EVT_MOTION, self.motion)
+        self.designer = designer
+        self.owner = owner
+    
+    def motion(self, evt):
+        print "Motion!"
+        if evt.LeftIsDown():
+            self.designer.do_resize(evt, self.owner, (0, 0, 0, 0))
+
+
+class SelectionMarker:
+    "Collection of the 4 SelectionTagS for each widget"
+    
+    def __init__(self, owner, parent, visible=False, designer=None):
+        self.visible = visible
+        self.owner = owner
+        self.parent = parent
+        self.designer = designer
+        if wx.Platform == '__WXMSW__': self.parent = owner
+        self.tag_pos = None
+        self.tags = None
+        #self.tags = [ SelectionTag(self.parent) for i in range(4) ]
+        self.update()
+        if visible:
+            for t in self.tags: t.Show()
+
+    def update(self, event=None):
+        if self.owner is self.parent: x, y = 0, 0
+        else: x, y = self.owner.GetPosition()
+        w, h = self.owner.GetClientSize()
+        def position(j):
+            if not j: return x, y                           # top-left
+            elif j == 1: return x + w - 7, y                # top-right
+            elif j == 2: return x + w - 7, y + h - 7        # bottom-right
+            elif j == 3: return x, y + h - 7                # bottom-left
+            elif j == 4: return x + w/2 - 3, y              # top
+            elif j == 5: return x, y + h/2 -3               # right
+            elif j == 6: return x + w - 7, y + h/2 - 3      # left
+            elif j == 7: return x + w/2 - 3, y + h - 7      # bottom
+            elif j == 8: return x + w/2 - 3, y + h/2 - 3    # middle
+        self.tag_pos = [ position(i) for i in range(9) ]
+        if self.visible:
+            if not self.tags:
+                self.tags = [ SelectionTag(self.parent, self.owner, index=i, designer=self.designer) for i in range(9) ]
+            for i in range(9):
+                self.tags[i].SetPosition(self.tag_pos[i])
+        if event: event.Skip()
+
+    def show(self, visible):
+        if self.visible != visible:
+            self.visible = visible
+            if self.visible:
+                if not self.tags:
+                    self.tags = [ SelectionTag(self.parent, self.owner, index=i, designer=self.designer) for i in range(9) ]
+                for i in range(9):
+                    self.tags[i].SetPosition(self.tag_pos[i])
+                    self.tags[i].Show()
+            else:
+                for tag in self.tags: tag.Destroy()
+                self.tags = None
+
+    def destroy(self):
+        if self.tags:
+            for tag in self.tags: tag.Destroy()
+            self.tags = None
+
+    def reparent(self, parent):
+        self.parent = parent
+        if self.tags:
+            for tag in self.tags: tag.Reparent(parent)
 
 
 def save(evt, designer):
