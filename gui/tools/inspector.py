@@ -72,7 +72,7 @@ class InspectorPanel(wx.Panel):
         self.build_tree(self.root, obj)
         self.tree.Expand(self.root)
 
-    def inspect(self, obj, context_menu=False):
+    def inspect(self, obj, context_menu=False, edit_prop=False):
         "Select the object and show its properties"
         child = self.tree.FindItem(self.root, obj.name)
         if DEBUG: print "inspect child", child
@@ -81,7 +81,7 @@ class InspectorPanel(wx.Panel):
             self.tree.SetCurrentItem(child)
             self.tree.SelectItem(child)
             child.Selected = True
-            self.activate_item(child)
+            self.activate_item(child, edit_prop)
             if context_menu:
                 self.show_context_menu(child)            
 
@@ -103,14 +103,15 @@ class InspectorPanel(wx.Panel):
         print('OnActivate: %s' % self.tree.GetItemText(child))
         self.activate_item(child)
     
-    def activate_item(self, child):
+    def activate_item(self, child, edit_prop):
         "load the selected item in the property editor"
         d = self.tree.GetItemData(child)
         if d:
             o = d.GetData()
             self.selected_obj = o
             self.propeditor.load_object(o)
-            ##self.propeditor.Parent.SetFocus()
+            if edit_prop:
+                wx.CallAfter(self.propeditor.edit)
         else:
             self.selected_obj = None
     

@@ -67,15 +67,18 @@ class BasicDesigner:
         elif evt.GetEventType() == wx.EVT_MOTION.typeId:
             self.mouse_move(evt)
         elif evt.GetEventType() == wx.EVT_RIGHT_DOWN.typeId and self.inspector:
-            # inspect and pop up the context menu
+            # on right click, inspect and pop up the context menu
             # do this after this event to prevent reference issues (deletions!)
             self.current = None
             wx.CallAfter(self.inspector.inspect, 
                          getattr(evt.GetEventObject(), "obj"), True)
-
+        elif evt.GetEventType() == wx.EVT_LEFT_DCLICK.typeId and self.inspector:
+            # on double click, inspect and edit the default property (ie label)
+            wx.CallAfter(self.inspector.inspect, 
+                         getattr(evt.GetEventObject(), "obj"), False, True)
         # allow default behavior (set focus / tab change):
         if isinstance(evt.GetEventObject(), wx.Notebook):
-            evt.Skip()        
+            evt.Skip()
        
     def mouse_down(self, evt): 
         "Get the selected object and store start position"

@@ -145,53 +145,33 @@ class PropertyEditorPanel(wx.Panel):
                         if doc:
                             pg.SetPropertyHelpString(name, doc)
                         appended.add(name)
-                            
 
-                    #pg.Append( wxpg.PropertyCategory("2 - More Properties") )
-                    #pg.Append( wxpg.DirProperty("Dir",value="C:\\Windows") )
-                    #pg.Append( wxpg.FileProperty("File",value="C:\\Windows\\system.ini") )
-                    #pg.Append( wxpg.ArrayStringProperty("ArrayString",value=['A','B','C']) )
+    def edit(self, name=None):
+        "Programatically select a (default) property to start editing it"
+        # for more info see DoSelectAndEdit in propgrid.cpp
+        prop = self.pg.GetPropertyByName("label")
+        if not prop:
+            prop = self.pg.GetPropertyByName("text")
+        self.Parent.SetFocus()
+        self.Parent.Raise()
+        self.pg.SetFocus()
+        # give time to the ui to show the prop grid and set focus:
+        wx.CallLater(250, self.select, prop.GetName())
 
-                #pg.Append( wxpg.EnumProperty("Enum","Enum",
-                #                             ['wxPython Rules',
-                #                              'wxPython Rocks',
-                #                             'wxPython Is The Best'],
-                #                             [10,11,12],
-                #                             0) )
-                #pg.Append( wxpg.EditEnumProperty("EditEnum","EditEnumProperty",
-                #                                 ['A','B','C'],
-                #                                 [0,1,2],
-                #                                 "Text Not in List") )
-
-                #pg.Append( wxpg.PropertyCategory("3 - Advanced Properties") )
-                #pg.Append( wxpg.DateProperty("Date",value=wx.DateTime_Now()) )
-                #pg.Append( wxpg.FontProperty("Font",value=panel.GetFont()) )
-                #pg.Append( wxpg.ColourProperty("Colour",
-                ##                               value=panel.GetBackgroundColour()) )
-                #pg.Append( wxpg.SystemColourProperty("SystemColour") )
-                #pg.Append( wxpg.ImageFileProperty("ImageFile") )
-                #pg.Append( wxpg.MultiChoiceProperty("MultiChoice",
-                #            choices=['wxWidgets','QT','GTK+']) )
-
-                #pg.Append( wxpg.PropertyCategory("4 - Additional Properties") )
-                #pg.Append( wxpg.IntProperty("IntWithSpin",value=256) )
-                #pg.SetPropertyEditor("IntWithSpin","SpinCtrl")
-
-                #pg.SetPropertyAttribute( "File", wxpg.PG_FILE_SHOW_FULL_PATH, 0 )
-                #pg.SetPropertyAttribute( "File", wxpg.PG_FILE_INITIAL_PATH,
-                ##                         "C:\\Program Files\\Internet Explorer" )
-                #pg.SetPropertyAttribute( "Date", wxpg.PG_DATE_PICKER_STYLE,
-                #                         wx.DP_DROPDOWN|wx.DP_SHOWCENTURY )
-
-                #pg.Append( wxpg.ImageFileProperty("ImageFileWithLargeEditor") )
-
-        # When page is added, it will become the target page for AutoFill
-        # calls (and for other property insertion methods as well)
-        ##pg.AddPage( "Page 2 - Results of AutoFill will appear here" )
-
-
+    def select(self, name, flags=0):
+        "Select a property (and start the editor)"
+        # do not call this directly from another window, use edit() instead
+        # // wxPropertyGrid::DoSelectProperty flags (selFlags) -see propgrid.h-
+        wxPG_SEL_FOCUS=0x0001  # Focuses to created editor
+        wxPG_SEL_FORCE=0x0002  # Forces deletion and recreation of editor
+        flags |= wxPG_SEL_FOCUS # | wxPG_SEL_FORCE
+        prop = self.pg.GetPropertyByName(name)
+        self.pg.SelectProperty(prop, flags)
+        print "selected!"
+    
     def OnPropGridChange(self, event):
         p = event.GetProperty()
+        print "change!", p
         if p:
             name = p.GetName()
             spec = p.GetPyClientData()
