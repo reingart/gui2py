@@ -80,7 +80,7 @@ class BasicDesigner:
     def mouse_down(self, evt): 
         "Get the selected object and store start position"
         if DEBUG: print "down!"
-        if not evt.ControlDown():
+        if not evt.ControlDown() and not evt.ShiftDown():
             for wx_obj in self.selection:
                 # clear marker
                 wx_obj.sel_marker.show(False)
