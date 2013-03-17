@@ -83,8 +83,8 @@ class BasicDesigner:
             self.resizing = self.hit_test(wx_obj, evt.GetPosition())
             if DEBUG: print "capture..."
             # do not capture on TextCtrl, it will fail (blocking) at least in gtk
-            # seems to only be needed in some controls to move them smoothly
-            if isinstance(wx_obj, (wx.Button, wx.CheckBox)):
+            # do not capture on wx.Notebook to allow selecting the tabs
+            if not isinstance(wx_obj, wx.Notebook):
                 self.parent.wx_obj.CaptureMouse()
 
 
@@ -203,7 +203,8 @@ class BasicDesigner:
                 self.draw_grip(None)        # clear the resize handle
 
         # allow default behavior (set focus / tab change):
-        evt.Skip()        
+        if isinstance(evt.GetEventObject(), wx.Notebook):
+            evt.Skip()        
        
 
     def mouse_up(self, evt):
