@@ -264,14 +264,19 @@ class SelectionTag(wx.Window):
         if index < 8:
             self.SetBackgroundColour(wx.BLUE) #wx.BLACK)
         self.Hide()
-        self.Bind(wx.EVT_MOTION, self.motion)
+        self.Bind(wx.EVT_MOUSE_EVENTS, self.motion)
         self.designer = designer
         self.owner = owner
         self.index = index
     
     def motion(self, evt):
+        if evt.LeftDown():
+            self.CaptureMouse()
         if evt.LeftIsDown():
             self.designer.do_resize(evt, self.owner, self.direction[self.index])
+        elif evt.LeftUp() and self.HasCapture():
+            self.ReleaseMouse()
+            
 
 
 class SelectionMarker:
