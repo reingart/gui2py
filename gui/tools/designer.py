@@ -191,6 +191,12 @@ class BasicDesigner:
                 self.mouse_up(evt)
             else:
                 self.mouse_move(evt)
+        elif evt.GetEventType() == wx.EVT_RIGHT_DOWN.typeId and self.inspector:
+            # inspect and pop up the context menu
+            # do this after this event to prevent reference issues (deletions!)
+            self.current = {}
+            wx.CallAfter(self.inspector.inspect, 
+                         getattr(evt.GetEventObject(), "obj"), True)
         else:
             wx_obj = evt.GetEventObject()
             if wx_obj is not self.parent.wx_obj:
@@ -227,7 +233,7 @@ class BasicDesigner:
         if key in (wx.WXK_LEFT, wx.WXK_UP, wx.WXK_RIGHT, wx.WXK_DOWN):
             for wx_obj in self.selection:
                 x, y = wx_obj.GetPosition()
-                if event.ShiftDown():     # snap to grid:
+                if event.ShiftDown():     # snap to grid:t 
                     # for now I'm only going to align to grid
                     # in the direction of the cursor movement 
                     if key == wx.WXK_LEFT:

@@ -72,7 +72,7 @@ class InspectorPanel(wx.Panel):
         self.build_tree(self.root, obj)
         self.tree.Expand(self.root)
 
-    def inspect(self, obj):
+    def inspect(self, obj, context_menu=False):
         "Select the object and show its properties"
         child = self.tree.FindItem(self.root, obj.name)
         if DEBUG: print "inspect child", child
@@ -82,7 +82,8 @@ class InspectorPanel(wx.Panel):
             self.tree.SelectItem(child)
             child.Selected = True
             self.activate_item(child)
-            
+            if context_menu:
+                self.show_context_menu(child)            
 
     def build_tree(self, parent, obj):
         if DEBUG: print "building", obj.__class__.__name__
@@ -162,6 +163,10 @@ class InspectorPanel(wx.Panel):
     def OnRightUp(self, evt):
         pos = evt.GetPosition()
         item, flags, col = self.tree.HitTest(pos)
+        self.show_context_menu(item)
+    
+    def show_context_menu(self, item):
+        "Open a popup menu with options regarding the selected object"
         if item:
             d = self.tree.GetItemData(item)
             if d:
