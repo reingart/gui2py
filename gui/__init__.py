@@ -10,7 +10,7 @@ from .windows import Window, HtmlWindow
 from .menu import MenuBar, Menu, MenuItem, MenuItemCheckable, MenuItemSeparator
 from .statusbar import StatusBar
 
-from .component import find_obj
+from .component import find
 
 #from . import tools
 
