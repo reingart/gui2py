@@ -794,7 +794,6 @@ def represent(obj, prefix, max_cols=79):
 
 
 def find_parent(new_parent, init):
-
     "Find an object already created"
     wx_parent = None
     # check if new_parent is given as string (useful for designer!)
@@ -809,6 +808,11 @@ def find_parent(new_parent, init):
             if wx_parent:
                 # store gui object (if any)
                 obj_parent = getattr(wx_parent, "obj") 
+            else:
+                # fallback using just object name (backward compatibility)
+                for obj in COMPONENTS.values():
+                    if obj.name==new_parent:
+                        obj_parent = obj 
     else:
         obj_parent = new_parent     # use the provided parent (as is)
     return obj_parent or wx_parent       # new parent
