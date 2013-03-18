@@ -175,7 +175,7 @@ class PropertyEditorPanel(wx.Panel):
         if p:
             name = p.GetName()
             spec = p.GetPyClientData()
-            if 'enum' in spec.type:
+            if spec and 'enum' in spec.type:
                 value = p.GetValueAsString()
             else:
                 value = p.GetValue()
