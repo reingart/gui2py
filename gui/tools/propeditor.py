@@ -97,8 +97,11 @@ class PropertyEditorPanel(wx.Panel):
                             value = False
                         if spec.type == "integer" and value is None:
                             value = -1
-                        if spec.type == "font" and value is not None:
-                            value = value.get_wx_font()
+                        if spec.type == "font":
+                            if value is None:
+                                value = wx.NullFont
+                            else:
+                                value = value.get_wx_font()
                         if callable(value):
                             # event binded at runtime cannot be modified:
                             value = str(value)

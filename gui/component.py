@@ -355,7 +355,7 @@ class Component(object):
     
     def _get_font(self):
         if self._font is None:
-            self._font = Font(parent=self)
+            return None
         wx_font = self.wx_obj.GetFont()
         # sanity check: avoid assertion error:
         if not wx_font.IsOk():
