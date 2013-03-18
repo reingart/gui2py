@@ -281,7 +281,7 @@ class Component(object):
     def set_parent(self, new_parent, init=False):
         "Store the gui/wx object parent for this component"
         # set init=True if this is called from the constructor
-        self._parent = find_parent(new_parent, init)    # store new parent
+        self._parent = find_obj(new_parent, init)    # store new parent
     
     def get_parent(self):
         "Return the object parent for this component (either gui or wx)"
@@ -724,7 +724,7 @@ class SubComponent(object):
     def set_parent(self, new_parent, init=False):
         "Associate the component to the control (it could be recreated)"
         # store gui reference inside of wx object (this will enable rebuild...)
-        self._parent = find_parent(new_parent, init=False)    # store new parent
+        self._parent = find_obj(new_parent, init=False)    # store new parent
         if init:
             self._parent[self._name] = self     # add child reference
 
@@ -761,12 +761,12 @@ def get_sort_key((name, spec)):
     return sort_order_map.get(spec.__class__, 6), name
 
 
-def represent(obj, prefix, max_cols=79):
+def represent(obj, prefix, max_cols=80):
     "Construct a string representing the object"
     try:
         name = getattr(obj, "name", "")
         class_name = "%s.%s" % (prefix, obj.__class__.__name__)
-        padding = 4 + len(name) + len(class_name)
+        padding = len(class_name)
         params = ["%s=%s" % 
                 (k, repr(getattr(obj, k))) 
                 for (k, spec) in sorted(obj._meta.specs.items(), key=get_sort_key)
@@ -786,35 +786,35 @@ def represent(obj, prefix, max_cols=79):
             line += param + ", "
         param_lines.append(line)
         param_str = ("\n%s" % (" " * padding)).join(param_lines)
-        return "%s = %s(%s)" % (name, class_name, param_str) 
+        return "%s(%s)" % (class_name, param_str) 
     except:
         raise
         # uninitialized, use standard representation to not break debuggers
         return object.__repr__(obj)
 
 
-def find_parent(new_parent, init):
+def find_obj(obj_name, init=False):
     "Find an object already created"
     wx_parent = None
     # check if new_parent is given as string (useful for designer!)
-    if isinstance(new_parent, basestring):
+    if isinstance(obj_name, basestring):
         # find the object reference in the already created gui2py objects
         # TODO: only useful for designer, get a better way
-        obj_parent = COMPONENTS.get(new_parent)
+        obj_parent = COMPONENTS.get(obj_name)
         if not obj_parent:
             ##import pdb;pdb.set_trace()
             # try to find window (it can be a plain wx frame/control)
-            wx_parent = wx.FindWindowByName(new_parent)
+            wx_parent = wx.FindWindowByName(obj_name)
             if wx_parent:
                 # store gui object (if any)
                 obj_parent = getattr(wx_parent, "obj") 
             else:
                 # fallback using just object name (backward compatibility)
                 for obj in COMPONENTS.values():
-                    if obj.name==new_parent:
+                    if obj.name==obj_name:
                         obj_parent = obj 
     else:
-        obj_parent = new_parent     # use the provided parent (as is)
+        obj_parent = obj_name     # use the provided parent (as is)
     return obj_parent or wx_parent       # new parent
 
 
