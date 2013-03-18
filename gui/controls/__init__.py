@@ -10,6 +10,7 @@ from .image import Image
 from .gauge import Gauge
 from .listview import ListView, ListColumn
 from .treeview import TreeView
+from .gridview import GridView, GridColumn
 
 # this should be the last as look for registered controls (valid children)
 from .panel import Panel
