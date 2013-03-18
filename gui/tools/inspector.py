@@ -103,7 +103,7 @@ class InspectorPanel(wx.Panel):
         print('OnActivate: %s' % self.tree.GetItemText(child))
         self.activate_item(child)
     
-    def activate_item(self, child, edit_prop):
+    def activate_item(self, child, edit_prop=False):
         "load the selected item in the property editor"
         d = self.tree.GetItemData(child)
         if d:
