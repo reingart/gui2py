@@ -104,7 +104,10 @@ class Component(object):
                                         (self._meta.name, spec_name))
                 if spec._name:
                     name = spec._name[1:]   # use the internal name
-                    setattr(self, spec._name, value)
+                    if name == "name":
+                        self._set_name(value)
+                    else:
+                        setattr(self, spec._name, value)
                 else:
                     name = spec_name        # use the spec attribute name
                 wx_kwargs[name] = value
@@ -154,9 +157,9 @@ class Component(object):
                     
         # store gui reference inside of wx object
         self.wx_obj.obj = self
-        if isinstance(self._parent, Component) and self._name:
+        if isinstance(self._parent, Component) and getattr(self, "_name", None):
             self._parent[self._name] = self     # add child reference
-            COMPONENTS[self._name] = self  # keep track for future reference
+            COMPONENTS[self._get_fully_qualified_name()] = self  
         
         # re-associate childrens (wx objects hierachy): 
         if rebuild:
@@ -199,15 +202,15 @@ class Component(object):
         self.destroy()
     
     def destroy(self):
-        "Remove event references and destroy wx object"
+        "Remove event references and destroy wx object (and children)"
         if self.wx_obj:
             self.wx_obj.Destroy()
             for child in self:
                 print "destroying child", 
                 child.destroy()
         if self._name:
-            del COMPONENTS[self._name]
-            print "deleted from components!"
+            del COMPONENTS[self._get_fully_qualified_name()]
+            if DEBUG: print "deleted from components!"
             if isinstance(self._parent, Component):
                 del self._parent[self._name]
                 print "deleted from parent!"
@@ -282,21 +285,56 @@ class Component(object):
     
     def get_parent(self):
         "Return the object parent for this component (either gui or wx)"
-        parent = self.wx_obj.GetParent()
-        if hasattr(parent, "obj"):
-            return parent.obj  # return the gui object
-        else:
-            return parent            # return the wx object
+        if self.wx_obj:
+            parent = self.wx_obj.GetParent()
+            if hasattr(parent, "obj"):
+                return parent.obj  # return the gui object
+            else:
+                return parent            # return the wx object
 
     def _get_parent_name(self):
         "Return parent window name (used in __repr__ parent spec)"
         parent = self.get_parent()
-        if isinstance(parent, Component):
-            return parent.name
-        else:
+        parent_names = []
+        while parent:
+            if isinstance(parent, Component):
+                parent_name = parent.name
+                # Top Level Windows has no parent!
+                if parent_name:
+                    parent_names.insert(0, parent_name)
+                parent = parent.get_parent()
+            else:
+                break
+        if not parent_names:
             return None
+        else:
+            return '.'.join(parent_names) 
 
-    def __repr__(self, prefix="gui"):
+    def _get_fully_qualified_name(self):
+        "return full parents name + self name (useful as key)"
+        parent_name = self._get_parent_name()
+        if not parent_name:
+            return self._name
+        else:
+            return "%s.%s" % (parent_name, self._name)
+   
+    def _get_name(self):
+        return getattr(self, "_name", None)
+    
+    def _set_name(self, value):
+        # check if we're changing the previous name (ie., design time)
+        if hasattr(self, "_name"):
+            key = self._get_fully_qualified_name()
+        else:
+            key = None
+        self._name = value
+        # delete old reference (if exists)
+        if key in COMPONENTS:
+            del COMPONENTS[key]
+            COMPONENTS[self._get_fully_qualified_name()] = self  
+
+    
+    def __repr__(   self, prefix="gui"):
         return represent(self, prefix)
 
     # properties:
@@ -395,7 +433,7 @@ class Component(object):
         if dt:
             self.wx_obj.SetDropTarget(dt)
     
-    name = InitSpec(optional=False, default="", _name="_name", type='string')
+    name = InitSpec(_get_name, _set_name, optional=False, _name="_name", default="", type='string')
     bgcolor = Spec(_get_bgcolor, _set_bgcolor, type='colour')
     font = Spec(_get_font, _set_font, type='font')
     fgcolor = Spec(_get_fgcolor, _set_fgcolor, type='colour')
@@ -765,6 +803,7 @@ def find_parent(new_parent, init):
         # TODO: only useful for designer, get a better way
         obj_parent = COMPONENTS.get(new_parent)
         if not obj_parent:
+            ##import pdb;pdb.set_trace()
             # try to find window (it can be a plain wx frame/control)
             wx_parent = wx.FindWindowByName(new_parent)
             if wx_parent:

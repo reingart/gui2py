@@ -41,23 +41,23 @@ menubar_83_155 = gui.MenuBar(name='menubar_83_155', fgcolor='black',
                              parent='mywin', )
 menu_114 = gui.Menu(name='menu_114', fgcolor='black', 
                     font={'size': 11, 'face': u'Ubuntu'}, 
-                    parent='menubar_83_155', )
+                    parent='mywin.menubar_83_155', )
 menuitem_127 = gui.MenuItem(help=u'MenuItem', id=127, name='menuitem_127', 
                             font={'size': 11, 'face': u'Ubuntu'}, 
-                            parent='menu_114', )
+                            parent='mywin.menubar_83_155.menu_114', )
 menuitemcheckable_120 = gui.MenuItemCheckable(help=u'MenuItemCheck', id=120, 
                                               label=u'MenuItemCheck', 
                                               name='menuitemcheckable_120', 
                                               checked=True, 
                                               font={'size': 11, 'face': u'Ubuntu'}, 
-                                              parent='menu_114', )
+                                              parent='mywin.menubar_83_155.menu_114', )
 menuitemseparator_130 = gui.MenuItemSeparator(help=u'MenuItem', id=130, 
                                               name='menuitemseparator_130', 
                                               font={'size': 11, 'face': u'Ubuntu'}, 
-                                              parent='menu_114', )
+                                              parent='mywin.menubar_83_155.menu_114', )
 menuitem_140 = gui.MenuItem(help=u'MenuItem', id=140, name='menuitem_140', 
                             font={'size': 11, 'face': u'Ubuntu'}, 
-                            parent='menu_114', )
+                            parent='mywin.menubar_83_155.menu_114', )
 gauge_43_128 = gui.Gauge(name='gauge_43_128', height='18', left='13', 
                          top='130', width='367', 
                          font={'size': 11, 'face': u'Ubuntu'}, 
@@ -79,14 +79,14 @@ notebook_121 = gui.Notebook(name='notebook_121', height='179', left='21',
                             parent='mywin', selection=0, )
 tabpanel_133 = gui.TabPanel(id=133, name='tabpanel_133', 
                             font={'size': 11, 'face': u'Ubuntu'}, index=0, 
-                            parent='notebook_121', selected=True, 
+                            parent='mywin.notebook_121', selected=True, 
                             text=u'tab 0', )
 button_197 = gui.Button(id=197, name='button_197', left='10', top='10', 
                         font={'size': 11, 'face': u'Ubuntu'}, 
-                        parent='tabpanel_133', )
+                        parent='mywin.notebook_121.tabpanel_133', )
 tabpanel_163 = gui.TabPanel(id=163, name='tabpanel_163', 
                             font={'size': 11, 'face': u'Ubuntu'}, index=1, 
-                            parent='notebook_121', selected=False, 
+                            parent='mywin.notebook_121', selected=False, 
                             text=u'tab 1', )
 
 # --- gui2py designer end ---
