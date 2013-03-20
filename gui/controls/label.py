@@ -23,7 +23,7 @@ class Label(Control):
     alignment = StyleSpec({'left': wx.ALIGN_LEFT, 
                            'center': wx.ALIGN_CENTER | wx.ST_NO_AUTORESIZE,
                            'right': wx.ALIGN_RIGHT | wx.ST_NO_AUTORESIZE},
-                           default='center')
+                           default='left')
     text = Spec(lambda self: self.wx_obj.GetLabel(), _set_text,
                      default="sample text label...", type="string")
 
