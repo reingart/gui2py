@@ -203,17 +203,19 @@ class Component(object):
     
     def destroy(self):
         "Remove event references and destroy wx object (and children)"
-        if self.wx_obj:
-            self.wx_obj.Destroy()
-            for child in self:
-                print "destroying child", 
-                child.destroy()
+        # unreference the obj from the components map and parent
         if self._name:
             del COMPONENTS[self._get_fully_qualified_name()]
             if DEBUG: print "deleted from components!"
             if isinstance(self._parent, Component):
                 del self._parent[self._name]
-                print "deleted from parent!"
+                if DEBUG: print "deleted from parent!"
+        # destroy the wx_obj (only if sure that reference is not needed!)
+        if self.wx_obj:
+            self.wx_obj.Destroy()
+            for child in self:
+                print "destroying child", 
+                child.destroy()
 
     def duplicate(self, new_parent=None):
         "Create a new object exactly similar to self"
