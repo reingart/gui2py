@@ -216,6 +216,9 @@ class Component(object):
             for child in self:
                 print "destroying child", 
                 child.destroy()
+        # destroy the designer selection marker (if any)
+        if hasattr(self, 'sel_marker') and self.sel_marker:
+            self.sel_marker.destroy()
 
     def duplicate(self, new_parent=None):
         "Create a new object exactly similar to self"
@@ -484,6 +487,10 @@ class DesignerMixin(object):
                             doc="function to handle events in design mode", 
                             type='internal')
 
+    sel_marker = InternalSpec(_name="_sel_marker",
+                              doc="selection marker in design mode", 
+                              type='internal')
+
    
 class Control(Component, DesignerMixin):
     "This is the base class for a control"
@@ -567,6 +574,9 @@ class Control(Component, DesignerMixin):
         x = self._calc_dimension(point[0], parent_size[0], font_width) + self.margin_left
         y = self._calc_dimension(point[1], parent_size[1], font_height) + self.margin_top
         self.wx_obj.Move((x, y))
+        # update the designer selection marker (if any)
+        if hasattr(self, 'sel_marker') and self.sel_marker:
+            self.sel_marker.update()
 
     def _get_size(self):
         # return the actual size, not (-1, -1)
@@ -603,6 +613,9 @@ class Control(Component, DesignerMixin):
             self.wx_obj.SetClientSize((w, h))
         else:
             self.wx_obj.SetSize((w, h))
+        # update the designer selection marker (if any)
+        if hasattr(self, 'sel_marker') and self.sel_marker:
+            self.sel_marker.update()
 
     def _get_margin(self, index):
         return self._margins[index] or 0
