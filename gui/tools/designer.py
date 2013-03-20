@@ -214,33 +214,42 @@ class BasicDesigner:
                 # update the position on the propertyEditor status bar
                 ##self.setToolTipDrag(name, (x, y), self.component[name].size)
         elif key == wx.WXK_DELETE:
-            print "DELETE!"
-            # get the selected objects (if any)
-            for wx_obj in self.selection:
-                obj = getattr(wx_obj, "obj")  
-                if obj:
-                    print "deleting", obj.name
-                    obj.destroy()
-            self.selection = []                         # clean selection
-            self.inspector.load_object()                # reload the tree
+            self.delete(event)
         elif key == wx.WXK_INSERT:
-            print "INSERT!"
-            # duplicate the selected objects (if any)
-            new_selection = []
-            for wx_obj in self.selection:
-                obj = getattr(wx_obj, "obj")  
-                if obj:
-                    print "duplicating", obj.name
-                    obj.sel_marker.destroy()
-                    obj.sel_marker = None
-                    obj2 = obj.duplicate()
-                    obj2.sel_marker = SelectionMarker(obj2)
-                    obj2.sel_marker.show(True)
-                    new_selection.append(obj2.wx_obj)
-            self.selection = new_selection              # update with new obj's
-            self.inspector.load_object()                # reload the tree
+            self.duplicate(event)
         else:
             print "KEY:", key
+
+    def delete(self, event):
+        "delete all of the selected objects"
+        print "DELETE!"
+        # get the selected objects (if any)
+        for wx_obj in self.selection:
+            obj = getattr(wx_obj, "obj")  
+            if obj:
+                print "deleting", obj.name
+                obj.destroy()
+        self.selection = []                         # clean selection
+        self.inspector.load_object()                # reload the tree        
+
+    def duplicate(self, event):
+        "create a copy of each selected object"
+        print "INSERT!"
+        # duplicate the selected objects (if any)
+        new_selection = []
+        for wx_obj in self.selection:
+            obj = getattr(wx_obj, "obj")  
+            if obj:
+                print "duplicating", obj.name
+                obj.sel_marker.destroy()
+                obj.sel_marker = None
+                obj2 = obj.duplicate()
+                obj2.sel_marker = SelectionMarker(obj2)
+                obj2.sel_marker.show(True)
+                new_selection.append(obj2.wx_obj)
+        self.selection = new_selection              # update with new obj's
+        self.inspector.load_object()                # reload the tree
+
 
     def draw_grid(self, event):
         wx_obj = event.GetEventObject()
