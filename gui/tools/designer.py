@@ -210,7 +210,7 @@ class BasicDesigner:
                         y = y - 1
                     elif key == wx.WXK_DOWN:
                         y = y + 1
-                wx_obj.SetPosition((x, y))
+                wx_obj.obj.pos = (x, y)
                 # update the position on the propertyEditor status bar
                 ##self.setToolTipDrag(name, (x, y), self.component[name].size)
         elif key == wx.WXK_DELETE:
