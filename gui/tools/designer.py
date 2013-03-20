@@ -221,6 +221,7 @@ class BasicDesigner:
                 if obj:
                     print "deleting", obj.name
                     self.inspector.delete(event, obj)
+            self.selection = []                         # clean selection
         else:
             print "KEY:", key
 
