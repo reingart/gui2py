@@ -84,8 +84,7 @@ class BasicDesigner:
         "Get the selected object and store start position"
         if DEBUG: print "down!"
         if not evt.ControlDown() and not evt.ShiftDown():
-            for wx_obj in self.selection:
-                obj = wx_obj.obj
+            for obj in self.selection:
                 # clear marker
                 if obj.sel_marker:
                     obj.sel_marker.show(False)
@@ -116,7 +115,7 @@ class BasicDesigner:
             # do not capture on wx.Notebook to allow selecting the tabs
             if not isinstance(wx_obj, wx.Notebook):
                 self.parent.wx_obj.CaptureMouse()
-            self.selection.append(wx_obj)
+            self.selection.append(obj)
 
     def mouse_move(self, evt):
         "Move the selected object"
@@ -188,8 +187,8 @@ class BasicDesigner:
         "support cursor keys to move components one pixel at a time"
         key = event.GetKeyCode()
         if key in (wx.WXK_LEFT, wx.WXK_UP, wx.WXK_RIGHT, wx.WXK_DOWN):
-            for wx_obj in self.selection:
-                x, y = wx_obj.GetPosition()
+            for obj in self.selection:
+                x, y = obj.pos
                 if event.ShiftDown():     # snap to grid:t 
                     # for now I'm only going to align to grid
                     # in the direction of the cursor movement 
@@ -210,7 +209,7 @@ class BasicDesigner:
                         y = y - 1
                     elif key == wx.WXK_DOWN:
                         y = y + 1
-                wx_obj.obj.pos = (x, y)
+                obj.pos = (x, y)
                 # update the position on the propertyEditor status bar
                 ##self.setToolTipDrag(name, (x, y), self.component[name].size)
         elif key == wx.WXK_DELETE:
@@ -224,8 +223,7 @@ class BasicDesigner:
         "delete all of the selected objects"
         print "DELETE!"
         # get the selected objects (if any)
-        for wx_obj in self.selection:
-            obj = getattr(wx_obj, "obj")  
+        for obj in self.selection:
             if obj:
                 print "deleting", obj.name
                 obj.destroy()
@@ -237,8 +235,7 @@ class BasicDesigner:
         print "INSERT!"
         # duplicate the selected objects (if any)
         new_selection = []
-        for wx_obj in self.selection:
-            obj = getattr(wx_obj, "obj")  
+        for obj in self.selection:
             if obj:
                 print "duplicating", obj.name
                 obj.sel_marker.destroy()
@@ -246,7 +243,7 @@ class BasicDesigner:
                 obj2 = obj.duplicate()
                 obj2.sel_marker = SelectionMarker(obj2)
                 obj2.sel_marker.show(True)
-                new_selection.append(obj2.wx_obj)
+                new_selection.append(obj2)
         self.selection = new_selection              # update with new obj's
         self.inspector.load_object()                # reload the tree
 
