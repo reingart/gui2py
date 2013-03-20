@@ -39,8 +39,11 @@ class ToolBox(aui.AuiToolBar):
             if ctrl._image:
                 menu_id = wx.NewId()
                 self.menu_ctrl_map[menu_id] = ctrl
-                self.AddSimpleTool(menu_id, name, ctrl._image.GetBitmap())
+                tool = self.AddSimpleTool(menu_id, name, ctrl._image.GetBitmap())
                 self.Bind(wx.EVT_MENU, self.tool_click, id=menu_id)
+                if 'Menu' in ctrl._meta.name:
+                    print "PREPEND!", ctrl
+                    append_items.append(tool)
 
         # Handle "A drag operation involving a toolbar item has started"
         self.Bind(aui.EVT_AUITOOLBAR_BEGIN_DRAG, self.start_drag_opperation)
