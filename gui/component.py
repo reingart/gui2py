@@ -233,6 +233,7 @@ class Component(object):
         # recursively create a copy of each child (in the new parent!)
         for child in self:
             child.duplicate(new_obj)
+        return new_obj
 
     def z_order(self, z=0):
         "Raises/lower the window to the top of the window hierarchy (Z-order)"

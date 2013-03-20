@@ -103,7 +103,7 @@ class BasicDesigner:
             # create the selection marker and assign it to the control
             obj = wx_obj.obj
             if not obj.sel_marker:
-                obj.sel_marker = SelectionMarker(obj, wx_obj.GetParent(), designer=self)
+                obj.sel_marker = SelectionMarker(obj)
             obj.sel_marker.show(True)
             if DEBUG: print wx_obj
             sx, sy = wx_obj.ScreenToClient(wx_obj.GetPositionTuple())
@@ -220,8 +220,25 @@ class BasicDesigner:
                 obj = getattr(wx_obj, "obj")  
                 if obj:
                     print "deleting", obj.name
-                    self.inspector.delete(event, obj)
+                    obj.destroy()
             self.selection = []                         # clean selection
+            self.inspector.load_object()                # reload the tree
+        elif key == wx.WXK_INSERT:
+            print "INSERT!"
+            # duplicate the selected objects (if any)
+            new_selection = []
+            for wx_obj in self.selection:
+                obj = getattr(wx_obj, "obj")  
+                if obj:
+                    print "duplicating", obj.name
+                    obj.sel_marker.destroy()
+                    obj.sel_marker = None
+                    obj2 = obj.duplicate()
+                    obj2.sel_marker = SelectionMarker(obj2)
+                    obj2.sel_marker.show(True)
+                    new_selection.append(obj2.wx_obj)
+            self.selection = new_selection              # update with new obj's
+            self.inspector.load_object()                # reload the tree
         else:
             print "KEY:", key
 
@@ -283,11 +300,11 @@ class SelectionTag(wx.Window):
 class SelectionMarker:
     "Collection of the 4 SelectionTagS for each widget"
     
-    def __init__(self, owner, parent, visible=False, designer=None):
+    def __init__(self, owner, visible=False):
         self.visible = visible
         self.owner = owner
-        self.parent = parent
-        self.designer = designer
+        self.parent = owner.wx_obj.GetParent()
+        self.designer = owner.designer
         if wx.Platform == '__WXMSW__': self.parent = owner
         self.tag_pos = None
         self.tags = None
