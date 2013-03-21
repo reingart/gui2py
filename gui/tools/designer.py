@@ -12,7 +12,7 @@ CURSOR_SIZING = wx.CURSOR_SIZENWSE
 
 
 class BasicDesigner:
-    "Simple point-and-click layout designer (support moving controls)"
+    "Simple point-and-click layout designer (supports move & resize controls)"
 
     def __init__(self, parent, inspector=None):
         self.parent = parent
@@ -141,7 +141,7 @@ class BasicDesigner:
             y = y / GRID_SIZE[1] * GRID_SIZE[1]
         pos = wx.Point(x, y)
         if not self.resizing or self.resizing != (wx_obj, (n, w, s, e)):
-            self.pos = pos                              # store starting point
+            self.pos = list(pos)                        # store starting point
             self.resizing = (wx_obj, (n, w, s, e))      # track obj and handle
         else:
             delta = pos - self.pos 
@@ -150,25 +150,37 @@ class BasicDesigner:
                 # resize according the direction (n, w, s, e)
                 x = wx_obj.Position[0] + e * delta[0]
                 y = wx_obj.Position[1] + n * delta[1]
-                w = wx_obj.Size[0] + (w - e) * delta[0]
-                h = wx_obj.Size[1] + (s - n) * delta[1]
+                width = wx_obj.Size[0] + (w - e) * delta[0]
+                if n or s:
+                    height = wx_obj.Size[1] + (s - n) * delta[1]
+                else:
+                    height = None
             else:
                 # just move
                 x = wx_obj.Position[0] + delta[0]
                 y = wx_obj.Position[1] + delta[1]
-                w = wx_obj.Size[0]
-                h = wx_obj.Size[1]
+                width = height = None
             new_pos = (x, y)
-            new_size = (w, h)
+            new_size = (width, height)
             if new_size != wx_obj.GetSize() or new_pos != wx_obj.GetPosition():
                 # reset margins (TODO: avoid resizing recursion)
                 wx_obj.obj.margin_left = 0
                 wx_obj.obj.margin_right = 0
                 wx_obj.obj.margin_top = 0
                 wx_obj.obj.margin_bottom = 0
-                wx_obj.obj.pos = new_pos      # update gui specs
-                wx_obj.obj.size = new_size    # update gui specs
-                self.pos = pos                # store new starting point
+                wx_obj.obj.pos = new_pos      # update gui specs (position)
+                # update gui specs (size), but do not alter default value
+                if width is not None and height is not None:
+                    wx_obj.obj.size = new_size
+                elif width is not None:
+                    wx_obj.obj.width = width
+                elif height is not None:
+                    wx_obj.obj.height = height
+                # only update on sw for a smooth resize
+                if w:
+                    self.pos[0] = pos[0]        # store new starting point
+                if s:
+                    self.pos[1] = pos[1]        # store new starting point
 
     def mouse_up(self, evt):
         "Release the selected object"
