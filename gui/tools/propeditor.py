@@ -155,6 +155,8 @@ class PropertyEditorPanel(wx.Panel):
         prop = self.pg.GetPropertyByName("label")
         if not prop:
             prop = self.pg.GetPropertyByName("text")
+        if not prop:
+            prop = self.pg.GetPropertyByName("title")
         self.Parent.SetFocus()
         self.Parent.Raise()
         self.pg.SetFocus()
