@@ -21,8 +21,6 @@ gui.TextBox(name='txtTest', height='25', left='99', top='31', width='152',
             parent='mywin', text=u'greeting', )
 gui.Button(label=u'click me!', name='btnTest', height='29', left='126', 
            top='157', width='85', default=True, parent='mywin', )
-gui.ComboBox(name='cboTest', height='22', left='100', top='60', width='80', 
-             items=[], parent='mywin', string_selection=u'', )
 gui.ListBox(name='lstTest', height='96', left='277', top='28', width='103', 
             data_selection=u'two', items=[u'one', u'two', u'tree'], 
             parent='mywin', selection=1, string_selection=u'two', )
@@ -56,6 +54,9 @@ gui.TabPanel(id=163, name='tabpanel_163', index=1,
              parent='mywin.notebook_121', selected=False, text=u'tab 1', )
 gui.GridView(name='gridview_123_56', height='32px', left='0px', top='0px', 
              width='82px', parent='mywin.notebook_121.tabpanel_163', )
+gui.ComboBox(name='cboTest', text=u'select me!', left='100', top='58', 
+             width='152', items=[u'option 1', u'option 2', u'option 3'], 
+             parent='mywin', string_selection=u'', )
 
 # --- gui2py designer end ---
 
