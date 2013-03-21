@@ -149,14 +149,13 @@ class PropertyEditorPanel(wx.Panel):
                             pg.SetPropertyHelpString(name, doc)
                         appended.add(name)
 
-    def edit(self, name=None):
+    def edit(self, name=""):
         "Programatically select a (default) property to start editing it"
         # for more info see DoSelectAndEdit in propgrid.cpp
-        prop = self.pg.GetPropertyByName("label")
-        if not prop:
-            prop = self.pg.GetPropertyByName("text")
-        if not prop:
-            prop = self.pg.GetPropertyByName("title")
+        for name in (name, "label", "text", "title", "filename", "name"):        
+            prop = self.pg.GetPropertyByName(name)
+            if prop is not None:
+                break
         self.Parent.SetFocus()
         self.Parent.Raise()
         self.pg.SetFocus()
