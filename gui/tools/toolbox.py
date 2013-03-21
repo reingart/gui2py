@@ -41,8 +41,8 @@ class ToolBox(aui.AuiToolBar):
                 self.menu_ctrl_map[menu_id] = ctrl
                 tool = self.AddSimpleTool(menu_id, name, ctrl._image.GetBitmap())
                 self.Bind(wx.EVT_MENU, self.tool_click, id=menu_id)
+                # TODO: add meta info to classify controls
                 if 'Menu' in ctrl._meta.name:
-                    print "PREPEND!", ctrl
                     append_items.append(tool)
 
         # Handle "A drag operation involving a toolbar item has started"
@@ -75,11 +75,11 @@ class ToolBox(aui.AuiToolBar):
                 obj.drop_target = dt
         # fix width and height if default is not visible
         w, h = obj.size
-        if w < 10:
-            w = 100
-        if h < 10:
-            h = 10
-        obj.size = (w, h)
+        if w <= 10:
+            obj.width = 100
+        if h <= 10:
+            obj.height = 20
+
         # update the object at the inspector (to show the new control)
         if self.inspector:
             self.inspector.load_object(self.inspector.root_obj)  # refresh tree
@@ -182,7 +182,12 @@ class ToolBoxDropTarget(wx.PyDropTarget):
             # set default dimensions (width and height determined by wx):
             if hasattr(obj, "pos"):     # only Controls
                 obj.left, obj.top = ["%spx" % dim for dim in obj.pos] 
-                obj.width, obj.height = ["%spx" % dim for dim in obj.size]
+                # fix width and height if default is not visible
+                w, h = obj.size
+                if w <= 10:
+                    obj.width = 100
+                if h <= 10:
+                    obj.height = 20
             # update the object at the inspector (to show the new control)
             if self.inspector:
                 self.inspector.load_object(self.root)
