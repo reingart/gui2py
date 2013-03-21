@@ -59,9 +59,13 @@ class InspectorPanel(wx.Panel):
         "track designer for context menu"
         self.designer = designer
 
-    def load_object(self, obj):
+    def load_object(self, obj=None):
         "Add the object and all their childs"
-        self.root_obj = obj
+        # if not obj is given, do a full reload using the current root
+        if obj:
+            self.root_obj = obj
+        else:
+            obj = self.root_obj
         self.tree.DeleteAllItems()
         self.root = self.tree.AddRoot("application")
         self.tree.SetItemText(self.root, "App", 1)

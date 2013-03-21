@@ -203,17 +203,22 @@ class Component(object):
     
     def destroy(self):
         "Remove event references and destroy wx object (and children)"
-        if self.wx_obj:
-            self.wx_obj.Destroy()
-            for child in self:
-                print "destroying child", 
-                child.destroy()
+        # unreference the obj from the components map and parent
         if self._name:
             del COMPONENTS[self._get_fully_qualified_name()]
             if DEBUG: print "deleted from components!"
             if isinstance(self._parent, Component):
                 del self._parent[self._name]
-                print "deleted from parent!"
+                if DEBUG: print "deleted from parent!"
+        # destroy the wx_obj (only if sure that reference is not needed!)
+        if self.wx_obj:
+            self.wx_obj.Destroy()
+            for child in self:
+                print "destroying child", 
+                child.destroy()
+        # destroy the designer selection marker (if any)
+        if hasattr(self, 'sel_marker') and self.sel_marker:
+            self.sel_marker.destroy()
 
     def duplicate(self, new_parent=None):
         "Create a new object exactly similar to self"
@@ -228,6 +233,7 @@ class Component(object):
         # recursively create a copy of each child (in the new parent!)
         for child in self:
             child.duplicate(new_obj)
+        return new_obj
 
     def z_order(self, z=0):
         "Raises/lower the window to the top of the window hierarchy (Z-order)"
@@ -482,6 +488,10 @@ class DesignerMixin(object):
                             doc="function to handle events in design mode", 
                             type='internal')
 
+    sel_marker = InternalSpec(_name="_sel_marker",
+                              doc="selection marker in design mode", 
+                              type='internal')
+
    
 class Control(Component, DesignerMixin):
     "This is the base class for a control"
@@ -565,6 +575,9 @@ class Control(Component, DesignerMixin):
         x = self._calc_dimension(point[0], parent_size[0], font_width) + self.margin_left
         y = self._calc_dimension(point[1], parent_size[1], font_height) + self.margin_top
         self.wx_obj.Move((x, y))
+        # update the designer selection marker (if any)
+        if hasattr(self, 'sel_marker') and self.sel_marker:
+            self.sel_marker.update()
 
     def _get_size(self):
         # return the actual size, not (-1, -1)
@@ -601,6 +614,9 @@ class Control(Component, DesignerMixin):
             self.wx_obj.SetClientSize((w, h))
         else:
             self.wx_obj.SetSize((w, h))
+        # update the designer selection marker (if any)
+        if hasattr(self, 'sel_marker') and self.sel_marker:
+            self.sel_marker.update()
 
     def _get_margin(self, index):
         return self._margins[index] or 0

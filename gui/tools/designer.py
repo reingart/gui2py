@@ -84,12 +84,12 @@ class BasicDesigner:
         "Get the selected object and store start position"
         if DEBUG: print "down!"
         if not evt.ControlDown() and not evt.ShiftDown():
-            for wx_obj in self.selection:
+            for obj in self.selection:
                 # clear marker
-                if hasattr(wx_obj, "sel_marker"):
-                    wx_obj.sel_marker.show(False)
-                    wx_obj.sel_marker.destroy()
-                    del wx_obj.sel_marker
+                if obj.sel_marker:
+                    obj.sel_marker.show(False)
+                    obj.sel_marker.destroy()
+                    obj.sel_marker = None
             self.selection = []  # clear previous selection
 
         wx_obj = evt.GetEventObject()
@@ -99,9 +99,11 @@ class BasicDesigner:
             if self.inspector and hasattr(wx_obj, "obj"):
                 self.inspector.inspect(wx_obj.obj)  # inspect top level window
         else:
-            if not hasattr(wx_obj, "sel_marker"):
-                wx_obj.sel_marker = SelectionMarker(wx_obj, wx_obj.GetParent(), designer=self)
-            wx_obj.sel_marker.show(True)
+            # create the selection marker and assign it to the control
+            obj = wx_obj.obj
+            if not obj.sel_marker:
+                obj.sel_marker = SelectionMarker(obj)
+            obj.sel_marker.show(True)
             if DEBUG: print wx_obj
             sx, sy = wx_obj.ScreenToClient(wx_obj.GetPositionTuple())
             dx, dy = wx_obj.ScreenToClient(wx.GetMousePosition())
@@ -113,15 +115,13 @@ class BasicDesigner:
             # do not capture on wx.Notebook to allow selecting the tabs
             if not isinstance(wx_obj, wx.Notebook):
                 self.parent.wx_obj.CaptureMouse()
-            self.selection.append(wx_obj)
+            self.selection.append(obj)
 
     def mouse_move(self, evt):
         "Move the selected object"
         if DEBUG: print "move!"
         if self.current:
             wx_obj = self.current
-            ##if  True or hasattr(wx_obj, "sel_maker"):
-            wx_obj.sel_marker.update()
             sx, sy = self.start
             x, y = wx.GetMousePosition()
             # update gui specs (this will overwrite relative dimensions):
@@ -169,7 +169,6 @@ class BasicDesigner:
                 wx_obj.obj.pos = new_pos      # update gui specs
                 wx_obj.obj.size = new_size    # update gui specs
                 self.pos = pos                # store new starting point
-                wx_obj.sel_marker.update()
 
     def mouse_up(self, evt):
         "Release the selected object"
@@ -177,7 +176,6 @@ class BasicDesigner:
         self.resizing = False
         if self.current: 
             wx_obj = self.current
-            #del wx_obj.sel_marker
             if self.parent.wx_obj.HasCapture():
                 self.parent.wx_obj.ReleaseMouse()
             self.current = None
@@ -189,8 +187,8 @@ class BasicDesigner:
         "support cursor keys to move components one pixel at a time"
         key = event.GetKeyCode()
         if key in (wx.WXK_LEFT, wx.WXK_UP, wx.WXK_RIGHT, wx.WXK_DOWN):
-            for wx_obj in self.selection:
-                x, y = wx_obj.GetPosition()
+            for obj in self.selection:
+                x, y = obj.pos
                 if event.ShiftDown():     # snap to grid:t 
                     # for now I'm only going to align to grid
                     # in the direction of the cursor movement 
@@ -211,22 +209,44 @@ class BasicDesigner:
                         y = y - 1
                     elif key == wx.WXK_DOWN:
                         y = y + 1
-                wx_obj.SetPosition((x, y))
-                wx_obj.sel_marker.update()
-                # make sure sizing handles follow component
-                ##self.showSizingHandles(name)
+                obj.pos = (x, y)
                 # update the position on the propertyEditor status bar
                 ##self.setToolTipDrag(name, (x, y), self.component[name].size)
         elif key == wx.WXK_DELETE:
-            print "DELETE!"
-            # get the selected objects (if any)
-            for wx_obj in self.selection:
-                obj = getattr(wx_obj, "obj")  
-                if obj:
-                    print "deleting", obj.name
-                    self.inspector.delete(event, obj)
+            self.delete(event)
+        elif key == wx.WXK_INSERT:
+            self.duplicate(event)
         else:
             print "KEY:", key
+
+    def delete(self, event):
+        "delete all of the selected objects"
+        print "DELETE!"
+        # get the selected objects (if any)
+        for obj in self.selection:
+            if obj:
+                print "deleting", obj.name
+                obj.destroy()
+        self.selection = []                         # clean selection
+        self.inspector.load_object()                # reload the tree        
+
+    def duplicate(self, event):
+        "create a copy of each selected object"
+        print "INSERT!"
+        # duplicate the selected objects (if any)
+        new_selection = []
+        for obj in self.selection:
+            if obj:
+                print "duplicating", obj.name
+                obj.sel_marker.destroy()
+                obj.sel_marker = None
+                obj2 = obj.duplicate()
+                obj2.sel_marker = SelectionMarker(obj2)
+                obj2.sel_marker.show(True)
+                new_selection.append(obj2)
+        self.selection = new_selection              # update with new obj's
+        self.inspector.load_object()                # reload the tree
+
 
     def draw_grid(self, event):
         wx_obj = event.GetEventObject()
@@ -277,7 +297,7 @@ class SelectionTag(wx.Window):
         if evt.LeftDown():
             self.CaptureMouse()
         if evt.LeftIsDown():
-            self.designer.do_resize(evt, self.owner, self.direction[self.index])
+            self.designer.do_resize(evt, self.owner.wx_obj, self.direction[self.index])
         elif evt.LeftUp() and self.HasCapture():
             self.ReleaseMouse()
             
@@ -286,11 +306,11 @@ class SelectionTag(wx.Window):
 class SelectionMarker:
     "Collection of the 4 SelectionTagS for each widget"
     
-    def __init__(self, owner, parent, visible=False, designer=None):
+    def __init__(self, owner, visible=False):
         self.visible = visible
         self.owner = owner
-        self.parent = parent
-        self.designer = designer
+        self.parent = owner.wx_obj.GetParent()
+        self.designer = owner.designer
         if wx.Platform == '__WXMSW__': self.parent = owner
         self.tag_pos = None
         self.tags = None
@@ -301,8 +321,8 @@ class SelectionMarker:
 
     def update(self, event=None):
         if self.owner is self.parent: x, y = 0, 0
-        else: x, y = self.owner.GetPosition()
-        w, h = self.owner.GetClientSize()
+        else: x, y = self.owner.wx_obj.GetPosition()
+        w, h = self.owner.wx_obj.GetClientSize()
         def position(j):
             if not j: return x, y                           # top-left
             elif j == 1: return x + w - 7, y                # top-right

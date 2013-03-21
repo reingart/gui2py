@@ -19,7 +19,7 @@ class wx_Panel(wx.Panel):
 class Panel(Control):
     "A container to group controls (optionally with a rectangle and title)"
     
-    _style = wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS
+    _style = wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS | wx.TAB_TRAVERSAL
     _image = images.panel
     
     def __init__(self, *args, **kwargs):
