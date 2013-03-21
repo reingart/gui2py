@@ -184,6 +184,12 @@ class Window(Control):
     ##wx.EVT_WINDOW_DESTROY(self, self.OnDestroy)
 
 
+# update metadata for the add context menu at the designer:
+
+Window._meta.valid_children = [ctr for ctr in registry.CONTROLS.values()
+                                 if ctr._image]   # TODO: better filter
+ 
+
 if __name__ == "__main__":
     # basic test until proper unit_test
     from ..controls import Button
