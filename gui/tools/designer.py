@@ -372,7 +372,7 @@ class SelectionMarker:
                 for i in range(8):
                     self.tags[i].SetPosition(self.tag_pos[i])
                     self.tags[i].Show()
-            else:
+            elif self.tags:
                 for tag in self.tags: tag.Destroy()
                 self.tags = None
 
