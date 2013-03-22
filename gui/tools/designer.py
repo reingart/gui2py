@@ -291,6 +291,9 @@ class SelectionTag(wx.Window):
     direction = [(1, 0, 0, 1), (1, 1, 0, 0), (0, 1, 1, 0), (0, 0, 1, 1),
                  (1, 0, 0, 0), (0, 0, 0, 1), (0, 1, 0, 0), (0, 0, 1, 0), 
                  (0, 0, 0, 0)]
+    cursors = [wx.CURSOR_SIZENWSE, wx.CURSOR_SIZENESW, wx.CURSOR_SIZENWSE, 
+               wx.CURSOR_SIZENESW, wx.CURSOR_SIZENS, wx.CURSOR_SIZEWE, 
+               wx.CURSOR_SIZEWE, wx.CURSOR_SIZENS, wx.CURSOR_SIZING]
     
     def __init__(self, parent, owner, pos=None, index=None, designer=None):
         kwds = { 'size': (7, 7) }
@@ -304,6 +307,7 @@ class SelectionTag(wx.Window):
         self.designer = designer
         self.owner = owner
         self.index = index
+        self.SetCursor(wx.StockCursor(self.cursors[index]))
     
     def motion(self, evt):
         if evt.LeftDown():
