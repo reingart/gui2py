@@ -312,7 +312,6 @@ class SelectionTag(wx.Window):
             self.designer.do_resize(evt, self.owner.wx_obj, self.direction[self.index])
         elif evt.LeftUp() and self.HasCapture():
             self.ReleaseMouse()
-            
 
 
 class SelectionMarker:
@@ -345,11 +344,11 @@ class SelectionMarker:
             elif j == 6: return x + w + 1, y + h/2 - 3      # right
             elif j == 7: return x + w/2 - 4, y + h + 1      # bottom
             elif j == 8: return x + w/2 - 4, y + h/2 - 4    # middle
-        self.tag_pos = [ position(i) for i in range(9) ]
+        self.tag_pos = [ position(i) for i in range(8) ]
         if self.visible:
             if not self.tags:
-                self.tags = [ SelectionTag(self.parent, self.owner, index=i, designer=self.designer) for i in range(9) ]
-            for i in range(9):
+                self.tags = [ SelectionTag(self.parent, self.owner, index=i, designer=self.designer) for i in range(8) ]
+            for i in range(8):
                 self.tags[i].SetPosition(self.tag_pos[i])
         if event: event.Skip()
 
@@ -358,8 +357,8 @@ class SelectionMarker:
             self.visible = visible
             if self.visible:
                 if not self.tags:
-                    self.tags = [ SelectionTag(self.parent, self.owner, index=i, designer=self.designer) for i in range(9) ]
-                for i in range(9):
+                    self.tags = [ SelectionTag(self.parent, self.owner, index=i, designer=self.designer) for i in range(8) ]
+                for i in range(8):
                     self.tags[i].SetPosition(self.tag_pos[i])
                     self.tags[i].Show()
             else:
