@@ -63,7 +63,7 @@ class BasicDesigner:
             self.key_press(evt)
         elif evt.GetEventType() == wx.EVT_LEFT_DOWN.typeId:
             # calculate time between clicks (is this a double click?)
-            if not self.timestamp or evt.Timestamp - self.timestamp > 1000:
+            if not self.timestamp or evt.Timestamp - self.timestamp > 500:
                 # no, process normal mouse click and store obj for later dclick
                 self.mouse_down(evt)
                 self.last_obj = getattr(evt.GetEventObject(), "obj")
