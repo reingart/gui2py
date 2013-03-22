@@ -308,6 +308,7 @@ class SelectionTag(wx.Window):
         self.owner = owner
         self.index = index
         self.SetCursor(wx.StockCursor(self.cursors[index]))
+        self.Raise()    # put over all the other controls so it get the events!
     
     def motion(self, evt):
         if evt.LeftDown():
