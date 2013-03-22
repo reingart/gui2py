@@ -323,7 +323,7 @@ class SelectionMarker:
         self.owner = owner
         self.parent = owner.wx_obj.GetParent()
         self.designer = owner.designer
-        if wx.Platform == '__WXMSW__': self.parent = owner
+        ##if wx.Platform == '__WXMSW__': self.parent = owner.wx_obj
         self.tag_pos = None
         self.tags = None
         #self.tags = [ SelectionTag(self.parent) for i in range(4) ]
@@ -336,15 +336,15 @@ class SelectionMarker:
         else: x, y = self.owner.wx_obj.GetPosition()
         w, h = self.owner.wx_obj.GetClientSize()
         def position(j):
-            if not j: return x, y                           # top-left
-            elif j == 1: return x + w - 7, y                # top-right
-            elif j == 2: return x + w - 7, y + h - 7        # bottom-right
-            elif j == 3: return x, y + h - 7                # bottom-left
-            elif j == 4: return x + w/2 - 3, y              # top
-            elif j == 5: return x, y + h/2 -3               # right
-            elif j == 6: return x + w - 7, y + h/2 - 3      # left
-            elif j == 7: return x + w/2 - 3, y + h - 7      # bottom
-            elif j == 8: return x + w/2 - 3, y + h/2 - 3    # middle
+            if not j: return x-8, y-8                       # top-left
+            elif j == 1: return x + w + 1, y - 8            # top-right
+            elif j == 2: return x + w + 1, y + h +1         # bottom-right
+            elif j == 3: return x - 8, y + h                # bottom-left
+            elif j == 4: return x + w/2 - 4, y - 8          # top
+            elif j == 5: return x - 8, y + h/2 - 4          # left
+            elif j == 6: return x + w + 1, y + h/2 - 3      # right
+            elif j == 7: return x + w/2 - 4, y + h + 1      # bottom
+            elif j == 8: return x + w/2 - 4, y + h/2 - 4    # middle
         self.tag_pos = [ position(i) for i in range(9) ]
         if self.visible:
             if not self.tags:
