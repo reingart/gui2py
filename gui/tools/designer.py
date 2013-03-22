@@ -24,6 +24,7 @@ class BasicDesigner:
         self.inspector = inspector
         self.last_wx_obj = None     # used to draw the resize handle
         self.onclose = None
+        self.timestamp = None       # used to track double clicks on MSW
 
     def __call__(self, evt):
         "Handler for EVT_MOUSE_EVENTS (binded in design mode)"
@@ -61,7 +62,15 @@ class BasicDesigner:
         elif evt.GetEventType() == wx.EVT_KEY_DOWN.typeId:
             self.key_press(evt)
         elif evt.GetEventType() == wx.EVT_LEFT_DOWN.typeId:
-            self.mouse_down(evt)
+            # calculate time between clicks (is this a double click?)
+            if not self.timestamp or evt.Timestamp - self.timestamp > 1000:
+                # no, process normal mouse click and store obj for later dclick
+                self.mouse_down(evt)
+                self.last_obj = getattr(evt.GetEventObject(), "obj")
+            elif self.inspector:
+                # on dclick, inspect & edit the default property (ie label)
+                wx.CallAfter(self.inspector.inspect, self.last_obj, False, True)
+            self.timestamp = evt.Timestamp
         elif evt.GetEventType() == wx.EVT_LEFT_UP.typeId:
             self.mouse_up(evt)
         elif evt.GetEventType() == wx.EVT_MOTION.typeId:
@@ -72,10 +81,6 @@ class BasicDesigner:
             self.current = None
             wx.CallAfter(self.inspector.inspect, 
                          getattr(evt.GetEventObject(), "obj"), True)
-        elif evt.GetEventType() == wx.EVT_LEFT_DCLICK.typeId and self.inspector:
-            # on double click, inspect and edit the default property (ie label)
-            wx.CallAfter(self.inspector.inspect, 
-                         getattr(evt.GetEventObject(), "obj"), False, True)
         # allow default behavior (set focus / tab change):
         if isinstance(evt.GetEventObject(), wx.Notebook):
             evt.Skip()
@@ -96,8 +101,9 @@ class BasicDesigner:
 
         if wx_obj.Parent is None:
             evt.Skip()
-            if self.inspector and hasattr(wx_obj, "obj"):
-                self.inspector.inspect(wx_obj.obj)  # inspect top level window
+            #if self.inspector and hasattr(wx_obj, "obj"):
+            #    self.inspector.inspect(wx_obj.obj)  # inspect top level window
+            #self.dclick = False
         else:
             # create the selection marker and assign it to the control
             obj = wx_obj.obj
