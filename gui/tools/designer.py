@@ -235,27 +235,25 @@ class BasicDesigner:
         elif key == wx.WXK_INSERT:
             self.duplicate(event)
         else:
-            print "KEY:", key
+            if DEBUG: print "KEY:", key
 
     def delete(self, event):
         "delete all of the selected objects"
-        print "DELETE!"
         # get the selected objects (if any)
         for obj in self.selection:
             if obj:
-                print "deleting", obj.name
+                if DEBUG: print "deleting", obj.name
                 obj.destroy()
         self.selection = []                         # clean selection
         self.inspector.load_object()                # reload the tree        
 
     def duplicate(self, event):
         "create a copy of each selected object"
-        print "INSERT!"
         # duplicate the selected objects (if any)
         new_selection = []
         for obj in self.selection:
             if obj:
-                print "duplicating", obj.name
+                if DEBUG: print "duplicating", obj.name
                 obj.sel_marker.destroy()
                 obj.sel_marker = None
                 obj2 = obj.duplicate()

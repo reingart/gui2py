@@ -171,11 +171,11 @@ class PropertyEditorPanel(wx.Panel):
         flags |= wxPG_SEL_FOCUS # | wxPG_SEL_FORCE
         prop = self.pg.GetPropertyByName(name)
         self.pg.SelectProperty(prop, flags)
-        print "selected!"
+        if DEBUG: print "selected!", prop
     
     def OnPropGridChange(self, event):
         p = event.GetProperty()
-        print "change!", p
+        if DEBUG: print "change!", p
         if p:
             name = p.GetName()
             spec = p.GetPyClientData()
