@@ -9,8 +9,8 @@ import gui
 
 # --- gui2py designer start ---
 
-gui.Window(name='mywin', title=u'hello world', resizable=True, height='617px', 
-           left='180', top='24', width='400px', )
+gui.Window(name='mywin', title=u'hello world', resizable=True, height='769px', 
+           left='180', top='24', width='528px', bgcolor=u'#E0E0E0', )
 gui.Button(label=u'Quit', name=u'btnClose', height='29', left='232', 
            top='156', width='85', parent='mywin', )
 gui.CheckBox(label=u'Check me!', name='chkTest', height='24', left='98', 
@@ -24,8 +24,8 @@ gui.Button(label=u'click me!', name='btnTest', height='29', left='126',
 gui.ListBox(name='lstTest', height='96', left='277', top='28', width='103', 
             data_selection=u'two', items=[u'one', u'two', u'tree'], 
             parent='mywin', selection=1, string_selection=u'two', )
-gui.MenuBar(name='menubar_83_155', fgcolor='black', parent='mywin', )
-gui.Menu(name='menu_114', fgcolor='black', parent='mywin.menubar_83_155', )
+gui.MenuBar(name='menubar_83_155', fgcolor=u'#000000', parent='mywin', )
+gui.Menu(name='menu_114', fgcolor=u'#000000', parent='mywin.menubar_83_155', )
 gui.MenuItem(help=u'MenuItem', id=127, name='menuitem_127', 
              parent='mywin.menubar_83_155.menu_114', )
 gui.MenuItemCheckable(help=u'MenuItemCheck', id=120, label=u'MenuItemCheck', 
@@ -51,12 +51,13 @@ gui.TabPanel(id=133, name='tabpanel_133', index=0,
 gui.Button(id=197, name='button_197', left='8', top='13', 
            parent='mywin.notebook_121.tabpanel_133', )
 gui.TabPanel(id=163, name='tabpanel_163', index=1, 
-             parent='mywin.notebook_121', selected=False, text=u'tab 1', )
+             parent='mywin.notebook_121', selected=False, text=u'tab 1', 
+             visible=False, )
 gui.GridView(name='gridview_123_56', height='32px', left='0px', top='0px', 
              width='82px', parent='mywin.notebook_121.tabpanel_163', )
-gui.ComboBox(name='cboTest', text=u'select me!', left='100', top='58', 
-             width='152', items=[u'option 1', u'option 2', u'option 3'], 
-             parent='mywin', string_selection=u'', )
+gui.ComboBox(name='cboTest', left='100', top='58', width='152', 
+             items=[u'option 1', u'option 2', u'option 3'], parent='mywin', 
+             string_selection=u'', )
 
 # --- gui2py designer end ---
 

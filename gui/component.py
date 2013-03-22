@@ -85,6 +85,7 @@ class Component(object):
         else:
             self.set_parent(parent, init=True)
             self._font = None
+            self._bgcolor = self._fgcolor = False
             # container to hold children:
             self._children_dict = {}    # key and values for __setitem__
             self._children_list = []    # ordered values for __iter__
@@ -375,6 +376,9 @@ class Component(object):
         if color is not wx.NullColour:
             self.wx_obj.SetForegroundColour(color)
             self.wx_obj.Refresh()   # KEA wxPython bug?
+            self._fgcolor = True
+        else:
+            self._fgcolor = False
     
     def _set_bgcolor(self, color):
         color = self._get_default_color(color, "background")
@@ -382,12 +386,25 @@ class Component(object):
         if color is not wx.NullColour:
             self.wx_obj.SetBackgroundColour(color)
             self.wx_obj.Refresh()   # KEA wxPython bug?
+            self._bgcolor = True
+        else:
+            self._fgcolor = False
 
     def _get_fgcolor(self):
-        return self.wx_obj.GetForegroundColour()
+        color = self.wx_obj.GetForegroundColour()
+        if color:
+            color = self._get_default_color(color, "foreground")
+            c = Color(color.Red(), color.Green(), color.Blue(), color.Alpha())
+            c.default = not self._fgcolor
+            return c
 
     def _get_bgcolor(self):
-        return self.wx_obj.GetBackgroundColour()
+        color = self.wx_obj.GetBackgroundColour()
+        if color:
+            color = self._get_default_color(color, "background")
+            c = Color(color.Red(), color.Green(), color.Blue(), color.Alpha())
+            c.default = not self._bgcolor
+            return c
         
     def _setToolTip(self, aString):
         toolTip = wx.ToolTip(aString)
@@ -414,14 +431,18 @@ class Component(object):
         if color is None:
             # warning: NullColour is ignored as it doesn't work properly in OSX
             # use wx.SystemSettings.GetColour(wx.SYS_COLOUR_BACKGROUND) instead
-            return wx.NullColour
+            c = wx.NullColour
         else:
             # KEA 2001-07-27
             # is the right place for this check?
             if isinstance(color, tuple) and len(color) == 3:
-                return wx.Colour(color[0], color[1], color[2])
+                c = Color(color[0], color[1], color[2])
             else:
-                return color
+                if isinstance(color, basestring):
+                    c = wx.NamedColour(color)
+                else:
+                    c = color
+        return c
 
     def _getEnabled(self):
         return self.wx_obj.IsEnabled()
@@ -760,9 +781,21 @@ class SubComponent(object):
                       doc="parent window (used internally)")
 
 
-# Auxiliary functions:
+# Auxiliary functions & classes:
 
 
+class Color(wx.Colour):
+    "Helper to represent the colour and detect if a colour is the default"
+    
+    default = True
+    
+    def __repr__(self):
+        if not self.default:
+            return repr(self.GetAsString(wx.C2S_HTML_SYNTAX))
+        else:
+            return 'None'
+
+            
 def new_id(id=None):
     if id is None or id == -1:
         return wx.NewId()
@@ -783,16 +816,17 @@ def represent(obj, prefix, max_cols=80):
         name = getattr(obj, "name", "")
         class_name = "%s.%s" % (prefix, obj.__class__.__name__)
         padding = len(class_name) + 1
-        params = ["%s=%s" % 
-                (k, repr(getattr(obj, k))) 
-                for (k, spec) in sorted(obj._meta.specs.items(), key=get_sort_key)
-
-                if not isinstance(spec, InternalSpec) 
-                   and getattr(obj, k, "") != spec.default
-                   and (k != 'id' or getattr(obj, k) > 0) 
-                   and isinstance(getattr(obj, k), 
-                         (basestring, int, long, bool, dict, list, Font))                
-                ]
+        params = []
+        for (k, spec) in sorted(obj._meta.specs.items(), key=get_sort_key):
+            v = getattr(obj, k, "")
+            if (not isinstance(spec, InternalSpec) 
+                and v != spec.default
+                and (k != 'id' or v > 0) 
+                and isinstance(v, 
+                     (basestring, int, long, bool, dict, list, Font, Color))                
+                and repr(v) != 'None'
+                ):
+                params.append("%s=%s" % (k, repr(v))) 
         param_lines = []
         line = ""
         for param in params:
@@ -802,7 +836,7 @@ def represent(obj, prefix, max_cols=80):
             line += param + ", "
         param_lines.append(line)
         param_str = ("\n%s" % (" " * padding)).join(param_lines)
-        return "%s(%s)" % (class_name, param_str) 
+        return "%s(%s)" % (class_name, param_str)
     except:
         raise
         # uninitialized, use standard representation to not break debuggers
