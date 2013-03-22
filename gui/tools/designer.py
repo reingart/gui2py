@@ -463,9 +463,9 @@ if __name__ == '__main__':
     else:
         log = open(os.devnull, 'w')
         
-    f1 = wx.Frame(None, pos=(600, 25), size=(300, 300), 
+    f1 = wx.Frame(None, pos=(600, 25), size=(300, 300), title="GUI Inspector")
+    f2 = wx.Frame(None, pos=(600, 350), size=(300, 300), 
                         title="GUI Property Editor")
-    f2 = wx.Frame(None, pos=(600, 350), size=(300, 300), title="GUI Inspector")
     propeditor = PropertyEditorPanel(f2, log)
     inspector = InspectorPanel(f1, propeditor, log)
     f1.Show()
