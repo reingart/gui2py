@@ -25,6 +25,7 @@ class BasicDesigner:
         self.last_wx_obj = None     # used to draw the resize handle
         self.onclose = None
         self.timestamp = None       # used to track double clicks on MSW
+        self.last_xy = None         # last clicked position
 
     def __call__(self, evt):
         "Handler for EVT_MOUSE_EVENTS (binded in design mode)"
@@ -63,7 +64,8 @@ class BasicDesigner:
             self.key_press(evt)
         elif evt.GetEventType() == wx.EVT_LEFT_DOWN.typeId:
             # calculate time between clicks (is this a double click?)
-            if not self.timestamp or evt.Timestamp - self.timestamp > 1000:
+            if not self.timestamp or evt.Timestamp - self.timestamp > 1000 or \
+                   self.last_xy != evt.GetPositionTuple():
                 # no, process normal mouse click and store obj for later dclick
                 self.mouse_down(evt)
                 self.last_obj = getattr(evt.GetEventObject(), "obj")
@@ -71,6 +73,7 @@ class BasicDesigner:
                 # on dclick, inspect & edit the default property (ie label)
                 wx.CallAfter(self.inspector.inspect, self.last_obj, False, True)
             self.timestamp = evt.Timestamp
+            self.last_xy = evt.GetPositionTuple()
         elif evt.GetEventType() == wx.EVT_LEFT_UP.typeId:
             self.mouse_up(evt)
         elif evt.GetEventType() == wx.EVT_MOTION.typeId:
