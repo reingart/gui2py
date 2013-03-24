@@ -1,3 +1,6 @@
+
+import decimal
+import datetime
 import wx
 
 from .event import FocusEvent, MouseEvent, KeyEvent
@@ -824,7 +827,10 @@ def represent(obj, prefix, max_cols=80):
                 and v != spec.default
                 and (k != 'id' or v > 0) 
                 and isinstance(v, 
-                     (basestring, int, long, bool, dict, list, Font, Color))                
+                     (basestring, int, long, float, bool, dict, list, 
+                      decimal.Decimal, 
+                      datetime.datetime, datetime.date, datetime.time,
+                      Font, Color))                
                 and repr(v) != 'None'
                 ):
                 params.append("%s=%s" % (k, repr(v))) 
