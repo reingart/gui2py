@@ -206,7 +206,6 @@ class TextBox(Control):
         return self.wx_obj.GetValue()
     
     def _set_value(self, new_value):
-        print "New Value", new_value, type(self.wx_obj)
         self.wx_obj.SetValue(new_value)
         
     alignment = StyleSpec({'left': wx.TE_LEFT, 
@@ -243,9 +242,9 @@ class wx_masked_TextCtrl(masked.TextCtrl):
     def SetValue(self, new_value):
         # to avoid formatting issues, values should not be passed as string!
         try:
-            print "setting", new_value
             masked.TextCtrl.SetValue(self, new_value)
         except Exception, e:
+            # TODO: better exception handling
             print e
     
     def GetValue(self):
@@ -258,7 +257,6 @@ class wx_masked_NumCtrl(masked.NumCtrl):
     
     def __init__(self, *args, **kwargs):
         # Use local conventions for decimal point and grouping
-        print "NUMCTLR!"
         lc = locale.localeconv()
         kwargs['useFixedWidthFont'] = False
         kwargs['groupChar'] = lc['mon_thousands_sep']
@@ -271,7 +269,7 @@ class wx_masked_NumCtrl(masked.NumCtrl):
         else:
             kwargs['fractionWidth'] = mask[mask.index("."):].count("#")
             kwargs['integerWidth'] = mask[:mask.index(".")].count("#") 
-        #allowNone = False,
+        kwargs['allowNone'] = True
         #allowNegative = True,
         #useParensForNegatives = False,
         #groupDigits = False,
@@ -290,9 +288,9 @@ class wx_masked_NumCtrl(masked.NumCtrl):
     def SetValue(self, new_value):
         # to avoid formatting issues, values should not be passed as string!
         try:
-            print "setting NumCtrl", new_value, type(new_value)
             masked.NumCtrl.SetValue(self, new_value)
         except Exception, e:
+            # TODO: better exception handling
             print e
 
 
