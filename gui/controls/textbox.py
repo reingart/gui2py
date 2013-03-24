@@ -1,4 +1,6 @@
 import locale
+import decimal
+import datetime
 import wx
 from ..event import FormEvent
 from ..component import Control, Spec, EventSpec, InitSpec, StyleSpec
@@ -16,9 +18,11 @@ class TextBox(Control):
     def __init__(self, *args, **kwargs):
         # if mask is given, create a masked control
         if 'mask' in kwargs and kwargs['mask']:
-            self._wx_class = wx_masked_TextCtrl
-            kwargs['useFixedWidthFont'] = False
-            kwargs['useFixedWidthFont'] = False
+            if all([(ch in ("#", ".")) for ch in kwargs['mask']]):
+                self._wx_class = wx_masked_NumCtrl
+            else:
+                self._wx_class = wx_masked_TextCtrl
+                
         elif 'mask' in kwargs:   
             del kwargs['mask']
 
@@ -192,8 +196,14 @@ class TextBox(Control):
         return self.wx_obj.GetValue()
     
     def _set_text(self, new_text):
-        self.wx_obj.SetValue(new_text)
-                
+        self.wx_obj.SetValue(str(new_text))
+
+    def _get_value(self):
+        return self.wx_obj.GetValue()
+    
+    def _set_value(self, new_value):
+        self.wx_obj.SetValue(new_value)
+        
     alignment = StyleSpec({'left': wx.TE_LEFT, 
                            'center': wx.TE_CENTRE,
                            'right': wx.TE_RIGHT},
@@ -201,8 +211,8 @@ class TextBox(Control):
     editable = Spec(lambda self: self.wx_obj.IsEditable(), 
                     lambda self, value: self.wx_obj.SetEditable(value),
                     default=True, type="boolean")
-    text = Spec(_get_text, _set_text,
-                default="", type="text")
+    text = Spec(_get_text, _set_text, default="", type="text")
+    value = Spec(_get_value, _set_value, default="", type="text")
     password = StyleSpec(wx.TE_PASSWORD, default=False)
     multiline = StyleSpec(wx.TE_MULTILINE, default=False)
     hscroll = StyleSpec(wx.HSCROLL, default=False)
@@ -221,19 +231,55 @@ class wx_masked_TextCtrl(masked.TextCtrl):
         kwargs['useFixedWidthFont'] = False
         kwargs['groupChar'] = lc['mon_thousands_sep']
         kwargs['decimalChar'] = lc['decimal_point']
+        kwargs['raiseOnInvalidPaste'] = False               # just bell
         masked.TextCtrl.__init__(self, *args, **kwargs) 
         
     def SetValue(self, new_value):
-        # to avoid formatting issues, values should be passed not as string!
+        # to avoid formatting issues, values should not be passed as string!
         try:
+            print "setting", new_value
             masked.TextCtrl.SetValue(self, new_value)
         except Exception, e:
             print e
     
     def GetValue(self):
         # should return number / date / etc.
-        value = masked.TextCtrl.GetValue(self)
+        value = masked.TextCtrl.GetValue(self)  # get the text value
         return value
+
+
+class wx_masked_NumCtrl(masked.NumCtrl):
+    
+    def __init__(self, *args, **kwargs):
+        # Use local conventions for decimal point and grouping
+        print "NUMCTLR!"
+        lc = locale.localeconv()
+        kwargs['useFixedWidthFont'] = False
+        kwargs['groupChar'] = lc['mon_thousands_sep']
+        kwargs['decimalChar'] = lc['decimal_point']
+        mask = kwargs['mask']
+        del kwargs['mask']
+        if '.' not in mask:
+            kwargs['fractionWidth'] = 0
+            kwargs['integerWidth'] = mask.count("#")
+        else:
+            kwargs['fractionWidth'] = mask[mask.index("."):].count("#")
+            kwargs['integerWidth'] = mask[:mask.index(".")].count("#") 
+        #allowNone = False,
+        #allowNegative = True,
+        #useParensForNegatives = False,
+        #groupDigits = False,
+        #min = None,
+        #max = None,
+        masked.NumCtrl.__init__(self, *args, **kwargs)
+
+    def SetValue(self, new_value):
+        # to avoid formatting issues, values should not be passed as string!
+        try:
+            print "setting NumCtrl", new_value
+            masked.NumCtrl.SetValue(self, new_value)
+        except Exception, e:
+            print e
 
 
 if __name__ == "__main__":
@@ -241,23 +287,28 @@ if __name__ == "__main__":
     # basic test until unit_test
     app = wx.App(redirect=False)
     frame = wx.Frame(None)
-    t = TextBox(frame, name="txtTest", border=False, text="hello world!",
+    t = TextBox(frame, name="txtTest", border=False, text="",
                 password='--password' in sys.argv,
                 multiline='--multiline' in sys.argv,
+                mask='###.##',
                 hscroll=True,
                 )
+    t.value = 1.01
     assert t.get_parent() is frame
     assert t.name == "txtTest"
     print "align", t.alignment
     print "text", t.text
+    print "mask", t.mask
     print "password", t.password
     print "multiline", t.multiline
     print "hscroll", t.hscroll
-    assert t.text == "hello world!"
+    #assert t.text == "hello world!"
     from pprint import pprint
     # assign some event handlers:
     t.onmousemove = lambda event: pprint("%s %s %s" % (event.name, event.x, event.y))
     t.onmouseleftdown = lambda event: pprint(event.target.append_text("click!"))
     t.onchange = lambda event: pprint("change: %s" % event.target.text)
     frame.Show()
-    app.MainLoop()
+    #print t.value, type(t.value)
+    app.MainLoop()    
+
