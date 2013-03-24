@@ -1,3 +1,4 @@
+import locale
 import wx
 from ..event import FormEvent
 from ..component import Control, Spec, EventSpec, InitSpec, StyleSpec
@@ -14,8 +15,10 @@ class TextBox(Control):
 
     def __init__(self, *args, **kwargs):
         # if mask is given, create a masked control
-        if 'mask' in kwargs and kwargs['mask'] and wx.VERSION >= (2, 9):
-            self._wx_class = masked.TextCtrl
+        if 'mask' in kwargs and kwargs['mask']:
+            self._wx_class = wx_masked_TextCtrl
+            kwargs['useFixedWidthFont'] = False
+            kwargs['useFixedWidthFont'] = False
         elif 'mask' in kwargs:   
             del kwargs['mask']
 
@@ -189,12 +192,7 @@ class TextBox(Control):
         return self.wx_obj.GetValue()
     
     def _set_text(self, new_text):
-        try:
-            self.wx_obj.SetValue(new_text)
-        except Exception, e:
-            print e
-            if not self.designer:
-                raise
+        self.wx_obj.SetValue(new_text)
                 
     alignment = StyleSpec({'left': wx.TE_LEFT, 
                            'center': wx.TE_CENTRE,
@@ -213,7 +211,30 @@ class TextBox(Control):
 
     mask = InitSpec(_get_mask, _set_mask, type='string', default=None, 
                     doc="template to control allowed user input")
+
+
+class wx_masked_TextCtrl(masked.TextCtrl):
+
+    def __init__(self, *args, **kwargs):
+        # Use local conventions for decimal point and grouping
+        lc = locale.localeconv()
+        kwargs['useFixedWidthFont'] = False
+        kwargs['groupChar'] = lc['mon_thousands_sep']
+        kwargs['decimalChar'] = lc['decimal_point']
+        masked.TextCtrl.__init__(self, *args, **kwargs) 
+        
+    def SetValue(self, new_value):
+        # to avoid formatting issues, values should be passed not as string!
+        try:
+            masked.TextCtrl.SetValue(self, new_value)
+        except Exception, e:
+            print e
     
+    def GetValue(self):
+        # should return number / date / etc.
+        value = masked.TextCtrl.GetValue(self)
+        return value
+
 
 if __name__ == "__main__":
     import sys
