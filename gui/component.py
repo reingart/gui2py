@@ -111,7 +111,8 @@ class Component(object):
                         setattr(self, spec._name, value)
                 else:
                     name = spec_name        # use the spec attribute name
-                wx_kwargs[name] = value
+                if value is not None:
+                    wx_kwargs[name] = value
                 if spec_name in kwargs:
                     del kwargs[spec_name]
             if isinstance(spec, StyleSpec):
