@@ -2,6 +2,7 @@ import wx
 from ..event import FormEvent
 from ..component import Control, Spec, EventSpec, InitSpec, StyleSpec
 from .. import images 
+import  wx.lib.masked as masked
 
 
 class TextBox(Control):
@@ -10,6 +11,17 @@ class TextBox(Control):
     _wx_class = wx.TextCtrl
     _style = wx.CLIP_SIBLINGS | wx.NO_FULL_REPAINT_ON_RESIZE
     _image = images.textbox
+
+    def __init__(self, *args, **kwargs):
+        # if mask is given, create a masked control
+        if 'mask' in kwargs and kwargs['mask'] and wx.VERSION >= (2, 9):
+            self._wx_class = masked.TextCtrl
+        elif 'mask' in kwargs:   
+            del kwargs['mask']
+
+        Control.__init__(self, *args, **kwargs)
+        # sane default for tab caption (in designer)
+    
     
     def clear_selection(self):
         if self.can_cut():
@@ -163,6 +175,27 @@ class TextBox(Control):
     def get_string(self, aFrom, aTo):
         return self.GetValue()[aFrom:aTo]
 
+    def _get_mask(self):
+        if isinstance(self.wx_obj, masked.TextCtrl):
+            return self.wx_obj.GetMask()
+        else:
+            return ''
+    
+    def _set_mask(self, new_mask):
+        if isinstance(self.wx_obj, masked.TextCtrl):
+            self.wx_obj.SetMask(new_mask)
+
+    def _get_text(self):
+        return self.wx_obj.GetValue()
+    
+    def _set_text(self, new_text):
+        try:
+            self.wx_obj.SetValue(new_text)
+        except Exception, e:
+            print e
+            if not self.designer:
+                raise
+                
     alignment = StyleSpec({'left': wx.TE_LEFT, 
                            'center': wx.TE_CENTRE,
                            'right': wx.TE_RIGHT},
@@ -170,14 +203,16 @@ class TextBox(Control):
     editable = Spec(lambda self: self.wx_obj.IsEditable(), 
                     lambda self, value: self.wx_obj.SetEditable(value),
                     default=True, type="boolean")
-    text = Spec(lambda self: self.wx_obj.GetValue(), 
-                lambda self, value: self.wx_obj.SetValue(value),
+    text = Spec(_get_text, _set_text,
                 default="", type="text")
     password = StyleSpec(wx.TE_PASSWORD, default=False)
     multiline = StyleSpec(wx.TE_MULTILINE, default=False)
     hscroll = StyleSpec(wx.HSCROLL, default=False)
 
     onchange = EventSpec('change', binding=wx.EVT_TEXT, kind=FormEvent)
+
+    mask = InitSpec(_get_mask, _set_mask, type='string', default=None, 
+                    doc="template to control allowed user input")
     
 
 if __name__ == "__main__":
