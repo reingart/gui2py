@@ -183,25 +183,30 @@ class TextBox(Control):
         return self.GetValue()[aFrom:aTo]
 
     def _get_mask(self):
-        if isinstance(self.wx_obj, masked.TextCtrl):
+        if hasattr(self.wx_obj, "GetMask"):
             return self.wx_obj.GetMask()
         else:
-            return ''
+            return None
     
     def _set_mask(self, new_mask):
         if isinstance(self.wx_obj, masked.TextCtrl):
             self.wx_obj.SetMask(new_mask)
 
     def _get_text(self):
-        return self.wx_obj.GetValue()
+        text = self.wx_obj.GetValue()
+        if not isinstance(text, basestring) and text is not None:
+            return None     # for safety, do not return a string repr
+        else:
+            return text
     
     def _set_text(self, new_text):
-        self.wx_obj.SetValue(str(new_text))
+        self.wx_obj.SetValue(unicode(new_text))
 
     def _get_value(self):
         return self.wx_obj.GetValue()
     
     def _set_value(self, new_value):
+        print "New Value", new_value, type(self.wx_obj)
         self.wx_obj.SetValue(new_value)
         
     alignment = StyleSpec({'left': wx.TE_LEFT, 
@@ -212,7 +217,8 @@ class TextBox(Control):
                     lambda self, value: self.wx_obj.SetEditable(value),
                     default=True, type="boolean")
     text = Spec(_get_text, _set_text, default="", type="text")
-    value = Spec(_get_value, _set_value, default="", type="text")
+    value = Spec(_get_value, _set_value, default="", type="expr",
+                 doc="Actual python object (int, float, datetime, decimal...)")
     password = StyleSpec(wx.TE_PASSWORD, default=False)
     multiline = StyleSpec(wx.TE_MULTILINE, default=False)
     hscroll = StyleSpec(wx.HSCROLL, default=False)
@@ -273,10 +279,18 @@ class wx_masked_NumCtrl(masked.NumCtrl):
         #max = None,
         masked.NumCtrl.__init__(self, *args, **kwargs)
 
+    def GetMask(self):
+        fraction_width = self.GetFractionWidth() 
+        integer_width = self.GetIntegerWidth()
+        if fraction_width:
+            return "%s.%s" % ("#" * integer_width, "#" * fraction_width)
+        else:
+            return "*" * integer_width
+
     def SetValue(self, new_value):
         # to avoid formatting issues, values should not be passed as string!
         try:
-            print "setting NumCtrl", new_value
+            print "setting NumCtrl", new_value, type(new_value)
             masked.NumCtrl.SetValue(self, new_value)
         except Exception, e:
             print e
