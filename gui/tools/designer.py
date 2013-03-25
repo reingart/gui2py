@@ -83,7 +83,8 @@ class BasicDesigner:
             # do this after this event to prevent reference issues (deletions!)
             self.current = None
             wx.CallAfter(self.inspector.inspect, 
-                         getattr(evt.GetEventObject(), "obj"), True)
+                         getattr(evt.GetEventObject(), "obj"), True, True, 
+                         evt.GetPositionTuple())
         # allow default behavior (set focus / tab change):
         if isinstance(evt.GetEventObject(), wx.Notebook):
             evt.Skip()

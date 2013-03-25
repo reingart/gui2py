@@ -76,7 +76,7 @@ class InspectorPanel(wx.Panel):
         self.build_tree(self.root, obj)
         self.tree.Expand(self.root)
 
-    def inspect(self, obj, context_menu=False, edit_prop=False):
+    def inspect(self, obj, context_menu=False, edit_prop=False, mouse_pos=None):
         "Select the object and show its properties"
         child = self.tree.FindItem(self.root, obj.name)
         if DEBUG: print "inspect child", child
@@ -87,7 +87,7 @@ class InspectorPanel(wx.Panel):
             child.Selected = True
             self.activate_item(child, edit_prop)
             if context_menu:
-                self.show_context_menu(child)            
+                self.show_context_menu(child, mouse_pos)
 
     def build_tree(self, parent, obj):
         if DEBUG: print "building", obj.__class__.__name__
@@ -172,7 +172,7 @@ class InspectorPanel(wx.Panel):
         item, flags, col = self.tree.HitTest(pos)
         self.show_context_menu(item)
     
-    def show_context_menu(self, item):
+    def show_context_menu(self, item, mouse_pos=None):
         "Open a popup menu with options regarding the selected object"
         if item:
             d = self.tree.GetItemData(item)
@@ -200,7 +200,7 @@ class InspectorPanel(wx.Panel):
                         new_id = wx.NewId()
                         sm.Append(new_id, ctrl._meta.name)
                         self.Bind(wx.EVT_MENU, 
-                                  lambda evt, ctrl=ctrl: self.add_child(ctrl), 
+                                  lambda evt, ctrl=ctrl: self.add_child(ctrl, mouse_pos), 
                                   id=new_id)
                         
                     menu.AppendMenu(wx.NewId(), "Add child", sm)
@@ -231,12 +231,15 @@ class InspectorPanel(wx.Panel):
     def send_to_back(self, evt):
         self.obj.z_order(0)
     
-    def add_child(self, ctrl):
+    def add_child(self, ctrl, mouse_pos=None):
         new_id = wx.NewId()
         obj = ctrl(self.obj, 
                name="%s_%s" % (ctrl._meta.name.lower(), new_id),
                id=new_id, 
                designer=self.designer)
+        if mouse_pos:
+            print "MOUSE EVENT: ", mouse_pos
+            obj.pos = mouse_pos
         # update the object at the inspector (to show the new control)
         wx.CallAfter(self.inspect, obj)
     
