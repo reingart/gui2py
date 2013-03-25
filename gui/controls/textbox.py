@@ -217,7 +217,7 @@ class TextBox(Control):
     editable = Spec(lambda self: self.wx_obj.IsEditable(), 
                     lambda self, value: self.wx_obj.SetEditable(value),
                     default=True, type="boolean")
-    text = Spec(_get_text, _set_text, default="", type="text")
+    ##text = Spec(_get_text, _set_text, default="", type="text")
     value = Spec(_get_value, _set_value, default="", type="expr",
                  doc="Actual python object (int, float, datetime, decimal...)")
     password = StyleSpec(wx.TE_PASSWORD, default=False)
@@ -285,7 +285,7 @@ class wx_masked_NumCtrl(masked.NumCtrl):
         if fraction_width:
             return "%s.%s" % ("#" * integer_width, "#" * fraction_width)
         else:
-            return "*" * integer_width
+            return "#" * integer_width
 
     def SetValue(self, new_value):
         # to avoid formatting issues, values should not be passed as string!
@@ -307,6 +307,9 @@ class wx_DatePickerCtrl(wx.DatePickerCtrl):
 
     def SetEditable(self, editable):
         pass # TODO
+        
+    def IsEditable(self):
+        return True # TODO
 
     def GetValue(self):
         "Convert and return the wx.DateTime to python datetime"
