@@ -231,7 +231,13 @@ class Component(object):
         "Create a new object exactly similar to self"
         kwargs = {}
         for spec_name, spec in self._meta.specs.items():
-            kwargs[spec_name] = getattr(self, spec_name)
+            value = getattr(self, spec_name)
+            if isinstance(value, Color):
+                print "COLOR", value, value.default
+                if value.default:
+                    value = None
+            if value is not None:
+                kwargs[spec_name] = value
         del kwargs['parent'] 
         new_id = wx.NewId()
         kwargs['id'] = new_id

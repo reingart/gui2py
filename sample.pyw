@@ -51,16 +51,15 @@ gui.TabPanel(id=133, name='tabpanel_133', index=0,
 gui.Button(id=197, name='button_197', left='252', top='101', 
            parent='mywin.notebook_121.tabpanel_133', )
 gui.Panel(label=u'Radio Box', name='panel_40_46', height='113', left='15', 
-          top='13', width='116', bgcolor=u'#DCDCDC', fgcolor=u'#4C4C4C', 
-          parent='mywin.notebook_121.tabpanel_133', )
+          top='13', width='116', parent='mywin.notebook_121.tabpanel_133', )
 gui.RadioButton(id=298, label=u'Option 3', name=u'opt3', left='14', top='61', 
-                width='86', bgcolor=u'#E0DEDC', fgcolor=u'#4C4C4C', 
+                width='86', 
                 parent='mywin.notebook_121.tabpanel_133.panel_40_46', )
 gui.RadioButton(id=148, label=u'Option 2', name=u'opt2_148', left='14', 
-                top='32', width='85', bgcolor=u'#E0DEDC', fgcolor=u'#4C4C4C', 
+                top='32', width='85', 
                 parent='mywin.notebook_121.tabpanel_133.panel_40_46', )
 gui.RadioButton(id=274, label=u'Option 1', name=u'opt1', left='14', top='5', 
-                width='85', bgcolor=u'#E0DEDC', fgcolor=u'#4C4C4C', 
+                width='85', 
                 parent='mywin.notebook_121.tabpanel_133.panel_40_46', 
                 value=True, )
 gui.TabPanel(id=163, name='tabpanel_163', index=1, 
