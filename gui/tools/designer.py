@@ -25,6 +25,7 @@ class BasicDesigner:
         self.last_wx_obj = None     # used to draw the resize handle
         self.onclose = None
         self.timestamp = None       # used to track double clicks on MSW
+        self.last_xy = None         # last clicked position
 
     def __call__(self, evt):
         "Handler for EVT_MOUSE_EVENTS (binded in design mode)"
@@ -63,7 +64,8 @@ class BasicDesigner:
             self.key_press(evt)
         elif evt.GetEventType() == wx.EVT_LEFT_DOWN.typeId:
             # calculate time between clicks (is this a double click?)
-            if not self.timestamp or evt.Timestamp - self.timestamp > 500:
+            if not self.timestamp or evt.Timestamp - self.timestamp > 1000 or \
+                   self.last_xy != evt.GetPositionTuple():
                 # no, process normal mouse click and store obj for later dclick
                 self.mouse_down(evt)
                 self.last_obj = getattr(evt.GetEventObject(), "obj")
@@ -71,6 +73,7 @@ class BasicDesigner:
                 # on dclick, inspect & edit the default property (ie label)
                 wx.CallAfter(self.inspector.inspect, self.last_obj, False, True)
             self.timestamp = evt.Timestamp
+            self.last_xy = evt.GetPositionTuple()
         elif evt.GetEventType() == wx.EVT_LEFT_UP.typeId:
             self.mouse_up(evt)
         elif evt.GetEventType() == wx.EVT_MOTION.typeId:
@@ -107,9 +110,6 @@ class BasicDesigner:
         else:
             # create the selection marker and assign it to the control
             obj = wx_obj.obj
-            if not obj.sel_marker:
-                obj.sel_marker = SelectionMarker(obj)
-            obj.sel_marker.show(True)
             if DEBUG: print wx_obj
             sx, sy = wx_obj.ScreenToClient(wx_obj.GetPositionTuple())
             dx, dy = wx_obj.ScreenToClient(wx.GetMousePosition())
@@ -121,7 +121,7 @@ class BasicDesigner:
             # do not capture on wx.Notebook to allow selecting the tabs
             if not isinstance(wx_obj, wx.Notebook):
                 self.parent.wx_obj.CaptureMouse()
-            self.selection.append(obj)
+            self.select(obj, keep_selection=True)
 
     def mouse_move(self, evt):
         "Move the selected object"
@@ -263,6 +263,17 @@ class BasicDesigner:
         self.selection = new_selection              # update with new obj's
         self.inspector.load_object()                # reload the tree
 
+    def select(self, obj, keep_selection=False):
+        # if not keep old selection, unselect all current selected objs.
+        if not keep_selection:
+            while self.selection:
+                old_obj = self.selection.pop()
+                old_obj.sel_marker.destroy()
+                old_obj.sel_marker = None
+        if not obj.sel_marker:
+            obj.sel_marker = SelectionMarker(obj)
+            obj.sel_marker.show(True)
+        self.selection.append(obj)
 
     def draw_grid(self, event):
         wx_obj = event.GetEventObject()

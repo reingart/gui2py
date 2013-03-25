@@ -84,6 +84,7 @@ class PropertyEditorPanel(wx.Panel):
                             'code': wxpg.LongStringProperty,
                             'enum': wxpg.EnumProperty,
                             'edit_enum': wxpg.EditEnumProperty,
+                            'expr': wxpg.StringProperty,
                             'array': wxpg.ArrayStringProperty,
                             'font': wxpg.FontProperty,
                             'image_file': wxpg.ImageFileProperty,
@@ -97,6 +98,10 @@ class PropertyEditorPanel(wx.Panel):
                             value = False
                         if spec.type == "integer" and value is None:
                             value = -1
+                        if spec.type in ("string", "text") and value is None:
+                            value = ""
+                        if spec.type == "expr":
+                            value = repr(value)
                         if spec.type == "font":
                             if value is None:
                                 value = wx.NullFont
@@ -152,7 +157,8 @@ class PropertyEditorPanel(wx.Panel):
     def edit(self, name=""):
         "Programatically select a (default) property to start editing it"
         # for more info see DoSelectAndEdit in propgrid.cpp
-        for name in (name, "label", "text", "title", "filename", "name"):        
+        for name in (name, "label", "value", "text", "title", "filename", 
+                           "name"):
             prop = self.pg.GetPropertyByName(name)
             if prop is not None:
                 break
@@ -193,6 +199,9 @@ class PropertyEditorPanel(wx.Panel):
                     font = Font()
                     font.set_wx_font(value)
                     value = font
+                # expressions must be evaluated to store the python object
+                if spec.type == "expr":
+                    value = eval(value)
                 # re-create the wx_object with the new property value
                 # (this is required at least to apply new styles and init specs)
                 if DEBUG: print "changed", self.obj.name
