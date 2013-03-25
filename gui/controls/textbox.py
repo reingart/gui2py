@@ -20,6 +20,8 @@ class TextBox(Control):
         if 'mask' in kwargs and kwargs['mask']:
             if all([(ch in ("#", ".")) for ch in kwargs['mask']]):
                 self._wx_class = wx_masked_NumCtrl
+            elif kwargs['mask'] == 'date':
+                self._wx_class = wx_DatePickerCtrl
             else:
                 self._wx_class = wx_masked_TextCtrl
                 
@@ -293,6 +295,40 @@ class wx_masked_NumCtrl(masked.NumCtrl):
             # TODO: better exception handling
             print e
 
+class wx_DatePickerCtrl(wx.DatePickerCtrl):
+    
+    def __init__(self, *args, **kwargs):
+        del kwargs['mask']
+        kwargs['style'] = style = wx.DP_DROPDOWN | wx.DP_SHOWCENTURY | wx.DP_ALLOWNONE 
+        wx.DatePickerCtrl.__init__(self, *args, **kwargs)
+
+    def GetMask(self):
+        return "date"
+
+    def SetEditable(self, editable):
+        pass # TODO
+
+    def GetValue(self):
+        "Convert and return the wx.DateTime to python datetime"
+        value = wx.DatePickerCtrl.GetValue(self)
+        assert isinstance(value, wx.DateTime) 
+        if value is None or not value.IsValid(): 
+            return
+        else:
+             ymd = map(int, value.FormatISODate().split('-')) 
+             return datetime.date(*ymd)          
+
+    def SetValue(self, new_value):
+        "Convert and set the python datetime to wx.DateTime"
+        try:
+             assert isinstance(new_value, (datetime.datetime, datetime.date)) 
+             tt = new_value.timetuple() 
+             dmy = (tt[2], tt[1]-1, tt[0]) 
+             wx.DatePickerCtrl.SetValue(self, wx.DateTimeFromDMY(*dmy)) 
+        except Exception, e:
+            # TODO: better exception handling
+            print e
+     
 
 if __name__ == "__main__":
     import sys
