@@ -237,8 +237,8 @@ class InspectorPanel(wx.Panel):
                name="%s_%s" % (ctrl._meta.name.lower(), new_id),
                id=new_id, 
                designer=self.designer)
+        # move the new object to the mouse position of the click evt (if given)
         if mouse_pos:
-            print "MOUSE EVENT: ", mouse_pos
             obj.pos = mouse_pos
         # update the object at the inspector (to show the new control)
         wx.CallAfter(self.inspect, obj)
