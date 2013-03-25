@@ -105,9 +105,9 @@ class InspectorPanel(wx.Panel):
     def OnActivate(self, evt):
         child = evt.GetItem()
         print('OnActivate: %s' % self.tree.GetItemText(child))
-        self.activate_item(child)
+        self.activate_item(child, select=True)
     
-    def activate_item(self, child, edit_prop=False):
+    def activate_item(self, child, edit_prop=False, select=False):
         "load the selected item in the property editor"
         d = self.tree.GetItemData(child)
         if d:
@@ -116,6 +116,8 @@ class InspectorPanel(wx.Panel):
             self.propeditor.load_object(o)
             if edit_prop:
                 wx.CallAfter(self.propeditor.edit)
+            if select and self.designer:
+                self.designer.select(o)
         else:
             self.selected_obj = None
     

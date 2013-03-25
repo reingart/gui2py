@@ -110,9 +110,6 @@ class BasicDesigner:
         else:
             # create the selection marker and assign it to the control
             obj = wx_obj.obj
-            if not obj.sel_marker:
-                obj.sel_marker = SelectionMarker(obj)
-            obj.sel_marker.show(True)
             if DEBUG: print wx_obj
             sx, sy = wx_obj.ScreenToClient(wx_obj.GetPositionTuple())
             dx, dy = wx_obj.ScreenToClient(wx.GetMousePosition())
@@ -124,7 +121,7 @@ class BasicDesigner:
             # do not capture on wx.Notebook to allow selecting the tabs
             if not isinstance(wx_obj, wx.Notebook):
                 self.parent.wx_obj.CaptureMouse()
-            self.selection.append(obj)
+            self.select(obj, keep_selection=True)
 
     def mouse_move(self, evt):
         "Move the selected object"
@@ -266,6 +263,17 @@ class BasicDesigner:
         self.selection = new_selection              # update with new obj's
         self.inspector.load_object()                # reload the tree
 
+    def select(self, obj, keep_selection=False):
+        # if not keep old selection, unselect all current selected objs.
+        if not keep_selection:
+            while self.selection:
+                old_obj = self.selection.pop()
+                old_obj.sel_marker.destroy()
+                old_obj.sel_marker = None
+        if not obj.sel_marker:
+            obj.sel_marker = SelectionMarker(obj)
+            obj.sel_marker.show(True)
+        self.selection.append(obj)
 
     def draw_grid(self, event):
         wx_obj = event.GetEventObject()
