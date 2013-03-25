@@ -11,7 +11,7 @@ class CheckBox(Control):
     _style = wx.CLIP_SIBLINGS | wx.NO_FULL_REPAINT_ON_RESIZE
     _image = images.checkbox
         
-    checked = Spec(lambda self: self.wx_obj.GetValue(), 
+    value = Spec(lambda self: self.wx_obj.GetValue(), 
                    lambda self, value: self.wx_obj.SetValue(value), 
                    default=False, type="boolean")
     label = InitSpec(lambda self: self.wx_obj.GetLabel(), 
@@ -31,6 +31,6 @@ if __name__ == "__main__":
     assert c.label == "Check me!"
     from pprint import pprint
     # assign some event handlers:
-    c.onclick = lambda event: pprint("click: %s" % event.target.checked)
+    c.onclick = lambda event: pprint("click: %s" % event.target.value)
     frame.Show()
     app.MainLoop()
