@@ -199,3 +199,11 @@ grid = PyEmbeddedImage(
     "agaaW1pCvI/NW2YWFihip06cIEqMgYFh1Ps0AKPeH/X+qPepBWjmfUYGGtRRAKDwYA1GLAkm"
     "AAAAAElFTkSuQmCC")
 
+#----------------------------------------------------------------------
+radio_button = PyEmbeddedImage(
+    "iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAABHNCSVQICAgIfAhkiAAAAKxJ"
+    "REFUOI3VlGEKwjAMhV/aXWrg0aZO3c0m3aWm8YcW6pqkYwxGHxTa0HykeSVEzmNvud2JVUGb"
+    "0oVHf+P0fO6vtBkaYd2l+4sP94GLcHI+W79EBsBLpXEpl5y3n/9l5LHpOVlpeaWxSq26qDAG"
+    "tdqi+0Qk7i0d80/Tvko9FmW5r8nqp9nTMAbR5aLzAEibUu/XzBKkPbUAAOcb1TUVuoRHWbDV"
+    "0C2qZ/TVA/0ARX6PGnIXW+EAAAAASUVORK5CYII=")
+
