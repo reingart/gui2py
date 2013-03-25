@@ -236,8 +236,8 @@ class wx_masked_TextCtrl(masked.TextCtrl):
         # Use local conventions for decimal point and grouping
         lc = locale.localeconv()
         kwargs['useFixedWidthFont'] = False
-        kwargs['groupChar'] = lc['mon_thousands_sep']
-        kwargs['decimalChar'] = lc['decimal_point']
+        kwargs['groupChar'] = lc['mon_thousands_sep'] or ","
+        kwargs['decimalChar'] = lc['decimal_point'] or "."
         kwargs['raiseOnInvalidPaste'] = False               # just bell
         masked.TextCtrl.__init__(self, *args, **kwargs) 
         
