@@ -43,6 +43,8 @@ class ComponentBase(type):
         # registry and return the new class:
         if hasattr(new_class, "_registry"):
             new_class._registry[name] = new_class
+            if name not in registry.ALL:
+                registry.ALL.append(name)
         return new_class
 
   

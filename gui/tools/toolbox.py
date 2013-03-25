@@ -35,7 +35,8 @@ class ToolBox(aui.AuiToolBar):
         self.menu_ctrl_map = {}
         
         # create a toolbar item for each control (ignore those that have no image)
-        for name, ctrl in registry.CONTROLS.items():
+        for name, ctrl in sorted(registry.CONTROLS.items(), 
+                                 key=lambda it: registry.ALL.index(it[0])):
             if ctrl._image:
                 menu_id = wx.NewId()
                 self.menu_ctrl_map[menu_id] = ctrl

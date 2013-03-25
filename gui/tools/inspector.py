@@ -194,7 +194,9 @@ class InspectorPanel(wx.Panel):
 
                     # make submenu!
                     sm = wx.Menu()
-                    for ctrl in obj._meta.valid_children:
+                    for ctrl in sorted(obj._meta.valid_children,
+                                       key=lambda c: 
+                                            registry.ALL.index(c._meta.name)):
                         new_id = wx.NewId()
                         sm.Append(new_id, ctrl._meta.name)
                         self.Bind(wx.EVT_MENU, 
