@@ -38,16 +38,16 @@ gui.MenuItem(help=u'MenuItem', id=140, name='menuitem_140',
 gui.Gauge(name='gauge_43_128', height='18', left='13', top='130', width='367', 
           parent='mywin', value=50, )
 gui.StatusBar(name='statusbar_15_91', parent='mywin', text=u'hello world!', )
-gui.ListView(name='listview_23_211', height='99', left='23px', top='211px', 
-             width='354', item_count=0, parent='mywin', sort_column=-1, )
+gui.ListView(name='listview', height='99', left='23', top='211', width='192', 
+             item_count=0, parent='mywin', sort_column=-1, )
 gui.ListColumn(index=0, name='listcolumn_129', text=u'Col A', 
-               parent='listview_23_211', )
+               parent='listview', )
 gui.ListColumn(index=1, name='listcolumn_140', text=u'Col B', 
-               parent='listview_23_211', )
+               parent='listview', )
 gui.Notebook(name='notebook_121', height='179', left='21', top='330', 
-             width='355', parent='mywin', selection=0, )
+             width='355', parent='mywin', selection=1, )
 gui.TabPanel(id=133, name='tabpanel_133', index=0, 
-             parent='mywin.notebook_121', selected=True, text=u'tab 0', )
+             parent='mywin.notebook_121', selected=False, text=u'tab 0', )
 gui.Button(id=197, name='button_197', left='245', top='103', 
            parent='mywin.notebook_121.tabpanel_133', )
 gui.Panel(label=u'Radio Box', name='panel_40_46', height='113', left='15', 
@@ -77,12 +77,20 @@ gui.Label(name='label_153_56', left='147', top='49',
 gui.Label(name='label_152_84', left='147', top='77', 
           parent='mywin.notebook_121.tabpanel_133', text=u'date:', )
 gui.TabPanel(id=163, name='tabpanel_163', index=1, 
-             parent='mywin.notebook_121', selected=False, text=u'tab 1', )
-gui.GridView(name='gridview_123_56', height='32px', left='0px', top='0px', 
-             width='82px', parent='mywin.notebook_121.tabpanel_163', )
+             parent='mywin.notebook_121', selected=True, text=u'grid', )
+gui.GridView(name='gridview', height='139', left='0', top='0', width='347', 
+             parent='mywin.notebook_121.tabpanel_163', )
+gui.GridColumn(index=0, name=u'col1', text=u'Col A', type='text', width=75, 
+               parent='gridview', )
+gui.GridColumn(index=1, name=u'col2', text=u'Col 2', type='datetime', 
+               width=75, parent='gridview', )
+gui.GridColumn(index=2, name=u'col3', text=u'Col B', type='float', width=75, 
+               parent='gridview', )
 gui.ComboBox(name='cboTest', left='100', top='58', width='152', 
              items=[u'option 1', u'option 2', u'option 3'], parent='mywin', 
              string_selection=u'', )
+gui.TreeView(name='treeview', height='98', left='223', top='212', width='154', 
+             parent='mywin', )
 
 # --- gui2py designer end ---
 
@@ -92,7 +100,8 @@ def my_handler(evt):
     print "loaded!!!"
 
 def my_handler2(evt):
-    mywin['txtTest'].text = "hello world!!!!!"
+    print "button clicked!", evt.target.name
+    mywin['txtTest'].value = "hello world!!!!!"
 
 
 if __name__ == "__main__":
@@ -100,6 +109,27 @@ if __name__ == "__main__":
     mywin.onload = my_handler
     mywin['btnTest'].onclick = my_handler2
     mywin['btnClose'].onclick = "exit()"
+
+    # load the list items and bind a event handler
+    lv = mywin['listview']
+    lv.items = [[str(i), chr(i)*5] for i in range(65, 92)]
+    lv.onitemselected = "print 'selection:', event.target.get_selected_items()"
+
+    # load the tree and bind a event handler
+    tv = mywin['treeview']
+    root = tv.items.add(text="Root")
+    child1 = tv.items.add(parent=root, text="Child 1")
+    child2 = tv.items.add(parent=root, text="Child 2")
+    child3 = tv.items.add(parent=root, text="Child 3")
+    child11 = tv.items.add(parent=child1, text="Child 11")
+    child11.ensure_visible()
+    child2.set_has_children()   # "virtual" tree node
+    tv.onitemselected = "print 'selected TreeItem:', event.detail.text"
+    
+    # load the grid:
+    gv = mywin['notebook_121']['tabpanel_163']['gridview']
+    gv.items = [[str(i), datetime.datetime.now(), 3.141516] for i in range(100)]
+    
     mywin.show()
     
     app.MainLoop()
