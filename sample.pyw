@@ -10,18 +10,17 @@ import gui
 
 # --- gui2py designer start ---
 
-gui.Window(name='mywin', title=u'hello world', resizable=True, height='769px', 
-           left='180', top='24', width='528px', bgcolor=u'#E0E0E0', )
-gui.Button(label=u'Quit', name=u'btnClose', height='29', left='232', 
-           top='156', width='85', parent='mywin', )
-gui.CheckBox(label=u'Check me!', name='chkTest', height='24', left='98', 
-             top='99', width='94', parent='mywin', )
-gui.Label(name='lblTest', alignment='right', height='25', left='38', top='37', 
-          width='48', parent='mywin', text=u'hello!', )
-gui.TextBox(name='txtTest', height='25', left='99', top='31', width='152', 
-            parent='mywin', )
-gui.Button(label=u'click me!', name='btnTest', height='29', left='126', 
-           top='157', width='85', default=True, parent='mywin', )
+gui.Window(name='mywin', title=u'hello world', resizable=True, height='582px', 
+           left='180', top='24', width='401px', bgcolor=u'#E0E0E0', )
+gui.Button(label=u'Quit', name=u'btnClose', left='232', top='156', width='85', 
+           parent='mywin', )
+gui.CheckBox(label=u'Check me!', name='chkTest', left='98', top='99', 
+             width='94', parent='mywin', )
+gui.Label(name='lblTest', alignment='right', left='38', top='37', width='48', 
+          parent='mywin', text=u'hello!', )
+gui.TextBox(name='txtTest', left='99', top='31', width='152', parent='mywin', )
+gui.Button(label=u'click me!', name='btnTest', left='126', top='157', 
+           width='85', default=True, parent='mywin', )
 gui.ListBox(name='lstTest', height='96', left='277', top='28', width='103', 
             data_selection=u'two', items=[u'one', u'two', u'tree'], 
             parent='mywin', selection=1, string_selection=u'two', )
@@ -64,21 +63,18 @@ gui.RadioButton(id=274, label=u'Option 1', name=u'opt1', left='14', top='5',
                 parent='mywin.notebook_121.tabpanel_133.panel_40_46', 
                 value=True, )
 gui.TextBox(mask=u'##-########-#', name=u'masked', alignment='right', 
-            left='221', top='16', width='115', bgcolor=u'#FFFFFF', 
-            fgcolor=u'#000000', parent='mywin.notebook_121.tabpanel_133', 
-            value=u'20-26756539-3', )
+            left='221', top='16', width='115', 
+            parent='mywin.notebook_121.tabpanel_133', value=u'20-26756539-3', )
 gui.TextBox(mask='###.##', name=u'numeric', alignment='right', left='255', 
-            top='45', bgcolor=u'#FFFFFF', fgcolor=u'#000000', 
-            parent='mywin.notebook_121.tabpanel_133', value=98.76, )
+            top='45', parent='mywin.notebook_121.tabpanel_133', value=98.76, )
 gui.TextBox(mask='date', name=u'date_picker', left='217', top='73', 
-            width='118', bgcolor=u'#FFFFFF', fgcolor=u'#4C4C4C', 
-            parent='mywin.notebook_121.tabpanel_133', 
+            width='118', parent='mywin.notebook_121.tabpanel_133', 
             value=datetime.date(2013, 3, 26), )
 gui.Label(name='label_159_27', left='147', top='21', 
           parent='mywin.notebook_121.tabpanel_133', text=u'masked:', )
-gui.Label(name='label_153_56', left='150', top='49', 
+gui.Label(name='label_153_56', left='147', top='49', 
           parent='mywin.notebook_121.tabpanel_133', text=u'numeric:', )
-gui.Label(name='label_152_84', left='153', top='77', 
+gui.Label(name='label_152_84', left='147', top='77', 
           parent='mywin.notebook_121.tabpanel_133', text=u'date:', )
 gui.TabPanel(id=163, name='tabpanel_163', index=1, 
              parent='mywin.notebook_121', selected=False, text=u'tab 1', )
