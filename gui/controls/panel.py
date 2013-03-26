@@ -16,6 +16,36 @@ class wx_Panel(wx.Panel):
         wx.Panel.__init__(self, parent, **kwargs)
 
 
+class wx_StaticBoxPanel(wx.Panel):
+    "A wx.Panel with an wx.StaticBox to easily group controls" 
+     
+    def __init__(self, parent, **kwargs):
+        label =kwargs['label']
+        del kwargs['label']
+        wx.Panel.__init__(self, parent, **kwargs)
+        # create the static box inside the panel so it is compatible with
+        # older wxpython versions (where child controls have to be siblings)
+        # and for handling TAB key navigation correctly on childrens
+        self.staticbox = wx.StaticBox(self, label=label)
+        # use a sizer so the StaticBox has the same size of the parent always
+        box = wx.BoxSizer(wx.VERTICAL)
+        box.Add(self.staticbox, 1, wx.EXPAND)
+        self.SetAutoLayout(True)
+        self.SetSizer(box)
+        self.Layout()
+    
+    def GetLabel(self):
+        return self.staticbox.GetLabel()
+    
+    def SetLabel(self, new_label):
+        self.staticbox.SetLabel(new_label)
+    
+    def Destroy(self):
+        "Destroy the static box and panel"
+        self.staticbox.Destroy()
+        wx.Panel.Destroy(self)
+
+
 class Panel(Control):
     "A container to group controls (optionally with a rectangle and title)"
     
@@ -25,8 +55,8 @@ class Panel(Control):
     def __init__(self, *args, **kwargs):
         # for the caption, create a static box with a rectangle around
         # (only in wx2.9, as previous version don't allow children):
-        if 'label' in kwargs and kwargs['label'] and wx.VERSION >= (2, 9):
-            self._wx_class = wx.StaticBox
+        if 'label' in kwargs and kwargs['label']:
+            self._wx_class = wx_StaticBoxPanel
         else:
             self._wx_class = wx_Panel
         Control.__init__(self, *args, **kwargs)
