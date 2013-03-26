@@ -490,6 +490,7 @@ class Component(object):
                                lambda self, value: self._set_drop_target(value), 
                                doc="drag&drop handler (used in design mode)", 
                                type='internal')
+
    
 
 class DesignerMixin(object):
@@ -729,6 +730,8 @@ class Control(Component, DesignerMixin):
                        doc="Kind of border to show (some will have no effect"
                            " depending on control and platform)",
                        default='default')
+    transparent = StyleSpec(wx.TRANSPARENT_WINDOW, default=False,
+                            doc="will not receive paint events. Windows only")
 
     # Events:
     onfocus = EventSpec('focus', binding=wx.EVT_SET_FOCUS, kind=FocusEvent)
@@ -805,17 +808,18 @@ class ImageBackgroundMixin(object):
     def __on_erase_background(self, evt):
         "Draw the image as background"
         
-        dc = evt.GetDC()
-        
-        if not dc:
-            dc = wx.ClientDC(self)
-            r = self.wx_obj.GetUpdateRegion().GetBox()
-            dc.SetClippingRegion(r.x, r.y, r.width, r.height)
-                                                       
-        if self._background_tiling:
-            self.__tile_background(dc)
-        else:
-            dc.DrawBitmapPoint(self._bitmap.get_bits(), (0, 0))
+        if self._bitmap:            
+            dc = evt.GetDC()
+            
+            if not dc:
+                dc = wx.ClientDC(self)
+                r = self.wx_obj.GetUpdateRegion().GetBox()
+                dc.SetClippingRegion(r.x, r.y, r.width, r.height)
+                                                           
+            if self._background_tiling:
+                self.__tile_background(dc)
+            else:
+                dc.DrawBitmapPoint(self._bitmap.get_bits(), (0, 0))
 
 
     image = Spec(lambda self: self._get_image(), 
