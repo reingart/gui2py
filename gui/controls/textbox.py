@@ -261,8 +261,8 @@ class wx_masked_NumCtrl(masked.NumCtrl):
         # Use local conventions for decimal point and grouping
         lc = locale.localeconv()
         kwargs['useFixedWidthFont'] = False
-        kwargs['groupChar'] = lc['mon_thousands_sep']
-        kwargs['decimalChar'] = lc['decimal_point']
+        kwargs['groupChar'] = lc['mon_thousands_sep'] or ','
+        kwargs['decimalChar'] = lc['decimal_point'] or '.'
         mask = kwargs['mask']
         del kwargs['mask']
         if '.' not in mask:
@@ -299,7 +299,7 @@ class wx_DatePickerCtrl(wx.DatePickerCtrl):
     
     def __init__(self, *args, **kwargs):
         del kwargs['mask']
-        kwargs['style'] = style = wx.DP_DROPDOWN | wx.DP_SHOWCENTURY | wx.DP_ALLOWNONE 
+        kwargs['style'] = style = wx.DP_DROPDOWN | wx.DP_SHOWCENTURY | wx.DP_ALLOWNONE | wx.DP_DEFAULT
         wx.DatePickerCtrl.__init__(self, *args, **kwargs)
 
     def GetMask(self):
