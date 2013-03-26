@@ -282,7 +282,7 @@ class BasicDesigner:
         brush = dc.GetBackground()
         brush.SetColour(wx_obj.GetBackgroundColour())
         dc.SetBackground(brush)
-        dc.Clear()
+        #dc.Clear()
         # should the color be settable by the user and then save
         # that in the prefs?
         dc.SetPen(wx.Pen('black', 1, wx.SOLID))

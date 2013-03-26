@@ -11,7 +11,8 @@ import gui
 # --- gui2py designer generated code starts ---
 
 gui.Window(name='mywin', title=u'hello world', resizable=True, height='601px', 
-           left='180', top='24', width='418px', bgcolor=u'#E0E0E0', )
+           left='180', top='24', width='418px', image=u'tile.bmp', 
+           tiled=True, bgcolor=u'#E0E0E0', )
 gui.Button(label=u'Quit', name=u'btnClose', left='232', top='156', width='85', 
            parent='mywin', )
 gui.CheckBox(label=u'Check me!', name='chkTest', left='98', top='99', 
@@ -65,7 +66,8 @@ gui.Label(name='label_153_56', left='147', top='50',
 gui.Label(name='label_152_84', left='147', top='78', 
           parent=u'mywin.notebook.tab0', text=u'date:', )
 gui.Panel(label=u'Group: ', name='panel_40_46', height='130', left='15', 
-          top='10', width='116', parent=u'mywin.notebook.tab0', )
+          top='10', width='116', background_image='', 
+          parent=u'mywin.notebook.tab0', )
 gui.RadioButton(id=298, label=u'Option 3', name=u'opt3', left='14', top='71', 
                 width='86', parent=u'mywin.notebook.tab0.panel_40_46', )
 gui.RadioButton(id=148, label=u'Option 2', name=u'opt2_148', left='14', 

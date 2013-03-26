@@ -5,6 +5,7 @@ import wx
 
 from .event import FocusEvent, MouseEvent, KeyEvent
 from .font import Font
+from .graphic import Bitmap
 from .spec import Spec, EventSpec, InitSpec, DimensionSpec, StyleSpec, InternalSpec
 from . import registry
 
@@ -751,6 +752,78 @@ class Control(Component, DesignerMixin):
     onkeypress = EventSpec('keypress', binding=wx.EVT_CHAR, kind=KeyEvent)
     onkeydown = EventSpec('keydown', binding=wx.EVT_KEY_DOWN, kind=KeyEvent)
     onkeyup = EventSpec('keyup', binding=wx.EVT_KEY_UP, kind=KeyEvent)
+
+
+class ImageBackgroundMixin(object):
+    "Tiled background image support"
+
+    __metaclass__ = ComponentBase
+
+    def _set_image(self, image):
+        if DEBUG: print "using image...", image, self._meta.name
+        self._image = image
+        # KEA 2001-07-27
+        # Load the bitmap once and keep it around
+        # this could fail, so should be a try/except.
+        if image and not hasattr(self, "_bitmap"):
+            self._bitmap = Bitmap(image)
+            wx.EVT_ERASE_BACKGROUND(self.wx_obj, self.__on_erase_background)
+            wx.EVT_WINDOW_DESTROY(self.wx_obj, self.__on_destroy)
+        elif hasattr(self, "_bitmap"):
+            self._bitmap = None
+
+    def _get_image(self):
+        return getattr(self, "_image", None) or ""
+
+    def __tile_background(self, dc):
+        "make several copies of the background bitmap"
+        sz = self.wx_obj.GetClientSize()
+        bmp = self._bitmap.get_bits()
+        w = bmp.GetWidth()
+        h = bmp.GetHeight()
+
+        if isinstance(self, wx.ScrolledWindow):
+            # adjust for scrolled position
+            spx, spy = self.wx_obj.GetScrollPixelsPerUnit()
+            vsx, vsy = self.wx_obj.GetViewStart()
+            dx,  dy  = (spx * vsx) % w, (spy * vsy) % h
+        else:
+            dx, dy = (w, h)
+
+        x = -dx
+        while x < sz.width:
+            y = -dy
+            while y < sz.height:
+                dc.DrawBitmapPoint(bmp, (x, y))
+                y = y + h
+            x = x + w
+
+    def __on_destroy(self, event):
+        # memory leak cleanup
+        self._bitmap = None
+
+    def __on_erase_background(self, evt):
+        "Draw the image as background"
+        
+        dc = evt.GetDC()
+        
+        if not dc:
+            dc = wx.ClientDC(self)
+            r = self.wx_obj.GetUpdateRegion().GetBox()
+            dc.SetClippingRegion(r.x, r.y, r.width, r.height)
+                                                       
+        if self._background_tiling:
+            self.__tile_background(dc)
+        else:
+            dc.DrawBitmapPoint(self._bitmap.get_bits(), (0, 0))
+
+
+    image = Spec(lambda self: self._get_image(), 
+                 lambda self, value: self._set_image(value), 
+                 doc="image (filename) used as background", 
+                 type="image_file")
+    tiled = Spec(_name="_background_tiling", default=False, 
+                 doc="image background tiling", type='boolean')
 
 
 class SubComponent(object):

@@ -1,13 +1,13 @@
 import wx
 
-from ..component import Component, Control
+from ..component import Component, Control, ImageBackgroundMixin
 from ..spec import Spec, InitSpec, EventSpec, StyleSpec, InternalSpec
 from ..event import UIEvent
 from .. import registry
 from .. import images
 
 
-class Window(Control):
+class Window(Control, ImageBackgroundMixin):
     "A window that contains controls" 
     # in PythonCard model.Background
     _wx_class = wx.Frame
