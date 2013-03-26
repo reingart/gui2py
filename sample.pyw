@@ -8,7 +8,7 @@ if app is None:
 
 import gui
 
-# --- gui2py designer start ---
+# --- gui2py designer generated code starts ---
 
 gui.Window(name='mywin', title=u'hello world', resizable=True, height='582px', 
            left='180', top='24', width='401px', bgcolor=u'#E0E0E0', )
@@ -45,12 +45,12 @@ gui.ListColumn(index=0, name='listcolumn_129', text=u'Col A',
 gui.ListColumn(index=1, name='listcolumn_140', text=u'Col B', 
                parent='listview', )
 gui.Notebook(name='notebook_121', height='179', left='21', top='330', 
-             width='355', parent='mywin', selection=1, )
+             width='355', parent='mywin', selection=0, )
 gui.TabPanel(id=133, name='tabpanel_133', index=0, 
-             parent='mywin.notebook_121', selected=False, text=u'tab 0', )
+             parent='mywin.notebook_121', selected=True, text=u'tab 0', )
 gui.Button(id=197, name='button_197', left='245', top='103', 
            parent='mywin.notebook_121.tabpanel_133', )
-gui.Panel(label=u'Radio Box', name='panel_40_46', height='113', left='15', 
+gui.Panel(label=u'Group', name='panel_40_46', height='113', left='15', 
           top='13', width='116', parent='mywin.notebook_121.tabpanel_133', )
 gui.RadioButton(id=298, label=u'Option 3', name=u'opt3', left='14', top='61', 
                 width='86', 
@@ -63,7 +63,7 @@ gui.RadioButton(id=274, label=u'Option 1', name=u'opt1', left='14', top='5',
                 parent='mywin.notebook_121.tabpanel_133.panel_40_46', 
                 value=True, )
 gui.TextBox(mask=u'##-########-#', name=u'masked', alignment='right', 
-            left='221', top='16', width='115', 
+            left='221', top='16', width='111', 
             parent='mywin.notebook_121.tabpanel_133', value=u'20-26756539-3', )
 gui.TextBox(mask='###.##', name=u'numeric', alignment='right', left='255', 
             top='45', parent='mywin.notebook_121.tabpanel_133', value=98.76, )
@@ -77,7 +77,7 @@ gui.Label(name='label_153_56', left='147', top='49',
 gui.Label(name='label_152_84', left='147', top='77', 
           parent='mywin.notebook_121.tabpanel_133', text=u'date:', )
 gui.TabPanel(id=163, name='tabpanel_163', index=1, 
-             parent='mywin.notebook_121', selected=True, text=u'grid', )
+             parent='mywin.notebook_121', selected=False, text=u'grid', )
 gui.GridView(name='gridview', height='139', left='0', top='0', width='347', 
              parent='mywin.notebook_121.tabpanel_163', )
 gui.GridColumn(index=0, name=u'col1', text=u'Col A', type='text', width=75, 
@@ -92,7 +92,7 @@ gui.ComboBox(name='cboTest', left='100', top='58', width='152',
 gui.TreeView(name='treeview', height='98', left='223', top='212', width='154', 
              parent='mywin', )
 
-# --- gui2py designer end ---
+# --- gui2py designer generated code ends ---
 
 mywin = gui.find("mywin")
 
