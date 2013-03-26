@@ -4,6 +4,7 @@ from ..component import Control, SubComponent
 from ..spec import Spec, EventSpec, InitSpec, StyleSpec, InternalSpec
 from .listbox import ItemContainerControl
 from .. import images 
+from .. import registry
 from types import TupleType, ListType, StringTypes, NoneType, IntType, DictType
 
 from wx.lib.mixins.listctrl import ColumnSorterMixin, ListCtrlAutoWidthMixin
@@ -220,6 +221,7 @@ class ListColumn(SubComponent):
     "ListView sub-component to handle heading, align and width of columns"
 
     _created = False
+    _registry = registry.MISC
     
     def set_parent(self, new_parent, init=False):
         "Associate the header to the control (it could be recreated)"

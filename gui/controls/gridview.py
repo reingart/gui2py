@@ -257,13 +257,14 @@ class GridColumn(SubComponent):
     "Grid sub-component to handle heading, align, width and props of columns"
 
     _created = False
+    _registry = registry.MISC
     
     def set_parent(self, new_parent, init=False):
         "Associate the header to the control (it could be recreated)"
         self._created = False
         SubComponent.set_parent(self, new_parent, init)
         # if index not given, append the column at the last position:
-        if self.index == -1 or self.index > self._parent.wx_obj.GetColumnCount():
+        if self.index == -1 or self.index >= len(self._parent.columns):
             self.index = len(self._parent.columns) - 1
         # insert the column in the listview:
         self._parent.wx_obj.AppendCols(1)

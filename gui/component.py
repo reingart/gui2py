@@ -867,7 +867,6 @@ def find(obj_name, init=False):
         # TODO: only useful for designer, get a better way
         obj_parent = COMPONENTS.get(obj_name)
         if not obj_parent:
-            ##import pdb;pdb.set_trace()
             # try to find window (it can be a plain wx frame/control)
             wx_parent = wx.FindWindowByName(obj_name)
             if wx_parent:

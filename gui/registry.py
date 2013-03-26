@@ -4,6 +4,7 @@ CONTROLS = {}
 HTML = {}       # tags
 WINDOWS = {}
 MENU = {}
+MISC = {}
 
 ALL = []      # used to keep registration order for toolbox and avoid duplicates
 
