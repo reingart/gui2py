@@ -665,11 +665,11 @@ class Control(Component, DesignerMixin):
             # check that size and pos is relative, then resize/move
             if self._left and self._left[-1] == "%" or \
                self._top and self._top[-1] == "%":
-                print "RESIZING", self.name, self._width
+                if DEBUG: print "MOVING", self.name, self._width
                 self._set_pos((self._left, self._top))
             if self._width and self._width[-1] == "%" or \
                self._height and self._height[-1] == "%":
-                print "RESIZING", self.name, self._width
+                if DEBUG: print "RESIZING", self.name, self._width, self._height
                 self._set_size((self._width, self._height))
         for child in self:
             if isinstance(child, Control):

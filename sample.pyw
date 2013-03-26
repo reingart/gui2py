@@ -44,51 +44,52 @@ gui.ListColumn(index=0, name='listcolumn_129', text=u'Col A',
                parent='listview', )
 gui.ListColumn(index=1, name='listcolumn_140', text=u'Col B', 
                parent='listview', )
-gui.Notebook(name='notebook_121', height='179', left='21', top='330', 
-             width='355', parent='mywin', selection=0, )
-gui.TabPanel(id=133, name='tabpanel_133', index=0, 
-             parent='mywin.notebook_121', selected=True, text=u'tab 0', )
+gui.Notebook(name='notebook', height='179', left='21', top='330', width='355', 
+             parent='mywin', selection=0, )
+gui.TabPanel(id=133, name=u'tab0', index=0, parent='mywin.notebook', 
+             selected=True, text=u'Misc.', )
 gui.Button(id=197, name='button_197', left='245', top='103', 
-           parent='mywin.notebook_121.tabpanel_133', )
+           parent=u'mywin.notebook.tab0', )
 gui.TextBox(mask=u'##-########-#', name=u'masked', alignment='right', 
-            left='220', top='19', width='111', 
-            parent='mywin.notebook_121.tabpanel_133', value=u'20-26756539-3', )
+            left='220', top='19', width='111', parent=u'mywin.notebook.tab0', 
+            value=u'20-26756539-3', )
 gui.TextBox(mask='###.##', name=u'numeric', alignment='right', left='230', 
-            top='46', width='101', parent='mywin.notebook_121.tabpanel_133', 
-            value=98.76, )
+            top='46', width='101', parent=u'mywin.notebook.tab0', value=98.76, )
 gui.TextBox(mask='date', name=u'date_picker', left='210', top='73', 
-            width='121', parent='mywin.notebook_121.tabpanel_133', 
+            width='121', parent=u'mywin.notebook.tab0', 
             value=datetime.date(2013, 3, 26), )
 gui.Label(name='label_159_27', left='147', top='23', 
-          parent='mywin.notebook_121.tabpanel_133', text=u'masked:', )
+          parent=u'mywin.notebook.tab0', text=u'masked:', )
 gui.Label(name='label_153_56', left='147', top='50', 
-          parent='mywin.notebook_121.tabpanel_133', text=u'numeric:', )
+          parent=u'mywin.notebook.tab0', text=u'numeric:', )
 gui.Label(name='label_152_84', left='147', top='78', 
-          parent='mywin.notebook_121.tabpanel_133', text=u'date:', )
+          parent=u'mywin.notebook.tab0', text=u'date:', )
 gui.Panel(label=u'Group: ', name='panel_40_46', height='130', left='15', 
-          top='10', width='116', parent='mywin.notebook_121.tabpanel_133', )
+          top='10', width='116', parent=u'mywin.notebook.tab0', )
 gui.RadioButton(id=298, label=u'Option 3', name=u'opt3', left='14', top='71', 
-                width='86', 
-                parent='mywin.notebook_121.tabpanel_133.panel_40_46', )
+                width='86', parent=u'mywin.notebook.tab0.panel_40_46', )
 gui.RadioButton(id=148, label=u'Option 2', name=u'opt2_148', left='14', 
                 top='47', width='85', 
-                parent='mywin.notebook_121.tabpanel_133.panel_40_46', )
+                parent=u'mywin.notebook.tab0.panel_40_46', )
 gui.RadioButton(id=274, label=u'Option 1', name=u'opt1', left='14', top='23', 
-                width='85', 
-                parent='mywin.notebook_121.tabpanel_133.panel_40_46', 
+                width='85', parent=u'mywin.notebook.tab0.panel_40_46', 
                 value=True, )
 gui.CheckBox(name='checkbox_29_80', left='14', top='95', 
-             parent='mywin.notebook_121.tabpanel_133.panel_40_46', )
-gui.TabPanel(id=163, name='tabpanel_163', index=1, 
-             parent='mywin.notebook_121', selected=False, text=u'grid', )
-gui.GridView(name='gridview', height='139', left='0', top='0', width='347', 
-             parent='mywin.notebook_121.tabpanel_163', )
+             parent=u'mywin.notebook.tab0.panel_40_46', )
+gui.TabPanel(id=163, name=u'tab1', index=1, parent='mywin.notebook', 
+             selected=False, text=u'Grid', )
+gui.GridView(name='gridview', height='100%', left='0', top='0', width='100%', 
+             parent=u'mywin.notebook.tab1', )
 gui.GridColumn(index=0, name=u'col1', text=u'Col A', type='text', width=75, 
                parent='gridview', )
 gui.GridColumn(index=1, name=u'col2', text=u'Col 2', type='datetime', 
                width=75, parent='gridview', )
 gui.GridColumn(index=2, name=u'col3', text=u'Col B', type='float', width=75, 
                parent='gridview', )
+gui.TabPanel(id=157, name=u'tab2', index=2, parent='mywin.notebook', 
+             selected=False, text=u'Html', )
+gui.HtmlBox(id=222, name='htmlbox_222', height='100%', left='0', top='0', 
+            width='100%', location=u'', parent=u'mywin.notebook.tab2', )
 gui.TreeView(name='treeview', height='98', left='223', top='212', width='154', 
              parent='mywin', )
 gui.ComboBox(name='cboTest', left='100', top='58', width='152', 
@@ -130,7 +131,7 @@ if __name__ == "__main__":
     tv.onitemselected = "print 'selected TreeItem:', event.detail.text"
     
     # load the grid:
-    gv = mywin['notebook_121']['tabpanel_163']['gridview']
+    gv = mywin['notebook']['tab1']['gridview']
     gv.items = [[str(i), datetime.datetime.now(), 3.141516] for i in range(100)]
     
     mywin.show()

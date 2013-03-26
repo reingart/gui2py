@@ -40,6 +40,7 @@ class TabPanel(Component, DesignerMixin):
     "Represents a tab (page) in the Notebook"
 
     _wx_class = wx.Panel
+    _registry = registry.MISC
 
     def __init__(self, *args, **kwargs):
         # caption is handled specially:
@@ -55,6 +56,9 @@ class TabPanel(Component, DesignerMixin):
         text = text or 'tab %s' % self.index
         # add the page to the notebook
         self._parent.wx_obj.AddPage(self.wx_obj, text, self.index)
+        # Handle resize events to adjust absolute and relative dimensions
+        self.wx_obj.Bind(wx.EVT_SIZE, self.resize)
+
 
     index = Spec(optional=False, default="", _name="_index", type='integer')
 
@@ -85,6 +89,15 @@ class TabPanel(Component, DesignerMixin):
             page.index = page.index - 1
         Component.destroy(self)
     
+    def resize(self, evt=None):
+        "automatically adjust relative pos and size of children controls"
+        for child in self:
+            if isinstance(child, Control):
+                child.resize(evt)
+        # call original handler (wx.HtmlWindow)
+        if evt:
+            evt.Skip()
+
 
 # update metadata for the add context menu at the designer:
 
