@@ -11,14 +11,12 @@ import gui
 # --- gui2py designer generated code starts ---
 
 gui.Window(name='mywin', title=u'hello world', resizable=True, height='601px', 
-           left='180', top='24', width='418px', image=u'tile.bmp', 
-           tiled=True, bgcolor=u'#E0E0E0', )
+           left='180', top='24', width='418px', bgcolor=u'#E0E0E0', 
+           image=u'tile.bmp', tiled=True, )
 gui.Button(label=u'Quit', name=u'btnClose', left='232', top='156', width='85', 
            parent='mywin', )
-gui.CheckBox(label=u'Check me!', name='chkTest', left='98', top='99', 
-             width='94', parent='mywin', )
-gui.Label(name='lblTest', alignment='right', left='38', top='37', width='48', 
-          parent='mywin', text=u'hello!', )
+gui.Label(name='lblTest', alignment='right', transparent=True, left='38', 
+          top='37', width='48', parent='mywin', text=u'hello!', )
 gui.TextBox(name='txtTest', left='100', top='31', width='152', parent='mywin', )
 gui.Button(label=u'click me!', name='btnTest', left='126', top='157', 
            width='85', default=True, parent='mywin', )
@@ -45,7 +43,7 @@ gui.ListColumn(index=0, name='listcolumn_129', text=u'Col A',
                parent='listview', )
 gui.ListColumn(index=1, name='listcolumn_140', text=u'Col B', 
                parent='listview', )
-gui.Notebook(name='notebook', height='179', left='21', top='330', width='355', 
+gui.Notebook(name='notebook', height='211', left='21', top='330', width='355', 
              parent='mywin', selection=0, )
 gui.TabPanel(id=133, name=u'tab0', index=0, parent='mywin.notebook', 
              selected=True, text=u'Misc.', )
@@ -65,9 +63,8 @@ gui.Label(name='label_153_56', left='147', top='50',
           parent=u'mywin.notebook.tab0', text=u'numeric:', )
 gui.Label(name='label_152_84', left='147', top='78', 
           parent=u'mywin.notebook.tab0', text=u'date:', )
-gui.Panel(label=u'Group: ', name='panel_40_46', height='130', left='15', 
-          top='10', width='116', background_image='', 
-          parent=u'mywin.notebook.tab0', )
+gui.Panel(label=u'Group: ', name='panel_40_46', height='138', left='15', 
+          top='10', width='116', image='', parent=u'mywin.notebook.tab0', )
 gui.RadioButton(id=298, label=u'Option 3', name=u'opt3', left='14', top='71', 
                 width='86', parent=u'mywin.notebook.tab0.panel_40_46', )
 gui.RadioButton(id=148, label=u'Option 2', name=u'opt2_148', left='14', 
@@ -76,7 +73,7 @@ gui.RadioButton(id=148, label=u'Option 2', name=u'opt2_148', left='14',
 gui.RadioButton(id=274, label=u'Option 1', name=u'opt1', left='14', top='23', 
                 width='85', parent=u'mywin.notebook.tab0.panel_40_46', 
                 value=True, )
-gui.CheckBox(name='checkbox_29_80', left='14', top='95', 
+gui.CheckBox(label=u'Check', name='checkbox_29_80', left='14', top='95', 
              parent=u'mywin.notebook.tab0.panel_40_46', )
 gui.TabPanel(id=163, name=u'tab1', index=1, parent='mywin.notebook', 
              selected=False, text=u'Grid', )

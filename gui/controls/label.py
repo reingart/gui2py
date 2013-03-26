@@ -12,6 +12,12 @@ class Label(Control):
     _style = wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS
     _image = images.label
 
+    def __init__(self, *args, **kwargs):
+        Control.__init__(self, *args, **kwargs)
+        if self.transparent and "__WXMSW__" in wx.Platform:
+            # on windows, avoid solid background ("transparent")
+            self.wx_obj.Bind(wx.EVT_PAINT, self.__on_paint)
+
     def _set_text(self, a_string):
         self.wx_obj.SetLabel(a_string)
         if self.size[0] <= 1:
@@ -20,6 +26,15 @@ class Label(Control):
         self.wx_obj.Refresh()
         self.wx_obj.Update()
 
+    def __on_paint(self, event):
+        "Custom draws the label when transparent background is needed"
+        # use a Device Context that supports anti-aliased drawing 
+        # and semi-transparent colours on all platforms
+        dc = wx.GCDC(wx.PaintDC(self.wx_obj))
+        dc.SetFont(self.wx_obj.GetFont())
+        dc.SetTextForeground(self.wx_obj.GetForegroundColour())
+        dc.DrawText(self.wx_obj.GetLabel(), 0, 0)
+        
     alignment = StyleSpec({'left': wx.ALIGN_LEFT, 
                            'center': wx.ALIGN_CENTER | wx.ST_NO_AUTORESIZE,
                            'right': wx.ALIGN_RIGHT | wx.ST_NO_AUTORESIZE},
