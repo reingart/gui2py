@@ -1,4 +1,5 @@
-
+import datetime
+import decimal
 import wx
 
 app = wx.GetApp()
@@ -39,7 +40,7 @@ gui.Gauge(name='gauge_43_128', height='18', left='13', top='130', width='367',
           parent='mywin', value=50, )
 gui.StatusBar(name='statusbar_15_91', parent='mywin', text=u'hello world!', )
 gui.ListView(name='listview_23_211', height='99', left='23px', top='211px', 
-             width='354', item_count=0, parent='mywin', sort_column=1, )
+             width='354', item_count=0, parent='mywin', sort_column=-1, )
 gui.ListColumn(index=0, name='listcolumn_129', text=u'Col A', 
                parent='listview_23_211', )
 gui.ListColumn(index=1, name='listcolumn_140', text=u'Col B', 
@@ -48,7 +49,7 @@ gui.Notebook(name='notebook_121', height='179', left='21', top='330',
              width='355', parent='mywin', selection=0, )
 gui.TabPanel(id=133, name='tabpanel_133', index=0, 
              parent='mywin.notebook_121', selected=True, text=u'tab 0', )
-gui.Button(id=197, name='button_197', left='252', top='101', 
+gui.Button(id=197, name='button_197', left='245', top='103', 
            parent='mywin.notebook_121.tabpanel_133', )
 gui.Panel(label=u'Radio Box', name='panel_40_46', height='113', left='15', 
           top='13', width='116', parent='mywin.notebook_121.tabpanel_133', )
@@ -62,6 +63,23 @@ gui.RadioButton(id=274, label=u'Option 1', name=u'opt1', left='14', top='5',
                 width='85', 
                 parent='mywin.notebook_121.tabpanel_133.panel_40_46', 
                 value=True, )
+gui.TextBox(mask=u'##-########-#', name=u'masked', alignment='right', 
+            left='221', top='16', width='115', bgcolor=u'#FFFFFF', 
+            fgcolor=u'#000000', parent='mywin.notebook_121.tabpanel_133', 
+            value=u'20-26756539-3', )
+gui.TextBox(mask='###.##', name=u'numeric', alignment='right', left='255', 
+            top='45', bgcolor=u'#FFFFFF', fgcolor=u'#000000', 
+            parent='mywin.notebook_121.tabpanel_133', value=98.76, )
+gui.TextBox(mask='date', name=u'date_picker', left='217', top='73', 
+            width='118', bgcolor=u'#FFFFFF', fgcolor=u'#4C4C4C', 
+            parent='mywin.notebook_121.tabpanel_133', 
+            value=datetime.date(2013, 3, 26), )
+gui.Label(name='label_159_27', left='147', top='21', 
+          parent='mywin.notebook_121.tabpanel_133', text=u'masked:', )
+gui.Label(name='label_153_56', left='150', top='49', 
+          parent='mywin.notebook_121.tabpanel_133', text=u'numeric:', )
+gui.Label(name='label_152_84', left='153', top='77', 
+          parent='mywin.notebook_121.tabpanel_133', text=u'date:', )
 gui.TabPanel(id=163, name='tabpanel_163', index=1, 
              parent='mywin.notebook_121', selected=False, text=u'tab 1', )
 gui.GridView(name='gridview_123_56', height='32px', left='0px', top='0px', 
