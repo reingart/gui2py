@@ -272,6 +272,7 @@ class wx_masked_NumCtrl(masked.NumCtrl):
             kwargs['fractionWidth'] = mask[mask.index("."):].count("#")
             kwargs['integerWidth'] = mask[:mask.index(".")].count("#") 
         kwargs['allowNone'] = True
+        kwargs['autoSize'] = False
         #allowNegative = True,
         #useParensForNegatives = False,
         #groupDigits = False,
