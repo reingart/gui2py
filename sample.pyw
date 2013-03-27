@@ -11,8 +11,8 @@ import gui
 
 # --- gui2py designer generated code starts ---
 
-gui.Window(name='mywin', title=u'hello world', resizable=True, height='633px', 
-           left='180', top='24', width='407px', bgcolor=u'#E0E0E0', 
+gui.Window(name='mywin', title=u'hello world', resizable=True, height='637px', 
+           left='180', top='24', width='414px', bgcolor=u'#E0E0E0', 
            image=u'tile.bmp', tiled=True, )
 gui.Label(name='lblTest', alignment='right', transparent=True, left='38', 
           top='37', width='48', parent='mywin', text=u'hello!', )
@@ -97,6 +97,8 @@ gui.TreeView(name='treeview', height='98', left='223', top='212', width='154',
 gui.ComboBox(name='cboTest', left='100', top='58', width='152', 
              items=[u'option 1', u'option 2', u'option 3'], parent='mywin', 
              string_selection=u'', )
+gui.Line(name='line_25_556', height='3', left='25', top='194', width='349', 
+         parent='mywin', )
 
 # --- gui2py designer generated code ends ---
 

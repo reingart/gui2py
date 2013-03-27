@@ -7,6 +7,7 @@ from .radiobutton import RadioButton
 from .listbox import ListBox
 from .combobox import ComboBox
 from .image import Image
+from .line import Line
 from .gauge import Gauge
 from .listview import ListView, ListColumn
 from .treeview import TreeView
