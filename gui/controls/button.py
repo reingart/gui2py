@@ -2,13 +2,22 @@
 import wx
 from ..event import FormEvent
 from ..component import Control, Spec, EventSpec, InitSpec
+from .image import Image
 from .. import images 
 
 
-class Button(Control):
-    "A simple push-button with a label"
+class Button(Image):
+    "A simple push-button with a label (or image)"
     _wx_class = wx.Button
     _image = images.button
+    
+    def __init__(self, parent=None, **kwargs):
+        if 'filename' in kwargs and kwargs['filename']:
+            self._wx_class = wx_BitmapButton
+            kwargs['label'] = ''
+        # TODO: refactor for Disabled, Focus, Hover, Selected bitmap support
+        # Use the common image contructor (TODO: ImageMixin!)
+        Image.__init__(self, parent, **kwargs)
     
     def _getDefault(self):
         #return self == self._parent.GetDefaultItem()
@@ -29,6 +38,15 @@ class Button(Control):
                      doc="text to show as caption")
     onclick = EventSpec('click', binding=wx.EVT_BUTTON, kind=FormEvent)
 
+    
+class wx_BitmapButton(wx.BitmapButton):
+
+    def __init__(self, *args, **kwargs):
+        # remove label as for bitmap button, it is a image (bitmap)
+        if 'label' in kwargs:
+            del kwargs['label']
+        wx.BitmapButton.__init__(self, *args, **kwargs)
+    
 
 
 if __name__ == "__main__":

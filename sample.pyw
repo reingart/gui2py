@@ -11,8 +11,8 @@ import gui
 
 # --- gui2py designer generated code starts ---
 
-gui.Window(name='mywin', title=u'hello world', resizable=True, height='639px', 
-           left='180', top='24', width='410px', bgcolor=u'#E0E0E0', 
+gui.Window(name='mywin', title=u'hello world', resizable=True, height='633px', 
+           left='180', top='24', width='407px', bgcolor=u'#E0E0E0', 
            image=u'tile.bmp', tiled=True, )
 gui.Label(name='lblTest', alignment='right', transparent=True, left='38', 
           top='37', width='48', parent='mywin', text=u'hello!', )
@@ -47,7 +47,8 @@ gui.Notebook(name='notebook', height='211', left='21', top='330', width='355',
              parent='mywin', selection=0, )
 gui.TabPanel(id=133, name=u'tab0', parent='mywin.notebook', selected=True, 
              text=u'Misc.', )
-gui.Button(id=197, name='button_197', left='245', top='103', 
+gui.Button(id=197, label=u'', name='button_197', height='17', left='245', 
+           top='113', width='55', filename=u'C:\\src\\gui2py\\edit.gif', 
            parent=u'mywin.notebook.tab0', )
 gui.TextBox(mask=u'##-########-#', name=u'masked', alignment='right', 
             left='220', top='19', width='111', parent=u'mywin.notebook.tab0', 

@@ -28,10 +28,14 @@ class Image(Control):
         if not hasattr(self, "_filename"):
             self._auto_size = self._stretch = None
             self._filename = kwargs.get('filename')
-            self._size = kwargs.get('size', (-1, -1))
-            self._bitmap = Bitmap(filename=self._filename, size=self._size)
+            # do not create bitmap if no filename is given
+            if self._filename:
+                self._size = kwargs.get('size', (-1, -1))
+                self._bitmap = Bitmap(filename=self._filename, size=self._size)
+            else:
+                self._bitmap = None
 
-        if 'auto_size' in kwargs and kwargs['auto_size']:
+        if 'auto_size' in kwargs and kwargs['auto_size'] and self._bitmap:
             self._auto_size = kwargs['auto_size']
             kwargs['width'] = self._bitmap.get_width()
             kwargs['height'] = self._bitmap.get_height()
@@ -45,15 +49,18 @@ class Image(Control):
         ##if kwargs['border'] == 'transparent':
         ##    mask = wx.MaskColour(self._bitmap, wxBLACK)
         ##    self._bitmap.SetMask(mask)
+        
+        if self._bitmap:
+            kwargs['bitmap'] = self._bitmap.get_bits()
 
+        #del kwargs['label']
         Control.__init__(
             self,
             parent,
-            bitmap=self._bitmap.get_bits(), 
             **kwargs 
             )
 
-        if _stretch is not None:
+        if _stretch is not None and self._bitmap:
             self.stretch = _stretch
         self.wx_obj.Bind(wx.EVT_WINDOW_DESTROY, self._OnDestroy)
         
@@ -68,13 +75,11 @@ class Image(Control):
 
     def _set_bitmap(self, bmp):
         self._bitmap = bmp
-        print "SETBITMAP!!!!!!!!!!!!!!!!!", bmp
         self.wx_obj.SetBitmap(bmp.get_bits())
 
         # update dimension
         self.auto_size = self.auto_size
         self.stretch = self.stretch
-
         
         # may actually need to refresh the panel as well
         # depending on the size of the new bitmap compared
@@ -86,7 +91,7 @@ class Image(Control):
     
     def _set_auto_size(self, value):
         self._auto_size = value
-        if value:
+        if value and self._bitmap:
             w = self._bitmap.get_width()
             h = self._bitmap.get_height()
             self.size = (w, h)    
@@ -107,15 +112,18 @@ class Image(Control):
 
     # KEA special handling for -2 size option
     def _set_size(self, size):
-        self._size = size or (-1, -1)
-        w = self._size[0]
-        if w == -2:
-            w = self._bitmap.getWidth()
-        h = self._size[1]
-        if h == -2:
-            h = self._bitmap.getHeight()
-        print "Size", (w, h)
-        Control._set_size(self, (w, h))
+        if self._bitmap:
+            self._size = size or (-1, -1)
+            w = self._size[0]
+            if w == -2:
+                w = self._bitmap.getWidth()
+            h = self._size[1]
+            if h == -2:
+                h = self._bitmap.getHeight()
+            ##print "Size", (w, h), self._name, self._filename
+            Control._set_size(self, (w, h))
+        elif size:
+            Control._set_size(self, size)
 
     # KEA 2001-08-02
     # right now the image is loaded from a filename
@@ -131,7 +139,10 @@ class Image(Control):
     # overhead
     def _set_filename(self, filename):
         self._filename = filename
-        self._set_bitmap(Bitmap(filename))
+        if filename:
+            self._set_bitmap(Bitmap(filename))
+        else:
+            self._bitmap = None
 
     def _set_bgcolor(self, color):
         color = self._get_default_color(color)
@@ -146,7 +157,7 @@ class Image(Control):
         self.wx_obj.Refresh()   # KEA wxPython bug?
 
     bgcolor = Spec(Control._get_bgcolor, _set_bgcolor, type="color")
-    bitmap = InitSpec(_get_bitmap, _set_bitmap)
+    bitmap = InitSpec(_get_bitmap, _set_bitmap, default=None)
     filename = Spec(_get_filename, _set_filename, default="", type="image_file")
     size = Spec(Control._get_size, _set_size)
     auto_size = Spec(lambda self: self._auto_size,
