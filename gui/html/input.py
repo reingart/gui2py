@@ -94,13 +94,13 @@ class FormCheckbox(CheckBox, FormControlMixin):
         kwargs["label"] = "" # TODO: fix!
         CheckBox.__init__(self, parent, *args, **kwargs)
         FormControlMixin.__init__(self, form, tag)
-        self.value = GetParam(tag, "VALUE", "1")
+        self.cheked = GetParam(tag, "VALUE", "1")
         if tag.HasParam("checked"):
-            self.checked = True
+            self.value = True
 
     def get_value(self):
-        if self.checked:
-            return self.value
+        if self.value:
+            return self.cheked
         else:
             return None
             
