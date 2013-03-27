@@ -207,8 +207,18 @@ radio_button = PyEmbeddedImage(
     "tdqi+0Qk7i0d80/Tvko9FmW5r8nqp9nTMAbR5aLzAEibUu/XzBKkPbUAAOcb1TUVuoRHWbDV"
     "0C2qZ/TVA/0ARX6PGnIXW+EAAAAASUVORK5CYII=")
 
+#----------------------------------------------------------------------
 line = PyEmbeddedImage(
     "iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAABHNCSVQICAgIfAhkiAAAAIxJ"
     "REFUOI3t1DEKhDAQheF/sioE9Aq5h/e/gh5BCIGUEoKJs91uZ5VGyOvfB2+KETEfWsc0Fzva"
     "0faRfd+1NTqEENi2jeM4KKUwTRMAtVbGcXws55yZ55nrukgp4ZxjXVfEe6/LsmCtRUQAUFVU"
     "FWOer3Pf969TSiHnzHmeDDFGYowNRv8j/aF09AXoFzKgNtnWAul4AAAAAElFTkSuQmCC")
+
+#----------------------------------------------------------------------
+slider = PyEmbeddedImage(
+    "iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAABHNCSVQICAgIfAhkiAAAAKVJ"
+    "REFUOI3VkzEOAyEMBHchxf2RjyTpeQpfgo6fgFNEXBBJ4JC44rayZTNasCGVxmqp5cQWKjmJ"
+    "5CS/Gnu1v1DJSag0qTTbw73a0OkqXQfKeqXKe1FplryO69ph6Cqdcv3b83E/tHtTUACw1i4D"
+    "isgbWpKeSMJ73+3Ztg0APlAACCHssXMOxpg9ntE5g6qT1tGswy8oOdzpeWiMcS10NPlZXeeb"
+    "vgBj5EmvX6ADGwAAAABJRU5ErkJggg==")
+

@@ -4,7 +4,7 @@
 # useful shortcuts:
 
 from .controls import Label, Button, TextBox, CheckBox, ListBox, ComboBox, \
-                      HtmlBox, Image, Gauge, ListView, ListColumn, \
+                      HtmlBox, Image, Gauge, Slider, ListView, ListColumn, \
                       TreeView, Notebook, TabPanel, Panel, RadioButton, Line, \
                       GridView, GridColumn
 from .windows import Window, HtmlWindow

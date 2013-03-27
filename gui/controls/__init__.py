@@ -9,6 +9,7 @@ from .combobox import ComboBox
 from .image import Image
 from .line import Line
 from .gauge import Gauge
+from .slider import Slider
 from .listview import ListView, ListColumn
 from .treeview import TreeView
 from .gridview import GridView, GridColumn

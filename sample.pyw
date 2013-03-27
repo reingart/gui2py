@@ -11,8 +11,8 @@ import gui
 
 # --- gui2py designer generated code starts ---
 
-gui.Window(name='mywin', title=u'hello world', resizable=True, height='637px', 
-           left='180', top='24', width='414px', bgcolor=u'#E0E0E0', 
+gui.Window(name='mywin', title=u'hello world', resizable=True, height='643px', 
+           left='180', top='24', width='415px', bgcolor=u'#E0E0E0', 
            image=u'tile.bmp', tiled=True, )
 gui.Label(name='lblTest', alignment='right', transparent=True, left='38', 
           top='37', width='48', parent='mywin', text=u'hello!', )
@@ -36,7 +36,7 @@ gui.MenuItemSeparator(help=u'MenuItem', id=130, name='menuitemseparator_130',
                       parent='mywin.menubar_83_155.menu_114', )
 gui.MenuItem(help=u'MenuItem', id=140, name='menuitem_140', 
              parent='mywin.menubar_83_155.menu_114', )
-gui.Gauge(name='gauge_43_128', height='18', left='13', top='130', width='367', 
+gui.Gauge(name='gauge', height='18', left='13', top='130', width='367', 
           parent='mywin', value=50, )
 gui.StatusBar(name='statusbar_15_91', parent='mywin', text=u'hello world!', )
 gui.ListView(name='listview', height='99', left='23', top='211', width='192', 
@@ -99,6 +99,8 @@ gui.ComboBox(name='cboTest', left='100', top='58', width='152',
              string_selection=u'', )
 gui.Line(name='line_25_556', height='3', left='25', top='194', width='349', 
          parent='mywin', )
+gui.Slider(name=u'slider', left='18', top='96', width='249', 
+           bgcolor=u'#F0F0F0', fgcolor=u'#000000', parent='mywin', )
 
 # --- gui2py designer generated code ends ---
 
@@ -154,6 +156,12 @@ if __name__ == "__main__":
     htmlbox.set_page("<b>hello</b> <a href='http://www.wxpython.org/'>wx!</a>")
 
     mywin['notebook']['tab0']['image'].onmousedown = "print 'clicked the image'"
+    
+    def slider_click(evt):
+        # move the progress bar according the slider ("scroll bar")
+        print "Slider value:", evt.target.value
+        mywin['gauge'].value = mywin['slider'].value
+    mywin['slider'].onclick = slider_click
     
     mywin.show()
     
