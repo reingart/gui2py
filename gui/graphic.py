@@ -218,3 +218,16 @@ class Bitmap:
             except Exception, e:
                 print "cannot rescale:", e
 
+
+class Color(wx.Colour):
+    "Helper to represent the colour and detect if a colour is the default"
+    
+    default = True
+    
+    def __repr__(self):
+        if not self.default:
+            return repr(self.GetAsString(wx.C2S_HTML_SYNTAX))
+        else:
+            return 'None'
+
+

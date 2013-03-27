@@ -5,7 +5,7 @@ import wx
 
 from .event import FocusEvent, MouseEvent, KeyEvent
 from .font import Font
-from .graphic import Bitmap
+from .graphic import Bitmap, Color
 from .spec import Spec, EventSpec, InitSpec, DimensionSpec, StyleSpec, InternalSpec
 from . import registry
 
@@ -871,18 +871,6 @@ class SubComponent(object):
 
 
 # Auxiliary functions & classes:
-
-
-class Color(wx.Colour):
-    "Helper to represent the colour and detect if a colour is the default"
-    
-    default = True
-    
-    def __repr__(self):
-        if not self.default:
-            return repr(self.GetAsString(wx.C2S_HTML_SYNTAX))
-        else:
-            return 'None'
 
             
 def new_id(id=None):
