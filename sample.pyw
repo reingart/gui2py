@@ -14,10 +14,10 @@ import gui
 gui.Window(name='mywin', title=u'hello world', resizable=True, height='601px', 
            left='180', top='24', width='418px', bgcolor=u'#E0E0E0', 
            image=u'tile.bmp', tiled=True, )
-gui.Button(label=u'Quit', name=u'btnClose', left='232', top='156', width='85', 
-           parent='mywin', )
 gui.Label(name='lblTest', alignment='right', transparent=True, left='38', 
           top='37', width='48', parent='mywin', text=u'hello!', )
+gui.Button(label=u'Quit', name=u'btnClose', left='232', top='156', width='85', 
+           parent='mywin', )
 gui.TextBox(name='txtTest', left='100', top='31', width='152', parent='mywin', )
 gui.Button(label=u'click me!', name='btnTest', left='126', top='157', 
            width='85', default=True, parent='mywin', )
@@ -40,14 +40,12 @@ gui.Gauge(name='gauge_43_128', height='18', left='13', top='130', width='367',
 gui.StatusBar(name='statusbar_15_91', parent='mywin', text=u'hello world!', )
 gui.ListView(name='listview', height='99', left='23', top='211', width='192', 
              item_count=0, parent='mywin', sort_column=-1, )
-gui.ListColumn(index=0, name='listcolumn_129', text=u'Col A', 
-               parent='listview', )
-gui.ListColumn(index=1, name='listcolumn_140', text=u'Col B', 
-               parent='listview', )
+gui.ListColumn(name='listcolumn_129', text=u'Col A', parent='listview', )
+gui.ListColumn(name='listcolumn_140', text=u'Col B', parent='listview', )
 gui.Notebook(name='notebook', height='211', left='21', top='330', width='355', 
              parent='mywin', selection=0, )
-gui.TabPanel(id=133, name=u'tab0', index=0, parent='mywin.notebook', 
-             selected=True, text=u'Misc.', )
+gui.TabPanel(id=133, name=u'tab0', parent='mywin.notebook', selected=True, 
+             text=u'Misc.', )
 gui.Button(id=197, name='button_197', left='245', top='103', 
            parent=u'mywin.notebook.tab0', )
 gui.TextBox(mask=u'##-########-#', name=u'masked', alignment='right', 
@@ -76,18 +74,18 @@ gui.RadioButton(id=274, label=u'Option 1', name=u'opt1', left='14', top='23',
                 value=True, )
 gui.CheckBox(label=u'Check', name='checkbox_29_80', left='14', top='95', 
              parent=u'mywin.notebook.tab0.panel_40_46', )
-gui.TabPanel(id=163, name=u'tab1', index=1, parent='mywin.notebook', 
-             selected=False, text=u'Grid', )
+gui.TabPanel(id=163, name=u'tab1', parent='mywin.notebook', selected=False, 
+             text=u'Grid', )
 gui.GridView(name='gridview', height='100%', left='0', top='0', width='100%', 
              parent=u'mywin.notebook.tab1', )
-gui.GridColumn(index=0, name=u'col1', text=u'Col A', type='text', width=75, 
+gui.GridColumn(name=u'col1', text=u'Col A', type='text', width=75, 
                parent='gridview', )
-gui.GridColumn(index=1, name=u'col2', text=u'Col 2', type='datetime', 
-               width=75, parent='gridview', )
-gui.GridColumn(index=2, name=u'col3', text=u'Col B', type='float', width=75, 
+gui.GridColumn(name=u'col2', text=u'Col 2', type='datetime', width=75, 
                parent='gridview', )
-gui.TabPanel(id=157, name=u'tab2', index=2, parent='mywin.notebook', 
-             selected=False, text=u'Html', )
+gui.GridColumn(name=u'col3', text=u'Col B', type='float', width=75, 
+               parent='gridview', )
+gui.TabPanel(id=157, name=u'tab2', parent='mywin.notebook', selected=False, 
+             text=u'Html', )
 gui.HtmlBox(id=222, name='htmlbox_222', height='100%', left='0', top='0', 
             width='100%', location=u'', parent=u'mywin.notebook.tab2', )
 gui.TreeView(name='treeview', height='98', left='223', top='212', width='154', 

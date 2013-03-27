@@ -249,27 +249,26 @@ class Component(object):
             child.duplicate(new_obj)
         return new_obj
 
-    def z_order(self, z=0):
-        "Raises/lower the window to the top of the window hierarchy (Z-order)"
-        # z=0: lowers, z=-1: raises
-        if z:
-            self.wx_obj.Raise()
-        else:
-            self.wx_obj.Lower()
+    def reindex(self, z=None):
+        "Raises/lower the component in the window hierarchy (Z-order/tab order)"
+        # z=0: lowers(first index), z=-1: raises (last)
+        # actually, only useful in design mode
         if isinstance(self._parent, Component):
             # get the current index (z-order)
+            if not self in self._parent._children_list:
+                return len(self._parent._children_list)
             i = self._parent._children_list.index(self)
+            if z is None:
+                return i
+            if not hasattr(self, "designer") and not self.designer:
+                raise RuntimeError("reindexing can only be done on design mode")
             # delete the element reference from the list
             del self._parent._children_list[i]
             # insert as last element
-            if z:
+            if z < 0:
                 self._parent._children_list.append(self)
             else:
-                self._parent._children_list.insert(0, self)
-            # rebuild in order:
-            for child in self._parent:
-                if isinstance(child, Control):
-                    child.__init__()
+                self._parent._children_list.insert(z, self)
 
             
     # Container methods:
@@ -287,7 +286,7 @@ class Component(object):
     def __delitem__(self, key):
         del self._children_list[self._children_list.index(self._children_dict[key])]
         del self._children_dict[key]
-                
+
     # Public methods:
     
     def redraw(self):
@@ -479,7 +478,7 @@ class Component(object):
     fgcolor = Spec(_get_fgcolor, _set_fgcolor, type='colour')
     enabled = Spec(_getEnabled, _setEnabled, default=True, type='boolean')
     id = InitSpec(_getId, _setId,  default=-1, type="integer")
-    helptext = Spec(optional=True, type="string"),
+    helptext = Spec(optional=True, type="string")
     tooltip = Spec(_getToolTip, _setToolTip, default='', type="string")
     visible = Spec(_getVisible, _setVisible, default=True, type='boolean')
     userdata = Spec(_name='_userdata')
@@ -490,6 +489,8 @@ class Component(object):
                                lambda self, value: self._set_drop_target(value), 
                                doc="drag&drop handler (used in design mode)", 
                                type='internal')
+    index = Spec(reindex, reindex, type="integer", default=None,
+                 doc="Z Order (overlapping) / Tab Order (Tabbing navigation)")
 
    
 
@@ -895,6 +896,8 @@ def represent(obj, prefix, max_cols=80):
         padding = len(class_name) + 1
         params = []
         for (k, spec) in sorted(obj._meta.specs.items(), key=get_sort_key):
+            if k == "index":        # index is really defined by creation order
+                continue            # also, avoid infinite recursion
             v = getattr(obj, k, "")
             if (not isinstance(spec, InternalSpec) 
                 and v != spec.default
@@ -964,6 +967,8 @@ if __name__ == "__main__":
     ct1 = Control(w, name="test_ctrl1")
     ct2 = Control(w, name="test_ctrl2")
     ct2.__init__(name="chau!")      # recreate the control (!= name)
+    assert ct1.index == 0
+    assert ct2.index == 1
     names = []
     for c in w:
         names.append(c.name)

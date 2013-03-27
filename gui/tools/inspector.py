@@ -226,10 +226,10 @@ class InspectorPanel(wx.Panel):
         obj2 = self.obj.duplicate()
 
     def bring_to_front(self, evt):
-        self.obj.z_order(1)
+        self.obj.reindex(-1)
 
     def send_to_back(self, evt):
-        self.obj.z_order(0)
+        self.obj.reindex(0)
     
     def add_child(self, ctrl, mouse_pos=None):
         new_id = wx.NewId()
