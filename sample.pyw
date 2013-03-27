@@ -1,3 +1,4 @@
+
 import datetime
 import decimal
 import wx
@@ -97,13 +98,13 @@ gui.ComboBox(name='cboTest', left='100', top='58', width='152',
 
 # --- gui2py designer generated code ends ---
 
-mywin = gui.find("mywin")
+mywin = gui.get("mywin")
 
 def my_handler(evt):
     print "loaded!!!"
 
 def my_handler2(evt):
-    print "button clicked!", evt.target.name
+    gui.alert("button clicked! %s" % evt.target.name, "Alert!!!")
     mywin['txtTest'].value = "hello world!!!!!"
 
 

@@ -301,7 +301,7 @@ class Component(object):
     def set_parent(self, new_parent, init=False):
         "Store the gui/wx object parent for this component"
         # set init=True if this is called from the constructor
-        self._parent = find(new_parent, init)    # store new parent
+        self._parent = get(new_parent, init)    # store new parent
     
     def get_parent(self):
         "Return the object parent for this component (either gui or wx)"
@@ -850,7 +850,7 @@ class SubComponent(object):
     def set_parent(self, new_parent, init=False):
         "Associate the component to the control (it could be recreated)"
         # store gui reference inside of wx object (this will enable rebuild...)
-        self._parent = find(new_parent, init=False)    # store new parent
+        self._parent = get(new_parent, init=False)    # store new parent
         if init:
             self._parent[self._name] = self     # add child reference
 
@@ -923,7 +923,7 @@ def represent(obj, prefix, max_cols=80):
         return object.__repr__(obj)
 
 
-def find(obj_name, init=False):
+def get(obj_name, init=False):
     "Find an object already created"
     wx_parent = None
     # check if new_parent is given as string (useful for designer!)
