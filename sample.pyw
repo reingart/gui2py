@@ -11,14 +11,15 @@ import gui
 
 # --- gui2py designer generated code starts ---
 
-gui.Window(name='mywin', title=u'hello world', resizable=True, height='601px', 
-           left='180', top='24', width='418px', bgcolor=u'#E0E0E0', 
+gui.Window(name='mywin', title=u'hello world', resizable=True, height='639px', 
+           left='180', top='24', width='410px', bgcolor=u'#E0E0E0', 
            image=u'tile.bmp', tiled=True, )
 gui.Label(name='lblTest', alignment='right', transparent=True, left='38', 
           top='37', width='48', parent='mywin', text=u'hello!', )
 gui.Button(label=u'Quit', name=u'btnClose', left='232', top='156', width='85', 
            parent='mywin', )
-gui.TextBox(name='txtTest', left='100', top='31', width='152', parent='mywin', )
+gui.TextBox(name='txtTest', left='100', top='31', width='152', parent='mywin', 
+            value=u'mariano', )
 gui.Button(label=u'click me!', name='btnTest', left='126', top='157', 
            width='85', default=True, parent='mywin', )
 gui.ListBox(name='lstTest', height='96', left='277', top='28', width='103', 
@@ -39,7 +40,7 @@ gui.Gauge(name='gauge_43_128', height='18', left='13', top='130', width='367',
           parent='mywin', value=50, )
 gui.StatusBar(name='statusbar_15_91', parent='mywin', text=u'hello world!', )
 gui.ListView(name='listview', height='99', left='23', top='211', width='192', 
-             item_count=0, parent='mywin', sort_column=-1, )
+             item_count=0, parent='mywin', sort_column=0, )
 gui.ListColumn(name='listcolumn_129', text=u'Col A', parent='listview', )
 gui.ListColumn(name='listcolumn_140', text=u'Col B', parent='listview', )
 gui.Notebook(name='notebook', height='211', left='21', top='330', width='355', 
@@ -74,19 +75,21 @@ gui.RadioButton(id=274, label=u'Option 1', name=u'opt1', left='14', top='23',
                 value=True, )
 gui.CheckBox(label=u'Check', name='checkbox_29_80', left='14', top='95', 
              parent=u'mywin.notebook.tab0.panel_40_46', )
+gui.Image(name='image', height='24', left='148', top='110', width='24', 
+          filename=u'trash.gif', parent=u'mywin.notebook.tab0', )
 gui.TabPanel(id=163, name=u'tab1', parent='mywin.notebook', selected=False, 
-             text=u'Grid', )
+             text=u'Grid', visible=False, )
 gui.GridView(name='gridview', height='100%', left='0', top='0', width='100%', 
              parent=u'mywin.notebook.tab1', )
 gui.GridColumn(name=u'col1', text=u'Col A', type='text', width=75, 
                parent='gridview', )
-gui.GridColumn(name=u'col2', text=u'Col 2', type='datetime', width=75, 
+gui.GridColumn(name=u'col2', text=u'Col 2', type='long', width=75, 
                parent='gridview', )
 gui.GridColumn(name=u'col3', text=u'Col B', type='float', width=75, 
                parent='gridview', )
 gui.TabPanel(id=157, name=u'tab2', parent='mywin.notebook', selected=False, 
-             text=u'Html', )
-gui.HtmlBox(id=222, name='htmlbox_222', height='100%', left='0', top='0', 
+             text=u'Html', visible=False, )
+gui.HtmlBox(id=222, name='htmlbox', height='100%', left='0', top='0', 
             width='100%', location=u'', parent=u'mywin.notebook.tab2', )
 gui.TreeView(name='treeview', height='98', left='223', top='212', width='154', 
              parent='mywin', )
@@ -105,6 +108,16 @@ def my_handler2(evt):
     gui.alert("button clicked! %s" % evt.target.name, "Alert!!!")
     mywin['txtTest'].value = "hello world!!!!!"
 
+def expand_item(event):
+    "lazy evaluation example: virtually add children at runtime"
+    if not event.detail.get_children_count():
+        for i in range(5):
+            it = tv.items.add(parent=event.detail, text="lazy child %s" % i)
+            it.set_has_children()  # allow to lazy expand this child too
+            
+    # assign some event handlers:
+    tv.onitemexpanding = expand_item
+
 
 if __name__ == "__main__":
     print "MAIN!"
@@ -121,16 +134,23 @@ if __name__ == "__main__":
     tv = mywin['treeview']
     root = tv.items.add(text="Root")
     child1 = tv.items.add(parent=root, text="Child 1")
-    child2 = tv.items.add(parent=root, text="Child 2")
+    child2 = tv.items.add(parent=root, text="Child 2 virtual!")
     child3 = tv.items.add(parent=root, text="Child 3")
     child11 = tv.items.add(parent=child1, text="Child 11")
     child11.ensure_visible()
     child2.set_has_children()   # "virtual" tree node
+    tv.onitemexpanding = expand_item
     tv.onitemselected = "print 'selected TreeItem:', event.detail.text"
     
     # load the grid:
     gv = mywin['notebook']['tab1']['gridview']
-    gv.items = [[str(i), datetime.datetime.now(), 3.141516] for i in range(100)]
+    gv.items = [[chr(i+32)*5, i, 3.141516] for i in range(100)]
+    
+    # load a sample html page
+    htmlbox = mywin['notebook']['tab2']['htmlbox']
+    htmlbox.set_page("<b>hello</b> <a href='http://www.wxpython.org/'>wx!</a>")
+
+    mywin['notebook']['tab0']['image'].onmousedown = "print 'clicked the image'"
     
     mywin.show()
     
