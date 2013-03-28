@@ -77,7 +77,9 @@ class BasicDesigner:
         elif evt.GetEventType() == wx.EVT_LEFT_UP.typeId:
             self.mouse_up(evt)
         elif evt.GetEventType() == wx.EVT_MOTION.typeId:
-            self.mouse_move(evt)
+            # wait 500ms before EVT_LEFT_DOWN to prevent accidental moves
+            if self.timestamp and evt.Timestamp - self.timestamp > 500:
+                self.mouse_move(evt)
         elif evt.GetEventType() == wx.EVT_RIGHT_DOWN.typeId and self.inspector:
             # on right click, inspect and pop up the context menu
             # do this after this event to prevent reference issues (deletions!)
