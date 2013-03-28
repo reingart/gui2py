@@ -48,7 +48,7 @@ gui.Notebook(name='notebook', height='211', left='21', top='330', width='355',
 gui.TabPanel(id=133, name=u'tab0', parent='mywin.notebook', selected=True, 
              text=u'Misc.', )
 gui.Button(id=197, label=u'', name='button_197', height='17', left='245', 
-           top='113', width='55', filename=u'C:\\src\\gui2py\\edit.gif', 
+           top='113', width='55', filename=u'edit.gif', 
            parent=u'mywin.notebook.tab0', )
 gui.TextBox(mask=u'##-########-#', name=u'masked', alignment='right', 
             left='220', top='19', width='111', parent=u'mywin.notebook.tab0', 
