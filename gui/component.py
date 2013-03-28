@@ -503,18 +503,18 @@ class DesignerMixin(object):
         if DEBUG: print "binding designer handler...", func, self._meta.name
         if func:
             # connect the mouse event handler of the designer:
-            self.wx_obj.Bind(wx.EVT_MOUSE_EVENTS, func)
+            self.wx_obj.Bind(wx.EVT_MOUSE_EVENTS, func, self.wx_obj)
             # link menu selection (click) to the designer
-            self.wx_obj.Bind(wx.EVT_MENU, func)
+            self.wx_obj.Bind(wx.EVT_MENU, func, self.wx_obj)
             # link repaint event (refresh) to the designer (draw grid)
-            self.wx_obj.Bind(wx.EVT_PAINT, func)
+            self.wx_obj.Bind(wx.EVT_PAINT, func, self.wx_obj)
             # link key press event to the designer (move)
-            self.wx_obj.Bind(wx.EVT_KEY_DOWN, func)
-            self.wx_obj.Bind(wx.EVT_KEY_UP, func)
+            self.wx_obj.Bind(wx.EVT_KEY_DOWN, func, self.wx_obj)
+            self.wx_obj.Bind(wx.EVT_KEY_UP, func, self.wx_obj)
             # bind top level window resizing and closing event:
             if self._parent is None:
-                self.wx_obj.Bind(wx.EVT_SIZE, func)
-                self.wx_obj.Bind(wx.EVT_CLOSE, func)
+                self.wx_obj.Bind(wx.EVT_SIZE, func, self.wx_obj)
+                self.wx_obj.Bind(wx.EVT_CLOSE, func, self.wx_obj)
             self._designer = func
             for child in self:
                 child.designer = func
@@ -765,19 +765,26 @@ class ImageBackgroundMixin(object):
 
     def _set_image(self, image):
         if DEBUG: print "using image...", image, self._meta.name
-        self._image = image
+        self._image_filename = image
         # KEA 2001-07-27
         # Load the bitmap once and keep it around
         # this could fail, so should be a try/except.
-        if image and not hasattr(self, "_bitmap"):
+        if image:
             self._bitmap = Bitmap(image)
-            wx.EVT_ERASE_BACKGROUND(self.wx_obj, self.__on_erase_background)
-            wx.EVT_WINDOW_DESTROY(self.wx_obj, self.__on_destroy)
-        elif hasattr(self, "_bitmap"):
+            # bind only one time (but designer could had destroyed the wx_obj!)
+            if not hasattr(self.wx_obj, "image_bg_mixin_bound"):
+                # only bound ourselves, don't catch childrens' erase/destroy
+                self.wx_obj.Bind(wx.EVT_ERASE_BACKGROUND, 
+                                 self.__on_erase_background, self.wx_obj)
+                self.wx_obj.Bind(wx.EVT_WINDOW_DESTROY, 
+                                 self.__on_destroy, self.wx_obj)
+                self.wx_obj.image_bg_mixin_bound = True
+        else:
+            # clean up the image
             self._bitmap = None
 
     def _get_image(self):
-        return getattr(self, "_image", None) or ""
+        return getattr(self, "_image_filename", None) or ""
 
     def __tile_background(self, dc):
         "make several copies of the background bitmap"
@@ -803,13 +810,13 @@ class ImageBackgroundMixin(object):
             x = x + w
 
     def __on_destroy(self, event):
+        assert event.EventObject == self.wx_obj
         # memory leak cleanup
         self._bitmap = None
-
+        
     def __on_erase_background(self, evt):
         "Draw the image as background"
-        
-        if self._bitmap:            
+        if self._bitmap:
             dc = evt.GetDC()
             
             if not dc:
