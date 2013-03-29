@@ -401,54 +401,55 @@ class SelectionMarker:
 
 def save(evt, designer):
     "Basic save functionality: just replaces the gui code"
-    wx_obj = evt.GetEventObject()
-    w = wx_obj.obj
-    try:
-        if DEBUG: print "saving..."
-        # make a backup:
-        fin = open(designer.filename, "r")
-        fout = open(designer.filename + ".bak", "w")
-        fout.write(fin.read())
-        fout.close()
-        fin.close()
-        # reopen the files to proccess them
-        fin = open(designer.filename + ".bak", "r")
-        fout = open(designer.filename, "w")
-        copy = True
-        newlines = fin.newlines or "\n"
 
-        def dump(obj):
-            "recursive convert object to string"
-            for ctl in obj:
-                fout.write(str(ctl))
-                fout.write(newlines)
-                dump(ctl)
-
-        for line in fin:
-            if line.startswith("# --- gui2py designer generated code starts ---"):
-                fout.write(line)
-                fout.write(newlines)
-                fout.write(str(w))
-                fout.write(newlines)
-                dump(w)
-                fout.write(newlines)
-                copy = False
-            if line.startswith("# --- gui2py designer generated code ends ---"):
-                copy = True
-            if copy:
-                fout.write(line)
-                #fout.write("\n\r")
-        fout.close()
-        fin.close()
-        ok = True
-    except Exception, e:
-        import traceback
-        print(traceback.print_exc())
-        dlg = wx.MessageDialog(evt.GetEventObject(), str(e), 'Unable to save:',
-                               wx.OK | wx.CANCEL | wx.ICON_EXCLAMATION)
-        ok = dlg.ShowModal() == wx.ID_OK
-        dlg.Destroy()
+    # ask the user if we should save the changes:
+    ok = gui.confirm("save the changes", "GUI2PY Designer", cancel=True)
     if ok:
+        wx_obj = evt.GetEventObject()
+        w = wx_obj.obj
+        try:
+            if DEBUG: print "saving..."
+            # make a backup:
+            fin = open(designer.filename, "r")
+            fout = open(designer.filename + ".bak", "w")
+            fout.write(fin.read())
+            fout.close()
+            fin.close()
+            # reopen the files to proccess them
+            fin = open(designer.filename + ".bak", "r")
+            fout = open(designer.filename, "w")
+            copy = True
+            newlines = fin.newlines or "\n"
+
+            def dump(obj):
+                "recursive convert object to string"
+                for ctl in obj:
+                    fout.write(str(ctl))
+                    fout.write(newlines)
+                    dump(ctl)
+
+            for line in fin:
+                if line.startswith("# --- gui2py designer generated code starts ---"):
+                    fout.write(line)
+                    fout.write(newlines)
+                    fout.write(str(w))
+                    fout.write(newlines)
+                    dump(w)
+                    fout.write(newlines)
+                    copy = False
+                if line.startswith("# --- gui2py designer generated code ends ---"):
+                    copy = True
+                if copy:
+                    fout.write(line)
+                    #fout.write("\n\r")
+            fout.close()
+            fin.close()
+        except Exception, e:
+            import traceback
+            print(traceback.print_exc())
+            ok = gui.confirm("Close anyway?\n%s" % str(e), 'Unable to save:', 
+                             ok=True, cancel=True)
+    if ok is not None:
         wx.CallAfter(exit)    # terminate the designer program
     return ok                 # ok to close and exit! 
 
@@ -492,7 +493,11 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         filename = sys.argv[1]
     else:
-        filename = "sample.pyw"
+        # let the user choose the file to edit:
+        filename = gui.open_file("Select the file to edit", ".", "sample.pyw")
+        if not filename:
+            exit()
+    
     vars = {}
     execfile(filename, vars)
     w = None
