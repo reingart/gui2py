@@ -503,18 +503,18 @@ class DesignerMixin(object):
         if DEBUG: print "binding designer handler...", func, self._meta.name
         if func:
             # connect the mouse event handler of the designer:
-            self.wx_obj.Bind(wx.EVT_MOUSE_EVENTS, func, self.wx_obj)
+            self.wx_obj.Bind(wx.EVT_MOUSE_EVENTS, func)
             # link menu selection (click) to the designer
-            self.wx_obj.Bind(wx.EVT_MENU, func, self.wx_obj)
-            # link repaint event (refresh) to the designer (draw grid)
-            self.wx_obj.Bind(wx.EVT_PAINT, func, self.wx_obj)
+            self.wx_obj.Bind(wx.EVT_MENU, func)
             # link key press event to the designer (move)
-            self.wx_obj.Bind(wx.EVT_KEY_DOWN, func, self.wx_obj)
-            self.wx_obj.Bind(wx.EVT_KEY_UP, func, self.wx_obj)
+            self.wx_obj.Bind(wx.EVT_KEY_DOWN, func)
+            self.wx_obj.Bind(wx.EVT_KEY_UP, func)
             # bind top level window resizing and closing event:
             if self._parent is None:
                 self.wx_obj.Bind(wx.EVT_SIZE, func, self.wx_obj)
                 self.wx_obj.Bind(wx.EVT_CLOSE, func, self.wx_obj)
+                # link repaint event (refresh) to the designer (draw grid)
+                self.wx_obj.Bind(wx.EVT_PAINT, func, self.wx_obj)
             self._designer = func
             for child in self:
                 child.designer = func
