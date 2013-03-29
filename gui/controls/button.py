@@ -1,7 +1,7 @@
 
 import wx
 from ..event import FormEvent
-from ..component import Control, Spec, EventSpec, InitSpec
+from ..component import Control, Spec, EventSpec, InitSpec, StyleSpec
 from .image import Image
 from .. import images 
 
@@ -15,6 +15,10 @@ class Button(Image):
         if 'filename' in kwargs and kwargs['filename']:
             self._wx_class = wx_BitmapButton
             kwargs['label'] = ''
+            ##if 'border' in kwargs and kwargs['border'] == 'default':
+            ##  kwargs['border'] = 'none'
+            ##  kwargs['auto_redraw'] = True # Windows specific ?!
+                
         # TODO: refactor for Disabled, Focus, Hover, Selected bitmap support
         # Use the common image contructor (TODO: ImageMixin!)
         Image.__init__(self, parent, **kwargs)
@@ -36,6 +40,10 @@ class Button(Image):
                      lambda self, label: self.wx_obj.SetLabel(label),
                      optional=False, default='Button', type="string", 
                      doc="text to show as caption")
+    auto_redraw = StyleSpec(wx.BU_AUTODRAW, default=False,
+        doc="drawn automatically using bitmap only, providing a 3D-look border")
+    exact_fit = StyleSpec(wx.BU_EXACTFIT, default=False,
+        doc="small as possible instead of standard size (which is the default)")
     onclick = EventSpec('click', binding=wx.EVT_BUTTON, kind=FormEvent)
 
     
