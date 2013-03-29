@@ -1,11 +1,19 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"Sample gui2py application"
 
 import datetime
 import decimal
 import wx
+import os
 
 app = wx.GetApp()
 if app is None:
     app = wx.App(False)
+
+# disable ubuntu unified menu
+os.environ['UBUNTU_MENUPROXY'] = '0'
 
 import gui
 
@@ -125,9 +133,6 @@ def expand_item(event):
 
 
 if __name__ == "__main__":
-
-    # disable ubuntu unified menu
-    os.environ['UBUNTU_MENUPROXY'] = '0'
     
     print "MAIN!"
     mywin.onload = my_handler
