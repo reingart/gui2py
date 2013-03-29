@@ -1,7 +1,7 @@
 
 import wx
 from ..event import FormEvent
-from ..component import Control, Component, ImageBackgroundMixin
+from ..component import Control, Component, ImageBackgroundMixin, SizerMixin
 from ..spec import Spec, EventSpec, InitSpec, StyleSpec, InternalSpec
 from .. import registry
 from .. import images
@@ -46,7 +46,7 @@ class wx_StaticBoxPanel(wx.Panel):
         wx.Panel.Destroy(self)
 
 
-class Panel(Control, ImageBackgroundMixin):
+class Panel(Control, ImageBackgroundMixin, SizerMixin):
     "A container to group controls (optionally with a rectangle and title)"
     
     _style = wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS | wx.TAB_TRAVERSAL

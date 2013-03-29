@@ -276,16 +276,18 @@ class Component(object):
     def __iter__(self):
         return self._children_list.__iter__()
     
-    def __setitem__(self, key, val):
-        self._children_dict[key] = val
-        self._children_list.append(val)
+    def __setitem__(self, name, child):
+        self._children_dict[name] = child
+        if child not in self._children_list and hasattr(self, "_sizer_add"):
+             self._sizer_add(child)
+        self._children_list.append(child)
         
-    def __getitem__(self, key):
-        return self._children_dict[key]
+    def __getitem__(self, name):
+        return self._children_dict[name]
     
-    def __delitem__(self, key):
-        del self._children_list[self._children_list.index(self._children_dict[key])]
-        del self._children_dict[key]
+    def __delitem__(self, name):
+        del self._children_list[self._children_list.index(self._children_dict[name])]
+        del self._children_dict[name]
 
     # Public methods:
     
@@ -475,7 +477,7 @@ class Component(object):
     def _set_drop_target(self, dt):
         if dt:
             self.wx_obj.SetDropTarget(dt)
-    
+
     name = InitSpec(_get_name, _set_name, optional=False, _name="_name", default="", type='string')
     bgcolor = Spec(_get_bgcolor, _set_bgcolor, type='colour')
     font = Spec(_get_font, _set_font, type='font')
@@ -531,6 +533,46 @@ class DesignerMixin(object):
     sel_marker = InternalSpec(_name="_sel_marker",
                               doc="selection marker in design mode", 
                               type='internal')
+
+
+class SizerMixin(object):
+    "Automatic layout & sizing support"
+
+    __metaclass__ = ComponentBase
+
+    def _set_sizer(self, enabled):
+        print "set sizer", enabled, self._meta.name
+        
+        if enabled:
+            # create a new sizer (flow / fluid) layout (requires wxPython 2.9)
+            self._sizer = wx.WrapSizer()
+            self.wx_obj.SetSizer(self._sizer)
+            # add all the children to the sizer (in case we're on design time):
+            for child in self:
+                self._sizer_add(child)
+        elif hasattr(self, "_sizer"):
+            # remove the sizer
+            self.wx_obj.SetSizer(None)
+            del self._sizer
+
+    def _get_sizer(self):
+        if hasattr(self, "_sizer"):
+            return True
+        else:
+            return False
+
+    def _sizer_add(self, child):
+        "called when adding a control to the window"
+        if self.sizer:
+            print "adding to sizer:", child.name
+            self._sizer.Add(child.wx_obj, 0, wx.ALL, 4)
+
+
+    sizer = Spec(lambda self: self._get_sizer(), 
+                 lambda self, value: self._set_sizer(value), 
+                 doc="automatic flow layout mechanism (WrapSizer)", 
+                 type='boolean')
+
 
    
 class Control(Component, DesignerMixin):
@@ -654,6 +696,7 @@ class Control(Component, DesignerMixin):
             self.wx_obj.SetClientSize((w, h))
         else:
             self.wx_obj.SetSize((w, h))
+            self.wx_obj.SetMinSize((w, h))  # needed for sizers
         # update the designer selection marker (if any)
         if hasattr(self, 'sel_marker') and self.sel_marker:
             self.sel_marker.update()

@@ -54,6 +54,9 @@ class BasicDesigner:
                 if w and h:
                     obj._width, obj._height = "%spx" % w, "%spx" % str(h)
                     wx.CallAfter(self.inspector.inspect, obj)
+                # update the selection markers position (needed if using sizer!)
+                for obj in self.selection:
+                    wx.CallAfter(obj.sel_marker.update)
             evt.Skip()  # call the default handler
         elif evt.GetEventType() == wx.EVT_CLOSE.typeId:
             # call the external close handler (useful to save)
