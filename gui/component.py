@@ -466,7 +466,11 @@ class Component(object):
         return self.wx_obj.IsShown()
 
     def _setVisible(self, aBoolean):
-        self.wx_obj.Show(aBoolean)
+        # do not show immediately to allow proper layout and avoid flickering
+        if aBoolean and self._parent is None:
+            wx.CallAfter(self.wx_obj.Show)
+        else:
+            self.wx_obj.Show(aBoolean)
     
     def _set_drop_target(self, dt):
         if dt:
