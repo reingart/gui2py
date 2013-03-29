@@ -37,18 +37,24 @@ def prompt(message="", title="", default="", multiline=False, password=None,
         return result.text
 
 
-def confirm(message="", title="", default=False, ok_cancel=False, parent=None):
-    "Ask for confirmation (yes/no or ok/cancel), returns True or False"
-    if ok_cancel:
-        style = wx.OK | wx.CANCEL | wx.CENTRE
+def confirm(message="", title="", default=False, ok=False, cancel=False,
+            parent=None):
+    "Ask for confirmation (yes/no or ok and cancel), returns True or False"
+    style = wx.CENTRE
+    if ok:
+        style |= wx.OK 
     else:
-        style = wx.YES | wx.NO | wx.CENTRE
+        style |= wx.YES | wx.NO
         if default:
             style |= wx.YES_DEFAULT
         else:
             style |= wx.NO_DEFAULT
+    if cancel:
+        style |= wx.CANCEL
     result = dialogs.messageDialog(parent, message, title, style)
-    return result.accepted
+    if cancel and result.returned == wx.ID_CANCEL:
+        return None
+    return result.accepted  # True or False
     
 
 def select_font(message="", title="", font=None, parent=None):
@@ -125,7 +131,7 @@ if __name__ == "__main__":
     alert("hola!", "Alert!", icon="error")
     text = prompt("Input your name:", "Prompt...", "mariano")
     print text
-    ok = confirm("do you agree?", "Confirm?", default=True, ok_cancel=False)
+    ok = confirm("do you agree?", "Confirm?", default=True, cancel=True)
     print ok
     font = select_font("Select a font!")
     print font
