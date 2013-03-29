@@ -146,7 +146,7 @@ class Image(Control):
 
     def _set_bgcolor(self, color):
         color = self._get_default_color(color)
-        if self._filename == '':
+        if self._filename == '' and self._bitmap:
             bmp = self._bitmap.get_bits()
             dc = wx.MemoryDC()
             dc.SelectObject(bmp)
