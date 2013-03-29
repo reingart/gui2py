@@ -125,6 +125,10 @@ def expand_item(event):
 
 
 if __name__ == "__main__":
+
+    # disable ubuntu unified menu
+    os.environ['UBUNTU_MENUPROXY'] = '0'
+    
     print "MAIN!"
     mywin.onload = my_handler
     mywin['btnTest'].onclick = my_handler2
