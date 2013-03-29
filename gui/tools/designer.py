@@ -544,7 +544,7 @@ if __name__ == '__main__':
     
     vars = {}
     execfile(filename, vars)
-    w = None
+    root = None
     for name, value in vars.items():
         if not isinstance(value, gui.Window):
             continue
@@ -568,16 +568,19 @@ if __name__ == '__main__':
         set_drop_target(root)
         # link the designer (context menu) and toolbox (tool click)
         inspector.set_designer(designer)
-        tb.set_default_tlw(w, designer, inspector)
+        tb.set_default_tlw(root, designer, inspector)
         root.show()
 
-    designer.onclose = save 
-    designer.filename = filename
-    
-    frame.Show()
-    tb.Show()
-    
-    wellcome_tip(root.wx_obj)
-    
-    app.MainLoop()
-
+    if root:
+        designer.onclose = save 
+        designer.filename = filename
+        
+        frame.Show()
+        tb.Show()
+        
+        wellcome_tip(root.wx_obj)
+        
+        app.MainLoop()
+    else:
+        gui.alert("No window to design!")
+        
