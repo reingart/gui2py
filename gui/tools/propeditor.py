@@ -130,6 +130,7 @@ class PropertyEditorPanel(wx.Panel):
                                 print "CANNOT LOAD PROPERTY", name, value, e
                         
                         prop.SetPyClientData(spec)
+                        appended.add(name)
                         
                         if spec.group is None:
                             pg.Append(prop)
@@ -146,13 +147,14 @@ class PropertyEditorPanel(wx.Panel):
                                 pg.SetPropertyReadOnly(spec.group)
                             pg.AppendIn(spec.group, prop)
                             pg.Collapse(spec.group)
+                            name = spec.group + "." + name
                                           
                         if spec.type == "boolean":
                             pg.SetPropertyAttribute(name, "UseCheckbox", True)
                         doc = spec.__doc__ 
                         if doc:
                             pg.SetPropertyHelpString(name, doc)
-                        appended.add(name)
+                        
 
     def edit(self, name=""):
         "Programatically select a (default) property to start editing it"

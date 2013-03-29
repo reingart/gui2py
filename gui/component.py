@@ -541,8 +541,7 @@ class SizerMixin(object):
     __metaclass__ = ComponentBase
 
     def _set_sizer(self, enabled):
-        print "set sizer", enabled, self._meta.name
-        
+        if DEBUG: print "set sizer", enabled, self._meta.name        
         if enabled:
             # create a new sizer (flow / fluid) layout (requires wxPython 2.9)
             self._sizer = wx.WrapSizer()
@@ -564,12 +563,20 @@ class SizerMixin(object):
     def _sizer_add(self, child):
         "called when adding a control to the window"
         if self.sizer:
-            print "adding to sizer:", child.name
-            self._sizer.Add(child.wx_obj, 0, wx.ALL, 4)
+            if DEBUG: print "adding to sizer:", child.name
+            # TODO: determine the combination of sides (wx.ALL now)
+            border = max(child.margin_left, child.margin_right,
+                         child.margin_top, child.margin_bottom)
+            if not border:
+                border = child.sizer_border
+            flags = wx.ALL
+            if child.sizer_align:
+                flags |= child._sizer_align 
+            self._sizer.Add(child.wx_obj, 0, flags, border)
 
 
     sizer = Spec(lambda self: self._get_sizer(), 
-                 lambda self, value: self._set_sizer(value), 
+                 lambda self, value: self._set_sizer(value), group="sizer",
                  doc="automatic flow layout mechanism (WrapSizer)", 
                  type='boolean')
 
@@ -736,7 +743,6 @@ class Control(Component, DesignerMixin):
         "Returns the character height for this window."
         return self.wx_obj.GetCharHeight()
 
-
     pos = InitSpec(_get_pos, _set_pos, default=[ -1, -1])
     size = InitSpec(_get_size, _set_size, default=[ -1, -1])
     client_size = Spec(lambda self: self.wx_obj.GetClientSize(),
@@ -767,6 +773,17 @@ class Control(Component, DesignerMixin):
     margin_bottom = DimensionSpec(lambda self: self._get_margin(3),
                            lambda self, value: self._set_margin(value, 3),
                            default=0, type="integer", group="margin")
+
+    sizer_border = DimensionSpec(_name="_sizer_border", default=0, 
+            type="integer", group="sizer",
+            doc="empty space arround a item, used by the sizer")
+    sizer_align = DimensionSpec(mapping={'left': wx.ALIGN_LEFT, 
+                                    'top': wx.ALIGN_TOP,
+                                    'center': wx.ALIGN_CENTER, 
+                                    'right': wx.ALIGN_RIGHT,
+                                    'bottom': wx.ALIGN_BOTTOM}, 
+            default='left', _name="_sizer_align", type="enum", group="sizer",
+            doc="alignment within the space allotted to it by the sizer")
 
     border = StyleSpec({'default': wx.BORDER_DEFAULT,
                         'simple': wx.BORDER_SIMPLE,
