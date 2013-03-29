@@ -88,7 +88,10 @@ def open_file(title="Open",  directory='', filename='',
         style |= wx.MULTIPLE
     result = dialogs.fileDialog(parent, title, directory, filename, wildcard, 
                                 style)
-    return result.paths
+    if result.paths and not multiple:
+        return result.paths[0]
+    else:
+        return result.paths
 
 
 def save_file(title="Save",  directory='', filename='', 
