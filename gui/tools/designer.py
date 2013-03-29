@@ -1,4 +1,6 @@
 import wx
+import wx.lib.agw.supertooltip as STT
+from .. import images
 
 "Visual Layout Designers"
 
@@ -454,6 +456,52 @@ def save(evt, designer):
     return ok                 # ok to close and exit! 
 
 
+# show a nice and unostrusive welcome & help
+    
+class CustomToolTipWindow(STT.ToolTipWindow):
+
+    def CalculateBestPosition(self,widget):
+        "When dealing with a Top-Level window position it absolute lower-right"
+        if isinstance(widget, wx.Frame):
+            screen = wx.ClientDisplayRect()[2:]
+            left,top = widget.ClientToScreenXY(0,0)
+            right,bottom = widget.ClientToScreenXY(*widget.GetClientRect()[2:])
+            size = self.GetSize()
+            xpos = right
+            ypos = bottom - size[1]
+            self.SetPosition((xpos,ypos))
+        else:
+            STT.ToolTipWindow.CalculateBestPosition(self)
+
+# ToolTipWindow should be redefined as it is used internally by SuperToolTip
+STT.ToolTipWindow = CustomToolTipWindow
+
+def wellcome_tip(wx_obj):
+    "Show a tip message"
+    
+    msg = ("Close the main window to exit & save.\n"
+           "Drag & Drop / Click the controls from the ToolBox to create new ones.\n"
+           "Left click on the created controls to select them.\n"
+           "Double click to edit the default property.\n"
+           "Right click to pop-up the context menu.\n")
+    tip = STT.SuperToolTip(msg)
+
+    tip.SetHeader("Welcome to gui2py designer!")
+    tip.SetTarget(wx_obj)
+    tip.SetDrawHeaderLine(True)
+    tip.ApplyStyle("Office 2007 Blue")
+    tip.SetDropShadow(True)
+
+    #bmp = wx.Bitmap(, wx.BITMAP_TYPE_ANY)
+    tip.SetHeaderBitmap(images.designer.GetBitmap())
+
+    #tip.SetEndDelay(15000)
+    #tip.EnableTip(True)
+    #tip.Show()
+    #tip.SetTarget(wx_obj)
+    wx.CallLater(1000, tip.DoShowNow)
+
+
 if __name__ == '__main__':
     # basic proof-of-concept visual gui designer
     
@@ -532,6 +580,8 @@ if __name__ == '__main__':
     
     frame.Show()
     tb.Show()
+    
+    wellcome_tip(root.wx_obj)
     
     app.MainLoop()
 

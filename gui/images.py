@@ -222,3 +222,23 @@ slider = PyEmbeddedImage(
     "isgbWpKeSMJ73+3Ztg0APlAACCHssXMOxpg9ntE5g6qT1tGswy8oOdzpeWiMcS10NPlZXeeb"
     "vgBj5EmvX6ADGwAAAABJRU5ErkJggg==")
 
+#----------------------------------------------------------------------
+designer = PyEmbeddedImage(
+    "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABh0"
+    "RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjM2qefiJQAAAvhJREFUOE91k11MU2cYgD8yY7Is"
+    "xAu4INulF954P7nQgHYky3al8YZpcG5haGLAualDs8QEL7yQGeZPpGMoc6U6BiKgLNR5oAUK"
+    "DFYUQWl7elooPy2l5af0FEqffVTByLYvefK93895zpv3vCdNyJGXl7c9IyPj3Dtbt4oDS6Mf"
+    "Zx/cnSV05MmKEMmEEKzPMk7KGDmnrYoRRW1ee17k5ORkt7e3E4/HCU5N47j9PXF3Oag3Uix1"
+    "XSDWcZaYcpLY4+PoShEMHqWteE/XhsBms7E+lhOrPK2vItxTCloFgZrjWE4dwXrvDtbaGvou"
+    "FsOzr3j89Z7O/xSsi9S+LvzN8rL3Err1HDN3L5OM60TaTPC0kCff/I8g7FIZMt3B+OknlNf1"
+    "03L9NKvO8yQcpczcOpkSMViIcnqTIJmUL6v/FW/llyw6H2D+toSk3JxfjGE3XWG+vwSGTzFX"
+    "e0RmUETH2U0Cz88/EG76Av3mTuz7M3B09crCrqDryywnElTXNDHdJgv4/Bj8/Tm20teC3L0f"
+    "ffjo2H6ifxah39vOwMF0FJOZ6FKcaFTfYHA8TpttBFfdCXhZROf53Z2iV4gtQ/syjfHuYvSW"
+    "97EfzqS7qZWFhRhzc9G3cE5E6XgRxe1WuXYiR7Oc2WUVHsO2hpW+EvTGTAYKP6C8qpPJ4CKh"
+    "8IL8jP1EFOsGlj+6GfbO4/ON89mhQ2fS08QOoRre+01vyGLg6A4cdgeaP4LxSZjZyCKB6l8I"
+    "uMcIjHqYfKFx9aqZmakQmjZGfn7+d6keGBDi3aqs9EutLY+YmAilsA+H+NEyh1Jt5pka4eFf"
+    "Ia60zuI038c/HkRVfW8EqVbOzZWt3CFTC7xhfJZGo4nGnhA9QwH8/iDDd+vxeadkDbRNAvkv"
+    "KEq7NE9u4PEFsVfewj06hmtEw/XSS+/tWlT3BE6n59+CtQzc7jXBVAqPNk1/s4XeuuZX/C5p"
+    "eJg6c7m8bwsMBkN2WVkZRuNPrzFuitfWr6isNFJRUUFBQUGqiP8Al3K98jWTy7wAAAAASUVO"
+    "RK5CYII=")
+
