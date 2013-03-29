@@ -491,15 +491,11 @@ def wellcome_tip(wx_obj):
     tip.SetDrawHeaderLine(True)
     tip.ApplyStyle("Office 2007 Blue")
     tip.SetDropShadow(True)
-
-    #bmp = wx.Bitmap(, wx.BITMAP_TYPE_ANY)
     tip.SetHeaderBitmap(images.designer.GetBitmap())
-
-    #tip.SetEndDelay(15000)
-    #tip.EnableTip(True)
-    #tip.Show()
-    #tip.SetTarget(wx_obj)
-    wx.CallLater(1000, tip.DoShowNow)
+    tip.SetEndDelay(15000)                      # hide in 15 s
+    wx.CallLater(1000, tip.DoShowNow)           # show the tip in 1 s
+    wx.CallLater(30000, tip.EnableTip, False)   # disable the tip in 30 s
+    #wx.CallLater(31000, tip.SetTarget, None)            
 
 
 if __name__ == '__main__':
