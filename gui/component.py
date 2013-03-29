@@ -188,14 +188,14 @@ class Component(object):
                 value = kwargs.get(spec_name, getattr(self, spec_name, spec.default))
                 setattr(self, spec_name, value)
 
-    def rebuild(self, recreate=True, **kwargs):
+    def rebuild(self, recreate=True, force=False, **kwargs):
         "Recreate (if needed) the wx_obj and apply new properties"
         # detect if this involves a spec that needs to recreate the wx_obj:
         needs_rebuild = any([isinstance(spec, (StyleSpec, InitSpec)) 
                              for spec_name, spec in self._meta.specs.items()
                              if spec_name in kwargs])
         # validate if this gui object needs and support recreation
-        if needs_rebuild and recreate:
+        if needs_rebuild and recreate or force:
             if DEBUG: print "rebuilding window!"
             # recreate the wx_obj! warning: it will call Destroy()
             self.__init__(**kwargs)       
@@ -874,9 +874,9 @@ class ImageBackgroundMixin(object):
             x = x + w
 
     def __on_destroy(self, event):
-        assert event.EventObject == self.wx_obj
-        # memory leak cleanup
-        self._bitmap = None
+        if event.EventObject == self.wx_obj:
+            # memory leak cleanup
+            self._bitmap = None
         
     def __on_erase_background(self, evt):
         "Draw the image as background"
