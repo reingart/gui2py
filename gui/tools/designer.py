@@ -411,7 +411,8 @@ def save(evt, designer):
     "Basic save functionality: just replaces the gui code"
 
     # ask the user if we should save the changes:
-    ok = gui.confirm("save the changes", "GUI2PY Designer", cancel=True)
+    ok = gui.confirm("Save the changes?", "GUI2PY Designer", 
+                     cancel=True, default=True)
     if ok:
         wx_obj = evt.GetEventObject()
         w = wx_obj.obj
