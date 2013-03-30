@@ -1,0 +1,31 @@
+Readme for gui2py
+
+gui2py is a GUI framework for building cross-platform "visual" desktop applications on Windows, Mac OS X, and Linux, using the Python language and the wxPython toolkit.
+Initially based on PythonCard, it was enhanced to include a modern component object model and patterns (MVC), intuitive design & inspection tools and a compact overall structure.
+It also mimics some HTML & Javascript features to make the gap between GUI and Web development smaller.
+
+Place the "gui" directory in your python directory or another directory on your PYTHONPATH. 
+By default, the Windows installer and distutils installer will place PythonCard in your Python2x\Lib\site-packages directory; 
+the actual path will be different depending on your OS and version of Python.
+
+To install, run `python setup.py install`
+Once installed, try the sample application in this directory, running: `python sample.pyw`
+Also, you can start the GUI designer with: `python -m gui.tools.designer`
+
+Home Page:
+https://code.google.com/p/gui2py
+
+Mailing list:
+https://groups.google.com/d/forum/gui2py
+
+gui2py requires Python 2.5 or later (up to 2.7) and wxPython 2.8.12.x or later. 
+wxPython 2.9.4.1 is required to use the newer features (PropertyGrid, WrapSizer, etc.)
+Python is available at http://www.python.org/
+wxPython is available at http://www.wxpython.org/
+
+License
+
+The source code written from scratch for this project is released under the terms of the GNU LGPLv3 license.
+This software was inpired and/or borrowed initially some concepts, code and documentation from other projects, mainly PythonCard, wxGlade and wxPython (demos), whose are governed by their respective licenses.
+For more information see the licenses directory.
+
