@@ -18,10 +18,13 @@ class wx_DummyWindow:
     # Font and Background/Textcolour seems to work only on MSW
     
     def __init__(self, parent, *args, **kwargs):
-        self._parent = parent
+        self.parent = parent
     
     def GetParent(self):
-        return self._parent
+        return self.parent
+    
+    def Reparent(self, new_parent):
+        self.parent = new_parent
     
     def GetSize(self):
         return [-1, -1]
@@ -65,7 +68,6 @@ class wx_MenuItem(wx_DummyWindow, wx.MenuItem):
                              kind=kwargs['style'], 
                              #subMenu=None,
                              )
-        self.parent = parent
         if self.GetKind() == wx.ITEM_SEPARATOR:
             self.parent.AppendSeparator()       # do not use AppendItem on MSW
         #elif self.GetKind() == wx.ITEM_CHECK:
@@ -136,7 +138,6 @@ class wx_Menu(wx_DummyWindow, wx.Menu):
         # if this is a popup menu, call constructor with:
         #   kwargs.get("label"), kwargs.get("style")
         wx.Menu.__init__(self)
-        self.parent = parent
         if isinstance(parent, wx.MenuBar):
             self.parent.Append(self, kwargs.get("label"))
         else:
@@ -239,7 +240,6 @@ class wx_MenuBar(wx_DummyWindow, wx.MenuBar):
         # TypeError: new_MenuBar() takes at most 1 argument (7 given)
         wx_DummyWindow.__init__(self, parent, *args, **kwargs)
         wx.MenuBar.__init__(self)
-        self.parent = parent
 
     # unsupported methods:
     
@@ -297,8 +297,15 @@ class MenuBar(Component):
             id = wx.NewId()
             mi = MenuItem(m, label='MenuItem', name='menu_item_%s' % id, id=id)
             mi.designer = self.designer
+        self._parent.menubar = self     # add the menubar to the window
 
-        self._parent.menubar = self
+    def set_parent(self, new_parent, init=False):
+        Component.set_parent(self, new_parent, init)
+        # if new_parent is rebuild, reparent (even to None) to avoid segv:
+        if not init:
+            wx_obj = new_parent and new_parent.wx_obj
+            self.wx_obj.Reparent(wx_obj)
+
 
     def find(self, item_id=None):
         "Recursively find a menu item by its id (useful for event handlers)"

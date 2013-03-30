@@ -306,12 +306,7 @@ class Component(object):
     
     def get_parent(self):
         "Return the object parent for this component (either gui or wx)"
-        if self.wx_obj:
-            parent = self.wx_obj.GetParent()
-            if hasattr(parent, "obj"):
-                return parent.obj  # return the gui object
-            else:
-                return parent            # return the wx object
+        return self._parent
 
     def _get_parent_name(self):
         "Return parent window name (used in __repr__ parent spec)"
@@ -610,7 +605,7 @@ class Control(Component, DesignerMixin):
         # if not called from constructor, we must also reparent in wx:
         if not init:
             if DEBUG: print "reparenting", ctrl.name
-            if isinstance(self.wx_obj, wx.Window):
+            if hasattr(self.wx_obj, "Reparent"):
                 self.wx_obj.Reparent(self._parent.wx_obj)
 
     # Dimensions:
