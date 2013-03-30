@@ -1,0 +1,48 @@
+Copyright (c) 2001-2005 PythonCard developers
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. The name of the author may not be used to endorse or promote products
+   derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+The PythonCard developers and contributors are;
+    Kevin Altis         - developer, project lead, <altis@sem-retired.com>
+    Rowland Smith       - developer
+    Patrick K O'Brien   - developer, PyCrust, <pobrien@orbtech.com>
+    Neil Hodgson        - developer, wxStyledTextCtrl (Scintilla), <neilh@scintilla.org>
+    Robin Dunn          - developer, wxPython, <robin@alldunn.com>
+    Andy Todd           - developer, dbBrowser sample, gadflyDatabase.py, documentation, <andy47@halfcooked.com>
+    Alex Tweedly        - developer, codeEditor & resourceEditor additions, documentation
+    Arlo Belshee        - developer, lsystem sample
+    Kim Wallmark        - developer, lsystem sample
+    Phil Edwards        - developer, documentation, pysshed sample, Linux RPMs, <phil@linux2000.com>
+    Dan Winkler         - developer, textIndexer sample, co-Godfather ;-)
+    Kenneth Pronovici   - Debian builds
+    Dan Shafer          - documentation, counter sample
+    Thomas Heller       - py2exe scripts, Windows distutils script
+    Simon Kittle        - textRouter sample
+    Juergen Rauch       - custdb sample
+    Richard Wolff
+    Randy Lea           - rpn sample
+    Riaan Booysen       - STCStyleEditor.py
+    David McNab         - documentation
+    David Primmer       - documentation
+    Fred Pacquier       - fpop sample
+    Gene Cash           - EXIF.py
+    Jon Dyte
+    Roman Suzi
+    William Volkman     - multicolumnexample sample
+    Bruce Eckel         - moderator sample
+    Tom Jacobs          - montyhall sample
+    Stephen Waterbury   - twistedEchoClient sample
+    Ward Cunningham     - lsystem sample
