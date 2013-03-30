@@ -1,8 +1,18 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"Visual in-place Layout Designer (point & click interfase) of gui2py's windows"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"
+__license__ = "LGPL 3.0"
+
+# some parts where inspired or borrowed from PythonCard, wxGlade or Boa et.al.
+
 import wx
 import wx.lib.agw.supertooltip as STT
 from .. import images
 
-"Visual Layout Designers"
 
 DEBUG = False
 

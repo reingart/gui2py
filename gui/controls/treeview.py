@@ -1,3 +1,15 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"gui2py's Tree Model-View-Controller control (uses wx.TreeCtrl)"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"  # where applicable
+
+# Initial implementation was based on PythonCard's Tree component, 
+# but redesigned and overhauled a lot (specs renamed, events refactorized, etc.)
+# Note: pythoncard version was trivial, Model and View code are completely new
+
 import wx
 from ..event import TreeEvent
 from ..component import Control, SubComponent
@@ -5,8 +17,6 @@ from ..spec import Spec, EventSpec, InitSpec, StyleSpec, InternalSpec
 from .listbox import ItemContainerControl
 from .. import images 
 from types import TupleType, ListType, StringTypes, NoneType, IntType, DictType
-
-from wx.lib.mixins.listctrl import ColumnSorterMixin, ListCtrlAutoWidthMixin
 
 
 class TreeView(Control):

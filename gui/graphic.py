@@ -1,4 +1,13 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
+"gui2py's Graphic facilities (encapsulate wx.Bitmap and wx.Color)"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart" # where applicable
+
+# Initial implementation was based on PythonCard's graphic module, altought
+# some of it was redesigned and overhauled a lot (specially Color)
 
 import os
 import wx

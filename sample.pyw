@@ -3,6 +3,13 @@
 
 "Sample gui2py application"
 
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"
+__license__ = "LGPL 3.0"
+
+# images were taken from Pythoncard's proof and widgets demos
+# for more complete examples, see each control module
+
 import datetime
 import decimal
 import wx

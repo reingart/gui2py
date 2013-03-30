@@ -1,3 +1,18 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"gui2py's Components Object Model: base & super classes, metaclasses and mixins"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"  # where applicable
+
+# Initial implementation was based on PythonCard's component module, altought
+# most of it was redesigned and overhauled a lot, mainly:
+#  * ComponentBase (metaclass) & ComponentMeta were inspired by Django's models
+#  * Widget was renamed to Control (wx.Control, Component abstract wx.Window)
+#  * SubComponent and DesignerMixin & SizerMixin are completely new
+#  * ImageBackgroundMixin was refactorized from Pythoncards Panel
+# Note: PyhonCard spec and event model were almost completely discarded
 
 import decimal
 import datetime

@@ -1,3 +1,15 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"gui2py's List Model-View-Controller control (uses wx.ListCtrl & mixins)"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"  # where applicable
+
+# Initial implementation was based on PythonCard's MultiColumnList component, 
+# but redesigned and overhauled a lot (specs renamed, events refactorized, etc.)
+# Note: pythoncard version was trivial, Model and View code are completely new
+
 import wx
 from ..event import FormEvent
 from ..component import Control, SubComponent

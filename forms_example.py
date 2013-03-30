@@ -1,6 +1,13 @@
 #!/usr/bin/python
 # -*- coding: latin-1 -*-
 
+"Experimental example of HTML forms + gui2py (using web2py helpers & models)"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2011-2013 Mariano Reingart"
+__license__ = "LGPL 3.0"
+
+
 import wx
 
 import gui

@@ -1,7 +1,11 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-"Sample gui2py application demo of sizer usage"
+"Experimental sample gui2py application demo of sizer usage"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"
+__license__ = "LGPL 3.0"
 
 import datetime
 import decimal

@@ -1,3 +1,14 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"gui2py's Notebook control and TabPanel (uses wx.Notebook and wx.Panel)"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"  # where applicable
+
+# Initial implementation was based on PythonCard's Notebook component, 
+# but redesigned and overhauled a lot (specs renamed, events refactorized, etc.)
+# Note: Pythoncard's code was trivial, so it was almost reimplemented completely
 
 import wx
 from ..event import FormEvent
@@ -8,6 +19,7 @@ from .. import images
 
 
 class Notebook(Control):
+    "A container which manages multiple windows with associated tabs"
     
     _wx_class = wx.Notebook
     _style = wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS

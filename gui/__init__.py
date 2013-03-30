@@ -1,3 +1,15 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"gui2py: Simple and powerful GUI framework for agile development - Main Package"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"
+__license__ = "LGPL 3.0"
+
+# some parts where inspired or borrowed from different sources & projects
+# please see the respective files or commit messages for proper recognition
+
 ##import wxversion
 ##wxversion.select("2.9")
 

@@ -1,11 +1,14 @@
-#!/usr/bin/env python
-# coding:utf-8
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
-"HTML control"
+"gui2py's basic HTML control (uses wx.HtmlWindow)"
 
 __author__ = "Mariano Reingart (reingart@gmail.com)"
-__copyright__ = "Copyright (C) 2011 Mariano Reingart"
-__license__ = "GPL 3.0"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"  # where applicable
+__license__ = "LGPL 3.0"
+
+# Initial implementation was based on PythonCard's HtmlWindow component, 
+# but redesigned and overhauled a lot (specs renamed, events refactorized, etc.)
  
 import os
 import sys

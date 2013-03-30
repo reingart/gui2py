@@ -1,4 +1,13 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
+"gui2py's basic Image control (uses wx.StaticBitmap)"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"
+
+# Initial implementation was based on PythonCard's Image component, 
+# but redesigned and overhauled a lot (specs renamed, events refactorized, etc.)
 
 import wx
 from ..event import FormEvent

@@ -3,6 +3,9 @@
 
 "Common dialogs (function wrappers for wxPython dialogs)"
 
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"
+
 
 import wx
 from wx.lib import dialogs

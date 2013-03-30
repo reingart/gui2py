@@ -1,3 +1,13 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"gui2py's Font facilities (encapsulate wx.Font)"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart" # where applicable
+
+# Initial implementation was based on PythonCard's font module, altought
+# most of it was redesigned and overhauled a lot
 
 import wx
 
@@ -99,7 +109,6 @@ class Font(object):
         else:
             return 'normal'
 
-
     def description(self):
         desc = {}
         if self._family != wx.DEFAULT:
@@ -121,6 +130,7 @@ class Font(object):
     size = property(_get_size, _set_size)
     style = property(_get_style, _set_style)
     weight = property(_get_weight, _set_weight)
+
 
 if __name__ == "__main__":
     # basic test until unit_tests

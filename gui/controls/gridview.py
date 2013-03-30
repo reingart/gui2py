@@ -1,3 +1,14 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"gui2py's Grid Model-View-Controller control (uses wx.Grid & PyGridBaseTable)"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"  # where applicables
+
+# Initial implementation was based on PythonCard's Grid component, 
+# but redesigned and overhauled a lot (specs renamed, events refactorized, etc.)
+# Note: pythoncard version was trivial, Model and View code are completely new
 
 import wx
 import wx.grid as gridlib

@@ -1,3 +1,15 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"gui2py's RadioButton for mutual exclusive options (uses wx.RadioButton)"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"  # where applicable
+
+# Note: Pythoncard didn't implemented this, so the code is almost completely new
+#       BTW, pythoncard used RadioGroup that is not implemented at all in gui2py
+#       if you need that functionality, just use RadioButtons inside a Panel
+
 import wx
 from ..event import FormEvent
 from ..component import Control, Spec, EventSpec, InitSpec, StyleSpec

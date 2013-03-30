@@ -1,3 +1,15 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"gui2py's Menu Model (encapsulates wx.MenuBar, wx.Menu and wx.MenuItems)"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"
+__license__ = "LGPL 3.0"
+
+# Initial implementation was based on PythonCard's statusbar module, altought
+# some of it was redesigned and overhauled a lot (specially Color)
+
 
 import wx
 from .event import FormEvent

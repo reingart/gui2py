@@ -1,3 +1,15 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"Visual Property Editor (using wx PropertyGrid) of gui2py's components"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"
+__license__ = "LGPL 3.0"
+
+# some parts where inspired or borrowed from wxFormBuilders & wxPython examples
+
+
 import sys, time, math, os, os.path
 
 import wx

@@ -1,4 +1,13 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
+"gui2py's Gauge (a.k.a. progress bar) control (uses wx.Gauge)"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"  # where applicable
+
+# Initial implementation was based on PythonCard's Gauge component, 
+# but redesigned and overhauled a lot (specs renamed, events refactorized, etc.)
 
 import wx
 from ..component import Control, Spec, EventSpec, InitSpec, StyleSpec

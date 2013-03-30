@@ -1,3 +1,14 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"gui2py's Panel control + optional label/frame (uses wx.StatixBox & wx.Panel)"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"  # where applicable
+
+# Initial implementation was based on PythonCard's StatixBox component, 
+# but redesigned and overhauled a lot (specs renamed, events refactorized, etc.)
+# Note: Pythoncard's code was trivial, so it was almost reimplemented completely
 
 import wx
 from ..event import FormEvent

@@ -1,4 +1,16 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
+"gui2py's Menu Model (encapsulates wx.MenuBar, wx.Menu and wx.MenuItems)"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"
+__license__ = "LGPL 3.0"
+
+# Initial implementation was inspired on PythonCard's menu module, altought
+# it was almost completely discarded and re-written from scratch to make it
+# simpler and cleaner, following the general gui2py component object model
+# Note: some wx stubs ("dummy window") where necessary for this simplification
 
 import wx
 from .event import FormEvent

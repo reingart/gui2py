@@ -1,3 +1,15 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"gui2py's TextBox control (uses wx.TextCtrl, wx.lib.masked & wx.DatePickerCtrl)"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"  # where applicable
+
+# Initial implementation was based on PythonCard's TextField/TextArea component, 
+# but redesigned and overhauled a lot (specs renamed, events refactorized, etc.)
+# Support for Masked TextCtrl/NumCtrl and DatePicker is completely new
+
 import locale
 import decimal
 import datetime

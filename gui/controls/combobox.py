@@ -1,3 +1,14 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"gui2py's ComboBox control (uses wx.ComboBox - wx.Choice is not used by now)"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"  # where applicable
+
+# Initial implementation was based on PythonCard's ComboBox component, 
+# but redesigned and overhauled a lot (specs renamed, events refactorized, etc.)
+
 import wx
 from ..event import FormEvent
 from ..component import Control, Spec, EventSpec, InitSpec, StyleSpec

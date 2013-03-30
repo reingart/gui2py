@@ -1,3 +1,13 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"Experimental HTML Form support using wx.Html"
+
+# Initial implementation was based on a form example found in the wxPython wiki,
+# altought some of it was redesigned and overhauled a lot.
+# Note: there is no need to use this package, as gui2py works completely without
+# this and, in fact, it re-implements some useful HTML features and fluid layout
+# For more information, see: http://wiki.wxpython.org/wxHTML
 
 import wx
 

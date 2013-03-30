@@ -1,3 +1,13 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"Visual Inspector (using wx TreeListCtrl) of gui2py component's"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"
+__license__ = "LGPL 3.0"
+
+# some parts where inspired or borrowed from wxPython examples
 
 import  wx
 import  wx.gizmos   as  gizmos

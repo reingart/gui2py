@@ -1,3 +1,16 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"gui2py's HTML Top Level Window (uses wx.Frame and gui.HtmlBox)"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"
+__license__ = "LGPL 3.0"
+
+# This is an experimental approach to show rich internet applications
+# There is no PythonCard equivalent, so code is almost completely new
+
+
 import wx
 
 from ..component import Component, Spec, InitSpec, EventSpec, StyleSpec

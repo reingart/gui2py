@@ -1,3 +1,16 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"gui2py's Specifications (properties) model to encapsulate wx object attributes"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"
+__license__ = "LGPL 3.0"
+
+# Initial implementation was inspired on PythonCard's spec module, altought
+# it was almost completely discarded and re-written from scratch to make it
+# simpler and more pythonic (similar to Django's models)
+
 import wx
 
 from .event import FocusEvent, MouseEvent, KeyEvent

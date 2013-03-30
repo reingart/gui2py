@@ -1,13 +1,21 @@
-import time
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
-#CallAfter
-#set_timeout = wx.CallLater
+"gui2py's Event Model (encapsulates wx.Event)"
 
-# Basic events
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"
+__license__ = "LGPL 3.0"
+
+# Initial implementation was inspired on PythonCard's event module, altought
+# it was almost completely discarded and re-written from scratch to make it
+# simpler and mimic web (html/javascript) event models
 
 # References
 # https://developer.mozilla.org/en-US/docs/Mozilla_event_reference
 # http://wxpython.org/docs/api/wx.Event-class.html
+
+import time
 
 
 class Event:
