@@ -639,14 +639,6 @@ class Control(Component, DesignerMixin):
     def _set_pos(self, point):
         # check parameters (and store user values for resize)
         point = list(point)
-        if point[0] is None:
-            point[0] = self.wx_obj.GetPositionTuple()[0]  # no change
-        else:
-            self._left = str(point[0])  # use the new value
-        if point[1] is None:
-            point[1] = self.wx_obj.GetPositionTuple()[1]  # no change
-        else:
-            self._top = str(point[1])  # use the new value
         # get parent or screen size (used to calc the percent)
         if self.parent and self.wx_obj.GetParent():
             parent_size = self.wx_obj.GetParent().GetSize()
@@ -655,29 +647,39 @@ class Control(Component, DesignerMixin):
         # get font metrics for "em" unit
         font_width = self.wx_obj.GetCharWidth()
         font_height = self.wx_obj.GetCharHeight()
+        # get current position:
+        x, y = self._get_pos()
         # calculate actual position (auto, relative or absolute)
-        x = self._calc_dimension(point[0], parent_size[0], font_width) + self.margin_left
-        y = self._calc_dimension(point[1], parent_size[1], font_height) + self.margin_top
+        if point[0] is not None:
+            x = self._calc_dimension(point[0], parent_size[0], font_width) \
+                    + self.margin_left
+        if point[1] is not None:
+            y = self._calc_dimension(point[1], parent_size[1], font_height) \
+                    + self.margin_top
+        # actually move the object
         self.wx_obj.Move((x, y))
         # update the designer selection marker (if any)
         if hasattr(self, 'sel_marker') and self.sel_marker:
             self.sel_marker.update()
 
+    def _set_left(self, value):
+        self._left = value
+        self._set_pos([value, None])
+
+    def _set_top(self, value):
+        self._top = value
+        self._set_pos([None, value])
+        
     def _get_size(self):
         # return the actual size, not (-1, -1)
-        return self.wx_obj.GetSizeTuple()
+        if isinstance(self.wx_obj, wx.TopLevelWindow):
+            return self.wx_obj.GetClientSizeTuple()
+        else:
+            return self.wx_obj.GetSizeTuple()
 
     def _set_size(self, size, new_size=None):
         # check parameters (and store user values for resize)
         size = list(size)
-        if size[0] is None:
-            size[0] = self.wx_obj.GetSizeTuple()[0]  # no change
-        else:
-            self._width = str(size[0])  # use the new value
-        if size[1] is None:
-            size[1] = self.wx_obj.GetSizeTuple()[1]  # no change
-        else:
-            self._height = str(size[1])  # use the new value
         # get parent or screen size (used to calc the percent)
         if new_size:
             parent_size = new_size  # use event size instead
@@ -688,9 +690,19 @@ class Control(Component, DesignerMixin):
         # get font metrics for "em" unit
         font_width = self.wx_obj.GetCharWidth()
         font_height = self.wx_obj.GetCharHeight()
+        # get current size (to use if a dimension has not changed)
+        prev_size = self._get_size()
         # calculate actual position (auto, relative or absolute)
-        w = self._calc_dimension(size[0], parent_size[0], font_width) - self.margin_left - self.margin_right
-        h = self._calc_dimension(size[1], parent_size[1], font_height) - self.margin_top - self.margin_bottom
+        if size[0] is not None:
+            w = self._calc_dimension(size[0], parent_size[0], font_width) \
+                    - self.margin_left - self.margin_right
+        else:
+            w = prev_size[0]
+        if size[1] is not None:
+            h = self._calc_dimension(size[1], parent_size[1], font_height) \
+                    - self.margin_top - self.margin_bottom
+        else:
+            h = prev_size[1]
         # on windows set the client size (ignore title bar)
         # note: don't do on controls (it doesn't work at least for textbox)
         if DEBUG: print "NEWSIZE", w, h
@@ -703,6 +715,14 @@ class Control(Component, DesignerMixin):
         if hasattr(self, 'sel_marker') and self.sel_marker:
             self.sel_marker.update()
 
+    def _set_width(self, value):
+        self._width = str(value)
+        self._set_size([value, None])
+        
+    def _set_height(self, value):
+        self._height = str(value)
+        self._set_size([None, value])
+        
     def _get_margin(self, index):
         return self._margins[index] or 0
     
@@ -745,16 +765,16 @@ class Control(Component, DesignerMixin):
                        default=[ -1, -1])
 
     width = DimensionSpec(lambda self: self._width, 
-                          lambda self, value: self._set_size([value, None]),
+                          lambda self, value: self._set_width(value),
                           default="", type="string", group="size")
     height = DimensionSpec(lambda self: self._height, 
-                           lambda self, value: self._set_size([None, value]),
+                           lambda self, value: self._set_height(value),
                            default="", type="string", group="size")
     left = DimensionSpec(lambda self: self._left, 
-                           lambda self, value: self._set_pos([value, None]),
+                           lambda self, value: self._set_left(value),
                            default="", type="string", group="position")
     top = DimensionSpec(lambda self: self._top, 
-                           lambda self, value: self._set_pos([None, value]),
+                           lambda self, value: self._set_top(value),
                            default="", type="string", group="position")
     margin_left = DimensionSpec(lambda self: self._get_margin(0), 
                            lambda self, value: self._set_margin(value, 0),

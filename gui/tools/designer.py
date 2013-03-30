@@ -164,7 +164,10 @@ class BasicDesigner:
                 # resize according the direction (n, w, s, e)
                 x = wx_obj.Position[0] + e * delta[0]
                 y = wx_obj.Position[1] + n * delta[1]
-                width = wx_obj.Size[0] + (w - e) * delta[0]
+                if not isinstance(wx_obj, wx.TopLevelWindow):
+                    width = wx_obj.Size[0] + (w - e) * delta[0]
+                else:
+                    width = wx_obj.ClientSize[0] + (w - e) * delta[0]
                 if n or s:
                     height = wx_obj.Size[1] + (s - n) * delta[1]
                 else:
