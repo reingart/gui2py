@@ -573,7 +573,7 @@ class SizerMixin(object):
     sizer = Spec(lambda self: self._get_sizer(), 
                  lambda self, value: self._set_sizer(value), group="sizer",
                  doc="automatic flow layout mechanism (WrapSizer)", 
-                 type='boolean')
+                 type='boolean', default=False)
 
 
    
@@ -597,7 +597,8 @@ class Control(Component, DesignerMixin):
         Component.__init__(self, parent, **kwargs) 
         # Handle resize events to adjust absolute and relative dimensions
         if self._resizable:
-            self.wx_obj.Bind(wx.EVT_SIZE, self.resize)
+            # postpone this so it doesn't catch initialization events:
+            wx.CallAfter(self.wx_obj.Bind, wx.EVT_SIZE, self.resize)
 
     def set_parent(self, new_parent, init=False):
         "Re-parent a child control with the new wx_obj parent"
@@ -678,6 +679,7 @@ class Control(Component, DesignerMixin):
             return self.wx_obj.GetSizeTuple()
 
     def _set_size(self, size, new_size=None):
+        if DEBUG: print "SET SIZE", self._name, size, new_size
         # check parameters (and store user values for resize)
         size = list(size)
         # get parent or screen size (used to calc the percent)
@@ -716,10 +718,12 @@ class Control(Component, DesignerMixin):
             self.sel_marker.update()
 
     def _set_width(self, value):
+        if DEBUG: print "SET WIDTH", self._name, value
         self._width = str(value)
         self._set_size([value, None])
         
     def _set_height(self, value):
+        if DEBUG: print "SET HEIGHT", self._name, value
         self._height = str(value)
         self._set_size([None, value])
         
@@ -727,8 +731,10 @@ class Control(Component, DesignerMixin):
         return self._margins[index] or 0
     
     def _set_margin(self, value, index):
+        old_margin = self._margins[index]
         self._margins[index] = value
-        self.resize()
+        if old_margin != value and value is not None:
+            self.resize()
 
     def resize(self, evt=None):
         "automatically adjust relative pos and size of children controls"

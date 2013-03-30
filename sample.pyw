@@ -17,11 +17,14 @@ os.environ['UBUNTU_MENUPROXY'] = '0'
 
 import gui
 
+import time
+t0 = time.time()
+
 # --- gui2py designer generated code starts ---
 
-gui.Window(name='mywin', title=u'hello world', resizable=True, height='598px', 
+gui.Window(name='mywin', title=u'hello world', resizable=True, height='610px', 
            left='180', top='24', width='396px', bgcolor=u'#E0E0E0', 
-           image=u'tile.bmp', sizer=False, tiled=True, )
+           image=u'tile.bmp', tiled=True, )
 gui.Label(name='lblTest', alignment='right', transparent=True, left='38', 
           top='37', width='48', parent='mywin', text=u'hello!', )
 gui.Button(label=u'Quit', name=u'btnClose', left='232', top='156', width='85', 
@@ -73,8 +76,7 @@ gui.Label(name='label_153_56', left='147', top='50',
 gui.Label(name='label_152_84', left='147', top='78', 
           parent=u'mywin.notebook.tab0', text=u'date:', )
 gui.Panel(label=u'Group: ', name='panel_40_46', height='138', left='15', 
-          top='10', width='116', image='', parent=u'mywin.notebook.tab0', 
-          sizer=False, )
+          top='10', width='116', image='', parent=u'mywin.notebook.tab0', )
 gui.RadioButton(id=298, label=u'Option 3', name=u'opt3', left='14', top='71', 
                 width='86', parent=u'mywin.notebook.tab0.panel_40_46', )
 gui.RadioButton(id=148, label=u'Option 2', name=u'opt2_148', left='14', 
@@ -112,6 +114,9 @@ gui.Slider(name=u'slider', left='18', top='96', width='249',
            bgcolor=u'#F0F0F0', fgcolor=u'#000000', parent='mywin', )
 
 # --- gui2py designer generated code ends ---
+
+t1 = time.time()
+print "basic timing: t1 - t0", t1 - t0
 
 mywin = gui.get("mywin")
 
