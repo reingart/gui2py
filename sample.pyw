@@ -70,6 +70,11 @@ def del_an_item(evt):
     for it in mywin['listview'].get_selected_items():
         del mywin['listview'].items[it.key]
 
+def update_items(evt):
+    # list item model is similar to dict (of dicts), to update an item do:
+    for it in mywin['listview'].items:
+        it['col_a'] = it['col_a'] * 2
+
 def add_a_row(evt):
     # grid model is similar to list, to add a row do:
     gv = mywin['notebook']['tab1']['gridview']
@@ -134,20 +139,23 @@ gui.MenuItem(help=u'Add an item to the list', id=225, label=u'Add item',
              name=u'add', parent=u'mywin.menubar.list', )
 gui.MenuItem(help=u'Remove the selected items in the list', id=235, 
              label=u'Remove items', name=u'del', parent=u'mywin.menubar.list', )
+gui.MenuItem(help=u'Update a values of an entire column', id=201, 
+             label=u'Update items', name=u'update', 
+             parent=u'mywin.menubar.list', )
 gui.Menu(label=u'Grid', name=u'grid', parent='mywin.menubar', )
-gui.MenuItem(help=u'Add a row to the grid', label=u'Add item',
-             name=u'add', parent=u'mywin.menubar.grid', )
+gui.MenuItem(help=u'Add a row to the grid', label=u'Add item', name=u'add', 
+             parent=u'mywin.menubar.grid', )
 gui.MenuItem(help=u'Remove the selected rows in the grid', 
              label=u'Remove rows', name=u'del', parent=u'mywin.menubar.grid', )
 gui.MenuItem(help=u'Update the rows in the grid', label=u'Update items', 
              name=u'update', parent=u'mywin.menubar.grid', )
-gui.MenuItem(help=u'Remove all the rows in the grid', 
-             label=u'Clear', name=u'clear', parent=u'mywin.menubar.grid', )
+gui.MenuItem(help=u'Remove all the rows in the grid', label=u'Clear', 
+             name=u'clear', parent=u'mywin.menubar.grid', )
 gui.Gauge(name='gauge', height='18', left='13', top='130', width='367', 
           parent='mywin', value=50, )
 gui.StatusBar(name='statusbar_15_91', parent='mywin', )
 gui.ListView(name='listview', height='99', left='23', top='211', width='192', 
-             item_count=0, parent='mywin', sort_column=0, 
+             item_count=27, parent='mywin', sort_column=0, 
              onitemselected="print 'sel', event.target.get_selected_items()", )
 gui.ListColumn(name='col_a', text=u'Col A', parent='listview', )
 gui.ListColumn(name='col_b', text=u'Col B', parent='listview', )
@@ -228,6 +236,7 @@ mywin['slider'].onclick = slider_click
 mywin['treeview'].onitemexpanding = expand_item
 mywin['menubar']['list']['add'].onclick = add_an_item
 mywin['menubar']['list']['del'].onclick = del_an_item
+mywin['menubar']['list']['update'].onclick = update_items
 mywin['menubar']['grid']['add'].onclick = add_a_row
 mywin['menubar']['grid']['del'].onclick = del_sel_rows
 mywin['menubar']['grid']['clear'].onclick = clear_rows
