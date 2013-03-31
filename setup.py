@@ -27,7 +27,7 @@ setup(name=APPLICATION_NAME,
       author="Mariano Reingart",
       author_email="reingart@gmail.com",
       url='http://code.google.com/p/gui2py',
-      download_url="http://gui2py.googlecode.com/files/gui2py-%s.tar.gz" % gui.__version__,
+      download_url="http://gui2py.googlecode.com/files/gui2py-%s.zip" % gui.__version__,
       classifiers = [
         "Development Status :: 3 - Alpha",
         "Environment :: MacOS X",
