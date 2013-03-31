@@ -115,8 +115,8 @@ class MenuItem(Component):
                      lambda self, label: self.wx_obj.SetText(label),
                      optional=False, default='MenuItem', type="string", 
                      doc="text to show as caption")
-    help = InitSpec(lambda self: self.wx_obj.GetText(), 
-                 lambda self, label: self.wx_obj.SetText(label),
+    help = InitSpec(lambda self: self.wx_obj.GetHelp(), 
+                 lambda self, label: self.wx_obj.SetHelp(label),
                  optional=True, default='', type="string", 
                  doc="text to show as help in the status bar?")
     onclick = EventSpec('click', binding=wx.EVT_MENU, kind=FormEvent)
