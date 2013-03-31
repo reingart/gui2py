@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-"gui2py's Menu Model (encapsulates wx.MenuBar, wx.Menu and wx.MenuItems)"
+"gui2py's StatusBar (encapsulates wx.StatusBar)"
 
 __author__ = "Mariano Reingart (reingart@gmail.com)"
 __copyright__ = "Copyright (C) 2013- Mariano Reingart"
@@ -52,3 +52,4 @@ class StatusBar(Component):
                 lambda self, value: self.wx_obj.SetStatusText(value), 
                 default="", type="string",
                 doc="text displayed in the statusBar")
+
