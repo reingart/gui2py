@@ -29,13 +29,13 @@ t0 = time.time()
 
 # --- gui2py designer generated code starts ---
 
-gui.Window(name='mywin', title=u'hello world', resizable=True, height='610px', 
-           left='180', top='24', width='396px', bgcolor=u'#E0E0E0', 
-           image=u'tile.bmp', tiled=True, )
+gui.Window(name='mywin', title=u'gui2py sample app', resizable=True, 
+           height='610px', left='180', top='24', width='396px', 
+           bgcolor=u'#E0E0E0', image=u'tile.bmp', tiled=True, )
 gui.Label(name='lblTest', alignment='right', transparent=True, left='38', 
           top='37', width='48', parent='mywin', text=u'hello!', )
 gui.Button(label=u'Quit', name=u'btnClose', left='232', top='156', width='85', 
-           parent='mywin', )
+           parent='mywin', onclick='exit()', )
 gui.TextBox(name='txtTest', left='100', top='31', width='152', parent='mywin', 
             value=u'mariano', )
 gui.Button(label=u'click me!', name='btnTest', left='126', top='157', 
@@ -110,21 +110,21 @@ gui.TabPanel(id=157, name=u'tab2', parent='mywin.notebook', selected=False,
              text=u'Html', visible=False, )
 gui.HtmlBox(id=222, name='htmlbox', height='100%', left='0', top='0', 
             width='100%', location=u'', parent=u'mywin.notebook.tab2', )
-gui.TreeView(name='treeview', height='98', left='223', top='212', width='154', 
-             parent='mywin', )
+gui.TreeView(name='treeview', default_style=True, has_buttons=True, 
+             height='98', left='223', top='212', width='154', parent='mywin', )
 gui.ComboBox(name='cboTest', left='100', top='58', width='152', 
              items=[u'option 1', u'option 2', u'option 3'], parent='mywin', 
              string_selection=u'', )
 gui.Line(name='line_25_556', height='3', left='25', top='194', width='349', 
          parent='mywin', )
-gui.Slider(name=u'slider', left='18', top='96', width='249', 
-           bgcolor=u'#F0F0F0', fgcolor=u'#000000', parent='mywin', )
+gui.Slider(name=u'slider', left='18', top='96', width='249', parent='mywin', )
 
 # --- gui2py designer generated code ends ---
 
 t1 = time.time()
-print "basic timing: t1 - t0", t1 - t0
+print "basic creation timing: t1 - t0", t1 - t0
 
+# get a reference to the Top Level Window:
 mywin = gui.get("mywin")
 
 def my_handler(evt):
@@ -135,22 +135,20 @@ def my_handler2(evt):
     mywin['txtTest'].value = "hello world!!!!!"
 
 def expand_item(event):
-    "lazy evaluation example: virtually add children at runtime"
+    "tree lazy evaluation example: virtually add children at runtime"
+    tv = event.target
     if not event.detail.get_children_count():
         for i in range(5):
             it = tv.items.add(parent=event.detail, text="lazy child %s" % i)
             it.set_has_children()  # allow to lazy expand this child too
-            
-    # assign some event handlers:
-    tv.onitemexpanding = expand_item
 
-
+# assign some event handlers:
+mywin.onload = my_handler
+mywin['btnTest'].onclick = my_handler2
+ 
 if __name__ == "__main__":
     
     print "MAIN!"
-    mywin.onload = my_handler
-    mywin['btnTest'].onclick = my_handler2
-    mywin['btnClose'].onclick = "exit()"
 
     # load the list items and bind a event handler
     lv = mywin['listview']
