@@ -817,9 +817,8 @@ class Control(Component, DesignerMixin):
                                     'top': wx.ALIGN_TOP,
                                     'center': wx.ALIGN_CENTER, 
                                     'right': wx.ALIGN_RIGHT,
-                                    'bottom': wx.ALIGN_BOTTOM,
-                                    'none': 0}, 
-            default='none', _name="_sizer_align", type="enum", group="sizer",
+                                    'bottom': wx.ALIGN_BOTTOM, }, 
+            default='left', _name="_sizer_align", type="enum", group="sizer",
             doc="alignment within the space allotted to it by the sizer")
 
     border = StyleSpec({'default': wx.BORDER_DEFAULT,
