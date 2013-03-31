@@ -27,6 +27,7 @@ class Label(Control):
         if self.transparent and "__WXMSW__" in wx.Platform:
             # on windows, avoid solid background ("transparent")
             self.wx_obj.Bind(wx.EVT_PAINT, self.__on_paint)
+            self.wx_obj.Bind(wx.EVT_ERASE_BACKGROUND, lambda evt: None)
 
     def _set_text(self, a_string):
         self.wx_obj.SetLabel(a_string)
