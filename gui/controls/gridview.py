@@ -367,7 +367,9 @@ class GridModel(list):
 
     def clear(self):
         "Remove all rows and reset internal structures"
-        ## list has no clear ...
+        ## list has no clear ... remove items in reverse order
+        for i in range(len(self)-1, -1, -1):
+            del self[i]
         self._key = 0
         if hasattr(self._grid_view, "wx_obj"):
             self._grid_view.wx_obj.ClearGrid()
@@ -418,10 +420,14 @@ class GridRow(dict):
         return self._grid_model.index(self)
 
     def _is_selected(self):
-        return self._grid_model._grid_view.wx_obj.IsSelected(self.index)
+        return self._grid_model._grid_view.wx_obj.IsInSelection(self.index, 0)
     
     def _select(self, on):
-        self._grid_model._grid_view.wx_obj.Select(self.index, on)
+        if on:
+            self._grid_model._grid_view.wx_obj.SelectRow(self.index, True)
+        else:
+            # this clear all the selection, TODO: clear just this row
+            self._grid_model._grid_view.wx_obj.ClearSelection()
 
     selected = property(_is_selected, _select)
 
