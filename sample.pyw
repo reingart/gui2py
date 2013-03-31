@@ -27,6 +27,91 @@ import gui
 import time
 t0 = time.time()
 
+
+# --- here goes your event handlers ---
+
+def load(evt):
+    print "loading!!!"
+    
+     # load the list items and bind a event handler
+    lv = mywin['listview']
+    lv.items = [[str(i), chr(i)*5] for i in range(65, 92)]
+
+    # load the tree and bind a event handler
+    tv = mywin['treeview']
+    root = tv.items.add(text="Root")
+    child1 = tv.items.add(parent=root, text="Child 1")
+    child2 = tv.items.add(parent=root, text="Child 2 virtual!")
+    child3 = tv.items.add(parent=root, text="Child 3")
+    child11 = tv.items.add(parent=child1, text="Child 11")
+    child11.ensure_visible()
+    child2.set_has_children()   # "virtual" tree node
+    
+    # load the grid:
+    gv = mywin['notebook']['tab1']['gridview']
+    gv.items = [[chr(i+32)*5, i, 3.141516] for i in range(100)]
+    
+    # load a sample html page
+    htmlbox = mywin['notebook']['tab2']['htmlbox']
+    htmlbox.set_page("<b>hello</b> <a href='http://www.wxpython.org/'>wx!</a>")
+
+def button_press(evt):
+    gui.alert("button clicked! %s" % evt.target.name, "Alert!!!")
+    mywin['txtTest'].value = "hello world!!!!!"
+
+def expand_item(event):
+    "tree lazy evaluation example: virtually add children at runtime"
+    tv = event.target
+    if not event.detail.get_children_count():
+        for i in range(5):
+            it = tv.items.add(parent=event.detail, text="lazy child %s" % i)
+            it.set_has_children()  # allow to lazy expand this child too
+
+def slider_click(evt):
+    # move the progress bar according the slider ("scroll bar")
+    print "Slider value:", evt.target.value
+    mywin['gauge'].value = mywin['slider'].value
+
+def add_an_item(evt):
+    # list item model is similar to a dict, to insert an item do:
+    new_key = 'my_key_%s' % time.time()
+    mywin['listview'].items[new_key] = {'col_a': '00', 'col_b': 'inserted!'}
+
+def del_an_item(evt):
+    # list item model is similar to dict, to remove an item do:
+    for it in mywin['listview'].get_selected_items():
+        del mywin['listview'].items[it.key]
+
+def add_a_row(evt):
+    # grid model is similar to list, to add a row do:
+    gv = mywin['notebook']['tab1']['gridview']
+    gv.items.insert(0, [10, 11, time.time()])   # insert a row at first pos
+
+def del_sel_rows(evt):
+    gv = mywin['notebook']['tab1']['gridview']
+    # get the selection & reverse it to start deleting from the end
+    selected_rows = reversed([it.index for it in gv.items if it.selected])
+    for row in selected_rows:
+        # grid model is similar to list, to remove a row do:
+        del gv.items[row]
+    
+def clear_rows(evt):
+    "remove all rows"
+    mywin['notebook']['tab1']['gridview'].items.clear()
+    print "clearing..."
+
+def update_rows(evt):
+    # grid model is similar to list (of lists), to update a row do:
+    for it in  mywin['notebook']['tab1']['gridview'].items:
+        it[2] = time.time()   # update the third column value of each row
+    
+def edit_buton_pressed(evt):
+    msg = []
+    for ctrl_name in 'masked', 'numeric', 'date_picker':
+        msg.append(repr(mywin['notebook']['tab0'][ctrl_name].value))
+    gui.alert('\n'.join(msg), "Input values:", scrolled=True)
+
+
 # --- gui2py designer generated code starts ---
 
 gui.Window(name='mywin', title=u'gui2py sample app', resizable=True, 
@@ -144,73 +229,11 @@ print "basic creation timing: t1 - t0", t1 - t0
 # get a reference to the Top Level Window:
 mywin = gui.get("mywin")
 
-def my_handler(evt):
-    print "loaded!!!"
-
-def my_handler2(evt):
-    gui.alert("button clicked! %s" % evt.target.name, "Alert!!!")
-    mywin['txtTest'].value = "hello world!!!!!"
-
-def expand_item(event):
-    "tree lazy evaluation example: virtually add children at runtime"
-    tv = event.target
-    if not event.detail.get_children_count():
-        for i in range(5):
-            it = tv.items.add(parent=event.detail, text="lazy child %s" % i)
-            it.set_has_children()  # allow to lazy expand this child too
-
-def slider_click(evt):
-    # move the progress bar according the slider ("scroll bar")
-    print "Slider value:", evt.target.value
-    mywin['gauge'].value = mywin['slider'].value
-
-def add_an_item(evt):
-    # list item model is similar to a dict, to insert an item do:
-    new_key = 'my_key_%s' % time.time()
-    mywin['listview'].items[new_key] = {'col_a': '00', 'col_b': 'inserted!'}
-
-def del_an_item(evt):
-    # list item model is similar to dict, to remove an item do:
-    for it in mywin['listview'].get_selected_items():
-        del mywin['listview'].items[it.key]
-
-def add_a_row(evt):
-    # grid model is similar to list, to add a row do:
-    gv = mywin['notebook']['tab1']['gridview']
-    gv.items.insert(0, [10, 11, time.time()])   # insert a row at first pos
-
-def del_sel_rows(evt):
-    gv = mywin['notebook']['tab1']['gridview']
-    # get the selection & reverse it to start deleting from the end
-    selected_rows = reversed([it.index for it in gv.items if it.selected])
-    for row in selected_rows:
-        # grid model is similar to list, to remove a row do:
-        del gv.items[row]
-    
-def clear_rows(evt):
-    "remove all rows"
-    mywin['notebook']['tab1']['gridview'].items.clear()
-    print "clearing..."
-
-def update_rows(evt):
-    # grid model is similar to list (of lists), to update a row do:
-    for it in  mywin['notebook']['tab1']['gridview'].items:
-        it[2] = time.time()   # update the third column value of each row
-    
-def edit_buton_pressed(evt):
-    msg = []
-    for ctrl_name in 'masked', 'numeric', 'date_picker':
-        msg.append(repr(mywin['notebook']['tab0'][ctrl_name].value))
-    gui.alert('\n'.join(msg), "Input values:", scrolled=True)
-    
 # assign some event handlers:
 
-mywin.onload = my_handler
-mywin['btnTest'].onclick = my_handler2
+mywin.onload = load
+mywin['btnTest'].onclick = button_press
 mywin['slider'].onclick = slider_click
-mywin['notebook']['tab0']['image'].onmousedown = "print 'clicked the image'"
-mywin['listview'].onitemselected = "print 'sel', event.target.get_selected_items()"
-mywin['treeview'].onitemselected = "print 'selected TreeItem:', event.detail.text"
 mywin['treeview'].onitemexpanding = expand_item
 mywin['menubar']['list']['add'].onclick = add_an_item
 mywin['menubar']['list']['del'].onclick = del_an_item
@@ -223,31 +246,6 @@ mywin['notebook']['tab0']['edit_button'].onclick = edit_buton_pressed
 if __name__ == "__main__":
     
     print "MAIN!"
-
-    # load the list items and bind a event handler
-    lv = mywin['listview']
-    lv.items = [[str(i), chr(i)*5] for i in range(65, 92)]
-
-    # load the tree and bind a event handler
-    tv = mywin['treeview']
-    root = tv.items.add(text="Root")
-    child1 = tv.items.add(parent=root, text="Child 1")
-    child2 = tv.items.add(parent=root, text="Child 2 virtual!")
-    child3 = tv.items.add(parent=root, text="Child 3")
-    child11 = tv.items.add(parent=child1, text="Child 11")
-    child11.ensure_visible()
-    child2.set_has_children()   # "virtual" tree node
-    
-    # load the grid:
-    gv = mywin['notebook']['tab1']['gridview']
-    gv.items = [[chr(i+32)*5, i, 3.141516] for i in range(100)]
-    
-    # load a sample html page
-    htmlbox = mywin['notebook']['tab2']['htmlbox']
-    htmlbox.set_page("<b>hello</b> <a href='http://www.wxpython.org/'>wx!</a>")
-
-
-    
     mywin.show()
     
     app.MainLoop()
