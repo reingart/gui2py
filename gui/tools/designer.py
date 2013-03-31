@@ -80,7 +80,7 @@ class BasicDesigner:
         elif evt.GetEventType() == wx.EVT_LEFT_DOWN.typeId:
             # calculate time between clicks (is this a double click?)
             if not self.timestamp or evt.Timestamp - self.timestamp > 1000 or \
-                   self.last_xy != evt.GetPositionTuple():
+                   self.last_xy != wx.GetMousePosition():
                 # no, process normal mouse click and store obj for later dclick
                 self.mouse_down(evt)
                 self.last_obj = getattr(evt.GetEventObject(), "obj")
@@ -88,7 +88,7 @@ class BasicDesigner:
                 # on dclick, inspect & edit the default property (ie label)
                 wx.CallAfter(self.inspector.inspect, self.last_obj, False, True)
             self.timestamp = evt.Timestamp
-            self.last_xy = evt.GetPositionTuple()
+            self.last_xy = wx.GetMousePosition()
         elif evt.GetEventType() == wx.EVT_LEFT_UP.typeId:
             self.mouse_up(evt)
         elif evt.GetEventType() == wx.EVT_MOTION.typeId:
@@ -100,8 +100,8 @@ class BasicDesigner:
             # do this after this event to prevent reference issues (deletions!)
             self.current = None
             wx.CallAfter(self.inspector.inspect, 
-                         getattr(evt.GetEventObject(), "obj"), True, True, 
-                         evt.GetPositionTuple())
+                         getattr(evt.GetEventObject(), "obj"), True, False, 
+                         wx.GetMousePosition())
         # allow default behavior (set focus / tab change):
         if isinstance(evt.GetEventObject(), wx.Notebook):
             evt.Skip()
