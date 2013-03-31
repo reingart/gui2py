@@ -9,12 +9,7 @@ __license__ = "LGPL 3.0"
 
 import datetime
 import decimal
-import wx
 import os
-
-app = wx.GetApp()
-if app is None:
-    app = wx.App(False)
 
 # disable ubuntu unified menu
 os.environ['UBUNTU_MENUPROXY'] = '0'
@@ -44,4 +39,4 @@ if __name__ == "__main__":
     
     mywin.show()
     
-    app.MainLoop()
+    gui.main_loop()

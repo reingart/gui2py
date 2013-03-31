@@ -10,23 +10,11 @@ __license__ = "LGPL 3.0"
 # images were taken from Pythoncard's proof and widgets demos
 # for more complete examples, see each control module
 
-import datetime
+import datetime     # base imports, used by some controls and event handlers
 import decimal
-import wx
-import os
-
-app = wx.GetApp()
-if app is None:
-    app = wx.App(False)
-
-# disable ubuntu unified menu
-os.environ['UBUNTU_MENUPROXY'] = '0'
-
-import gui
-
 import time
-t0 = time.time()
 
+import gui          # import gui2py package (shortcuts):
 
 # --- here goes your event handlers ---
 
@@ -110,6 +98,8 @@ def edit_buton_pressed(evt):
     for ctrl_name in 'masked', 'numeric', 'date_picker':
         msg.append(repr(mywin['notebook']['tab0'][ctrl_name].value))
     gui.alert('\n'.join(msg), "Input values:", scrolled=True)
+
+t0 = time.time()    # user for basic timing
 
 
 # --- gui2py designer generated code starts ---
@@ -223,6 +213,7 @@ gui.Slider(name=u'slider', left='18', top='96', width='249', parent='mywin', )
 
 # --- gui2py designer generated code ends ---
 
+
 t1 = time.time()
 print "basic creation timing: t1 - t0", t1 - t0
 
@@ -248,4 +239,4 @@ if __name__ == "__main__":
     print "MAIN!"
     mywin.show()
     
-    app.MainLoop()
+    gui.main_loop()

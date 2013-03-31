@@ -10,6 +10,8 @@ __license__ = "LGPL 3.0"
 # some parts where inspired or borrowed from different sources & projects
 # please see the respective files or commit messages for proper recognition
 
+import wx
+
 ##import wxversion
 ##wxversion.select("2.9")
 
@@ -30,3 +32,17 @@ from .dialog import alert, prompt, confirm, select_font, select_color, \
 
 #from . import tools
 
+import os
+
+# disable ubuntu unified menu
+os.environ['UBUNTU_MENUPROXY'] = '0'
+
+# create an app, note that the app could be already created (i.e. by an IDE):
+
+app = wx.GetApp()
+if app is None:
+    app = wx.App(False)
+    main_loop = app.MainLoop
+else:
+    # app and main loop is already created and executed by a third party tool
+    main_loop = lambda: None
