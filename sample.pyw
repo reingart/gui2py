@@ -43,29 +43,44 @@ gui.Button(label=u'click me!', name='btnTest', left='126', top='157',
 gui.ListBox(name='lstTest', height='96', left='277', top='28', width='103', 
             data_selection=u'two', items=[u'one', u'two', u'tree'], 
             parent='mywin', selection=1, string_selection=u'two', )
-gui.MenuBar(name='menubar_83_155', fgcolor=u'#000000', parent='mywin', )
-gui.Menu(name='menu_114', fgcolor=u'#000000', parent='mywin.menubar_83_155', )
+gui.MenuBar(name='menubar', fgcolor=u'#000000', parent='mywin', )
+gui.Menu(name='menu_114', fgcolor=u'#000000', parent='mywin.menubar', )
 gui.MenuItem(help=u'MenuItem', id=127, name='menuitem_127', 
-             parent='mywin.menubar_83_155.menu_114', )
+             parent='mywin.menubar.menu_114', )
 gui.MenuItemCheckable(help=u'MenuItemCheck', id=120, label=u'MenuItemCheck', 
                       name='menuitemcheckable_120', checked=True, 
-                      parent='mywin.menubar_83_155.menu_114', )
+                      parent='mywin.menubar.menu_114', )
 gui.MenuItemSeparator(help=u'MenuItem', id=130, name='menuitemseparator_130', 
-                      parent='mywin.menubar_83_155.menu_114', )
+                      parent='mywin.menubar.menu_114', )
 gui.MenuItem(help=u'MenuItem', id=140, name='menuitem_140', 
-             parent='mywin.menubar_83_155.menu_114', )
+             parent='mywin.menubar.menu_114', )
+gui.Menu(label=u'List', name=u'list', parent='mywin.menubar', )
+gui.MenuItem(help=u'Add an item to the list', id=225, label=u'Add item', 
+             name=u'add', parent=u'mywin.menubar.list', )
+gui.MenuItem(help=u'Remove the selected items in the list', id=235, 
+             label=u'Remove items', name=u'del', parent=u'mywin.menubar.list', )
+gui.Menu(label=u'Grid', name=u'grid', parent='mywin.menubar', )
+gui.MenuItem(help=u'Add a row to the grid', label=u'Add item',
+             name=u'add', parent=u'mywin.menubar.grid', )
+gui.MenuItem(help=u'Remove the selected rows in the grid', 
+             label=u'Remove rows', name=u'del', parent=u'mywin.menubar.grid', )
+gui.MenuItem(help=u'Update the rows in the grid', label=u'Update items', 
+             name=u'update', parent=u'mywin.menubar.grid', )
+gui.MenuItem(help=u'Remove all the rows in the grid', 
+             label=u'Clear', name=u'clear', parent=u'mywin.menubar.grid', )
 gui.Gauge(name='gauge', height='18', left='13', top='130', width='367', 
           parent='mywin', value=50, )
-gui.StatusBar(name='statusbar_15_91', parent='mywin', text=u'hello world!', )
+gui.StatusBar(name='statusbar_15_91', parent='mywin', )
 gui.ListView(name='listview', height='99', left='23', top='211', width='192', 
-             item_count=0, parent='mywin', sort_column=0, )
-gui.ListColumn(name='listcolumn_129', text=u'Col A', parent='listview', )
-gui.ListColumn(name='listcolumn_140', text=u'Col B', parent='listview', )
+             item_count=0, parent='mywin', sort_column=0, 
+             onitemselected="print 'sel', event.target.get_selected_items()", )
+gui.ListColumn(name='col_a', text=u'Col A', parent='listview', )
+gui.ListColumn(name='col_b', text=u'Col B', parent='listview', )
 gui.Notebook(name='notebook', height='211', left='21', top='330', width='355', 
              parent='mywin', selection=0, )
 gui.TabPanel(id=133, name=u'tab0', parent='mywin.notebook', selected=True, 
              text=u'Misc.', )
-gui.Button(id=197, label=u'', name='button_197', height='17', left='245', 
+gui.Button(id=197, label=u'', name='edit_button', height='17', left='245', 
            top='113', width='55', filename=u'edit.gif', 
            parent=u'mywin.notebook.tab0', )
 gui.TextBox(mask=u'##-########-#', name=u'masked', alignment='right', 
@@ -95,7 +110,8 @@ gui.RadioButton(id=274, label=u'Option 1', name=u'opt1', left='14', top='23',
 gui.CheckBox(label=u'Check', name='checkbox_29_80', left='14', top='95', 
              parent=u'mywin.notebook.tab0.panel_40_46', )
 gui.Image(name='image', height='24', left='148', top='110', width='24', 
-          filename=u'trash.gif', parent=u'mywin.notebook.tab0', )
+          filename=u'trash.gif', parent=u'mywin.notebook.tab0', 
+          onmousedown="print 'clicked the image'", )
 gui.TabPanel(id=163, name=u'tab1', parent='mywin.notebook', selected=False, 
              text=u'Grid', visible=False, )
 gui.GridView(name='gridview', height='100%', left='0', top='0', width='100%', 
@@ -111,7 +127,8 @@ gui.TabPanel(id=157, name=u'tab2', parent='mywin.notebook', selected=False,
 gui.HtmlBox(id=222, name='htmlbox', height='100%', left='0', top='0', 
             width='100%', location=u'', parent=u'mywin.notebook.tab2', )
 gui.TreeView(name='treeview', default_style=True, has_buttons=True, 
-             height='98', left='223', top='212', width='154', parent='mywin', )
+             height='98', left='223', top='212', width='154', parent='mywin', 
+             onitemselected="print 'selected TreeItem:', event.detail.text", )
 gui.ComboBox(name='cboTest', left='100', top='58', width='152', 
              items=[u'option 1', u'option 2', u'option 3'], parent='mywin', 
              string_selection=u'', )
@@ -142,10 +159,67 @@ def expand_item(event):
             it = tv.items.add(parent=event.detail, text="lazy child %s" % i)
             it.set_has_children()  # allow to lazy expand this child too
 
+def slider_click(evt):
+    # move the progress bar according the slider ("scroll bar")
+    print "Slider value:", evt.target.value
+    mywin['gauge'].value = mywin['slider'].value
+
+def add_an_item(evt):
+    # list item model is similar to a dict, to insert an item do:
+    new_key = 'my_key_%s' % time.time()
+    mywin['listview'].items[new_key] = {'col_a': '00', 'col_b': 'inserted!'}
+
+def del_an_item(evt):
+    # list item model is similar to dict, to remove an item do:
+    for it in mywin['listview'].get_selected_items():
+        del mywin['listview'].items[it.key]
+
+def add_a_row(evt):
+    # grid model is similar to list, to add a row do:
+    gv = mywin['notebook']['tab1']['gridview']
+    gv.items.insert(0, [10, 11, time.time()])   # insert a row at first pos
+
+def del_sel_rows(evt):
+    gv = mywin['notebook']['tab1']['gridview']
+    # get the selection & reverse it to start deleting from the end
+    selected_rows = reversed([it.index for it in gv.items if it.selected])
+    for row in selected_rows:
+        # grid model is similar to list, to remove a row do:
+        del gv.items[row]
+    
+def clear_rows(evt):
+    "remove all rows"
+    mywin['notebook']['tab1']['gridview'].items.clear()
+    print "clearing..."
+
+def update_rows(evt):
+    # grid model is similar to list (of lists), to update a row do:
+    for it in  mywin['notebook']['tab1']['gridview'].items:
+        it[2] = time.time()   # update the third column value of each row
+    
+def edit_buton_pressed(evt):
+    msg = []
+    for ctrl_name in 'masked', 'numeric', 'date_picker':
+        msg.append(repr(mywin['notebook']['tab0'][ctrl_name].value))
+    gui.alert('\n'.join(msg), "Input values:", scrolled=True)
+    
 # assign some event handlers:
+
 mywin.onload = my_handler
 mywin['btnTest'].onclick = my_handler2
- 
+mywin['slider'].onclick = slider_click
+mywin['notebook']['tab0']['image'].onmousedown = "print 'clicked the image'"
+mywin['listview'].onitemselected = "print 'sel', event.target.get_selected_items()"
+mywin['treeview'].onitemselected = "print 'selected TreeItem:', event.detail.text"
+mywin['treeview'].onitemexpanding = expand_item
+mywin['menubar']['list']['add'].onclick = add_an_item
+mywin['menubar']['list']['del'].onclick = del_an_item
+mywin['menubar']['grid']['add'].onclick = add_a_row
+mywin['menubar']['grid']['del'].onclick = del_sel_rows
+mywin['menubar']['grid']['clear'].onclick = clear_rows
+mywin['menubar']['grid']['update'].onclick = update_rows
+mywin['notebook']['tab0']['edit_button'].onclick = edit_buton_pressed
+
 if __name__ == "__main__":
     
     print "MAIN!"
@@ -153,7 +227,6 @@ if __name__ == "__main__":
     # load the list items and bind a event handler
     lv = mywin['listview']
     lv.items = [[str(i), chr(i)*5] for i in range(65, 92)]
-    lv.onitemselected = "print 'selection:', event.target.get_selected_items()"
 
     # load the tree and bind a event handler
     tv = mywin['treeview']
@@ -164,8 +237,6 @@ if __name__ == "__main__":
     child11 = tv.items.add(parent=child1, text="Child 11")
     child11.ensure_visible()
     child2.set_has_children()   # "virtual" tree node
-    tv.onitemexpanding = expand_item
-    tv.onitemselected = "print 'selected TreeItem:', event.detail.text"
     
     # load the grid:
     gv = mywin['notebook']['tab1']['gridview']
@@ -175,13 +246,7 @@ if __name__ == "__main__":
     htmlbox = mywin['notebook']['tab2']['htmlbox']
     htmlbox.set_page("<b>hello</b> <a href='http://www.wxpython.org/'>wx!</a>")
 
-    mywin['notebook']['tab0']['image'].onmousedown = "print 'clicked the image'"
-    
-    def slider_click(evt):
-        # move the progress bar according the slider ("scroll bar")
-        print "Slider value:", evt.target.value
-        mywin['gauge'].value = mywin['slider'].value
-    mywin['slider'].onclick = slider_click
+
     
     mywin.show()
     
