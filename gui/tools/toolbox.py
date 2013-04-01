@@ -1,3 +1,14 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+"Visual Toolbox to drag & drop gui2py's components (using wx AuiToolbar)"
+
+__author__ = "Mariano Reingart (reingart@gmail.com)"
+__copyright__ = "Copyright (C) 2013- Mariano Reingart"
+__license__ = "LGPL 3.0"
+
+# some parts where inspired or borrowed from wxPython examples
+
 import wx
 import os, sys
 
