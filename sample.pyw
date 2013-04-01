@@ -14,18 +14,18 @@ import datetime     # base imports, used by some controls and event handlers
 import decimal
 import time
 
-import gui          # import gui2py package (shortcuts):
+import gui          # import gui2py package (shortcuts)
 
 # --- here goes your event handlers ---
 
 def load(evt):
     print "loading!!!"
     
-     # load the list items and bind a event handler
+     # load the list items with sample data:
     lv = mywin['listview']
     lv.items = [[str(i), chr(i)*5] for i in range(65, 92)]
 
-    # load the tree and bind a event handler
+    # load the tree with sample data:
     tv = mywin['treeview']
     root = tv.items.add(text="Root")
     child1 = tv.items.add(parent=root, text="Child 1")
@@ -35,7 +35,7 @@ def load(evt):
     child11.ensure_visible()
     child2.set_has_children()   # "virtual" tree node
     
-    # load the grid:
+    # load the grid with sample data:
     gv = mywin['notebook']['tab1']['gridview']
     gv.items = [[chr(i+32)*5, i, 3.141516] for i in range(100)]
     
@@ -62,7 +62,7 @@ def slider_click(evt):
 
 def add_an_item(evt):
     # list item model is similar to a dict, to insert an item do:
-    new_key = 'my_key_%s' % time.time()
+    new_key = 'my_key_%s' % time.time()     # generate a unique key
     mywin['listview'].items[new_key] = {'col_a': '00', 'col_b': 'inserted!'}
 
 def del_an_item(evt):
@@ -78,7 +78,7 @@ def update_items(evt):
 def add_a_row(evt):
     # grid model is similar to list, to add a row do:
     gv = mywin['notebook']['tab1']['gridview']
-    gv.items.insert(0, [10, 11, time.time()])   # insert a row at first pos
+    gv.items.insert(0, [10, 11, time.time()])   # insert a row at first pos (0)
 
 def del_sel_rows(evt):
     gv = mywin['notebook']['tab1']['gridview']
@@ -225,10 +225,11 @@ gui.Slider(name=u'slider', left='18', top='96', width='249', parent='mywin', )
 t1 = time.time()
 print "basic creation timing: t1 - t0", t1 - t0
 
-# get a reference to the Top Level Window:
+# get a reference to the Top Level Window (used by designer / events handlers):
 mywin = gui.get("mywin")
 
-# assign some event handlers:
+# assign (bind) some event handlers 
+# (move to "__main__" block if you don't want to be executed in design mode):
 
 mywin.onload = load
 mywin['btnTest'].onclick = button_press
