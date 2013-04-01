@@ -6,13 +6,14 @@
 __author__ = "Mariano Reingart (reingart@gmail.com)"
 __copyright__ = "Copyright (C) 2013- Mariano Reingart"
 __license__ = "LGPL 3.0"
-__version__ = "0.9a"
+__version__ = "0.9b"
 
 # some parts where inspired or borrowed from different sources & projects
 # please see the respective files or commit messages for proper recognition
 
 import wx
 
+# TODO: we'd select the tested wx version before importing it (or warn):
 ##import wxversion
 ##wxversion.select("2.9")
 
