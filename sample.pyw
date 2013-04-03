@@ -196,7 +196,7 @@ gui.Image(name='image', height='24', left='148', top='110', width='24',
           filename=u'trash.gif', parent=u'mywin.notebook.tab0', 
           onmousedown="print 'clicked the image'", )
 gui.TabPanel(id=163, name=u'tab1', parent='mywin.notebook', selected=False, 
-             text=u'Grid', visible=False, )
+             text=u'Grid', visible=True, )
 gui.GridView(name='gridview', height='100%', left='0', top='0', width='100%', 
              parent=u'mywin.notebook.tab1', )
 gui.GridColumn(name=u'col1', text=u'Col A', type='text', width=75, 
@@ -206,7 +206,7 @@ gui.GridColumn(name=u'col2', text=u'Col 2', type='long', width=75,
 gui.GridColumn(name=u'col3', text=u'Col B', type='float', width=75, 
                parent='gridview', )
 gui.TabPanel(id=157, name=u'tab2', parent='mywin.notebook', selected=False, 
-             text=u'Html', visible=False, )
+             text=u'Html', visible=True, )
 gui.HtmlBox(id=222, name='htmlbox', height='100%', left='0', top='0', 
             width='100%', location=u'', parent=u'mywin.notebook.tab2', )
 gui.TreeView(name='treeview', default_style=True, has_buttons=True, 
