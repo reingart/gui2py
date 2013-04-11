@@ -585,15 +585,15 @@ class SizerMixin(object):
             self._sizer.Add(child.wx_obj, 0, flags, border)
 
 
-    sizer = Spec(lambda self: self._get_sizer(), 
+    sizer = DimensionSpec(lambda self: self._get_sizer(), 
                  lambda self, value: self._set_sizer(value), group="sizer",
                  doc="use an automatic flow layout mechanism (wx.WrapSizer)", 
                  type='boolean', default=False)
 
 
    
-class Control(Component, DesignerMixin):
-    "This is the base class for a control"
+class ControlSuper(Component, DesignerMixin):
+    "This is the base class for a control and top level windows"
 
     # A control is generally a small window which processes user input and/or 
     # displays one or more item of data (for more info see wx.Control)
@@ -810,17 +810,6 @@ class Control(Component, DesignerMixin):
                            lambda self, value: self._set_margin(value, 3),
                            default=0, type="integer", group="margin")
 
-    sizer_border = DimensionSpec(_name="_sizer_border", default=0, 
-            type="integer", group="sizer",
-            doc="empty space arround a item, used by the sizer")
-    sizer_align = DimensionSpec(mapping={'left': wx.ALIGN_LEFT, 
-                                    'top': wx.ALIGN_TOP,
-                                    'center': wx.ALIGN_CENTER, 
-                                    'right': wx.ALIGN_RIGHT,
-                                    'bottom': wx.ALIGN_BOTTOM, }, 
-            default='left', _name="_sizer_align", type="enum", group="sizer",
-            doc="alignment within the space allotted to it by the sizer")
-
     border = StyleSpec({'default': wx.BORDER_DEFAULT,
                         'simple': wx.BORDER_SIMPLE,
                         'sunken': wx.BORDER_SUNKEN,
@@ -856,6 +845,22 @@ class Control(Component, DesignerMixin):
     onkeypress = EventSpec('keypress', binding=wx.EVT_CHAR, kind=KeyEvent)
     onkeydown = EventSpec('keydown', binding=wx.EVT_KEY_DOWN, kind=KeyEvent)
     onkeyup = EventSpec('keyup', binding=wx.EVT_KEY_UP, kind=KeyEvent)
+
+
+class Control(ControlSuper):
+    "This is the base class for a control"
+
+    sizer_border = DimensionSpec(_name="_sizer_border", default=0, 
+            type="integer", group="sizer",
+            doc="empty space arround a item, used by the sizer")
+    sizer_align = DimensionSpec(mapping={'left': wx.ALIGN_LEFT, 
+                                    'top': wx.ALIGN_TOP,
+                                    'center': wx.ALIGN_CENTER, 
+                                    'right': wx.ALIGN_RIGHT,
+                                    'bottom': wx.ALIGN_BOTTOM, }, 
+            default='left', _name="_sizer_align", type="enum", group="sizer",
+            doc="alignment within the space allotted to it by the sizer")
+
 
 
 class ImageBackgroundMixin(object):

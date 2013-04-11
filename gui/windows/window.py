@@ -11,14 +11,14 @@ __copyright__ = "Copyright (C) 2013- Mariano Reingart"  # where applicable
 
 import wx
 
-from ..component import Component, Control, ImageBackgroundMixin, SizerMixin
+from ..component import Component, ControlSuper, ImageBackgroundMixin, SizerMixin
 from ..spec import Spec, InitSpec, EventSpec, StyleSpec, InternalSpec
 from ..event import UIEvent
 from .. import registry
 from .. import images
 
 
-class Window(Control, ImageBackgroundMixin, SizerMixin):
+class Window(ControlSuper, ImageBackgroundMixin, SizerMixin):
     "A window that contains controls" 
     # in PythonCard model.Background
     _wx_class = wx.Frame
@@ -35,7 +35,7 @@ class Window(Control, ImageBackgroundMixin, SizerMixin):
             self._statusbar = None
         
         # call generic component initialization:
-        Control.__init__(self, parent, **kwargs)
+        ControlSuper.__init__(self, parent, **kwargs)
         self.app = wx.GetApp()
         
         # AJT 20.11.2001
@@ -144,7 +144,7 @@ class Window(Control, ImageBackgroundMixin, SizerMixin):
         if self._statusbar:
             self.wx_obj.SetStatusBar(None)
             self._statusbar.set_parent(None)    # just in case
-        Control.rebuild(self, *args, **kwargs)
+        ControlSuper.rebuild(self, *args, **kwargs)
         # re attach statusbar/menubar
         if self._statusbar:
             self._statusbar.set_parent(self)
@@ -182,7 +182,7 @@ class Window(Control, ImageBackgroundMixin, SizerMixin):
     float_on_parent = StyleSpec(wx.FRAME_FLOAT_ON_PARENT, 
                         doc="Always be on top of its parent (parent=None)")
     shaped = StyleSpec(wx.FRAME_SHAPED, doc="Allow shape change (set_shape)")
-    border = Control.border
+    border = ControlSuper.border
     # ex_metal wx.FRAME_EX_METAL  # On Mac OS X, frames with this style will be 
                         #shown with a metallic look. This is an extra style.
 
