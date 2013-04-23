@@ -65,6 +65,10 @@ class wx_BitmapButton(wx.BitmapButton):
             del kwargs['label']
         wx.BitmapButton.__init__(self, *args, **kwargs)
     
+    # WORKAROUND: 2.8 has no SetBitmap: 
+    if wx.VERSION < (2, 9):
+        def SetBitmap(self, bitmap):
+            self.SetBitmapLabel(bitmap)
 
 
 if __name__ == "__main__":
