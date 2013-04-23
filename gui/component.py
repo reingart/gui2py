@@ -28,6 +28,13 @@ DEBUG = False
 COMPONENTS = {}        # map all created objects (used to search parents) 
 
 
+# WORKAROUND: 2.8 does not have WrapSizer, use custom FlowSizer instead:
+if wx.VERSION >= (2, 9):
+    wx_WrapSizer = wx.WrapSizer
+else:
+    from .flowsizer import FlowSizer as wx_WrapSizer
+
+
 class ComponentMeta():
     "Component Metadata"
     def __init__(self, name, specs):
@@ -554,7 +561,7 @@ class SizerMixin(object):
         if DEBUG: print "set sizer", enabled, self._meta.name        
         if enabled:
             # create a new sizer (flow / fluid) layout (requires wxPython 2.9)
-            self._sizer = wx.WrapSizer()
+            self._sizer = wx_WrapSizer()
             self.wx_obj.SetSizer(self._sizer)
             # add all the children to the sizer (in case we're on design time):
             for child in self:
