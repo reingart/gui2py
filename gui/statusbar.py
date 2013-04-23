@@ -46,8 +46,8 @@ class StatusBar(Component):
             wx_obj = new_parent and new_parent.wx_obj
             self.wx_obj.Reparent(wx_obj)
 
-                
-    grip = StyleSpec(wx.ST_SIZEGRIP, doc="resizing grip", default=False)
+    if wx.VERSION < (2, 9, 5):
+        grip = StyleSpec(wx.ST_SIZEGRIP, doc="resizing grip", default=False)
     text = Spec(lambda self: self.wx_obj.GetStatusText(), 
                 lambda self, value: self.wx_obj.SetStatusText(value), 
                 default="", type="string",
