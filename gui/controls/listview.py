@@ -17,7 +17,6 @@ from ..spec import Spec, EventSpec, InitSpec, StyleSpec, InternalSpec
 from .listbox import ItemContainerControl
 from .. import images 
 from .. import registry
-from types import TupleType, ListType, StringTypes, NoneType, IntType, DictType
 
 from wx.lib.mixins.listctrl import ColumnSorterMixin, ListCtrlAutoWidthMixin
 
@@ -131,7 +130,7 @@ class ListView(Control):
         self.insert_items(a_list, self.wx_obj.GetItemCount())
 
     def insert_items(self, a_list, index=-1):
-        if not isinstance(a_list, (ListType, TupleType, DictType)):
+        if not isinstance(a_list, (list, tuple, dict)):
             raise AttributeError("unsupported type, list expected")
         elif not a_list:
             return
@@ -155,7 +154,7 @@ class ListView(Control):
     def _set_items(self, a_list):
         if isinstance(a_list, NoneType):
             a_list = []
-        elif not isinstance(a_list, (ListType, TupleType, DictType)):
+        elif not isinstance(a_list, (list, tuple, dict)):
             raise AttributeError("unsupported type, list/tuple/dict expected")
 
         self._items = ListModel(self)

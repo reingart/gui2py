@@ -19,8 +19,6 @@ from ..spec import Spec, EventSpec, InitSpec, StyleSpec, InternalSpec
 from .. import registry
 from .. import images
 
-from types import TupleType, ListType, StringTypes, NoneType, IntType, DictType
-
 
 class wx_Grid(gridlib.Grid):
     "Simple Grid control"
@@ -51,9 +49,9 @@ class GridView(Control):
         return self._items
 
     def _set_items(self, a_list):
-        if isinstance(a_list, NoneType):
+        if a_list is None:
             a_list = []
-        elif not isinstance(a_list, (ListType, TupleType, DictType)):
+        elif not isinstance(a_list, (list, tuple, dict)):
             raise AttributeError("unsupported type, list/tuple/dict expected")
 
         self._items = GridModel(self, a_list)

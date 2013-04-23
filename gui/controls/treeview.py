@@ -16,7 +16,6 @@ from ..component import Control, SubComponent
 from ..spec import Spec, EventSpec, InitSpec, StyleSpec, InternalSpec
 from .listbox import ItemContainerControl
 from .. import images 
-from types import TupleType, ListType, StringTypes, NoneType, IntType, DictType
 
 
 class TreeView(Control):
