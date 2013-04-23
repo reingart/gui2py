@@ -101,13 +101,20 @@ class GridView(Control):
                        binding=gridlib.EVT_GRID_EDITOR_CREATED, kind=GridEvent)
 
 
-class GridTable(gridlib.PyGridTableBase):
+# Avoid deprecation warning (and TypeError) in WX Phoenix
+if wx.VERSION < (2, 9, 5):
+    GridTableBase = gridlib.PyGridTableBase
+else:
+    GridTableBase = gridlib.GridTableBase
+
+
+class GridTable(GridTableBase):
     "A custom wx.Grid Table using user supplied data"
     
     def __init__(self, wx_grid, plugins):
         "data is a list of the form {row_index: {col_name: value}"
         # The base class must be initialized *first*
-        gridlib.PyGridTableBase.__init__(self)
+        GridTableBase.__init__(self)
         self.wx_grid = wx_grid
         self.plugins = plugins or {}
         # we need to store the row length and column length to
