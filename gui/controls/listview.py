@@ -136,7 +136,7 @@ class ListView(Control):
             return
         # calculate the zero-based index position (-1 like python lists)
         index = max(self.get_count() + index + 1, 0) if index < 0 else index
-        if isinstance(a_list, DictType):
+        if isinstance(a_list, dict):
             for i, (key, a_item) in enumerate(a_list.items()):
                 self._items.add(index + i, key, a_item)
         else:
@@ -152,7 +152,7 @@ class ListView(Control):
         return self._items
 
     def _set_items(self, a_list):
-        if isinstance(a_list, NoneType):
+        if a_list is None:
             a_list = []
         elif not isinstance(a_list, (list, tuple, dict)):
             raise AttributeError("unsupported type, list/tuple/dict expected")
