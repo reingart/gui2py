@@ -251,7 +251,10 @@ class wx_masked_TextCtrl(masked.TextCtrl):
         kwargs['groupChar'] = lc['mon_thousands_sep'] or ","
         kwargs['decimalChar'] = lc['decimal_point'] or "."
         kwargs['raiseOnInvalidPaste'] = False               # just bell
-        masked.TextCtrl.__init__(self, *args, **kwargs) 
+        try:
+            masked.TextCtrl.__init__(self, *args, **kwargs) 
+        except:
+            pass
         
     def SetValue(self, new_value):
         # to avoid formatting issues, values should not be passed as string!
@@ -290,7 +293,10 @@ class wx_masked_NumCtrl(masked.NumCtrl):
         #groupDigits = False,
         #min = None,
         #max = None,
-        masked.NumCtrl.__init__(self, *args, **kwargs)
+        try:
+            masked.NumCtrl.__init__(self, *args, **kwargs)
+        except:
+            pass
 
     def GetMask(self):
         fraction_width = self.GetFractionWidth() 
