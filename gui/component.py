@@ -657,7 +657,7 @@ class ControlSuper(Component, DesignerMixin):
     
     def _get_pos(self):
         # get the actual position, not (-1, -1)
-        return self.wx_obj.GetPositionTuple()
+        return tuple(self.wx_obj.GetPosition())
 
     def _set_pos(self, point):
         # check parameters (and store user values for resize)
@@ -696,9 +696,9 @@ class ControlSuper(Component, DesignerMixin):
     def _get_size(self):
         # return the actual size, not (-1, -1)
         if isinstance(self.wx_obj, wx.TopLevelWindow):
-            return self.wx_obj.GetClientSizeTuple()
+            return tuple(self.wx_obj.GetClientSize())
         else:
-            return self.wx_obj.GetSizeTuple()
+            return tuple(self.wx_obj.GetSize())
 
     def _set_size(self, size, new_size=None):
         if DEBUG: print "SET SIZE", self._name, size, new_size
