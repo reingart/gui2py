@@ -87,8 +87,10 @@ class GridView(Control):
                        binding=gridlib.EVT_GRID_COL_SIZE, kind=GridEvent)
     ongridrangeselect = EventSpec('grid_range_select', 
                        binding=gridlib.EVT_GRID_RANGE_SELECT, kind=GridEvent)
-    ongridcellchange = EventSpec('grid_cell_change', 
-                       binding=gridlib.EVT_GRID_CELL_CHANGE, kind=GridEvent)
+    ongridcellchanged = EventSpec('grid_cell_changed', 
+                       binding=wx.VERSION < (2, 9, 5) 
+                           and gridlib.EVT_GRID_CELL_CHANGE or
+                               gridlib.EVT_GRID_CELL_CHANGED, kind=GridEvent)
     ongridselectcell = EventSpec('grid_select_cell', 
                        binding=gridlib.EVT_GRID_SELECT_CELL, kind=GridEvent)
     ongrideditornshown = EventSpec('grid_editor_shown', 
