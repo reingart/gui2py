@@ -12,12 +12,13 @@ import gui
 # --- here goes your event handlers ---
 
 def greeting(evt):
-    gui.alert('hello world!')
+    import wx, sys
+    gui.alert('\n'.join([wx.version(), sys.version]), "gui2py hello world!")
 
 # --- gui2py designer generated code starts ---
 
-gui.Window(name='mywin', title=u'gui2py minimal app', resizable=True, )
-gui.Button(label=u'Click me!', name='button', default=True, parent='mywin', )
+gui.Window(name='mywin', title='gui2py minimal app', resizable=True, )
+gui.Button(label='Click me!', name='button', default=True, parent='mywin', )
 
 # --- gui2py designer generated code ends ---
 
