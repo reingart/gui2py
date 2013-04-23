@@ -917,7 +917,7 @@ class ImageBackgroundMixin(object):
         while x < sz.width:
             y = -dy
             while y < sz.height:
-                dc.DrawBitmapPoint(bmp, (x, y))
+                dc.DrawBitmap(bmp, x, y)
                 y = y + h
             x = x + w
 
