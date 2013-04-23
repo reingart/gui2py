@@ -82,7 +82,7 @@ def bitmap_type(filename):
         # KEA 2001-10-10
         # rather than throw an exception, we could try and have wxPython figure out the image
         # type by returning wxBITMAP_TYPE_ANY
-        raise 'invalid graphics format'    # should throw an exception here
+        raise RuntimeErro('invalid graphics format')    # should throw an exception here
 
 
 def save_window_screenshot(w, path):
@@ -186,7 +186,7 @@ class Bitmap:
             # KEA 2001-10-10
             # rather than throw an exception, we could try and have wxPython figure out the image
             # type by returning wxBITMAP_TYPE_ANY
-            raise 'invalid graphics format'    # should throw an exception here
+            raise RuntimeError('invalid graphics format')    # should throw an exception here
 
     # xbm format doesn't seem to work on Windows
     def load_file(self, filename=None, size=(-1, -1)):
