@@ -308,44 +308,77 @@ class wx_masked_NumCtrl(masked.NumCtrl):
             # TODO: better exception handling
             print e
 
-class wx_DatePickerCtrl(wx.DatePickerCtrl):
+
+# WORKAROUND as Phoenix doesn't have DatePickerCtrl right now
+# (could be useful for WXMAC or similar):
+if wx.VERSION < (2, 9, 5):
+
+    class wx_DatePickerCtrl(wx.DatePickerCtrl):
     
-    def __init__(self, *args, **kwargs):
-        del kwargs['mask']
-        kwargs['style'] = style = wx.DP_DROPDOWN | wx.DP_SHOWCENTURY | wx.DP_ALLOWNONE | wx.DP_DEFAULT
-        wx.DatePickerCtrl.__init__(self, *args, **kwargs)
+        def __init__(self, *args, **kwargs):
+            del kwargs['mask']
+            kwargs['style'] = style = wx.DP_DROPDOWN | wx.DP_SHOWCENTURY | wx.DP_ALLOWNONE | wx.DP_DEFAULT
+            wx.DatePickerCtrl.__init__(self, *args, **kwargs)
 
-    def GetMask(self):
-        return "date"
+        def GetMask(self):
+            return "date"
 
-    def SetEditable(self, editable):
-        pass # TODO
-        
-    def IsEditable(self):
-        return True # TODO
+        def SetEditable(self, editable):
+            pass # TODO
+            
+        def IsEditable(self):
+            return True # TODO
 
-    def GetValue(self):
-        "Convert and return the wx.DateTime to python datetime"
-        value = wx.DatePickerCtrl.GetValue(self)
-        assert isinstance(value, wx.DateTime) 
-        if value is None or not value.IsValid(): 
-            return
-        else:
-             ymd = map(int, value.FormatISODate().split('-')) 
-             return datetime.date(*ymd)          
+        def GetValue(self):
+            "Convert and return the wx.DateTime to python datetime"
+            value = wx.DatePickerCtrl.GetValue(self)
+            assert isinstance(value, wx.DateTime) 
+            if value is None or not value.IsValid(): 
+                return
+            else:
+                 ymd = map(int, value.FormatISODate().split('-')) 
+                 return datetime.date(*ymd)          
 
-    def SetValue(self, new_value):
-        "Convert and set the python datetime to wx.DateTime"
-        try:
-             assert isinstance(new_value, (datetime.datetime, datetime.date)) 
-             tt = new_value.timetuple() 
-             dmy = (tt[2], tt[1]-1, tt[0]) 
-             wx.DatePickerCtrl.SetValue(self, wx.DateTimeFromDMY(*dmy)) 
-        except Exception, e:
-            # TODO: better exception handling
-            print e
-     
+        def SetValue(self, new_value):
+            "Convert and set the python datetime to wx.DateTime"
+            try:
+                 assert isinstance(new_value, (datetime.datetime, datetime.date)) 
+                 tt = new_value.timetuple() 
+                 dmy = (tt[2], tt[1]-1, tt[0]) 
+                 wx.DatePickerCtrl.SetValue(self, wx.DateTimeFromDMY(*dmy)) 
+            except Exception, e:
+                # TODO: better exception handling
+                print e
+         
+else:
 
+    # TODO: look for a better alternative for wx.DatePickerCtrl (masked?)
+
+    class wx_DatePickerCtrl(wx.TextCtrl):
+
+        def __init__(self, *args, **kwargs):
+            del kwargs['mask']
+            wx.TextCtrl.__init__(self, *args, **kwargs)
+
+        def GetValue(self):
+            "Convert and return the wx.DateTime to python datetime"
+            value = wx.TextCtrl.GetValue(self)
+            if not value: 
+                return
+            else:
+                 ymd = map(int, value.split('-')) 
+                 return datetime.date(*ymd)          
+
+        def SetValue(self, new_value):
+            "Convert and set the python datetime to wx.DateTime"
+            try:
+                 assert isinstance(new_value, (datetime.datetime, datetime.date))
+                 wx.TextCtrl.SetValue(self, str(new_value)) 
+            except Exception, e:
+                # TODO: better exception handling
+                print e
+
+    
 if __name__ == "__main__":
     import sys
     # basic test until unit_test
