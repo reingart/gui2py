@@ -76,7 +76,6 @@ class wx_MenuItem(wx_DummyWindow, wx.MenuItem):
         wx.MenuItem.__init__(self, parentMenu=parent, 
                              id=kwargs['id'], 
                              text=kwargs['label'], 
-                             help=kwargs['help'], 
                              kind=kwargs['style'], 
                              #subMenu=None,
                              )
@@ -85,6 +84,8 @@ class wx_MenuItem(wx_DummyWindow, wx.MenuItem):
         #elif self.GetKind() == wx.ITEM_CHECK:
         #    self.parent.AppendCheckItem(wx.NewId(), self.GetText())            
         else:
+            # in phoenix (2.9.5), kwargs is helpString, so set it here:
+            self.SetHelp(kwargs['help'])
             self.parent.AppendItem(self)
 
     def Enable(self, value):
