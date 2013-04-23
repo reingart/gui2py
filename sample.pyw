@@ -19,7 +19,7 @@ import gui          # import gui2py package (shortcuts)
 # --- here goes your event handlers ---
 
 def load(evt):
-    print "loading!!!"
+    print("loading!!!")
     
      # load the list items with sample data:
     lv = mywin['listview']
@@ -57,7 +57,7 @@ def expand_item(event):
 
 def slider_click(evt):
     # move the progress bar according the slider ("scroll bar")
-    print "Slider value:", evt.target.value
+    print("Slider value: %s" % evt.target.value)
     mywin['gauge'].value = mywin['slider'].value
 
 def add_an_item(evt):
@@ -91,7 +91,7 @@ def del_sel_rows(evt):
 def clear_rows(evt):
     "remove all rows"
     mywin['notebook']['tab1']['gridview'].items.clear()
-    print "clearing..."
+    print("clearing...")
 
 def update_rows(evt):
     # grid model is similar to list (of lists), to update a row do:
@@ -156,7 +156,7 @@ gui.Gauge(name='gauge', height='18', left='13', top='130', width='367',
 gui.StatusBar(name='statusbar_15_91', parent='mywin', )
 gui.ListView(name='listview', height='99', left='23', top='211', width='192', 
              item_count=27, parent='mywin', sort_column=0, 
-             onitemselected="print 'sel', event.target.get_selected_items()", )
+             onitemselected="print ('sel %s' % event.target.get_selected_items())", )
 gui.ListColumn(name='col_a', text=u'Col A', parent='listview', )
 gui.ListColumn(name='col_b', text=u'Col B', parent='listview', )
 gui.Notebook(name='notebook', height='211', left='21', top='330', width='355', 
@@ -194,7 +194,7 @@ gui.CheckBox(label=u'Check', name='checkbox_29_80', left='14', top='95',
              parent=u'mywin.notebook.tab0.panel_40_46', )
 gui.Image(name='image', height='24', left='148', top='110', width='24', 
           filename=u'trash.gif', parent=u'mywin.notebook.tab0', 
-          onmousedown="print 'clicked the image'", )
+          onmousedown="print('clicked the image')", )
 gui.TabPanel(id=163, name=u'tab1', parent='mywin.notebook', selected=False, 
              text=u'Grid', visible=True, )
 gui.GridView(name='gridview', height='100%', left='0', top='0', width='100%', 
@@ -211,7 +211,7 @@ gui.HtmlBox(id=222, name='htmlbox', height='100%', left='0', top='0',
             width='100%', location=u'', parent=u'mywin.notebook.tab2', )
 gui.TreeView(name='treeview', default_style=True, has_buttons=True, 
              height='98', left='223', top='212', width='154', parent='mywin', 
-             onitemselected="print 'selected TreeItem:', event.detail.text", )
+             onitemselected="print('selected TreeItem: %s' % event.detail.text)", )
 gui.ComboBox(name='cboTest', left='100', top='58', width='152', 
              items=[u'option 1', u'option 2', u'option 3'], parent='mywin', 
              string_selection=u'', )
@@ -223,7 +223,7 @@ gui.Slider(name=u'slider', left='18', top='96', width='249', parent='mywin', )
 
 
 t1 = time.time()
-print "basic creation timing: t1 - t0", t1 - t0
+print("basic creation timing: t1 - t0: %s" % (t1 - t0))
 
 # get a reference to the Top Level Window (used by designer / events handlers):
 mywin = gui.get("mywin")
@@ -246,7 +246,7 @@ mywin['notebook']['tab0']['edit_button'].onclick = edit_buton_pressed
 
 if __name__ == "__main__":
     
-    print "MAIN!"
+    print("MAIN!")
     mywin.show()
     
     gui.main_loop()
