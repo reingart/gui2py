@@ -30,15 +30,15 @@ class Slider(Control):
     labels = StyleSpec(wx.SL_LABELS, doc="appareance") 
     ticks = StyleSpec(wx.SL_TICKS, doc="appareance") 
     freq = Spec(lambda self: self.wx_obj.GetTickFreq(),
-                lambda self, value: self.wx_obj.SetTickFreq(value, 1),
+                lambda self, value: self.wx_obj.SetTickFreq(value),
                 default=1,
                 ) 
     max = Spec(lambda self: self.wx_obj.GetMax(), 
-               lambda self, value: self.wx_obj.SetMax(value),
+               lambda self, value: self.wx_obj.SetRange(self.min, value),
                default=100, type="integer",
                doc="Range of the gauge")
     min = Spec(lambda self: self.wx_obj.GetMin(), 
-               lambda self, value: self.wx_obj.SetMin(value),
+               lambda self, value: self.wx_obj.SetRange(value, self.max),
                default=0, type="integer",
                doc="Range of the gauge")
     value = Spec(lambda self: self.wx_obj.GetValue(), 
