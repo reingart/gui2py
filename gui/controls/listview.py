@@ -337,7 +337,10 @@ class ListModel(dict):
             if not isinstance(text, basestring):
                 text = col.represent(text)
             if col.index == 0:
-                self._list_view.wx_obj.InsertStringItem(index, text)
+                if wx.VERSION < (2, 9, 5):
+                    self._list_view.wx_obj.InsertStringItem(index, text)
+                else:
+                    self._list_view.wx_obj.InsertItem(index, text)
             else:
                 self._list_view.wx_obj.SetStringItem(index, col.index, text)
         # update internal data, used by ColumnSorterMixin
