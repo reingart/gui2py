@@ -153,7 +153,7 @@ gui.MenuItem(help=u'Remove all the rows in the grid', label=u'Clear',
              name=u'clear', parent=u'mywin.menubar.grid', )
 gui.Gauge(name='gauge', height='18', left='13', top='130', width='367', 
           parent='mywin', value=50, )
-gui.StatusBar(name='statusbar_15_91', parent='mywin', )
+gui.StatusBar(name='statusbar', parent='mywin', )
 gui.ListView(name='listview', height='99', left='23', top='211', width='192', 
              item_count=27, parent='mywin', sort_column=0, 
              onitemselected="print ('sel %s' % event.target.get_selected_items())", )
@@ -248,5 +248,7 @@ if __name__ == "__main__":
     
     print("MAIN!")
     mywin.show()
-    
+    # update the status bar text with python and wxpython version info:
+    import wx, sys
+    mywin['statusbar'].text = "wx%s - py%s" % (wx.version(), sys.version)    
     gui.main_loop()
