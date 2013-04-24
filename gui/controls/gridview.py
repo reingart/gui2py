@@ -181,21 +181,27 @@ class GridTable(GridTableBase):
         
     def InsertCols(self, *args, **kwargs):
         wx.CallAfter(self.ResetView, self.wx_grid)
+        return True
 
     def AppendCols(self, *args, **kwargs):
         wx.CallAfter(self.ResetView, self.wx_grid)
+        return True
 
     def DeleteCols(self, *args, **kwargs):
         wx.CallAfter(self.ResetView, self.wx_grid)
+        return True
 
     def InsertRows(self, *args, **kwargs):
         wx.CallAfter(self.ResetView, self.wx_grid)
+        return True
 
     def AppendRows(self, *args, **kwargs):
         wx.CallAfter(self.ResetView, self.wx_grid)
+        return True
 
     def DeleteRows(self, *args, **kwargs):
         wx.CallAfter(self.ResetView, self.wx_grid)
+        return True
 
     def ResetView(self, grid):
         "Update the grid if rows and columns have been added or deleted"
