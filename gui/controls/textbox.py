@@ -315,16 +315,23 @@ class wx_masked_NumCtrl(masked.NumCtrl):
             print e
 
 
-# WORKAROUND as Phoenix doesn't have DatePickerCtrl right now
+# WORKAROUND as Phoenix moved datetime picker
 # (could be useful for WXMAC or similar):
 if wx.VERSION < (2, 9, 5):
+    DatePickerCtrl = wx.DatePickerCtrl
+    DP_STYLE = wx.DP_DROPDOWN | wx.DP_SHOWCENTURY | wx.DP_ALLOWNONE | wx.DP_DEFAULT
+else:
+    import wx.adv
+    DatePickerCtrl = wx.adv.DatePickerCtrl
+    DP_STYLE = wx.adv.DP_DROPDOWN | wx.adv.DP_SHOWCENTURY | wx.adv.DP_ALLOWNONE | wx.adv.DP_DEFAULT
 
-    class wx_DatePickerCtrl(wx.DatePickerCtrl):
+if DatePickerCtrl:
+    class wx_DatePickerCtrl(DatePickerCtrl):
     
         def __init__(self, *args, **kwargs):
             del kwargs['mask']
-            kwargs['style'] = style = wx.DP_DROPDOWN | wx.DP_SHOWCENTURY | wx.DP_ALLOWNONE | wx.DP_DEFAULT
-            wx.DatePickerCtrl.__init__(self, *args, **kwargs)
+            kwargs['style'] = style = DP_STYLE
+            DatePickerCtrl.__init__(self, *args, **kwargs)
 
         def GetMask(self):
             return "date"
@@ -337,7 +344,7 @@ if wx.VERSION < (2, 9, 5):
 
         def GetValue(self):
             "Convert and return the wx.DateTime to python datetime"
-            value = wx.DatePickerCtrl.GetValue(self)
+            value = DatePickerCtrl.GetValue(self)
             assert isinstance(value, wx.DateTime) 
             if value is None or not value.IsValid(): 
                 return
@@ -351,11 +358,11 @@ if wx.VERSION < (2, 9, 5):
                  assert isinstance(new_value, (datetime.datetime, datetime.date)) 
                  tt = new_value.timetuple() 
                  dmy = (tt[2], tt[1]-1, tt[0]) 
-                 wx.DatePickerCtrl.SetValue(self, wx.DateTimeFromDMY(*dmy)) 
+                 DatePickerCtrl.SetValue(self, wx.DateTimeFromDMY(*dmy)) 
             except Exception, e:
                 # TODO: better exception handling
                 print e
-         
+
 else:
 
     # TODO: look for a better alternative for wx.DatePickerCtrl (masked?)
