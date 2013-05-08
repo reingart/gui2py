@@ -1,5 +1,6 @@
-rem Convert gui2py to Python 3.x (on windows)
+rem generate the installers (windows)
 
-hg revert -a
+rem hg revert -a
+del dist\*.*
 python setup.py bdist_wininst --plat-name=win32
 python setup.py bdist_wininst --plat-name=win-amd64
