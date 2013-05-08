@@ -20,6 +20,8 @@ import gui
 version = gui.__version__
 if sys.version_info > (3, ):
     version += "-py3k"
+else:
+    version += "-py2x"
 
 # append install on windows
 if len(sys.argv) == 1 and sys.platform.startswith("win"):
