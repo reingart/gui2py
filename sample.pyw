@@ -248,6 +248,7 @@ if __name__ == "__main__":
     
     print("MAIN!")
     mywin.show()
+    mywin.title = "gui2py %s sample app" % gui.__version__
     # update the status bar text with python and wxpython version info:
     import wx, sys
     mywin['statusbar'].text = "wx%s - py%s" % (wx.version(), sys.version)    
