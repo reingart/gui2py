@@ -10,6 +10,7 @@ __copyright__ = "Copyright (C) 2013- Mariano Reingart" # where applicable
 # some of it was redesigned and overhauled a lot (specially Color)
 
 import os
+import warnings
 import wx
 
 try:
@@ -192,12 +193,18 @@ class Bitmap:
     def load_file(self, filename=None, size=(-1, -1)):
         if filename is None or filename == '':
             self._filename = None
+        elif not os.path.exists(filename):
+            # TODO: add an absoulte base path if it is relative
+            warnings.warn("Image %s not found" % filename, RuntimeWarning)
+            self._filename = None
         else:
             self._filename = filename
+
         if (self._filename is None) and (tuple(size) == (-1, -1)):
             self._size = (10, 10)
         else:
             self._size = size
+
         self._type = self._getbitmap_type(self._filename)
         if self._type is None:
             self._bits = wx.EmptyBitmap(self._size[0], self._size[1])
