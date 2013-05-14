@@ -1,0 +1,44 @@
+gui2py Documentation Index
+--------------------------
+
+``gui2py`` is a GUI framework for building cross-platform 
+"visual" desktop applications on Windows, Mac OS X, and Linux, 
+using the Python language and the wxPython toolkit. 
+
+Its objetive is to evolve PythonCard with web2py's phylosophy 
+and facilities with the following goals:
+
+* KISS compact structure: easy to learn and maintain, complete 
+  and powerful GUI Framework for Rapid Application Development
+
+* Visual Tools: designer, inspector and property editor, 
+  embeddables into IDEs. 
+
+* HTML/Javascript-like capabilities (i.e. events, layout): 
+  reusing and/or adapting gluon (web2py framework) + automatic 
+  flow mechanism
+
+.. autosummary::
+   :toctree: api/
+   :template: package.rst
+   :hidden: 
+
+   gui
+   
+
+API Reference
+==============
+
+.. toctree::
+   :maxdepth: 9
+
+   api/gui
+
+
+
+Related Documentation
+======================
+
+* `Project Home <https://code.google.com/p/gui2py/>`_
+
+

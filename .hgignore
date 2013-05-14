@@ -16,3 +16,5 @@ uploads/*
 databases/*
 sessions/*
 errors/*
+gui/doc/api
+gui/doc/_build
