@@ -15,14 +15,20 @@ APPLICATION_NAME = "gui2py"
 from distutils.core import setup
 import os, sys
 
+# get the package version (add py3k if needed)
 import gui
+version = gui.__version__
+if sys.version_info > (3, ):
+    version += "-py3k"
+else:
+    version += "-py2x"
 
+# append install on windows
 if len(sys.argv) == 1 and sys.platform.startswith("win"):
     sys.argv.append(WIN_DEFAULT_COMMAND)
 
-
 setup(name=APPLICATION_NAME, 
-      version=gui.__version__,
+      version=version,
       description="gui2py framework",
       author="Mariano Reingart",
       author_email="reingart@gmail.com",
@@ -35,6 +41,7 @@ setup(name=APPLICATION_NAME,
         "Environment :: MacOS X :: Cocoa",
         "Environment :: Win32 (MS Windows)",
         "Environment :: X11 Applications :: GTK",
+        #"Framework :: web2py",
         "Intended Audience :: Developers",
         "Intended Audience :: Education",
         "Intended Audience :: End Users/Desktop",
@@ -48,6 +55,14 @@ setup(name=APPLICATION_NAME,
         "Operating System :: Microsoft :: Windows",
         "Operating System :: POSIX :: Linux",
         "Programming Language :: Python",
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 2.5",
+        "Programming Language :: Python :: 2.6",
+        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.1",
+        "Programming Language :: Python :: 3.2",
+        "Programming Language :: Python :: 3.3",
         "Topic :: Software Development",
         "Topic :: Software Development :: User Interfaces",
       ],
