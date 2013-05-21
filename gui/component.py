@@ -676,9 +676,11 @@ class ControlSuper(Component, DesignerMixin):
         if point[0] is not None:
             x = self._calc_dimension(point[0], parent_size[0], font_width) \
                     + self.margin_left
+            self._left = str(point[0])
         if point[1] is not None:
             y = self._calc_dimension(point[1], parent_size[1], font_height) \
                     + self.margin_top
+            self._top = str(point[1])
         # actually move the object
         self.wx_obj.Move((x, y))
         # update the designer selection marker (if any)
@@ -686,11 +688,9 @@ class ControlSuper(Component, DesignerMixin):
             self.sel_marker.update()
 
     def _set_left(self, value):
-        self._left = value
         self._set_pos([value, None])
 
     def _set_top(self, value):
-        self._top = value
         self._set_pos([None, value])
         
     def _get_size(self):
