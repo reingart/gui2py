@@ -551,8 +551,6 @@ if __name__ == '__main__':
                         title="GUI Property Editor")
     propeditor = PropertyEditorPanel(f2, log)
     inspector = InspectorPanel(f1, propeditor, log)
-    f1.Show()
-    f2.Show()
     
     # create a toolbox 
     frame = wx.Frame(None, pos=(0, 25), size=(80, 600), title="GUI Toolbox")
@@ -603,8 +601,14 @@ if __name__ == '__main__':
         tb.Show()
         
         wellcome_tip(root.wx_obj)
+
+        f1.Move((root.pos[0] + root.size[0] + 50, 25))
+        f2.Move((root.pos[0] + root.size[0] + 50, f1.Size[1] + 60))
+
+        f1.Show()
+        f2.Show()
         
         app.MainLoop()
     else:
         gui.alert("No window to design!")
-        
+
