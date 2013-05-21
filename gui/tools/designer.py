@@ -77,6 +77,10 @@ class BasicDesigner:
                     evt.Skip() 
         elif evt.GetEventType() == wx.EVT_KEY_DOWN.typeId:
             self.key_press(evt)
+        elif evt.GetEventType() == wx.EVT_KEY_UP.typeId:
+            if self.selection and not self.current:
+                # update the position on the property Editor (last selected)
+                self.inspector.inspect(self.selection[-1])
         elif evt.GetEventType() == wx.EVT_LEFT_DOWN.typeId:
             # calculate time between clicks (is this a double click?)
             if not self.timestamp or evt.Timestamp - self.timestamp > 1000 or \
@@ -249,8 +253,6 @@ class BasicDesigner:
                     elif key == wx.WXK_DOWN:
                         y = y + 1
                 obj.pos = (x, y)
-                # update the position on the propertyEditor status bar
-                ##self.setToolTipDrag(name, (x, y), self.component[name].size)
         elif key == wx.WXK_DELETE:
             self.delete(event)
         elif key == wx.WXK_INSERT:
