@@ -490,8 +490,6 @@ class CustomToolTipWindow(STT.ToolTipWindow):
         else:
             STT.ToolTipWindow.CalculateBestPosition(self)
 
-# ToolTipWindow should be redefined as it is used internally by SuperToolTip
-STT.ToolTipWindow = CustomToolTipWindow
 
 def wellcome_tip(wx_obj):
     "Show a tip message"
@@ -501,18 +499,25 @@ def wellcome_tip(wx_obj):
            "Left click on the created controls to select them.\n"
            "Double click to edit the default property.\n"
            "Right click to pop-up the context menu.\n")
-    tip = STT.SuperToolTip(msg)
-
-    tip.SetHeader("Welcome to gui2py designer!")
-    tip.SetTarget(wx_obj)
-    tip.SetDrawHeaderLine(True)
-    tip.ApplyStyle("Office 2007 Blue")
-    tip.SetDropShadow(True)
-    tip.SetHeaderBitmap(images.designer.GetBitmap())
-    tip.SetEndDelay(15000)                      # hide in 15 s
-    wx.CallLater(1000, tip.DoShowNow)           # show the tip in 1 s
-    wx.CallLater(30000, tip.EnableTip, False)   # disable the tip in 30 s
-    #wx.CallLater(31000, tip.SetTarget, None)            
+    # create a super tool tip manager and set some styles
+    stt = STT.SuperToolTip(msg)
+    stt.SetHeader("Welcome to gui2py designer!")
+    stt.SetDrawHeaderLine(True)
+    stt.ApplyStyle("Office 2007 Blue")
+    stt.SetDropShadow(True)
+    stt.SetHeaderBitmap(images.designer.GetBitmap())
+    stt.SetEndDelay(15000)                      # hide in 15 s
+    # create a independent tip window, show/hide manually (avoid binding wx_obj)
+    tip = CustomToolTipWindow(wx_obj, stt)
+    tip.CalculateBestSize()
+    tip.CalculateBestPosition(wx_obj)
+    tip.DropShadow(stt.GetDropShadow())
+    if stt.GetUseFade():
+        show = lambda: tip.StartAlpha(True)
+    else:
+        show = lambda: tip.Show()
+    wx.CallLater(1000, show)           # show the tip in 1 s
+    wx.CallLater(30000, tip.Destroy)   # disable the tip in 30 s
 
 
 if __name__ == '__main__':
