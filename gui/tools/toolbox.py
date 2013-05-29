@@ -215,8 +215,20 @@ class ToolBoxDropTarget(wx.PyDropTarget):
         # with the original data (move, copy, etc.)  In this
         # case we just return the suggested value given to us.
         return d  
-               
-        
+
+
+# Helper functions:
+
+def set_drop_target(obj, root, designer, inspector):
+    "Recursively create and set the drop target for obj and childs"
+    if isinstance(obj, (gui.Panel, gui.TabPanel, gui.Window)):
+        dt = ToolBoxDropTarget(obj, root, designer=designer, 
+                                          inspector=inspector)
+        obj.drop_target = dt
+    for child in obj:
+        set_drop_target(child, root, designer, inspector)
+
+
 if __name__ == '__main__':
     import sys,os
     app = wx.App()

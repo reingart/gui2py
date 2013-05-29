@@ -538,7 +538,7 @@ if __name__ == '__main__':
     from gui.tools.inspector import InspectorPanel
     from gui.tools.propeditor import PropertyEditorPanel
     from gui.tools.designer import BasicDesigner
-    from gui.tools.toolbox import ToolBox, ToolBoxDropTarget
+    from gui.tools.toolbox import ToolBox, ToolBoxDropTarget, set_drop_target
 
     # create the windows and the property editor / inspector
     if DEBUG:
@@ -579,15 +579,7 @@ if __name__ == '__main__':
         # associate the window with the toolbox:
         # (this will allow to drop new controls on the window)
         obj = root
-        def set_drop_target(obj):
-            "Recursively create and set the drop target for obj and childs"
-            if isinstance(obj, (gui.Panel, gui.TabPanel, gui.Window)):
-                dt = ToolBoxDropTarget(obj, root, designer=designer, 
-                                                  inspector=inspector)
-                obj.drop_target = dt
-            for child in obj:
-                set_drop_target(child)
-        set_drop_target(root)
+        set_drop_target(root, root, designer, inspector)
         # link the designer (context menu) and toolbox (tool click)
         inspector.set_designer(designer)
         tb.set_default_tlw(root, designer, inspector)
