@@ -175,6 +175,8 @@ def migrate_control(comp):
             v = [migrate_control(comp) for comp in v]
         else:
             k = SPEC_MAP['Widget'].get(k, k)
+            if comp['type'] in SPEC_MAP:
+                k = SPEC_MAP[comp['type']].get(k, k)
         ret[k] = v
     return ret
     
