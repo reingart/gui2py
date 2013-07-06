@@ -48,3 +48,7 @@ if app is None:
 else:
     # app and main loop is already created and executed by a third party tool
     main_loop = lambda: None
+    
+
+from .resource import load, build
+
