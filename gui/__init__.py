@@ -52,3 +52,13 @@ else:
 
 from .resource import parse, load, dump, save
 
+# useful functions (shortcuts)
+
+def inspect(obj):
+    "Open the inspector windows for a given object"
+    from gui.tools.inspector import InspectorTool
+    inspector = InspectorTool()
+    inspector.show(obj)
+    return inspector
+
+
