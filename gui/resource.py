@@ -93,10 +93,10 @@ def dump(obj):
     import decimal, datetime
     from .font import Font
     from .graphic import Bitmap, Color
+    from . import registry
 
-    ret = {'type': obj.__class__.__name__, 'components': []}
+    ret = {'type': obj.__class__.__name__}
     
-    params = []
     for (k, spec) in obj._meta.specs.items():
         if k == "index":        # index is really defined by creation order
             continue            # also, avoid infinite recursion
@@ -115,7 +115,16 @@ def dump(obj):
             ret[k] = v 
             
     for ctl in obj:
-        ret['components'].append(dump(ctl))
+        if ret['type'] == 'MenuBar':
+            ret['menubar'] = dump(ctl)
+        elif ret['type'] in registry.MENU:
+            ret.setdefault('items', []).append(dump(ctl))
+        else:
+            res = dump(ctl)
+            if 'menubar' in res:
+                ret.setdefault('menubar', []).append(res.pop('menubar'))
+            else:
+                ret.setdefault('components', []).append(res)
     
     return ret
 
