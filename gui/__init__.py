@@ -61,4 +61,10 @@ def inspect(obj):
     inspector.show(obj)
     return inspector
 
+def shell():
+    "Open a shell"
+    from gui.tools.debug import Shell    
+    shell = Shell()
+    shell.show()
+    return shell
 
