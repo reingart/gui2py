@@ -29,9 +29,10 @@ def save(filename, rsrc):
 
 def build(rsrc):
     "Create the GUI objects defined in the resource"
+    ret = []
     for win in rsrc:
-        build_window(win)        
-
+        ret.append(build_window(win))
+    return ret
 
 def build_window(res):
     "Create a gui2py window based on the python resource"
@@ -56,6 +57,7 @@ def build_window(res):
         mb = gui.MenuBar(name="menubar", parent=win)
         for menu in menubar:
             build_component(menu, parent=mb)
+    return win
         
 
 def build_component(res, parent=None):
@@ -85,6 +87,8 @@ def build_component(res, parent=None):
         print "building subcomponent", comp
         build_component(comp, parent=com)
 
+    return com
+    
 
 def dump(obj):
     "Recursive convert a live GUI object to a resource list/dict"
