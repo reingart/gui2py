@@ -53,7 +53,7 @@ def build_window(res):
             build_component(comp, parent=win)
 
     if menubar:
-        mb = gui.MenuBar(parent=win)
+        mb = gui.MenuBar(name="menubar", parent=win)
         for menu in menubar:
             build_component(menu, parent=mb)
         
