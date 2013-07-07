@@ -209,6 +209,20 @@ class Component(object):
                 if DEBUG: print "resetting internal specs (rebound...):", spec_name, self.name
                 value = kwargs.get(spec_name, getattr(self, spec_name, spec.default))
                 setattr(self, spec_name, value)
+            if isinstance(spec, InitSpec):
+                # override special dimension init values passed directly
+                if spec_name == 'pos' and 'pos' in wx_kwargs:
+                    x, y = wx_kwargs['pos']
+                    if x >= 0:
+                        self._left = str(x)
+                    if y >= 0:
+                        self._top = str(y)
+                elif spec_name == 'size' and 'size' in wx_kwargs:
+                    w, h = wx_kwargs['size']
+                    if w >= 0:
+                        self._width = str(w)
+                    if h >= 0:
+                        self._height = str(h)
 
     def rebuild(self, recreate=True, force=False, **kwargs):
         "Recreate (if needed) the wx_obj and apply new properties"
