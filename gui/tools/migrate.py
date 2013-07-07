@@ -177,9 +177,20 @@ def migrate_control(comp):
             k = SPEC_MAP['Widget'].get(k, k)
             if comp['type'] in SPEC_MAP:
                 k = SPEC_MAP[comp['type']].get(k, k)
+            if k == 'font':
+                v = migrate_font(v)
         ret[k] = v
     return ret
     
+
+def migrate_font(font):
+    "Convert PythonCard font description to gui2py style"
+    if 'faceName' in font:
+        font['face'] = font.pop('faceName')
+    if 'family' in font and font['family'] == 'sansSerif':
+        font['family'] = 'sans serif'
+    return font
+
 
 if __name__ == '__main__':
     
