@@ -571,8 +571,7 @@ if __name__ == '__main__':
     vars = {}
     if filename.endswith(".rsrc.py"):
         # load the resource file
-        rsrc = gui.load(filename)
-        objs = gui.build(rsrc)
+        objs = gui.load(filename)
     else:
         # exec a normal python file
         execfile(filename, vars)

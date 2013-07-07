@@ -13,7 +13,7 @@ import pprint
 from . import util
 
 
-def load(filename=""):
+def parse(filename=""):
     "Open, read and eval the resource from the source file"
     # use the provided resource file:
     s = open(filename).read()
@@ -29,7 +29,7 @@ def save(filename, rsrc):
     open(filename, "w").write(s)
 
 
-def build(rsrc="", name=None):
+def load(rsrc="", name=None):
     "Create the GUI objects defined in the resource (filename or python struct)"
     # if no rsrc is given, search for the rsrc.py with the same module name:
     if not rsrc:
@@ -45,7 +45,7 @@ def build(rsrc="", name=None):
         rsrc = base + ".rsrc.py"
     # when rsrc is a file name, open, read and eval it:
     if isinstance(rsrc, basestring):
-        rsrc = load(rsrc)
+        rsrc = parse(rsrc)
     ret = []
     # search over the resource to create the requested object (or all)
     for win in rsrc:
