@@ -42,7 +42,19 @@ def dirname(path):
         return os.path.split(path)[0]
 
 
+def get_caller_module():
+    f = sys._current_frames().values()[0]
+    return f.f_back.f_back.f_globals
+
+def get_app_dir():
+    return dirname(os.path.abspath(sys.argv[0]))
+
+
 if __name__ == '__main__':
     print "Frozen: ", main_is_frozen()
     print "Main dir: ", get_main_dir()
+    def test():
+        return get_caller_module()
+    print test()
+    print get_app_dir()
 

@@ -8,11 +8,13 @@ __copyright__ = "Copyright (C) 2013- Mariano Reingart"
 __license__ = "LGPL 3.0"
 
 
+import os
 import pprint
+from . import util
 
 
-def load(filename):
-    "Load the resource from the source file"
+def load(filename=""):
+    "Open, read and eval the resource from the source file"
     # use the provided resource file:
     s = open(filename).read()
     ##s.decode("latin1").encode("utf8")
@@ -27,12 +29,34 @@ def save(filename, rsrc):
     open(filename, "w").write(s)
 
 
-def build(rsrc):
-    "Create the GUI objects defined in the resource"
+def build(rsrc="", name=None):
+    "Create the GUI objects defined in the resource (filename or python struct)"
+    # if no rsrc is given, search for the rsrc.py with the same module name:
+    if not rsrc:
+        if util.main_is_frozen():
+            # running standalone
+            filename = os.path.split(util.get_caller_module()['__file__'])[1]
+            filename = os.path.join(util.get_app_dir(), filename)
+        else:
+            # figure out the .rsrc.py filename based on the module name
+            filename = util.get_caller_module()['__file__']
+        # chop the .pyc or .pyo from the end
+        base, ext = os.path.splitext(filename)
+        rsrc = base + ".rsrc.py"
+    # when rsrc is a file name, open, read and eval it:
+    if isinstance(rsrc, basestring):
+        rsrc = load(rsrc)
     ret = []
+    # search over the resource to create the requested object (or all)
     for win in rsrc:
-        ret.append(build_window(win))
-    return ret
+        if not name or win['name'] == name:
+            ret.append(build_window(win))
+    # return the first instance created if name was given:
+    if name:
+        return ret[0]
+    else:
+        return ret
+
 
 def build_window(res):
     "Create a gui2py window based on the python resource"
@@ -80,11 +104,9 @@ def build_component(res, parent=None):
         comclass = registry.MENU[comtype]
     
     # Instantiate the GUI object
-    print comclass, kwargs
     com = comclass(parent=parent, **kwargs)
     
     for comp in components:
-        print "building subcomponent", comp
         build_component(comp, parent=com)
 
     return com
