@@ -39,7 +39,7 @@ def build_window(res):
     # windows specs (parameters)
     kwargs = dict(res.items())
     wintype = kwargs.pop('type')
-    menubar = kwargs.pop('menubar')
+    menubar = kwargs.pop('menubar', None)
     components = kwargs.pop('components')
     
     from gui import registry
@@ -84,7 +84,41 @@ def build_component(res, parent=None):
     for comp in components:
         print "building subcomponent", comp
         build_component(comp, parent=com)
+
+
+def dump(obj):
+    "Recursive convert a live GUI object to a resource list/dict"
+    
+    from .spec import InitSpec, DimensionSpec, StyleSpec, InternalSpec
+    import decimal, datetime
+    from .font import Font
+    from .graphic import Bitmap, Color
+
+    ret = {'type': obj.__class__.__name__, 'components': []}
+    
+    params = []
+    for (k, spec) in obj._meta.specs.items():
+        if k == "index":        # index is really defined by creation order
+            continue            # also, avoid infinite recursion
+        v = getattr(obj, k, "")
+        if (not isinstance(spec, InternalSpec) 
+            and v != spec.default
+            and (k != 'id' or v > 0) 
+            and isinstance(v, 
+                 (basestring, int, long, float, bool, dict, list, 
+                  decimal.Decimal, 
+                  datetime.datetime, datetime.date, datetime.time,
+                  Font, Color))                
+            and repr(v) != 'None'
+            and k != 'parent'
+            ):
+            ret[k] = v 
             
+    for ctl in obj:
+        ret['components'].append(dump(ctl))
+    
+    return ret
+
 
 class Controller():
     def __init__(self):

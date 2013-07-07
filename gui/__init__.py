@@ -50,5 +50,5 @@ else:
     main_loop = lambda: None
     
 
-from .resource import load, build, save
+from .resource import load, build, dump, save
 
