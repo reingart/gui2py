@@ -436,33 +436,37 @@ def save(evt, designer):
             fout.write(fin.read())
             fout.close()
             fin.close()
-            # reopen the files to proccess them
-            fin = open(designer.filename + ".bak", "r")
-            fout = open(designer.filename, "w")
-            copy = True
-            newlines = fin.newlines or "\n"
+            if designer.filename.endswith(".rsrc.py"):
+                # serialize and save the resource
+                gui.save(designer.filename, [gui.dump(w)])
+            else:
+                # reopen the files to proccess them
+                fin = open(designer.filename + ".bak", "r")
+                fout = open(designer.filename, "w")
+                copy = True
+                newlines = fin.newlines or "\n"
+                
+                def dump(obj):
+                    "recursive convert object to string"
+                    for ctl in obj:
+                        fout.write(str(ctl))
+                        fout.write(newlines)
+                        dump(ctl)
 
-            def dump(obj):
-                "recursive convert object to string"
-                for ctl in obj:
-                    fout.write(str(ctl))
-                    fout.write(newlines)
-                    dump(ctl)
-
-            for line in fin:
-                if line.startswith("# --- gui2py designer generated code starts ---"):
-                    fout.write(line)
-                    fout.write(newlines)
-                    fout.write(str(w))
-                    fout.write(newlines)
-                    dump(w)
-                    fout.write(newlines)
-                    copy = False
-                if line.startswith("# --- gui2py designer generated code ends ---"):
-                    copy = True
-                if copy:
-                    fout.write(line)
-                    #fout.write("\n\r")
+                for line in fin:
+                    if line.startswith("# --- gui2py designer generated code starts ---"):
+                        fout.write(line)
+                        fout.write(newlines)
+                        fout.write(str(w))
+                        fout.write(newlines)
+                        dump(w)
+                        fout.write(newlines)
+                        copy = False
+                    if line.startswith("# --- gui2py designer generated code ends ---"):
+                        copy = True
+                    if copy:
+                        fout.write(line)
+                        #fout.write("\n\r")
             fout.close()
             fin.close()
         except Exception, e:
@@ -565,9 +569,16 @@ if __name__ == '__main__':
             exit()
     
     vars = {}
-    execfile(filename, vars)
-    root = None
-    for name, value in vars.items():
+    if filename.endswith(".rsrc.py"):
+        # load the resource file
+        rsrc = gui.load(filename)
+        objs = gui.build(rsrc)
+    else:
+        # exec a normal python file
+        execfile(filename, vars)
+        root = None
+        objs = vars.values()
+    for value in objs:
         if not isinstance(value, gui.Window):
             continue
         root = value       # TODO: support many windows
