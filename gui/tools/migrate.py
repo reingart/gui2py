@@ -186,12 +186,11 @@ if __name__ == '__main__':
     import sys
     import os
     import pprint
+    import gui
     
     if len(sys.argv) > 1:
         # use the provided resource file:
-        s = open(sys.argv[1]).read()
-        ##s.decode("latin1").encode("utf8")
-        rsrc = eval(s)        
+        rsrc = gui.load(sys.argv[1])
     else:    
         # use a test resource file (see minimal.rsrc.py sample):
         rsrc = {'application': { 
@@ -229,9 +228,7 @@ if __name__ == '__main__':
     
     if len(sys.argv) > 2:
         # save to the provided file
-        s = pprint.pformat(new_rsrc)
-        ## s = s.encode("utf8")
-        open(sys.argv[2], "w").write(s)
+        gui.save(sys.argv[2], new_rsrc)
     else:
         # pretty-print the output
         pprint.pprint(new_rsrc)

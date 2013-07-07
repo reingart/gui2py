@@ -8,7 +8,11 @@ __copyright__ = "Copyright (C) 2013- Mariano Reingart"
 __license__ = "LGPL 3.0"
 
 
+import pprint
+
+
 def load(filename):
+    "Load the resource from the source file"
     # use the provided resource file:
     s = open(filename).read()
     ##s.decode("latin1").encode("utf8")
@@ -16,7 +20,15 @@ def load(filename):
     return rsrc
 
 
+def save(filename, rsrc):
+    "Save the resource to the source file"
+    s = pprint.pformat(rsrc)
+    ## s = s.encode("utf8")
+    open(filename, "w").write(s)
+
+
 def build(rsrc):
+    "Create the GUI objects defined in the resource"
     for win in rsrc:
         build_window(win)        
 
@@ -64,6 +76,9 @@ def build_component(res, parent=None):
         comclass = registry.CONTROLS[comtype]
     elif comtype in registry.MENU:
         comclass = registry.MENU[comtype]
+    
+    # Instantiate the GUI object
+    print comclass, kwargs
     com = comclass(parent=parent, **kwargs)
     
     for comp in components:
