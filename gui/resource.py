@@ -7,6 +7,9 @@ __author__ = "Mariano Reingart (reingart@gmail.com)"
 __copyright__ = "Copyright (C) 2013- Mariano Reingart"
 __license__ = "LGPL 3.0"
 
+# Implementation resembles PythonCard's resource file structure (resource and 
+# model modules) but it was simplified even further and rewritten from scratch
+
 
 import os
 import pprint

@@ -1,12 +1,12 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-"gui2py's Graphic facilities (encapsulate wx.Bitmap and wx.Color)"
+"gui2py's miscellaneous utility functions (frozen, path, caller module, etc.)"
 
 __author__ = "Mariano Reingart (reingart@gmail.com)"
 __copyright__ = "Copyright (C) 2013- Mariano Reingart" # where applicable
 
-# Initial implementation was copied from PythonCard's util module
+# Initial implementation was stripped down from PythonCard's util module
 
 
 import os
@@ -14,6 +14,7 @@ import sys
 import imp
 import re
 import fnmatch
+
 
 # Thomas Heller's function for determining
 # if a module is running standalone
@@ -28,10 +29,12 @@ def main_is_frozen():
                 hasattr(sys, "importers") # old py2exe
                 or imp.is_frozen("__main__")) # tools/freeze, cx_freeze
 
+
 def get_main_dir():
     if main_is_frozen():
         return os.path.dirname(sys.executable)
     return os.path.dirname(sys.argv[0])
+
 
 # this is how I expected os.path.dirname to work
 # it might be better to name this directoryName instead?!
@@ -45,6 +48,7 @@ def dirname(path):
 def get_caller_module():
     f = sys._current_frames().values()[0]
     return f.f_back.f_back.f_globals
+
 
 def get_app_dir():
     return dirname(os.path.abspath(sys.argv[0]))
