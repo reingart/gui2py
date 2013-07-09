@@ -139,7 +139,8 @@ class Window(ControlSuper, ImageBackgroundMixin, SizerMixin):
     def rebuild(self, *args, **kwargs):
         # detach the menubar (if any) so it can be auto re-attached later
         self.wx_obj.SetMenuBar(None)
-        self._menubar.set_parent(None)    # just in case
+        if self._menubar:
+            self._menubar.set_parent(None)    # just in case
         # statusbar needs special care:
         if self._statusbar:
             self.wx_obj.SetStatusBar(None)
