@@ -249,7 +249,15 @@ class InspectorPanel(wx.Panel):
                designer=self.designer)
         # move the new object to the mouse position of the click evt (if given)
         if mouse_pos:
-            obj.pos = mouse_pos
+            x, y = mouse_pos
+            parent = self.obj
+            while parent:
+                # adjust the relative position inside the container
+                x0, y0 = parent.pos
+                x = x - x0
+                y = y - y0
+                parent = parent.get_parent()
+            obj.pos = (x, y)
         # update the object at the inspector (to show the new control)
         wx.CallAfter(self.inspect, obj)
     
