@@ -73,7 +73,7 @@ class ToolBox(aui.AuiToolBar):
         if self.inspector.selected_obj:
             # find the first parent drop target
             parent = self.inspector.selected_obj
-            while parent.drop_target is None:
+            while parent.drop_target is not None:
                 parent = parent.get_parent()
             # create the new object
             obj = ctrl(parent, 
