@@ -388,25 +388,29 @@ class SelectionMarker:
             elif j == 7: return x + w/2 - 4, y + h + 1      # bottom
             elif j == 8: return x + w/2 - 4, y + h/2 - 4    # middle
         self.tag_pos = [ position(i) for i in range(8) ]
-        if self.visible:
-            if not self.tags:
-                self.tags = [ SelectionTag(self.parent, self.owner, index=i, designer=self.designer) for i in range(8) ]
-            for i in range(8):
-                self.tags[i].SetPosition(self.tag_pos[i])
+        if self.visible and self.parent:
+            self.draw()
         if event: event.Skip()
 
     def show(self, visible):
         if self.visible != visible:
             self.visible = visible
-            if self.visible:
-                if not self.tags:
-                    self.tags = [ SelectionTag(self.parent, self.owner, index=i, designer=self.designer) for i in range(8) ]
-                for i in range(8):
-                    self.tags[i].SetPosition(self.tag_pos[i])
-                    self.tags[i].Show()
+            if self.visible and self.parent:
+                self.draw(visible)
             elif self.tags:
-                for tag in self.tags: tag.Destroy()
-                self.tags = None
+                self.destroy()
+
+    def draw(self, visible=False):
+        if not self.tags:
+            self.tags = []
+            for i in range(8):
+                tag = SelectionTag(self.parent, self.owner, index=i,
+                                   designer=self.designer)
+                self.tags.append(tag)
+        for i in range(8):
+            self.tags[i].SetPosition(self.tag_pos[i])
+            if visible:
+                self.tags[i].Show()
 
     def destroy(self):
         if self.tags:
