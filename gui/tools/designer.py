@@ -296,10 +296,12 @@ class BasicDesigner:
                 old_obj = self.selection.pop()
                 old_obj.sel_marker.destroy()
                 old_obj.sel_marker = None
-        if not obj.sel_marker:
-            obj.sel_marker = SelectionMarker(obj)
-            obj.sel_marker.show(True)
-        self.selection.append(obj)
+        # check if it can be selected! (menu, statusbar, etc. cannot)
+        if hasattr(obj, "sel_marker"):
+            if not obj.sel_marker:
+                obj.sel_marker = SelectionMarker(obj)
+                obj.sel_marker.show(True)
+            self.selection.append(obj)
 
     def draw_grid(self, event):
         wx_obj = event.GetEventObject()
