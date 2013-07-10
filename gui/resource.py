@@ -64,9 +64,11 @@ def load(rsrc="", name=None, controller=None):
     # associate event handlers
     if ret and controller:
         connect(ret[0], controller)        
-    # return the first instance created (if any):
-    if ret:
+        # return the first instance created (if any):
         return ret[0]
+    else:
+        # return all the instances created -for the designer- (if any):
+        return ret
 
 
 def build_window(res):
