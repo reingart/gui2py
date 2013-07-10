@@ -45,10 +45,12 @@ def dirname(path):
         return os.path.split(path)[0]
 
 
-def get_caller_module():
+def get_caller_module_dict():
     f = sys._current_frames().values()[0]
     return f.f_back.f_back.f_globals
 
+def get_class_module_dict(instance):
+    return sys.modules[instance.__class__.__module__].__dict__
 
 def get_app_dir():
     return dirname(os.path.abspath(sys.argv[0]))

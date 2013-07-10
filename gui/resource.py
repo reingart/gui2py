@@ -32,17 +32,21 @@ def save(filename, rsrc):
     open(filename, "w").write(s)
 
 
-def load(rsrc="", name=None):
+def load(rsrc="", name=None, controller=None):
     "Create the GUI objects defined in the resource (filename or python struct)"
     # if no rsrc is given, search for the rsrc.py with the same module name:
     if not rsrc:
+        if controller:
+            mod_dict = util.get_class_module_dict(controller)
+        else:
+            mod_dict = util.get_caller_module_dict()
         if util.main_is_frozen():
             # running standalone
-            filename = os.path.split(util.get_caller_module()['__file__'])[1]
+            filename = os.path.split(mod_dict['__file__'])[1]
             filename = os.path.join(util.get_app_dir(), filename)
         else:
             # figure out the .rsrc.py filename based on the module name
-            filename = util.get_caller_module()['__file__']
+            filename = mod_dict['__file__']
         # chop the .pyc or .pyo from the end
         base, ext = os.path.splitext(filename)
         rsrc = base + ".rsrc.py"
@@ -81,7 +85,7 @@ def build_window(res):
             build_component(comp, parent=win)
 
     if menubar:
-        mb = gui.MenuBar(name="menubar", parent=win)
+        mb = gui.MenuBar(name="menu", parent=win)
         for menu in menubar:
             build_component(menu, parent=mb)
     return win
@@ -158,8 +162,40 @@ def dump(obj):
     return ret
 
 
-class Controller():
-    def __init__(self):
-        pass
-        
+class Controller(object):
+    "Default controller (loads resource and bind events)"
     
+    # mix of PythonCard model.Application & model.Background
+    
+    def __init__(self, name='', rsrc=None):
+
+        # load the resource:
+        if not name:
+            self.component = load(controller=self)[0]
+        else:
+            self.component = load(rsrc, name, controller=self)
+
+        class_name = self.__class__.__name__
+
+        # associate event handlers:
+        for fn in [n for n in dir(self) if n.startswith("on_")]:
+            # on_mypanel_mybutton_click -> ['mypanel']['mybutton'].onclick 
+            names = fn.split("_")
+            event_name = names.pop(0) + names.pop(-1)
+            # find the control
+            obj = self.component
+            for name in names:
+                try:
+                    obj = obj[name]
+                except KeyError:
+                    raise NameError("'%s' component not found (%s.%s)" % 
+                                        (name, class_name, fn))
+            # check if the control supports the event:
+            if not hasattr(obj, event_name):
+                raise NameError("'%s' event not valid (%s.%s)" % 
+                                    (event_name, class_name, fn))
+            # bind the event (assign the method to the on... spec)
+            setattr(obj, event_name, getattr(self, fn))
+        
+        # done
+

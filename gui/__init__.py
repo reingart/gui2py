@@ -50,7 +50,7 @@ else:
     main_loop = lambda: None
     
 
-from .resource import parse, load, dump, save
+from .resource import parse, load, dump, save, Controller
 
 # useful functions (shortcuts)
 
