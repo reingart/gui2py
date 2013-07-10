@@ -178,10 +178,13 @@ class BasicDesigner:
                 # resize according the direction (n, w, s, e)
                 x = wx_obj.Position[0] + e * delta[0]
                 y = wx_obj.Position[1] + n * delta[1]
-                if not isinstance(wx_obj, wx.TopLevelWindow):
-                    width = wx_obj.Size[0] + (w - e) * delta[0]
+                if w or e:
+                    if not isinstance(wx_obj, wx.TopLevelWindow):
+                        width = wx_obj.Size[0] + (w - e) * delta[0]
+                    else:
+                        width = wx_obj.ClientSize[0] + (w - e) * delta[0]
                 else:
-                    width = wx_obj.ClientSize[0] + (w - e) * delta[0]
+                    width = None
                 if n or s:
                     height = wx_obj.Size[1] + (s - n) * delta[1]
                 else:
@@ -202,7 +205,8 @@ class BasicDesigner:
                 wx_obj.obj.pos = new_pos      # update gui specs (position)
                 # update gui specs (size), but do not alter default value
                 if width is not None and height is not None:
-                    wx_obj.obj.size = new_size
+                    wx_obj.obj.width = width
+                    wx_obj.obj.height = height
                 elif width is not None:
                     wx_obj.obj.width = width
                 elif height is not None:
