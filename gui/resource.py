@@ -58,11 +58,8 @@ def load(rsrc="", name=None, controller=None):
     for win in rsrc:
         if not name or win['name'] == name:
             ret.append(build_window(win))
-    # return the first instance created if name was given:
-    if name:
-        return ret[0]
-    else:
-        return ret
+    # return the first instance created:
+    return ret[0]
 
 
 def build_window(res):
@@ -162,6 +159,39 @@ def dump(obj):
     return ret
 
 
+def connect(component, controller=None):
+    "Associate event handlers "
+    
+    # get the controller functions and names (module or class)
+    if not controller:
+        controller = util.get_caller_module_dict()
+        controller_name = controller['__name__']
+        controller_dict = controller
+    else:
+        controller_name = controller.__class__.__name__
+        controller_dict = dict([(k, getattr(controller, k)) for k 
+                                in dir(controller) if k.startswith("on_")])
+
+    for fn in [n for n in controller_dict if n.startswith("on_")]:
+        # on_mypanel_mybutton_click -> ['mypanel']['mybutton'].onclick 
+        names = fn.split("_")
+        event_name = names.pop(0) + names.pop(-1)
+        # find the control
+        obj = component
+        for name in names:
+            try:
+                obj = obj[name]
+            except KeyError:
+                raise NameError("'%s' component not found (%s.%s)" % 
+                                    (name, controller_name, fn))
+        # check if the control supports the event:
+        if not hasattr(obj, event_name):
+            raise NameError("'%s' event not valid (%s.%s)" % 
+                                (event_name, controller_name, fn))
+        # bind the event (assign the method to the on... spec)
+        setattr(obj, event_name, controller_dict[fn])
+
+
 class Controller(object):
     "Default controller (loads resource and bind events)"
     
@@ -171,31 +201,12 @@ class Controller(object):
 
         # load the resource:
         if not name:
-            self.component = load(controller=self)[0]
+            self.component = load(rsrc=rsrc, controller=self)
         else:
             self.component = load(rsrc, name, controller=self)
-
-        class_name = self.__class__.__name__
-
-        # associate event handlers:
-        for fn in [n for n in dir(self) if n.startswith("on_")]:
-            # on_mypanel_mybutton_click -> ['mypanel']['mybutton'].onclick 
-            names = fn.split("_")
-            event_name = names.pop(0) + names.pop(-1)
-            # find the control
-            obj = self.component
-            for name in names:
-                try:
-                    obj = obj[name]
-                except KeyError:
-                    raise NameError("'%s' component not found (%s.%s)" % 
-                                        (name, class_name, fn))
-            # check if the control supports the event:
-            if not hasattr(obj, event_name):
-                raise NameError("'%s' event not valid (%s.%s)" % 
-                                    (event_name, class_name, fn))
-            # bind the event (assign the method to the on... spec)
-            setattr(obj, event_name, getattr(self, fn))
+        
+        # associate event handlers
+        connect(self.component, self)
         
         # done
 
