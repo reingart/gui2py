@@ -217,18 +217,17 @@ class BasicDesigner:
                 if s:
                     self.pos[1] = pos[1]        # store new starting point
 
-    def mouse_up(self, evt):
-        "Release the selected object"
-        if DEBUG: print "up!"
+    def mouse_up(self, evt, wx_obj=None):
+        "Release the selected object (pass a wx_obj if the event was captured)"
         self.resizing = False
         if self.current: 
             wx_obj = self.current
             if self.parent.wx_obj.HasCapture():
                 self.parent.wx_obj.ReleaseMouse()
             self.current = None
-            if self.inspector:
-                self.inspector.inspect(wx_obj.obj)
-            if DEBUG: print "SELECTION", self.selection
+        if self.inspector and wx_obj:
+            self.inspector.inspect(wx_obj.obj)
+        if DEBUG: print "SELECTION", self.selection
 
     def key_press(self, event):
         "support cursor keys to move components one pixel at a time"
@@ -359,6 +358,9 @@ class SelectionTag(wx.Window):
             self.designer.do_resize(evt, self.owner.wx_obj, self.direction[self.index])
         elif evt.LeftUp() and self.HasCapture():
             self.ReleaseMouse()
+            # signal the designer to refresh the object (mouse_up was captured!)
+            self.designer.mouse_up(evt, self.owner.wx_obj)
+            
 
 
 class SelectionMarker:
