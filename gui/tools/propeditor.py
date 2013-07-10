@@ -26,6 +26,7 @@ class PropertyEditorPanel(wx.Panel):
     def __init__( self, parent, log ):
         wx.Panel.__init__(self, parent, wx.ID_ANY)
         self.log = log
+        self.callback = None
 
         self.panel = panel = wx.Panel(self, wx.ID_ANY)
         topsizer = wx.BoxSizer(wx.VERTICAL)
@@ -62,8 +63,9 @@ class PropertyEditorPanel(wx.Panel):
         self.SetSizer(sizer)
         self.SetAutoLayout(True)
 
-    def load_object(self, obj):
-        pg = self.pg    # get the property grid reference
+    def load_object(self, obj, callback=None):
+        pg = self.pg                    # get the property grid reference
+        self.callback = callback        # store the update method
         
         # delete all properties
         pg.Clear()
@@ -221,6 +223,8 @@ class PropertyEditorPanel(wx.Panel):
                 if DEBUG: print "changed", self.obj.name
                 kwargs = {str(name): value}
                 wx.CallAfter(self.obj.rebuild,  **kwargs)
+                if name == 'name':
+                    wx.CallAfter(self.callback, **dict(name=self.obj.name))
 
     def OnPropGridSelect(self, event):
         p = event.GetProperty()

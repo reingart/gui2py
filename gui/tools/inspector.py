@@ -123,13 +123,27 @@ class InspectorPanel(wx.Panel):
         if d:
             o = d.GetData()
             self.selected_obj = o
-            self.propeditor.load_object(o)
+            callback = lambda o=o, **kwargs: self.update(o, **kwargs)
+            self.propeditor.load_object(o, callback)
             if edit_prop:
                 wx.CallAfter(self.propeditor.edit)
             if select and self.designer:
                 self.designer.select(o)
         else:
             self.selected_obj = None
+
+    def update(self, obj, **kwargs):
+        "Update the tree item when the object name changes"
+        # search for the old name:
+        child = self.tree.FindItem(self.root, kwargs['name'])
+        if DEBUG: print "update child", child, kwargs
+        if child:
+            self.tree.ScrollTo(child)
+            self.tree.SetCurrentItem(child)
+            self.tree.SelectItem(child)
+            child.Selected = True
+            # update the new name
+            self.tree.SetItemText(child, obj.name, 0)
     
     def do_highlight(self, tlw, rect, colour, pen_width=2):
         if not self.highlighting and tlw:
