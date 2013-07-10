@@ -505,9 +505,18 @@ class Component(object):
         else:
             self.wx_obj.Show(aBoolean)
     
+    def _get_drop_target(self):
+        # dt is a special case because the original wx_obj could be destroyed
+        return hasattr(self, "_drop_target") and self._drop_target or None
+    
     def _set_drop_target(self, dt):
-        if dt:
+        # discard previous drop target, as it is associated to the old wx_obj!
+        if dt and self.drop_target == dt:
+            dt = dt.copy()                  # create a copy to avoid wx problems
+        self._drop_target = dt
+        if hasattr(self.wx_obj, "SetDropTarget"):
             self.wx_obj.SetDropTarget(dt)
+
 
     name = InitSpec(_get_name, _set_name, optional=False, _name="_name", default="", type='string')
     bgcolor = Spec(_get_bgcolor, _set_bgcolor, type='colour')
@@ -522,7 +531,7 @@ class Component(object):
     parent = Spec(lambda self: self._get_parent_name(), 
                       optional=False, default="",
                       doc="parent window (used internally)")
-    drop_target = InternalSpec(lambda self: self.wx_obj.GetDropTarget(), 
+    drop_target = InternalSpec(lambda self: self._get_drop_target(), 
                                lambda self, value: self._set_drop_target(value), 
                                doc="drag&drop handler (used in design mode)", 
                                type='internal')

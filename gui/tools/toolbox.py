@@ -216,6 +216,11 @@ class ToolBoxDropTarget(wx.PyDropTarget):
         # case we just return the suggested value given to us.
         return d  
 
+    def copy(self):
+        "Return a copy of the drop target (to avoid wx problems on rebuild)"
+        return ToolBoxDropTarget(self.dv, self.root, 
+                                 self.designer, self.inspector)
+          
 
 # Helper functions:
 
