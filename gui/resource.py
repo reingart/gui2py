@@ -40,6 +40,9 @@ def load(rsrc="", name=None, controller=None):
             mod_dict = util.get_class_module_dict(controller)
         else:
             mod_dict = util.get_caller_module_dict()
+            # do not use as controller if it was explicitly False or empty
+            if controller is None:
+                controller = mod_dict
         if util.main_is_frozen():
             # running standalone
             filename = os.path.split(mod_dict['__file__'])[1]
@@ -58,8 +61,12 @@ def load(rsrc="", name=None, controller=None):
     for win in rsrc:
         if not name or win['name'] == name:
             ret.append(build_window(win))
-    # return the first instance created:
-    return ret[0]
+    # associate event handlers
+    if ret and controller:
+        connect(ret[0], controller)        
+    # return the first instance created (if any):
+    if ret:
+        return ret[0]
 
 
 def build_window(res):
@@ -163,8 +170,9 @@ def connect(component, controller=None):
     "Associate event handlers "
     
     # get the controller functions and names (module or class)
-    if not controller:
-        controller = util.get_caller_module_dict()
+    if not controller or isinstance(controller, dict):
+        if not controller:
+            controller = util.get_caller_module_dict()
         controller_name = controller['__name__']
         controller_dict = controller
     else:
@@ -205,8 +213,4 @@ class Controller(object):
         else:
             self.component = load(rsrc, name, controller=self)
         
-        # associate event handlers
-        connect(self.component, self)
-        
-        # done
 

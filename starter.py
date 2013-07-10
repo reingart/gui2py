@@ -36,6 +36,5 @@ def on_mypanel_mybutton_click(etv):
 
 if __name__ == '__main__':
     window = gui.load()
-    gui.connect(window)
     gui.main_loop()
 
