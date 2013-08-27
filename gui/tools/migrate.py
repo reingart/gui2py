@@ -201,7 +201,7 @@ if __name__ == '__main__':
     
     if len(sys.argv) > 1:
         # use the provided resource file:
-        rsrc = gui.load(sys.argv[1])
+        rsrc = gui.parse(sys.argv[1])
     else:    
         # use a test resource file (see minimal.rsrc.py sample):
         rsrc = {'application': { 
