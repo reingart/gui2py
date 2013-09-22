@@ -14,6 +14,10 @@ import datetime     # base imports, used by some controls and event handlers
 import decimal
 import time
 
+# set default locale to handle correctly numeric format (maskedit):
+import locale
+locale.setlocale(locale.LC_ALL, "")
+
 import gui          # import gui2py package (shortcuts)
 
 # --- here goes your event handlers ---

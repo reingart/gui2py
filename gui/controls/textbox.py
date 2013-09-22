@@ -275,6 +275,9 @@ class wx_masked_NumCtrl(masked.NumCtrl):
         kwargs['useFixedWidthFont'] = False
         kwargs['groupChar'] = lc['mon_thousands_sep'] or ','
         kwargs['decimalChar'] = lc['decimal_point'] or '.'
+        # fix non-breaking space 0xa0 thousands sep in French_France.1252 (win)
+        if isinstance(kwargs['groupChar'], str):
+            kwargs['groupChar'] = kwargs['groupChar'].decode("latin1", "replace")
         mask = kwargs['mask']
         del kwargs['mask']
         if '.' not in mask:
