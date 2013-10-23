@@ -154,9 +154,7 @@ def dump(obj):
             ret[k] = v 
             
     for ctl in obj:
-        if ret['type'] == 'MenuBar':
-            ret['menubar'] = dump(ctl)
-        elif ret['type'] in registry.MENU:
+        if ret['type'] in registry.MENU:
             ret.setdefault('items', []).append(dump(ctl))
         else:
             res = dump(ctl)
