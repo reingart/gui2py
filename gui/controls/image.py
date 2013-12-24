@@ -20,7 +20,7 @@ USE_GENERIC = False ## wx.Platform == '__WXGTK__'
 
 if USE_GENERIC:
     from wx.lib.statbmp import GenStaticBitmap as StaticBitmap
-elif wx.VERSION >= (2, 9, 5):
+elif wx.VERSION >= (2, 9, 5) and wx.VERSION < (3, 0, 0):
     # WORKAROUND for Phoenix: bitmap -> label
     class StaticBitmap(wx.StaticBitmap):
         def __init__(self, *args, **kwargs):
@@ -68,8 +68,7 @@ class Image(Control):
         
         if self._bitmap:
             kwargs['bitmap'] = self._bitmap.get_bits()
-
-        #del kwargs['label']
+               
         Control.__init__(
             self,
             parent,
