@@ -102,7 +102,7 @@ class GridView(Control):
 
 
 # Avoid deprecation warning (and TypeError) in WX Phoenix
-if wx.VERSION < (2, 9, 5):
+if wx.VERSION < (2, 9, 5) or wx.VERSION >= (3, 0 , 0):
     GridTableBase = gridlib.PyGridTableBase
 else:
     GridTableBase = gridlib.GridTableBase
