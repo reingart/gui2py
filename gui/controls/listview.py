@@ -337,7 +337,7 @@ class ListModel(dict):
             if not isinstance(text, basestring):
                 text = col.represent(text)
             if col.index == 0:
-                if wx.VERSION < (2, 9, 5):
+                if wx.VERSION < (2, 9, 5) or wx.VERSION >= (3, 0, 0):
                     self._list_view.wx_obj.InsertStringItem(index, text)
                 else:
                     self._list_view.wx_obj.InsertItem(index, text)
