@@ -315,7 +315,7 @@ class wx_masked_NumCtrl(masked.NumCtrl):
 
 # WORKAROUND as Phoenix moved datetime picker
 # (could be useful for WXMAC or similar):
-if wx.VERSION < (2, 9, 5) or wx.VERSION >= (3, 0, 0):
+if wx.VERSION < (2, 9, 5) or not 'phoenix' in wx.version():
     DatePickerCtrl = wx.DatePickerCtrl
     DP_STYLE = wx.DP_DROPDOWN | wx.DP_SHOWCENTURY | wx.DP_ALLOWNONE | wx.DP_DEFAULT
 else:
