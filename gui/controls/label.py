@@ -22,8 +22,8 @@ class Label(Control):
     _style = wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS
     _image = images.label
 
-    def __init__(self, *args, **kwargs):
-        Control.__init__(self, *args, **kwargs)
+    def __init__(self, parent=False, *args, **kwargs):
+        Control.__init__(self, parent, *args, **kwargs)
         if self.transparent and "__WXMSW__" in wx.Platform:
             # on windows, avoid solid background ("transparent")
             self.wx_obj.Bind(wx.EVT_PAINT, self.__on_paint)
