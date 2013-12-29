@@ -205,7 +205,9 @@ def connect(component, controller=None):
                                     (name, controller_name, fn))
         # check if the control supports the event:
         if event_name in PYTHONCARD_EVENT_MAP:
-            event_name = PYTHONCARD_EVENT_MAP[event_name]
+            new_name = PYTHONCARD_EVENT_MAP[event_name]
+            print "WARNING: %s should be %s (%s)" % (event_name, new_name, fn)
+            event_name = new_name
         if not hasattr(obj, event_name):
             raise NameError("'%s' event not valid (%s.%s)" % 
                                 (event_name, controller_name, fn))
