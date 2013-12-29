@@ -15,6 +15,8 @@ import os
 import pprint
 from . import util
 
+PYTHONCARD_EVENT_MAP = {'onselect': 'onclick', 'onmouseClick': 'onmouseclick', 
+    'oninitialize': 'onload'}
 
 def parse(filename=""):
     "Open, read and eval the resource from the source file"
@@ -202,6 +204,8 @@ def connect(component, controller=None):
                 raise NameError("'%s' component not found (%s.%s)" % 
                                     (name, controller_name, fn))
         # check if the control supports the event:
+        if event_name in PYTHONCARD_EVENT_MAP:
+            event_name = PYTHONCARD_EVENT_MAP[event_name]
         if not hasattr(obj, event_name):
             raise NameError("'%s' event not valid (%s.%s)" % 
                                 (event_name, controller_name, fn))
