@@ -190,6 +190,15 @@ def connect(component, controller=None):
             try:
                 obj = obj[name]
             except KeyError:
+                obj = None
+                break
+        if not obj:
+            from .component import COMPONENTS
+            for key, obj in COMPONENTS.items():
+                if obj.name == name:
+                    print "WARNING: %s should be %s" % (name, key.replace(".", "_"))
+                    break
+            else:
                 raise NameError("'%s' component not found (%s.%s)" % 
                                     (name, controller_name, fn))
         # check if the control supports the event:
