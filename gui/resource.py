@@ -17,6 +17,7 @@ from . import util
 
 PYTHONCARD_EVENT_MAP = {'onselect': 'onclick', 'onmouseClick': 'onmouseclick', 
     'oninitialize': 'onload'}
+PYTHONCARD_PROPERTY_MAP = {'text': 'value', 'stringSelection': 'string_selection'}
 
 def parse(filename=""):
     "Open, read and eval the resource from the source file"
@@ -215,6 +216,35 @@ def connect(component, controller=None):
         setattr(obj, event_name, controller_dict[fn])
 
 
+class PythonCardWrapper(object):
+    "Translator between PythonCard and gui2py attributes names"
+
+    def __init__(self, obj):
+        object.__setattr__(self, 'obj', obj)
+
+    def convert(self, name):
+        "translate gui2py attribute name from pythoncard legacy code"
+        new_name = PYTHONCARD_PROPERTY_MAP.get(name)
+        if new_name:
+            print "WARNING: property %s should be %s (%s)" % (name, new_name, self.obj.name)
+            return new_name
+        else:
+            return name
+
+    def __getattr__(self, name):
+        obj = object.__getattribute__(self, "obj")   # avoid recursion!
+        print "getting %s.%s" % (obj.name, name)
+        name = self.convert(name)
+        return getattr(obj, name)
+
+    def __setattr__(self, name, value):
+        obj = object.__getattribute__(self, "obj")   # avoid recursion!
+        print "setting %s.%s = %s" % (obj.name, name, repr(value))
+        name = self.convert(name)
+        getattr(obj, name)   # check that the attribute actually exists!
+        return setattr(obj, name, value)    # then set the new value
+
+
 class Controller(object):
     "Default controller (loads resource and bind events)"
     
@@ -227,5 +257,10 @@ class Controller(object):
             self.component = load(rsrc=rsrc, controller=self)
         else:
             self.component = load(rsrc, name, controller=self)
-        
+
+    def __getattr__(self, name):            
+        return PythonCardWrapper(self.component[name])
+
+    # allow access self.components.btnName
+    components = property(lambda self: self)
 
