@@ -864,7 +864,7 @@ class ControlSuper(Component, DesignerMixin):
                                                   wx.EVT_MIDDLE_DOWN, 
                                                   wx.EVT_RIGHT_DOWN), 
                                         kind=MouseEvent)
-    onmouseclick = EventSpec('mousedclick', binding=(wx.EVT_LEFT_DCLICK, 
+    onmousedclick = EventSpec('mousedclick', binding=(wx.EVT_LEFT_DCLICK, 
                                                   wx.EVT_MIDDLE_DCLICK,
                                                   wx.EVT_RIGHT_DCLICK),
                                          kind=MouseEvent)
