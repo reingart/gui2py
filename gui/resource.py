@@ -233,16 +233,18 @@ class PythonCardWrapper(object):
 
     def __getattr__(self, name):
         obj = object.__getattribute__(self, "obj")   # avoid recursion!
-        print "getting %s.%s" % (obj.name, name)
         name = self.convert(name)
         return getattr(obj, name)
 
     def __setattr__(self, name, value):
         obj = object.__getattribute__(self, "obj")   # avoid recursion!
-        print "setting %s.%s = %s" % (obj.name, name, repr(value))
         name = self.convert(name)
-        getattr(obj, name)   # check that the attribute actually exists!
-        return setattr(obj, name, value)    # then set the new value
+        getattr(obj, name)          # check that the attribute actually exists!
+        setattr(obj, name, value)   # then set the new value
+
+    def __setitem__(self, name, value):
+        obj = object.__getattribute__(self, "obj")   # avoid recursion!
+        obj[name] = value
 
 
 class Controller(object):
