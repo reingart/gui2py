@@ -15,7 +15,7 @@ import os
 import pprint
 from . import util
 
-PYTHONCARD_EVENT_MAP = {'onselect': 'onclick', 'onmouseClick': 'onmouseclick', 
+PYTHONCARD_EVENT_MAP = {'onselect': 'onclick', 'onmouseClick': 'onmousedown', 
     'oninitialize': 'onload'}
 PYTHONCARD_PROPERTY_MAP = {'text': 'value', 'stringSelection': 'string_selection'}
 
