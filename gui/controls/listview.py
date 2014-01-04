@@ -113,7 +113,7 @@ class ListView(Control):
 
     def clear(self):
         self._items.clear()
-
+    
     def get_count(self):
         "Get the item (row) count"
         return self.wx_obj.GetItemCount()
@@ -175,6 +175,13 @@ class ListView(Control):
         # return it in the same order as inserted in the ListCtrl
         headers = [ctrl for ctrl in self if isinstance(ctrl, ListColumn)]
         return sorted(headers, key=lambda ch: ch.index)
+
+    def clear_all(self):
+        "Remove all items and column headings"
+        self.clear()
+        for ch in reversed(self.columns):
+            del self[ch.name]
+        #self.wx_obj.ClearAll()
 
     view = StyleSpec({'report': wx.LC_REPORT,
                       'list': wx.LC_LIST,
@@ -246,10 +253,21 @@ class ListColumn(SubComponent):
                                          self.width)
         self._created = True    # enable setattr hook
 
+    def __del__(self):
+        "Hook to remove the column from the wx ListCtrl when deleted" 
+        if self.index is not None:
+            # remove the column from the list ctr
+            self._parent.wx_obj.DeleteColumn(self.index)
+            self.index = None
+            # renumerate index
+            for ctrl in reversed(self._parent.columns):
+                if ctrl.index > self.index:
+                    ctrl.index = ctrl.index - 1
+
     def __setattr__(self, name, value):
         "Hook to update the column information in wx"
         object.__setattr__(self, name, value)
-        if name not in ("_parent", "_created") and self._created:
+        if name not in ("_parent", "_created") and self._created and self.index is not None:
             # get the internal column info (a.k.a. wx.ListItem)
             info = self._parent.wx_obj.GetColumn(self.index)
             if name == "_text":
