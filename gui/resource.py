@@ -13,6 +13,7 @@ __license__ = "LGPL 3.0"
 
 import os
 import pprint
+import sys
 from . import util
 
 PYTHONCARD_EVENT_MAP = {'onselect': 'onclick', 'onmouseClick': 'onclick', 
@@ -48,7 +49,11 @@ def load(rsrc="", name=None, controller=None):
                 controller = mod_dict
         if util.main_is_frozen():
             # running standalone
-            filename = os.path.split(mod_dict['__file__'])[1]
+            if '__file__' in mod_dict:
+                filename = os.path.split(mod_dict['__file__'])[1]
+            else:
+                # __main__ has not __file__ under py2exe!
+                filename = os.path.split(sys.argv[0])[-1]
             filename = os.path.join(util.get_app_dir(), filename)
         else:
             # figure out the .rsrc.py filename based on the module name
