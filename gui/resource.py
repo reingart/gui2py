@@ -87,7 +87,6 @@ def build_window(res):
     wintype = kwargs.pop('type')
     menubar = kwargs.pop('menubar', None)
     components = kwargs.pop('components')
-    panel = kwargs.pop('panel', {})
     
     from gui import registry
     import gui
@@ -95,16 +94,9 @@ def build_window(res):
     winclass = registry.WINDOWS[wintype]
     win = winclass(**kwargs)
 
-    # add an implicit panel by default (as pythoncard had)
-    if panel is not None:
-        panel['name'] = 'panel'
-        p = gui.Panel(win, **panel)
-    else:
-        p = win
-        
     if components:
         for comp in components:
-            build_component(comp, parent=p)
+            build_component(comp, parent=win)
 
     if menubar:
         mb = gui.MenuBar(name="menu", parent=win)
@@ -284,14 +276,9 @@ class Controller(object):
             self.component = load(rsrc=rsrc, controller=self)
         else:
             self.component = load(rsrc, name, controller=self)
-        # get the default panel (like pythoncard):
-        try:
-            self.panel = self.component["panel"]
-        except:
-            self.panel = self.component
-            
+
     def __getattr__(self, name):            
-        return PythonCardWrapper(self.panel[name])
+        return PythonCardWrapper(self.component[name])
 
     # allow access self.components.btnName
     components = property(lambda self: self)
