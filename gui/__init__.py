@@ -23,7 +23,7 @@ from .controls import Label, Button, TextBox, CheckBox, ListBox, ComboBox, \
                       HtmlBox, Image, Gauge, Slider, ListView, ListColumn, \
                       TreeView, Notebook, TabPanel, Panel, RadioButton, Line, \
                       GridView, GridColumn
-from .windows import Window, HtmlWindow
+from .windows import Window, HtmlWindow, Form
 from .menu import MenuBar, Menu, MenuItem, MenuItemCheckable, MenuItemSeparator
 from .statusbar import StatusBar
 
