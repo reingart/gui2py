@@ -506,7 +506,7 @@ class CustomToolTipWindow(STT.ToolTipWindow):
             ypos = bottom - size[1]
             self.SetPosition((xpos,ypos))
         else:
-            STT.ToolTipWindow.CalculateBestPosition(self)
+            STT.ToolTipWindow.CalculateBestPosition(self, widget)
 
 
 def wellcome_tip(wx_obj):
