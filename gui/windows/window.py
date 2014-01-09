@@ -238,6 +238,8 @@ class wx_FormWindow(wx.Panel):
     InitDialog = lambda self, *args, **kwargs: self._frame.InitDialog(*args, **kwargs)
     GetTitle = lambda self, *args, **kwargs: self._frame.GetTitle(*args, **kwargs)
     SetTitle = lambda self, *args, **kwargs: self._frame.SetTitle(*args, **kwargs)
+    SetSize = lambda self, *args, **kwargs: self._frame.SetSize(*args, **kwargs)
+    GetSize = lambda self, *args, **kwargs: self._frame.GetSize(*args, **kwargs)
 
     # Connect events to the wx.Frame:
     
@@ -246,7 +248,7 @@ class wx_FormWindow(wx.Panel):
 
     # set gui2py object both in the frame and panel (needed by event processing)
     
-    def get_obj(self, obj):
+    def get_obj(self):
         return self._obj
 
     def set_obj(self, obj):
