@@ -240,6 +240,9 @@ class wx_FormWindow(wx.Panel):
     SetTitle = lambda self, *args, **kwargs: self._frame.SetTitle(*args, **kwargs)
     SetSize = lambda self, *args, **kwargs: self._frame.SetSize(*args, **kwargs)
     GetSize = lambda self, *args, **kwargs: self._frame.GetSize(*args, **kwargs)
+    Close = lambda self, *args, **kwargs: self._frame.Close(*args, **kwargs)    
+    Layout = lambda self, *args, **kwargs: self._frame.Layout(*args, **kwargs)    
+    Fit = lambda self, *args, **kwargs: self._frame.Fit(*args, **kwargs)    
 
     # Connect events to the wx.Frame:
     
