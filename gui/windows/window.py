@@ -48,9 +48,7 @@ class Window(ControlSuper, ImageBackgroundMixin, SizerMixin):
         #    wx.EVT_MENU_HIGHLIGHT_ALL(self, self.menu_highlight)
 
         if parent is None:
-            tlw = self.wx_obj   
-            tlw = getattr(tlw, "_frame", tlw)  # support Form (wx.Panel in a wx.Frame)
-            self.app.SetTopWindow(tlw)
+            self.app.SetTopWindow(self.wx_obj)
 
         wx.CallAfter(self.wx_obj.InitDialog)
         wx.CallAfter(self.wx_obj.Layout)
@@ -206,66 +204,7 @@ class Window(ControlSuper, ImageBackgroundMixin, SizerMixin):
 
 Window._meta.valid_children = [ctr for ctr in registry.CONTROLS.values()
                                  if ctr._image]   # TODO: better filter
-
-
-class wx_FormWindow(wx.Panel):
-    "Class to blend a panel"
-    
-    def __init__(self, parent, *args, **kwargs):
-        self._frame = wx.Frame(parent, *args, **kwargs)
-        wx.Panel.__init__(self, self._frame, style=wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS | wx.TAB_TRAVERSAL)
-    
-    def Show(self, visible=True):
-        self._frame.Show(visible)
-        wx.Panel.Show(self, visible)
-
-    def Refresh(self):
-        self._frame.Refresh()
-        wx.Panel.Refresh(self)
-    
-    def Destroy(self):
-        wx.Panel.Destroy(self)
-        self._panel.Destroy()
-
-    # Route TopLevelWindow methods to the wx.Frame (the rest is inherited from wx.Panel)  
-
-    Maximize = lambda self, *args, **kwargs: self._frame.Maximize(*args, **kwargs)    
-    IsMaximized = lambda self, *args, **kwargs: self._frame.IsMaximized(*args, **kwargs)    
-    Iconize = lambda self, *args, **kwargs: self._frame.Iconize(*args, **kwargs)    
-    IsIconized = lambda self, *args, **kwargs: self._frame.IsIconized(*args, **kwargs)    
-    SetMenuBar = lambda self, *args, **kwargs: self._frame.SetMenuBar(*args, **kwargs)    
-    SetStatusBar = lambda self, *args, **kwargs: self._frame.SetStatusBar(*args, **kwargs)
-    InitDialog = lambda self, *args, **kwargs: self._frame.InitDialog(*args, **kwargs)
-    GetTitle = lambda self, *args, **kwargs: self._frame.GetTitle(*args, **kwargs)
-    SetTitle = lambda self, *args, **kwargs: self._frame.SetTitle(*args, **kwargs)
-    SetSize = lambda self, *args, **kwargs: self._frame.SetSize(*args, **kwargs)
-    GetSize = lambda self, *args, **kwargs: self._frame.GetSize(*args, **kwargs)
-    Close = lambda self, *args, **kwargs: self._frame.Close(*args, **kwargs)    
-    Layout = lambda self, *args, **kwargs: self._frame.Layout(*args, **kwargs)    
-    Fit = lambda self, *args, **kwargs: self._frame.Fit(*args, **kwargs)    
-
-    # Connect events to the wx.Frame:
-    
-    Bind = lambda self, *args, **kwargs: self._frame.Bind(*args, **kwargs)
-    Unbind = lambda self, *args, **kwargs: self._frame.Unbind(*args, **kwargs)
-
-    # set gui2py object both in the frame and panel (needed by event processing)
-    
-    def get_obj(self):
-        return self._obj
-
-    def set_obj(self, obj):
-        self._obj = obj
-        self._frame.obj = obj
-
-    obj = property(get_obj, set_obj)
-            
-
-class Form(Window):
-    "Window capable of handling controls and TAB traversal (like a dialog)"
-
-    _wx_class = wx_FormWindow   # just a wx.Panel inside a wx.Frame ("combined")
-
+ 
 
 if __name__ == "__main__":
     # basic test until proper unit_test

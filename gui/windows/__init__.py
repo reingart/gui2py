@@ -9,5 +9,5 @@ __license__ = "LGPL 3.0"
 
 # Window is a fork of PythonCard's model.Background
 
-from .window import Window, Form
+from .window import Window
 from .htmlwin import HtmlWindow
