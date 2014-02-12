@@ -25,6 +25,7 @@ def parse(filename=""):
     # use the provided resource file:
     s = open(filename).read()
     ##s.decode("latin1").encode("utf8")
+    import datetime, decimal
     rsrc = eval(s)
     return rsrc
 
@@ -131,7 +132,11 @@ def build_component(res, parent=None):
         comclass = registry.CONTROLS[comtype]
     elif comtype in registry.MENU:
         comclass = registry.MENU[comtype]
-    
+    elif comtype in registry.MISC:
+        comclass = registry.MISC[comtype]
+    else:
+        raise RuntimeError("%s not in registry" % comtype)
+        
     # Instantiate the GUI object
     com = comclass(parent=parent, **kwargs)
     
