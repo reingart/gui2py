@@ -97,7 +97,7 @@ def build_window(res):
     win = winclass(**kwargs)
 
     # add an implicit panel by default (as pythoncard had)
-    if panel is not None:
+    if False and panel is not None:
         panel['name'] = 'panel'
         p = gui.Panel(win, **panel)
     else:
