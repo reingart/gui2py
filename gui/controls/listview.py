@@ -353,7 +353,10 @@ class ListModel(dict):
                 continue
             text = self[key][col.name]
             if not isinstance(text, basestring):
-                text = col.represent(text)
+                if callable(col.represent):
+                    text = col.represent(text)
+                else:
+                    text = col.represent % text     # use as format
             if col.index == 0:
                 if wx.VERSION < (2, 9, 5) or 'classic' in wx.version():
                     self._list_view.wx_obj.InsertStringItem(index, text)
