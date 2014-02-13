@@ -263,7 +263,9 @@ class Component(object):
         # destroy the designer selection marker (if any)
         if hasattr(self, 'sel_marker') and self.sel_marker:
             self.sel_marker.destroy()
-
+        if hasattr(self, 'facade') and self.facade:
+            self.facade.destroy()
+            
     def duplicate(self, new_parent=None):
         "Create a new object exactly similar to self"
         kwargs = {}
@@ -538,7 +540,6 @@ class Component(object):
     index = Spec(reindex, reindex, type="integer", default=None,
                  doc="Z Order (overlapping) / Tab Order (Tabbing navigation)")
 
-   
 
 class DesignerMixin(object):
     "Designer support"
@@ -562,12 +563,42 @@ class DesignerMixin(object):
                 # link repaint event (refresh) to the designer (draw grid)
                 self.wx_obj.Bind(wx.EVT_PAINT, func, self.wx_obj)
             self._designer = func
+            self._facade = None
             for child in self:
                 child.designer = func
+
+    def snapshot(self):
+        "Capture the screen appearance of the control (to be used as facade)"
+        width, height = self.wx_obj.GetSize()
+        bmp = wx.EmptyBitmap(width, height)
+        wdc = wx.ClientDC(self.wx_obj)
+        mdc = wx.MemoryDC(bmp)
+        mdc.Blit(0, 0, width, height, wdc, 0, 0)
+        #bmp.SaveFile("test.bmp", wx.BITMAP_TYPE_BMP)
+        wdc.Destroy()
+        mdc.Destroy()
+        return bmp
+
+    def _set_facade(self, Facade):
+        if DEBUG: print "setting facade...", self._meta.name
+        if Facade:
+            self._facade = Facade(self._parent.wx_obj, name=self._meta.name,
+                                 pos=self.wx_obj.Position, 
+                                 size=self.wx_obj.Size,
+                                 obj=self,
+                                 )
+            self._facade.Bind(wx.EVT_MOUSE_EVENTS, self.designer)
+            self._facade.Show()
+
 
     designer = InternalSpec(lambda self: self._designer, 
                             lambda self, value: self._set_designer(value), 
                             doc="function to handle events in design mode", 
+                            type='internal')
+
+    facade = InternalSpec(lambda self: self._facade, 
+                            lambda self, value: self._set_facade(value), 
+                            doc="fake static superficial object in design mode", 
                             type='internal')
 
     sel_marker = InternalSpec(_name="_sel_marker",
@@ -709,6 +740,8 @@ class ControlSuper(Component, DesignerMixin):
         # update the designer selection marker (if any)
         if hasattr(self, 'sel_marker') and self.sel_marker:
             self.sel_marker.update()
+        if hasattr(self, 'facade') and self.facade:
+            self.facade.update()
 
     def _set_left(self, value):
         self._set_pos([value, None])
@@ -761,6 +794,8 @@ class ControlSuper(Component, DesignerMixin):
         # update the designer selection marker (if any)
         if hasattr(self, 'sel_marker') and self.sel_marker:
             self.sel_marker.update()
+        if hasattr(self, 'facade') and self.facade:
+            self.facade.update()
 
     def _set_width(self, value):
         if DEBUG: print "SET WIDTH", self._name, value

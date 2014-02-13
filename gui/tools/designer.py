@@ -67,6 +67,7 @@ class BasicDesigner:
                 # update the selection markers position (needed if using sizer!)
                 for obj in self.selection:
                     wx.CallAfter(obj.sel_marker.update)
+                    wx.CallAfter(obj.facade.update)
             evt.Skip()  # call the default handler
         elif evt.GetEventType() == wx.EVT_CLOSE.typeId:
             # call the external close handler (useful to save)
@@ -81,9 +82,14 @@ class BasicDesigner:
             if self.selection and not self.current:
                 # update the position on the property Editor (last selected)
                 self.inspector.inspect(self.selection[-1])
+        elif evt.GetEventType() == (wx.EVT_ENTER_WINDOW.typeId):
+            obj = getattr(evt.GetEventObject(), "obj")
+            # TODO: better workaround to detect controls that need a facade:
+            if obj.name == "date_picker" and not obj.facade and obj.parent:
+                obj.facade = Facade
         elif evt.GetEventType() == wx.EVT_LEFT_DOWN.typeId:
             # calculate time between clicks (is this a double click?)
-            if not self.timestamp or evt.Timestamp - self.timestamp > 1000 or \
+            if not self.timestamp or evt.Timestamp - self.timestamp > 300 or \
                    self.last_xy != wx.GetMousePosition():
                 # no, process normal mouse click and store obj for later dclick
                 self.mouse_down(evt)
@@ -106,6 +112,8 @@ class BasicDesigner:
             wx.CallAfter(self.inspector.inspect, 
                          getattr(evt.GetEventObject(), "obj"), True, False, 
                          wx.GetMousePosition())
+        else:
+            pass #print "UNKNOWN EVENT!", evt.GetEventType()
         # allow default behavior (set focus / tab change):
         if isinstance(evt.GetEventObject(), wx.Notebook):
             evt.Skip()
@@ -431,6 +439,53 @@ class SelectionMarker:
             for tag in self.tags: tag.Reparent(parent)
 
 
+class Facade(wx.Window):
+    "Sustitute a real control with its fake static superficial appearance"
+    # this allows capture mouse events not exposed by DatePicker, ComboBox, etc.
+
+    def __init__(self, parent, id=wx.ID_ANY, pos=wx.DefaultPosition,
+           size=wx.DefaultSize, style=0, name='fake',
+           obj=None):
+        wx.Window.__init__(self, parent, id, pos, size, style, name)
+        self.obj = obj              # original control we're mimicking
+        self.bmp = obj.snapshot()   # initial image to be shown as facade
+        self.Bind(wx.EVT_PAINT, self.on_paint)
+
+    def on_paint(self, event):
+        dc = wx.PaintDC(self)
+        width, height = self.GetSize()
+        bg = self.bmp
+        #bg = wx.EmptyBitmap(width, height)
+        #bg.LoadFile("test.bmp", wx.BITMAP_TYPE_BMP)
+        dc.DrawBitmap(bg, 0, 0)
+        if True or DEBUG:
+            # print a watermark to identify from the real object
+            font_face = self.GetFont()
+            font_color = wx.Colour(255, 0, 0)
+            dc.SetFont(font_face)
+            dc.SetTextForeground(font_color)
+            dc.DrawText("FACADE", 0, 0)
+
+    def update(self):
+        "Adjust facade with the dimensions of the original object (and repaint)"
+        x, y = self.obj.wx_obj.GetPosition()
+        w, h = self.obj.wx_obj.GetSize()
+        self.Move((x, y))
+        self.SetSize((w, h))
+        self.Hide()
+        # allow original control to repaint before taking the new snapshot image:
+        wx.CallAfter(self.refresh)
+
+    def refresh(self):
+        "Capture the new control superficial image after an update"
+        self.bmp = self.obj.snapshot()
+        self.Show()
+        self.Refresh()
+
+    def destroy(self):
+        self.Destroy()
+
+
 def save(evt, designer):
     "Basic save functionality: just replaces the gui code"
 
@@ -621,6 +676,9 @@ if __name__ == '__main__':
 
         f1.Show()
         f2.Show()
+
+        ##import wx.lib.inspection
+        ##wx.lib.inspection.InspectionTool().Show()
         
         app.MainLoop()
     else:
