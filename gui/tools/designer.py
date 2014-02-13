@@ -85,7 +85,7 @@ class BasicDesigner:
         elif evt.GetEventType() == (wx.EVT_ENTER_WINDOW.typeId):
             obj = getattr(evt.GetEventObject(), "obj")
             # TODO: better workaround to detect controls that need a facade:
-            if obj.name == "date_picker" and not obj.facade and obj.parent:
+            if obj.name in ("date_picker", "cboTest") and not obj.facade and obj.parent:
                 obj.facade = Facade
         elif evt.GetEventType() == wx.EVT_LEFT_DOWN.typeId:
             # calculate time between clicks (is this a double click?)
@@ -444,41 +444,45 @@ class Facade(wx.Window):
     # this allows capture mouse events not exposed by DatePicker, ComboBox, etc.
 
     def __init__(self, parent, id=wx.ID_ANY, pos=wx.DefaultPosition,
-           size=wx.DefaultSize, style=0, name='fake',
+           size=wx.Size(0, 0), style=0, name='fake',
            obj=None):
         wx.Window.__init__(self, parent, id, pos, size, style, name)
         self.obj = obj              # original control we're mimicking
-        self.bmp = obj.snapshot()   # initial image to be shown as facade
+        self.bmp = None             # initial image to be shown as facade
+        self.Hide()
         self.Bind(wx.EVT_PAINT, self.on_paint)
+        wx.CallAfter(self.update)        
 
     def on_paint(self, event):
-        dc = wx.PaintDC(self)
-        width, height = self.GetSize()
-        bg = self.bmp
-        #bg = wx.EmptyBitmap(width, height)
-        #bg.LoadFile("test.bmp", wx.BITMAP_TYPE_BMP)
-        dc.DrawBitmap(bg, 0, 0)
-        if True or DEBUG:
-            # print a watermark to identify from the real object
-            font_face = self.GetFont()
-            font_color = wx.Colour(255, 0, 0)
-            dc.SetFont(font_face)
-            dc.SetTextForeground(font_color)
-            dc.DrawText("FACADE", 0, 0)
+        if self.bmp:
+            dc = wx.PaintDC(self)
+            width, height = self.GetSize()
+            bg = self.bmp
+            #bg = wx.EmptyBitmap(width, height)
+            #bg.LoadFile("test.bmp", wx.BITMAP_TYPE_BMP)
+            dc.DrawBitmap(bg, 0, 0)
+            if True or DEBUG:
+                # print a watermark to identify from the real object
+                font_face = self.GetFont()
+                font_color = wx.Colour(255, 0, 0)
+                dc.SetFont(font_face)
+                dc.SetTextForeground(font_color)
+                dc.DrawText("FACADE", 0, 0)
 
     def update(self):
         "Adjust facade with the dimensions of the original object (and repaint)"
         x, y = self.obj.wx_obj.GetPosition()
         w, h = self.obj.wx_obj.GetSize()
+        self.Hide()
         self.Move((x, y))
         self.SetSize((w, h))
-        self.Hide()
         # allow original control to repaint before taking the new snapshot image:
-        wx.CallAfter(self.refresh)
+        wx.CallLater(200, self.refresh)
 
     def refresh(self):
         "Capture the new control superficial image after an update"
         self.bmp = self.obj.snapshot()
+        self.Raise()
         self.Show()
         self.Refresh()
 

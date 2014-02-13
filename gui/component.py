@@ -582,11 +582,7 @@ class DesignerMixin(object):
     def _set_facade(self, Facade):
         if DEBUG: print "setting facade...", self._meta.name
         if Facade:
-            self._facade = Facade(self._parent.wx_obj, name=self._meta.name,
-                                 pos=self.wx_obj.Position, 
-                                 size=self.wx_obj.Size,
-                                 obj=self,
-                                 )
+            self._facade = Facade(self._parent.wx_obj, obj=self, )
             self._facade.Bind(wx.EVT_MOUSE_EVENTS, self.designer)
             self._facade.Show()
 
