@@ -85,7 +85,7 @@ class BasicDesigner:
         elif evt.GetEventType() == (wx.EVT_ENTER_WINDOW.typeId):
             obj = getattr(evt.GetEventObject(), "obj")
             # TODO: better workaround to detect controls that need a facade:
-            if obj.name in ("date_picker", "cboTest") and not obj.facade and obj.parent:
+            if obj._meta.name in ("DatePicker", "ComboBox") and not obj.facade and obj.parent:
                 obj.facade = Facade
         elif evt.GetEventType() == wx.EVT_LEFT_DOWN.typeId:
             # calculate time between clicks (is this a double click?)
@@ -482,11 +482,13 @@ class Facade(wx.Window):
     def refresh(self):
         "Capture the new control superficial image after an update"
         self.bmp = self.obj.snapshot()
+        # change z-order to overlap controls (windows) and show the image:
         self.Raise()
         self.Show()
         self.Refresh()
 
     def destroy(self):
+        self.Hide()
         self.Destroy()
 
 

@@ -563,7 +563,6 @@ class DesignerMixin(object):
                 # link repaint event (refresh) to the designer (draw grid)
                 self.wx_obj.Bind(wx.EVT_PAINT, func, self.wx_obj)
             self._designer = func
-            self._facade = None
             for child in self:
                 child.designer = func
 
@@ -581,10 +580,14 @@ class DesignerMixin(object):
 
     def _set_facade(self, Facade):
         if DEBUG: print "setting facade...", self._meta.name
+        if hasattr(self, "_facade") and self._facade:
+            self._facade.destroy()
         if Facade:
             self._facade = Facade(self._parent.wx_obj, obj=self, )
             self._facade.Bind(wx.EVT_MOUSE_EVENTS, self.designer)
             self._facade.Show()
+        else:
+            self._facade = None
 
 
     designer = InternalSpec(lambda self: self._designer, 
