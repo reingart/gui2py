@@ -574,13 +574,16 @@ class DesignerMixin(object):
         wdc = wx.ClientDC(self.wx_obj)
         mdc = wx.MemoryDC(bmp)
         mdc.Blit(0, 0, width, height, wdc, 0, 0)
-        #bmp.SaveFile("test.bmp", wx.BITMAP_TYPE_BMP)
+        bmp.SaveFile("test.bmp", wx.BITMAP_TYPE_BMP)
         wdc.Destroy()
         mdc.Destroy()
         return bmp
 
     def _set_facade(self, Facade):
         if DEBUG: print "setting facade...", self._meta.name
+        if hasattr(self, "_facade") and self._facade:
+            self._facade.destroy()
+            self._facade = None   
         if Facade:
             self._facade = Facade(self._parent.wx_obj, name=self._meta.name,
                                  pos=self.wx_obj.Position, 
