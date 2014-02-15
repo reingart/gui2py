@@ -66,7 +66,8 @@ class BasicDesigner:
                 # update the selection markers position (needed if using sizer!)
                 for obj in self.selection:
                     wx.CallAfter(obj.sel_marker.update)
-                    wx.CallAfter(obj.facade.update)
+                    if obj.facade:
+                        wx.CallAfter(obj.facade.update)
             evt.Skip()  # call the default handler
         elif evt.GetEventType() == wx.EVT_CLOSE.typeId:
             # call the external close handler (useful to save)
