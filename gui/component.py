@@ -516,8 +516,9 @@ class Component(object):
         # discard previous drop target, as it is associated to the old wx_obj!
         if dt and self.drop_target == dt:
             dt = dt.copy()                  # create a copy to avoid wx problems
+        old_dt = getattr(self, "_drop_target", None)    
         self._drop_target = dt
-        if hasattr(self.wx_obj, "SetDropTarget"):
+        if old_dt and hasattr(self.wx_obj, "SetDropTarget"):
             self.wx_obj.SetDropTarget(dt)
 
 
