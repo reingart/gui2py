@@ -12,6 +12,7 @@ __license__ = "LGPL 3.0"
 import wx
 import wx.lib.agw.supertooltip as STT
 from .. import images
+from ..component import Control
 
 DEBUG = False
 
@@ -266,21 +267,23 @@ class BasicDesigner:
                 self.parent.wx_obj.ReleaseMouse()
             self.current = None
             if self.overlay:
-                # finish the multiple selection using the mouse:
-                rect = wx.RectPP(self.pos, evt.GetPosition())
-                for obj in wx_obj.obj:
-                    obj_rect = obj.wx_obj.GetRect()
-                    if rect.ContainsRect(obj_rect):
-                        self.select(obj, keep_selection=True)
-                self.pos = None 
                 # When the mouse is released we reset the overlay and it 
                 # restores the former content to the window. 
                 dc = wx.ClientDC(wx_obj)
                 odc = wx.DCOverlay(self.overlay, dc)
                 odc.Clear()
                 del odc
-                self.overlay.Reset()
+                self.overlay.Reset()                
                 self.overlay = None
+                # finish the multiple selection using the mouse:
+                rect = wx.RectPP(self.pos, evt.GetPosition())
+                for obj in wx_obj.obj:
+                    # only check child controls (not menubar/statusbar)
+                    if isinstance(obj, Control):
+                        obj_rect = obj.wx_obj.GetRect()
+                        if rect.ContainsRect(obj_rect):
+                            self.select(obj, keep_selection=True)
+                self.pos = None 
 
         if self.inspector and wx_obj:
             self.inspector.inspect(wx_obj.obj)
