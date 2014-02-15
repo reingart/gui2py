@@ -37,6 +37,7 @@ class BasicDesigner:
         self.onclose = None
         self.timestamp = None       # used to track double clicks on MSW
         self.last_xy = None         # last clicked position
+        self.overlay = None         # wx.Overlay to draw a rubberband effect
 
     def __call__(self, evt):
         "Handler for EVT_MOUSE_EVENTS (binded in design mode)"
@@ -134,12 +135,18 @@ class BasicDesigner:
 
         if wx_obj.Parent is None:
             evt.Skip()
+            # start the rubberband effect (multiple selection using the mouse) 
+            self.current = wx_obj
+            self.overlay = wx.Overlay()
+            self.pos = evt.GetPosition() 
+            self.parent.wx_obj.CaptureMouse()
             #if self.inspector and hasattr(wx_obj, "obj"):
             #    self.inspector.inspect(wx_obj.obj)  # inspect top level window
             #self.dclick = False
         else:
             # create the selection marker and assign it to the control
             obj = wx_obj.obj
+            self.overlay = None
             if DEBUG: print wx_obj
             sx, sy = wx_obj.ScreenToClient(wx_obj.GetPositionTuple())
             dx, dy = wx_obj.ScreenToClient(wx.GetMousePosition())
@@ -156,7 +163,7 @@ class BasicDesigner:
     def mouse_move(self, evt):
         "Move the selected object"
         if DEBUG: print "move!"
-        if self.current:
+        if self.current and not self.overlay:
             wx_obj = self.current
             sx, sy = self.start
             x, y = wx.GetMousePosition()
@@ -174,6 +181,23 @@ class BasicDesigner:
                 x = x + dx
                 y = y + dy
                 obj.pos = (wx.Point(x, y))
+        elif self.overlay:
+            wx_obj = self.current
+            rect = wx.RectPP(self.pos, evt.GetPosition()) 
+            # Draw the rubber-band rectangle using an overlay so it 
+            # will manage keeping the rectangle and the former window 
+            # contents separate. 
+            dc = wx.ClientDC(wx_obj) 
+            odc = wx.DCOverlay(self.overlay, dc) 
+            odc.Clear() 
+            dc.SetPen(wx.Pen("blue", 2)) 
+            if 'wxMac' in wx.PlatformInfo: 
+                dc.SetBrush(wx.Brush(wx.Colour(0xC0, 0xC0, 0xC0, 0x80))) 
+            else: 
+                dc.SetBrush(wx.TRANSPARENT_BRUSH) 
+            dc.DrawRectangleRect(rect)
+            del odc # work around a bug in the Python wrappers to make 
+                    # sure the odc is destroyed before the dc is. 
 
     def do_resize(self, evt, wx_obj, (n, w, s, e)):
         "Called by SelectionTag"
@@ -241,6 +265,23 @@ class BasicDesigner:
             if self.parent.wx_obj.HasCapture():
                 self.parent.wx_obj.ReleaseMouse()
             self.current = None
+            if self.overlay:
+                # finish the multiple selection using the mouse:
+                rect = wx.RectPP(self.pos, evt.GetPosition())
+                for obj in wx_obj.obj:
+                    obj_rect = obj.wx_obj.GetRect()
+                    if rect.ContainsRect(obj_rect):
+                        self.select(obj, keep_selection=True)
+                self.pos = None 
+                # When the mouse is released we reset the overlay and it 
+                # restores the former content to the window. 
+                dc = wx.ClientDC(wx_obj)
+                odc = wx.DCOverlay(self.overlay, dc)
+                odc.Clear()
+                del odc
+                self.overlay.Reset()
+                self.overlay = None
+
         if self.inspector and wx_obj:
             self.inspector.inspect(wx_obj.obj)
         if DEBUG: print "SELECTION", self.selection
