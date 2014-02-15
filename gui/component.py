@@ -590,6 +590,11 @@ class DesignerMixin(object):
         else:
             self._facade = None
 
+    def rebuild(self, **kwargs):
+        super(DesignerMixin, self).rebuild(**kwargs)
+        # refresh the fake image screenshot (if used as facade):
+        if self._meta.facade and self.facade:
+            self.facade.update()
 
     designer = InternalSpec(lambda self: self._designer, 
                             lambda self, value: self._set_designer(value), 
@@ -653,7 +658,7 @@ class SizerMixin(object):
 
 
    
-class ControlSuper(Component, DesignerMixin):
+class ControlSuper(DesignerMixin, Component):
     "This is the base class for a control and top level windows"
 
     # A control is generally a small window which processes user input and/or 
