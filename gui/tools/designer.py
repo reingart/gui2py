@@ -159,12 +159,20 @@ class BasicDesigner:
             wx_obj = self.current
             sx, sy = self.start
             x, y = wx.GetMousePosition()
-            # update gui specs (this will overwrite relative dimensions):
+            # calculate the new position (this will overwrite relative dimensions):
             x, y = (x + sx, y + sy)
             if evt.ShiftDown():     # snap to grid:
                 x = x / GRID_SIZE[0] * GRID_SIZE[0]
                 y = y / GRID_SIZE[1] * GRID_SIZE[1]
-            wx_obj.obj.pos = (wx.Point(x, y))
+            # calculate the diff to use in the rest of the selected objects:
+            ox, oy = wx_obj.obj.pos
+            dx, dy = (x - ox), (y - oy)
+            # move all selected objects:
+            for obj in self.selection:
+                x, y = obj.pos
+                x = x + dx
+                y = y + dy
+                obj.pos = (wx.Point(x, y))
 
     def do_resize(self, evt, wx_obj, (n, w, s, e)):
         "Called by SelectionTag"
