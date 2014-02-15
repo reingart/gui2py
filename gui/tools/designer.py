@@ -13,7 +13,6 @@ import wx
 import wx.lib.agw.supertooltip as STT
 from .. import images
 
-
 DEBUG = False
 
 GRID_SIZE = (10, 10)
@@ -84,8 +83,8 @@ class BasicDesigner:
                 self.inspector.inspect(self.selection[-1])
         elif evt.GetEventType() == (wx.EVT_ENTER_WINDOW.typeId):
             obj = getattr(evt.GetEventObject(), "obj")
-            # TODO: better workaround to detect controls that need a facade:
-            if obj._meta.name in ("DatePicker", "ComboBox") and not obj.facade and obj.parent:
+            # check if the control should be replaced with a "facade" fake image:
+            if obj._meta.facade and not obj.facade and obj.parent:
                 obj.facade = Facade
         elif evt.GetEventType() == wx.EVT_LEFT_DOWN.typeId:
             # calculate time between clicks (is this a double click?)

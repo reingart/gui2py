@@ -41,6 +41,7 @@ class ComponentMeta():
         self.name = name
         self.specs = specs
         self.valid_children = []
+        self.facade = False         # enable facade (fake screenshot ) at design
 
     
 class ComponentBase(type):

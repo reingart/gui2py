@@ -389,6 +389,10 @@ else:
                 # TODO: better exception handling
                 print e
 
+
+# On Linux DatePickerCtrl cannot be clicked, so enable facade fake screenshot image (designer):
+TextBox._meta.facade = True 
+
     
 if __name__ == "__main__":
     import sys

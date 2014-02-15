@@ -35,6 +35,10 @@ class ComboBox(ItemContainerControl):
     onchange = EventSpec('change', binding=wx.EVT_TEXT, kind=FormEvent)
 
 
+# On Windows ComboBox cannot be clicked, so enable facade fake screenshot image (designer):
+ComboBox._meta.facade = True 
+
+
 if __name__ == "__main__":
     import sys
     # basic test until unit_test
