@@ -518,7 +518,7 @@ class Component(object):
             dt = dt.copy()                  # create a copy to avoid wx problems
         old_dt = getattr(self, "_drop_target", None)    
         self._drop_target = dt
-        if old_dt and hasattr(self.wx_obj, "SetDropTarget"):
+        if (old_dt or dt) and hasattr(self.wx_obj, "SetDropTarget"):
             self.wx_obj.SetDropTarget(dt)
 
 
