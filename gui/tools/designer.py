@@ -316,7 +316,8 @@ class BasicDesigner:
             if not obj.sel_marker:
                 obj.sel_marker = SelectionMarker(obj)
                 obj.sel_marker.show(True)
-            self.selection.append(obj)
+            if obj not in self.selection:
+                self.selection.append(obj)
 
     def draw_grid(self, event):
         wx_obj = event.GetEventObject()
