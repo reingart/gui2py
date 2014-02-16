@@ -123,7 +123,7 @@ class BasicDesigner:
     def mouse_down(self, evt): 
         "Get the selected object and store start position"
         if DEBUG: print "down!"
-        if not evt.ControlDown() and not evt.ShiftDown():
+        if (not evt.ControlDown() and not evt.ShiftDown()) or evt.AltDown():
             for obj in self.selection:
                 # clear marker
                 if obj.sel_marker:
@@ -134,8 +134,9 @@ class BasicDesigner:
 
         wx_obj = evt.GetEventObject()
 
-        if wx_obj.Parent is None:
-            evt.Skip()
+        if wx_obj.Parent is None or evt.AltDown():
+            if not evt.AltDown():
+                evt.Skip()
             # start the rubberband effect (multiple selection using the mouse) 
             self.current = wx_obj
             self.overlay = wx.Overlay()
@@ -184,7 +185,12 @@ class BasicDesigner:
                 obj.pos = (wx.Point(x, y))
         elif self.overlay:
             wx_obj = self.current
-            rect = wx.RectPP(self.pos, evt.GetPosition()) 
+            pos = evt.GetPosition()
+            # convert to relative client coordinates of the containter:
+            if evt.GetEventObject() != wx_obj:
+                pos = evt.GetEventObject().ClientToScreen(pos)  # frame
+                pos = wx_obj.ScreenToClient(pos)                # panel
+            rect = wx.RectPP(self.pos, pos) 
             # Draw the rubber-band rectangle using an overlay so it 
             # will manage keeping the rectangle and the former window 
             # contents separate. 
@@ -275,8 +281,13 @@ class BasicDesigner:
                 del odc
                 self.overlay.Reset()                
                 self.overlay = None
+                pos = evt.GetPosition()
+                # convert to relative client coordinates of the containter:
+                if evt.GetEventObject() != wx_obj:
+                    pos = evt.GetEventObject().ClientToScreen(pos)  # frame
+                    pos = wx_obj.ScreenToClient(pos)                # panel
                 # finish the multiple selection using the mouse:
-                rect = wx.RectPP(self.pos, evt.GetPosition())
+                rect = wx.RectPP(self.pos, pos)
                 for obj in wx_obj.obj:
                     # only check child controls (not menubar/statusbar)
                     if isinstance(obj, Control):
