@@ -87,6 +87,7 @@ class Panel(Control, ImageBackgroundMixin, SizerMixin):
 
 Panel._meta.valid_children = [ctr for ctr in registry.CONTROLS.values()
                                  if ctr._image]   # TODO: better filter
+Panel._meta.container = True
  
 
 if __name__ == "__main__":

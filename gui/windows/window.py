@@ -204,6 +204,7 @@ class Window(ControlSuper, ImageBackgroundMixin, SizerMixin):
 
 Window._meta.valid_children = [ctr for ctr in registry.CONTROLS.values()
                                  if ctr._image]   # TODO: better filter
+Window._meta.container = True
  
 
 if __name__ == "__main__":

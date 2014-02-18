@@ -42,6 +42,7 @@ class ComponentMeta():
         self.specs = specs
         self.valid_children = []
         self.facade = False         # enable facade (fake screenshot ) at design
+        self.container = False      # True if can contain controls
 
     
 class ComponentBase(type):

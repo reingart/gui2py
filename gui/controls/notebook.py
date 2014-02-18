@@ -116,6 +116,7 @@ class TabPanel(Component, DesignerMixin):
 Notebook._meta.valid_children = [TabPanel]
 TabPanel._meta.valid_children = [ctr for ctr in registry.CONTROLS.values()
                                  if ctr._image]   # TODO: better filter
+TabPanel._meta.container = True
  
 
 if __name__ == "__main__":

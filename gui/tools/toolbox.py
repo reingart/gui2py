@@ -80,7 +80,7 @@ class ToolBox(aui.AuiToolBar):
                        name="%s_%s" % (ctrl._meta.name.lower(), wx.NewId()), 
                        pos=(0, 0), designer=self.designer)
             # associate the object with the toolbox:
-            if isinstance(obj, (gui.Panel, gui.TabPanel, gui.Window)):
+            if obj._meta.container:
                 dt = ToolBoxDropTarget(obj, self.inspector.root_obj, 
                                        designer=self.designer, 
                                        inspector=self.inspector)
@@ -205,7 +205,7 @@ class ToolBoxDropTarget(wx.PyDropTarget):
                 self.inspector.load_object(self.root)
                 self.inspector.inspect(obj)
             # associate the object with the toolbox:
-            if isinstance(obj, (gui.Panel, gui.TabPanel, gui.Window)):
+            if obj._meta.container:
                 dt = ToolBoxDropTarget(obj, self.inspector.root_obj, 
                                        designer=self.designer, 
                                        inspector=self.inspector)
@@ -226,7 +226,7 @@ class ToolBoxDropTarget(wx.PyDropTarget):
 
 def set_drop_target(obj, root, designer, inspector):
     "Recursively create and set the drop target for obj and childs"
-    if isinstance(obj, (gui.Panel, gui.TabPanel, gui.Window)):
+    if obj._meta.container:
         dt = ToolBoxDropTarget(obj, root, designer=designer, 
                                           inspector=inspector)
         obj.drop_target = dt
