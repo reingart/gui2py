@@ -14,6 +14,7 @@ import  wx.gizmos   as  gizmos
 
 from gui import registry
 from gui.tools.propeditor import PropertyEditorPanel
+from gui.tools.toolbox import set_drop_target
 
 
 DEBUG = False
@@ -261,6 +262,9 @@ class InspectorPanel(wx.Panel):
                name="%s_%s" % (ctrl._meta.name.lower(), new_id),
                id=new_id, 
                designer=self.designer)
+        # in design mode set drag & drop target for the toolbox: 
+        if self.designer and obj._meta.container and self.obj.drop_target:
+            set_drop_target(obj, self.root_obj, self.designer, self)
         # move the new object to the mouse position of the click evt (if given)
         if mouse_pos:
             x, y = self.obj.wx_obj.ScreenToClient(mouse_pos)
