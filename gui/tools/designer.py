@@ -590,6 +590,7 @@ def save(evt, designer):
                         fout.write(newlines)
                         dump(ctl)
 
+                dumped = False
                 for line in fin:
                     if line.startswith("# --- gui2py designer generated code starts ---"):
                         fout.write(line)
@@ -598,12 +599,17 @@ def save(evt, designer):
                         fout.write(newlines)
                         dump(w)
                         fout.write(newlines)
+                        dumped = True
                         copy = False
                     if line.startswith("# --- gui2py designer generated code ends ---"):
                         copy = True
                     if copy:
                         fout.write(line)
                         #fout.write("\n\r")
+                if not dumped:
+                    gui.alert("No valid # --- gui2py... delimiters! \n"
+                              "Unable to write down design code!", 
+                              "Design not updated:")
             fout.close()
             fin.close()
         except Exception, e:
