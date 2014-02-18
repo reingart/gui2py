@@ -112,115 +112,105 @@ t0 = time.time()    # user for basic timing
 
 # --- gui2py designer generated code starts ---
 
-gui.Window(name='mywin', title='gui2py sample app', resizable=True, 
-           height='610px', left='180', top='24', width='396px', 
-           bgcolor='#E0E0E0', image='tile.bmp', tiled=True, )
-gui.Label(name='lblTest', alignment='right', transparent=True, left='38', 
-          top='37', width='48', parent='mywin', text='hello!', )
-gui.Button(label='Quit', name='btnClose', left='232', top='156', width='85', 
-           parent='mywin', onclick='exit()', )
-gui.TextBox(name='txtTest', left='100', top='31', width='152', parent='mywin', 
-            value='mariano', )
-gui.Button(label='click me!', name='btnTest', left='126', top='157', 
-           width='85', default=True, parent='mywin', )
-gui.ListBox(name='lstTest', height='96', left='277', top='28', width='103', 
-            data_selection='two', items=['one', 'two', 'tree'], 
-            parent='mywin', selection=1, string_selection='two', )
-gui.MenuBar(name='menubar', fgcolor='#000000', parent='mywin', )
-gui.Menu(name='menu_114', fgcolor='#000000', parent='mywin.menubar', )
-gui.MenuItem(help='MenuItem', id=127, name='menuitem_127', 
-             parent='mywin.menubar.menu_114', )
-gui.MenuItemCheckable(help='MenuItemCheck', id=120, label='MenuItemCheck', 
-                      name='menuitemcheckable_120', checked=True, 
-                      parent='mywin.menubar.menu_114', )
-gui.MenuItemSeparator(help='MenuItem', id=130, name='menuitemseparator_130', 
-                      parent='mywin.menubar.menu_114', )
-gui.MenuItem(help='MenuItem', id=140, name='menuitem_140', 
-             parent='mywin.menubar.menu_114', )
-gui.Menu(label='List', name='list', parent='mywin.menubar', )
-gui.MenuItem(help='Add an item to the list', id=225, label='Add item', 
-             name='add', parent='mywin.menubar.list', )
-gui.MenuItem(help='Remove the selected items in the list', id=235, 
-             label='Remove items', name='del', parent='mywin.menubar.list', )
-gui.MenuItem(help='Update a values of an entire column', id=201, 
-             label='Update items', name='update', 
-             parent='mywin.menubar.list', )
-gui.Menu(label='Grid', name='grid', parent='mywin.menubar', )
-gui.MenuItem(help='Add a row to the grid', label='Add item', name='add', 
-             parent='mywin.menubar.grid', )
-gui.MenuItem(help='Remove the selected rows in the grid', 
-             label='Remove rows', name='del', parent='mywin.menubar.grid', )
-gui.MenuItem(help='Update the rows in the grid', label='Update items', 
-             name='update', parent='mywin.menubar.grid', )
-gui.MenuItem(help='Remove all the rows in the grid', label='Clear', 
-             name='clear', parent='mywin.menubar.grid', )
-gui.Gauge(name='gauge', height='18', left='13', top='130', width='367', 
-          parent='mywin', value=50, )
-gui.StatusBar(name='statusbar', parent='mywin', )
-gui.ListView(name='listview', height='99', left='23', top='211', width='192', 
-             item_count=27, parent='mywin', sort_column=0, 
-             onitemselected="print ('sel %s' % event.target.get_selected_items())", )
-gui.ListColumn(name='col_a', text='Col A', parent='listview', )
-gui.ListColumn(name='col_b', text='Col B', parent='listview', )
-gui.Notebook(name='notebook', height='211', left='21', top='330', width='355', 
-             parent='mywin', selection=0, )
-gui.TabPanel(id=133, name='tab0', parent='mywin.notebook', selected=True, 
-             text='Misc.', )
-gui.Button(id=197, label='', name='edit_button', height='17', left='245', 
-           top='113', width='55', filename='edit.gif', 
-           parent='mywin.notebook.tab0', )
-gui.TextBox(mask='##-########-#', name='masked', alignment='right', 
-            left='220', top='19', width='111', parent='mywin.notebook.tab0', 
-            value='20-26756539-3', )
-gui.TextBox(mask='###.##', name='numeric', alignment='right', left='230', 
-            top='46', width='101', parent='mywin.notebook.tab0', value=98.76, )
-gui.TextBox(mask='date', name='date_picker', left='210', top='73', 
-            width='121', parent='mywin.notebook.tab0', 
-            value=datetime.date(2013, 3, 26), )
-gui.Label(name='label_159_27', left='147', top='23', 
-          parent='mywin.notebook.tab0', text='masked:', )
-gui.Label(name='label_153_56', left='147', top='50', 
-          parent='mywin.notebook.tab0', text='numeric:', )
-gui.Label(name='label_152_84', left='147', top='78', 
-          parent='mywin.notebook.tab0', text='date:', )
-gui.Panel(label='Group: ', name='panel_40_46', height='138', left='15', 
-          top='10', width='116', image='', parent='mywin.notebook.tab0', )
-gui.RadioButton(id=298, label='Option 3', name='opt3', left='14', top='71', 
-                width='86', parent='mywin.notebook.tab0.panel_40_46', )
-gui.RadioButton(id=148, label='Option 2', name='opt2_148', left='14', 
-                top='47', width='85', 
-                parent='mywin.notebook.tab0.panel_40_46', )
-gui.RadioButton(id=274, label='Option 1', name='opt1', left='14', top='23', 
-                width='85', parent='mywin.notebook.tab0.panel_40_46', 
-                value=True, )
-gui.CheckBox(label='Check', name='checkbox_29_80', left='14', top='95', 
-             parent='mywin.notebook.tab0.panel_40_46', )
-gui.Image(name='image', height='24', left='148', top='110', width='24', 
-          filename='trash.gif', parent='mywin.notebook.tab0', 
-          onmousedown="print('clicked the image')", )
-gui.TabPanel(id=163, name='tab1', parent='mywin.notebook', selected=False, 
-             text='Grid', visible=True, )
-gui.GridView(name='gridview', height='100%', left='0', top='0', width='100%', 
-             parent='mywin.notebook.tab1', )
-gui.GridColumn(name='col1', text='Col A', type='text', width=75, 
-               parent='gridview', )
-gui.GridColumn(name='col2', text='Col 2', type='long', width=75, 
-               parent='gridview', )
-gui.GridColumn(name='col3', text='Col B', type='float', width=75, 
-               parent='gridview', )
-gui.TabPanel(id=157, name='tab2', parent='mywin.notebook', selected=False, 
-             text='Html', visible=True, )
-gui.HtmlBox(id=222, name='htmlbox', height='100%', left='0', top='0', 
-            width='100%', location='', parent='mywin.notebook.tab2', )
-gui.TreeView(name='treeview', default_style=True, has_buttons=True, 
-             height='98', left='223', top='212', width='154', parent='mywin', 
-             onitemselected="print('selected TreeItem: %s' % event.detail.text)", )
-gui.ComboBox(name='cboTest', left='100', top='58', width='152', 
-             items=['option 1', 'option 2', 'option 3'], parent='mywin', 
-             string_selection='', )
-gui.Line(name='line_25_556', height='3', left='25', top='194', width='349', 
-         parent='mywin', )
-gui.Slider(name='slider', left='18', top='96', width='249', parent='mywin', )
+with gui.Window(name='mywin', title=u'gui2py sample app', resizable=True, 
+                height='565px', left='180', top='24', width='396px', 
+                bgcolor=u'#E0E0E0', image='tile.bmp', tiled=True, ):
+    gui.Label(name='lblTest', alignment='right', transparent=True, left='38', 
+              top='37', width='48', text=u'hello!', )
+    gui.Button(label=u'Quit', name='btnClose', left='232', top='156', 
+               width='85', onclick='exit()', )
+    gui.TextBox(name='txtTest', left='100', top='31', width='152', 
+                value=u'mariano', )
+    gui.Button(label=u'click me!', name='btnTest', left='126', top='157', 
+               width='85', default=True, )
+    gui.ListBox(name='lstTest', height='96', left='277', top='28', 
+                width='103', data_selection='two', 
+                items=[u'one', u'two', u'tree'], selection=1, 
+                string_selection=u'two', )
+    with gui.MenuBar(name='menubar', fgcolor=u'#000000', ):
+        with gui.Menu(name='menu_114', fgcolor=u'#000000', ):
+            gui.MenuItem(help=u'MenuItem', id=127, name='menuitem_127', )
+            gui.MenuItemCheckable(help=u'MenuItemCheck', id=120, 
+                                  label=u'MenuItemCheck', 
+                                  name='menuitemcheckable_120', checked=True, )
+            gui.MenuItemSeparator(id=130, name='menuitemseparator_130', )
+            gui.MenuItem(help=u'MenuItem', id=140, name='menuitem_140', )
+        with gui.Menu(label=u'List', name='list', ):
+            gui.MenuItem(help=u'Add an item to the list', id=225, 
+                         label=u'Add item', name='add', )
+            gui.MenuItem(help=u'Remove the selected items in the list', 
+                         id=235, label=u'Remove items', name='del', )
+            gui.MenuItem(help=u'Update a values of an entire column', id=201, 
+                         label=u'Update items', name='update', )
+        with gui.Menu(label=u'Grid', name='grid', ):
+            gui.MenuItem(help=u'Add a row to the grid', label=u'Add item', 
+                         name='add', )
+            gui.MenuItem(help=u'Remove the selected rows in the grid', 
+                         label=u'Remove rows', name='del', )
+            gui.MenuItem(help=u'Update the rows in the grid', 
+                         label=u'Update items', name='update', )
+            gui.MenuItem(help=u'Remove all the rows in the grid', 
+                         label=u'Clear', name='clear', )
+    gui.Gauge(name='gauge', height='18', left='13', top='130', width='367', 
+              value=50, )
+    gui.StatusBar(name='statusbar', )
+    with gui.ListView(name='listview', height='99', left='23', top='211', 
+                      width='192', item_count=27, sort_column=0, 
+                      onitemselected="print ('sel %s' % event.target.get_selected_items())", ):
+        gui.ListColumn(name='col_a', text='Col A', )
+        gui.ListColumn(name='col_b', text='Col B', )
+    with gui.Notebook(name='notebook', height='211', left='21', top='330', 
+                      width='355', selection=0, ):
+        with gui.TabPanel(id=133, name='tab0', selected=True, text=u'Misc.', ):
+            gui.Button(id=197, label=u'', name='edit_button', height='17', 
+                       left='245', top='113', width='55', filename='edit.gif', )
+            gui.TextBox(mask='##-########-#', name='masked', 
+                        alignment='right', left='220', top='19', width='111', 
+                        value=u'20-26756539-3', )
+            gui.TextBox(mask='###.##', name='numeric', alignment='right', 
+                        left='230', top='46', width='101', value=98.76, )
+            gui.TextBox(mask='date', name='date_picker', left='210', top='73', 
+                        width='121', value=datetime.date(2013, 3, 26), )
+            gui.Label(name='label_159_27', left='147', top='23', 
+                      text=u'masked:', )
+            gui.Label(name='label_153_56', left='147', top='50', 
+                      text=u'numeric:', )
+            gui.Label(name='label_152_84', left='147', top='78', 
+                      text=u'date:', )
+            with gui.Panel(label=u'Group: ', name='panel_40_46', height='138', 
+                           left='15', top='10', width='116', image='', ):
+                gui.RadioButton(id=298, label=u'Option 3', name='opt3', 
+                                left='14', top='71', width='86', )
+                gui.RadioButton(id=148, label=u'Option 2', name='opt2_148', 
+                                left='14', top='47', width='85', )
+                gui.RadioButton(id=274, label=u'Option 1', name='opt1', 
+                                left='14', top='23', width='85', value=True, )
+                gui.CheckBox(label=u'Check', name='checkbox_29_80', left='14', 
+                             top='95', )
+            gui.Image(name='image', height='24', left='148', top='110', 
+                      width='24', filename='trash.gif', 
+                      onmousedown="print('clicked the image')", )
+        with gui.TabPanel(id=163, name='tab1', selected=False, text=u'Grid', ):
+            with gui.GridView(name='gridview', height='100%', left='0', 
+                              top='0', width='100%', ):
+                gui.GridColumn(name='col1', text='Col A', type='text', 
+                               width=75, )
+                gui.GridColumn(name='col2', text='Col 2', type='long', 
+                               width=75, )
+                gui.GridColumn(name='col3', text='Col B', type='float', 
+                               width=75, )
+        with gui.TabPanel(id=157, name='tab2', selected=False, text=u'Html', ):
+            gui.HtmlBox(id=222, name='htmlbox', height='100%', left='0', 
+                        top='0', width='100%', location=u'', )
+    gui.TreeView(name='treeview', default_style=True, has_buttons=True, 
+                 height='98', left='223', top='212', width='154', 
+                 onitemselected="print('selected TreeItem: %s' % event.detail.text)", )
+    gui.ComboBox(name='cboTest', left='100', top='58', width='152', 
+                 items=[u'option 1', u'option 2', u'option 3'], 
+                 string_selection=u'', )
+    gui.Line(name='line_25_556', height='3', left='25', top='194', 
+             width='349', )
+    gui.Slider(name='slider', left='18', top='96', width='249', freq=0, )
 
 # --- gui2py designer generated code ends ---
 

@@ -282,7 +282,7 @@ class BasicDesigner:
                 self.overlay.Reset()                
                 self.overlay = None
                 pos = evt.GetPosition()
-                # convert to relative client coordinates of the containter:
+                # convert to relative client coordinates of the container:
                 if evt.GetEventObject() != wx_obj:
                     pos = evt.GetEventObject().ClientToScreen(pos)  # frame
                     pos = wx_obj.ScreenToClient(pos)                # panel
@@ -582,22 +582,29 @@ def save(evt, designer):
                 fout = open(designer.filename, "w")
                 copy = True
                 newlines = fin.newlines or "\n"
-                
-                def dump(obj):
+
+                def dump(obj, indent=1):
                     "recursive convert object to string"
-                    for ctl in obj:
-                        fout.write(str(ctl))
+                    for ctl in obj[:]:
+                        write(ctl, indent)
+
+                def write(ctl, indent):
+                    if ctl[:]:
+                        fout.write(" " * indent * 4)
+                        fout.write("with %s:" % ctl.__repr__(parent=None, indent=indent, context=True))
                         fout.write(newlines)
-                        dump(ctl)
+                        dump(ctl, indent + 1)                
+                    else:
+                        fout.write(" " * indent * 4)
+                        fout.write(ctl.__repr__(parent=None, indent=indent))
+                        fout.write(newlines)
 
                 dumped = False
                 for line in fin:
                     if line.startswith("# --- gui2py designer generated code starts ---"):
                         fout.write(line)
                         fout.write(newlines)
-                        fout.write(str(w))
-                        fout.write(newlines)
-                        dump(w)
+                        write(w, indent=0)
                         fout.write(newlines)
                         dumped = True
                         copy = False

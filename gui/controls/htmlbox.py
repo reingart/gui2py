@@ -30,11 +30,11 @@ class HtmlBox(Control):
     _style = wx.html.HW_DEFAULT_STYLE | wx.TAB_TRAVERSAL
     _image = images.html
     
-    def __init__(self, parent, design=False, **kwargs):
+    def __init__(self, parent=None, design=False, **kwargs):
         self.design = design   # flag to enable designer mode
         # set resizable to False to avoid gui2py auto layout on children
         # (EVT_SIZE it is already handled by wx.HtmlWindow) 
-        Control.__init__(self, parent, **kwargs)
+        Control.__init__(self, parent=parent, **kwargs)
         if "gtk2" in wx.PlatformInfo:
             self.wx_obj.SetStandardFonts()
         

@@ -26,6 +26,7 @@ from . import registry
 
 DEBUG = False
 COMPONENTS = {}        # map all created objects (used to search parents) 
+STACK = []             # used by the context manager to store parent references
 
 
 # WORKAROUND: 2.8 does not have WrapSizer, use custom FlowSizer instead:
@@ -96,6 +97,11 @@ class Component(object):
         
         # check if we are recreating the object (i.e., to apply a new style)
         rebuild = hasattr(self, "wx_obj")
+        
+        # if using context manager, use the parent reference from the creation stack:
+        if not parent and STACK:
+            parent = STACK[-1]
+            if DEBUG: print "using parent stack ", parent
         
         # get current spec values (if we are re-creating the wx object)
         if rebuild:
@@ -322,13 +328,27 @@ class Component(object):
              self._sizer_add(child)
         self._children_list.append(child)
         
-    def __getitem__(self, name):
-        return self._children_dict[name]
+    def __getitem__(self, key):
+        if isinstance(key, slice):
+            return self._children_list.__getitem__(key)
+        else:
+            return self._children_dict[key]
     
     def __delitem__(self, name):
         del self._children_list[self._children_list.index(self._children_dict[name])]
         del self._children_dict[name]
 
+    # context manager methods (with statement currently used to stack parents)
+
+    def __enter__(self):
+        STACK.append(self)
+        if DEBUG: print "pushed", self.name
+        return self
+    
+    def __exit__(self, *exc_info):
+        obj = STACK.pop()
+        if DEBUG: print "popped", obj.name
+            
     # Public methods:
     
     def redraw(self):
@@ -390,8 +410,8 @@ class Component(object):
             COMPONENTS[self._get_fully_qualified_name()] = self  
 
     
-    def __repr__(   self, prefix="gui"):
-        return represent(self, prefix)
+    def __repr__(   self, prefix="gui", parent="", indent=0, context=False):
+        return represent(self, prefix, parent, indent, context)
 
     # properties:
     
@@ -1024,7 +1044,14 @@ class SubComponent(object):
     def __iter__(self):
         return [].__iter__()    # we have no children (designer!)
     
+    def __getitem__(self, key):
+        return None
+        
     def __init__(self, parent=None, **kwargs):
+        # if using context manager, use the parent reference from the creation stack:
+        if not parent and STACK:
+            parent = STACK[-1]
+            if DEBUG: print "using parent stack ", parent
         # set up the properties:
         for spec_name, spec in self._meta.specs.items():
             if not spec.read_only:
@@ -1047,8 +1074,8 @@ class SubComponent(object):
     def destroy(self, **kwargs):
         pass
 
-    def __repr__(self, prefix="gui"):
-        return represent(self, prefix)
+    def __repr__(self, prefix="gui", parent="", indent=0):
+        return represent(self, prefix, parent, indent)
 
     parent = Spec(lambda self: self._parent.name, 
                       optional=False, default="",
@@ -1072,28 +1099,35 @@ def get_sort_key((name, spec)):
     return sort_order_map.get(spec.__class__, 6), name
 
 
-def represent(obj, prefix, max_cols=80):
+def represent(obj, prefix, parent="", indent=0, context=False, max_cols=80):
     "Construct a string representing the object"
     try:
         name = getattr(obj, "name", "")
         class_name = "%s.%s" % (prefix, obj.__class__.__name__)
-        padding = len(class_name) + 1
+        padding = len(class_name) + 1 + indent * 4 + (5 if context else 0)
         params = []
         for (k, spec) in sorted(obj._meta.specs.items(), key=get_sort_key):
             if k == "index":        # index is really defined by creation order
                 continue            # also, avoid infinite recursion
-            v = getattr(obj, k, "")
-            if (not isinstance(spec, InternalSpec) 
-                and v != spec.default
-                and (k != 'id' or v > 0) 
-                and isinstance(v, 
-                     (basestring, int, long, float, bool, dict, list, 
-                      decimal.Decimal, 
-                      datetime.datetime, datetime.date, datetime.time,
-                      Font, Color))                
-                and repr(v) != 'None'
-                ):
-                params.append("%s=%s" % (k, repr(v))) 
+            if k == "parent" and parent != "":
+                v = parent
+            else:
+                v = getattr(obj, k, "")
+                if (not isinstance(spec, InternalSpec) 
+                    and v != spec.default
+                    and (k != 'id' or v > 0) 
+                    and isinstance(v, 
+                         (basestring, int, long, float, bool, dict, list, 
+                          decimal.Decimal, 
+                          datetime.datetime, datetime.date, datetime.time,
+                          Font, Color))                
+                    and repr(v) != 'None'
+                    ):
+                    v = repr(v)
+                else:
+                    v = None
+            if v is not None:
+                params.append("%s=%s" % (k, v)) 
         param_lines = []
         line = ""
         for param in params:

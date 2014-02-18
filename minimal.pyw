@@ -17,13 +17,11 @@ def greeting(evt):
 
 # --- gui2py designer generated code starts ---
 
-gui.Window(name='mywin', title='gui2py minimal app', resizable=True, )
-gui.Button(label='Click me!', name='button', default=True, parent='mywin', )
+with gui.Window(title='gui2py minimal app', resizable=True, ) as mywin:
+    gui.Button(label='Click me!', name="button", default=True, parent=mywin, )
 
 # --- gui2py designer generated code ends ---
 
-# get a reference to the Top Level Window:
-mywin = gui.get("mywin")
 
 # assign your event handlers:
 
