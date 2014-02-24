@@ -14,13 +14,14 @@ import datetime     # base imports, used by some controls and event handlers
 import decimal
 import time
 
-# set default locale to handle correctly numeric format (maskedit):
-import locale
-locale.setlocale(locale.LC_ALL, "")
-
 import gui          # import gui2py package (shortcuts)
 
-# --- here goes your event handlers ---
+# set default locale to handle correctly numeric format (maskedit):
+import wx, locale
+#locale.setlocale(locale.LC_ALL, u'es_ES.UTF-8')
+loc = wx.Locale(wx.LANGUAGE_DEFAULT, wx.LOCALE_LOAD_DEFAULT)
+
+# --- here go your event handlers ---
 
 def load(evt):
     
