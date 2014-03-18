@@ -110,6 +110,13 @@ def edit_buton_pressed(evt):
         msg.append(repr(mywin['notebook']['tab0'][ctrl_name].value))
     gui.alert('\n'.join(msg), "Input values:", scrolled=True)
 
+def trash_buton_pressed(evt):
+    import starter
+    child = gui.load(starter)
+    child.show(modal=True)
+    print "Field1", child['field1'].value
+
+
 t0 = time.time()    # user for basic timing
 
 
@@ -180,7 +187,7 @@ with gui.Window(name='mywin', title=u'gui2py sample app', resizable=True,
                       text=u'numeric:', )
             gui.Label(name='label_152_84', left='147', top='78', 
                       text=u'date:', )
-            with gui.Panel(label=u'Group: ', name='panel_40_46', height='138', 
+            with gui.Panel(label=u'Group: ', name='panel', height='138', 
                            left='15', top='10', width='116', image='', ):
                 gui.RadioButton(id=298, label=u'Option 3', name='opt3', 
                                 left='14', top='71', width='86', )
@@ -239,6 +246,7 @@ mywin['menubar']['grid']['del'].onclick = del_sel_rows
 mywin['menubar']['grid']['clear'].onclick = clear_rows
 mywin['menubar']['grid']['update'].onclick = update_rows
 mywin['notebook']['tab0']['edit_button'].onclick = edit_buton_pressed
+mywin['notebook']['tab0']['image'].onmousedown = trash_buton_pressed
 
 if __name__ == "__main__":
     mywin.show()
