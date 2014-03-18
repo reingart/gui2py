@@ -13,22 +13,22 @@ import gui
 
 def on_load(evt):
     print "initializing!"
-    window['mypanel']['mybutton'].label = "Click ME!!!!"
-    window.show()
+    evt.window['mypanel']['mybutton'].label = "Click ME!!!!"
+    evt.window.show()
 
 def on_menu_file_about_click(event):
     pass
 
 def on_menu_file_exit_click(evt):
-    window.close()
+    evt.window.close()
     
 def on_field1_change(evt):
-    print "Changed, new text: ", window['field1'].value
+    print "Changed, new text: ", evt.window['field1'].value
 
 def on_field1_keypress(evt):
     print "Keypress: ", evt.key
     if evt.key == 13:
-        gui.alert(window['field1'].value, "hello world!")
+        gui.alert(evt.window['field1'].value, "hello world!")
     
 def on_mypanel_mybutton_click(etv):
     gui.alert("btn clicked!!!!")
