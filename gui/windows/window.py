@@ -121,8 +121,22 @@ class Window(ControlSuper, ImageBackgroundMixin, SizerMixin):
         # # is this even possible? focus in another window maybe?
         # return None
 
-    def show(self, value=True):
+    def show(self, value=True, modal=None):
+        "Display or hide the window, optionally disabling all other windows"
         self.wx_obj.Show(value)
+        if modal:
+            # disable all top level windows of this application (MakeModal)
+            disabler = wx.WindowDisabler(self.wx_obj)
+            # create an event loop to stop execution 
+            eventloop = wx.EventLoop()
+            def on_close_modal(evt):
+                evt.Skip()
+                eventloop.Exit()
+            self.wx_obj.Bind(wx.EVT_CLOSE, on_close_modal)
+            # start the event loop to wait user interaction 
+            eventloop.Run()
+            # reenable the windows disabled and return control to the caller
+            del disabler
 
     def fit(self):
         "Sizes the window so that it fits around its subwindows"
