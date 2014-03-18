@@ -721,7 +721,7 @@ if __name__ == '__main__':
     vars = {}
     if filename.endswith(".rsrc.py"):
         # load the resource file (do not bind the controller event handlers)
-        objs = gui.load(filename, controller=False)
+        objs = gui.load(filename=filename, controller=False)
     else:
         # exec a normal python file
         execfile(filename, vars)

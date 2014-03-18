@@ -14,6 +14,7 @@ __license__ = "LGPL 3.0"
 import os
 import pprint
 import sys
+import types
 from . import util
 
 PYTHONCARD_EVENT_MAP = {'onselect': 'onclick', 'onmouseClick': 'onclick', 
@@ -37,13 +38,18 @@ def save(filename, rsrc):
     open(filename, "w").write(s)
 
 
-def load(rsrc="", name=None, controller=None):
+def load(controller=None, filename="", name=None, rsrc=None):
     "Create the GUI objects defined in the resource (filename or python struct)"
-    # if no rsrc is given, search for the rsrc.py with the same module name:
-    if not rsrc:
-        if controller:
+    # if no filename is given, search for the rsrc.py with the same module name:
+    if not filename and not rsrc:
+        if isinstance(controller, types.ClassType):
+            # use the controller class module (to get __file__ for rsrc.py)
             mod_dict = util.get_class_module_dict(controller)
+        elif isinstance(controller, types.ModuleType):
+            # use the module provided as controller
+            mod_dict = controller.__dict__
         else:
+            # use the caller module (no controller explicitelly provided)
             mod_dict = util.get_caller_module_dict()
             # do not use as controller if it was explicitly False or empty
             if controller is None:
@@ -61,10 +67,10 @@ def load(rsrc="", name=None, controller=None):
             filename = mod_dict['__file__']
         # chop the .pyc or .pyo from the end
         base, ext = os.path.splitext(filename)
-        rsrc = base + ".rsrc.py"
+        filename = base + ".rsrc.py"
     # when rsrc is a file name, open, read and eval it:
-    if isinstance(rsrc, basestring):
-        rsrc = parse(rsrc)
+    if isinstance(filename, basestring):
+        rsrc = parse(filename)
     ret = []
     # search over the resource to create the requested object (or all)
     for win in rsrc:
