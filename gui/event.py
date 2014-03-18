@@ -49,6 +49,11 @@ class UIEvent(Event):
     def __init__(self, name, detail=None, wx_event=None):
         Event.__init__(self, name, wx_event)
         self.detail = detail
+        # get the top level window:
+        obj = self.target
+        while obj and obj.parent:
+            obj = obj.get_parent()
+        self.window = obj
 
     def prevent_default(self):
         if self.name == 'unload':
@@ -66,7 +71,7 @@ class FocusEvent(Event):
     names = ["focus", "blur"]
 
 
-class FormEvent(Event):
+class FormEvent(UIEvent):
     "Form HTML-like events "
     
     names = ["select", "change", "reset", "submit", "invalid"]
