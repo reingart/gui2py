@@ -605,7 +605,8 @@ class DesignerMixin(object):
         if DEBUG: print "setting facade...", self._meta.name
         if hasattr(self, "_facade") and self._facade:
             self._facade.destroy()
-        if Facade:
+        # only set facade if it is a Class (not instantiated)
+        if Facade and callable(Facade):
             self._facade = Facade(self._parent.wx_obj, obj=self, )
             self._facade.Bind(wx.EVT_MOUSE_EVENTS, self.designer)
             self._facade.Show()
