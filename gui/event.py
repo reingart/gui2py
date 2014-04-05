@@ -27,6 +27,9 @@ class Event:
         self.wx_event = wx_event
         # retrieve wxPython event properties:
         wx_obj = self.wx_event.GetEventObject()
+        # look for gui object (compound control with wx childs controls)
+        while wx_obj and not hasattr(wx_obj, "obj"):
+            wx_obj = wx_obj.Parent
         self.target = wx_obj.obj if wx_obj else None
         self.timestamp = wx_event.GetTimestamp()
         # check if timestamp (wx report it only for mouse or keyboard)
