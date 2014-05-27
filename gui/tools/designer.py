@@ -525,7 +525,7 @@ class Facade(wx.Window):
             #bg = wx.EmptyBitmap(width, height)
             #bg.LoadFile("test.bmp", wx.BITMAP_TYPE_BMP)
             dc.DrawBitmap(bg, 0, 0)
-            if True or DEBUG:
+            if DEBUG:
                 # print a watermark to identify from the real object
                 font_face = self.GetFont()
                 font_color = wx.Colour(255, 0, 0)
