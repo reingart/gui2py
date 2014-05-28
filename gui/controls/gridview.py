@@ -367,18 +367,27 @@ class GridModel(list):
 
     def insert(self, pos, values):
         "Insert a number of rows into the grid (and associated table)"
-        row = GridRow(self, *values)
+        if isinstance(values, dict):
+            row = GridRow(self, **values)
+        else:
+            row = GridRow(self, *values)
         list.insert(self, pos, row)
         self._grid_view.wx_obj.InsertRows(pos, numRows=1)
 
     def append(self, values):
         "Insert a number of rows into the grid (and associated table)"
-        row = GridRow(self, *values)
+        if isinstance(values, dict):
+            row = GridRow(self, **values)
+        else:
+            row = GridRow(self, *values)
         list.append(self, row)
         self._grid_view.wx_obj.AppendRows(numRows=1)
         
     def __setitem__(self, pos, value):
-        row = GridRow(self, *value)
+        if isinstance(values, dict):
+            row = GridRow(self, **values)
+        else:
+            row = GridRow(self, *value)
         list.__setitem__(self, pos, row)
         # update the grid (just the row affected):
         self._refresh(pos)
