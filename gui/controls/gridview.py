@@ -63,10 +63,25 @@ class GridView(Control):
         # return it in the same order as inserted in the Grid
         headers = [ctrl for ctrl in self if isinstance(ctrl, GridColumn)]
         return sorted(headers, key=lambda ch: ch.index)
+
+    def _get_row_label(self):
+        "Return the row label format string"
+        return self.wx_obj._table._row_label
+    
+    def _set_row_label(self, value):
+        "Set the row label format string (empty to hide)"
+        if not value:
+            self.wx_obj.HideRowLabels()
+        else:
+            self.wx_obj._table._row_label = value
     
     columns = InternalSpec(_get_column_headings,
                            doc="Return a list of current column headers")
     items = InternalSpec(_get_items, _set_items)
+    
+    row_label = Spec(_get_row_label, _set_row_label,
+        default=None,
+        doc="indicate to the control the number of items it contains (virtual)")
     
     # events:
     ongridmouseclick = EventSpec('grid_mouse_click', 
@@ -121,6 +136,7 @@ class GridTable(GridTableBase):
         # see if the table has changed size
         self._rows = 0
         self._cols = 0
+        self._row_label = "row %03d"
 
     # shortcuts to gui2py:
     columns = property(lambda self: self.wx_grid.obj.columns)
@@ -142,7 +158,7 @@ class GridTable(GridTableBase):
         return self.columns[col].text
 
     def GetRowLabelValue(self, row):
-        return "row %03d" % row
+        return self._row_label % row
 
     def GetValue(self, row, col):
         return self.data[row].get(self.columns[col].name, "")
