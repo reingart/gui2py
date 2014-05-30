@@ -71,7 +71,7 @@ class GridView(Control):
     def _set_row_label(self, value):
         "Set the row label format string (empty to hide)"
         if not value:
-            self.wx_obj.HideRowLabels()
+            self.wx_obj.SetRowLabelSize(0)
         else:
             self.wx_obj._table._row_label = value
     
