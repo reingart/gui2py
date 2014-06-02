@@ -353,10 +353,14 @@ if DatePickerCtrl:
         def SetValue(self, new_value):
             "Convert and set the python datetime to wx.DateTime"
             try:
-                 assert isinstance(new_value, (datetime.datetime, datetime.date)) 
-                 tt = new_value.timetuple() 
-                 dmy = (tt[2], tt[1]-1, tt[0]) 
-                 DatePickerCtrl.SetValue(self, wx.DateTimeFromDMY(*dmy)) 
+                if new_value is None:
+                    # pass an invalid (empty) wx date to clear the control
+                    DatePickerCtrl.SetValue(self, wx.DateTime())
+                else:
+                    assert isinstance(new_value, (datetime.datetime, datetime.date)) 
+                    tt = new_value.timetuple() 
+                    dmy = (tt[2], tt[1]-1, tt[0]) 
+                    DatePickerCtrl.SetValue(self, wx.DateTimeFromDMY(*dmy)) 
             except Exception, e:
                 # TODO: better exception handling
                 print e
