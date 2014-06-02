@@ -168,10 +168,12 @@ class ItemContainerControl(Control):
         return self.wx_obj.IsSelected(a_position)        
         
     items = Spec(_get_items, _set_items, type="array")
-    selection = Spec(_get_selection, _set_selection, type="integer")
-    string_selection = Spec(_get_string_selection, _set_string_selection,
-                            type="string")
-    data_selection = Spec(_get_data_selection, _set_data_selection)
+    selection = Spec(_get_selection, _set_selection, type="integer",
+                     doc="Index of the selected item")
+    text = Spec(_get_string_selection, _set_string_selection,
+                type="string", doc="Selected text string")
+    value = Spec(_get_data_selection, _set_data_selection, 
+                 doc="Selected data (actual python object)")
 
 
 class ListBox(ItemContainerControl):
@@ -208,7 +210,7 @@ if __name__ == "__main__":
     # assign some event handlers:
     c.onclick = lambda event: pprint("selection: %s" % str(event.target.selection))
     c.ondblclick = lambda event: pprint(
-        "stringselection: %s dataselection: %s" % 
-        (str(event.target.string_selection), str(event.target.data_selection)))
+        "text: %s value: %s" % 
+        (str(event.target.text), str(event.target.value)))
     frame.Show()
     app.MainLoop()
