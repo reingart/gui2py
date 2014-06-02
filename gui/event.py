@@ -181,8 +181,8 @@ class GridEvent(UIEvent):
     "Grid Control events (mouse, size, edit, etc.)"
     
     def __init__(self, name, detail=None, wx_event=None):
-        wx_tree = wx_event.GetEventObject()
-        ##model = wx_tree.obj.items
+        wx_grid = wx_event.GetEventObject()
+        model = wx_grid.obj.items
         try:
             self.row = wx_event.GetRow()
             self.column = wx_event.GetCol()
@@ -190,7 +190,7 @@ class GridEvent(UIEvent):
         except:
             pass
         UIEvent.__init__(self, name, wx_event=wx_event, 
-                         detail=model(wx_item))
+                         detail=model[self.row][self.column])
 
 
 WIDGET_EVENTS = MouseEvent, FocusEvent, TimingEvent
