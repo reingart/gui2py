@@ -229,7 +229,7 @@ class TextBox(Control):
     editable = Spec(lambda self: self.wx_obj.IsEditable(), 
                     lambda self, value: self.wx_obj.SetEditable(value),
                     default=True, type="boolean")
-    ##text = Spec(_get_text, _set_text, default="", type="text")
+    text = Spec(_get_text, _set_text, default="", type="text")
     value = Spec(_get_value, _set_value, default="", type="expr",
                  doc="Actual python object (int, float, datetime, decimal...)")
     password = StyleSpec(wx.TE_PASSWORD, default=False)
