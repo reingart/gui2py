@@ -22,6 +22,7 @@ class ComboBox(ItemContainerControl):
     _wx_class = wx.ComboBox
     _style = wx.CB_DROPDOWN | wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS
     _image = images.combobox
+    _commandtype = wx.wxEVT_COMMAND_COMBOBOX_SELECTED
     
     multiselect = False    # required by ItemContainerControl
     

@@ -31,12 +31,23 @@ class ItemContainerControl(Control):
             else:
                 return sel
 
-    def _set_selection(self, index):
+    def _set_selection(self, index, dummy=False):
         "Sets the item at index 'n' to be the selected item."
+        # only change selection if index is None and not dummy:
         if index is None:
             self.wx_obj.SetSelection(-1)
+            self.wx_obj.SetValue("")
         else:
             self.wx_obj.SetSelection(index)
+        # send a programmatically event (not issued by wx)
+        wx_event = ItemContainerControlSelectEvent(self._commandtype,
+                                                   index, self.wx_obj)
+        if hasattr(self, "onchange"):
+            # TODO: fix (should work but it doesn't):
+            ## wx.PostEvent(self.wx_obj, wx_evt)
+            # WORKAROUND:
+            event = FormEvent(name="change", wx_event=wx_event)
+            self.onchange(event)    # this will fail if the action is a simple string
 
     def _get_string_selection(self):
         "Returns the label of the selected item or an empty string if none"
@@ -49,9 +60,12 @@ class ItemContainerControl(Control):
     def _set_string_selection(self, s):
         # an arg of None or empty string will remove the selection
         if s is None or s == '':
-            self.wx_obj.SetSelection(-1)
+            self._set_selection(-1)
         else:
-            self.wx_obj.SetStringSelection(s)
+            ok = self.wx_obj.SetStringSelection(s)
+            if ok:
+                index = self.wx_obj.GetStringSelection()
+                self._set_selection(index, dummy=True)
     
     def _get_data_selection(self):
         if self.multiselect:
@@ -65,7 +79,7 @@ class ItemContainerControl(Control):
     def _set_data_selection(self, data):
         # an arg of None or empty string will remove the selection
         if data is None:
-            self.wx_obj.SetSelection(-1)
+            self._set_selection(-1)
         else:
             if not self.multiselect:
                 data = [data]
@@ -74,7 +88,7 @@ class ItemContainerControl(Control):
             for datum in data:
                 s = self._items_dict[datum]
                 i = self.wx_obj.FindString(s)
-                self.wx_obj.SetSelection(i)
+                self._set_selection(i)
             
     def _get_items(self):
         items = []
@@ -182,6 +196,7 @@ class ListBox(ItemContainerControl):
     _wx_class = wx.ListBox
     _style = wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS
     _image = images.listbox
+    _commandtype = wx.wxEVT_COMMAND_LISTBOX_SELECTED
 
     def insert_items(self, aList, aPosition):
         self.wx_obj.InsertItems(a_list, a_position)
@@ -194,6 +209,22 @@ class ListBox(ItemContainerControl):
     ondblclick = EventSpec('dblclick', 
                                    binding=wx.EVT_LISTBOX_DCLICK, kind=FormEvent)
     
+
+class ItemContainerControlSelectEvent(wx.PyCommandEvent):
+    """
+    Because calling SetSelection programmatically does not fire EVT_COMBOBOX
+    events, the derived control has to do it itself.
+    """
+    def __init__(self, command_type, selection=0, wx_obj=None):
+        wx.PyCommandEvent.__init__(self, command_type)#, wx_obj.GetId())
+        self.__selection = selection
+        self.SetEventObject(wx_obj)
+
+    def GetSelection(self):
+        """Retrieve the value of the control at the time
+        this event was generated."""
+        return self.__selection
+
 
 if __name__ == "__main__":
     import sys
