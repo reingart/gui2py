@@ -10,6 +10,7 @@ __copyright__ = "Copyright (C) 2013- Mariano Reingart"  # where applicables
 # but redesigned and overhauled a lot (specs renamed, events refactorized, etc.)
 # Note: pythoncard version was trivial, Model and View code are completely new
 
+import string
 import wx
 import wx.grid as gridlib
 
@@ -31,6 +32,12 @@ class wx_Grid(gridlib.Grid):
 
         self._table = GridTable(self, plugins={})
         self.SetTable(self._table)
+        
+        # Allow the user to type a string not in choices array 
+        # (see ComboCellEditor for a custom implementation bellow)
+        self.RegisterDataType("combo",
+                              gridlib.GridCellStringRenderer(),
+                              gridlib.GridCellChoiceEditor(allowOthers=True))
         #self._plugins = plugins
 
     def Reset(self):
@@ -164,7 +171,7 @@ class GridTable(GridTableBase):
         value = self.data[row].get(self.columns[col].name, "")
         # map choices internal value to strings using keys/index:
         choices = self.columns[col]._choices
-        if choices:
+        if isinstance(choices, dict):
             value = choices[value]
         return value
         
@@ -180,14 +187,12 @@ class GridTable(GridTableBase):
         if choices:
             if isinstance(choices, dict):
                 choices = choices.items()
-            else:
-                choices = enumerate(choices)
-            for k, v in choices:
-                if v == value:
-                    value = k
-                    break
-            else:
-                value = None
+                for k, v in choices:
+                    if v == value:
+                        value = k
+                        break
+                else:
+                    value = None
         self.data[row][self.columns[col].name] = value
 
     def SetRawValue(self, row, col, value):
@@ -197,6 +202,7 @@ class GridTable(GridTableBase):
         return self.columns[col].name not in self.data[row]
 
     # Called to determine the kind of editor/renderer to use by
+    # default, doesn't necessarily have to be the same type used
     # default, doesn't necessarily have to be the same type used
     # natively by the editor/renderer if they know how to convert.
     def GetTypeName(self, row, col):
@@ -378,6 +384,7 @@ class GridColumn(SubComponent):
                              'choice': gridlib.GRID_VALUE_CHOICE,
                              'choiceint': gridlib.GRID_VALUE_CHOICEINT,
                              'datetime': gridlib.GRID_VALUE_DATETIME,
+                             'combo': 'combo',
                              }, 
                      default='string', _name="_type", type="edit_enum",
                      doc="Type of value of a cell, use ':' for additional "
@@ -509,6 +516,104 @@ class GridRow(dict):
         
     def focus(self):
         self._grid_model._grid_view.wx_obj.Focus(self.index)
+
+
+class ComboCellEditor(wx.grid.PyGridCellEditor):
+    "The sample custom editor is a ComboBox editor."
+
+    def __init__(self, wx_grid):
+        wx.grid.PyGridCellEditor.__init__(self)
+        self.wx_grid = wx_grid
+        
+    def Create(self, parent, id, evtHandler):
+        "Called to create the control, which must derive from wxControl."        
+        self._tc = wx.ComboBox(parent, id, "", (100, 50))
+        self.SetControl(self._tc)
+        # pushing a different event handler instead evtHandler:
+        self._tc.PushEventHandler(wx.EvtHandler())
+        self._tc.Bind(wx.EVT_COMBOBOX, self.OnChange) 
+
+    def OnChange(self, event):
+        wx.CallAfter(self.wx_grid.DisableCellEditControl) 
+        
+    def SetSize(self, rect):
+        "Called to position/size the edit control within the cell rectangle."
+        self._tc.SetDimensions(rect.x, rect.y, rect.width+2, rect.height+2,
+                               wx.SIZE_ALLOW_MINUS_ONE)
+
+    def Show(self, show, attr):
+        "Show or hide the edit control.  You can use the attr (if not None)"
+        self.base_Show(show, attr)
+
+    def PaintBackground(self, dc, rect, attr):
+        "Draws the part of the cell not occupied by the edit control"
+
+    def BeginEdit(self, row, col, grid):
+        "Fetch the value from the table and prepare the edit control"
+        self.startValue = grid.GetTable().GetValue(row, col)
+        choices = grid.GetTable().columns[col]._choices
+        self._tc.Clear()
+        self._tc.AppendItems(choices)
+        self._tc.SetStringSelection(self.startValue)
+        self._tc.SetFocus()
+
+    def EndEdit(self, row, col, grid, val=None):
+        "Complete the editing of the current cell. Returns True if changed"
+        changed = False
+        val = self._tc.GetStringSelection()
+        print "val", val, row, col, self.startValue
+        if val != self.startValue:
+            changed = True
+            grid.GetTable().SetValue(row, col, val) # update the table
+        self.startValue = ''
+        self._tc.SetStringSelection('')
+        return changed
+
+    def ApplyEdit(self, row, col, grid):
+        "Save the value of the control into the grid or grid table"
+        val = self._tc.GetValue()
+        grid.GetTable().SetValue(row, col, val) # update the table
+        self.startValue = ''
+        self._tc.SetValue('')
+
+    def Reset(self):
+        "Reset the value in the control back to its starting value"
+        self._tc.SetStringSelection(self.startValue)
+        #self._tc.SetInsertionPointEnd()
+
+    def IsAcceptedKey(self, evt):
+        "Return True to allow the given key to start editing"
+        ## Oops, there's a bug here, we'll have to do it ourself..
+        ##return self.base_IsAcceptedKey(evt)
+        return (not (evt.ControlDown() or evt.AltDown()) and
+                evt.GetKeyCode() != wx.WXK_SHIFT)
+
+    def StartingKey(self, evt):
+        "This will be called to let the editor do something with the first key"
+        key = evt.GetKeyCode()
+        ch = None
+        if key in [wx.WXK_NUMPAD0, wx.WXK_NUMPAD1, wx.WXK_NUMPAD2, wx.WXK_NUMPAD3, wx.WXK_NUMPAD4,
+                   wx.WXK_NUMPAD5, wx.WXK_NUMPAD6, wx.WXK_NUMPAD7, wx.WXK_NUMPAD8, wx.WXK_NUMPAD9]:
+            ch = ch = chr(ord('0') + key - wx.WXK_NUMPAD0)
+        elif key < 256 and key >= 0 and chr(key) in string.printable:
+            ch = chr(key)
+            if not evt.ShiftDown():
+                ch = ch.lower()
+        if ch is not None:
+            self._tc.SetStringSelection(ch)
+        else:
+            evt.Skip()
+
+    def StartingClick(self):
+        "Called to allow the editor to simulate the click on the control"
+
+    def Destroy(self):
+        "final cleanup"
+        self.base_Destroy()
+
+    def Clone(self):
+        "Create a new object which is the copy of this one"
+        return ComboCellEditor(self.wx_grid)
 
 
 # update metadata for the add context menu at the designer:
