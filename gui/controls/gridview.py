@@ -161,13 +161,33 @@ class GridTable(GridTableBase):
         return self._row_label % row
 
     def GetValue(self, row, col):
-        return self.data[row].get(self.columns[col].name, "")
+        value = self.data[row].get(self.columns[col].name, "")
+        # map choices internal value to strings using keys/index:
+        choices = self.columns[col]._choices
+        if choices:
+            value = choices[value]
+        return value
+        
 
     def GetRawValue(self, row, col):
         return self.data[row].get(self.columns[col].name, "")
 
     def SetValue(self, row, col, value):
         # if using types, do not convert to str (already done if needed)
+        # map choices values according keys/index:
+        choices = self.columns[col]._choices
+        valu = value
+        if choices:
+            if isinstance(choices, dict):
+                choices = choices.items()
+            else:
+                choices = enumerate(choices)
+            for k, v in choices:
+                if v == value:
+                    value = k
+                    break
+            else:
+                value = None
         self.data[row][self.columns[col].name] = value
 
     def SetRawValue(self, row, col, value):
