@@ -180,7 +180,17 @@ class GridTable(GridTableBase):
     # default, doesn't necessarily have to be the same type used
     # natively by the editor/renderer if they know how to convert.
     def GetTypeName(self, row, col):
-        return self.columns[col]._type
+        column = self.columns[col]
+        type_name = column._type
+        if column.format:
+            type_name += ":" + column._format
+        if column._choices:
+            if isinstance(column._choices, dict):
+                choices = sorted(column._choices.values())
+            else:
+                choices = column._choices
+            type_name += ":" + ",".join(choices)
+        return type_name
     
     # Called to determine how the data can be fetched and stored by the
     # editor and renderer.  This allows you to enforce some type-safety
@@ -353,6 +363,11 @@ class GridColumn(SubComponent):
                      doc="Type of value of a cell, use ':' for additional "
                          "parameters: 'choice:all,MSW,GTK,MAC' or 'double:6,2'"
                      )
+    format = InitSpec(_name="_format", type='string',
+                 doc="string additional parameter for type (width,precision)")
+    choices = InitSpec(type="array", _name="_choices", 
+                     doc="list or dict for choice type")
+    
 
 
 class GridModel(list):
