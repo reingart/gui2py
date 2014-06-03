@@ -172,7 +172,7 @@ class GridTable(GridTableBase):
         # map choices internal value to strings using keys/index:
         choices = self.columns[col]._choices
         if isinstance(choices, dict):
-            value = choices[value]
+            value = choices.get(value, "")
         return value
         
 
