@@ -185,12 +185,12 @@ class GridEvent(UIEvent):
         model = wx_grid.obj.items
         try:
             self.row = wx_event.GetRow()
-            self.column = wx_event.GetCol()
+            self.col = wx_event.GetCol()
             self.position = wx_event.GetPosition()
         except:
             pass
         UIEvent.__init__(self, name, wx_event=wx_event, 
-                         detail=model[self.row][self.column])
+                         detail=model[self.row][self.col])
 
 
 WIDGET_EVENTS = MouseEvent, FocusEvent, TimingEvent
