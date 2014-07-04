@@ -68,3 +68,5 @@ def shell():
     shell.show()
     return shell
 
+call_after = wx.CallAfter
+call_later = wx.CallLater
