@@ -480,9 +480,9 @@ class GridRow(dict):
                     break
             else:
                 col = None  # raise an exception?
+        # store the value and notify the view to refresh the item
+        dict.__setitem__(self, key, value)
         if col is not None and self[key] != value:
-            # store the value and notify the view to refresh the item
-            dict.__setitem__(self, key, value)
             pos = self.index
             # refresh the value (usefull if value setted programatically)
             self._grid_model._refresh(pos, col)
