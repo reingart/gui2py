@@ -277,7 +277,8 @@ class wx_masked_NumCtrl(masked.NumCtrl):
         kwargs['decimalChar'] = lc['decimal_point'] or '.'
         # fix non-breaking space 0xa0 thousands sep in French_France.1252 (win)
         for k in ('groupChar', 'decimalChar'): 
-            if isinstance(kwargs[k], str):
+            # on python2, convert everything to unicode
+            if isinstance(kwargs[k], str) and hasattr(str, "decode"):
                 kwargs[k] = kwargs[k].decode("latin1", "replace")
         mask = kwargs['mask']
         del kwargs['mask']
