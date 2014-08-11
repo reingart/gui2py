@@ -37,7 +37,7 @@ class wx_Grid(gridlib.Grid):
         # (see ComboCellEditor for a custom implementation bellow)
         self.RegisterDataType("combo",
                               gridlib.GridCellStringRenderer(),
-                              gridlib.GridCellChoiceEditor(allowOthers=True))
+                              gridlib.GridCellChoiceEditor([], True))
         #self._plugins = plugins
 
     def Reset(self):
