@@ -21,7 +21,8 @@ import gui          # import gui2py package (shortcuts)
 # set default locale to handle correctly numeric format (maskedit):
 import wx, locale
 #locale.setlocale(locale.LC_ALL, u'es_ES.UTF-8')
-loc = wx.Locale(wx.LANGUAGE_DEFAULT, wx.LOCALE_LOAD_DEFAULT)
+if wx.VERSION < (2, 9, 5) or 'classic' in wx.version():
+    loc = wx.Locale(wx.LANGUAGE_DEFAULT, wx.LOCALE_LOAD_DEFAULT)
 
 # --- here go your event handlers ---
 
