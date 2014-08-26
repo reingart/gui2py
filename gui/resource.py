@@ -48,6 +48,9 @@ def load(controller=None, filename="", name=None, rsrc=None):
         elif isinstance(controller, types.ModuleType):
             # use the module provided as controller
             mod_dict = controller.__dict__
+        elif isinstance(controller, Controller):
+            # use the instance provided as controller
+            mod_dict = util.get_class_module_dict(controller)
         else:
             # use the caller module (no controller explicitelly provided)
             mod_dict = util.get_caller_module_dict()
