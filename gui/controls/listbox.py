@@ -42,7 +42,7 @@ class ItemContainerControl(Control):
         # send a programmatically event (not issued by wx)
         wx_event = ItemContainerControlSelectEvent(self._commandtype,
                                                    index, self.wx_obj)
-        if hasattr(self, "onchange"):
+        if hasattr(self, "onchange") and self.onchange:
             # TODO: fix (should work but it doesn't):
             ## wx.PostEvent(self.wx_obj, wx_evt)
             # WORKAROUND:
