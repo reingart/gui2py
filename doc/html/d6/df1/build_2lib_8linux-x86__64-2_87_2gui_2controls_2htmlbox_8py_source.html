@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Fichero Fuente build/lib.linux-x86_64-2.7/gui/controls/htmlbox.py</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">htmlbox.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="../../d6/dde/namespacegui_1_1controls_1_1htmlbox.html">    1</a></span>&#160;<span class="comment">#!/usr/bin/python</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">&quot;gui2py&#39;s basic HTML control (uses wx.HtmlWindow)&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="../../d6/dde/namespacegui_1_1controls_1_1htmlbox.html#a0a57bf710b2941a4a437307fe316bd31">    6</a></span>&#160;__author__ = <span class="stringliteral">&quot;Mariano Reingart (reingart@gmail.com)&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../d6/dde/namespacegui_1_1controls_1_1htmlbox.html#a24d8d8328426508738cc1051580f5607">    7</a></span>&#160;__copyright__ = <span class="stringliteral">&quot;Copyright (C) 2013- Mariano Reingart&quot;</span>  <span class="comment"># where applicable</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../d6/dde/namespacegui_1_1controls_1_1htmlbox.html#aa024a9b4fc39330f7050a498f47c4e98">    8</a></span>&#160;__license__ = <span class="stringliteral">&quot;LGPL 3.0&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"># Initial implementation was based on PythonCard&#39;s HtmlWindow component, </span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"># but redesigned and overhauled a lot (specs renamed, events refactorized, etc.)</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> os</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> sys</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> wx</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">import</span> wx.html</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">##import wx.lib.wxpTag</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">from</span> ..event <span class="keyword">import</span> HtmlCellEvent, HtmlLinkEvent, SubmitEvent</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">from</span> ..component <span class="keyword">import</span> Control, Spec, EventSpec, StyleSpec</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">from</span> ..html.form <span class="keyword">import</span> EVT_FORM_SUBMIT</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">from</span> ..html.object <span class="keyword">import</span> HTML_CTRL_CLICK</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">from</span> .. <span class="keyword">import</span> images</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html">HtmlBox</a>(Control):</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="stringliteral">&quot;An HTML widget to display simple markup and embeed controls.&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a96a0bc734faa0a24c8ecd3b31e44d0c7">   29</a></span>&#160;    _wx_class = wx.html.HtmlWindow</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#abf5c1abdbeca2308f7be5ec7e86b26ad">   30</a></span>&#160;    _style = wx.html.HW_DEFAULT_STYLE | wx.TAB_TRAVERSAL</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a621e22bb88a3d83bfee1d86e64dc27ac">   31</a></span>&#160;    _image = images.html</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a2d5d2e79ecd99d1828d75e9602cb8929">   33</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a2d5d2e79ecd99d1828d75e9602cb8929">__init__</a>(self, parent=None, design=False, **kwargs):</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a32331784cb46502bcacc811622e033cd">   34</a></span>&#160;        self.<a class="code" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a32331784cb46502bcacc811622e033cd">design</a> = design   <span class="comment"># flag to enable designer mode</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment"># set resizable to False to avoid gui2py auto layout on children</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment"># (EVT_SIZE it is already handled by wx.HtmlWindow) </span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        Control.__init__(self, parent=parent, **kwargs)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span> <span class="stringliteral">&quot;gtk2&quot;</span> <span class="keywordflow">in</span> wx.PlatformInfo:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            self.wx_obj.SetStandardFonts()</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a0a170ceb90428364405ab897e4e05166">   41</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a0a170ceb90428364405ab897e4e05166">OnLinkClicked</a>(self, linkinfo):</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        print(<span class="stringliteral">&#39;OnLinkClicked: %s\n&#39;</span> % linkinfo.GetHref())</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        super(MyHtmlWindow, self).<a class="code" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a0a170ceb90428364405ab897e4e05166">OnLinkClicked</a>(linkinfo)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a598ba0d449ae05ecf87f05022334e20d">   45</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a598ba0d449ae05ecf87f05022334e20d">OnSetTitle</a>(self, title):</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        print(<span class="stringliteral">&#39;OnSetTitle: %s\n&#39;</span> % title)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        super(MyHtmlWindow, self).<a class="code" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a598ba0d449ae05ecf87f05022334e20d">OnSetTitle</a>(title)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#af3d9c7e317ca8005b55eab72842015f0">   49</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#af3d9c7e317ca8005b55eab72842015f0">OnCellMouseHover</a>(self, cell, x, y):</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        print(<span class="stringliteral">&#39;OnCellMouseHover: %s, (%d %d)\n&#39;</span> % (cell, x, y))</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        super(MyHtmlWindow, self).<a class="code" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#af3d9c7e317ca8005b55eab72842015f0">OnCellMouseHover</a>(cell, x, y)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;         </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a9dea163cdf95be3dc648ef64c432f880">   53</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a9dea163cdf95be3dc648ef64c432f880">OnCellClicked</a>(self, cell, x, y, evt):</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        print(<span class="stringliteral">&#39;OnCellClicked: %s, (%d %d)\n&#39;</span> % (cell, x, y))</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">if</span> isinstance(cell, wx.html.HtmlWordCell):</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            sel = wx.html.HtmlSelection()</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            print(<span class="stringliteral">&#39;     %s\n&#39;</span> % cell.ConvertToText(sel))</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        super(MyHtmlWindow, self).<a class="code" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a9dea163cdf95be3dc648ef64c432f880">OnCellClicked</a>(cell, x, y, evt)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a3748310d2d339542ed81c00091c97db9">   60</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a3748310d2d339542ed81c00091c97db9">_get_location</a>(self) :</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> self.wx_obj.GetOpenedPage()</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a92ea7d7b55128c94488ff4e8bf625c0c">   63</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a92ea7d7b55128c94488ff4e8bf625c0c">set_page</a>(self, source):</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="stringliteral">&quot;Sets HTML page and display it&quot;</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        self.wx_obj.SetPage(source)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#aa4e86bf4372d9e392b413ef3f9676af9">   67</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#aa4e86bf4372d9e392b413ef3f9676af9">load_page</a>(self, location):</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="stringliteral">&quot;Loads HTML page from location and then displays it&quot;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> location:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            self.wx_obj.SetPage(<span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            self.wx_obj.LoadPage(location)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="comment">#self._delegate.Refresh()</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#ac32342f9fe73a547497120c8c2cc3bcb">   75</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#ac32342f9fe73a547497120c8c2cc3bcb">load_file</a>(self, filename):</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="stringliteral">&quot;Loads HTML page from file and displays it.&quot;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        self.wx_obj.LoadFile(filename)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a1b64b14db8f0cd531869f561f965d06d">   79</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a1b64b14db8f0cd531869f561f965d06d">write</a>(self, source):</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="stringliteral">&quot;Appends HTML fragment to currently displayed text and refreshes it.&quot;</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        self.wx_obj.AppendToPage(source)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment"># properties:</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a74d7ac03d413af0659d3da5fcf19bdd6">   84</a></span>&#160;    location = Spec(_get_location, load_page, doc=<span class="stringliteral">&quot;URL currently loaded&quot;</span>)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment"># styles:</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a95765a789de5e55ca678640a88beab0b">   87</a></span>&#160;    no_selection = StyleSpec(wx.html.HW_NO_SELECTION, </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                             doc=<span class="stringliteral">&quot;Don’t allow the user to select text.&quot;</span>)</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a094c87a3c3924e3c72121ae6fcfe40f8">   89</a></span>&#160;    scrollbars = StyleSpec({<span class="keyword">False</span>: wx.html.HW_SCROLLBAR_NEVER,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                            <span class="keyword">True</span>: wx.html.HW_SCROLLBAR_AUTO},</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                            doc=<span class="stringliteral">&quot;Control how to display scrollbars&quot;</span>,)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment"># events:</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a6b87b3e8fc6caed539daf527ac40fbaf">   94</a></span>&#160;    oncellclick = EventSpec(<span class="stringliteral">&#39;click&#39;</span>, binding=wx.html.EVT_HTML_CELL_CLICKED, </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                        kind=HtmlCellEvent, doc=<span class="stringliteral">&quot;An cell was clicked&quot;</span>)</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a3e0a86dd39e535d228d27c5b312441eb">   96</a></span>&#160;    oncellhover = EventSpec(<span class="stringliteral">&#39;hover&#39;</span>, binding=wx.html.EVT_HTML_CELL_HOVER, </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                        kind=HtmlCellEvent, doc=<span class="stringliteral">&quot;The mouse passed over a cell&quot;</span>)</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a8f8a54031ed193da94adf41e95dce795">   98</a></span>&#160;    onlinkclick = EventSpec(<span class="stringliteral">&#39;link&#39;</span>, binding=wx.html.EVT_HTML_LINK_CLICKED,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                        kind=HtmlLinkEvent, doc=<span class="stringliteral">&quot;An hyperlink was clicked&quot;</span>)</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a372fc20f993bb90c8de36fced1c5365a">  100</a></span>&#160;    onclick = EventSpec(<span class="stringliteral">&#39;click&#39;</span>, binding=HTML_CTRL_CLICK,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                        kind=SubmitEvent, doc=<span class="stringliteral">&quot;A control was clicked&quot;</span>)</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#afcdfff9f7c41033a3be0652c613db611">  102</a></span>&#160;    onsubmit = EventSpec(<span class="stringliteral">&#39;submit&#39;</span>, binding=EVT_FORM_SUBMIT,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                        kind=SubmitEvent, doc=<span class="stringliteral">&quot;A form was submitted&quot;</span>)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                            </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&#39;__main__&#39;</span>:</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="../../d6/dde/namespacegui_1_1controls_1_1htmlbox.html#a9f1fb0d7a373b99f0f465e1cedefd1dd">  108</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d6/dde/namespacegui_1_1controls_1_1htmlbox.html#a9f1fb0d7a373b99f0f465e1cedefd1dd">on_click</a>(evt):</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">print</span> evt.detail</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">print</span> evt.href, evt.target</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        evt.prevent_default()       <span class="comment"># abort opening the link</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    </div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="../../d6/dde/namespacegui_1_1controls_1_1htmlbox.html#a354bf005e7cf8d1b1b6feff86f6910fa">  113</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d6/dde/namespacegui_1_1controls_1_1htmlbox.html#a354bf005e7cf8d1b1b6feff86f6910fa">on_cell</a>(evt):</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">print</span> evt.point</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="../../d6/dde/namespacegui_1_1controls_1_1htmlbox.html#a50bc18e05534d25d4b61ea39b4c8f446">  116</a></span>&#160;    app = wx.App(redirect=<span class="keyword">False</span>)</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="../../d6/dde/namespacegui_1_1controls_1_1htmlbox.html#aeccce7784370110a8811422045ef50b9">  117</a></span>&#160;    f = wx.Frame(<span class="keywordtype">None</span>)</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="../../d6/dde/namespacegui_1_1controls_1_1htmlbox.html#a9d6e407e5862acc6cf4d263e423b5dd4">  118</a></span>&#160;    html = <a class="code" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html">HtmlBox</a>(f, name=<span class="stringliteral">&quot;html&quot;</span>, visible=<span class="keyword">True</span>, width=<span class="stringliteral">&quot;100px&quot;</span>)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    html.set_page(<span class="stringliteral">&quot;&lt;a href=&#39;hola&#39;&gt;hello&lt;/a&gt; &lt;b&gt;world!&lt;/b&gt;&quot;</span>)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    html.onlinkclick = on_click</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    html.oncellhover = on_cell</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    f.Show()</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    app.MainLoop()</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;       </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="ttc" id="classgui_1_1controls_1_1htmlbox_1_1HtmlBox_html_a9dea163cdf95be3dc648ef64c432f880"><div class="ttname"><a href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a9dea163cdf95be3dc648ef64c432f880">gui.controls.htmlbox.HtmlBox.OnCellClicked</a></div><div class="ttdeci">def OnCellClicked</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00053">htmlbox.py:53</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1htmlbox_1_1HtmlBox_html_a1b64b14db8f0cd531869f561f965d06d"><div class="ttname"><a href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a1b64b14db8f0cd531869f561f965d06d">gui.controls.htmlbox.HtmlBox.write</a></div><div class="ttdeci">def write</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00079">htmlbox.py:79</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1htmlbox_1_1HtmlBox_html_a92ea7d7b55128c94488ff4e8bf625c0c"><div class="ttname"><a href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a92ea7d7b55128c94488ff4e8bf625c0c">gui.controls.htmlbox.HtmlBox.set_page</a></div><div class="ttdeci">def set_page</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00063">htmlbox.py:63</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1htmlbox_1_1HtmlBox_html_a598ba0d449ae05ecf87f05022334e20d"><div class="ttname"><a href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a598ba0d449ae05ecf87f05022334e20d">gui.controls.htmlbox.HtmlBox.OnSetTitle</a></div><div class="ttdeci">def OnSetTitle</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00045">htmlbox.py:45</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1htmlbox_1_1HtmlBox_html_aa4e86bf4372d9e392b413ef3f9676af9"><div class="ttname"><a href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#aa4e86bf4372d9e392b413ef3f9676af9">gui.controls.htmlbox.HtmlBox.load_page</a></div><div class="ttdeci">def load_page</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00067">htmlbox.py:67</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1htmlbox_1_1HtmlBox_html_ac32342f9fe73a547497120c8c2cc3bcb"><div class="ttname"><a href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#ac32342f9fe73a547497120c8c2cc3bcb">gui.controls.htmlbox.HtmlBox.load_file</a></div><div class="ttdeci">def load_file</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00075">htmlbox.py:75</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1htmlbox_1_1HtmlBox_html_a32331784cb46502bcacc811622e033cd"><div class="ttname"><a href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a32331784cb46502bcacc811622e033cd">gui.controls.htmlbox.HtmlBox.design</a></div><div class="ttdeci">design</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00034">htmlbox.py:34</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1htmlbox_1_1HtmlBox_html_a3748310d2d339542ed81c00091c97db9"><div class="ttname"><a href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a3748310d2d339542ed81c00091c97db9">gui.controls.htmlbox.HtmlBox._get_location</a></div><div class="ttdeci">def _get_location</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00060">htmlbox.py:60</a></div></div>
+<div class="ttc" id="namespacegui_1_1controls_1_1htmlbox_html_a354bf005e7cf8d1b1b6feff86f6910fa"><div class="ttname"><a href="../../d6/dde/namespacegui_1_1controls_1_1htmlbox.html#a354bf005e7cf8d1b1b6feff86f6910fa">gui.controls.htmlbox.on_cell</a></div><div class="ttdeci">def on_cell</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00113">htmlbox.py:113</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1htmlbox_1_1HtmlBox_html"><div class="ttname"><a href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html">gui.controls.htmlbox.HtmlBox</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00026">htmlbox.py:26</a></div></div>
+<div class="ttc" id="namespacegui_1_1controls_1_1htmlbox_html_a9f1fb0d7a373b99f0f465e1cedefd1dd"><div class="ttname"><a href="../../d6/dde/namespacegui_1_1controls_1_1htmlbox.html#a9f1fb0d7a373b99f0f465e1cedefd1dd">gui.controls.htmlbox.on_click</a></div><div class="ttdeci">def on_click</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00108">htmlbox.py:108</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1htmlbox_1_1HtmlBox_html_af3d9c7e317ca8005b55eab72842015f0"><div class="ttname"><a href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#af3d9c7e317ca8005b55eab72842015f0">gui.controls.htmlbox.HtmlBox.OnCellMouseHover</a></div><div class="ttdeci">def OnCellMouseHover</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00049">htmlbox.py:49</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1htmlbox_1_1HtmlBox_html_a0a170ceb90428364405ab897e4e05166"><div class="ttname"><a href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a0a170ceb90428364405ab897e4e05166">gui.controls.htmlbox.HtmlBox.OnLinkClicked</a></div><div class="ttdeci">def OnLinkClicked</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00041">htmlbox.py:41</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1htmlbox_1_1HtmlBox_html_a2d5d2e79ecd99d1828d75e9602cb8929"><div class="ttname"><a href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a2d5d2e79ecd99d1828d75e9602cb8929">gui.controls.htmlbox.HtmlBox.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00033">htmlbox.py:33</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_96a7eeec1342994a7cb0d7fe7902ae74.html">build</a></li><li class="navelem"><a class="el" href="../../dir_3740601ea11ece1a00f9273977396bc4.html">lib.linux-x86_64-2.7</a></li><li class="navelem"><a class="el" href="../../dir_5bcb0661a26d4ce62009196be9ab2e39.html">gui</a></li><li class="navelem"><a class="el" href="../../dir_4c91e8b673aaef7bf66ef8a4b005b30e.html">controls</a></li><li class="navelem"><a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py.html">htmlbox.py</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:47 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

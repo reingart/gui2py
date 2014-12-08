@@ -1,0 +1,1651 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Referencia de la Clase gui.graphic.Bitmap</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('dd/d51/classgui_1_1graphic_1_1Bitmap.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="#pri-methods">Métodos privados</a> &#124;
+<a href="#pri-attribs">Atributos privados</a> &#124;
+<a href="../../d7/d2c/classgui_1_1graphic_1_1Bitmap-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase gui.graphic.Bitmap</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a8e9f6cda9714a0ad72432850d7faef6b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a8e9f6cda9714a0ad72432850d7faef6b">__init__</a></td></tr>
+<tr class="separator:a8e9f6cda9714a0ad72432850d7faef6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4a4dd427819b1f9ab28bc4c3b6673b1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#aa4a4dd427819b1f9ab28bc4c3b6673b1">get_bits</a></td></tr>
+<tr class="separator:aa4a4dd427819b1f9ab28bc4c3b6673b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace6b979a3ca563888de75c5ffe9b20c8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#ace6b979a3ca563888de75c5ffe9b20c8">set_bits</a></td></tr>
+<tr class="separator:ace6b979a3ca563888de75c5ffe9b20c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72895998bd76cfbd2599c71c525c0cdc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a72895998bd76cfbd2599c71c525c0cdc">set_pil_bits</a></td></tr>
+<tr class="separator:a72895998bd76cfbd2599c71c525c0cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17b4de414209e284d5e39d16d34f3b00"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a17b4de414209e284d5e39d16d34f3b00">get_pil_bits</a></td></tr>
+<tr class="separator:a17b4de414209e284d5e39d16d34f3b00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adecacfd695d87ebba000c026e1dda85f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#adecacfd695d87ebba000c026e1dda85f">set_image_bits</a></td></tr>
+<tr class="separator:adecacfd695d87ebba000c026e1dda85f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a878a334b246a4345bdd19c23d9d4eb91"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a878a334b246a4345bdd19c23d9d4eb91">get_image_bits</a></td></tr>
+<tr class="separator:a878a334b246a4345bdd19c23d9d4eb91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a567fc278e8d958c2cb8c88f660a498a5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a567fc278e8d958c2cb8c88f660a498a5">get_height</a></td></tr>
+<tr class="separator:a567fc278e8d958c2cb8c88f660a498a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f4f47afcbe9c4dced5c565387ac040c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a5f4f47afcbe9c4dced5c565387ac040c">get_width</a></td></tr>
+<tr class="separator:a5f4f47afcbe9c4dced5c565387ac040c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64098967036054c12f3dd1528172083e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a64098967036054c12f3dd1528172083e">get_size</a></td></tr>
+<tr class="separator:a64098967036054c12f3dd1528172083e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87322ac5a4a6ad42fea17458dc18b09d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a87322ac5a4a6ad42fea17458dc18b09d">set_size</a></td></tr>
+<tr class="separator:a87322ac5a4a6ad42fea17458dc18b09d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a663d53c53ed4b013646b98b26bf766a7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a663d53c53ed4b013646b98b26bf766a7">get_type</a></td></tr>
+<tr class="separator:a663d53c53ed4b013646b98b26bf766a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc30eca062ea530aa220f7d5c3ba7ec9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#abc30eca062ea530aa220f7d5c3ba7ec9">load_file</a></td></tr>
+<tr class="separator:abc30eca062ea530aa220f7d5c3ba7ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7839834b7b11a46f829fc80e78555eb7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a7839834b7b11a46f829fc80e78555eb7">save_file</a></td></tr>
+<tr class="separator:a7839834b7b11a46f829fc80e78555eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a395c243be4e976b0435ff318657e5d75"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a395c243be4e976b0435ff318657e5d75">rotate90</a></td></tr>
+<tr class="separator:a395c243be4e976b0435ff318657e5d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66e9bbd2915a1932ec088220274638ca"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a66e9bbd2915a1932ec088220274638ca">rescale</a></td></tr>
+<tr class="separator:a66e9bbd2915a1932ec088220274638ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e9f6cda9714a0ad72432850d7faef6b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a8e9f6cda9714a0ad72432850d7faef6b">__init__</a></td></tr>
+<tr class="separator:a8e9f6cda9714a0ad72432850d7faef6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4a4dd427819b1f9ab28bc4c3b6673b1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#aa4a4dd427819b1f9ab28bc4c3b6673b1">get_bits</a></td></tr>
+<tr class="separator:aa4a4dd427819b1f9ab28bc4c3b6673b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace6b979a3ca563888de75c5ffe9b20c8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#ace6b979a3ca563888de75c5ffe9b20c8">set_bits</a></td></tr>
+<tr class="separator:ace6b979a3ca563888de75c5ffe9b20c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72895998bd76cfbd2599c71c525c0cdc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a72895998bd76cfbd2599c71c525c0cdc">set_pil_bits</a></td></tr>
+<tr class="separator:a72895998bd76cfbd2599c71c525c0cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17b4de414209e284d5e39d16d34f3b00"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a17b4de414209e284d5e39d16d34f3b00">get_pil_bits</a></td></tr>
+<tr class="separator:a17b4de414209e284d5e39d16d34f3b00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adecacfd695d87ebba000c026e1dda85f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#adecacfd695d87ebba000c026e1dda85f">set_image_bits</a></td></tr>
+<tr class="separator:adecacfd695d87ebba000c026e1dda85f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a878a334b246a4345bdd19c23d9d4eb91"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a878a334b246a4345bdd19c23d9d4eb91">get_image_bits</a></td></tr>
+<tr class="separator:a878a334b246a4345bdd19c23d9d4eb91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a567fc278e8d958c2cb8c88f660a498a5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a567fc278e8d958c2cb8c88f660a498a5">get_height</a></td></tr>
+<tr class="separator:a567fc278e8d958c2cb8c88f660a498a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f4f47afcbe9c4dced5c565387ac040c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a5f4f47afcbe9c4dced5c565387ac040c">get_width</a></td></tr>
+<tr class="separator:a5f4f47afcbe9c4dced5c565387ac040c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64098967036054c12f3dd1528172083e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a64098967036054c12f3dd1528172083e">get_size</a></td></tr>
+<tr class="separator:a64098967036054c12f3dd1528172083e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87322ac5a4a6ad42fea17458dc18b09d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a87322ac5a4a6ad42fea17458dc18b09d">set_size</a></td></tr>
+<tr class="separator:a87322ac5a4a6ad42fea17458dc18b09d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a663d53c53ed4b013646b98b26bf766a7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a663d53c53ed4b013646b98b26bf766a7">get_type</a></td></tr>
+<tr class="separator:a663d53c53ed4b013646b98b26bf766a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc30eca062ea530aa220f7d5c3ba7ec9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#abc30eca062ea530aa220f7d5c3ba7ec9">load_file</a></td></tr>
+<tr class="separator:abc30eca062ea530aa220f7d5c3ba7ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7839834b7b11a46f829fc80e78555eb7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a7839834b7b11a46f829fc80e78555eb7">save_file</a></td></tr>
+<tr class="separator:a7839834b7b11a46f829fc80e78555eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a395c243be4e976b0435ff318657e5d75"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a395c243be4e976b0435ff318657e5d75">rotate90</a></td></tr>
+<tr class="separator:a395c243be4e976b0435ff318657e5d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66e9bbd2915a1932ec088220274638ca"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a66e9bbd2915a1932ec088220274638ca">rescale</a></td></tr>
+<tr class="separator:a66e9bbd2915a1932ec088220274638ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:afe4a15b385fe5eeb34797d89b5b57ddb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#afe4a15b385fe5eeb34797d89b5b57ddb">size</a></td></tr>
+<tr class="separator:afe4a15b385fe5eeb34797d89b5b57ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Métodos privados</h2></td></tr>
+<tr class="memitem:a0d86d5e82bf7e36d5f3b72a193289123"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a0d86d5e82bf7e36d5f3b72a193289123">_getbitmap_type</a></td></tr>
+<tr class="separator:a0d86d5e82bf7e36d5f3b72a193289123"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d86d5e82bf7e36d5f3b72a193289123"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a0d86d5e82bf7e36d5f3b72a193289123">_getbitmap_type</a></td></tr>
+<tr class="separator:a0d86d5e82bf7e36d5f3b72a193289123"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:a228ec6d3f328541295815ef4b9803c80"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a228ec6d3f328541295815ef4b9803c80">_filename</a></td></tr>
+<tr class="separator:a228ec6d3f328541295815ef4b9803c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98f69fb8a9a5170032884027c2bc6f7e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a98f69fb8a9a5170032884027c2bc6f7e">_size</a></td></tr>
+<tr class="separator:a98f69fb8a9a5170032884027c2bc6f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45f097cc76d8e72b57442bb503d13ad7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a45f097cc76d8e72b57442bb503d13ad7">_type</a></td></tr>
+<tr class="separator:a45f097cc76d8e72b57442bb503d13ad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcfbc09e585406e50fc666e3c77ead59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#abcfbc09e585406e50fc666e3c77ead59">_bits</a></td></tr>
+<tr class="separator:abcfbc09e585406e50fc666e3c77ead59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00102">102</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="a8e9f6cda9714a0ad72432850d7faef6b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>filename</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>size</em> = <code>(-1,&#160;-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00104">104</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00104">gui.graphic.Bitmap.__init__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a8e9f6cda9714a0ad72432850d7faef6b_icgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a8e9f6cda9714a0ad72432850d7faef6b_icgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a8e9f6cda9714a0ad72432850d7faef6b_icgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a8e9f6cda9714a0ad72432850d7faef6b_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8e9f6cda9714a0ad72432850d7faef6b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>filename</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>size</em> = <code>(-1,&#160;-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00104">104</a> del archivo <a class="el" href="../../de/d21/gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00104">gui.graphic.Bitmap.__init__()</a>, <a class="el" href="../../d6/df6/build_2lib_8linux-x86__64-2_87_2gui_2controls_2image_8py_source.html#l00046">gui.controls.image.Image._filename</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00106">gui.graphic.Bitmap._filename</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00023">gui.font.Font._size</a>, <a class="el" href="../../d6/df6/build_2lib_8linux-x86__64-2_87_2gui_2controls_2image_8py_source.html#l00049">gui.controls.image.Image._size</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00079">gui.controls.canvas.Canvas._size</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00113">gui.graphic.Bitmap._size</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00116">gui.graphic.Bitmap._type</a>, <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00075">gui.controls.htmlbox.HtmlBox.load_file()</a> y <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00193">gui.graphic.Bitmap.load_file()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a8e9f6cda9714a0ad72432850d7faef6b_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a8e9f6cda9714a0ad72432850d7faef6b_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a8e9f6cda9714a0ad72432850d7faef6b_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a8e9f6cda9714a0ad72432850d7faef6b_cgraph">
+<area shape="rect" id="node2" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#ac32342f9fe73a547497120c8c2cc3bcb" title="gui.controls.htmlbox.Html\lBox.load_file" alt="" coords="196,5,367,46"/><area shape="rect" id="node3" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#abc30eca062ea530aa220f7d5c3ba7ec9" title="gui.graphic.Bitmap.load_file" alt="" coords="190,71,373,97"/><area shape="rect" id="node4" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a0d86d5e82bf7e36d5f3b72a193289123" title="gui.graphic.Bitmap.\l_getbitmap_type" alt="" coords="422,63,557,105"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="a0d86d5e82bf7e36d5f3b72a193289123"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap._getbitmap_type </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>filename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Get the type of an image from the file's extension ( .jpg, etc. )
+</pre> 
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00153">153</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00153">gui.graphic.Bitmap._getbitmap_type()</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00193">gui.graphic.Bitmap.load_file()</a> y <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00215">gui.graphic.Bitmap.save_file()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a0d86d5e82bf7e36d5f3b72a193289123_icgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a0d86d5e82bf7e36d5f3b72a193289123_icgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a0d86d5e82bf7e36d5f3b72a193289123_icgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a0d86d5e82bf7e36d5f3b72a193289123_icgraph">
+<area shape="rect" id="node2" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#abc30eca062ea530aa220f7d5c3ba7ec9" title="gui.graphic.Bitmap.load_file" alt="" coords="191,29,374,56"/><area shape="rect" id="node4" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a7839834b7b11a46f829fc80e78555eb7" title="gui.graphic.Bitmap.save_file" alt="" coords="189,104,376,131"/><area shape="rect" id="node3" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a8e9f6cda9714a0ad72432850d7faef6b" title="gui.graphic.Bitmap.\l__init__" alt="" coords="425,22,559,63"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0d86d5e82bf7e36d5f3b72a193289123"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap._getbitmap_type </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>filename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Get the type of an image from the file's extension ( .jpg, etc. )
+</pre> 
+<p>Definición en la línea <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00153">153</a> del archivo <a class="el" href="../../de/d21/gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00153">gui.graphic.Bitmap._getbitmap_type()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a0d86d5e82bf7e36d5f3b72a193289123_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a0d86d5e82bf7e36d5f3b72a193289123_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a0d86d5e82bf7e36d5f3b72a193289123_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a0d86d5e82bf7e36d5f3b72a193289123_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa4a4dd427819b1f9ab28bc4c3b6673b1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.get_bits </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00119">119</a> del archivo <a class="el" href="../../de/d21/gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00123">gui.graphic.Bitmap._bits</a> y <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00119">gui.graphic.Bitmap.get_bits()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_aa4a4dd427819b1f9ab28bc4c3b6673b1_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_aa4a4dd427819b1f9ab28bc4c3b6673b1_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_aa4a4dd427819b1f9ab28bc4c3b6673b1_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_aa4a4dd427819b1f9ab28bc4c3b6673b1_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa4a4dd427819b1f9ab28bc4c3b6673b1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.get_bits </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00119">119</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00123">gui.graphic.Bitmap._bits</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00119">gui.graphic.Bitmap.get_bits()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_aa4a4dd427819b1f9ab28bc4c3b6673b1_icgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_aa4a4dd427819b1f9ab28bc4c3b6673b1_icgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_aa4a4dd427819b1f9ab28bc4c3b6673b1_icgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_aa4a4dd427819b1f9ab28bc4c3b6673b1_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a567fc278e8d958c2cb8c88f660a498a5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.get_height </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00137">137</a> del archivo <a class="el" href="../../de/d21/gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00137">gui.graphic.Bitmap.get_height()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a567fc278e8d958c2cb8c88f660a498a5_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a567fc278e8d958c2cb8c88f660a498a5_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a567fc278e8d958c2cb8c88f660a498a5_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a567fc278e8d958c2cb8c88f660a498a5_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a567fc278e8d958c2cb8c88f660a498a5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.get_height </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00137">137</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00137">gui.graphic.Bitmap.get_height()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a567fc278e8d958c2cb8c88f660a498a5_icgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a567fc278e8d958c2cb8c88f660a498a5_icgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a567fc278e8d958c2cb8c88f660a498a5_icgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a567fc278e8d958c2cb8c88f660a498a5_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a878a334b246a4345bdd19c23d9d4eb91"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.get_image_bits </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00134">134</a> del archivo <a class="el" href="../../de/d21/gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00123">gui.graphic.Bitmap._bits</a> y <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00134">gui.graphic.Bitmap.get_image_bits()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a878a334b246a4345bdd19c23d9d4eb91_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a878a334b246a4345bdd19c23d9d4eb91_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a878a334b246a4345bdd19c23d9d4eb91_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a878a334b246a4345bdd19c23d9d4eb91_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a878a334b246a4345bdd19c23d9d4eb91"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.get_image_bits </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00134">134</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00123">gui.graphic.Bitmap._bits</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00134">gui.graphic.Bitmap.get_image_bits()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a878a334b246a4345bdd19c23d9d4eb91_icgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a878a334b246a4345bdd19c23d9d4eb91_icgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a878a334b246a4345bdd19c23d9d4eb91_icgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a878a334b246a4345bdd19c23d9d4eb91_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a17b4de414209e284d5e39d16d34f3b00"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.get_pil_bits </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00128">128</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00123">gui.graphic.Bitmap._bits</a> y <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00039">gui.graphic.bitmap_to_pil()</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00128">gui.graphic.Bitmap.get_pil_bits()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a17b4de414209e284d5e39d16d34f3b00_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a17b4de414209e284d5e39d16d34f3b00_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a17b4de414209e284d5e39d16d34f3b00_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a17b4de414209e284d5e39d16d34f3b00_cgraph">
+<area shape="rect" id="node2" href="../../d9/dbc/namespacegui_1_1graphic.html#a01c89e7e4a970b1919a538809ad0f766" title="gui.graphic.bitmap\l_to_pil" alt="" coords="205,29,333,70"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a17b4de414209e284d5e39d16d34f3b00_icgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a17b4de414209e284d5e39d16d34f3b00_icgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a17b4de414209e284d5e39d16d34f3b00_icgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a17b4de414209e284d5e39d16d34f3b00_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a17b4de414209e284d5e39d16d34f3b00"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.get_pil_bits </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00128">128</a> del archivo <a class="el" href="../../de/d21/gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00123">gui.graphic.Bitmap._bits</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00039">gui.graphic.bitmap_to_pil()</a> y <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00128">gui.graphic.Bitmap.get_pil_bits()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a17b4de414209e284d5e39d16d34f3b00_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a17b4de414209e284d5e39d16d34f3b00_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a17b4de414209e284d5e39d16d34f3b00_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a17b4de414209e284d5e39d16d34f3b00_cgraph">
+<area shape="rect" id="node2" href="../../d9/dbc/namespacegui_1_1graphic.html#a01c89e7e4a970b1919a538809ad0f766" title="gui.graphic.bitmap\l_to_pil" alt="" coords="205,29,333,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a64098967036054c12f3dd1528172083e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.get_size </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00143">143</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00143">gui.graphic.Bitmap.get_size()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a64098967036054c12f3dd1528172083e_icgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a64098967036054c12f3dd1528172083e_icgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a64098967036054c12f3dd1528172083e_icgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a64098967036054c12f3dd1528172083e_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a64098967036054c12f3dd1528172083e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.get_size </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00143">143</a> del archivo <a class="el" href="../../de/d21/gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00143">gui.graphic.Bitmap.get_size()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a64098967036054c12f3dd1528172083e_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a64098967036054c12f3dd1528172083e_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a64098967036054c12f3dd1528172083e_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a64098967036054c12f3dd1528172083e_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a663d53c53ed4b013646b98b26bf766a7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.get_type </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00150">150</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00116">gui.graphic.Bitmap._type</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00150">gui.graphic.Bitmap.get_type()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a663d53c53ed4b013646b98b26bf766a7_icgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a663d53c53ed4b013646b98b26bf766a7_icgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a663d53c53ed4b013646b98b26bf766a7_icgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a663d53c53ed4b013646b98b26bf766a7_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a663d53c53ed4b013646b98b26bf766a7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.get_type </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00150">150</a> del archivo <a class="el" href="../../de/d21/gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00116">gui.graphic.Bitmap._type</a> y <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00150">gui.graphic.Bitmap.get_type()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a663d53c53ed4b013646b98b26bf766a7_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a663d53c53ed4b013646b98b26bf766a7_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a663d53c53ed4b013646b98b26bf766a7_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a663d53c53ed4b013646b98b26bf766a7_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5f4f47afcbe9c4dced5c565387ac040c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.get_width </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00140">140</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00140">gui.graphic.Bitmap.get_width()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a5f4f47afcbe9c4dced5c565387ac040c_icgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a5f4f47afcbe9c4dced5c565387ac040c_icgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a5f4f47afcbe9c4dced5c565387ac040c_icgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a5f4f47afcbe9c4dced5c565387ac040c_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5f4f47afcbe9c4dced5c565387ac040c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.get_width </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00140">140</a> del archivo <a class="el" href="../../de/d21/gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00140">gui.graphic.Bitmap.get_width()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a5f4f47afcbe9c4dced5c565387ac040c_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a5f4f47afcbe9c4dced5c565387ac040c_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a5f4f47afcbe9c4dced5c565387ac040c_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a5f4f47afcbe9c4dced5c565387ac040c_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abc30eca062ea530aa220f7d5c3ba7ec9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.load_file </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>filename</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>size</em> = <code>(-1,&#160;-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00193">193</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00123">gui.graphic.Bitmap._bits</a>, <a class="el" href="../../d6/df6/build_2lib_8linux-x86__64-2_87_2gui_2controls_2image_8py_source.html#l00046">gui.controls.image.Image._filename</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00106">gui.graphic.Bitmap._filename</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00153">gui.graphic.Bitmap._getbitmap_type()</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00023">gui.font.Font._size</a>, <a class="el" href="../../d6/df6/build_2lib_8linux-x86__64-2_87_2gui_2controls_2image_8py_source.html#l00049">gui.controls.image.Image._size</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00079">gui.controls.canvas.Canvas._size</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00113">gui.graphic.Bitmap._size</a> y <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00116">gui.graphic.Bitmap._type</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00104">gui.graphic.Bitmap.__init__()</a> y <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00193">gui.graphic.Bitmap.load_file()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_abc30eca062ea530aa220f7d5c3ba7ec9_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_abc30eca062ea530aa220f7d5c3ba7ec9_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_abc30eca062ea530aa220f7d5c3ba7ec9_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_abc30eca062ea530aa220f7d5c3ba7ec9_cgraph">
+<area shape="rect" id="node2" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a0d86d5e82bf7e36d5f3b72a193289123" title="gui.graphic.Bitmap.\l_getbitmap_type" alt="" coords="238,22,373,63"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_abc30eca062ea530aa220f7d5c3ba7ec9_icgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_abc30eca062ea530aa220f7d5c3ba7ec9_icgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_abc30eca062ea530aa220f7d5c3ba7ec9_icgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_abc30eca062ea530aa220f7d5c3ba7ec9_icgraph">
+<area shape="rect" id="node2" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a8e9f6cda9714a0ad72432850d7faef6b" title="gui.graphic.Bitmap.\l__init__" alt="" coords="238,22,373,63"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abc30eca062ea530aa220f7d5c3ba7ec9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.load_file </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>filename</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>size</em> = <code>(-1,&#160;-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00193">193</a> del archivo <a class="el" href="../../de/d21/gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00123">gui.graphic.Bitmap._bits</a>, <a class="el" href="../../d6/df6/build_2lib_8linux-x86__64-2_87_2gui_2controls_2image_8py_source.html#l00046">gui.controls.image.Image._filename</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00106">gui.graphic.Bitmap._filename</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00153">gui.graphic.Bitmap._getbitmap_type()</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00023">gui.font.Font._size</a>, <a class="el" href="../../d6/df6/build_2lib_8linux-x86__64-2_87_2gui_2controls_2image_8py_source.html#l00049">gui.controls.image.Image._size</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00079">gui.controls.canvas.Canvas._size</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00113">gui.graphic.Bitmap._size</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00116">gui.graphic.Bitmap._type</a> y <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00193">gui.graphic.Bitmap.load_file()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_abc30eca062ea530aa220f7d5c3ba7ec9_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_abc30eca062ea530aa220f7d5c3ba7ec9_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_abc30eca062ea530aa220f7d5c3ba7ec9_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_abc30eca062ea530aa220f7d5c3ba7ec9_cgraph">
+<area shape="rect" id="node2" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a0d86d5e82bf7e36d5f3b72a193289123" title="gui.graphic.Bitmap.\l_getbitmap_type" alt="" coords="238,22,373,63"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a66e9bbd2915a1932ec088220274638ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.rescale </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>quality</em> = <code>100</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00227">227</a> del archivo <a class="el" href="../../de/d21/gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00123">gui.graphic.Bitmap._bits</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00227">gui.graphic.Bitmap.rescale()</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00130">gui.font.Font.size</a>, <a class="el" href="../../d6/df6/build_2lib_8linux-x86__64-2_87_2gui_2controls_2image_8py_source.html#l00177">gui.controls.image.Image.size</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00233">gui.graphic.Bitmap.size</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00876">gui.component.ControlSuper.size</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a66e9bbd2915a1932ec088220274638ca_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a66e9bbd2915a1932ec088220274638ca_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a66e9bbd2915a1932ec088220274638ca_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a66e9bbd2915a1932ec088220274638ca_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a66e9bbd2915a1932ec088220274638ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.rescale </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>quality</em> = <code>100</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00227">227</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00123">gui.graphic.Bitmap._bits</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00227">gui.graphic.Bitmap.rescale()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a66e9bbd2915a1932ec088220274638ca_icgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a66e9bbd2915a1932ec088220274638ca_icgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a66e9bbd2915a1932ec088220274638ca_icgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a66e9bbd2915a1932ec088220274638ca_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a395c243be4e976b0435ff318657e5d75"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.rotate90 </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>clockwise</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00223">223</a> del archivo <a class="el" href="../../de/d21/gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00123">gui.graphic.Bitmap._bits</a> y <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00223">gui.graphic.Bitmap.rotate90()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a395c243be4e976b0435ff318657e5d75_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a395c243be4e976b0435ff318657e5d75_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a395c243be4e976b0435ff318657e5d75_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a395c243be4e976b0435ff318657e5d75_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a395c243be4e976b0435ff318657e5d75"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.rotate90 </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>clockwise</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00223">223</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00123">gui.graphic.Bitmap._bits</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00223">gui.graphic.Bitmap.rotate90()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a395c243be4e976b0435ff318657e5d75_icgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a395c243be4e976b0435ff318657e5d75_icgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a395c243be4e976b0435ff318657e5d75_icgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a395c243be4e976b0435ff318657e5d75_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7839834b7b11a46f829fc80e78555eb7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.save_file </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>filename</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00215">215</a> del archivo <a class="el" href="../../de/d21/gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d6/df6/build_2lib_8linux-x86__64-2_87_2gui_2controls_2image_8py_source.html#l00046">gui.controls.image.Image._filename</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00106">gui.graphic.Bitmap._filename</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00153">gui.graphic.Bitmap._getbitmap_type()</a> y <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00215">gui.graphic.Bitmap.save_file()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a7839834b7b11a46f829fc80e78555eb7_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a7839834b7b11a46f829fc80e78555eb7_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a7839834b7b11a46f829fc80e78555eb7_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a7839834b7b11a46f829fc80e78555eb7_cgraph">
+<area shape="rect" id="node2" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a0d86d5e82bf7e36d5f3b72a193289123" title="gui.graphic.Bitmap.\l_getbitmap_type" alt="" coords="241,5,375,46"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7839834b7b11a46f829fc80e78555eb7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.save_file </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>filename</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00215">215</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d6/df6/build_2lib_8linux-x86__64-2_87_2gui_2controls_2image_8py_source.html#l00046">gui.controls.image.Image._filename</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00106">gui.graphic.Bitmap._filename</a> y <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00153">gui.graphic.Bitmap._getbitmap_type()</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00215">gui.graphic.Bitmap.save_file()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a7839834b7b11a46f829fc80e78555eb7_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a7839834b7b11a46f829fc80e78555eb7_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a7839834b7b11a46f829fc80e78555eb7_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a7839834b7b11a46f829fc80e78555eb7_cgraph">
+<area shape="rect" id="node2" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a0d86d5e82bf7e36d5f3b72a193289123" title="gui.graphic.Bitmap.\l_getbitmap_type" alt="" coords="241,5,375,46"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a7839834b7b11a46f829fc80e78555eb7_icgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a7839834b7b11a46f829fc80e78555eb7_icgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a7839834b7b11a46f829fc80e78555eb7_icgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a7839834b7b11a46f829fc80e78555eb7_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ace6b979a3ca563888de75c5ffe9b20c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.set_bits </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>aWxBitmap</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00122">122</a> del archivo <a class="el" href="../../de/d21/gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00123">gui.graphic.Bitmap._bits</a> y <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00122">gui.graphic.Bitmap.set_bits()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_ace6b979a3ca563888de75c5ffe9b20c8_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_ace6b979a3ca563888de75c5ffe9b20c8_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_ace6b979a3ca563888de75c5ffe9b20c8_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_ace6b979a3ca563888de75c5ffe9b20c8_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ace6b979a3ca563888de75c5ffe9b20c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.set_bits </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>aWxBitmap</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00122">122</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00122">gui.graphic.Bitmap.set_bits()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_ace6b979a3ca563888de75c5ffe9b20c8_icgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_ace6b979a3ca563888de75c5ffe9b20c8_icgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_ace6b979a3ca563888de75c5ffe9b20c8_icgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_ace6b979a3ca563888de75c5ffe9b20c8_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="adecacfd695d87ebba000c026e1dda85f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.set_image_bits </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>image</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00131">131</a> del archivo <a class="el" href="../../de/d21/gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00123">gui.graphic.Bitmap._bits</a> y <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00131">gui.graphic.Bitmap.set_image_bits()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_adecacfd695d87ebba000c026e1dda85f_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_adecacfd695d87ebba000c026e1dda85f_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_adecacfd695d87ebba000c026e1dda85f_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_adecacfd695d87ebba000c026e1dda85f_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="adecacfd695d87ebba000c026e1dda85f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.set_image_bits </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>image</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00131">131</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00123">gui.graphic.Bitmap._bits</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00131">gui.graphic.Bitmap.set_image_bits()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_adecacfd695d87ebba000c026e1dda85f_icgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_adecacfd695d87ebba000c026e1dda85f_icgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_adecacfd695d87ebba000c026e1dda85f_icgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_adecacfd695d87ebba000c026e1dda85f_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a72895998bd76cfbd2599c71c525c0cdc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.set_pil_bits </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>image</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00125">125</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00123">gui.graphic.Bitmap._bits</a> y <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00036">gui.graphic.pil_to_bitmap()</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00125">gui.graphic.Bitmap.set_pil_bits()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a72895998bd76cfbd2599c71c525c0cdc_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a72895998bd76cfbd2599c71c525c0cdc_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a72895998bd76cfbd2599c71c525c0cdc_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a72895998bd76cfbd2599c71c525c0cdc_cgraph">
+<area shape="rect" id="node2" href="../../d9/dbc/namespacegui_1_1graphic.html#a34a74b0876cc8259bb244438f25b4e9c" title="gui.graphic.pil_to\l_bitmap" alt="" coords="205,29,325,70"/><area shape="rect" id="node3" href="../../d9/dbc/namespacegui_1_1graphic.html#a3032fd84f4d34f930e631a9a7769ee15" title="gui.graphic.pil_to\l_image" alt="" coords="373,29,493,70"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a72895998bd76cfbd2599c71c525c0cdc_icgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a72895998bd76cfbd2599c71c525c0cdc_icgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a72895998bd76cfbd2599c71c525c0cdc_icgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a72895998bd76cfbd2599c71c525c0cdc_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a72895998bd76cfbd2599c71c525c0cdc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.set_pil_bits </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>image</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00125">125</a> del archivo <a class="el" href="../../de/d21/gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00123">gui.graphic.Bitmap._bits</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00036">gui.graphic.pil_to_bitmap()</a> y <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00125">gui.graphic.Bitmap.set_pil_bits()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a72895998bd76cfbd2599c71c525c0cdc_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a72895998bd76cfbd2599c71c525c0cdc_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a72895998bd76cfbd2599c71c525c0cdc_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a72895998bd76cfbd2599c71c525c0cdc_cgraph">
+<area shape="rect" id="node2" href="../../d9/dbc/namespacegui_1_1graphic.html#a34a74b0876cc8259bb244438f25b4e9c" title="gui.graphic.pil_to\l_bitmap" alt="" coords="205,29,325,70"/><area shape="rect" id="node3" href="../../d9/dbc/namespacegui_1_1graphic.html#a3032fd84f4d34f930e631a9a7769ee15" title="gui.graphic.pil_to\l_image" alt="" coords="373,29,493,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a87322ac5a4a6ad42fea17458dc18b09d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.set_size </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>aSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00147">147</a> del archivo <a class="el" href="../../de/d21/gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00147">gui.graphic.Bitmap.set_size()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a87322ac5a4a6ad42fea17458dc18b09d_cgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a87322ac5a4a6ad42fea17458dc18b09d_cgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a87322ac5a4a6ad42fea17458dc18b09d_cgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a87322ac5a4a6ad42fea17458dc18b09d_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a87322ac5a4a6ad42fea17458dc18b09d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.graphic.Bitmap.set_size </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>aSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00147">147</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00147">gui.graphic.Bitmap.set_size()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d51/classgui_1_1graphic_1_1Bitmap_a87322ac5a4a6ad42fea17458dc18b09d_icgraph.png" border="0" usemap="#dd/d51/classgui_1_1graphic_1_1Bitmap_a87322ac5a4a6ad42fea17458dc18b09d_icgraph" alt=""/></div>
+<map name="dd/d51/classgui_1_1graphic_1_1Bitmap_a87322ac5a4a6ad42fea17458dc18b09d_icgraph" id="dd/d51/classgui_1_1graphic_1_1Bitmap_a87322ac5a4a6ad42fea17458dc18b09d_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="abcfbc09e585406e50fc666e3c77ead59"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.graphic.Bitmap._bits</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00123">123</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00119">gui.graphic.Bitmap.get_bits()</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00134">gui.graphic.Bitmap.get_image_bits()</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00128">gui.graphic.Bitmap.get_pil_bits()</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00193">gui.graphic.Bitmap.load_file()</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00227">gui.graphic.Bitmap.rescale()</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00223">gui.graphic.Bitmap.rotate90()</a>, <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00122">gui.graphic.Bitmap.set_bits()</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00131">gui.graphic.Bitmap.set_image_bits()</a> y <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00125">gui.graphic.Bitmap.set_pil_bits()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a228ec6d3f328541295815ef4b9803c80"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.graphic.Bitmap._filename</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00106">106</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00104">gui.graphic.Bitmap.__init__()</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00193">gui.graphic.Bitmap.load_file()</a> y <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00215">gui.graphic.Bitmap.save_file()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a98f69fb8a9a5170032884027c2bc6f7e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.graphic.Bitmap._size</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00113">113</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00104">gui.graphic.Bitmap.__init__()</a> y <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00193">gui.graphic.Bitmap.load_file()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a45f097cc76d8e72b57442bb503d13ad7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.graphic.Bitmap._type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00116">116</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00104">gui.graphic.Bitmap.__init__()</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00150">gui.graphic.Bitmap.get_type()</a> y <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00193">gui.graphic.Bitmap.load_file()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afe4a15b385fe5eeb34797d89b5b57ddb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.graphic.Bitmap.size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00233">233</a> del archivo <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dc/db6/gui_2html_2select_8py_source.html#l00008">gui.html.select.SingleSelectControl.__init__()</a>, <a class="el" href="../../d4/d6c/gui_2html_2label_8py_source.html#l00014">gui.html.label.FormLabel.__init__()</a>, <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00048">gui.html.input.SubmitButton.__init__()</a>, <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00063">gui.html.input.FormTextInput.__init__()</a>, <a class="el" href="../../d5/d23/build_2lib_8linux-x86__64-2_87_2gui_2controls_2label_8py_source.html#l00032">gui.controls.label.Label._set_text()</a> y <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00227">gui.graphic.Bitmap.rescale()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>build/lib.linux-x86_64-2.7/gui/<a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html">graphic.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/dc4/namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="../../d9/dbc/namespacegui_1_1graphic.html">graphic</a></li><li class="navelem"><a class="el" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html">Bitmap</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:48 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

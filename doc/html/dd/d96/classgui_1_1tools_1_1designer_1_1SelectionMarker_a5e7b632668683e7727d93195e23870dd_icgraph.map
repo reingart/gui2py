@@ -1,0 +1,12 @@
+<map id="gui.tools.designer.SelectionMarker.draw" name="gui.tools.designer.SelectionMarker.draw">
+<area shape="rect" id="node2" href="$dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a37ea66539ea5878bbd818dfd8bee05d8" title="gui.tools.designer.Selection\lMarker.show" alt="" coords="238,29,421,70"/>
+<area shape="rect" id="node3" href="$dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a7fc319b435e00175890da5ee4b2b330a" title="gui.tools.designer.Selection\lMarker.update" alt="" coords="238,118,421,159"/>
+<area shape="rect" id="node4" href="$dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#adeed60d0f5f81b42b2b4f7fc47a0939f" title="gui.tools.designer.Selection\lMarker.__init__" alt="" coords="471,53,654,94"/>
+<area shape="rect" id="node5" href="$d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a9f3fb479c1a4fd2bd78299a2cdce6d8f" title="gui.tools.designer.Facade.\l__init__" alt="" coords="475,118,650,159"/>
+<area shape="rect" id="node6" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#acd3321153d346058fb9d100b47824cec" title="gui.tools.inspector.Inspector\lPanel.activate_item" alt="" coords="469,207,656,249"/>
+<area shape="rect" id="node7" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a09f420bcf22a03cb72b015c5d7c735e1" title="gui.tools.inspector.Inspector\lPanel.inspect" alt="" coords="704,162,891,203"/>
+<area shape="rect" id="node10" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ad6bb08719cc2b1a43893b693ff7b2008" title="gui.tools.inspector.Inspector\lPanel.OnActivate" alt="" coords="704,251,891,293"/>
+<area shape="rect" id="node8" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#af70ae5e60130d48df846d94df4c56c02" title="gui.tools.inspector.Inspector\lPanel.add_child" alt="" coords="939,162,1125,203"/>
+<area shape="rect" id="node9" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182" title="gui.tools.inspector.Inspector\lPanel.show_context_menu" alt="" coords="1173,162,1360,203"/>
+<area shape="rect" id="node11" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#abf4066bdb859fc8ca923d9a22f0ea546" title="gui.tools.inspector.Inspector\lPanel.__init__" alt="" coords="939,251,1125,293"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="gui.component.Component._get_default_color" name="gui.component.Component._get_default_color">
+<area shape="rect" id="node2" href="$da/d31/classgui_1_1controls_1_1canvas_1_1Canvas.html#a5e016edf8ec585df9bfc495c7efa1e77" title="gui.controls.canvas.Canvas.\l_set_bgcolor" alt="" coords="238,29,426,70"/>
+<area shape="rect" id="node3" href="$d8/d4e/classgui_1_1controls_1_1image_1_1Image.html#a3ff3e353ad075f5a185b3a1611028946" title="gui.controls.image.Image.\l_set_bgcolor" alt="" coords="246,118,418,159"/>
+<area shape="rect" id="node4" href="$da/d31/classgui_1_1controls_1_1canvas_1_1Canvas.html#a073b0342a5ff6333d2a855f84ae2c99e" title="gui.controls.canvas.Canvas.\l_set_fgcolor" alt="" coords="238,207,426,249"/>
+<area shape="rect" id="node6" href="$da/d31/classgui_1_1controls_1_1canvas_1_1Canvas.html#a0b1167861ade1a925f4542a925566c7e" title="gui.controls.canvas.Canvas.\l_set_fill_color" alt="" coords="238,297,426,338"/>
+<area shape="rect" id="node5" href="$da/d31/classgui_1_1controls_1_1canvas_1_1Canvas.html#a44648c60a682419411d7e64095cc924e" title="gui.controls.canvas.Canvas.\l__init__" alt="" coords="475,207,663,249"/>
+</map>

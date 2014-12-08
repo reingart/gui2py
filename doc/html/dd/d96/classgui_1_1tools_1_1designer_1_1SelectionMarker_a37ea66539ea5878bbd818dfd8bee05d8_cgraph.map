@@ -1,0 +1,11 @@
+<map id="gui.tools.designer.SelectionMarker.show" name="gui.tools.designer.SelectionMarker.show">
+<area shape="rect" id="node2" href="$df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a364c967e23e9ad1100e1ad7ff47a45a6" title="gui.controls.notebook.Tab\lPanel.destroy" alt="" coords="275,5,447,46"/>
+<area shape="rect" id="node3" href="$d7/d98/classgui_1_1component_1_1Component.html#a878dfade57f994abd7b7df40bad3505f" title="gui.component.Component.destroy" alt="" coords="249,71,474,97"/>
+<area shape="rect" id="node7" href="$d5/d7e/classgui_1_1controls_1_1gridview_1_1GridColumn.html#a6dbbeee2c94980129d22cbe312a584f7" title="gui.controls.gridview.Grid\lColumn.destroy" alt="" coords="277,122,446,163"/>
+<area shape="rect" id="node8" href="$dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a4fb83941b0da89d3a4d7e295fefad91c" title="gui.tools.designer.Selection\lMarker.destroy" alt="" coords="270,187,453,229"/>
+<area shape="rect" id="node9" href="$dc/d07/classgui_1_1component_1_1SubComponent.html#a796d83089d10ae7d8cc4677b532a517f" title="gui.component.SubComponent.destroy" alt="" coords="237,253,485,280"/>
+<area shape="rect" id="node10" href="$dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a5e7b632668683e7727d93195e23870dd" title="gui.tools.designer.Selection\lMarker.draw" alt="" coords="270,305,453,346"/>
+<area shape="rect" id="node4" href="$d7/d98/classgui_1_1component_1_1Component.html#aef1d100fe1c668847583366148620873" title="gui.component.Component.\l_get_fully_qualified_name" alt="" coords="534,63,717,105"/>
+<area shape="rect" id="node5" href="$d7/d98/classgui_1_1component_1_1Component.html#a311db6e15161ccbe876a1ff7662ba2a2" title="gui.component.Component.\l_get_parent_name" alt="" coords="766,63,949,105"/>
+<area shape="rect" id="node6" href="$d7/d98/classgui_1_1component_1_1Component.html#a22d66b10bb4fbe00b4d237c42dae1264" title="gui.component.Component.get\l_parent" alt="" coords="997,63,1197,105"/>
+</map>

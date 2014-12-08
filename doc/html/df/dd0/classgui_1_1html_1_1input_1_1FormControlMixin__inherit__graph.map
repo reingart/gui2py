@@ -1,0 +1,8 @@
+<map id="gui.html.input.FormControlMixin" name="gui.html.input.FormControlMixin">
+<area shape="rect" id="node3" href="$db/d75/classgui_1_1html_1_1input_1_1FormCheckbox.html" title="gui.html.input.FormCheckbox" alt="" coords="337,5,530,32"/>
+<area shape="rect" id="node4" href="$d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl.html" title="gui.html.input.FormHidden\lControl" alt="" coords="346,57,521,98"/>
+<area shape="rect" id="node5" href="$d8/d6a/classgui_1_1html_1_1input_1_1FormTextArea.html" title="gui.html.input.FormTextArea" alt="" coords="340,123,527,149"/>
+<area shape="rect" id="node6" href="$d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput.html" title="gui.html.input.FormTextInput" alt="" coords="339,173,528,200"/>
+<area shape="rect" id="node8" href="$d2/d71/classgui_1_1html_1_1input_1_1SubmitButton.html" title="gui.html.input.SubmitButton" alt="" coords="342,224,525,251"/>
+<area shape="rect" id="node7" href="$d6/d3a/classgui_1_1html_1_1input_1_1FormPasswordInput.html" title="gui.html.input.FormPassword\lInput" alt="" coords="579,166,771,207"/>
+</map>

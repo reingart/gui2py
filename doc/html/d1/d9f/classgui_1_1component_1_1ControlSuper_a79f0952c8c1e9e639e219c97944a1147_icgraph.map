@@ -1,0 +1,10 @@
+<map id="gui.component.ControlSuper._set_size" name="gui.component.ControlSuper._set_size">
+<area shape="rect" id="node2" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#a5d8a866e98fee78e792a4a821ad2ba8c" title="gui.component.ControlSuper.\l_set_height" alt="" coords="263,29,454,70"/>
+<area shape="rect" id="node5" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#a2e83ac3b6fe325c0ec3dc76b9b6cbc73" title="gui.component.ControlSuper.\l_set_width" alt="" coords="263,118,454,159"/>
+<area shape="rect" id="node6" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#aa777e42e418b9e9517dcd4aae5cf1430" title="gui.component.ControlSuper.resize" alt="" coords="245,221,472,248"/>
+<area shape="rect" id="node3" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#a81c05bce87b2980cd7ab5ab22fd5189b" title="gui.component.ControlSuper.get\l_char_height" alt="" coords="761,79,970,121"/>
+<area shape="rect" id="node4" href="$d8/d6a/classgui_1_1html_1_1input_1_1FormTextArea.html#aaa6a45e5e9a6348b6625092ab4247e55" title="gui.html.input.FormTextArea.\l__init__" alt="" coords="1019,79,1210,121"/>
+<area shape="rect" id="node7" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#a17fb25dd4c1b68f28fc239d2ab5d3e0c" title="gui.component.ControlSuper.\l_set_margin" alt="" coords="521,162,711,203"/>
+<area shape="rect" id="node8" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#ace3b877725a11c910667016dc2781748" title="gui.component.ControlSuper.\l__init__" alt="" coords="521,227,711,269"/>
+<area shape="rect" id="node9" href="$df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a4817dc7a2fa46461a3982722a3594446" title="gui.controls.notebook.Tab\lPanel.__init__" alt="" coords="530,293,702,334"/>
+</map>

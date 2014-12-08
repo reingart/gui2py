@@ -1,0 +1,1121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Referencia de la Clase gui.controls.gridview.GridView</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-attribs">Atributos públicos estáticos</a> &#124;
+<a href="#pri-methods">Métodos privados</a> &#124;
+<a href="#pri-attribs">Atributos privados</a> &#124;
+<a href="#pri-static-attribs">Atributos privados estáticos</a> &#124;
+<a href="../../dd/d2d/classgui_1_1controls_1_1gridview_1_1GridView-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase gui.controls.gridview.GridView</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagrama de herencias de gui.controls.gridview.GridView</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d67/classgui_1_1controls_1_1gridview_1_1GridView__inherit__graph.png" border="0" usemap="#gui_8controls_8gridview_8GridView_inherit__map" alt="Inheritance graph"/></div>
+<map name="gui_8controls_8gridview_8GridView_inherit__map" id="gui_8controls_8gridview_8GridView_inherit__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración para gui.controls.gridview.GridView:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d5d/classgui_1_1controls_1_1gridview_1_1GridView__coll__graph.png" border="0" usemap="#gui_8controls_8gridview_8GridView_coll__map" alt="Collaboration graph"/></div>
+<map name="gui_8controls_8gridview_8GridView_coll__map" id="gui_8controls_8gridview_8GridView_coll__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Atributos públicos estáticos</h2></td></tr>
+<tr class="memitem:a4838958e5f9b8b25e2ec596e8e62623c"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a4838958e5f9b8b25e2ec596e8e62623c">columns</a></td></tr>
+<tr class="separator:a4838958e5f9b8b25e2ec596e8e62623c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a3d29bdbc5f94b9e9800a63e99068ec"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a8a3d29bdbc5f94b9e9800a63e99068ec">items</a> = InternalSpec(<a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a9e9bb0622ca1cd26d746c560b9b4d46a">_get_items</a>, <a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a19b8177958b9d1f1213b9ed51c60e737">_set_items</a>)</td></tr>
+<tr class="separator:a8a3d29bdbc5f94b9e9800a63e99068ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa117c7669fc5a703fe42fdaa54c359db"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#aa117c7669fc5a703fe42fdaa54c359db">row_label</a></td></tr>
+<tr class="separator:aa117c7669fc5a703fe42fdaa54c359db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40c08a8b321ea9100aa8a2be7800dc04"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a40c08a8b321ea9100aa8a2be7800dc04">ongridmouseclick</a></td></tr>
+<tr class="separator:a40c08a8b321ea9100aa8a2be7800dc04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a1c963a153c878df15086fdadc268b8"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a9a1c963a153c878df15086fdadc268b8">ongridmouserclick</a></td></tr>
+<tr class="separator:a9a1c963a153c878df15086fdadc268b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a721c7974a71f91a95966297a8717cc"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a1a721c7974a71f91a95966297a8717cc">ongridmousedclick</a></td></tr>
+<tr class="separator:a1a721c7974a71f91a95966297a8717cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ca2009d0b912ab32b82d5beec3ab046"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a1ca2009d0b912ab32b82d5beec3ab046">ongridlabelclick</a></td></tr>
+<tr class="separator:a1ca2009d0b912ab32b82d5beec3ab046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4edf8abdf990c8859d3ded093b13a59"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#ad4edf8abdf990c8859d3ded093b13a59">ongridlabelrclick</a></td></tr>
+<tr class="separator:ad4edf8abdf990c8859d3ded093b13a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8728487f553abbce9d4145678918751a"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a8728487f553abbce9d4145678918751a">ongridlabeldclick</a></td></tr>
+<tr class="separator:a8728487f553abbce9d4145678918751a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab078feac5f8bceff49d971c64c45626f"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#ab078feac5f8bceff49d971c64c45626f">ongridrowsize</a></td></tr>
+<tr class="separator:ab078feac5f8bceff49d971c64c45626f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2e20893cd0a1352eaa69d0525b5ddad"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#aa2e20893cd0a1352eaa69d0525b5ddad">ongridcolsize</a></td></tr>
+<tr class="separator:aa2e20893cd0a1352eaa69d0525b5ddad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a524d508a269a0bda022f4fe39a095c4b"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a524d508a269a0bda022f4fe39a095c4b">ongridrangeselect</a></td></tr>
+<tr class="separator:a524d508a269a0bda022f4fe39a095c4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10eec8786e2f5f4c103d93a68465a632"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a10eec8786e2f5f4c103d93a68465a632">ongridcellchanged</a></td></tr>
+<tr class="separator:a10eec8786e2f5f4c103d93a68465a632"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a280d861383f5cbb088b584ce332d93e9"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a280d861383f5cbb088b584ce332d93e9">ongridselectcell</a></td></tr>
+<tr class="separator:a280d861383f5cbb088b584ce332d93e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6599761e4322e8a4d95fc66291e77299"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a6599761e4322e8a4d95fc66291e77299">ongrideditornshown</a></td></tr>
+<tr class="separator:a6599761e4322e8a4d95fc66291e77299"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92bcab2e69ff02477631066d8d72ade7"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a92bcab2e69ff02477631066d8d72ade7">ongrideditorhidden</a></td></tr>
+<tr class="separator:a92bcab2e69ff02477631066d8d72ade7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acedbcdabf3657b0c2f364bacad2c942f"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#acedbcdabf3657b0c2f364bacad2c942f">ongrideditorcreated</a></td></tr>
+<tr class="separator:acedbcdabf3657b0c2f364bacad2c942f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Métodos privados</h2></td></tr>
+<tr class="memitem:a9e9bb0622ca1cd26d746c560b9b4d46a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a9e9bb0622ca1cd26d746c560b9b4d46a">_get_items</a></td></tr>
+<tr class="separator:a9e9bb0622ca1cd26d746c560b9b4d46a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19b8177958b9d1f1213b9ed51c60e737"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a19b8177958b9d1f1213b9ed51c60e737">_set_items</a></td></tr>
+<tr class="separator:a19b8177958b9d1f1213b9ed51c60e737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af45f76ef84e4f908dd8341bb4694b0bf"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#af45f76ef84e4f908dd8341bb4694b0bf">_get_column_headings</a></td></tr>
+<tr class="separator:af45f76ef84e4f908dd8341bb4694b0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af68f80c6d63d03ba60e1b03827f320df"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#af68f80c6d63d03ba60e1b03827f320df">_get_row_label</a></td></tr>
+<tr class="separator:af68f80c6d63d03ba60e1b03827f320df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a820d36ab034f85443928e13ccbaa3a6a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a820d36ab034f85443928e13ccbaa3a6a">_set_row_label</a></td></tr>
+<tr class="separator:a820d36ab034f85443928e13ccbaa3a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e9bb0622ca1cd26d746c560b9b4d46a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a9e9bb0622ca1cd26d746c560b9b4d46a">_get_items</a></td></tr>
+<tr class="separator:a9e9bb0622ca1cd26d746c560b9b4d46a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19b8177958b9d1f1213b9ed51c60e737"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a19b8177958b9d1f1213b9ed51c60e737">_set_items</a></td></tr>
+<tr class="separator:a19b8177958b9d1f1213b9ed51c60e737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af45f76ef84e4f908dd8341bb4694b0bf"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#af45f76ef84e4f908dd8341bb4694b0bf">_get_column_headings</a></td></tr>
+<tr class="separator:af45f76ef84e4f908dd8341bb4694b0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af68f80c6d63d03ba60e1b03827f320df"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#af68f80c6d63d03ba60e1b03827f320df">_get_row_label</a></td></tr>
+<tr class="separator:af68f80c6d63d03ba60e1b03827f320df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a820d36ab034f85443928e13ccbaa3a6a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a820d36ab034f85443928e13ccbaa3a6a">_set_row_label</a></td></tr>
+<tr class="separator:a820d36ab034f85443928e13ccbaa3a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:a1d392aa368d3df15e35a67ce1df22ef6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a1d392aa368d3df15e35a67ce1df22ef6">_items</a></td></tr>
+<tr class="separator:a1d392aa368d3df15e35a67ce1df22ef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Atributos privados estáticos</h2></td></tr>
+<tr class="memitem:a68a2324579c55ff9d1abff14f8b828ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a68a2324579c55ff9d1abff14f8b828ad">_wx_class</a> = <a class="el" href="../../d2/d00/classgui_1_1controls_1_1gridview_1_1wx__Grid.html">wx_Grid</a></td></tr>
+<tr class="separator:a68a2324579c55ff9d1abff14f8b828ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab03a4c766d4648427eb813f05822cb70"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#ab03a4c766d4648427eb813f05822cb70">_image</a> = <a class="el" href="../../dc/d41/namespacegui_1_1images.html#a8c65320bb065770b304ba627ddffbe01">images.grid</a></td></tr>
+<tr class="separator:ab03a4c766d4648427eb813f05822cb70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00049">49</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+</div><h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="af45f76ef84e4f908dd8341bb4694b0bf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridView._get_column_headings </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00068">68</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00068">gui.controls.gridview.GridView._get_column_headings()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView_af45f76ef84e4f908dd8341bb4694b0bf_icgraph.png" border="0" usemap="#da/df7/classgui_1_1controls_1_1gridview_1_1GridView_af45f76ef84e4f908dd8341bb4694b0bf_icgraph" alt=""/></div>
+<map name="da/df7/classgui_1_1controls_1_1gridview_1_1GridView_af45f76ef84e4f908dd8341bb4694b0bf_icgraph" id="da/df7/classgui_1_1controls_1_1gridview_1_1GridView_af45f76ef84e4f908dd8341bb4694b0bf_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af45f76ef84e4f908dd8341bb4694b0bf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridView._get_column_headings </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00068">68</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00068">gui.controls.gridview.GridView._get_column_headings()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView_af45f76ef84e4f908dd8341bb4694b0bf_cgraph.png" border="0" usemap="#da/df7/classgui_1_1controls_1_1gridview_1_1GridView_af45f76ef84e4f908dd8341bb4694b0bf_cgraph" alt=""/></div>
+<map name="da/df7/classgui_1_1controls_1_1gridview_1_1GridView_af45f76ef84e4f908dd8341bb4694b0bf_cgraph" id="da/df7/classgui_1_1controls_1_1gridview_1_1GridView_af45f76ef84e4f908dd8341bb4694b0bf_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9e9bb0622ca1cd26d746c560b9b4d46a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridView._get_items </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00055">55</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00064">gui.controls.gridview.GridView._items</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00055">gui.controls.gridview.GridView._get_items()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a9e9bb0622ca1cd26d746c560b9b4d46a_icgraph.png" border="0" usemap="#da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a9e9bb0622ca1cd26d746c560b9b4d46a_icgraph" alt=""/></div>
+<map name="da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a9e9bb0622ca1cd26d746c560b9b4d46a_icgraph" id="da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a9e9bb0622ca1cd26d746c560b9b4d46a_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9e9bb0622ca1cd26d746c560b9b4d46a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridView._get_items </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00055">55</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00055">gui.controls.gridview.GridView._get_items()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00064">gui.controls.gridview.GridView._items</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a9e9bb0622ca1cd26d746c560b9b4d46a_cgraph.png" border="0" usemap="#da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a9e9bb0622ca1cd26d746c560b9b4d46a_cgraph" alt=""/></div>
+<map name="da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a9e9bb0622ca1cd26d746c560b9b4d46a_cgraph" id="da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a9e9bb0622ca1cd26d746c560b9b4d46a_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af68f80c6d63d03ba60e1b03827f320df"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridView._get_row_label </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00074">74</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00074">gui.controls.gridview.GridView._get_row_label()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView_af68f80c6d63d03ba60e1b03827f320df_icgraph.png" border="0" usemap="#da/df7/classgui_1_1controls_1_1gridview_1_1GridView_af68f80c6d63d03ba60e1b03827f320df_icgraph" alt=""/></div>
+<map name="da/df7/classgui_1_1controls_1_1gridview_1_1GridView_af68f80c6d63d03ba60e1b03827f320df_icgraph" id="da/df7/classgui_1_1controls_1_1gridview_1_1GridView_af68f80c6d63d03ba60e1b03827f320df_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af68f80c6d63d03ba60e1b03827f320df"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridView._get_row_label </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00074">74</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00074">gui.controls.gridview.GridView._get_row_label()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView_af68f80c6d63d03ba60e1b03827f320df_cgraph.png" border="0" usemap="#da/df7/classgui_1_1controls_1_1gridview_1_1GridView_af68f80c6d63d03ba60e1b03827f320df_cgraph" alt=""/></div>
+<map name="da/df7/classgui_1_1controls_1_1gridview_1_1GridView_af68f80c6d63d03ba60e1b03827f320df_cgraph" id="da/df7/classgui_1_1controls_1_1gridview_1_1GridView_af68f80c6d63d03ba60e1b03827f320df_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a19b8177958b9d1f1213b9ed51c60e737"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridView._set_items </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>a_list</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00058">58</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00064">gui.controls.gridview.GridView._items</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00058">gui.controls.gridview.GridView._set_items()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a19b8177958b9d1f1213b9ed51c60e737_cgraph.png" border="0" usemap="#da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a19b8177958b9d1f1213b9ed51c60e737_cgraph" alt=""/></div>
+<map name="da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a19b8177958b9d1f1213b9ed51c60e737_cgraph" id="da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a19b8177958b9d1f1213b9ed51c60e737_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a19b8177958b9d1f1213b9ed51c60e737"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridView._set_items </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>a_list</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00058">58</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00058">gui.controls.gridview.GridView._set_items()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a19b8177958b9d1f1213b9ed51c60e737_icgraph.png" border="0" usemap="#da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a19b8177958b9d1f1213b9ed51c60e737_icgraph" alt=""/></div>
+<map name="da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a19b8177958b9d1f1213b9ed51c60e737_icgraph" id="da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a19b8177958b9d1f1213b9ed51c60e737_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a820d36ab034f85443928e13ccbaa3a6a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridView._set_row_label </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00078">78</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00078">gui.controls.gridview.GridView._set_row_label()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00128">gui.controls.gridview.GridTableBase</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a820d36ab034f85443928e13ccbaa3a6a_cgraph.png" border="0" usemap="#da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a820d36ab034f85443928e13ccbaa3a6a_cgraph" alt=""/></div>
+<map name="da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a820d36ab034f85443928e13ccbaa3a6a_cgraph" id="da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a820d36ab034f85443928e13ccbaa3a6a_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a820d36ab034f85443928e13ccbaa3a6a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridView._set_row_label </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00078">78</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00078">gui.controls.gridview.GridView._set_row_label()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a820d36ab034f85443928e13ccbaa3a6a_icgraph.png" border="0" usemap="#da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a820d36ab034f85443928e13ccbaa3a6a_icgraph" alt=""/></div>
+<map name="da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a820d36ab034f85443928e13ccbaa3a6a_icgraph" id="da/df7/classgui_1_1controls_1_1gridview_1_1GridView_a820d36ab034f85443928e13ccbaa3a6a_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="ab03a4c766d4648427eb813f05822cb70"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.gridview.GridView._image = <a class="el" href="../../dc/d41/namespacegui_1_1images.html#a8c65320bb065770b304ba627ddffbe01">images.grid</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00053">53</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1d392aa368d3df15e35a67ce1df22ef6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.gridview.GridView._items</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00064">64</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00042">gui.controls.treeview.TreeView._get_items()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00055">gui.controls.gridview.GridView._get_items()</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00151">gui.controls.listview.ListView._get_items()</a>, <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html#l00045">gui.controls.treeview.TreeView._set_items()</a>, <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00058">gui.controls.gridview.GridView._set_items()</a>, <a class="el" href="../../d5/da6/gui_2controls_2listview_8py_source.html#l00154">gui.controls.listview.ListView._set_items()</a> y <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00146">gui.controls.listview.ListView.delete()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a68a2324579c55ff9d1abff14f8b828ad"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.gridview.GridView._wx_class = <a class="el" href="../../d2/d00/classgui_1_1controls_1_1gridview_1_1wx__Grid.html">wx_Grid</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00052">52</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../da/d65/build_2lib_8linux-x86__64-2_87_2gui_2controls_2textbox_8py_source.html#l00030">gui.controls.textbox.TextBox.__init__()</a> y <a class="el" href="../../d1/def/gui_2controls_2panel_8py_source.html#l00066">gui.controls.panel.Panel.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4838958e5f9b8b25e2ec596e8e62623c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.gridview.GridView.columns</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= InternalSpec(_get_column_headings,</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                           doc=<span class="stringliteral">&quot;Return a list of current column headers&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">85</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00298">gui.controls.gridview.GridTable._updateColAttrs()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00224">gui.controls.gridview.GridTable.CanGetValueAs()</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00179">gui.controls.listview.ListView.clear_all()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00164">gui.controls.gridview.GridTable.GetColLabelValue()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00152">gui.controls.gridview.GridTable.GetNumberCols()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00179">gui.controls.gridview.GridTable.GetRawValue()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00208">gui.controls.gridview.GridTable.GetTypeName()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00170">gui.controls.gridview.GridTable.GetValue()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00201">gui.controls.gridview.GridTable.IsEmptyCell()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00198">gui.controls.gridview.GridTable.SetRawValue()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00182">gui.controls.gridview.GridTable.SetValue()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00313">gui.controls.gridview.GridTable.SortColumn()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8a3d29bdbc5f94b9e9800a63e99068ec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.gridview.GridView.items = InternalSpec(<a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a9e9bb0622ca1cd26d746c560b9b4d46a">_get_items</a>, <a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html#a19b8177958b9d1f1213b9ed51c60e737">_set_items</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00087">87</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00122">gui.controls.treeview.TreeModel.__call__()</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00331">gui.controls.listview.ListModel.__call__()</a>, <a class="el" href="../../dc/db6/gui_2html_2select_8py_source.html#l00008">gui.html.select.SingleSelectControl.__init__()</a> y <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00126">gui.controls.listview.ListView.get_selected_items()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a10eec8786e2f5f4c103d93a68465a632"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.gridview.GridView.ongridcellchanged</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;grid_cell_changed&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                       binding=wx.VERSION &lt; (2, 9, 5) </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                           <span class="keywordflow">and</span> gridlib.EVT_GRID_CELL_CHANGE <span class="keywordflow">or</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                               gridlib.EVT_GRID_CELL_CHANGED, kind=GridEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00112">112</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa2e20893cd0a1352eaa69d0525b5ddad"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.gridview.GridView.ongridcolsize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;grid_col_size&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                       binding=gridlib.EVT_GRID_COL_SIZE, kind=GridEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00108">108</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acedbcdabf3657b0c2f364bacad2c942f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.gridview.GridView.ongrideditorcreated</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;grid_editor_created&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                       binding=gridlib.EVT_GRID_EDITOR_CREATED, kind=GridEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00122">122</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a92bcab2e69ff02477631066d8d72ade7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.gridview.GridView.ongrideditorhidden</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;grid_editor_hidden&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                       binding=gridlib.EVT_GRID_EDITOR_HIDDEN, kind=GridEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00120">120</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6599761e4322e8a4d95fc66291e77299"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.gridview.GridView.ongrideditornshown</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;grid_editor_shown&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                       binding=gridlib.EVT_GRID_EDITOR_SHOWN, kind=GridEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00118">118</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1ca2009d0b912ab32b82d5beec3ab046"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.gridview.GridView.ongridlabelclick</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;grid_label_click&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                       binding=gridlib.EVT_GRID_LABEL_LEFT_CLICK, kind=GridEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00100">100</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8728487f553abbce9d4145678918751a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.gridview.GridView.ongridlabeldclick</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;grid_label_dclick&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                       binding=gridlib.EVT_GRID_LABEL_LEFT_DCLICK, kind=GridEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00104">104</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad4edf8abdf990c8859d3ded093b13a59"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.gridview.GridView.ongridlabelrclick</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;grid_label_rclick&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                       binding=gridlib.EVT_GRID_LABEL_RIGHT_CLICK, kind=GridEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00102">102</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a40c08a8b321ea9100aa8a2be7800dc04"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.gridview.GridView.ongridmouseclick</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;grid_mouse_click&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                       binding=gridlib.EVT_GRID_CELL_LEFT_CLICK, kind=GridEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00094">94</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1a721c7974a71f91a95966297a8717cc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.gridview.GridView.ongridmousedclick</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;grid_mouse_dclick&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                       binding=gridlib.EVT_GRID_CELL_LEFT_DCLICK, kind=GridEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00098">98</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9a1c963a153c878df15086fdadc268b8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.gridview.GridView.ongridmouserclick</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;grid_mouse_rclick&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                       binding=gridlib.EVT_GRID_CELL_RIGHT_CLICK, kind=GridEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00096">96</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a524d508a269a0bda022f4fe39a095c4b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.gridview.GridView.ongridrangeselect</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;grid_range_select&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                       binding=gridlib.EVT_GRID_RANGE_SELECT, kind=GridEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00110">110</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab078feac5f8bceff49d971c64c45626f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.gridview.GridView.ongridrowsize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;grid_row_size&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                       binding=gridlib.EVT_GRID_ROW_SIZE, kind=GridEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00106">106</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a280d861383f5cbb088b584ce332d93e9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.gridview.GridView.ongridselectcell</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;grid_select_cell&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                       binding=gridlib.EVT_GRID_SELECT_CELL, kind=GridEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00116">116</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa117c7669fc5a703fe42fdaa54c359db"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.gridview.GridView.row_label</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= Spec(_get_row_label, _set_row_label,</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;        default=<span class="keywordtype">None</span>,</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;        doc=<span class="stringliteral">&quot;indicate to the control the number of items it contains (virtual)&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00089">89</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>build/lib.linux-x86_64-2.7/gui/controls/<a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/dc4/namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="../../d7/d56/namespacegui_1_1controls.html">controls</a></li><li class="navelem"><a class="el" href="../../d3/d2b/namespacegui_1_1controls_1_1gridview.html">gridview</a></li><li class="navelem"><a class="el" href="../../da/df7/classgui_1_1controls_1_1gridview_1_1GridView.html">GridView</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:47 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

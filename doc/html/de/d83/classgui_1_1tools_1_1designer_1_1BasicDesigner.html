@@ -1,0 +1,1504 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Referencia de la Clase gui.tools.designer.BasicDesigner</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="../../dc/dcf/classgui_1_1tools_1_1designer_1_1BasicDesigner-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase gui.tools.designer.BasicDesigner</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:aa1555d60319d014b07affc837c5f2dbd"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aa1555d60319d014b07affc837c5f2dbd">__init__</a></td></tr>
+<tr class="separator:aa1555d60319d014b07affc837c5f2dbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab438e7b78dc9494cfb71315b358616e4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ab438e7b78dc9494cfb71315b358616e4">__call__</a></td></tr>
+<tr class="separator:ab438e7b78dc9494cfb71315b358616e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bdaf6b80465efa4a0ce37c65620bfc0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a1bdaf6b80465efa4a0ce37c65620bfc0">mouse_down</a></td></tr>
+<tr class="separator:a1bdaf6b80465efa4a0ce37c65620bfc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dcffe54c0f15a01d03fbe9054ce2065"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0dcffe54c0f15a01d03fbe9054ce2065">mouse_move</a></td></tr>
+<tr class="separator:a0dcffe54c0f15a01d03fbe9054ce2065"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add691788f47e55d19b47313e5f3c3b68"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#add691788f47e55d19b47313e5f3c3b68">do_resize</a></td></tr>
+<tr class="separator:add691788f47e55d19b47313e5f3c3b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e2988071913c13b913a6557893a0be5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a7e2988071913c13b913a6557893a0be5">mouse_up</a></td></tr>
+<tr class="separator:a7e2988071913c13b913a6557893a0be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6bd0af10b6e21d249814190b671afd3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ae6bd0af10b6e21d249814190b671afd3">key_press</a></td></tr>
+<tr class="separator:ae6bd0af10b6e21d249814190b671afd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d504f42e52b760d035561560cd94dc6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0d504f42e52b760d035561560cd94dc6">delete</a></td></tr>
+<tr class="separator:a0d504f42e52b760d035561560cd94dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0de31d5cce0a357648bd5c4aa08d437a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0de31d5cce0a357648bd5c4aa08d437a">duplicate</a></td></tr>
+<tr class="separator:a0de31d5cce0a357648bd5c4aa08d437a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a556b6cf9d1f11a9d55238c6d24ea5d0a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a556b6cf9d1f11a9d55238c6d24ea5d0a">select</a></td></tr>
+<tr class="separator:a556b6cf9d1f11a9d55238c6d24ea5d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b2047d29fef8e4b929bb816176214c2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a7b2047d29fef8e4b929bb816176214c2">draw_grid</a></td></tr>
+<tr class="separator:a7b2047d29fef8e4b929bb816176214c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26d361b9d6c48439174f82aeca2e9bc3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a26d361b9d6c48439174f82aeca2e9bc3">OnLayoutNeeded</a></td></tr>
+<tr class="separator:a26d361b9d6c48439174f82aeca2e9bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1555d60319d014b07affc837c5f2dbd"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aa1555d60319d014b07affc837c5f2dbd">__init__</a></td></tr>
+<tr class="separator:aa1555d60319d014b07affc837c5f2dbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab438e7b78dc9494cfb71315b358616e4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ab438e7b78dc9494cfb71315b358616e4">__call__</a></td></tr>
+<tr class="separator:ab438e7b78dc9494cfb71315b358616e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bdaf6b80465efa4a0ce37c65620bfc0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a1bdaf6b80465efa4a0ce37c65620bfc0">mouse_down</a></td></tr>
+<tr class="separator:a1bdaf6b80465efa4a0ce37c65620bfc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dcffe54c0f15a01d03fbe9054ce2065"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0dcffe54c0f15a01d03fbe9054ce2065">mouse_move</a></td></tr>
+<tr class="separator:a0dcffe54c0f15a01d03fbe9054ce2065"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add691788f47e55d19b47313e5f3c3b68"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#add691788f47e55d19b47313e5f3c3b68">do_resize</a></td></tr>
+<tr class="separator:add691788f47e55d19b47313e5f3c3b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e2988071913c13b913a6557893a0be5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a7e2988071913c13b913a6557893a0be5">mouse_up</a></td></tr>
+<tr class="separator:a7e2988071913c13b913a6557893a0be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6bd0af10b6e21d249814190b671afd3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ae6bd0af10b6e21d249814190b671afd3">key_press</a></td></tr>
+<tr class="separator:ae6bd0af10b6e21d249814190b671afd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d504f42e52b760d035561560cd94dc6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0d504f42e52b760d035561560cd94dc6">delete</a></td></tr>
+<tr class="separator:a0d504f42e52b760d035561560cd94dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0de31d5cce0a357648bd5c4aa08d437a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0de31d5cce0a357648bd5c4aa08d437a">duplicate</a></td></tr>
+<tr class="separator:a0de31d5cce0a357648bd5c4aa08d437a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a556b6cf9d1f11a9d55238c6d24ea5d0a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a556b6cf9d1f11a9d55238c6d24ea5d0a">select</a></td></tr>
+<tr class="separator:a556b6cf9d1f11a9d55238c6d24ea5d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b2047d29fef8e4b929bb816176214c2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a7b2047d29fef8e4b929bb816176214c2">draw_grid</a></td></tr>
+<tr class="separator:a7b2047d29fef8e4b929bb816176214c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26d361b9d6c48439174f82aeca2e9bc3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a26d361b9d6c48439174f82aeca2e9bc3">OnLayoutNeeded</a></td></tr>
+<tr class="separator:a26d361b9d6c48439174f82aeca2e9bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:a21be0ba86bcaa6ae12a96ffb66a47faa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a21be0ba86bcaa6ae12a96ffb66a47faa">parent</a></td></tr>
+<tr class="separator:a21be0ba86bcaa6ae12a96ffb66a47faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a316585262d7ed22890206f11eab3cca7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a316585262d7ed22890206f11eab3cca7">current</a></td></tr>
+<tr class="separator:a316585262d7ed22890206f11eab3cca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09103eaa17ddb6cad04098d9d4799e09"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a09103eaa17ddb6cad04098d9d4799e09">selection</a></td></tr>
+<tr class="separator:a09103eaa17ddb6cad04098d9d4799e09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb2ac7b44fb8d777254c0618d0b37e51"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aeb2ac7b44fb8d777254c0618d0b37e51">resizing</a></td></tr>
+<tr class="separator:aeb2ac7b44fb8d777254c0618d0b37e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad244cf98af34097e633b2aedb666baf9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ad244cf98af34097e633b2aedb666baf9">inspector</a></td></tr>
+<tr class="separator:ad244cf98af34097e633b2aedb666baf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d228ecbd90ac2d2a2c4b5bd16db22ca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a3d228ecbd90ac2d2a2c4b5bd16db22ca">last_wx_obj</a></td></tr>
+<tr class="separator:a3d228ecbd90ac2d2a2c4b5bd16db22ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3878d5edf4f9fefea378db6750999c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#af3878d5edf4f9fefea378db6750999c8">onclose</a></td></tr>
+<tr class="separator:af3878d5edf4f9fefea378db6750999c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fa8f2fcc07cfba06d32f0212041d90a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a8fa8f2fcc07cfba06d32f0212041d90a">timestamp</a></td></tr>
+<tr class="separator:a8fa8f2fcc07cfba06d32f0212041d90a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba57a42564d5b254ca18a68dfeeeaed3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aba57a42564d5b254ca18a68dfeeeaed3">last_xy</a></td></tr>
+<tr class="separator:aba57a42564d5b254ca18a68dfeeeaed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8874c79a78fed38e98fdddf65aab1e05"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a8874c79a78fed38e98fdddf65aab1e05">overlay</a></td></tr>
+<tr class="separator:a8874c79a78fed38e98fdddf65aab1e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a678c487a73bb44c5edd58ce75f20b3b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a678c487a73bb44c5edd58ce75f20b3b7">last_obj</a></td></tr>
+<tr class="separator:a678c487a73bb44c5edd58ce75f20b3b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcea83aeb6437827df7706156b6e89bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#adcea83aeb6437827df7706156b6e89bc">pos</a></td></tr>
+<tr class="separator:adcea83aeb6437827df7706156b6e89bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa9e18460582b807dffa0bc3ab0ae089"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aaa9e18460582b807dffa0bc3ab0ae089">start</a></td></tr>
+<tr class="separator:aaa9e18460582b807dffa0bc3ab0ae089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00026">26</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="aa1555d60319d014b07affc837c5f2dbd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>inspector</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00029">29</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00029">gui.tools.designer.BasicDesigner.__init__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_aa1555d60319d014b07affc837c5f2dbd_icgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_aa1555d60319d014b07affc837c5f2dbd_icgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_aa1555d60319d014b07affc837c5f2dbd_icgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_aa1555d60319d014b07affc837c5f2dbd_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa1555d60319d014b07affc837c5f2dbd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>inspector</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00029">29</a> del archivo <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00029">gui.tools.designer.BasicDesigner.__init__()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00031">gui.tools.designer.BasicDesigner.current</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00036">gui.tools.designer.BasicDesigner.inspector</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00037">gui.tools.designer.BasicDesigner.last_wx_obj</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00040">gui.tools.designer.BasicDesigner.last_xy</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00038">gui.tools.designer.BasicDesigner.onclose</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00041">gui.tools.designer.BasicDesigner.overlay</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00030">gui.tools.designer.BasicDesigner.parent</a>, <a class="el" href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00033">gui.menu.wx_DummyWindow.parent</a>, <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00156">gui.controls.treeview.TreeItem.parent</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00556">gui.component.Component.parent</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01081">gui.component.SubComponent.parent</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00033">gui.tools.designer.BasicDesigner.resizing</a>, <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00021">gui.html.select.SingleSelectControl.selection</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00032">gui.tools.designer.BasicDesigner.selection</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00038">gui.controls.notebook.Notebook.selection</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00185">gui.controls.listbox.ItemContainerControl.selection</a>, <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00034">gui.event.Event.timestamp</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00039">gui.tools.designer.BasicDesigner.timestamp</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_aa1555d60319d014b07affc837c5f2dbd_cgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_aa1555d60319d014b07affc837c5f2dbd_cgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_aa1555d60319d014b07affc837c5f2dbd_cgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_aa1555d60319d014b07affc837c5f2dbd_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="ab438e7b78dc9494cfb71315b358616e4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.__call__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00043">43</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00031">gui.tools.designer.BasicDesigner.current</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00378">gui.tools.designer.BasicDesigner.draw_grid()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00036">gui.tools.designer.BasicDesigner.inspector</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00303">gui.tools.designer.BasicDesigner.key_press()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00040">gui.tools.designer.BasicDesigner.last_xy</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00123">gui.tools.designer.BasicDesigner.mouse_down()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00038">gui.tools.designer.BasicDesigner.onclose</a>, <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00021">gui.html.select.SingleSelectControl.selection</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00032">gui.tools.designer.BasicDesigner.selection</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00038">gui.controls.notebook.Notebook.selection</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00185">gui.controls.listbox.ItemContainerControl.selection</a>, <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00034">gui.event.Event.timestamp</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00039">gui.tools.designer.BasicDesigner.timestamp</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00043">gui.tools.designer.BasicDesigner.__call__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ab438e7b78dc9494cfb71315b358616e4_cgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ab438e7b78dc9494cfb71315b358616e4_cgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ab438e7b78dc9494cfb71315b358616e4_cgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ab438e7b78dc9494cfb71315b358616e4_cgraph">
+<area shape="rect" id="node2" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a7b2047d29fef8e4b929bb816176214c2" title="gui.tools.designer.Basic\lDesigner.draw_grid" alt="" coords="217,70,378,111"/><area shape="rect" id="node3" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ae6bd0af10b6e21d249814190b671afd3" title="gui.tools.designer.Basic\lDesigner.key_press" alt="" coords="217,135,378,177"/><area shape="rect" id="node11" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a1bdaf6b80465efa4a0ce37c65620bfc0" title="gui.tools.designer.Basic\lDesigner.mouse_down" alt="" coords="217,201,378,242"/><area shape="rect" id="node12" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0dcffe54c0f15a01d03fbe9054ce2065" title="gui.tools.designer.Basic\lDesigner.mouse_move" alt="" coords="217,266,378,307"/><area shape="rect" id="node13" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a7e2988071913c13b913a6557893a0be5" title="gui.tools.designer.Basic\lDesigner.mouse_up" alt="" coords="217,331,378,373"/><area shape="rect" id="node4" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ab57819669de9197abc515734d64e6d73" title="gui.controls.listbox.Item\lContainerControl.delete" alt="" coords="463,5,625,46"/><area shape="rect" id="node6" href="../../d1/d7f/classgui_1_1controls_1_1listview_1_1ListView.html#ad038ccaf2043329eba4ed80311a4a1b8" title="gui.controls.listview.List\lView.delete" alt="" coords="463,70,625,111"/><area shape="rect" id="node7" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0d504f42e52b760d035561560cd94dc6" title="gui.tools.designer.Basic\lDesigner.delete" alt="" coords="463,135,625,177"/><area shape="rect" id="node8" href="../../d7/d98/classgui_1_1component_1_1Component.html#a2a4e1ce9390e14e18785d56086a422c5" title="gui.component.Component.duplicate" alt="" coords="427,201,661,228"/><area shape="rect" id="node10" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0de31d5cce0a357648bd5c4aa08d437a" title="gui.tools.designer.Basic\lDesigner.duplicate" alt="" coords="463,253,625,294"/><area shape="rect" id="node5" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a427f981a0aea5188e0d3e857257c602b" title="gui.controls.listbox.Item\lContainerControl.get_data" alt="" coords="722,5,897,46"/><area shape="rect" id="node9" href="../../d7/d98/classgui_1_1component_1_1Component.html#a22d66b10bb4fbe00b4d237c42dae1264" title="gui.component.Component.get\l_parent" alt="" coords="709,194,909,235"/><area shape="rect" id="node14" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a556b6cf9d1f11a9d55238c6d24ea5d0a" title="gui.tools.designer.Basic\lDesigner.select" alt="" coords="463,331,625,373"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ab438e7b78dc9494cfb71315b358616e4_icgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ab438e7b78dc9494cfb71315b358616e4_icgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ab438e7b78dc9494cfb71315b358616e4_icgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ab438e7b78dc9494cfb71315b358616e4_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab438e7b78dc9494cfb71315b358616e4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.__call__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00043">43</a> del archivo <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00043">gui.tools.designer.BasicDesigner.__call__()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00031">gui.tools.designer.BasicDesigner.current</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00378">gui.tools.designer.BasicDesigner.draw_grid()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00036">gui.tools.designer.BasicDesigner.inspector</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00303">gui.tools.designer.BasicDesigner.key_press()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00098">gui.tools.designer.BasicDesigner.last_obj</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00040">gui.tools.designer.BasicDesigner.last_xy</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00123">gui.tools.designer.BasicDesigner.mouse_down()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00165">gui.tools.designer.BasicDesigner.mouse_move()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00267">gui.tools.designer.BasicDesigner.mouse_up()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00038">gui.tools.designer.BasicDesigner.onclose</a>, <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00021">gui.html.select.SingleSelectControl.selection</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00032">gui.tools.designer.BasicDesigner.selection</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00038">gui.controls.notebook.Notebook.selection</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00185">gui.controls.listbox.ItemContainerControl.selection</a>, <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00034">gui.event.Event.timestamp</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00039">gui.tools.designer.BasicDesigner.timestamp</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ab438e7b78dc9494cfb71315b358616e4_cgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ab438e7b78dc9494cfb71315b358616e4_cgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ab438e7b78dc9494cfb71315b358616e4_cgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ab438e7b78dc9494cfb71315b358616e4_cgraph">
+<area shape="rect" id="node2" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a7b2047d29fef8e4b929bb816176214c2" title="gui.tools.designer.Basic\lDesigner.draw_grid" alt="" coords="217,70,378,111"/><area shape="rect" id="node3" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ae6bd0af10b6e21d249814190b671afd3" title="gui.tools.designer.Basic\lDesigner.key_press" alt="" coords="217,135,378,177"/><area shape="rect" id="node11" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a1bdaf6b80465efa4a0ce37c65620bfc0" title="gui.tools.designer.Basic\lDesigner.mouse_down" alt="" coords="217,201,378,242"/><area shape="rect" id="node12" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0dcffe54c0f15a01d03fbe9054ce2065" title="gui.tools.designer.Basic\lDesigner.mouse_move" alt="" coords="217,266,378,307"/><area shape="rect" id="node13" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a7e2988071913c13b913a6557893a0be5" title="gui.tools.designer.Basic\lDesigner.mouse_up" alt="" coords="217,331,378,373"/><area shape="rect" id="node4" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ab57819669de9197abc515734d64e6d73" title="gui.controls.listbox.Item\lContainerControl.delete" alt="" coords="463,5,625,46"/><area shape="rect" id="node6" href="../../d1/d7f/classgui_1_1controls_1_1listview_1_1ListView.html#ad038ccaf2043329eba4ed80311a4a1b8" title="gui.controls.listview.List\lView.delete" alt="" coords="463,70,625,111"/><area shape="rect" id="node7" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0d504f42e52b760d035561560cd94dc6" title="gui.tools.designer.Basic\lDesigner.delete" alt="" coords="463,135,625,177"/><area shape="rect" id="node8" href="../../d7/d98/classgui_1_1component_1_1Component.html#a2a4e1ce9390e14e18785d56086a422c5" title="gui.component.Component.duplicate" alt="" coords="427,201,661,228"/><area shape="rect" id="node10" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0de31d5cce0a357648bd5c4aa08d437a" title="gui.tools.designer.Basic\lDesigner.duplicate" alt="" coords="463,253,625,294"/><area shape="rect" id="node5" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a427f981a0aea5188e0d3e857257c602b" title="gui.controls.listbox.Item\lContainerControl.get_data" alt="" coords="722,5,897,46"/><area shape="rect" id="node9" href="../../d7/d98/classgui_1_1component_1_1Component.html#a22d66b10bb4fbe00b4d237c42dae1264" title="gui.component.Component.get\l_parent" alt="" coords="709,194,909,235"/><area shape="rect" id="node14" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a556b6cf9d1f11a9d55238c6d24ea5d0a" title="gui.tools.designer.Basic\lDesigner.select" alt="" coords="463,331,625,373"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0d504f42e52b760d035561560cd94dc6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.delete </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00337">337</a> del archivo <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00337">gui.tools.designer.BasicDesigner.delete()</a>, <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00021">gui.html.select.SingleSelectControl.selection</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00032">gui.tools.designer.BasicDesigner.selection</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00038">gui.controls.notebook.Notebook.selection</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00185">gui.controls.listbox.ItemContainerControl.selection</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0d504f42e52b760d035561560cd94dc6_cgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0d504f42e52b760d035561560cd94dc6_cgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0d504f42e52b760d035561560cd94dc6_cgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0d504f42e52b760d035561560cd94dc6_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0d504f42e52b760d035561560cd94dc6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.delete </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00337">337</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00021">gui.html.select.SingleSelectControl.selection</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00032">gui.tools.designer.BasicDesigner.selection</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00038">gui.controls.notebook.Notebook.selection</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00185">gui.controls.listbox.ItemContainerControl.selection</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00337">gui.tools.designer.BasicDesigner.delete()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00303">gui.tools.designer.BasicDesigner.key_press()</a> y <a class="el" href="../../d5/ddf/gui_2tools_2inspector_8py_source.html#l00200">gui.tools.inspector.InspectorPanel.show_context_menu()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0d504f42e52b760d035561560cd94dc6_icgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0d504f42e52b760d035561560cd94dc6_icgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0d504f42e52b760d035561560cd94dc6_icgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0d504f42e52b760d035561560cd94dc6_icgraph">
+<area shape="rect" id="node2" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ae6bd0af10b6e21d249814190b671afd3" title="gui.tools.designer.Basic\lDesigner.key_press" alt="" coords="229,29,390,70"/><area shape="rect" id="node4" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182" title="gui.tools.inspector.Inspector\lPanel.show_context_menu" alt="" coords="216,94,403,135"/><area shape="rect" id="node3" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ab438e7b78dc9494cfb71315b358616e4" title="gui.tools.designer.Basic\lDesigner.__call__" alt="" coords="451,29,613,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="add691788f47e55d19b47313e5f3c3b68"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.do_resize </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>wx_obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00209">209</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00143">gui.tools.designer.BasicDesigner.pos</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00875">gui.component.ControlSuper.pos</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00033">gui.tools.designer.BasicDesigner.resizing</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00209">gui.tools.designer.BasicDesigner.do_resize()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_add691788f47e55d19b47313e5f3c3b68_icgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_add691788f47e55d19b47313e5f3c3b68_icgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_add691788f47e55d19b47313e5f3c3b68_icgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_add691788f47e55d19b47313e5f3c3b68_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="add691788f47e55d19b47313e5f3c3b68"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.do_resize </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>wx_obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00209">209</a> del archivo <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00209">gui.tools.designer.BasicDesigner.do_resize()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00143">gui.tools.designer.BasicDesigner.pos</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00875">gui.component.ControlSuper.pos</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00033">gui.tools.designer.BasicDesigner.resizing</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_add691788f47e55d19b47313e5f3c3b68_cgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_add691788f47e55d19b47313e5f3c3b68_cgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_add691788f47e55d19b47313e5f3c3b68_cgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_add691788f47e55d19b47313e5f3c3b68_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7b2047d29fef8e4b929bb816176214c2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.draw_grid </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00378">378</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00043">gui.tools.designer.BasicDesigner.__call__()</a> y <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00378">gui.tools.designer.BasicDesigner.draw_grid()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a7b2047d29fef8e4b929bb816176214c2_icgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a7b2047d29fef8e4b929bb816176214c2_icgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a7b2047d29fef8e4b929bb816176214c2_icgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a7b2047d29fef8e4b929bb816176214c2_icgraph">
+<area shape="rect" id="node2" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ab438e7b78dc9494cfb71315b358616e4" title="gui.tools.designer.Basic\lDesigner.__call__" alt="" coords="217,29,378,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7b2047d29fef8e4b929bb816176214c2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.draw_grid </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00378">378</a> del archivo <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00378">gui.tools.designer.BasicDesigner.draw_grid()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a7b2047d29fef8e4b929bb816176214c2_cgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a7b2047d29fef8e4b929bb816176214c2_cgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a7b2047d29fef8e4b929bb816176214c2_cgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a7b2047d29fef8e4b929bb816176214c2_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0de31d5cce0a357648bd5c4aa08d437a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.duplicate </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00347">347</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00021">gui.html.select.SingleSelectControl.selection</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00032">gui.tools.designer.BasicDesigner.selection</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00038">gui.controls.notebook.Notebook.selection</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00185">gui.controls.listbox.ItemContainerControl.selection</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00347">gui.tools.designer.BasicDesigner.duplicate()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00303">gui.tools.designer.BasicDesigner.key_press()</a> y <a class="el" href="../../d5/ddf/gui_2tools_2inspector_8py_source.html#l00200">gui.tools.inspector.InspectorPanel.show_context_menu()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0de31d5cce0a357648bd5c4aa08d437a_icgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0de31d5cce0a357648bd5c4aa08d437a_icgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0de31d5cce0a357648bd5c4aa08d437a_icgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0de31d5cce0a357648bd5c4aa08d437a_icgraph">
+<area shape="rect" id="node2" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ae6bd0af10b6e21d249814190b671afd3" title="gui.tools.designer.Basic\lDesigner.key_press" alt="" coords="229,29,390,70"/><area shape="rect" id="node4" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182" title="gui.tools.inspector.Inspector\lPanel.show_context_menu" alt="" coords="216,94,403,135"/><area shape="rect" id="node3" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ab438e7b78dc9494cfb71315b358616e4" title="gui.tools.designer.Basic\lDesigner.__call__" alt="" coords="451,29,613,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0de31d5cce0a357648bd5c4aa08d437a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.duplicate </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00347">347</a> del archivo <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00347">gui.tools.designer.BasicDesigner.duplicate()</a>, <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00021">gui.html.select.SingleSelectControl.selection</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00032">gui.tools.designer.BasicDesigner.selection</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00038">gui.controls.notebook.Notebook.selection</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00185">gui.controls.listbox.ItemContainerControl.selection</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0de31d5cce0a357648bd5c4aa08d437a_cgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0de31d5cce0a357648bd5c4aa08d437a_cgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0de31d5cce0a357648bd5c4aa08d437a_cgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0de31d5cce0a357648bd5c4aa08d437a_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae6bd0af10b6e21d249814190b671afd3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.key_press </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00303">303</a> del archivo <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00146">gui.controls.listview.ListView.delete()</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00153">gui.controls.listbox.ItemContainerControl.delete()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00337">gui.tools.designer.BasicDesigner.delete()</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00277">gui.component.Component.duplicate()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00347">gui.tools.designer.BasicDesigner.duplicate()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00303">gui.tools.designer.BasicDesigner.key_press()</a>, <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00021">gui.html.select.SingleSelectControl.selection</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00032">gui.tools.designer.BasicDesigner.selection</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00038">gui.controls.notebook.Notebook.selection</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00185">gui.controls.listbox.ItemContainerControl.selection</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ae6bd0af10b6e21d249814190b671afd3_cgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ae6bd0af10b6e21d249814190b671afd3_cgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ae6bd0af10b6e21d249814190b671afd3_cgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ae6bd0af10b6e21d249814190b671afd3_cgraph">
+<area shape="rect" id="node2" href="../../d1/d7f/classgui_1_1controls_1_1listview_1_1ListView.html#ad038ccaf2043329eba4ed80311a4a1b8" title="gui.controls.listview.List\lView.delete" alt="" coords="252,5,415,46"/><area shape="rect" id="node3" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ab57819669de9197abc515734d64e6d73" title="gui.controls.listbox.Item\lContainerControl.delete" alt="" coords="253,70,414,111"/><area shape="rect" id="node5" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0d504f42e52b760d035561560cd94dc6" title="gui.tools.designer.Basic\lDesigner.delete" alt="" coords="253,135,414,177"/><area shape="rect" id="node6" href="../../d7/d98/classgui_1_1component_1_1Component.html#a2a4e1ce9390e14e18785d56086a422c5" title="gui.component.Component.duplicate" alt="" coords="216,201,451,228"/><area shape="rect" id="node8" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0de31d5cce0a357648bd5c4aa08d437a" title="gui.tools.designer.Basic\lDesigner.duplicate" alt="" coords="253,253,414,294"/><area shape="rect" id="node4" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a427f981a0aea5188e0d3e857257c602b" title="gui.controls.listbox.Item\lContainerControl.get_data" alt="" coords="511,70,686,111"/><area shape="rect" id="node7" href="../../d7/d98/classgui_1_1component_1_1Component.html#a22d66b10bb4fbe00b4d237c42dae1264" title="gui.component.Component.get\l_parent" alt="" coords="499,194,699,235"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae6bd0af10b6e21d249814190b671afd3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.key_press </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00303">303</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00146">gui.controls.listview.ListView.delete()</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00153">gui.controls.listbox.ItemContainerControl.delete()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00337">gui.tools.designer.BasicDesigner.delete()</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00277">gui.component.Component.duplicate()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00347">gui.tools.designer.BasicDesigner.duplicate()</a>, <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00021">gui.html.select.SingleSelectControl.selection</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00032">gui.tools.designer.BasicDesigner.selection</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00038">gui.controls.notebook.Notebook.selection</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00185">gui.controls.listbox.ItemContainerControl.selection</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00043">gui.tools.designer.BasicDesigner.__call__()</a> y <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00303">gui.tools.designer.BasicDesigner.key_press()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ae6bd0af10b6e21d249814190b671afd3_cgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ae6bd0af10b6e21d249814190b671afd3_cgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ae6bd0af10b6e21d249814190b671afd3_cgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ae6bd0af10b6e21d249814190b671afd3_cgraph">
+<area shape="rect" id="node2" href="../../d1/d7f/classgui_1_1controls_1_1listview_1_1ListView.html#ad038ccaf2043329eba4ed80311a4a1b8" title="gui.controls.listview.List\lView.delete" alt="" coords="252,5,415,46"/><area shape="rect" id="node3" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ab57819669de9197abc515734d64e6d73" title="gui.controls.listbox.Item\lContainerControl.delete" alt="" coords="253,70,414,111"/><area shape="rect" id="node5" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0d504f42e52b760d035561560cd94dc6" title="gui.tools.designer.Basic\lDesigner.delete" alt="" coords="253,135,414,177"/><area shape="rect" id="node6" href="../../d7/d98/classgui_1_1component_1_1Component.html#a2a4e1ce9390e14e18785d56086a422c5" title="gui.component.Component.duplicate" alt="" coords="216,201,451,228"/><area shape="rect" id="node8" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0de31d5cce0a357648bd5c4aa08d437a" title="gui.tools.designer.Basic\lDesigner.duplicate" alt="" coords="253,253,414,294"/><area shape="rect" id="node4" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a427f981a0aea5188e0d3e857257c602b" title="gui.controls.listbox.Item\lContainerControl.get_data" alt="" coords="511,70,686,111"/><area shape="rect" id="node7" href="../../d7/d98/classgui_1_1component_1_1Component.html#a22d66b10bb4fbe00b4d237c42dae1264" title="gui.component.Component.get\l_parent" alt="" coords="499,194,699,235"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ae6bd0af10b6e21d249814190b671afd3_icgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ae6bd0af10b6e21d249814190b671afd3_icgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ae6bd0af10b6e21d249814190b671afd3_icgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_ae6bd0af10b6e21d249814190b671afd3_icgraph">
+<area shape="rect" id="node2" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ab438e7b78dc9494cfb71315b358616e4" title="gui.tools.designer.Basic\lDesigner.__call__" alt="" coords="217,29,378,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1bdaf6b80465efa4a0ce37c65620bfc0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.mouse_down </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00123">123</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00031">gui.tools.designer.BasicDesigner.current</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00041">gui.tools.designer.BasicDesigner.overlay</a>, <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00021">gui.html.select.SingleSelectControl.selection</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00032">gui.tools.designer.BasicDesigner.selection</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00038">gui.controls.notebook.Notebook.selection</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00185">gui.controls.listbox.ItemContainerControl.selection</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00043">gui.tools.designer.BasicDesigner.__call__()</a> y <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00123">gui.tools.designer.BasicDesigner.mouse_down()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a1bdaf6b80465efa4a0ce37c65620bfc0_icgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a1bdaf6b80465efa4a0ce37c65620bfc0_icgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a1bdaf6b80465efa4a0ce37c65620bfc0_icgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a1bdaf6b80465efa4a0ce37c65620bfc0_icgraph">
+<area shape="rect" id="node2" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ab438e7b78dc9494cfb71315b358616e4" title="gui.tools.designer.Basic\lDesigner.__call__" alt="" coords="217,29,378,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1bdaf6b80465efa4a0ce37c65620bfc0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.mouse_down </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00123">123</a> del archivo <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00031">gui.tools.designer.BasicDesigner.current</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00123">gui.tools.designer.BasicDesigner.mouse_down()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00041">gui.tools.designer.BasicDesigner.overlay</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00143">gui.tools.designer.BasicDesigner.pos</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00875">gui.component.ControlSuper.pos</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00363">gui.tools.designer.BasicDesigner.select()</a>, <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00021">gui.html.select.SingleSelectControl.selection</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00032">gui.tools.designer.BasicDesigner.selection</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00038">gui.controls.notebook.Notebook.selection</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00185">gui.controls.listbox.ItemContainerControl.selection</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00156">gui.tools.designer.BasicDesigner.start</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a1bdaf6b80465efa4a0ce37c65620bfc0_cgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a1bdaf6b80465efa4a0ce37c65620bfc0_cgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a1bdaf6b80465efa4a0ce37c65620bfc0_cgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a1bdaf6b80465efa4a0ce37c65620bfc0_cgraph">
+<area shape="rect" id="node2" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a556b6cf9d1f11a9d55238c6d24ea5d0a" title="gui.tools.designer.Basic\lDesigner.select" alt="" coords="217,29,378,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0dcffe54c0f15a01d03fbe9054ce2065"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.mouse_move </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00165">165</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00031">gui.tools.designer.BasicDesigner.current</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00041">gui.tools.designer.BasicDesigner.overlay</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00143">gui.tools.designer.BasicDesigner.pos</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00875">gui.component.ControlSuper.pos</a>, <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00021">gui.html.select.SingleSelectControl.selection</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00032">gui.tools.designer.BasicDesigner.selection</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00038">gui.controls.notebook.Notebook.selection</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00185">gui.controls.listbox.ItemContainerControl.selection</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00156">gui.tools.designer.BasicDesigner.start</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00043">gui.tools.designer.BasicDesigner.__call__()</a> y <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00165">gui.tools.designer.BasicDesigner.mouse_move()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0dcffe54c0f15a01d03fbe9054ce2065_icgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0dcffe54c0f15a01d03fbe9054ce2065_icgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0dcffe54c0f15a01d03fbe9054ce2065_icgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0dcffe54c0f15a01d03fbe9054ce2065_icgraph">
+<area shape="rect" id="node2" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ab438e7b78dc9494cfb71315b358616e4" title="gui.tools.designer.Basic\lDesigner.__call__" alt="" coords="217,29,378,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0dcffe54c0f15a01d03fbe9054ce2065"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.mouse_move </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00165">165</a> del archivo <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00031">gui.tools.designer.BasicDesigner.current</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00165">gui.tools.designer.BasicDesigner.mouse_move()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00041">gui.tools.designer.BasicDesigner.overlay</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00143">gui.tools.designer.BasicDesigner.pos</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00875">gui.component.ControlSuper.pos</a>, <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00021">gui.html.select.SingleSelectControl.selection</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00032">gui.tools.designer.BasicDesigner.selection</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00038">gui.controls.notebook.Notebook.selection</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00185">gui.controls.listbox.ItemContainerControl.selection</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00156">gui.tools.designer.BasicDesigner.start</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0dcffe54c0f15a01d03fbe9054ce2065_cgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0dcffe54c0f15a01d03fbe9054ce2065_cgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0dcffe54c0f15a01d03fbe9054ce2065_cgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a0dcffe54c0f15a01d03fbe9054ce2065_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7e2988071913c13b913a6557893a0be5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.mouse_up </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>wx_obj</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00267">267</a> del archivo <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00031">gui.tools.designer.BasicDesigner.current</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00036">gui.tools.designer.BasicDesigner.inspector</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00267">gui.tools.designer.BasicDesigner.mouse_up()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00041">gui.tools.designer.BasicDesigner.overlay</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00143">gui.tools.designer.BasicDesigner.pos</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00875">gui.component.ControlSuper.pos</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00033">gui.tools.designer.BasicDesigner.resizing</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00363">gui.tools.designer.BasicDesigner.select()</a>, <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00021">gui.html.select.SingleSelectControl.selection</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00032">gui.tools.designer.BasicDesigner.selection</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00038">gui.controls.notebook.Notebook.selection</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00185">gui.controls.listbox.ItemContainerControl.selection</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a7e2988071913c13b913a6557893a0be5_cgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a7e2988071913c13b913a6557893a0be5_cgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a7e2988071913c13b913a6557893a0be5_cgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a7e2988071913c13b913a6557893a0be5_cgraph">
+<area shape="rect" id="node2" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a556b6cf9d1f11a9d55238c6d24ea5d0a" title="gui.tools.designer.Basic\lDesigner.select" alt="" coords="217,5,378,46"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7e2988071913c13b913a6557893a0be5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.mouse_up </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>wx_obj</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00267">267</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00031">gui.tools.designer.BasicDesigner.current</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00036">gui.tools.designer.BasicDesigner.inspector</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00041">gui.tools.designer.BasicDesigner.overlay</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00143">gui.tools.designer.BasicDesigner.pos</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00875">gui.component.ControlSuper.pos</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00033">gui.tools.designer.BasicDesigner.resizing</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00363">gui.tools.designer.BasicDesigner.select()</a>, <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00021">gui.html.select.SingleSelectControl.selection</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00032">gui.tools.designer.BasicDesigner.selection</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00038">gui.controls.notebook.Notebook.selection</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00185">gui.controls.listbox.ItemContainerControl.selection</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00043">gui.tools.designer.BasicDesigner.__call__()</a> y <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00267">gui.tools.designer.BasicDesigner.mouse_up()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a7e2988071913c13b913a6557893a0be5_cgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a7e2988071913c13b913a6557893a0be5_cgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a7e2988071913c13b913a6557893a0be5_cgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a7e2988071913c13b913a6557893a0be5_cgraph">
+<area shape="rect" id="node2" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a556b6cf9d1f11a9d55238c6d24ea5d0a" title="gui.tools.designer.Basic\lDesigner.select" alt="" coords="217,5,378,46"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a7e2988071913c13b913a6557893a0be5_icgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a7e2988071913c13b913a6557893a0be5_icgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a7e2988071913c13b913a6557893a0be5_icgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a7e2988071913c13b913a6557893a0be5_icgraph">
+<area shape="rect" id="node2" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ab438e7b78dc9494cfb71315b358616e4" title="gui.tools.designer.Basic\lDesigner.__call__" alt="" coords="217,29,378,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a26d361b9d6c48439174f82aeca2e9bc3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.OnLayoutNeeded </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00396">396</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00396">gui.tools.designer.BasicDesigner.OnLayoutNeeded()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a26d361b9d6c48439174f82aeca2e9bc3_icgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a26d361b9d6c48439174f82aeca2e9bc3_icgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a26d361b9d6c48439174f82aeca2e9bc3_icgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a26d361b9d6c48439174f82aeca2e9bc3_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a26d361b9d6c48439174f82aeca2e9bc3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.OnLayoutNeeded </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00396">396</a> del archivo <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00396">gui.tools.designer.BasicDesigner.OnLayoutNeeded()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a26d361b9d6c48439174f82aeca2e9bc3_cgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a26d361b9d6c48439174f82aeca2e9bc3_cgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a26d361b9d6c48439174f82aeca2e9bc3_cgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a26d361b9d6c48439174f82aeca2e9bc3_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a556b6cf9d1f11a9d55238c6d24ea5d0a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.select </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>keep_selection</em> = <code>False</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00363">363</a> del archivo <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00363">gui.tools.designer.BasicDesigner.select()</a>, <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00021">gui.html.select.SingleSelectControl.selection</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00032">gui.tools.designer.BasicDesigner.selection</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00038">gui.controls.notebook.Notebook.selection</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00185">gui.controls.listbox.ItemContainerControl.selection</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a556b6cf9d1f11a9d55238c6d24ea5d0a_cgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a556b6cf9d1f11a9d55238c6d24ea5d0a_cgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a556b6cf9d1f11a9d55238c6d24ea5d0a_cgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a556b6cf9d1f11a9d55238c6d24ea5d0a_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a556b6cf9d1f11a9d55238c6d24ea5d0a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.designer.BasicDesigner.select </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>keep_selection</em> = <code>False</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00363">363</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00021">gui.html.select.SingleSelectControl.selection</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00032">gui.tools.designer.BasicDesigner.selection</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00038">gui.controls.notebook.Notebook.selection</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00185">gui.controls.listbox.ItemContainerControl.selection</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00173">gui.tools.propeditor.PropertyEditorPanel.edit()</a>, <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00123">gui.tools.designer.BasicDesigner.mouse_down()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00267">gui.tools.designer.BasicDesigner.mouse_up()</a> y <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00363">gui.tools.designer.BasicDesigner.select()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a556b6cf9d1f11a9d55238c6d24ea5d0a_icgraph.png" border="0" usemap="#de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a556b6cf9d1f11a9d55238c6d24ea5d0a_icgraph" alt=""/></div>
+<map name="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a556b6cf9d1f11a9d55238c6d24ea5d0a_icgraph" id="de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner_a556b6cf9d1f11a9d55238c6d24ea5d0a_icgraph">
+<area shape="rect" id="node2" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a6cdd91cff57400fad7a61b52fa63c886" title="gui.tools.propeditor.Property\lEditorPanel.edit" alt="" coords="217,29,402,70"/><area shape="rect" id="node3" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a1bdaf6b80465efa4a0ce37c65620bfc0" title="gui.tools.designer.Basic\lDesigner.mouse_down" alt="" coords="229,94,390,135"/><area shape="rect" id="node4" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a7e2988071913c13b913a6557893a0be5" title="gui.tools.designer.Basic\lDesigner.mouse_up" alt="" coords="229,183,390,225"/><area shape="rect" id="node5" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ab438e7b78dc9494cfb71315b358616e4" title="gui.tools.designer.Basic\lDesigner.__call__" alt="" coords="451,183,613,225"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="a316585262d7ed22890206f11eab3cca7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.tools.designer.BasicDesigner.current</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00031">31</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00043">gui.tools.designer.BasicDesigner.__call__()</a>, <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00029">gui.tools.designer.BasicDesigner.__init__()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00123">gui.tools.designer.BasicDesigner.mouse_down()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00165">gui.tools.designer.BasicDesigner.mouse_move()</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00267">gui.tools.designer.BasicDesigner.mouse_up()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad244cf98af34097e633b2aedb666baf9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.tools.designer.BasicDesigner.inspector</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00036">36</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00043">gui.tools.designer.BasicDesigner.__call__()</a>, <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00029">gui.tools.designer.BasicDesigner.__init__()</a>, <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00034">gui.tools.toolbox.ToolBox.__init__()</a>, <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00142">gui.tools.toolbox.ToolBoxDropTarget.__init__()</a>, <a class="el" href="../../d5/ddf/gui_2tools_2inspector_8py_source.html#l00283">gui.tools.inspector.InspectorTool.__init__()</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00219">gui.tools.toolbox.ToolBoxDropTarget.copy()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00267">gui.tools.designer.BasicDesigner.mouse_up()</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00182">gui.tools.toolbox.ToolBoxDropTarget.OnData()</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00165">gui.tools.toolbox.ToolBoxDropTarget.OnDragOver()</a>, <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00133">gui.tools.toolbox.ToolBox.set_default_tlw()</a> y <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00067">gui.tools.toolbox.ToolBox.tool_click()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a678c487a73bb44c5edd58ce75f20b3b7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.tools.designer.BasicDesigner.last_obj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00098">98</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00043">gui.tools.designer.BasicDesigner.__call__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3d228ecbd90ac2d2a2c4b5bd16db22ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.tools.designer.BasicDesigner.last_wx_obj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00037">37</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00029">gui.tools.designer.BasicDesigner.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aba57a42564d5b254ca18a68dfeeeaed3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.tools.designer.BasicDesigner.last_xy</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00040">40</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00043">gui.tools.designer.BasicDesigner.__call__()</a> y <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00029">gui.tools.designer.BasicDesigner.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af3878d5edf4f9fefea378db6750999c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.tools.designer.BasicDesigner.onclose</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00038">38</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00043">gui.tools.designer.BasicDesigner.__call__()</a> y <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00029">gui.tools.designer.BasicDesigner.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8874c79a78fed38e98fdddf65aab1e05"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.tools.designer.BasicDesigner.overlay</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00041">41</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00029">gui.tools.designer.BasicDesigner.__init__()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00123">gui.tools.designer.BasicDesigner.mouse_down()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00165">gui.tools.designer.BasicDesigner.mouse_move()</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00267">gui.tools.designer.BasicDesigner.mouse_up()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a21be0ba86bcaa6ae12a96ffb66a47faa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.tools.designer.BasicDesigner.parent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00030">30</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00029">gui.tools.designer.BasicDesigner.__init__()</a>, <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00443">gui.tools.designer.SelectionMarker.__init__()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00483">gui.tools.designer.SelectionMarker.draw()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00500">gui.tools.designer.SelectionMarker.reparent()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00475">gui.tools.designer.SelectionMarker.show()</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00456">gui.tools.designer.SelectionMarker.update()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adcea83aeb6437827df7706156b6e89bc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.tools.designer.BasicDesigner.pos</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00143">143</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00209">gui.tools.designer.BasicDesigner.do_resize()</a>, <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00123">gui.tools.designer.BasicDesigner.mouse_down()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00165">gui.tools.designer.BasicDesigner.mouse_move()</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00267">gui.tools.designer.BasicDesigner.mouse_up()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb2ac7b44fb8d777254c0618d0b37e51"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.tools.designer.BasicDesigner.resizing</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00033">33</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00029">gui.tools.designer.BasicDesigner.__init__()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00209">gui.tools.designer.BasicDesigner.do_resize()</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00267">gui.tools.designer.BasicDesigner.mouse_up()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a09103eaa17ddb6cad04098d9d4799e09"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.tools.designer.BasicDesigner.selection</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00032">32</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00043">gui.tools.designer.BasicDesigner.__call__()</a>, <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00029">gui.tools.designer.BasicDesigner.__init__()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00337">gui.tools.designer.BasicDesigner.delete()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00347">gui.tools.designer.BasicDesigner.duplicate()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00303">gui.tools.designer.BasicDesigner.key_press()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00123">gui.tools.designer.BasicDesigner.mouse_down()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00165">gui.tools.designer.BasicDesigner.mouse_move()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00267">gui.tools.designer.BasicDesigner.mouse_up()</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00363">gui.tools.designer.BasicDesigner.select()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaa9e18460582b807dffa0bc3ab0ae089"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.tools.designer.BasicDesigner.start</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00156">156</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00123">gui.tools.designer.BasicDesigner.mouse_down()</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00165">gui.tools.designer.BasicDesigner.mouse_move()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8fa8f2fcc07cfba06d32f0212041d90a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.tools.designer.BasicDesigner.timestamp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00039">39</a> del archivo <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00043">gui.tools.designer.BasicDesigner.__call__()</a> y <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00029">gui.tools.designer.BasicDesigner.__init__()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>build/lib.linux-x86_64-2.7/gui/tools/<a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html">designer.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/dc4/namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="../../d3/da2/namespacegui_1_1tools.html">tools</a></li><li class="navelem"><a class="el" href="../../de/dbe/namespacegui_1_1tools_1_1designer.html">designer</a></li><li class="navelem"><a class="el" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html">BasicDesigner</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:48 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

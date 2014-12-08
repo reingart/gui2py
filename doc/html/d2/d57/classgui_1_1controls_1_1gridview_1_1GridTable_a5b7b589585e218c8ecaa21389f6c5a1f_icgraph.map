@@ -1,0 +1,8 @@
+<map id="gui.controls.gridview.GridTable.ResetView" name="gui.controls.gridview.GridTable.ResetView">
+<area shape="rect" id="node2" href="$d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#ac3d3c13db875b0edc129f545c8231194" title="gui.controls.gridview.Grid\lTable.AppendCols" alt="" coords="225,29,394,70"/>
+<area shape="rect" id="node3" href="$d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aca17abc8a8ef61c82212b0ae4dd30a29" title="gui.controls.gridview.Grid\lTable.AppendRows" alt="" coords="225,118,394,159"/>
+<area shape="rect" id="node4" href="$d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a9888cfe4f606659d74b1f0df16d797b0" title="gui.controls.gridview.Grid\lTable.DeleteCols" alt="" coords="225,207,394,249"/>
+<area shape="rect" id="node5" href="$d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#ad3737b47992f7e42bf3789292c7219a7" title="gui.controls.gridview.Grid\lTable.DeleteRows" alt="" coords="225,297,394,338"/>
+<area shape="rect" id="node6" href="$d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8ceca9f18caabddff7a40bfbbdac7d55" title="gui.controls.gridview.Grid\lTable.InsertCols" alt="" coords="225,386,394,427"/>
+<area shape="rect" id="node7" href="$d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aedf892465769115e6b86997d2fd1a92c" title="gui.controls.gridview.Grid\lTable.InsertRows" alt="" coords="225,475,394,517"/>
+</map>

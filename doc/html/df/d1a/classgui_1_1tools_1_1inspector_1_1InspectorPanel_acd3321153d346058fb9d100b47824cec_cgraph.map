@@ -1,0 +1,10 @@
+<map id="gui.tools.inspector.InspectorPanel.activate_item" name="gui.tools.inspector.InspectorPanel.activate_item">
+<area shape="rect" id="node2" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a59c1ce8f0b5d976ea5bb7c1442824af6" title="gui.tools.inspector.Inspector\lPanel.update" alt="" coords="255,5,441,46"/>
+<area shape="rect" id="node3" href="$dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a7fc319b435e00175890da5ee4b2b330a" title="gui.tools.designer.Selection\lMarker.update" alt="" coords="257,70,439,111"/>
+<area shape="rect" id="node5" href="$d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a72b0f21887fb8b746ee99646b5d7c4a7" title="gui.tools.designer.Facade.update" alt="" coords="241,161,455,188"/>
+<area shape="rect" id="node4" href="$dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a5e7b632668683e7727d93195e23870dd" title="gui.tools.designer.Selection\lMarker.draw" alt="" coords="527,57,710,98"/>
+<area shape="rect" id="node6" href="$da/d31/classgui_1_1controls_1_1canvas_1_1Canvas.html#a10087fa35fd33fd2f3237e23ee7421a3" title="gui.controls.canvas.Canvas.refresh" alt="" coords="505,123,733,149"/>
+<area shape="rect" id="node7" href="$d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a163280d73dea67f87f5bc394b538a80c" title="gui.tools.designer.Facade.refresh" alt="" coords="511,173,726,200"/>
+<area shape="rect" id="node9" href="$da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#adae2e18973709734aeae837dd3ad8feb" title="gui.controls.gridview.Combo\lCellEditor.SetSize" alt="" coords="525,225,712,266"/>
+<area shape="rect" id="node8" href="$da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a25499840cdbef32ef2f196860318787c" title="gui.controls.gridview.Combo\lCellEditor.Show" alt="" coords="781,166,968,207"/>
+</map>

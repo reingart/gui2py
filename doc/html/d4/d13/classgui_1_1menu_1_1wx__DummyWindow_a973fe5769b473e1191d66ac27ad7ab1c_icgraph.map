@@ -1,0 +1,7 @@
+<map id="gui.menu.wx_DummyWindow.Bind" name="gui.menu.wx_DummyWindow.Bind">
+<area shape="rect" id="node2" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#abf4066bdb859fc8ca923d9a22f0ea546" title="gui.tools.inspector.Inspector\lPanel.__init__" alt="" coords="280,5,467,46"/>
+<area shape="rect" id="node3" href="$df/d53/classgui_1_1tools_1_1toolbox_1_1ToolBox.html#a2eef69d35bed45e7f611eb3f6410ad7c" title="gui.tools.toolbox.ToolBox.\l__init__" alt="" coords="287,70,460,111"/>
+<area shape="rect" id="node4" href="$d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html#aaca85a7532a9f093db33cae652554bb4" title="gui.tools.designer.Selection\lTag.__init__" alt="" coords="282,159,465,201"/>
+<area shape="rect" id="node5" href="$d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a9f3fb479c1a4fd2bd78299a2cdce6d8f" title="gui.tools.designer.Facade.\l__init__" alt="" coords="286,225,461,266"/>
+<area shape="rect" id="node6" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182" title="gui.tools.inspector.Inspector\lPanel.show_context_menu" alt="" coords="280,290,467,331"/>
+</map>

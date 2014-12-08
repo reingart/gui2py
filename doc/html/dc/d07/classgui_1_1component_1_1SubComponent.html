@@ -1,0 +1,863 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Referencia de la Clase gui.component.SubComponent</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('dc/d07/classgui_1_1component_1_1SubComponent.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-static-attribs">Atributos públicos estáticos</a> &#124;
+<a href="#pri-attribs">Atributos privados</a> &#124;
+<a href="#pri-static-attribs">Atributos privados estáticos</a> &#124;
+<a href="../../df/d0f/classgui_1_1component_1_1SubComponent-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase gui.component.SubComponent</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagrama de herencias de gui.component.SubComponent</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/dfb/classgui_1_1component_1_1SubComponent__inherit__graph.png" border="0" usemap="#gui_8component_8SubComponent_inherit__map" alt="Inheritance graph"/></div>
+<map name="gui_8component_8SubComponent_inherit__map" id="gui_8component_8SubComponent_inherit__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración para gui.component.SubComponent:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d40/classgui_1_1component_1_1SubComponent__coll__graph.png" border="0" usemap="#gui_8component_8SubComponent_coll__map" alt="Collaboration graph"/></div>
+<map name="gui_8component_8SubComponent_coll__map" id="gui_8component_8SubComponent_coll__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a1b01b92db47fd5bcb52cb797c6737056"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#a1b01b92db47fd5bcb52cb797c6737056">__iter__</a></td></tr>
+<tr class="separator:a1b01b92db47fd5bcb52cb797c6737056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8332046f36f996801873dd4610cfafd5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#a8332046f36f996801873dd4610cfafd5">__getitem__</a></td></tr>
+<tr class="separator:a8332046f36f996801873dd4610cfafd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e9780792226a60af754524c7bbd77d8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#a9e9780792226a60af754524c7bbd77d8">__init__</a></td></tr>
+<tr class="separator:a9e9780792226a60af754524c7bbd77d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbd0beed5e2f9ca4c85c159aa2336fd2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#abbd0beed5e2f9ca4c85c159aa2336fd2">set_parent</a></td></tr>
+<tr class="separator:abbd0beed5e2f9ca4c85c159aa2336fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afed385eb1b473379461eef54d7e1e5a6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#afed385eb1b473379461eef54d7e1e5a6">rebuild</a></td></tr>
+<tr class="separator:afed385eb1b473379461eef54d7e1e5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a796d83089d10ae7d8cc4677b532a517f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#a796d83089d10ae7d8cc4677b532a517f">destroy</a></td></tr>
+<tr class="separator:a796d83089d10ae7d8cc4677b532a517f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e59e87efe87739885396f52af179c86"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#a4e59e87efe87739885396f52af179c86">__repr__</a></td></tr>
+<tr class="separator:a4e59e87efe87739885396f52af179c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b01b92db47fd5bcb52cb797c6737056"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#a1b01b92db47fd5bcb52cb797c6737056">__iter__</a></td></tr>
+<tr class="separator:a1b01b92db47fd5bcb52cb797c6737056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8332046f36f996801873dd4610cfafd5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#a8332046f36f996801873dd4610cfafd5">__getitem__</a></td></tr>
+<tr class="separator:a8332046f36f996801873dd4610cfafd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e9780792226a60af754524c7bbd77d8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#a9e9780792226a60af754524c7bbd77d8">__init__</a></td></tr>
+<tr class="separator:a9e9780792226a60af754524c7bbd77d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbd0beed5e2f9ca4c85c159aa2336fd2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#abbd0beed5e2f9ca4c85c159aa2336fd2">set_parent</a></td></tr>
+<tr class="separator:abbd0beed5e2f9ca4c85c159aa2336fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afed385eb1b473379461eef54d7e1e5a6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#afed385eb1b473379461eef54d7e1e5a6">rebuild</a></td></tr>
+<tr class="separator:afed385eb1b473379461eef54d7e1e5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a796d83089d10ae7d8cc4677b532a517f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#a796d83089d10ae7d8cc4677b532a517f">destroy</a></td></tr>
+<tr class="separator:a796d83089d10ae7d8cc4677b532a517f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e59e87efe87739885396f52af179c86"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#a4e59e87efe87739885396f52af179c86">__repr__</a></td></tr>
+<tr class="separator:a4e59e87efe87739885396f52af179c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Atributos públicos estáticos</h2></td></tr>
+<tr class="memitem:a431e7b7324ea2952c3927ad76f5c911c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#a431e7b7324ea2952c3927ad76f5c911c">wx_obj</a> = None</td></tr>
+<tr class="separator:a431e7b7324ea2952c3927ad76f5c911c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb4719a77e4737fdbf367873ac976c27"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#abb4719a77e4737fdbf367873ac976c27">parent</a></td></tr>
+<tr class="separator:abb4719a77e4737fdbf367873ac976c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:a87a3382b8aaffab709351a9550cf06ca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#a87a3382b8aaffab709351a9550cf06ca">_parent</a></td></tr>
+<tr class="separator:a87a3382b8aaffab709351a9550cf06ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Atributos privados estáticos</h2></td></tr>
+<tr class="memitem:a1788eb9b6b435e60bb7ff73fd5f75dc8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#a1788eb9b6b435e60bb7ff73fd5f75dc8">__metaclass__</a> = <a class="el" href="../../d1/db2/classgui_1_1component_1_1ComponentBase.html">ComponentBase</a></td></tr>
+<tr class="separator:a1788eb9b6b435e60bb7ff73fd5f75dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01039">1039</a> del archivo <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html">component.py</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="a9e9780792226a60af754524c7bbd77d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.component.SubComponent.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01051">1051</a> del archivo <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html">component.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00362">gui.component.Component.set_parent()</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00707">gui.component.ControlSuper.set_parent()</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01063">gui.component.SubComponent.set_parent()</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d92/gui_2component_8py_source.html#l01051">gui.component.SubComponent.__init__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d07/classgui_1_1component_1_1SubComponent_a9e9780792226a60af754524c7bbd77d8_cgraph.png" border="0" usemap="#dc/d07/classgui_1_1component_1_1SubComponent_a9e9780792226a60af754524c7bbd77d8_cgraph" alt=""/></div>
+<map name="dc/d07/classgui_1_1component_1_1SubComponent_a9e9780792226a60af754524c7bbd77d8_cgraph" id="dc/d07/classgui_1_1component_1_1SubComponent_a9e9780792226a60af754524c7bbd77d8_cgraph">
+<area shape="rect" id="node2" href="../../d7/d98/classgui_1_1component_1_1Component.html#ad146f1473fa23139699d793758a6aaee" title="gui.component.Component.set\l_parent" alt="" coords="271,5,471,46"/><area shape="rect" id="node3" href="../../d1/d9f/classgui_1_1component_1_1ControlSuper.html#ae92b3961491af2a2273baa295b8e1e4a" title="gui.component.ControlSuper.set\l_parent" alt="" coords="266,70,475,111"/><area shape="rect" id="node4" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#abbd0beed5e2f9ca4c85c159aa2336fd2" title="gui.component.SubComponent.set\l_parent" alt="" coords="259,135,482,177"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d07/classgui_1_1component_1_1SubComponent_a9e9780792226a60af754524c7bbd77d8_icgraph.png" border="0" usemap="#dc/d07/classgui_1_1component_1_1SubComponent_a9e9780792226a60af754524c7bbd77d8_icgraph" alt=""/></div>
+<map name="dc/d07/classgui_1_1component_1_1SubComponent_a9e9780792226a60af754524c7bbd77d8_icgraph" id="dc/d07/classgui_1_1component_1_1SubComponent_a9e9780792226a60af754524c7bbd77d8_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9e9780792226a60af754524c7bbd77d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.component.SubComponent.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d92/gui_2component_8py_source.html#l01051">1051</a> del archivo <a class="el" href="../../d3/d92/gui_2component_8py_source.html">component.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01051">gui.component.SubComponent.__init__()</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00362">gui.component.Component.set_parent()</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00707">gui.component.ControlSuper.set_parent()</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01063">gui.component.SubComponent.set_parent()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d07/classgui_1_1component_1_1SubComponent_a9e9780792226a60af754524c7bbd77d8_cgraph.png" border="0" usemap="#dc/d07/classgui_1_1component_1_1SubComponent_a9e9780792226a60af754524c7bbd77d8_cgraph" alt=""/></div>
+<map name="dc/d07/classgui_1_1component_1_1SubComponent_a9e9780792226a60af754524c7bbd77d8_cgraph" id="dc/d07/classgui_1_1component_1_1SubComponent_a9e9780792226a60af754524c7bbd77d8_cgraph">
+<area shape="rect" id="node2" href="../../d7/d98/classgui_1_1component_1_1Component.html#ad146f1473fa23139699d793758a6aaee" title="gui.component.Component.set\l_parent" alt="" coords="271,5,471,46"/><area shape="rect" id="node3" href="../../d1/d9f/classgui_1_1component_1_1ControlSuper.html#ae92b3961491af2a2273baa295b8e1e4a" title="gui.component.ControlSuper.set\l_parent" alt="" coords="266,70,475,111"/><area shape="rect" id="node4" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#abbd0beed5e2f9ca4c85c159aa2336fd2" title="gui.component.SubComponent.set\l_parent" alt="" coords="259,135,482,177"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="a8332046f36f996801873dd4610cfafd5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.component.SubComponent.__getitem__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01048">1048</a> del archivo <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html">component.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d92/gui_2component_8py_source.html#l01048">gui.component.SubComponent.__getitem__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d07/classgui_1_1component_1_1SubComponent_a8332046f36f996801873dd4610cfafd5_icgraph.png" border="0" usemap="#dc/d07/classgui_1_1component_1_1SubComponent_a8332046f36f996801873dd4610cfafd5_icgraph" alt=""/></div>
+<map name="dc/d07/classgui_1_1component_1_1SubComponent_a8332046f36f996801873dd4610cfafd5_icgraph" id="dc/d07/classgui_1_1component_1_1SubComponent_a8332046f36f996801873dd4610cfafd5_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8332046f36f996801873dd4610cfafd5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.component.SubComponent.__getitem__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d92/gui_2component_8py_source.html#l01048">1048</a> del archivo <a class="el" href="../../d3/d92/gui_2component_8py_source.html">component.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01048">gui.component.SubComponent.__getitem__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d07/classgui_1_1component_1_1SubComponent_a8332046f36f996801873dd4610cfafd5_cgraph.png" border="0" usemap="#dc/d07/classgui_1_1component_1_1SubComponent_a8332046f36f996801873dd4610cfafd5_cgraph" alt=""/></div>
+<map name="dc/d07/classgui_1_1component_1_1SubComponent_a8332046f36f996801873dd4610cfafd5_cgraph" id="dc/d07/classgui_1_1component_1_1SubComponent_a8332046f36f996801873dd4610cfafd5_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b01b92db47fd5bcb52cb797c6737056"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.component.SubComponent.__iter__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01045">1045</a> del archivo <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html">component.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d92/gui_2component_8py_source.html#l01045">gui.component.SubComponent.__iter__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d07/classgui_1_1component_1_1SubComponent_a1b01b92db47fd5bcb52cb797c6737056_icgraph.png" border="0" usemap="#dc/d07/classgui_1_1component_1_1SubComponent_a1b01b92db47fd5bcb52cb797c6737056_icgraph" alt=""/></div>
+<map name="dc/d07/classgui_1_1component_1_1SubComponent_a1b01b92db47fd5bcb52cb797c6737056_icgraph" id="dc/d07/classgui_1_1component_1_1SubComponent_a1b01b92db47fd5bcb52cb797c6737056_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b01b92db47fd5bcb52cb797c6737056"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.component.SubComponent.__iter__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d92/gui_2component_8py_source.html#l01045">1045</a> del archivo <a class="el" href="../../d3/d92/gui_2component_8py_source.html">component.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01045">gui.component.SubComponent.__iter__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d07/classgui_1_1component_1_1SubComponent_a1b01b92db47fd5bcb52cb797c6737056_cgraph.png" border="0" usemap="#dc/d07/classgui_1_1component_1_1SubComponent_a1b01b92db47fd5bcb52cb797c6737056_cgraph" alt=""/></div>
+<map name="dc/d07/classgui_1_1component_1_1SubComponent_a1b01b92db47fd5bcb52cb797c6737056_cgraph" id="dc/d07/classgui_1_1component_1_1SubComponent_a1b01b92db47fd5bcb52cb797c6737056_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4e59e87efe87739885396f52af179c86"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.component.SubComponent.__repr__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>prefix</em> = <code>&quot;gui&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>indent</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d92/gui_2component_8py_source.html#l01078">1078</a> del archivo <a class="el" href="../../d3/d92/gui_2component_8py_source.html">component.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4e59e87efe87739885396f52af179c86"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.component.SubComponent.__repr__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>prefix</em> = <code>&quot;gui&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>indent</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01078">1078</a> del archivo <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html">component.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a796d83089d10ae7d8cc4677b532a517f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.component.SubComponent.destroy </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d92/gui_2component_8py_source.html#l01075">1075</a> del archivo <a class="el" href="../../d3/d92/gui_2component_8py_source.html">component.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01075">gui.component.SubComponent.destroy()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d07/classgui_1_1component_1_1SubComponent_a796d83089d10ae7d8cc4677b532a517f_cgraph.png" border="0" usemap="#dc/d07/classgui_1_1component_1_1SubComponent_a796d83089d10ae7d8cc4677b532a517f_cgraph" alt=""/></div>
+<map name="dc/d07/classgui_1_1component_1_1SubComponent_a796d83089d10ae7d8cc4677b532a517f_cgraph" id="dc/d07/classgui_1_1component_1_1SubComponent_a796d83089d10ae7d8cc4677b532a517f_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a796d83089d10ae7d8cc4677b532a517f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.component.SubComponent.destroy </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01075">1075</a> del archivo <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html">component.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d92/gui_2component_8py_source.html#l01075">gui.component.SubComponent.destroy()</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00475">gui.tools.designer.SelectionMarker.show()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d07/classgui_1_1component_1_1SubComponent_a796d83089d10ae7d8cc4677b532a517f_icgraph.png" border="0" usemap="#dc/d07/classgui_1_1component_1_1SubComponent_a796d83089d10ae7d8cc4677b532a517f_icgraph" alt=""/></div>
+<map name="dc/d07/classgui_1_1component_1_1SubComponent_a796d83089d10ae7d8cc4677b532a517f_icgraph" id="dc/d07/classgui_1_1component_1_1SubComponent_a796d83089d10ae7d8cc4677b532a517f_icgraph">
+<area shape="rect" id="node2" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a37ea66539ea5878bbd818dfd8bee05d8" title="gui.tools.designer.Selection\lMarker.show" alt="" coords="302,29,485,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="afed385eb1b473379461eef54d7e1e5a6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.component.SubComponent.rebuild </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01070">1070</a> del archivo <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html">component.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d92/gui_2component_8py_source.html#l01070">gui.component.SubComponent.rebuild()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d07/classgui_1_1component_1_1SubComponent_afed385eb1b473379461eef54d7e1e5a6_icgraph.png" border="0" usemap="#dc/d07/classgui_1_1component_1_1SubComponent_afed385eb1b473379461eef54d7e1e5a6_icgraph" alt=""/></div>
+<map name="dc/d07/classgui_1_1component_1_1SubComponent_afed385eb1b473379461eef54d7e1e5a6_icgraph" id="dc/d07/classgui_1_1component_1_1SubComponent_afed385eb1b473379461eef54d7e1e5a6_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="afed385eb1b473379461eef54d7e1e5a6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.component.SubComponent.rebuild </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d92/gui_2component_8py_source.html#l01070">1070</a> del archivo <a class="el" href="../../d3/d92/gui_2component_8py_source.html">component.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01070">gui.component.SubComponent.rebuild()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d07/classgui_1_1component_1_1SubComponent_afed385eb1b473379461eef54d7e1e5a6_cgraph.png" border="0" usemap="#dc/d07/classgui_1_1component_1_1SubComponent_afed385eb1b473379461eef54d7e1e5a6_cgraph" alt=""/></div>
+<map name="dc/d07/classgui_1_1component_1_1SubComponent_afed385eb1b473379461eef54d7e1e5a6_cgraph" id="dc/d07/classgui_1_1component_1_1SubComponent_afed385eb1b473379461eef54d7e1e5a6_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abbd0beed5e2f9ca4c85c159aa2336fd2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.component.SubComponent.set_parent </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>new_parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>init</em> = <code>False</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01063">1063</a> del archivo <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html">component.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01051">gui.component.SubComponent.__init__()</a> y <a class="el" href="../../d3/d92/gui_2component_8py_source.html#l01063">gui.component.SubComponent.set_parent()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d07/classgui_1_1component_1_1SubComponent_abbd0beed5e2f9ca4c85c159aa2336fd2_icgraph.png" border="0" usemap="#dc/d07/classgui_1_1component_1_1SubComponent_abbd0beed5e2f9ca4c85c159aa2336fd2_icgraph" alt=""/></div>
+<map name="dc/d07/classgui_1_1component_1_1SubComponent_abbd0beed5e2f9ca4c85c159aa2336fd2_icgraph" id="dc/d07/classgui_1_1component_1_1SubComponent_abbd0beed5e2f9ca4c85c159aa2336fd2_icgraph">
+<area shape="rect" id="node2" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html#a9e9780792226a60af754524c7bbd77d8" title="gui.component.SubComponent.\l__init__" alt="" coords="277,29,483,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abbd0beed5e2f9ca4c85c159aa2336fd2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.component.SubComponent.set_parent </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>new_parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>init</em> = <code>False</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d92/gui_2component_8py_source.html#l01063">1063</a> del archivo <a class="el" href="../../d3/d92/gui_2component_8py_source.html">component.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00051">gui.spec.Spec._name</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00406">gui.component.Component._name</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00365">gui.component.Component._parent</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01066">gui.component.SubComponent._parent</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01148">gui.component.get()</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01063">gui.component.SubComponent.set_parent()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d07/classgui_1_1component_1_1SubComponent_abbd0beed5e2f9ca4c85c159aa2336fd2_cgraph.png" border="0" usemap="#dc/d07/classgui_1_1component_1_1SubComponent_abbd0beed5e2f9ca4c85c159aa2336fd2_cgraph" alt=""/></div>
+<map name="dc/d07/classgui_1_1component_1_1SubComponent_abbd0beed5e2f9ca4c85c159aa2336fd2_cgraph" id="dc/d07/classgui_1_1component_1_1SubComponent_abbd0beed5e2f9ca4c85c159aa2336fd2_cgraph">
+<area shape="rect" id="node2" href="../../d9/d90/namespacegui_1_1component.html#a937836205f3a4daa11179df3fc58e3c9" title="gui.component.get" alt="" coords="278,36,407,63"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="a1788eb9b6b435e60bb7ff73fd5f75dc8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.component.SubComponent.__metaclass__ = <a class="el" href="../../d1/db2/classgui_1_1component_1_1ComponentBase.html">ComponentBase</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01042">1042</a> del archivo <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html">component.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a87a3382b8aaffab709351a9550cf06ca"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.component.SubComponent._parent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01066">1066</a> del archivo <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html">component.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d8/d46/gui_2font_8py_source.html#l00019">gui.font.Font.__init__()</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00572">gui.component.DesignerMixin._set_designer()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00352">gui.controls.gridview.GridColumn.destroy()</a> y <a class="el" href="../../d3/d92/gui_2component_8py_source.html#l01063">gui.component.SubComponent.set_parent()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abb4719a77e4737fdbf367873ac976c27"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple SubComponent.parent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= Spec(<span class="keyword">lambda</span> self: self._parent.name, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                      optional=<span class="keyword">False</span>, default=<span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                      doc=<span class="stringliteral">&quot;parent window (used internally)&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01081">1081</a> del archivo <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html">component.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00029">gui.tools.designer.BasicDesigner.__init__()</a>, <a class="el" href="../../dd/d81/gui_2menu_8py_source.html#l00032">gui.menu.wx_DummyWindow.__init__()</a>, <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html#l00153">gui.controls.treeview.TreeItem.__init__()</a>, <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00443">gui.tools.designer.SelectionMarker.__init__()</a>, <a class="el" href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00162">gui.menu.wx_Menu.Destroy()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00483">gui.tools.designer.SelectionMarker.draw()</a>, <a class="el" href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00035">gui.menu.wx_DummyWindow.GetParent()</a>, <a class="el" href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00038">gui.menu.wx_DummyWindow.Reparent()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00500">gui.tools.designer.SelectionMarker.reparent()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00475">gui.tools.designer.SelectionMarker.show()</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00456">gui.tools.designer.SelectionMarker.update()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a431e7b7324ea2952c3927ad76f5c911c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.component.SubComponent.wx_obj = None</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01043">1043</a> del archivo <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html">component.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dc/d6e/gui_2windows_2window_8py_source.html#l00029">gui.windows.window.Window.__init__()</a>, <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html#l00057">gui.controls.notebook.TabPanel.__init__()</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01010">gui.component.ImageBackgroundMixin.__on_destroy()</a>, <a class="el" href="../../d5/d23/build_2lib_8linux-x86__64-2_87_2gui_2controls_2label_8py_source.html#l00040">gui.controls.label.Label.__on_paint()</a>, <a class="el" href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00225">gui.menu.Menu._get_label()</a>, <a class="el" href="../../da/d65/build_2lib_8linux-x86__64-2_87_2gui_2controls_2textbox_8py_source.html#l00199">gui.controls.textbox.TextBox._get_mask()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00410">gui.controls.canvas.Canvas._OnPaint()</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00572">gui.component.DesignerMixin._set_designer()</a>, <a class="el" href="../../d3/d92/gui_2component_8py_source.html#l00964">gui.component.ImageBackgroundMixin._set_image()</a>, <a class="el" href="../../da/d65/build_2lib_8linux-x86__64-2_87_2gui_2controls_2textbox_8py_source.html#l00205">gui.controls.textbox.TextBox._set_mask()</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00034">gui.controls.listbox.ItemContainerControl._set_selection()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00205">gui.controls.canvas.Canvas.blit()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00212">gui.controls.canvas.Canvas.clear()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00225">gui.controls.canvas.Canvas.draw_arc()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00219">gui.controls.canvas.Canvas.draw_axis()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00245">gui.controls.canvas.Canvas.draw_bitmap()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00264">gui.controls.canvas.Canvas.draw_bitmap_scaled()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00284">gui.controls.canvas.Canvas.draw_circle()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00290">gui.controls.canvas.Canvas.draw_ellipse()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00296">gui.controls.canvas.Canvas.draw_elliptic_arc()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00302">gui.controls.canvas.Canvas.draw_icon()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00308">gui.controls.canvas.Canvas.draw_line()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00371">gui.controls.canvas.Canvas.draw_line_list()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00314">gui.controls.canvas.Canvas.draw_lines()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00320">gui.controls.canvas.Canvas.draw_point()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00338">gui.controls.canvas.Canvas.draw_point_list()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00326">gui.controls.canvas.Canvas.draw_polygon()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00332">gui.controls.canvas.Canvas.draw_rectangle()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00347">gui.controls.canvas.Canvas.draw_rectangle_list()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00353">gui.controls.canvas.Canvas.draw_rotated_text()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00359">gui.controls.canvas.Canvas.draw_rounded_rectangle()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00365">gui.controls.canvas.Canvas.draw_spline()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00377">gui.controls.canvas.Canvas.draw_text()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00384">gui.controls.canvas.Canvas.flood_fill()</a>, <a class="el" href="../../de/dfa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2canvas_8py_source.html#l00399">gui.controls.canvas.Canvas.refresh()</a>, <a class="el" href="../../d0/d9e/build_2lib_8linux-x86__64-2_87_2gui_2windows_2window_8py_source.html#l00124">gui.windows.window.Window.show()</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00592">gui.component.DesignerMixin.snapshot()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>build/lib.linux-x86_64-2.7/gui/<a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html">component.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/dc4/namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="../../d9/d90/namespacegui_1_1component.html">component</a></li><li class="navelem"><a class="el" href="../../dc/d07/classgui_1_1component_1_1SubComponent.html">SubComponent</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:47 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

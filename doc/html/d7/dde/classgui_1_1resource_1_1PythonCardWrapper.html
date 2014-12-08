@@ -1,0 +1,836 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Referencia de la Clase gui.resource.PythonCardWrapper</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="../../d8/dbb/classgui_1_1resource_1_1PythonCardWrapper-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase gui.resource.PythonCardWrapper</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagrama de herencias de gui.resource.PythonCardWrapper</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d1c/classgui_1_1resource_1_1PythonCardWrapper__inherit__graph.png" border="0" usemap="#gui_8resource_8PythonCardWrapper_inherit__map" alt="Inheritance graph"/></div>
+<map name="gui_8resource_8PythonCardWrapper_inherit__map" id="gui_8resource_8PythonCardWrapper_inherit__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración para gui.resource.PythonCardWrapper:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d16/classgui_1_1resource_1_1PythonCardWrapper__coll__graph.png" border="0" usemap="#gui_8resource_8PythonCardWrapper_coll__map" alt="Collaboration graph"/></div>
+<map name="gui_8resource_8PythonCardWrapper_coll__map" id="gui_8resource_8PythonCardWrapper_coll__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a1351ec9f4e1c0936cdd332371c4f760d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#a1351ec9f4e1c0936cdd332371c4f760d">__init__</a></td></tr>
+<tr class="separator:a1351ec9f4e1c0936cdd332371c4f760d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b1651313881cd0cc3292701e6b3a0a4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#a2b1651313881cd0cc3292701e6b3a0a4">convert</a></td></tr>
+<tr class="separator:a2b1651313881cd0cc3292701e6b3a0a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae900f98b630a8e7a0c18adb3df0d9c16"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#ae900f98b630a8e7a0c18adb3df0d9c16">__getattr__</a></td></tr>
+<tr class="separator:ae900f98b630a8e7a0c18adb3df0d9c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a370236e5d69fd032c1582d3d58f94539"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#a370236e5d69fd032c1582d3d58f94539">__setattr__</a></td></tr>
+<tr class="separator:a370236e5d69fd032c1582d3d58f94539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d1ade2cf01feae25a118a781a819b5e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#a3d1ade2cf01feae25a118a781a819b5e">__getitem__</a></td></tr>
+<tr class="separator:a3d1ade2cf01feae25a118a781a819b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b70d5d61bc24fb5bb041a607a671ad2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#a5b70d5d61bc24fb5bb041a607a671ad2">__setitem__</a></td></tr>
+<tr class="separator:a5b70d5d61bc24fb5bb041a607a671ad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad63b7a9e97ec04043deed9c96e7bd5c4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#ad63b7a9e97ec04043deed9c96e7bd5c4">__delitem__</a></td></tr>
+<tr class="separator:ad63b7a9e97ec04043deed9c96e7bd5c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fa454738072bdd21c1e53ef7e29e4c7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#a4fa454738072bdd21c1e53ef7e29e4c7">__iter__</a></td></tr>
+<tr class="separator:a4fa454738072bdd21c1e53ef7e29e4c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1351ec9f4e1c0936cdd332371c4f760d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#a1351ec9f4e1c0936cdd332371c4f760d">__init__</a></td></tr>
+<tr class="separator:a1351ec9f4e1c0936cdd332371c4f760d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b1651313881cd0cc3292701e6b3a0a4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#a2b1651313881cd0cc3292701e6b3a0a4">convert</a></td></tr>
+<tr class="separator:a2b1651313881cd0cc3292701e6b3a0a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae900f98b630a8e7a0c18adb3df0d9c16"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#ae900f98b630a8e7a0c18adb3df0d9c16">__getattr__</a></td></tr>
+<tr class="separator:ae900f98b630a8e7a0c18adb3df0d9c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a370236e5d69fd032c1582d3d58f94539"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#a370236e5d69fd032c1582d3d58f94539">__setattr__</a></td></tr>
+<tr class="separator:a370236e5d69fd032c1582d3d58f94539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d1ade2cf01feae25a118a781a819b5e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#a3d1ade2cf01feae25a118a781a819b5e">__getitem__</a></td></tr>
+<tr class="separator:a3d1ade2cf01feae25a118a781a819b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b70d5d61bc24fb5bb041a607a671ad2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#a5b70d5d61bc24fb5bb041a607a671ad2">__setitem__</a></td></tr>
+<tr class="separator:a5b70d5d61bc24fb5bb041a607a671ad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad63b7a9e97ec04043deed9c96e7bd5c4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#ad63b7a9e97ec04043deed9c96e7bd5c4">__delitem__</a></td></tr>
+<tr class="separator:ad63b7a9e97ec04043deed9c96e7bd5c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fa454738072bdd21c1e53ef7e29e4c7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#a4fa454738072bdd21c1e53ef7e29e4c7">__iter__</a></td></tr>
+<tr class="separator:a4fa454738072bdd21c1e53ef7e29e4c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00246">246</a> del archivo <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html">resource.py</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="a1351ec9f4e1c0936cdd332371c4f760d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.resource.PythonCardWrapper.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00249">249</a> del archivo <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html">resource.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d7/dca/gui_2resource_8py_source.html#l00249">gui.resource.PythonCardWrapper.__init__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a1351ec9f4e1c0936cdd332371c4f760d_icgraph.png" border="0" usemap="#d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a1351ec9f4e1c0936cdd332371c4f760d_icgraph" alt=""/></div>
+<map name="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a1351ec9f4e1c0936cdd332371c4f760d_icgraph" id="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a1351ec9f4e1c0936cdd332371c4f760d_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1351ec9f4e1c0936cdd332371c4f760d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.resource.PythonCardWrapper.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d7/dca/gui_2resource_8py_source.html#l00249">249</a> del archivo <a class="el" href="../../d7/dca/gui_2resource_8py_source.html">resource.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00249">gui.resource.PythonCardWrapper.__init__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a1351ec9f4e1c0936cdd332371c4f760d_cgraph.png" border="0" usemap="#d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a1351ec9f4e1c0936cdd332371c4f760d_cgraph" alt=""/></div>
+<map name="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a1351ec9f4e1c0936cdd332371c4f760d_cgraph" id="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a1351ec9f4e1c0936cdd332371c4f760d_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="ad63b7a9e97ec04043deed9c96e7bd5c4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.resource.PythonCardWrapper.__delitem__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00280">280</a> del archivo <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html">resource.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d7/dca/gui_2resource_8py_source.html#l00280">gui.resource.PythonCardWrapper.__delitem__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper_ad63b7a9e97ec04043deed9c96e7bd5c4_icgraph.png" border="0" usemap="#d7/dde/classgui_1_1resource_1_1PythonCardWrapper_ad63b7a9e97ec04043deed9c96e7bd5c4_icgraph" alt=""/></div>
+<map name="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_ad63b7a9e97ec04043deed9c96e7bd5c4_icgraph" id="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_ad63b7a9e97ec04043deed9c96e7bd5c4_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad63b7a9e97ec04043deed9c96e7bd5c4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.resource.PythonCardWrapper.__delitem__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d7/dca/gui_2resource_8py_source.html#l00280">280</a> del archivo <a class="el" href="../../d7/dca/gui_2resource_8py_source.html">resource.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00280">gui.resource.PythonCardWrapper.__delitem__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper_ad63b7a9e97ec04043deed9c96e7bd5c4_cgraph.png" border="0" usemap="#d7/dde/classgui_1_1resource_1_1PythonCardWrapper_ad63b7a9e97ec04043deed9c96e7bd5c4_cgraph" alt=""/></div>
+<map name="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_ad63b7a9e97ec04043deed9c96e7bd5c4_cgraph" id="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_ad63b7a9e97ec04043deed9c96e7bd5c4_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae900f98b630a8e7a0c18adb3df0d9c16"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.resource.PythonCardWrapper.__getattr__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d7/dca/gui_2resource_8py_source.html#l00261">261</a> del archivo <a class="el" href="../../d7/dca/gui_2resource_8py_source.html">resource.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00261">gui.resource.PythonCardWrapper.__getattr__()</a> y <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00252">gui.resource.PythonCardWrapper.convert()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper_ae900f98b630a8e7a0c18adb3df0d9c16_cgraph.png" border="0" usemap="#d7/dde/classgui_1_1resource_1_1PythonCardWrapper_ae900f98b630a8e7a0c18adb3df0d9c16_cgraph" alt=""/></div>
+<map name="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_ae900f98b630a8e7a0c18adb3df0d9c16_cgraph" id="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_ae900f98b630a8e7a0c18adb3df0d9c16_cgraph">
+<area shape="rect" id="node2" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#a2b1651313881cd0cc3292701e6b3a0a4" title="gui.resource.PythonCardWrapper.convert" alt="" coords="273,12,535,39"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae900f98b630a8e7a0c18adb3df0d9c16"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.resource.PythonCardWrapper.__getattr__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00261">261</a> del archivo <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html">resource.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00252">gui.resource.PythonCardWrapper.convert()</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d7/dca/gui_2resource_8py_source.html#l00261">gui.resource.PythonCardWrapper.__getattr__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper_ae900f98b630a8e7a0c18adb3df0d9c16_cgraph.png" border="0" usemap="#d7/dde/classgui_1_1resource_1_1PythonCardWrapper_ae900f98b630a8e7a0c18adb3df0d9c16_cgraph" alt=""/></div>
+<map name="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_ae900f98b630a8e7a0c18adb3df0d9c16_cgraph" id="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_ae900f98b630a8e7a0c18adb3df0d9c16_cgraph">
+<area shape="rect" id="node2" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#a2b1651313881cd0cc3292701e6b3a0a4" title="gui.resource.PythonCardWrapper.convert" alt="" coords="273,12,535,39"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper_ae900f98b630a8e7a0c18adb3df0d9c16_icgraph.png" border="0" usemap="#d7/dde/classgui_1_1resource_1_1PythonCardWrapper_ae900f98b630a8e7a0c18adb3df0d9c16_icgraph" alt=""/></div>
+<map name="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_ae900f98b630a8e7a0c18adb3df0d9c16_icgraph" id="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_ae900f98b630a8e7a0c18adb3df0d9c16_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3d1ade2cf01feae25a118a781a819b5e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.resource.PythonCardWrapper.__getitem__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00272">272</a> del archivo <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html">resource.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d7/dca/gui_2resource_8py_source.html#l00272">gui.resource.PythonCardWrapper.__getitem__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a3d1ade2cf01feae25a118a781a819b5e_icgraph.png" border="0" usemap="#d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a3d1ade2cf01feae25a118a781a819b5e_icgraph" alt=""/></div>
+<map name="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a3d1ade2cf01feae25a118a781a819b5e_icgraph" id="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a3d1ade2cf01feae25a118a781a819b5e_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3d1ade2cf01feae25a118a781a819b5e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.resource.PythonCardWrapper.__getitem__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d7/dca/gui_2resource_8py_source.html#l00272">272</a> del archivo <a class="el" href="../../d7/dca/gui_2resource_8py_source.html">resource.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00272">gui.resource.PythonCardWrapper.__getitem__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a3d1ade2cf01feae25a118a781a819b5e_cgraph.png" border="0" usemap="#d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a3d1ade2cf01feae25a118a781a819b5e_cgraph" alt=""/></div>
+<map name="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a3d1ade2cf01feae25a118a781a819b5e_cgraph" id="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a3d1ade2cf01feae25a118a781a819b5e_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4fa454738072bdd21c1e53ef7e29e4c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.resource.PythonCardWrapper.__iter__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d7/dca/gui_2resource_8py_source.html#l00284">284</a> del archivo <a class="el" href="../../d7/dca/gui_2resource_8py_source.html">resource.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00284">gui.resource.PythonCardWrapper.__iter__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a4fa454738072bdd21c1e53ef7e29e4c7_cgraph.png" border="0" usemap="#d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a4fa454738072bdd21c1e53ef7e29e4c7_cgraph" alt=""/></div>
+<map name="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a4fa454738072bdd21c1e53ef7e29e4c7_cgraph" id="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a4fa454738072bdd21c1e53ef7e29e4c7_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4fa454738072bdd21c1e53ef7e29e4c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.resource.PythonCardWrapper.__iter__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00284">284</a> del archivo <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html">resource.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d7/dca/gui_2resource_8py_source.html#l00284">gui.resource.PythonCardWrapper.__iter__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a4fa454738072bdd21c1e53ef7e29e4c7_icgraph.png" border="0" usemap="#d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a4fa454738072bdd21c1e53ef7e29e4c7_icgraph" alt=""/></div>
+<map name="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a4fa454738072bdd21c1e53ef7e29e4c7_icgraph" id="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a4fa454738072bdd21c1e53ef7e29e4c7_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a370236e5d69fd032c1582d3d58f94539"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.resource.PythonCardWrapper.__setattr__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00266">266</a> del archivo <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html">resource.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00252">gui.resource.PythonCardWrapper.convert()</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d7/dca/gui_2resource_8py_source.html#l00266">gui.resource.PythonCardWrapper.__setattr__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a370236e5d69fd032c1582d3d58f94539_cgraph.png" border="0" usemap="#d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a370236e5d69fd032c1582d3d58f94539_cgraph" alt=""/></div>
+<map name="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a370236e5d69fd032c1582d3d58f94539_cgraph" id="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a370236e5d69fd032c1582d3d58f94539_cgraph">
+<area shape="rect" id="node2" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#a2b1651313881cd0cc3292701e6b3a0a4" title="gui.resource.PythonCardWrapper.convert" alt="" coords="273,36,535,63"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a370236e5d69fd032c1582d3d58f94539_icgraph.png" border="0" usemap="#d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a370236e5d69fd032c1582d3d58f94539_icgraph" alt=""/></div>
+<map name="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a370236e5d69fd032c1582d3d58f94539_icgraph" id="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a370236e5d69fd032c1582d3d58f94539_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a370236e5d69fd032c1582d3d58f94539"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.resource.PythonCardWrapper.__setattr__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d7/dca/gui_2resource_8py_source.html#l00266">266</a> del archivo <a class="el" href="../../d7/dca/gui_2resource_8py_source.html">resource.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00266">gui.resource.PythonCardWrapper.__setattr__()</a> y <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00252">gui.resource.PythonCardWrapper.convert()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a370236e5d69fd032c1582d3d58f94539_cgraph.png" border="0" usemap="#d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a370236e5d69fd032c1582d3d58f94539_cgraph" alt=""/></div>
+<map name="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a370236e5d69fd032c1582d3d58f94539_cgraph" id="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a370236e5d69fd032c1582d3d58f94539_cgraph">
+<area shape="rect" id="node2" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#a2b1651313881cd0cc3292701e6b3a0a4" title="gui.resource.PythonCardWrapper.convert" alt="" coords="273,36,535,63"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5b70d5d61bc24fb5bb041a607a671ad2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.resource.PythonCardWrapper.__setitem__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00276">276</a> del archivo <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html">resource.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d7/dca/gui_2resource_8py_source.html#l00276">gui.resource.PythonCardWrapper.__setitem__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a5b70d5d61bc24fb5bb041a607a671ad2_icgraph.png" border="0" usemap="#d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a5b70d5d61bc24fb5bb041a607a671ad2_icgraph" alt=""/></div>
+<map name="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a5b70d5d61bc24fb5bb041a607a671ad2_icgraph" id="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a5b70d5d61bc24fb5bb041a607a671ad2_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5b70d5d61bc24fb5bb041a607a671ad2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.resource.PythonCardWrapper.__setitem__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d7/dca/gui_2resource_8py_source.html#l00276">276</a> del archivo <a class="el" href="../../d7/dca/gui_2resource_8py_source.html">resource.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00276">gui.resource.PythonCardWrapper.__setitem__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a5b70d5d61bc24fb5bb041a607a671ad2_cgraph.png" border="0" usemap="#d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a5b70d5d61bc24fb5bb041a607a671ad2_cgraph" alt=""/></div>
+<map name="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a5b70d5d61bc24fb5bb041a607a671ad2_cgraph" id="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a5b70d5d61bc24fb5bb041a607a671ad2_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2b1651313881cd0cc3292701e6b3a0a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.resource.PythonCardWrapper.convert </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d7/dca/gui_2resource_8py_source.html#l00252">252</a> del archivo <a class="el" href="../../d7/dca/gui_2resource_8py_source.html">resource.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00252">gui.resource.PythonCardWrapper.convert()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a2b1651313881cd0cc3292701e6b3a0a4_cgraph.png" border="0" usemap="#d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a2b1651313881cd0cc3292701e6b3a0a4_cgraph" alt=""/></div>
+<map name="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a2b1651313881cd0cc3292701e6b3a0a4_cgraph" id="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a2b1651313881cd0cc3292701e6b3a0a4_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2b1651313881cd0cc3292701e6b3a0a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.resource.PythonCardWrapper.convert </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00252">252</a> del archivo <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html">resource.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00261">gui.resource.PythonCardWrapper.__getattr__()</a>, <a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00266">gui.resource.PythonCardWrapper.__setattr__()</a> y <a class="el" href="../../d7/dca/gui_2resource_8py_source.html#l00252">gui.resource.PythonCardWrapper.convert()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a2b1651313881cd0cc3292701e6b3a0a4_icgraph.png" border="0" usemap="#d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a2b1651313881cd0cc3292701e6b3a0a4_icgraph" alt=""/></div>
+<map name="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a2b1651313881cd0cc3292701e6b3a0a4_icgraph" id="d7/dde/classgui_1_1resource_1_1PythonCardWrapper_a2b1651313881cd0cc3292701e6b3a0a4_icgraph">
+<area shape="rect" id="node2" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#ae900f98b630a8e7a0c18adb3df0d9c16" title="gui.resource.PythonCardWrapper.\l__getattr__" alt="" coords="317,29,536,70"/><area shape="rect" id="node3" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html#a370236e5d69fd032c1582d3d58f94539" title="gui.resource.PythonCardWrapper.\l__setattr__" alt="" coords="317,118,536,159"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>build/lib.linux-x86_64-2.7/gui/<a class="el" href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html">resource.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/dc4/namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="../../dc/d3b/namespacegui_1_1resource.html">resource</a></li><li class="navelem"><a class="el" href="../../d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html">PythonCardWrapper</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:48 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

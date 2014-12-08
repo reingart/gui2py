@@ -1,0 +1,496 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Fichero Fuente gui/tools/inspector.py</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d5/ddf/gui_2tools_2inspector_8py_source.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">inspector.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/ddf/gui_2tools_2inspector_8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">#!/usr/bin/python</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">&quot;Visual Inspector (using wx TreeListCtrl) of gui2py component&#39;s&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;__author__ = <span class="stringliteral">&quot;Mariano Reingart (reingart@gmail.com)&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;__copyright__ = <span class="stringliteral">&quot;Copyright (C) 2013- Mariano Reingart&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;__license__ = <span class="stringliteral">&quot;LGPL 3.0&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"># some parts where inspired or borrowed from wxPython examples</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span>  wx</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span>  wx.gizmos   <span class="keyword">as</span>  gizmos</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">from</span> gui <span class="keyword">import</span> registry</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d5/dbb/namespacegui_1_1tools_1_1propeditor.html">gui.tools.propeditor</a> <span class="keyword">import</span> PropertyEditorPanel</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">from</span> <a class="code" href="../../db/d4e/namespacegui_1_1tools_1_1toolbox.html">gui.tools.toolbox</a> <span class="keyword">import</span> set_drop_target</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;DEBUG = <span class="keyword">False</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">#----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">class </span>InspectorPanel(wx.Panel):</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#abf4066bdb859fc8ca923d9a22f0ea546">   24</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#abf4066bdb859fc8ca923d9a22f0ea546">__init__</a>(self, parent, propeditor, log):</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a735fe2fb4680659d2646785af8105147">log</a> = log</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a9513a263ade0060b687d3553fd07beff">propeditor</a> = propeditor</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a32657fa33f7099a7aaa7d3fe6e3c2859">designer</a> = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ab418c50dbe193f425902eeb861cc422a">highlighting</a> = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a492eab3bcdb81d10afc4df1072544829">selected_obj</a> = <span class="keywordtype">None</span>   <span class="comment"># used by the toolbox as default drop target</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        wx.Panel.__init__(self, parent, -1)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        self.Bind(wx.EVT_SIZE, self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a227e584bcd80cbfa76a17250f6be2709">OnSize</a>)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#aadbbd71c10cb661cfd2a15e5556e535a">tree</a> = gizmos.TreeListCtrl(self, -1, style =</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                        wx.TR_DEFAULT_STYLE</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                        | wx.TR_HAS_BUTTONS</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                        <span class="comment">#| wx.TR_TWIST_BUTTONS</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                        | wx.TR_ROW_LINES</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                        | wx.TR_COLUMN_LINES</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                        <span class="comment">#| wx.TR_NO_LINES </span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                        | wx.TR_FULL_ROW_HIGHLIGHT</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                   )</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        isz = (16,16)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        il = wx.ImageList(isz[0], isz[1])</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        fldridx     = il.Add(wx.ArtProvider_GetBitmap(wx.ART_FOLDER,      wx.ART_OTHER, isz))</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        fldropenidx = il.Add(wx.ArtProvider_GetBitmap(wx.ART_FILE_OPEN,   wx.ART_OTHER, isz))</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        fileidx     = il.Add(wx.ArtProvider_GetBitmap(wx.ART_NORMAL_FILE, wx.ART_OTHER, isz))</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#aa1a3b84bf0461e25d7f1579213f5d38d">images_map</a> = {}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">for</span> name, ctrl <span class="keywordflow">in</span> registry.CONTROLS.items() + registry.WINDOWS.items() + registry.MENU.items():</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">if</span> ctrl._image:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="comment">#bmp = wx.Bitmap(os.path.join(path, filename), wx.BITMAP_TYPE_XPM)</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#aa1a3b84bf0461e25d7f1579213f5d38d">images_map</a>[name] = il.Add(ctrl._image.GetBitmap().ConvertToImage().Scale(16,16).ConvertToBitmap())             </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        self.tree.SetImageList(il)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#aa22fcb36f97a06580be6caf3323802c2">il</a> = il</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="comment"># create some columns</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        self.tree.AddColumn(<span class="stringliteral">&quot;Object name&quot;</span>)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        self.tree.AddColumn(<span class="stringliteral">&quot;Class&quot;</span>)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">#self.tree.AddColumn(&quot;Column 2&quot;)</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        self.tree.SetMainColumn(0) <span class="comment"># the one with the tree in it...</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        self.tree.SetColumnWidth(0, 175)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        self.tree.GetMainWindow().Bind(wx.EVT_RIGHT_UP, self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ab3e19cf3494aa1cc0c03f4dea519c416">OnRightUp</a>)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        self.tree.Bind(wx.EVT_TREE_ITEM_ACTIVATED, self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ad6bb08719cc2b1a43893b693ff7b2008">OnActivate</a>)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        self.tree.Bind(wx.EVT_TREE_SEL_CHANGED, self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#aa47d66f67023fa6354981711d14429b8">OnSelect</a>)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#afeb60a8b16ea936ffafc7114676b99b2">   69</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#afeb60a8b16ea936ffafc7114676b99b2">set_designer</a>(self, designer):</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="stringliteral">&quot;track designer for context menu&quot;</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a32657fa33f7099a7aaa7d3fe6e3c2859">designer</a> = designer</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a3d9133aa613f3f891a20f8f044dcf4df">   73</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a3d9133aa613f3f891a20f8f044dcf4df">load_object</a>(self, obj=None):</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="stringliteral">&quot;Add the object and all their childs&quot;</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment"># if not obj is given, do a full reload using the current root</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">if</span> obj:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ab410fec26bbec6787dd20402eebf9b82">root_obj</a> = obj</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            obj = self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ab410fec26bbec6787dd20402eebf9b82">root_obj</a></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        self.tree.DeleteAllItems()</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a3ac14a0be7fb0d4c70512492f2d76e5e">root</a> = self.tree.AddRoot(<span class="stringliteral">&quot;application&quot;</span>)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        self.tree.SetItemText(self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a3ac14a0be7fb0d4c70512492f2d76e5e">root</a>, <span class="stringliteral">&quot;App&quot;</span>, 1)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        self.tree.SetItemText(self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a3ac14a0be7fb0d4c70512492f2d76e5e">root</a>, <span class="stringliteral">&quot;col 2 root&quot;</span>, 2)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">#self.tree.SetItemImage(self.root, fldridx, which = wx.TreeItemIcon_Normal)</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="comment">#self.tree.SetItemImage(self.root, fldropenidx, which = wx.TreeItemIcon_Expanded)</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a479b17cb17c30b70c1611a801c8e0dec">build_tree</a>(self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a3ac14a0be7fb0d4c70512492f2d76e5e">root</a>, obj)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        self.tree.Expand(self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a3ac14a0be7fb0d4c70512492f2d76e5e">root</a>)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a09f420bcf22a03cb72b015c5d7c735e1">   90</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a09f420bcf22a03cb72b015c5d7c735e1">inspect</a>(self, obj, context_menu=False, edit_prop=False, mouse_pos=None):</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="stringliteral">&quot;Select the object and show its properties&quot;</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        child = self.tree.FindItem(self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a3ac14a0be7fb0d4c70512492f2d76e5e">root</a>, obj.name)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;inspect child&quot;</span>, child</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">if</span> child:</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            self.tree.ScrollTo(child)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            self.tree.SetCurrentItem(child)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            self.tree.SelectItem(child)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            child.Selected = <span class="keyword">True</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#acd3321153d346058fb9d100b47824cec">activate_item</a>(child, edit_prop)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">if</span> context_menu:</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182">show_context_menu</a>(child, mouse_pos)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a479b17cb17c30b70c1611a801c8e0dec">  103</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a479b17cb17c30b70c1611a801c8e0dec">build_tree</a>(self, parent, obj):</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;building&quot;</span>, obj.__class__.__name__</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        child = self.tree.AppendItem(parent, obj.name)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        self.tree.SetItemText(child, obj.__class__.__name__, 1)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">if</span> obj._meta.name <span class="keywordflow">in</span> self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#aa1a3b84bf0461e25d7f1579213f5d38d">images_map</a>:</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            self.tree.SetItemImage(child, self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#aa1a3b84bf0461e25d7f1579213f5d38d">images_map</a>[obj._meta.name])</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        self.tree.SetItemData(child, wx.TreeItemData(obj))</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="comment">#self.tree.SetItemImage(child, fldropenidx, which = wx.TreeItemIcon_Expanded)</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">for</span> ctrl <span class="keywordflow">in</span> obj:</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a479b17cb17c30b70c1611a801c8e0dec">build_tree</a>(child, ctrl)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        self.tree.Expand(child)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ad6bb08719cc2b1a43893b693ff7b2008">  116</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ad6bb08719cc2b1a43893b693ff7b2008">OnActivate</a>(self, evt):</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        child = evt.GetItem()</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        print(<span class="stringliteral">&#39;OnActivate: %s&#39;</span> % self.tree.GetItemText(child))</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#acd3321153d346058fb9d100b47824cec">activate_item</a>(child, select=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    </div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#acd3321153d346058fb9d100b47824cec">  121</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#acd3321153d346058fb9d100b47824cec">activate_item</a>(self, child, edit_prop=False, select=False):</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="stringliteral">&quot;load the selected item in the property editor&quot;</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        d = self.tree.GetItemData(child)</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">if</span> d:</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            o = d.GetData()</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a492eab3bcdb81d10afc4df1072544829">selected_obj</a> = o</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            callback = <span class="keyword">lambda</span> o=o, **kwargs: self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a59c1ce8f0b5d976ea5bb7c1442824af6">update</a>(o, **kwargs)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            self.propeditor.load_object(o, callback)</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">if</span> edit_prop:</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                wx.CallAfter(self.propeditor.edit)</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keywordflow">if</span> select <span class="keywordflow">and</span> self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a32657fa33f7099a7aaa7d3fe6e3c2859">designer</a>:</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                self.designer.select(o)</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a492eab3bcdb81d10afc4df1072544829">selected_obj</a> = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a59c1ce8f0b5d976ea5bb7c1442824af6">  136</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a59c1ce8f0b5d976ea5bb7c1442824af6">update</a>(self, obj, **kwargs):</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="stringliteral">&quot;Update the tree item when the object name changes&quot;</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="comment"># search for the old name:</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        child = self.tree.FindItem(self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a3ac14a0be7fb0d4c70512492f2d76e5e">root</a>, kwargs[<span class="stringliteral">&#39;name&#39;</span>])</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;update child&quot;</span>, child, kwargs</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordflow">if</span> child:</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            self.tree.ScrollTo(child)</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            self.tree.SetCurrentItem(child)</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            self.tree.SelectItem(child)</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            child.Selected = <span class="keyword">True</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="comment"># update the new name</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            self.tree.SetItemText(child, obj.name, 0)</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    </div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ac369f3121aba776ff3001d45a317d1fc">  149</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ac369f3121aba776ff3001d45a317d1fc">do_highlight</a>(self, tlw, rect, colour, pen_width=2):</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ab418c50dbe193f425902eeb861cc422a">highlighting</a> <span class="keywordflow">and</span> tlw:</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ab418c50dbe193f425902eeb861cc422a">highlighting</a> = tlw</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> tlw.IsFrozen():</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                tlw.Freeze()</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            dc = wx.ScreenDC()</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            dco = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            dc.SetPen(wx.Pen(colour, pen_width))</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            dc.SetBrush(wx.TRANSPARENT_BRUSH)</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            drawRect = wx.Rect(*rect)</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            dc.DrawRectangleRect(drawRect)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            drawRect.Inflate(2,2)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            pos = tlw.ScreenToClient(drawRect.GetPosition())</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            drawRect.SetPosition(pos)</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            wx.CallLater(300, self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5f95eb72313bd1c93bfbedfc1fb3a75e">do_unhighlight</a>, tlw, drawRect)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="keywordflow">return</span> dc, dco</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    </div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5f95eb72313bd1c93bfbedfc1fb3a75e">  170</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5f95eb72313bd1c93bfbedfc1fb3a75e">do_unhighlight</a>(self, tlw, rect):</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> tlw:</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordflow">return</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">if</span> tlw.IsFrozen():</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            tlw.Thaw()</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        tlw.RefreshRect(rect)</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ab418c50dbe193f425902eeb861cc422a">highlighting</a> = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a93b4d530566190a084aa12590d02b310">  178</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a93b4d530566190a084aa12590d02b310">highlight</a>(self, win):</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">if</span> win <span class="keywordflow">and</span> isinstance(win, wx.Window):</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            rect = win.GetClientRect()</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            tlw = win.GetTopLevelParent()</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            pos = win.ClientToScreen((0,0))</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            rect.SetPosition(pos)</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ac369f3121aba776ff3001d45a317d1fc">do_highlight</a>(tlw, rect, <span class="stringliteral">&#39;red&#39;</span>)</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
+<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#aa47d66f67023fa6354981711d14429b8">  186</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#aa47d66f67023fa6354981711d14429b8">OnSelect</a>(self, evt):</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        child = evt.GetItem()</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">if</span> DEBUG: print(<span class="stringliteral">&#39;OnSelect: %s&#39;</span> % self.tree.GetItemText(child))</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        d = self.tree.GetItemData(child)</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">if</span> d:</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            o = d.GetData()</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a93b4d530566190a084aa12590d02b310">highlight</a>(o.wx_obj <span class="keywordflow">if</span> o <span class="keywordflow">else</span> <span class="keywordtype">None</span>)</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ab3e19cf3494aa1cc0c03f4dea519c416">  195</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ab3e19cf3494aa1cc0c03f4dea519c416">OnRightUp</a>(self, evt):</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        pos = evt.GetPosition()</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        item, flags, col = self.tree.HitTest(pos)</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182">show_context_menu</a>(item)</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    </div>
+<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182">  200</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182">show_context_menu</a>(self, item, mouse_pos=None):</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="stringliteral">&quot;Open a popup menu with options regarding the selected object&quot;</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordflow">if</span> item:</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            d = self.tree.GetItemData(item)</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keywordflow">if</span> d:</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                obj = d.GetData()</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                <span class="keywordflow">if</span> obj:</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                    <span class="comment"># highligh and store the selected object:</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                    self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a93b4d530566190a084aa12590d02b310">highlight</a>(obj.wx_obj)</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                    self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#acd15719f4cfa64683e6b24ddeda9c473">obj</a> = obj</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                    </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                    <span class="comment"># make the context menu</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                    menu = wx.Menu()</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                    id_del, id_dup, id_raise, id_lower = [wx.NewId() <span class="keywordflow">for</span> i</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                                                            <span class="keywordflow">in</span> range(4)]</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                    menu.Append(id_del, <span class="stringliteral">&quot;Delete&quot;</span>)</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                    menu.Append(id_dup, <span class="stringliteral">&quot;Duplicate&quot;</span>)</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                    menu.Append(id_raise, <span class="stringliteral">&quot;Bring to Front&quot;</span>)</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                    menu.Append(id_lower, <span class="stringliteral">&quot;Send to Back&quot;</span>)</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                    <span class="comment"># make submenu!</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    sm = wx.Menu()</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                    <span class="keywordflow">for</span> ctrl <span class="keywordflow">in</span> sorted(obj._meta.valid_children,</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                                       key=<span class="keyword">lambda</span> c: </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                                            registry.ALL.index(c._meta.name)):</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                        new_id = wx.NewId()</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                        sm.Append(new_id, ctrl._meta.name)</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                        self.Bind(wx.EVT_MENU, </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                                  <span class="keyword">lambda</span> evt, ctrl=ctrl: self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#af70ae5e60130d48df846d94df4c56c02">add_child</a>(ctrl, mouse_pos), </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                                  id=new_id)</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                        </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                    menu.AppendMenu(wx.NewId(), <span class="stringliteral">&quot;Add child&quot;</span>, sm)</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                    self.Bind(wx.EVT_MENU, self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a9b091f5c2dfa04b04a8c440bfacd6539">delete</a>, id=id_del)</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                    self.Bind(wx.EVT_MENU, self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a58cd3c99d4e9f14ee226e14a0b6891a4">duplicate</a>, id=id_dup)</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                    self.Bind(wx.EVT_MENU, self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a38800891c0c52108e8cd482023479fee">bring_to_front</a>, id=id_raise)</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                    self.Bind(wx.EVT_MENU, self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a57f2da6e049a1709c4243830a037ac89">send_to_back</a>, id=id_lower)</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                    self.PopupMenu(menu)</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                    menu.Destroy()</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                    self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a3d9133aa613f3f891a20f8f044dcf4df">load_object</a>(self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ab410fec26bbec6787dd20402eebf9b82">root_obj</a>)     <span class="comment"># reload the tree</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    </div>
+<div class="line"><a name="l00242"></a><span class="lineno"><a class="line" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a9b091f5c2dfa04b04a8c440bfacd6539">  242</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a9b091f5c2dfa04b04a8c440bfacd6539">delete</a>(self, evt, obj=None):</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="comment"># remove the object from parent and destroy it:</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordflow">if</span> obj:</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#acd15719f4cfa64683e6b24ddeda9c473">obj</a> = obj</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        self.obj.destroy()</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        del self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#acd15719f4cfa64683e6b24ddeda9c473">obj</a></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
+<div class="line"><a name="l00249"></a><span class="lineno"><a class="line" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a58cd3c99d4e9f14ee226e14a0b6891a4">  249</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a58cd3c99d4e9f14ee226e14a0b6891a4">duplicate</a>(self, evt):</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="comment"># create a similar copy of the object</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        obj2 = self.obj.duplicate()</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;</div>
+<div class="line"><a name="l00253"></a><span class="lineno"><a class="line" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a38800891c0c52108e8cd482023479fee">  253</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a38800891c0c52108e8cd482023479fee">bring_to_front</a>(self, evt):</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        self.obj.reindex(-1)</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
+<div class="line"><a name="l00256"></a><span class="lineno"><a class="line" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a57f2da6e049a1709c4243830a037ac89">  256</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a57f2da6e049a1709c4243830a037ac89">send_to_back</a>(self, evt):</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        self.obj.reindex(0)</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    </div>
+<div class="line"><a name="l00259"></a><span class="lineno"><a class="line" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#af70ae5e60130d48df846d94df4c56c02">  259</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#af70ae5e60130d48df846d94df4c56c02">add_child</a>(self, ctrl, mouse_pos=None):</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        new_id = wx.NewId()</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        obj = ctrl(self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#acd15719f4cfa64683e6b24ddeda9c473">obj</a>, </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;               name=<span class="stringliteral">&quot;%s_%s&quot;</span> % (ctrl._meta.name.lower(), new_id),</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;               id=new_id, </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;               designer=self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a32657fa33f7099a7aaa7d3fe6e3c2859">designer</a>)</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="comment"># in design mode set drag &amp; drop target for the toolbox: </span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a32657fa33f7099a7aaa7d3fe6e3c2859">designer</a> <span class="keywordflow">and</span> obj._meta.container <span class="keywordflow">and</span> self.obj.drop_target:</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <a class="code" href="../../db/d4e/namespacegui_1_1tools_1_1toolbox.html#a2e61b2d9a49e1d06836d805a18f095ab">set_drop_target</a>(obj, self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ab410fec26bbec6787dd20402eebf9b82">root_obj</a>, self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a32657fa33f7099a7aaa7d3fe6e3c2859">designer</a>, self)</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="comment"># move the new object to the mouse position of the click evt (if given)</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="keywordflow">if</span> mouse_pos:</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            x, y = self.obj.wx_obj.ScreenToClient(mouse_pos)</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            obj.pos = (x, y)</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <span class="comment"># update the object at the inspector (to show the new control)</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        wx.CallAfter(self.<a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a09f420bcf22a03cb72b015c5d7c735e1">inspect</a>, obj)</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    </div>
+<div class="line"><a name="l00275"></a><span class="lineno"><a class="line" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a227e584bcd80cbfa76a17250f6be2709">  275</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a227e584bcd80cbfa76a17250f6be2709">OnSize</a>(self, evt):</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        self.tree.SetSize(self.GetSize())</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="comment">#----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="keyword">class </span><a class="code" href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html">InspectorTool</a>:</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;</div>
+<div class="line"><a name="l00283"></a><span class="lineno"><a class="line" href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html#ae81263e3be0c08afcef4581e7ebe8e0a">  283</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html#ae81263e3be0c08afcef4581e7ebe8e0a">__init__</a>(self, parent=None, log=None):</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="keywordflow">if</span> log <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <span class="keyword">import</span> sys</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            log = sys.stdout</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        self.<a class="code" href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html#ac8fc402ccbfafec9b78f363e81930f38">f1</a> = wx.Frame(parent, pos=(600,0), size=(300, 300))</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        self.<a class="code" href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html#a3eb8969e530d426a443d629e95f5db98">f2</a> = wx.Frame(parent, pos=(600,350), size=(300, 300))</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        self.<a class="code" href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html#ae334a365f35ea3c0cf69c7730a8d644f">propeditor</a> = <a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html">PropertyEditorPanel</a>(self.<a class="code" href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html#a3eb8969e530d426a443d629e95f5db98">f2</a>, log)</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        self.<a class="code" href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html#a7fa9f114d5edc1b7e1af13365824b51e">inspector</a> = <a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html">InspectorPanel</a>(self.<a class="code" href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html#ac8fc402ccbfafec9b78f363e81930f38">f1</a>, self.<a class="code" href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html#ae334a365f35ea3c0cf69c7730a8d644f">propeditor</a>, log)</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    </div>
+<div class="line"><a name="l00293"></a><span class="lineno"><a class="line" href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html#a5c2c7c290b4b15b199abe201df5b16b4">  293</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html#a5c2c7c290b4b15b199abe201df5b16b4">show</a>(self, root_obj, visible=True):</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        self.inspector.load_object(root_obj)</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        self.f1.Show(visible)</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        self.f2.Show(visible)</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        </div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="comment">#----------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&#39;__main__&#39;</span>:</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keyword">import</span> sys,os</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    app = wx.App(redirect=<span class="keywordtype">None</span>)</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    </div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keyword">from</span> <a class="code" href="../../d7/d56/namespacegui_1_1controls.html">gui.controls</a> <span class="keyword">import</span> Button, Label, TextBox, CheckBox, ListBox, ComboBox</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keyword">from</span> <a class="code" href="../../d7/d42/namespacegui_1_1windows.html">gui.windows</a> <span class="keyword">import</span> Window</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    w = Window(title=<span class="stringliteral">&quot;hello world&quot;</span>, name=<span class="stringliteral">&quot;frmTest&quot;</span>, tool_window=<span class="keyword">False</span>, </div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;               resizable=<span class="keyword">True</span>, visible=<span class="keyword">False</span>, pos=(180, 0))</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;               </div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    o = Button(w, name=<span class="stringliteral">&quot;btnTest&quot;</span>, label=<span class="stringliteral">&quot;click me!&quot;</span>, default=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    o = Label(w, name=<span class="stringliteral">&quot;lblTest&quot;</span>, alignment=<span class="stringliteral">&quot;right&quot;</span>, size=(-1, 500), text=<span class="stringliteral">&quot;hello!&quot;</span>)</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    o = TextBox(w, name=<span class="stringliteral">&quot;txtTest&quot;</span>, border=<span class="keyword">False</span>, text=<span class="stringliteral">&quot;hello world!&quot;</span>)</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    o = CheckBox(w, name=<span class="stringliteral">&quot;chkTest&quot;</span>, border=<span class="stringliteral">&#39;none&#39;</span>, label=<span class="stringliteral">&quot;Check me!&quot;</span>)</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    o = ListBox(w, name=<span class="stringliteral">&quot;lstTest&quot;</span>, border=<span class="stringliteral">&#39;none&#39;</span>, </div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                items={<span class="stringliteral">&#39;datum1&#39;</span>: <span class="stringliteral">&#39;a&#39;</span>, <span class="stringliteral">&#39;datum2&#39;</span>:<span class="stringliteral">&#39;b&#39;</span>, <span class="stringliteral">&#39;datum3&#39;</span>:<span class="stringliteral">&#39;c&#39;</span>},</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                multiselect=<span class="stringliteral">&quot;--multiselect&quot;</span> <span class="keywordflow">in</span> sys.argv)</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    o = ComboBox(w, name=<span class="stringliteral">&quot;cboTest&quot;</span>,</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                items={<span class="stringliteral">&#39;datum1&#39;</span>: <span class="stringliteral">&#39;a&#39;</span>, <span class="stringliteral">&#39;datum2&#39;</span>:<span class="stringliteral">&#39;b&#39;</span>, <span class="stringliteral">&#39;datum3&#39;</span>:<span class="stringliteral">&#39;c&#39;</span>},</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                readonly=<span class="stringliteral">&#39;--readonly&#39;</span> <span class="keywordflow">in</span> sys.argv,</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                )</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    w.show()</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <a class="code" href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html">InspectorTool</a>().<a class="code" href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html#a5c2c7c290b4b15b199abe201df5b16b4">show</a>(w)</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    </div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    app.MainLoop()</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_a735fe2fb4680659d2646785af8105147"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a735fe2fb4680659d2646785af8105147">gui.tools.inspector.InspectorPanel.log</a></div><div class="ttdeci">log</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00025">inspector.py:25</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_aadbbd71c10cb661cfd2a15e5556e535a"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#aadbbd71c10cb661cfd2a15e5556e535a">gui.tools.inspector.InspectorPanel.tree</a></div><div class="ttdeci">tree</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00034">inspector.py:34</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_aa22fcb36f97a06580be6caf3323802c2"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#aa22fcb36f97a06580be6caf3323802c2">gui.tools.inspector.InspectorPanel.il</a></div><div class="ttdeci">il</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00056">inspector.py:56</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_aa47d66f67023fa6354981711d14429b8"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#aa47d66f67023fa6354981711d14429b8">gui.tools.inspector.InspectorPanel.OnSelect</a></div><div class="ttdeci">def OnSelect</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00186">inspector.py:186</a></div></div>
+<div class="ttc" id="namespacegui_1_1tools_1_1propeditor_html"><div class="ttname"><a href="../../d5/dbb/namespacegui_1_1tools_1_1propeditor.html">gui.tools.propeditor</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00001">propeditor.py:1</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_a58cd3c99d4e9f14ee226e14a0b6891a4"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a58cd3c99d4e9f14ee226e14a0b6891a4">gui.tools.inspector.InspectorPanel.duplicate</a></div><div class="ttdeci">def duplicate</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00249">inspector.py:249</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_abf4066bdb859fc8ca923d9a22f0ea546"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#abf4066bdb859fc8ca923d9a22f0ea546">gui.tools.inspector.InspectorPanel.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00024">inspector.py:24</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_afeb60a8b16ea936ffafc7114676b99b2"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#afeb60a8b16ea936ffafc7114676b99b2">gui.tools.inspector.InspectorPanel.set_designer</a></div><div class="ttdeci">def set_designer</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00069">inspector.py:69</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorTool_html_a3eb8969e530d426a443d629e95f5db98"><div class="ttname"><a href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html#a3eb8969e530d426a443d629e95f5db98">gui.tools.inspector.InspectorTool.f2</a></div><div class="ttdeci">f2</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00289">inspector.py:289</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorTool_html_ae81263e3be0c08afcef4581e7ebe8e0a"><div class="ttname"><a href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html#ae81263e3be0c08afcef4581e7ebe8e0a">gui.tools.inspector.InspectorTool.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00283">inspector.py:283</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html">gui.tools.inspector.InspectorPanel</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00023">inspector.py:23</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorTool_html"><div class="ttname"><a href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html">gui.tools.inspector.InspectorTool</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00281">inspector.py:281</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_ab3e19cf3494aa1cc0c03f4dea519c416"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ab3e19cf3494aa1cc0c03f4dea519c416">gui.tools.inspector.InspectorPanel.OnRightUp</a></div><div class="ttdeci">def OnRightUp</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00195">inspector.py:195</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_a5f95eb72313bd1c93bfbedfc1fb3a75e"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5f95eb72313bd1c93bfbedfc1fb3a75e">gui.tools.inspector.InspectorPanel.do_unhighlight</a></div><div class="ttdeci">def do_unhighlight</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00170">inspector.py:170</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_a3ac14a0be7fb0d4c70512492f2d76e5e"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a3ac14a0be7fb0d4c70512492f2d76e5e">gui.tools.inspector.InspectorPanel.root</a></div><div class="ttdeci">root</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00081">inspector.py:81</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_a5a270e6ded4480804a4a62899a88e182"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182">gui.tools.inspector.InspectorPanel.show_context_menu</a></div><div class="ttdeci">def show_context_menu</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00200">inspector.py:200</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorTool_html_ae334a365f35ea3c0cf69c7730a8d644f"><div class="ttname"><a href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html#ae334a365f35ea3c0cf69c7730a8d644f">gui.tools.inspector.InspectorTool.propeditor</a></div><div class="ttdeci">propeditor</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00290">inspector.py:290</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_a32657fa33f7099a7aaa7d3fe6e3c2859"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a32657fa33f7099a7aaa7d3fe6e3c2859">gui.tools.inspector.InspectorPanel.designer</a></div><div class="ttdeci">designer</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00027">inspector.py:27</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel_html"><div class="ttname"><a href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html">gui.tools.propeditor.PropertyEditorPanel</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00024">propeditor.py:24</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_a9513a263ade0060b687d3553fd07beff"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a9513a263ade0060b687d3553fd07beff">gui.tools.inspector.InspectorPanel.propeditor</a></div><div class="ttdeci">propeditor</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00026">inspector.py:26</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_a59c1ce8f0b5d976ea5bb7c1442824af6"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a59c1ce8f0b5d976ea5bb7c1442824af6">gui.tools.inspector.InspectorPanel.update</a></div><div class="ttdeci">def update</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00136">inspector.py:136</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorTool_html_a7fa9f114d5edc1b7e1af13365824b51e"><div class="ttname"><a href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html#a7fa9f114d5edc1b7e1af13365824b51e">gui.tools.inspector.InspectorTool.inspector</a></div><div class="ttdeci">inspector</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00291">inspector.py:291</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_a9b091f5c2dfa04b04a8c440bfacd6539"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a9b091f5c2dfa04b04a8c440bfacd6539">gui.tools.inspector.InspectorPanel.delete</a></div><div class="ttdeci">def delete</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00242">inspector.py:242</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_ab418c50dbe193f425902eeb861cc422a"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ab418c50dbe193f425902eeb861cc422a">gui.tools.inspector.InspectorPanel.highlighting</a></div><div class="ttdeci">highlighting</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00028">inspector.py:28</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_acd15719f4cfa64683e6b24ddeda9c473"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#acd15719f4cfa64683e6b24ddeda9c473">gui.tools.inspector.InspectorPanel.obj</a></div><div class="ttdeci">obj</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00209">inspector.py:209</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_a09f420bcf22a03cb72b015c5d7c735e1"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a09f420bcf22a03cb72b015c5d7c735e1">gui.tools.inspector.InspectorPanel.inspect</a></div><div class="ttdeci">def inspect</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00090">inspector.py:90</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_ab410fec26bbec6787dd20402eebf9b82"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ab410fec26bbec6787dd20402eebf9b82">gui.tools.inspector.InspectorPanel.root_obj</a></div><div class="ttdeci">root_obj</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00077">inspector.py:77</a></div></div>
+<div class="ttc" id="namespacegui_1_1controls_html"><div class="ttname"><a href="../../d7/d56/namespacegui_1_1controls.html">gui.controls</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbf/build_2lib_8linux-x86__64-2_87_2gui_2controls_2____init_____8py_source.html#l00001">__init__.py:1</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_ad6bb08719cc2b1a43893b693ff7b2008"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ad6bb08719cc2b1a43893b693ff7b2008">gui.tools.inspector.InspectorPanel.OnActivate</a></div><div class="ttdeci">def OnActivate</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00116">inspector.py:116</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_af70ae5e60130d48df846d94df4c56c02"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#af70ae5e60130d48df846d94df4c56c02">gui.tools.inspector.InspectorPanel.add_child</a></div><div class="ttdeci">def add_child</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00259">inspector.py:259</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorTool_html_a5c2c7c290b4b15b199abe201df5b16b4"><div class="ttname"><a href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html#a5c2c7c290b4b15b199abe201df5b16b4">gui.tools.inspector.InspectorTool.show</a></div><div class="ttdeci">def show</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00293">inspector.py:293</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_a93b4d530566190a084aa12590d02b310"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a93b4d530566190a084aa12590d02b310">gui.tools.inspector.InspectorPanel.highlight</a></div><div class="ttdeci">def highlight</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00178">inspector.py:178</a></div></div>
+<div class="ttc" id="namespacegui_1_1tools_1_1toolbox_html"><div class="ttname"><a href="../../db/d4e/namespacegui_1_1tools_1_1toolbox.html">gui.tools.toolbox</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00001">toolbox.py:1</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_a38800891c0c52108e8cd482023479fee"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a38800891c0c52108e8cd482023479fee">gui.tools.inspector.InspectorPanel.bring_to_front</a></div><div class="ttdeci">def bring_to_front</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00253">inspector.py:253</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_a227e584bcd80cbfa76a17250f6be2709"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a227e584bcd80cbfa76a17250f6be2709">gui.tools.inspector.InspectorPanel.OnSize</a></div><div class="ttdeci">def OnSize</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00275">inspector.py:275</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_ac369f3121aba776ff3001d45a317d1fc"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ac369f3121aba776ff3001d45a317d1fc">gui.tools.inspector.InspectorPanel.do_highlight</a></div><div class="ttdeci">def do_highlight</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00149">inspector.py:149</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_a57f2da6e049a1709c4243830a037ac89"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a57f2da6e049a1709c4243830a037ac89">gui.tools.inspector.InspectorPanel.send_to_back</a></div><div class="ttdeci">def send_to_back</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00256">inspector.py:256</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_a492eab3bcdb81d10afc4df1072544829"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a492eab3bcdb81d10afc4df1072544829">gui.tools.inspector.InspectorPanel.selected_obj</a></div><div class="ttdeci">selected_obj</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00029">inspector.py:29</a></div></div>
+<div class="ttc" id="namespacegui_1_1tools_1_1toolbox_html_a2e61b2d9a49e1d06836d805a18f095ab"><div class="ttname"><a href="../../db/d4e/namespacegui_1_1tools_1_1toolbox.html#a2e61b2d9a49e1d06836d805a18f095ab">gui.tools.toolbox.set_drop_target</a></div><div class="ttdeci">def set_drop_target</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00227">toolbox.py:227</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_acd3321153d346058fb9d100b47824cec"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#acd3321153d346058fb9d100b47824cec">gui.tools.inspector.InspectorPanel.activate_item</a></div><div class="ttdeci">def activate_item</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00121">inspector.py:121</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_a3d9133aa613f3f891a20f8f044dcf4df"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a3d9133aa613f3f891a20f8f044dcf4df">gui.tools.inspector.InspectorPanel.load_object</a></div><div class="ttdeci">def load_object</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00073">inspector.py:73</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_aa1a3b84bf0461e25d7f1579213f5d38d"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#aa1a3b84bf0461e25d7f1579213f5d38d">gui.tools.inspector.InspectorPanel.images_map</a></div><div class="ttdeci">images_map</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00049">inspector.py:49</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorTool_html_ac8fc402ccbfafec9b78f363e81930f38"><div class="ttname"><a href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html#ac8fc402ccbfafec9b78f363e81930f38">gui.tools.inspector.InspectorTool.f1</a></div><div class="ttdeci">f1</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00288">inspector.py:288</a></div></div>
+<div class="ttc" id="namespacegui_1_1windows_html"><div class="ttname"><a href="../../d7/d42/namespacegui_1_1windows.html">gui.windows</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da3/build_2lib_8linux-x86__64-2_87_2gui_2windows_2____init_____8py_source.html#l00001">__init__.py:1</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html_a479b17cb17c30b70c1611a801c8e0dec"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a479b17cb17c30b70c1611a801c8e0dec">gui.tools.inspector.InspectorPanel.build_tree</a></div><div class="ttdeci">def build_tree</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00103">inspector.py:103</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_be831313eee9167e67543a36aa74e60d.html">gui</a></li><li class="navelem"><a class="el" href="../../dir_53c845addcf54ccd5761a2e320502361.html">tools</a></li><li class="navelem"><a class="el" href="../../d5/ddf/gui_2tools_2inspector_8py.html">inspector.py</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:47 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

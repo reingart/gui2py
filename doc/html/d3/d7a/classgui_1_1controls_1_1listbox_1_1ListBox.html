@@ -1,0 +1,1656 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Referencia de la Clase gui.controls.listbox.ListBox</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-static-attribs">Atributos públicos estáticos</a> &#124;
+<a href="#pri-static-attribs">Atributos privados estáticos</a> &#124;
+<a href="../../dd/d6f/classgui_1_1controls_1_1listbox_1_1ListBox-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase gui.controls.listbox.ListBox</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagrama de herencias de gui.controls.listbox.ListBox</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d61/classgui_1_1controls_1_1listbox_1_1ListBox__inherit__graph.png" border="0" usemap="#gui_8controls_8listbox_8ListBox_inherit__map" alt="Inheritance graph"/></div>
+<map name="gui_8controls_8listbox_8ListBox_inherit__map" id="gui_8controls_8listbox_8ListBox_inherit__map">
+<area shape="rect" id="node2" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html" title="gui.controls.listbox.Item\lContainerControl" alt="" coords="14,81,175,122"/></map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración para gui.controls.listbox.ListBox:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/d8c/classgui_1_1controls_1_1listbox_1_1ListBox__coll__graph.png" border="0" usemap="#gui_8controls_8listbox_8ListBox_coll__map" alt="Collaboration graph"/></div>
+<map name="gui_8controls_8listbox_8ListBox_coll__map" id="gui_8controls_8listbox_8ListBox_coll__map">
+<area shape="rect" id="node2" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html" title="gui.controls.listbox.Item\lContainerControl" alt="" coords="14,81,175,122"/></map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a9688f9caf1109157669eb90166982cc6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html#a9688f9caf1109157669eb90166982cc6">insert_items</a></td></tr>
+<tr class="separator:a9688f9caf1109157669eb90166982cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9688f9caf1109157669eb90166982cc6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html#a9688f9caf1109157669eb90166982cc6">insert_items</a></td></tr>
+<tr class="separator:a9688f9caf1109157669eb90166982cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac09915963fa529543df1bee65f80f039"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ac09915963fa529543df1bee65f80f039">set_data</a></td></tr>
+<tr class="separator:ac09915963fa529543df1bee65f80f039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac09915963fa529543df1bee65f80f039"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ac09915963fa529543df1bee65f80f039">set_data</a></td></tr>
+<tr class="separator:ac09915963fa529543df1bee65f80f039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a427f981a0aea5188e0d3e857257c602b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a427f981a0aea5188e0d3e857257c602b">get_data</a></td></tr>
+<tr class="separator:a427f981a0aea5188e0d3e857257c602b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a427f981a0aea5188e0d3e857257c602b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a427f981a0aea5188e0d3e857257c602b">get_data</a></td></tr>
+<tr class="separator:a427f981a0aea5188e0d3e857257c602b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9feabda46de5ea49e998427253791751"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a9feabda46de5ea49e998427253791751">append</a></td></tr>
+<tr class="separator:a9feabda46de5ea49e998427253791751"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9feabda46de5ea49e998427253791751"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a9feabda46de5ea49e998427253791751">append</a></td></tr>
+<tr class="separator:a9feabda46de5ea49e998427253791751"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cd3010ec50b3e7c91db2e0f57fef34c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a8cd3010ec50b3e7c91db2e0f57fef34c">append_items</a></td></tr>
+<tr class="separator:a8cd3010ec50b3e7c91db2e0f57fef34c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cd3010ec50b3e7c91db2e0f57fef34c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a8cd3010ec50b3e7c91db2e0f57fef34c">append_items</a></td></tr>
+<tr class="separator:a8cd3010ec50b3e7c91db2e0f57fef34c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af60a13fdd6777f47b2fa5b11a9c653bf"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#af60a13fdd6777f47b2fa5b11a9c653bf">clear</a></td></tr>
+<tr class="separator:af60a13fdd6777f47b2fa5b11a9c653bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af60a13fdd6777f47b2fa5b11a9c653bf"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#af60a13fdd6777f47b2fa5b11a9c653bf">clear</a></td></tr>
+<tr class="separator:af60a13fdd6777f47b2fa5b11a9c653bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab57819669de9197abc515734d64e6d73"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ab57819669de9197abc515734d64e6d73">delete</a></td></tr>
+<tr class="separator:ab57819669de9197abc515734d64e6d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab57819669de9197abc515734d64e6d73"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ab57819669de9197abc515734d64e6d73">delete</a></td></tr>
+<tr class="separator:ab57819669de9197abc515734d64e6d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac99ccbe5d08fd0763677b653ce1e7a1d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ac99ccbe5d08fd0763677b653ce1e7a1d">find_string</a></td></tr>
+<tr class="separator:ac99ccbe5d08fd0763677b653ce1e7a1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac99ccbe5d08fd0763677b653ce1e7a1d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ac99ccbe5d08fd0763677b653ce1e7a1d">find_string</a></td></tr>
+<tr class="separator:ac99ccbe5d08fd0763677b653ce1e7a1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2118c2e24f32f9e28f4525f809cbea44"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a2118c2e24f32f9e28f4525f809cbea44">get_string</a></td></tr>
+<tr class="separator:a2118c2e24f32f9e28f4525f809cbea44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2118c2e24f32f9e28f4525f809cbea44"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a2118c2e24f32f9e28f4525f809cbea44">get_string</a></td></tr>
+<tr class="separator:a2118c2e24f32f9e28f4525f809cbea44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fe74c538432a4c34e4ae93d82f16d05"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a1fe74c538432a4c34e4ae93d82f16d05">set_string</a></td></tr>
+<tr class="separator:a1fe74c538432a4c34e4ae93d82f16d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fe74c538432a4c34e4ae93d82f16d05"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a1fe74c538432a4c34e4ae93d82f16d05">set_string</a></td></tr>
+<tr class="separator:a1fe74c538432a4c34e4ae93d82f16d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4357802120a84ec4a88ae429e6bead7a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a4357802120a84ec4a88ae429e6bead7a">get_count</a></td></tr>
+<tr class="separator:a4357802120a84ec4a88ae429e6bead7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4357802120a84ec4a88ae429e6bead7a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a4357802120a84ec4a88ae429e6bead7a">get_count</a></td></tr>
+<tr class="separator:a4357802120a84ec4a88ae429e6bead7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0271d3303b4e3937b4a7173de87704fb"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a0271d3303b4e3937b4a7173de87704fb">is_selected</a></td></tr>
+<tr class="separator:a0271d3303b4e3937b4a7173de87704fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0271d3303b4e3937b4a7173de87704fb"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a0271d3303b4e3937b4a7173de87704fb">is_selected</a></td></tr>
+<tr class="separator:a0271d3303b4e3937b4a7173de87704fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Atributos públicos estáticos</h2></td></tr>
+<tr class="memitem:ac27ad4e487a71604d984cda4c0c12a87"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html#ac27ad4e487a71604d984cda4c0c12a87">multiselect</a></td></tr>
+<tr class="separator:ac27ad4e487a71604d984cda4c0c12a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a990a7a698a0cfb20e1b0f933eb9d391e"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html#a990a7a698a0cfb20e1b0f933eb9d391e">onclick</a></td></tr>
+<tr class="separator:a990a7a698a0cfb20e1b0f933eb9d391e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3af9fc81a1b25df33be6c3de28a357eb"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html#a3af9fc81a1b25df33be6c3de28a357eb">ondblclick</a></td></tr>
+<tr class="separator:a3af9fc81a1b25df33be6c3de28a357eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef43e3b88061626b1f5b628c462ff9c2"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#aef43e3b88061626b1f5b628c462ff9c2">items</a> = Spec(<a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a0ea66103916c438708a36228c1125484">_get_items</a>, <a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a299a50f37b7338f43900602089f7aacd">_set_items</a>, type=&quot;array&quot;)</td></tr>
+<tr class="separator:aef43e3b88061626b1f5b628c462ff9c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a509844046739692415f5a208bf553deb"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a509844046739692415f5a208bf553deb">selection</a></td></tr>
+<tr class="separator:a509844046739692415f5a208bf553deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32cd77648015aeef0dc56b54b7f15ee2"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a32cd77648015aeef0dc56b54b7f15ee2">text</a></td></tr>
+<tr class="separator:a32cd77648015aeef0dc56b54b7f15ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dc477ee3b97232b6f8ba5abb32d4616"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a1dc477ee3b97232b6f8ba5abb32d4616">value</a></td></tr>
+<tr class="separator:a1dc477ee3b97232b6f8ba5abb32d4616"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Atributos privados estáticos</h2></td></tr>
+<tr class="memitem:ad474aa0e18d31519db4913645d12b860"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html#ad474aa0e18d31519db4913645d12b860">_wx_class</a> = wx.ListBox</td></tr>
+<tr class="separator:ad474aa0e18d31519db4913645d12b860"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee2e4c1edc308ee6bf998db99a8d28fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html#aee2e4c1edc308ee6bf998db99a8d28fe">_style</a> = wx.NO_FULL_REPAINT_ON_RESIZE|wx.CLIP_SIBLINGS</td></tr>
+<tr class="separator:aee2e4c1edc308ee6bf998db99a8d28fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57b798d7c01b5528cd8e7106cff1628b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html#a57b798d7c01b5528cd8e7106cff1628b">_image</a> = <a class="el" href="../../dc/d41/namespacegui_1_1images.html#a7596d2178e730839da06f87a2c03da70">images.listbox</a></td></tr>
+<tr class="separator:a57b798d7c01b5528cd8e7106cff1628b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2ec8847f4d54d62eb29c7e647fc099d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html#af2ec8847f4d54d62eb29c7e647fc099d">_commandtype</a> = wx.wxEVT_COMMAND_LISTBOX_SELECTED</td></tr>
+<tr class="separator:af2ec8847f4d54d62eb29c7e647fc099d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00193">193</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+</div><h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="a9feabda46de5ea49e998427253791751"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.append </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>a_string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>data</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00138">138</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00102">gui.controls.listbox.ItemContainerControl._items_dict</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00138">gui.controls.listbox.ItemContainerControl.append()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a9feabda46de5ea49e998427253791751_icgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a9feabda46de5ea49e998427253791751_icgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a9feabda46de5ea49e998427253791751_icgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a9feabda46de5ea49e998427253791751_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9feabda46de5ea49e998427253791751"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.append </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>a_string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>data</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00138">138</a> del archivo <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00102">gui.controls.listbox.ItemContainerControl._items_dict</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00138">gui.controls.listbox.ItemContainerControl.append()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a9feabda46de5ea49e998427253791751_cgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a9feabda46de5ea49e998427253791751_cgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a9feabda46de5ea49e998427253791751_cgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a9feabda46de5ea49e998427253791751_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8cd3010ec50b3e7c91db2e0f57fef34c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.append_items </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>a_list</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00144">144</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00144">gui.controls.listbox.ItemContainerControl.append_items()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a8cd3010ec50b3e7c91db2e0f57fef34c_icgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a8cd3010ec50b3e7c91db2e0f57fef34c_icgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a8cd3010ec50b3e7c91db2e0f57fef34c_icgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a8cd3010ec50b3e7c91db2e0f57fef34c_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8cd3010ec50b3e7c91db2e0f57fef34c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.append_items </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>a_list</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00144">144</a> del archivo <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00144">gui.controls.listbox.ItemContainerControl.append_items()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a8cd3010ec50b3e7c91db2e0f57fef34c_cgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a8cd3010ec50b3e7c91db2e0f57fef34c_cgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a8cd3010ec50b3e7c91db2e0f57fef34c_cgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a8cd3010ec50b3e7c91db2e0f57fef34c_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af60a13fdd6777f47b2fa5b11a9c653bf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.clear </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00148">148</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00102">gui.controls.listbox.ItemContainerControl._items_dict</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html#l00090">gui.controls.treeview.TreeModel.__init__()</a>, <a class="el" href="../../d5/da6/gui_2controls_2listview_8py_source.html#l00298">gui.controls.listview.ListModel.__init__()</a>, <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00148">gui.controls.listbox.ItemContainerControl.clear()</a> y <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00179">gui.controls.listview.ListView.clear_all()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_af60a13fdd6777f47b2fa5b11a9c653bf_icgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_af60a13fdd6777f47b2fa5b11a9c653bf_icgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_af60a13fdd6777f47b2fa5b11a9c653bf_icgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_af60a13fdd6777f47b2fa5b11a9c653bf_icgraph">
+<area shape="rect" id="node2" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a50e91b30385dd4679e3a863c8ab0ab35" title="gui.controls.treeview.Tree\lModel.__init__" alt="" coords="217,5,389,46"/><area shape="rect" id="node3" href="../../d8/d7f/classgui_1_1controls_1_1listview_1_1ListModel.html#a5a3a13ee75f11a6babf8699f9e124d83" title="gui.controls.listview.List\lModel.__init__" alt="" coords="221,70,384,111"/><area shape="rect" id="node4" href="../../d1/d7f/classgui_1_1controls_1_1listview_1_1ListView.html#a0afe6c0297ea2256fdb51ff322fc49be" title="gui.controls.listview.List\lView.clear_all" alt="" coords="221,159,384,201"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af60a13fdd6777f47b2fa5b11a9c653bf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.clear </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00148">148</a> del archivo <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00102">gui.controls.listbox.ItemContainerControl._items_dict</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00148">gui.controls.listbox.ItemContainerControl.clear()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_af60a13fdd6777f47b2fa5b11a9c653bf_cgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_af60a13fdd6777f47b2fa5b11a9c653bf_cgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_af60a13fdd6777f47b2fa5b11a9c653bf_cgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_af60a13fdd6777f47b2fa5b11a9c653bf_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab57819669de9197abc515734d64e6d73"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.delete </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>a_position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00153">153</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00102">gui.controls.listbox.ItemContainerControl._items_dict</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00134">gui.controls.listbox.ItemContainerControl.get_data()</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00153">gui.controls.listbox.ItemContainerControl.delete()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00303">gui.tools.designer.BasicDesigner.key_press()</a> y <a class="el" href="../../d5/ddf/gui_2tools_2inspector_8py_source.html#l00200">gui.tools.inspector.InspectorPanel.show_context_menu()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ab57819669de9197abc515734d64e6d73_cgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ab57819669de9197abc515734d64e6d73_cgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ab57819669de9197abc515734d64e6d73_cgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ab57819669de9197abc515734d64e6d73_cgraph">
+<area shape="rect" id="node2" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a427f981a0aea5188e0d3e857257c602b" title="gui.controls.listbox.Item\lContainerControl.get_data" alt="" coords="217,29,391,70"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ab57819669de9197abc515734d64e6d73_icgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ab57819669de9197abc515734d64e6d73_icgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ab57819669de9197abc515734d64e6d73_icgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ab57819669de9197abc515734d64e6d73_icgraph">
+<area shape="rect" id="node2" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ae6bd0af10b6e21d249814190b671afd3" title="gui.tools.designer.Basic\lDesigner.key_press" alt="" coords="229,29,390,70"/><area shape="rect" id="node4" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182" title="gui.tools.inspector.Inspector\lPanel.show_context_menu" alt="" coords="216,94,403,135"/><area shape="rect" id="node3" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ab438e7b78dc9494cfb71315b358616e4" title="gui.tools.designer.Basic\lDesigner.__call__" alt="" coords="451,29,613,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab57819669de9197abc515734d64e6d73"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.delete </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>a_position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00153">153</a> del archivo <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00102">gui.controls.listbox.ItemContainerControl._items_dict</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00153">gui.controls.listbox.ItemContainerControl.delete()</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00134">gui.controls.listbox.ItemContainerControl.get_data()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ab57819669de9197abc515734d64e6d73_cgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ab57819669de9197abc515734d64e6d73_cgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ab57819669de9197abc515734d64e6d73_cgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ab57819669de9197abc515734d64e6d73_cgraph">
+<area shape="rect" id="node2" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a427f981a0aea5188e0d3e857257c602b" title="gui.controls.listbox.Item\lContainerControl.get_data" alt="" coords="217,29,391,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac99ccbe5d08fd0763677b653ce1e7a1d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.find_string </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>a_string</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00160">160</a> del archivo <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00160">gui.controls.listbox.ItemContainerControl.find_string()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ac99ccbe5d08fd0763677b653ce1e7a1d_cgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ac99ccbe5d08fd0763677b653ce1e7a1d_cgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ac99ccbe5d08fd0763677b653ce1e7a1d_cgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ac99ccbe5d08fd0763677b653ce1e7a1d_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac99ccbe5d08fd0763677b653ce1e7a1d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.find_string </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>a_string</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00160">160</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00160">gui.controls.listbox.ItemContainerControl.find_string()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ac99ccbe5d08fd0763677b653ce1e7a1d_icgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ac99ccbe5d08fd0763677b653ce1e7a1d_icgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ac99ccbe5d08fd0763677b653ce1e7a1d_icgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ac99ccbe5d08fd0763677b653ce1e7a1d_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4357802120a84ec4a88ae429e6bead7a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.get_count </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00172">172</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00172">gui.controls.listbox.ItemContainerControl.get_count()</a> y <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00132">gui.controls.listview.ListView.insert_items()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a4357802120a84ec4a88ae429e6bead7a_icgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a4357802120a84ec4a88ae429e6bead7a_icgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a4357802120a84ec4a88ae429e6bead7a_icgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a4357802120a84ec4a88ae429e6bead7a_icgraph">
+<area shape="rect" id="node2" href="../../d1/d7f/classgui_1_1controls_1_1listview_1_1ListView.html#ad0103da4c8f6055a173449309b315046" title="gui.controls.listview.List\lView.insert_items" alt="" coords="235,62,397,103"/><area shape="rect" id="node3" href="../../d1/d7f/classgui_1_1controls_1_1listview_1_1ListView.html#a480933bcaa8b198afe7f87603d6f2223" title="gui.controls.listview.List\lView.append" alt="" coords="445,29,608,70"/><area shape="rect" id="node4" href="../../d1/d7f/classgui_1_1controls_1_1listview_1_1ListView.html#a23e4429df1a2e0fe5ae75184bf14da40" title="gui.controls.listview.List\lView._set_items" alt="" coords="445,94,608,135"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4357802120a84ec4a88ae429e6bead7a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.get_count </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00172">172</a> del archivo <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00172">gui.controls.listbox.ItemContainerControl.get_count()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a4357802120a84ec4a88ae429e6bead7a_cgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a4357802120a84ec4a88ae429e6bead7a_cgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a4357802120a84ec4a88ae429e6bead7a_cgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a4357802120a84ec4a88ae429e6bead7a_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a427f981a0aea5188e0d3e857257c602b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.get_data </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00134">134</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00153">gui.controls.listbox.ItemContainerControl.delete()</a> y <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00134">gui.controls.listbox.ItemContainerControl.get_data()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a427f981a0aea5188e0d3e857257c602b_icgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a427f981a0aea5188e0d3e857257c602b_icgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a427f981a0aea5188e0d3e857257c602b_icgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a427f981a0aea5188e0d3e857257c602b_icgraph">
+<area shape="rect" id="node2" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ab57819669de9197abc515734d64e6d73" title="gui.controls.listbox.Item\lContainerControl.delete" alt="" coords="230,62,391,103"/><area shape="rect" id="node3" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ae6bd0af10b6e21d249814190b671afd3" title="gui.tools.designer.Basic\lDesigner.key_press" alt="" coords="453,29,614,70"/><area shape="rect" id="node5" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182" title="gui.tools.inspector.Inspector\lPanel.show_context_menu" alt="" coords="440,94,627,135"/><area shape="rect" id="node4" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ab438e7b78dc9494cfb71315b358616e4" title="gui.tools.designer.Basic\lDesigner.__call__" alt="" coords="675,29,837,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a427f981a0aea5188e0d3e857257c602b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.get_data </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00134">134</a> del archivo <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00134">gui.controls.listbox.ItemContainerControl.get_data()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a427f981a0aea5188e0d3e857257c602b_cgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a427f981a0aea5188e0d3e857257c602b_cgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a427f981a0aea5188e0d3e857257c602b_cgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a427f981a0aea5188e0d3e857257c602b_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2118c2e24f32f9e28f4525f809cbea44"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.get_string </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>a_position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00164">164</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00164">gui.controls.listbox.ItemContainerControl.get_string()</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00128">gui.controls.listbox.ItemContainerControl.set_data()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a2118c2e24f32f9e28f4525f809cbea44_icgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a2118c2e24f32f9e28f4525f809cbea44_icgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a2118c2e24f32f9e28f4525f809cbea44_icgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a2118c2e24f32f9e28f4525f809cbea44_icgraph">
+<area shape="rect" id="node2" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ac09915963fa529543df1bee65f80f039" title="gui.controls.listbox.Item\lContainerControl.set_data" alt="" coords="235,29,410,70"/><area shape="rect" id="node3" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a299a50f37b7338f43900602089f7aacd" title="gui.controls.listbox.Item\lContainerControl._set_items" alt="" coords="459,29,647,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2118c2e24f32f9e28f4525f809cbea44"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.get_string </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>a_position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00164">164</a> del archivo <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00164">gui.controls.listbox.ItemContainerControl.get_string()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a2118c2e24f32f9e28f4525f809cbea44_cgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a2118c2e24f32f9e28f4525f809cbea44_cgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a2118c2e24f32f9e28f4525f809cbea44_cgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a2118c2e24f32f9e28f4525f809cbea44_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9688f9caf1109157669eb90166982cc6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ListBox.insert_items </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>aList</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>aPosition</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00201">201</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/da6/gui_2controls_2listview_8py_source.html#l00154">gui.controls.listview.ListView._set_items()</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00129">gui.controls.listview.ListView.append()</a> y <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00201">gui.controls.listbox.ListBox.insert_items()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox_a9688f9caf1109157669eb90166982cc6_icgraph.png" border="0" usemap="#d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox_a9688f9caf1109157669eb90166982cc6_icgraph" alt=""/></div>
+<map name="d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox_a9688f9caf1109157669eb90166982cc6_icgraph" id="d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox_a9688f9caf1109157669eb90166982cc6_icgraph">
+<area shape="rect" id="node2" href="../../d1/d7f/classgui_1_1controls_1_1listview_1_1ListView.html#a23e4429df1a2e0fe5ae75184bf14da40" title="gui.controls.listview.List\lView._set_items" alt="" coords="211,5,373,46"/><area shape="rect" id="node3" href="../../d1/d7f/classgui_1_1controls_1_1listview_1_1ListView.html#a480933bcaa8b198afe7f87603d6f2223" title="gui.controls.listview.List\lView.append" alt="" coords="211,94,373,135"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9688f9caf1109157669eb90166982cc6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ListBox.insert_items </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>aList</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>aPosition</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00201">201</a> del archivo <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00201">gui.controls.listbox.ListBox.insert_items()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox_a9688f9caf1109157669eb90166982cc6_cgraph.png" border="0" usemap="#d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox_a9688f9caf1109157669eb90166982cc6_cgraph" alt=""/></div>
+<map name="d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox_a9688f9caf1109157669eb90166982cc6_cgraph" id="d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox_a9688f9caf1109157669eb90166982cc6_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0271d3303b4e3937b4a7173de87704fb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.is_selected </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>a_position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Determines whether an item is selected.
+a_position is the zero-based item index
+Returns True if the given item is selected, False otherwise.
+</pre> 
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00177">177</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00177">gui.controls.listbox.ItemContainerControl.is_selected()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a0271d3303b4e3937b4a7173de87704fb_icgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a0271d3303b4e3937b4a7173de87704fb_icgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a0271d3303b4e3937b4a7173de87704fb_icgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a0271d3303b4e3937b4a7173de87704fb_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0271d3303b4e3937b4a7173de87704fb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.is_selected </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>a_position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<pre class="fragment">Determines whether an item is selected.
+a_position is the zero-based item index
+Returns True if the given item is selected, False otherwise.
+</pre> 
+<p>Definición en la línea <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00177">177</a> del archivo <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00177">gui.controls.listbox.ItemContainerControl.is_selected()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a0271d3303b4e3937b4a7173de87704fb_cgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a0271d3303b4e3937b4a7173de87704fb_cgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a0271d3303b4e3937b4a7173de87704fb_cgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a0271d3303b4e3937b4a7173de87704fb_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac09915963fa529543df1bee65f80f039"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.set_data </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00128">128</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00102">gui.controls.listbox.ItemContainerControl._items_dict</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00164">gui.controls.listbox.ItemContainerControl.get_string()</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00099">gui.controls.listbox.ItemContainerControl._set_items()</a> y <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00128">gui.controls.listbox.ItemContainerControl.set_data()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ac09915963fa529543df1bee65f80f039_cgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ac09915963fa529543df1bee65f80f039_cgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ac09915963fa529543df1bee65f80f039_cgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ac09915963fa529543df1bee65f80f039_cgraph">
+<area shape="rect" id="node2" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a2118c2e24f32f9e28f4525f809cbea44" title="gui.controls.listbox.Item\lContainerControl.get_string" alt="" coords="229,29,411,70"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ac09915963fa529543df1bee65f80f039_icgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ac09915963fa529543df1bee65f80f039_icgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ac09915963fa529543df1bee65f80f039_icgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ac09915963fa529543df1bee65f80f039_icgraph">
+<area shape="rect" id="node2" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a299a50f37b7338f43900602089f7aacd" title="gui.controls.listbox.Item\lContainerControl._set_items" alt="" coords="230,29,418,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac09915963fa529543df1bee65f80f039"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.set_data </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00128">128</a> del archivo <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00102">gui.controls.listbox.ItemContainerControl._items_dict</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00164">gui.controls.listbox.ItemContainerControl.get_string()</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00128">gui.controls.listbox.ItemContainerControl.set_data()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ac09915963fa529543df1bee65f80f039_cgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ac09915963fa529543df1bee65f80f039_cgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ac09915963fa529543df1bee65f80f039_cgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_ac09915963fa529543df1bee65f80f039_cgraph">
+<area shape="rect" id="node2" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a2118c2e24f32f9e28f4525f809cbea44" title="gui.controls.listbox.Item\lContainerControl.get_string" alt="" coords="229,29,411,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1fe74c538432a4c34e4ae93d82f16d05"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.set_string </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>a_string</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00168">168</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00168">gui.controls.listbox.ItemContainerControl.set_string()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a1fe74c538432a4c34e4ae93d82f16d05_icgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a1fe74c538432a4c34e4ae93d82f16d05_icgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a1fe74c538432a4c34e4ae93d82f16d05_icgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a1fe74c538432a4c34e4ae93d82f16d05_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1fe74c538432a4c34e4ae93d82f16d05"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.listbox.ItemContainerControl.set_string </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>a_string</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html#l00168">168</a> del archivo <a class="el" href="../../da/d42/gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00168">gui.controls.listbox.ItemContainerControl.set_string()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a1fe74c538432a4c34e4ae93d82f16d05_cgraph.png" border="0" usemap="#dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a1fe74c538432a4c34e4ae93d82f16d05_cgraph" alt=""/></div>
+<map name="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a1fe74c538432a4c34e4ae93d82f16d05_cgraph" id="dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl_a1fe74c538432a4c34e4ae93d82f16d05_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="af2ec8847f4d54d62eb29c7e647fc099d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.listbox.ListBox._commandtype = wx.wxEVT_COMMAND_LISTBOX_SELECTED</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00199">199</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00034">gui.controls.listbox.ItemContainerControl._set_selection()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a57b798d7c01b5528cd8e7106cff1628b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.listbox.ListBox._image = <a class="el" href="../../dc/d41/namespacegui_1_1images.html#a7596d2178e730839da06f87a2c03da70">images.listbox</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00198">198</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aee2e4c1edc308ee6bf998db99a8d28fe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.listbox.ListBox._style = wx.NO_FULL_REPAINT_ON_RESIZE|wx.CLIP_SIBLINGS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00197">197</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d8/d46/gui_2font_8py_source.html#l00019">gui.font.Font.__init__()</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00054">gui.font.Font._get_style()</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00062">gui.font.Font._set_style()</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00112">gui.font.Font.description()</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00030">gui.font.Font.get_wx_font()</a> y <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00038">gui.font.Font.set_wx_font()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad474aa0e18d31519db4913645d12b860"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.listbox.ListBox._wx_class = wx.ListBox</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00196">196</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../da/d65/build_2lib_8linux-x86__64-2_87_2gui_2controls_2textbox_8py_source.html#l00030">gui.controls.textbox.TextBox.__init__()</a> y <a class="el" href="../../d1/def/gui_2controls_2panel_8py_source.html#l00066">gui.controls.panel.Panel.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aef43e3b88061626b1f5b628c462ff9c2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.listbox.ItemContainerControl.items = Spec(<a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a0ea66103916c438708a36228c1125484">_get_items</a>, <a class="el" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a299a50f37b7338f43900602089f7aacd">_set_items</a>, type=&quot;array&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00184">184</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00122">gui.controls.treeview.TreeModel.__call__()</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00331">gui.controls.listview.ListModel.__call__()</a>, <a class="el" href="../../dc/db6/gui_2html_2select_8py_source.html#l00008">gui.html.select.SingleSelectControl.__init__()</a> y <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00126">gui.controls.listview.ListView.get_selected_items()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac27ad4e487a71604d984cda4c0c12a87"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.listbox.ListBox.multiselect</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= StyleSpec({<span class="keyword">True</span>: wx.LB_EXTENDED, <span class="keyword">False</span>: wx.LB_SINGLE}, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                            default=<span class="keyword">False</span>)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00204">204</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00070">gui.controls.listbox.ItemContainerControl._get_data_selection()</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00023">gui.controls.listbox.ItemContainerControl._get_selection()</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00052">gui.controls.listbox.ItemContainerControl._get_string_selection()</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00079">gui.controls.listbox.ItemContainerControl._set_data_selection()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a990a7a698a0cfb20e1b0f933eb9d391e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.listbox.ListBox.onclick</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;click&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                                   binding=wx.EVT_LISTBOX, kind=FormEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00207">207</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00048">gui.html.input.SubmitButton.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3af9fc81a1b25df33be6c3de28a357eb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.listbox.ListBox.ondblclick</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;dblclick&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                                   binding=wx.EVT_LISTBOX_DCLICK, kind=FormEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00209">209</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a509844046739692415f5a208bf553deb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.listbox.ItemContainerControl.selection</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= Spec(_get_selection, _set_selection, type=<span class="stringliteral">&quot;integer&quot;</span>,</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                     doc=<span class="stringliteral">&quot;Index of the selected item&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00185">185</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00043">gui.tools.designer.BasicDesigner.__call__()</a>, <a class="el" href="../../dc/db6/gui_2html_2select_8py_source.html#l00008">gui.html.select.SingleSelectControl.__init__()</a>, <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00029">gui.tools.designer.BasicDesigner.__init__()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00337">gui.tools.designer.BasicDesigner.delete()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00347">gui.tools.designer.BasicDesigner.duplicate()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00303">gui.tools.designer.BasicDesigner.key_press()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00123">gui.tools.designer.BasicDesigner.mouse_down()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00165">gui.tools.designer.BasicDesigner.mouse_move()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00267">gui.tools.designer.BasicDesigner.mouse_up()</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00363">gui.tools.designer.BasicDesigner.select()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a32cd77648015aeef0dc56b54b7f15ee2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.listbox.ItemContainerControl.text</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= Spec(_get_string_selection, _set_string_selection,</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                type=<span class="stringliteral">&quot;string&quot;</span>, doc=<span class="stringliteral">&quot;Selected text string&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00187">187</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d4/d6c/gui_2html_2label_8py_source.html#l00014">gui.html.label.FormLabel.__init__()</a>, <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00063">gui.html.input.FormTextInput.__init__()</a>, <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00125">gui.html.input.FormTextArea.__init__()</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00079">gui.html.input.FormTextInput.get_value()</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00140">gui.html.input.FormTextArea.get_value()</a> y <a class="el" href="../../d5/da6/gui_2controls_2listview_8py_source.html#l00244">gui.controls.listview.ListColumn.set_parent()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1dc477ee3b97232b6f8ba5abb32d4616"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.listbox.ItemContainerControl.value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= Spec(_get_data_selection, _set_data_selection, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                 doc=<span class="stringliteral">&quot;Selected data (actual python object)&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00189">189</a> del archivo <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00092">gui.html.input.FormCheckbox.__init__()</a>, <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00110">gui.html.input.FormHiddenControl.__init__()</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00101">gui.html.input.FormCheckbox.get_value()</a> y <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00115">gui.html.input.FormHiddenControl.get_value()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>build/lib.linux-x86_64-2.7/gui/controls/<a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html">listbox.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/dc4/namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="../../d7/d56/namespacegui_1_1controls.html">controls</a></li><li class="navelem"><a class="el" href="../../db/d1b/namespacegui_1_1controls_1_1listbox.html">listbox</a></li><li class="navelem"><a class="el" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html">ListBox</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:48 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

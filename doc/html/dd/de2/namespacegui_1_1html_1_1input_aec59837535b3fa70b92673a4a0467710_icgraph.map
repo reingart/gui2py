@@ -1,0 +1,8 @@
+<map id="gui.html.input.TypeHandler" name="gui.html.input.TypeHandler">
+<area shape="rect" id="node2" href="$d6/d3a/classgui_1_1html_1_1input_1_1FormPasswordInput.html#a010fe737958f9c5b06933201a7278db9" title="gui.html.input.FormPassword\lInput.__init__" alt="" coords="244,5,436,46"/>
+<area shape="rect" id="node3" href="$d2/d71/classgui_1_1html_1_1input_1_1SubmitButton.html#a24a2fe391423e1b668b0606d16b53cfb" title="gui.html.input.SubmitButton.get\l_value" alt="" coords="237,70,443,111"/>
+<area shape="rect" id="node4" href="$d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput.html#aded943ab785b1a1d04a6b6104bf03a56" title="gui.html.input.FormTextInput.get\l_value" alt="" coords="235,135,445,177"/>
+<area shape="rect" id="node5" href="$db/d75/classgui_1_1html_1_1input_1_1FormCheckbox.html#a8808d1deb111c24f63c463f1e1b0a62c" title="gui.html.input.FormCheckbox.get\l_value" alt="" coords="233,201,447,242"/>
+<area shape="rect" id="node6" href="$d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl.html#a94e5771b1ad7facd726bfc4490562945" title="gui.html.input.FormHidden\lControl.is_enabled" alt="" coords="253,266,427,307"/>
+<area shape="rect" id="node7" href="$d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin.html#ad643067c1c98032b3fcdcdd6a7d867f1" title="gui.html.input.FormControl\lMixin.OnClick" alt="" coords="252,331,428,373"/>
+</map>

@@ -1,0 +1,556 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Fichero Fuente gui/menu.py</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('dd/d81/gui_2menu_8py_source.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">menu.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dd/d81/gui_2menu_8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">#!/usr/bin/python</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">&quot;gui2py&#39;s Menu Model (encapsulates wx.MenuBar, wx.Menu and wx.MenuItems)&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;__author__ = <span class="stringliteral">&quot;Mariano Reingart (reingart@gmail.com)&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;__copyright__ = <span class="stringliteral">&quot;Copyright (C) 2013- Mariano Reingart&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;__license__ = <span class="stringliteral">&quot;LGPL 3.0&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"># Initial implementation was inspired on PythonCard&#39;s menu module, altought</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"># it was almost completely discarded and re-written from scratch to make it</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"># simpler and cleaner, following the general gui2py component object model</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"># Note: some wx stubs (&quot;dummy window&quot;) where necessary for this simplification</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> wx</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">from</span> .event <span class="keyword">import</span> FormEvent</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">from</span> .component <span class="keyword">import</span> Component, Spec, StyleSpec, EventSpec, InitSpec, DimensionSpec</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">from</span> . <span class="keyword">import</span> images</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">from</span> . <span class="keyword">import</span> registry</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;DEBUG = <span class="keyword">False</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">class </span>wx_DummyWindow:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="stringliteral">&quot;Class to emulate (and normalize) menues in wx whit gui object model&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment"># if using custom-draw menues (agw.FlatMenu) this would not be necesary </span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment"># (so wx_Menu* could be replaced someday..)</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment"># note that wx ignores dimension and almost all event on menus</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment"># Font and Background/Textcolour seems to work only on MSW</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a90648cdbad4cc4d5b8b997fceba2845a">   32</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a90648cdbad4cc4d5b8b997fceba2845a">__init__</a>(self, parent, *args, **kwargs):</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        self.<a class="code" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a928f0d58beb93f5b88ea00a9fa1033f3">parent</a> = parent</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#adccd4ae16e792c6d4e4f2865613d3b29">   35</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#adccd4ae16e792c6d4e4f2865613d3b29">GetParent</a>(self):</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a928f0d58beb93f5b88ea00a9fa1033f3">parent</a></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a1a88d9a9f0d0271b0f5f25efdd7c523d">   38</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a1a88d9a9f0d0271b0f5f25efdd7c523d">Reparent</a>(self, new_parent):</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        self.<a class="code" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a928f0d58beb93f5b88ea00a9fa1033f3">parent</a> = new_parent</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a1efa7b3e015e4fbd86c252f3e1840b92">   41</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a1efa7b3e015e4fbd86c252f3e1840b92">GetSize</a>(self):</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> [-1, -1]</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    GetSizeTuple = GetClientSize = GetSize</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    GetPositionTuple = GetSizeTuple</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#af632fe2c7c7083bd5503c4d07b8f7d7f">   47</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#af632fe2c7c7083bd5503c4d07b8f7d7f">GetCharWidth</a>(self):</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> 0</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a572612e1440d5fb3fe5194bbdda549b2">   50</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a572612e1440d5fb3fe5194bbdda549b2">GetCharHeight</a>(self):</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> 0</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#ab9335c0fa7509d9bb44a6198e9425b2a">   53</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#ab9335c0fa7509d9bb44a6198e9425b2a">Dummy</a>(self, *args, **kwargs):</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">pass</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    Show = SetSize = Refresh = Move = SetToolTip = Dummy</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    SetClientSize  = Dummy      </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    IsShown = <span class="keyword">lambda</span> self: <span class="keyword">True</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a973fe5769b473e1191d66ac27ad7ab1c">   60</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a973fe5769b473e1191d66ac27ad7ab1c">Bind</a>(self, evt, handler, id=None):</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment"># this should reach top level window:</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> evt == wx.EVT_SIZE:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">pass</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;binding MENU&quot;</span>, self.__class__.__name__, id, handler</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            self.parent.Bind(evt, handler, id=id <span class="keywordflow">or</span> self.GetId())</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a0fddd3fc6f679233ec3946aa4a1a03f0">   68</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a0fddd3fc6f679233ec3946aa4a1a03f0">Unbind</a>(self, evt, id=None):</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;unbinding MENU&quot;</span>, self.Text, self.GetId()</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        self.parent.Unbind(evt, id=id <span class="keywordflow">or</span> self.GetId())</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/de7/classgui_1_1menu_1_1wx__MenuItem.html">wx_MenuItem</a>(<a class="code" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html">wx_DummyWindow</a>, wx.MenuItem):</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../d1/de7/classgui_1_1menu_1_1wx__MenuItem.html#a258e63eab143daf0f4d435dc40e1071f">   74</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/de7/classgui_1_1menu_1_1wx__MenuItem.html#a258e63eab143daf0f4d435dc40e1071f">__init__</a>(self, parent, *args, **kwargs):</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        wx_DummyWindow.__init__(self, parent, *args, **kwargs)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        wx.MenuItem.__init__(self, parentMenu=parent, </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                             id=kwargs[<span class="stringliteral">&#39;id&#39;</span>], </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                             text=kwargs[<span class="stringliteral">&#39;label&#39;</span>], </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                             kind=kwargs[<span class="stringliteral">&#39;style&#39;</span>], </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                             <span class="comment">#subMenu=None,</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                             )</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> self.GetKind() == wx.ITEM_SEPARATOR:</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            self.parent.AppendSeparator()       <span class="comment"># do not use AppendItem on MSW</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">#elif self.GetKind() == wx.ITEM_CHECK:</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="comment">#    self.parent.AppendCheckItem(wx.NewId(), self.GetText())            </span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="comment"># in phoenix (2.9.5), kwargs is helpString, so set it here:</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            self.SetHelp(kwargs[<span class="stringliteral">&#39;help&#39;</span>])</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            self.parent.AppendItem(self)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="../../d1/de7/classgui_1_1menu_1_1wx__MenuItem.html#ab40b39643a0626315537be8d492a29ce">   91</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/de7/classgui_1_1menu_1_1wx__MenuItem.html#ab40b39643a0626315537be8d492a29ce">Enable</a>(self, value):</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="comment"># avoid assertion in Enable: invalid menu item</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.GetKind() == wx.ITEM_SEPARATOR:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            wx.MenuItem.Enable(self, value)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="../../d1/de7/classgui_1_1menu_1_1wx__MenuItem.html#a3537f3dadf9d7d6f7c5fa3d8ec8dd4a5">   96</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/de7/classgui_1_1menu_1_1wx__MenuItem.html#a3537f3dadf9d7d6f7c5fa3d8ec8dd4a5">Destroy</a>(self):</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        self.parent.RemoveItem(self)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        wx.MenuItem.Destroy(self)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="../../d1/de7/classgui_1_1menu_1_1wx__MenuItem.html#ad88d0e91746f44de062caa3e76c9a739">  100</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/de7/classgui_1_1menu_1_1wx__MenuItem.html#ad88d0e91746f44de062caa3e76c9a739">Check</a>(self, value):</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="comment"># avoid assertion in Check(): invalid menu item</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">if</span> self.GetKind() == wx.ITEM_CHECK:</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            wx.MenuItem.Check(self, value)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    GetForegroundColour = wx.MenuItem.GetTextColour</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    SetForegroundColour = wx.MenuItem.SetTextColour</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">class </span><a class="code" href="../../da/d76/classgui_1_1menu_1_1MenuItem.html">MenuItem</a>(Component):</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="stringliteral">&quot;A MenuItem represents one selectable item in a Menu&quot;</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    _wx_class = wx_MenuItem</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    _registry = registry.MENU</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    label = InitSpec(<span class="keyword">lambda</span> self: self.wx_obj.GetText(), </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                     <span class="keyword">lambda</span> self, label: self.wx_obj.SetText(label),</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                     optional=<span class="keyword">False</span>, default=<span class="stringliteral">&#39;MenuItem&#39;</span>, type=<span class="stringliteral">&quot;string&quot;</span>, </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                     doc=<span class="stringliteral">&quot;text to show as caption&quot;</span>)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    help = InitSpec(<span class="keyword">lambda</span> self: self.wx_obj.GetHelp(), </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                 <span class="keyword">lambda</span> self, label: self.wx_obj.SetHelp(label),</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                 optional=<span class="keyword">True</span>, default=<span class="stringliteral">&#39;&#39;</span>, type=<span class="stringliteral">&quot;string&quot;</span>, </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                 doc=<span class="stringliteral">&quot;text to show as help in the status bar?&quot;</span>)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    onclick = EventSpec(<span class="stringliteral">&#39;click&#39;</span>, binding=wx.EVT_MENU, kind=FormEvent)</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="../../da/d76/classgui_1_1menu_1_1MenuItem.html#ab6151e09fbb2d301a7c27c219fe7cdc5">  125</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/d76/classgui_1_1menu_1_1MenuItem.html#ab6151e09fbb2d301a7c27c219fe7cdc5">rebuild</a>(self, **kwargs):</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="comment"># avoid recreating the object (not supported yet!)</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        Component.rebuild(self, <span class="keyword">False</span>, **kwargs)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="keyword">class </span><a class="code" href="../../de/dfd/classgui_1_1menu_1_1MenuItemCheckable.html">MenuItemCheckable</a>(<a class="code" href="../../da/d76/classgui_1_1menu_1_1MenuItem.html">MenuItem</a>):</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="stringliteral">&quot;A MenuItem represents one selectable item in a Menu&quot;</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    _wx_class = wx_MenuItem</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    _registry = registry.MENU</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    _style = wx.ITEM_CHECK</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    checked = Spec(<span class="keyword">lambda</span> self: self.wx_obj.IsChecked(), </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                   <span class="keyword">lambda</span> self, value: self.wx_obj.Check(value),</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                   default=<span class="keyword">False</span>, type=<span class="stringliteral">&quot;boolean&quot;</span>)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/d8f/classgui_1_1menu_1_1MenuItemSeparator.html">MenuItemSeparator</a>(<a class="code" href="../../da/d76/classgui_1_1menu_1_1MenuItem.html">MenuItem</a>):</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    _style = wx.ITEM_SEPARATOR</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html">wx_Menu</a>(<a class="code" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html">wx_DummyWindow</a>, wx.Menu):</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    </div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#aa71608ea1bcfa377cc146ed3cec3b239">  149</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#aa71608ea1bcfa377cc146ed3cec3b239">__init__</a>(self, parent, *args, **kwargs):</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        wx_DummyWindow.__init__(self, parent, *args, **kwargs)</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="comment"># if this is a popup menu, call constructor with:</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="comment">#   kwargs.get(&quot;label&quot;), kwargs.get(&quot;style&quot;)</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        wx.Menu.__init__(self)</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">if</span> isinstance(parent, wx.MenuBar):</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            self.parent.Append(self, kwargs.get(<span class="stringliteral">&quot;label&quot;</span>))</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            self.parent.AppendSubMenu(submenu=self, </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                   text=kwargs.get(<span class="stringliteral">&quot;label&quot;</span>))</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        id = self.parent.GetLastId()</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        self.<a class="code" href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#a644944f8a7cca77ad2f3522c01b541a3">GetId</a> = <span class="keyword">lambda</span>: id</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#a270dfaa4c2e180bb7b8aea672a70e278">  162</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#a270dfaa4c2e180bb7b8aea672a70e278">Destroy</a>(self):</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">if</span> isinstance(self.<a class="code" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a928f0d58beb93f5b88ea00a9fa1033f3">parent</a>, wx.MenuBar):</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            self.parent.RemoveItem(self)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            self.parent.Remove(self.<a class="code" href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#a644944f8a7cca77ad2f3522c01b541a3">GetId</a>())</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            wx.Menu.Destroy(self)</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">except</span> TypeError:</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="comment"># we were removed! ignore &quot;got _wxPyDeadObject instance instead&quot;</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <span class="keywordflow">pass</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment"># unsupported methods:</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    GetBackgroundColour = SetBackgroundColour = wx_DummyWindow.Dummy</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    SetFont = wx_DummyWindow.Dummy </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    GetFont = <span class="keyword">lambda</span> self: wx.SystemSettings.GetFont(wx.SYS_DEFAULT_GUI_FONT)</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    GetForegroundColour = <span class="keyword">lambda</span> self: <span class="stringliteral">&#39;black&#39;</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    SetForegroundColour = wx_DummyWindow.Dummy</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#aafb31f6d72987d7253bcef1da54801f9">  181</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#aafb31f6d72987d7253bcef1da54801f9">Enable</a>(self, value):</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="stringliteral">&quot;enable or disable all menu items&quot;</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(self.GetMenuItemCount()):</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            it = self.FindItemByPosition(i) </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            it.Enable(value)</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    </div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#a34ce5d53837d3e74d44d083fdb352ffa">  187</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#a34ce5d53837d3e74d44d083fdb352ffa">IsEnabled</a>(self, *args, **kwargs):</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="stringliteral">&quot;check if all menu items are enabled&quot;</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(self.GetMenuItemCount()):</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            it = self.FindItemByPosition(i) </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> it.IsEnabled():</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">False</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">True</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#a0eec151930f6227956c66d0a75e670ce">  195</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#a0eec151930f6227956c66d0a75e670ce">SetItemLabel</a>(self, menu, label):</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="comment">#return #return menu.GetTitle()</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        id = menu.GetId()</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keywordflow">print</span> <span class="stringliteral">&quot;MENUID&quot;</span>, id</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        self.SetLabel(id, label)</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="comment">#menu.SetLabel(menu.GetTitle())</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">pass</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
+<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#a2125b5e73f2dabc8d6ae17d392df8f97">  203</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#a2125b5e73f2dabc8d6ae17d392df8f97">GetItemLabel</a>(self, menu):</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="comment">#return menu.GetTitle()</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="keywordflow">return</span> self.GetLabel(menu.GetId())</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordflow">except</span>:</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keyword">import</span> pdb; pdb.set_trace()    </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
+<div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#af47946be66064cd04126838917bac265">  210</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#af47946be66064cd04126838917bac265">GetLastId</a>(self):</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keywordflow">return</span> list(self.GetMenuItems())[-1].<a class="code" href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#a644944f8a7cca77ad2f3522c01b541a3">GetId</a>()</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="keyword">class </span><a class="code" href="../../da/d55/classgui_1_1menu_1_1Menu.html">Menu</a>(Component):</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="stringliteral">&quot;A Menu contains 0..n MenuItem objects.&quot;</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    _wx_class = wx_Menu</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    _registry = registry.MENU</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
+<div class="line"><a name="l00220"></a><span class="lineno"><a class="line" href="../../da/d55/classgui_1_1menu_1_1Menu.html#aacf8d8909cd87ddb311f22eb3f2d20fe">  220</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/d55/classgui_1_1menu_1_1Menu.html#aacf8d8909cd87ddb311f22eb3f2d20fe">_set_label</a>(self, value):</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="comment"># note that wx.Menu.SetTitle() does not work on gtk for menubars</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;       <span class="comment">#self.wx_obj.SetTitle(value)     # do not use SetTitle (in msw is shown)  </span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;       self.wx_obj.parent.SetItemLabel(self.wx_obj, value)</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                </div>
+<div class="line"><a name="l00225"></a><span class="lineno"><a class="line" href="../../da/d55/classgui_1_1menu_1_1Menu.html#a1fe8e49bb6e37ab0b60343a450b4bdd6">  225</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/d55/classgui_1_1menu_1_1Menu.html#a1fe8e49bb6e37ab0b60343a450b4bdd6">_get_label</a>(self):</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="comment"># note that wx.Menu.GetTitle() does not work on windows for menubars</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keywordflow">return</span> self.wx_obj.parent.GetItemLabel(self.wx_obj)</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
+<div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="../../da/d55/classgui_1_1menu_1_1Menu.html#ac6b559ca7263cf728a24c329ff7d871b">  229</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/d55/classgui_1_1menu_1_1Menu.html#ac6b559ca7263cf728a24c329ff7d871b">find</a>(self, item_id=None):</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="stringliteral">&quot;Recursively find a menu item by its id (useful for event handlers)&quot;</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keywordflow">for</span> it <span class="keywordflow">in</span> self:</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <span class="keywordflow">if</span> it.id == item_id:</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                <span class="keywordflow">return</span> it</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <span class="keywordflow">elif</span> isinstance(it, Menu):</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                found = it.find(item_id)</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                <span class="keywordflow">if</span> found:</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                    <span class="keywordflow">return</span> found </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;</div>
+<div class="line"><a name="l00239"></a><span class="lineno"><a class="line" href="../../da/d55/classgui_1_1menu_1_1Menu.html#a7834c6d2c9b31f347403edcacffad977">  239</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/d55/classgui_1_1menu_1_1Menu.html#a7834c6d2c9b31f347403edcacffad977">rebuild</a>(self, **kwargs):</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="comment"># avoid recreating the object (not supported yet!)</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        Component.rebuild(self, <span class="keyword">False</span>, **kwargs)</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    label = InitSpec(_get_label,  _set_label,</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                     optional=<span class="keyword">False</span>, default=<span class="stringliteral">&#39;Menu&#39;</span>, type=<span class="stringliteral">&quot;string&quot;</span>, </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                     doc=<span class="stringliteral">&quot;text to show as caption&quot;</span>)         </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html">wx_MenuBar</a>(<a class="code" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html">wx_DummyWindow</a>, wx.MenuBar):</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;</div>
+<div class="line"><a name="l00250"></a><span class="lineno"><a class="line" href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#a3e8f1f0818aae8697e53b971b7873fd9">  250</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#a3e8f1f0818aae8697e53b971b7873fd9">__init__</a>(self, parent, *args, **kwargs):</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="comment"># it should receive (self, parent, id, pos, size, style, name)</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="comment"># but it doesnt!</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="comment"># TypeError: new_MenuBar() takes at most 1 argument (7 given)</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        wx_DummyWindow.__init__(self, parent, *args, **kwargs)</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        wx.MenuBar.__init__(self)</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="comment"># unsupported methods:</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    GetBackgroundColour = SetBackgroundColour = wx_DummyWindow.Dummy</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    SetFont = wx_DummyWindow.Dummy </div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    GetFont = <span class="keyword">lambda</span> self: wx.SystemSettings.GetFont(wx.SYS_DEFAULT_GUI_FONT)</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    GetForegroundColour = <span class="keyword">lambda</span> self: <span class="stringliteral">&#39;black&#39;</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    SetForegroundColour = wx_DummyWindow.Dummy</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
+<div class="line"><a name="l00265"></a><span class="lineno"><a class="line" href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#a2f3f83c6df5bbb6a15a55eb97f4a8b86">  265</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#a2f3f83c6df5bbb6a15a55eb97f4a8b86">Enable</a>(self, value):</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="stringliteral">&quot;enable or disable all top menus&quot;</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(self.GetMenuCount()):</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            self.EnableTop(i, value)</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    </div>
+<div class="line"><a name="l00270"></a><span class="lineno"><a class="line" href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#a4af61a0d45b6d4ed6be23f3305f688bd">  270</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#a4af61a0d45b6d4ed6be23f3305f688bd">IsEnabled</a>(self, *args, **kwargs):</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="stringliteral">&quot;check if all top menus are enabled&quot;</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(self.GetMenuCount()):</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.IsEnabledTop(i):</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">False</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">True</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div>
+<div class="line"><a name="l00277"></a><span class="lineno"><a class="line" href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#aff76230edfc5c8e9e36e9210a55dbd0d">  277</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#aff76230edfc5c8e9e36e9210a55dbd0d">RemoveItem</a>(self, menu):</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="stringliteral">&quot;Helper method to remove a menu avoiding using its position&quot;</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        menus = self.GetMenus()     <span class="comment"># get the list of (menu, title)</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        menus = [submenu <span class="keywordflow">for</span> submenu <span class="keywordflow">in</span> menus <span class="keywordflow">if</span> submenu[0] != menu]</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        self.SetMenus(menus)</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        </div>
+<div class="line"><a name="l00283"></a><span class="lineno"><a class="line" href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#af77fb929c7e8850b3490bc846986bcd3">  283</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#af77fb929c7e8850b3490bc846986bcd3">SetItemLabel</a>(self, menu, label):</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        menus = self.GetMenus()     <span class="comment"># get the list of (menu, title)</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        pos = [submenu[0] <span class="keywordflow">for</span> submenu <span class="keywordflow">in</span> menus].index(menu)</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        self.SetMenuLabel(pos, label)</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
+<div class="line"><a name="l00288"></a><span class="lineno"><a class="line" href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#a0c8ecbe8bebcfcdc89f3b13651b07a10">  288</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#a0c8ecbe8bebcfcdc89f3b13651b07a10">GetItemLabel</a>(self, menu):</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        menus = self.GetMenus()     <span class="comment"># get the list of (menu, title)</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keywordflow">for</span> submenu, title <span class="keywordflow">in</span> menus:</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            <span class="keywordflow">if</span> submenu == menu:</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                <span class="keywordflow">return</span> title</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;</div>
+<div class="line"><a name="l00294"></a><span class="lineno"><a class="line" href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#a96069c5907ae5fa2f41b455df95b520c">  294</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#a96069c5907ae5fa2f41b455df95b520c">GetLastId</a>(self):</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">return</span> -1 <span class="comment">#self.GetMenus()[-1][0].GetId()</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/d84/classgui_1_1menu_1_1MenuBar.html">MenuBar</a>(Component):</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    _wx_class = wx_MenuBar</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    _image = images.menubar</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    _registry = registry.CONTROLS</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    </div>
+<div class="line"><a name="l00304"></a><span class="lineno"><a class="line" href="../../d7/d84/classgui_1_1menu_1_1MenuBar.html#ada44c9a4ad1a3b5706af45d6de274476">  304</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d7/d84/classgui_1_1menu_1_1MenuBar.html#ada44c9a4ad1a3b5706af45d6de274476">__init__</a>(self, *args, **kwargs):</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        Component.__init__(self, *args, **kwargs)</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordflow">if</span> hasattr(self, <span class="stringliteral">&quot;_designer&quot;</span>) <span class="keywordflow">and</span> self.designer:</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            <span class="comment"># create a basic menu</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            id = wx.NewId()</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            m = <a class="code" href="../../da/d55/classgui_1_1menu_1_1Menu.html">Menu</a>(self, label=<span class="stringliteral">&#39;Menu&#39;</span>, name=<span class="stringliteral">&quot;menu_%s&quot;</span> % id, id=id)</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            id = wx.NewId()</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            mi = <a class="code" href="../../da/d76/classgui_1_1menu_1_1MenuItem.html">MenuItem</a>(m, label=<span class="stringliteral">&#39;MenuItem&#39;</span>, name=<span class="stringliteral">&#39;menu_item_%s&#39;</span> % id, id=id)</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            mi.designer = self.designer</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        self._parent.menubar = self     <span class="comment"># add the menubar to the window</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;</div>
+<div class="line"><a name="l00315"></a><span class="lineno"><a class="line" href="../../d7/d84/classgui_1_1menu_1_1MenuBar.html#a3ed0b468a5fd0c41fa06e7290639ddfe">  315</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d7/d84/classgui_1_1menu_1_1MenuBar.html#a3ed0b468a5fd0c41fa06e7290639ddfe">set_parent</a>(self, new_parent, init=False):</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        Component.set_parent(self, new_parent, init)</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <span class="comment"># if new_parent is rebuild, reparent (even to None) to avoid segv:</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> init:</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            wx_obj = new_parent <span class="keywordflow">and</span> new_parent.wx_obj</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            self.wx_obj.Reparent(wx_obj)</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
+<div class="line"><a name="l00323"></a><span class="lineno"><a class="line" href="../../d7/d84/classgui_1_1menu_1_1MenuBar.html#a2840d0a02fc5e6627557c481721484f5">  323</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d7/d84/classgui_1_1menu_1_1MenuBar.html#a2840d0a02fc5e6627557c481721484f5">find</a>(self, item_id=None):</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="stringliteral">&quot;Recursively find a menu item by its id (useful for event handlers)&quot;</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordflow">for</span> it <span class="keywordflow">in</span> self:</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            found = it.find(item_id)</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            <span class="keywordflow">if</span> found:</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                <span class="keywordflow">return</span> found </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="comment"># update metadata for the add context menu at the designer:</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;MenuBar._meta.valid_children = [Menu, ] </div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;Menu._meta.valid_children = [MenuItem, MenuItemCheckable, MenuItemSeparator, Menu] </div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="comment"># Unit Test</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&#39;__main__&#39;</span> :</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keyword">import</span> sys, os</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    </div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="comment"># disable ubuntu unity menubar</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    os.environ[<span class="stringliteral">&#39;UBUNTU_MENUPROXY&#39;</span>] = <span class="stringliteral">&#39;0&#39;</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    </div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    app = wx.App(redirect=<span class="keyword">False</span>)</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        </div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="keyword">from</span> <a class="code" href="../../d7/d42/namespacegui_1_1windows.html">gui.windows</a> <span class="keyword">import</span> Window</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    w = Window(title=<span class="stringliteral">&quot;hello world&quot;</span>, name=<span class="stringliteral">&quot;frmTest&quot;</span>, tool_window=<span class="keyword">False</span>, </div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;               resizable=<span class="keyword">True</span>, visible=<span class="keyword">False</span>, pos=(180, 0))</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    mb = <a class="code" href="../../d7/d84/classgui_1_1menu_1_1MenuBar.html">MenuBar</a>(w, name=<span class="stringliteral">&quot;menubar&quot;</span>) </div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    m1 = <a class="code" href="../../da/d55/classgui_1_1menu_1_1Menu.html">Menu</a>(mb, label=<span class="stringliteral">&#39;File&#39;</span>, name=<span class="stringliteral">&quot;mnu_file&quot;</span>)</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    mi11 = <a class="code" href="../../da/d76/classgui_1_1menu_1_1MenuItem.html">MenuItem</a>(m1, label=<span class="stringliteral">&#39;Open&#39;</span>, name=<span class="stringliteral">&#39;menu_file_open&#39;</span>)</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    mi12 = <a class="code" href="../../da/d76/classgui_1_1menu_1_1MenuItem.html">MenuItem</a>(m1, label=<span class="stringliteral">&#39;Save&#39;</span>, name=<span class="stringliteral">&#39;menu_file_save&#39;</span>, enabled=<span class="keyword">False</span>)</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    mi13 = <a class="code" href="../../da/d76/classgui_1_1menu_1_1MenuItem.html">MenuItem</a>(m1, label=<span class="stringliteral">&#39;Quit&#39;</span>, name=<span class="stringliteral">&#39;menu_file_quit&#39;</span>)</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    m11 = <a class="code" href="../../da/d55/classgui_1_1menu_1_1Menu.html">Menu</a>(m1, label=<span class="stringliteral">&#39;Recent files&#39;</span>, name=<span class="stringliteral">&quot;mnu_recent_file&quot;</span>)</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    mi111 = <a class="code" href="../../da/d76/classgui_1_1menu_1_1MenuItem.html">MenuItem</a>(m11, label=<span class="stringliteral">&#39;file1&#39;</span>, name=<span class="stringliteral">&#39;menu_recent_file1&#39;</span>)</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    mi112 = <a class="code" href="../../da/d76/classgui_1_1menu_1_1MenuItem.html">MenuItem</a>(m11, label=<span class="stringliteral">&#39;file2&#39;</span>, name=<span class="stringliteral">&#39;menu_recent_file2&#39;</span>)</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    mi113 = <a class="code" href="../../da/d76/classgui_1_1menu_1_1MenuItem.html">MenuItem</a>(m11, label=<span class="stringliteral">&#39;file3&#39;</span>, name=<span class="stringliteral">&#39;menu_recent_file3&#39;</span>)</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    m2 = <a class="code" href="../../da/d55/classgui_1_1menu_1_1Menu.html">Menu</a>(mb, label=<span class="stringliteral">&#39;Edit&#39;</span>, name=<span class="stringliteral">&quot;mnu_edit&quot;</span>)</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    mi21 = <a class="code" href="../../da/d76/classgui_1_1menu_1_1MenuItem.html">MenuItem</a>(m2, label=<span class="stringliteral">&#39;Copy&#39;</span>, name=<span class="stringliteral">&#39;menu_edit_copy&#39;</span>)</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    mi22 = <a class="code" href="../../da/d76/classgui_1_1menu_1_1MenuItem.html">MenuItem</a>(m2, label=<span class="stringliteral">&#39;Cut&#39;</span>, name=<span class="stringliteral">&#39;menu_edit_cut&#39;</span>)</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    mi23 = <a class="code" href="../../da/d76/classgui_1_1menu_1_1MenuItem.html">MenuItem</a>(m2, label=<span class="stringliteral">&#39;Paste&#39;</span>, name=<span class="stringliteral">&#39;menu_edit_paste&#39;</span>)</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    m2.enabled = <span class="keyword">False</span>  <span class="comment"># disable a whole menu</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keyword">def </span><a class="code" href="../../d3/d79/namespacegui_1_1menu.html#a814cec8395508e733293a7b43f6d08c6">disable_all</a>(event):</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        mb.enabled = <span class="keyword">False</span>  <span class="comment"># disable the menubar</span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keyword">def </span><a class="code" href="../../d3/d79/namespacegui_1_1menu.html#af2e0a41d3c885affdea0e54695caba3c">enable_edit</a>(event):</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        m2.enabled = <span class="keywordflow">not</span> m2.enabled</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        mi11.label = <span class="stringliteral">&quot;Close&quot;</span> <span class="keywordflow">if</span> m2.enabled <span class="keywordflow">else</span> <span class="stringliteral">&quot;Open&quot;</span> </div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        mi12.enabled = <span class="keywordflow">not</span> mi12.enabled</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    mi11.onclick = enable_edit</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    mi13.onclick = disable_all</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keyword">from</span> <a class="code" href="../../d4/d72/namespacegui_1_1tools_1_1inspector.html">gui.tools.inspector</a> <span class="keyword">import</span> InspectorTool</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <a class="code" href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html">InspectorTool</a>().show(w)</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    w.show()</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    app.MainLoop()</div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__MenuItem_html_a3537f3dadf9d7d6f7c5fa3d8ec8dd4a5"><div class="ttname"><a href="../../d1/de7/classgui_1_1menu_1_1wx__MenuItem.html#a3537f3dadf9d7d6f7c5fa3d8ec8dd4a5">gui.menu.wx_MenuItem.Destroy</a></div><div class="ttdeci">def Destroy</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00096">menu.py:96</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__DummyWindow_html"><div class="ttname"><a href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html">gui.menu.wx_DummyWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00025">menu.py:25</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__MenuBar_html_aff76230edfc5c8e9e36e9210a55dbd0d"><div class="ttname"><a href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#aff76230edfc5c8e9e36e9210a55dbd0d">gui.menu.wx_MenuBar.RemoveItem</a></div><div class="ttdeci">def RemoveItem</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00277">menu.py:277</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1MenuItemCheckable_html"><div class="ttname"><a href="../../de/dfd/classgui_1_1menu_1_1MenuItemCheckable.html">gui.menu.MenuItemCheckable</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00130">menu.py:130</a></div></div>
+<div class="ttc" id="namespacegui_1_1menu_html_a814cec8395508e733293a7b43f6d08c6"><div class="ttname"><a href="../../d3/d79/namespacegui_1_1menu.html#a814cec8395508e733293a7b43f6d08c6">gui.menu.disable_all</a></div><div class="ttdeci">def disable_all</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00368">menu.py:368</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__DummyWindow_html_ab9335c0fa7509d9bb44a6198e9425b2a"><div class="ttname"><a href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#ab9335c0fa7509d9bb44a6198e9425b2a">gui.menu.wx_DummyWindow.Dummy</a></div><div class="ttdeci">def Dummy</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00053">menu.py:53</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__MenuBar_html_a4af61a0d45b6d4ed6be23f3305f688bd"><div class="ttname"><a href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#a4af61a0d45b6d4ed6be23f3305f688bd">gui.menu.wx_MenuBar.IsEnabled</a></div><div class="ttdeci">def IsEnabled</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00270">menu.py:270</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__MenuItem_html_ad88d0e91746f44de062caa3e76c9a739"><div class="ttname"><a href="../../d1/de7/classgui_1_1menu_1_1wx__MenuItem.html#ad88d0e91746f44de062caa3e76c9a739">gui.menu.wx_MenuItem.Check</a></div><div class="ttdeci">def Check</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00100">menu.py:100</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__MenuItem_html_ab40b39643a0626315537be8d492a29ce"><div class="ttname"><a href="../../d1/de7/classgui_1_1menu_1_1wx__MenuItem.html#ab40b39643a0626315537be8d492a29ce">gui.menu.wx_MenuItem.Enable</a></div><div class="ttdeci">def Enable</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00091">menu.py:91</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__DummyWindow_html_a928f0d58beb93f5b88ea00a9fa1033f3"><div class="ttname"><a href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a928f0d58beb93f5b88ea00a9fa1033f3">gui.menu.wx_DummyWindow.parent</a></div><div class="ttdeci">parent</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00033">menu.py:33</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorTool_html"><div class="ttname"><a href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html">gui.tools.inspector.InspectorTool</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00281">inspector.py:281</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__DummyWindow_html_a90648cdbad4cc4d5b8b997fceba2845a"><div class="ttname"><a href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a90648cdbad4cc4d5b8b997fceba2845a">gui.menu.wx_DummyWindow.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00032">menu.py:32</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__DummyWindow_html_a1efa7b3e015e4fbd86c252f3e1840b92"><div class="ttname"><a href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a1efa7b3e015e4fbd86c252f3e1840b92">gui.menu.wx_DummyWindow.GetSize</a></div><div class="ttdeci">def GetSize</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00041">menu.py:41</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1MenuBar_html_a2840d0a02fc5e6627557c481721484f5"><div class="ttname"><a href="../../d7/d84/classgui_1_1menu_1_1MenuBar.html#a2840d0a02fc5e6627557c481721484f5">gui.menu.MenuBar.find</a></div><div class="ttdeci">def find</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00323">menu.py:323</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__MenuBar_html_a2f3f83c6df5bbb6a15a55eb97f4a8b86"><div class="ttname"><a href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#a2f3f83c6df5bbb6a15a55eb97f4a8b86">gui.menu.wx_MenuBar.Enable</a></div><div class="ttdeci">def Enable</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00265">menu.py:265</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1Menu_html_a1fe8e49bb6e37ab0b60343a450b4bdd6"><div class="ttname"><a href="../../da/d55/classgui_1_1menu_1_1Menu.html#a1fe8e49bb6e37ab0b60343a450b4bdd6">gui.menu.Menu._get_label</a></div><div class="ttdeci">def _get_label</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00225">menu.py:225</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__MenuBar_html_a0c8ecbe8bebcfcdc89f3b13651b07a10"><div class="ttname"><a href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#a0c8ecbe8bebcfcdc89f3b13651b07a10">gui.menu.wx_MenuBar.GetItemLabel</a></div><div class="ttdeci">def GetItemLabel</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00288">menu.py:288</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__Menu_html_a2125b5e73f2dabc8d6ae17d392df8f97"><div class="ttname"><a href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#a2125b5e73f2dabc8d6ae17d392df8f97">gui.menu.wx_Menu.GetItemLabel</a></div><div class="ttdeci">def GetItemLabel</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00203">menu.py:203</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__Menu_html_a0eec151930f6227956c66d0a75e670ce"><div class="ttname"><a href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#a0eec151930f6227956c66d0a75e670ce">gui.menu.wx_Menu.SetItemLabel</a></div><div class="ttdeci">def SetItemLabel</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00195">menu.py:195</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__Menu_html_a644944f8a7cca77ad2f3522c01b541a3"><div class="ttname"><a href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#a644944f8a7cca77ad2f3522c01b541a3">gui.menu.wx_Menu.GetId</a></div><div class="ttdeci">GetId</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00160">menu.py:160</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__MenuItem_html"><div class="ttname"><a href="../../d1/de7/classgui_1_1menu_1_1wx__MenuItem.html">gui.menu.wx_MenuItem</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00073">menu.py:73</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__Menu_html_af47946be66064cd04126838917bac265"><div class="ttname"><a href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#af47946be66064cd04126838917bac265">gui.menu.wx_Menu.GetLastId</a></div><div class="ttdeci">def GetLastId</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00210">menu.py:210</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__Menu_html"><div class="ttname"><a href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html">gui.menu.wx_Menu</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00147">menu.py:147</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__Menu_html_aafb31f6d72987d7253bcef1da54801f9"><div class="ttname"><a href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#aafb31f6d72987d7253bcef1da54801f9">gui.menu.wx_Menu.Enable</a></div><div class="ttdeci">def Enable</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00181">menu.py:181</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__DummyWindow_html_af632fe2c7c7083bd5503c4d07b8f7d7f"><div class="ttname"><a href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#af632fe2c7c7083bd5503c4d07b8f7d7f">gui.menu.wx_DummyWindow.GetCharWidth</a></div><div class="ttdeci">def GetCharWidth</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00047">menu.py:47</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__MenuBar_html_af77fb929c7e8850b3490bc846986bcd3"><div class="ttname"><a href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#af77fb929c7e8850b3490bc846986bcd3">gui.menu.wx_MenuBar.SetItemLabel</a></div><div class="ttdeci">def SetItemLabel</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00283">menu.py:283</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__DummyWindow_html_a973fe5769b473e1191d66ac27ad7ab1c"><div class="ttname"><a href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a973fe5769b473e1191d66ac27ad7ab1c">gui.menu.wx_DummyWindow.Bind</a></div><div class="ttdeci">def Bind</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00060">menu.py:60</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__MenuBar_html_a3e8f1f0818aae8697e53b971b7873fd9"><div class="ttname"><a href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#a3e8f1f0818aae8697e53b971b7873fd9">gui.menu.wx_MenuBar.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00250">menu.py:250</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__DummyWindow_html_a572612e1440d5fb3fe5194bbdda549b2"><div class="ttname"><a href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a572612e1440d5fb3fe5194bbdda549b2">gui.menu.wx_DummyWindow.GetCharHeight</a></div><div class="ttdeci">def GetCharHeight</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00050">menu.py:50</a></div></div>
+<div class="ttc" id="namespacegui_1_1menu_html_af2e0a41d3c885affdea0e54695caba3c"><div class="ttname"><a href="../../d3/d79/namespacegui_1_1menu.html#af2e0a41d3c885affdea0e54695caba3c">gui.menu.enable_edit</a></div><div class="ttdeci">def enable_edit</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00371">menu.py:371</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__DummyWindow_html_adccd4ae16e792c6d4e4f2865613d3b29"><div class="ttname"><a href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#adccd4ae16e792c6d4e4f2865613d3b29">gui.menu.wx_DummyWindow.GetParent</a></div><div class="ttdeci">def GetParent</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00035">menu.py:35</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1Menu_html_aacf8d8909cd87ddb311f22eb3f2d20fe"><div class="ttname"><a href="../../da/d55/classgui_1_1menu_1_1Menu.html#aacf8d8909cd87ddb311f22eb3f2d20fe">gui.menu.Menu._set_label</a></div><div class="ttdeci">def _set_label</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00220">menu.py:220</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__Menu_html_a34ce5d53837d3e74d44d083fdb352ffa"><div class="ttname"><a href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#a34ce5d53837d3e74d44d083fdb352ffa">gui.menu.wx_Menu.IsEnabled</a></div><div class="ttdeci">def IsEnabled</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00187">menu.py:187</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__DummyWindow_html_a1a88d9a9f0d0271b0f5f25efdd7c523d"><div class="ttname"><a href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a1a88d9a9f0d0271b0f5f25efdd7c523d">gui.menu.wx_DummyWindow.Reparent</a></div><div class="ttdeci">def Reparent</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00038">menu.py:38</a></div></div>
+<div class="ttc" id="namespacegui_1_1tools_1_1inspector_html"><div class="ttname"><a href="../../d4/d72/namespacegui_1_1tools_1_1inspector.html">gui.tools.inspector</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00001">inspector.py:1</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__MenuItem_html_a258e63eab143daf0f4d435dc40e1071f"><div class="ttname"><a href="../../d1/de7/classgui_1_1menu_1_1wx__MenuItem.html#a258e63eab143daf0f4d435dc40e1071f">gui.menu.wx_MenuItem.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00074">menu.py:74</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__MenuBar_html"><div class="ttname"><a href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html">gui.menu.wx_MenuBar</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00248">menu.py:248</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1Menu_html_a7834c6d2c9b31f347403edcacffad977"><div class="ttname"><a href="../../da/d55/classgui_1_1menu_1_1Menu.html#a7834c6d2c9b31f347403edcacffad977">gui.menu.Menu.rebuild</a></div><div class="ttdeci">def rebuild</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00239">menu.py:239</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1Menu_html_ac6b559ca7263cf728a24c329ff7d871b"><div class="ttname"><a href="../../da/d55/classgui_1_1menu_1_1Menu.html#ac6b559ca7263cf728a24c329ff7d871b">gui.menu.Menu.find</a></div><div class="ttdeci">def find</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00229">menu.py:229</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1MenuBar_html"><div class="ttname"><a href="../../d7/d84/classgui_1_1menu_1_1MenuBar.html">gui.menu.MenuBar</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00298">menu.py:298</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1MenuItemSeparator_html"><div class="ttname"><a href="../../d0/d8f/classgui_1_1menu_1_1MenuItemSeparator.html">gui.menu.MenuItemSeparator</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00142">menu.py:142</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__DummyWindow_html_a0fddd3fc6f679233ec3946aa4a1a03f0"><div class="ttname"><a href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a0fddd3fc6f679233ec3946aa4a1a03f0">gui.menu.wx_DummyWindow.Unbind</a></div><div class="ttdeci">def Unbind</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00068">menu.py:68</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__MenuBar_html_a96069c5907ae5fa2f41b455df95b520c"><div class="ttname"><a href="../../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#a96069c5907ae5fa2f41b455df95b520c">gui.menu.wx_MenuBar.GetLastId</a></div><div class="ttdeci">def GetLastId</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00294">menu.py:294</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1MenuBar_html_ada44c9a4ad1a3b5706af45d6de274476"><div class="ttname"><a href="../../d7/d84/classgui_1_1menu_1_1MenuBar.html#ada44c9a4ad1a3b5706af45d6de274476">gui.menu.MenuBar.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00304">menu.py:304</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1Menu_html"><div class="ttname"><a href="../../da/d55/classgui_1_1menu_1_1Menu.html">gui.menu.Menu</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00214">menu.py:214</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1MenuItem_html"><div class="ttname"><a href="../../da/d76/classgui_1_1menu_1_1MenuItem.html">gui.menu.MenuItem</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00109">menu.py:109</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1MenuItem_html_ab6151e09fbb2d301a7c27c219fe7cdc5"><div class="ttname"><a href="../../da/d76/classgui_1_1menu_1_1MenuItem.html#ab6151e09fbb2d301a7c27c219fe7cdc5">gui.menu.MenuItem.rebuild</a></div><div class="ttdeci">def rebuild</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00125">menu.py:125</a></div></div>
+<div class="ttc" id="namespacegui_1_1windows_html"><div class="ttname"><a href="../../d7/d42/namespacegui_1_1windows.html">gui.windows</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da3/build_2lib_8linux-x86__64-2_87_2gui_2windows_2____init_____8py_source.html#l00001">__init__.py:1</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__Menu_html_aa71608ea1bcfa377cc146ed3cec3b239"><div class="ttname"><a href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#aa71608ea1bcfa377cc146ed3cec3b239">gui.menu.wx_Menu.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00149">menu.py:149</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1wx__Menu_html_a270dfaa4c2e180bb7b8aea672a70e278"><div class="ttname"><a href="../../d1/d13/classgui_1_1menu_1_1wx__Menu.html#a270dfaa4c2e180bb7b8aea672a70e278">gui.menu.wx_Menu.Destroy</a></div><div class="ttdeci">def Destroy</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00162">menu.py:162</a></div></div>
+<div class="ttc" id="classgui_1_1menu_1_1MenuBar_html_a3ed0b468a5fd0c41fa06e7290639ddfe"><div class="ttname"><a href="../../d7/d84/classgui_1_1menu_1_1MenuBar.html#a3ed0b468a5fd0c41fa06e7290639ddfe">gui.menu.MenuBar.set_parent</a></div><div class="ttdeci">def set_parent</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00315">menu.py:315</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_be831313eee9167e67543a36aa74e60d.html">gui</a></li><li class="navelem"><a class="el" href="../../dd/d81/gui_2menu_8py.html">menu.py</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:47 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

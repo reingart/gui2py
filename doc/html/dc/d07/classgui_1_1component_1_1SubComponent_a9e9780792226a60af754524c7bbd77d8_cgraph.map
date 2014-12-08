@@ -1,0 +1,5 @@
+<map id="gui.component.SubComponent.__init__" name="gui.component.SubComponent.__init__">
+<area shape="rect" id="node2" href="$d7/d98/classgui_1_1component_1_1Component.html#ad146f1473fa23139699d793758a6aaee" title="gui.component.Component.set\l_parent" alt="" coords="271,5,471,46"/>
+<area shape="rect" id="node3" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#ae92b3961491af2a2273baa295b8e1e4a" title="gui.component.ControlSuper.set\l_parent" alt="" coords="266,70,475,111"/>
+<area shape="rect" id="node4" href="$dc/d07/classgui_1_1component_1_1SubComponent.html#abbd0beed5e2f9ca4c85c159aa2336fd2" title="gui.component.SubComponent.set\l_parent" alt="" coords="259,135,482,177"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="gui.tools.inspector.InspectorPanel.OnSelect" name="gui.tools.inspector.InspectorPanel.OnSelect">
+<area shape="rect" id="node2" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a93b4d530566190a084aa12590d02b310" title="gui.tools.inspector.Inspector\lPanel.highlight" alt="" coords="240,5,427,46"/>
+<area shape="rect" id="node3" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ac369f3121aba776ff3001d45a317d1fc" title="gui.tools.inspector.Inspector\lPanel.do_highlight" alt="" coords="475,5,661,46"/>
+<area shape="rect" id="node4" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5f95eb72313bd1c93bfbedfc1fb3a75e" title="gui.tools.inspector.Inspector\lPanel.do_unhighlight" alt="" coords="709,5,896,46"/>
+</map>

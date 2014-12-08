@@ -1,0 +1,6 @@
+<map id="gui.tools.designer.BasicDesigner.select" name="gui.tools.designer.BasicDesigner.select">
+<area shape="rect" id="node2" href="$db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a6cdd91cff57400fad7a61b52fa63c886" title="gui.tools.propeditor.Property\lEditorPanel.edit" alt="" coords="217,29,402,70"/>
+<area shape="rect" id="node3" href="$de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a1bdaf6b80465efa4a0ce37c65620bfc0" title="gui.tools.designer.Basic\lDesigner.mouse_down" alt="" coords="229,94,390,135"/>
+<area shape="rect" id="node4" href="$de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a7e2988071913c13b913a6557893a0be5" title="gui.tools.designer.Basic\lDesigner.mouse_up" alt="" coords="229,183,390,225"/>
+<area shape="rect" id="node5" href="$de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ab438e7b78dc9494cfb71315b358616e4" title="gui.tools.designer.Basic\lDesigner.__call__" alt="" coords="451,183,613,225"/>
+</map>

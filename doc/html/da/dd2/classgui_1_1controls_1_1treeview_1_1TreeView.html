@@ -1,0 +1,1033 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Referencia de la Clase gui.controls.treeview.TreeView</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-static-attribs">Atributos públicos estáticos</a> &#124;
+<a href="#pri-methods">Métodos privados</a> &#124;
+<a href="#pri-attribs">Atributos privados</a> &#124;
+<a href="#pri-static-attribs">Atributos privados estáticos</a> &#124;
+<a href="../../d5/d45/classgui_1_1controls_1_1treeview_1_1TreeView-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase gui.controls.treeview.TreeView</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagrama de herencias de gui.controls.treeview.TreeView</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/d9c/classgui_1_1controls_1_1treeview_1_1TreeView__inherit__graph.png" border="0" usemap="#gui_8controls_8treeview_8TreeView_inherit__map" alt="Inheritance graph"/></div>
+<map name="gui_8controls_8treeview_8TreeView_inherit__map" id="gui_8controls_8treeview_8TreeView_inherit__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración para gui.controls.treeview.TreeView:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d99/classgui_1_1controls_1_1treeview_1_1TreeView__coll__graph.png" border="0" usemap="#gui_8controls_8treeview_8TreeView_coll__map" alt="Collaboration graph"/></div>
+<map name="gui_8controls_8treeview_8TreeView_coll__map" id="gui_8controls_8treeview_8TreeView_coll__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:aebbb7f30c8409b0d6380702c4fec0ad5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#aebbb7f30c8409b0d6380702c4fec0ad5">__init__</a></td></tr>
+<tr class="separator:aebbb7f30c8409b0d6380702c4fec0ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25e0363ccf5f2a7347762da00b1435e2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a25e0363ccf5f2a7347762da00b1435e2">clear</a></td></tr>
+<tr class="separator:a25e0363ccf5f2a7347762da00b1435e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe4b1a4e0bcc9ad3b1d0805f74012920"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#abe4b1a4e0bcc9ad3b1d0805f74012920">get_selected_items</a></td></tr>
+<tr class="separator:abe4b1a4e0bcc9ad3b1d0805f74012920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebbb7f30c8409b0d6380702c4fec0ad5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#aebbb7f30c8409b0d6380702c4fec0ad5">__init__</a></td></tr>
+<tr class="separator:aebbb7f30c8409b0d6380702c4fec0ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25e0363ccf5f2a7347762da00b1435e2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a25e0363ccf5f2a7347762da00b1435e2">clear</a></td></tr>
+<tr class="separator:a25e0363ccf5f2a7347762da00b1435e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe4b1a4e0bcc9ad3b1d0805f74012920"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#abe4b1a4e0bcc9ad3b1d0805f74012920">get_selected_items</a></td></tr>
+<tr class="separator:abe4b1a4e0bcc9ad3b1d0805f74012920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Atributos públicos estáticos</h2></td></tr>
+<tr class="memitem:a495403be6d8f84f051d4a058fdecd4d7"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a495403be6d8f84f051d4a058fdecd4d7">has_buttons</a></td></tr>
+<tr class="separator:a495403be6d8f84f051d4a058fdecd4d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1741a08def8c5a6685733ca73dbb7355"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a1741a08def8c5a6685733ca73dbb7355">no_lines</a></td></tr>
+<tr class="separator:a1741a08def8c5a6685733ca73dbb7355"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ed53d29144c8d3b5edcac35f6af3b01"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a6ed53d29144c8d3b5edcac35f6af3b01">row_lines</a></td></tr>
+<tr class="separator:a6ed53d29144c8d3b5edcac35f6af3b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5505c2bc2a07126f84e72c73fec82be4"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a5505c2bc2a07126f84e72c73fec82be4">multiselect</a></td></tr>
+<tr class="separator:a5505c2bc2a07126f84e72c73fec82be4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadb29dbe214a0e4d2174bc9e5a9fb471"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#aadb29dbe214a0e4d2174bc9e5a9fb471">hide_root</a></td></tr>
+<tr class="separator:aadb29dbe214a0e4d2174bc9e5a9fb471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace18ae4ef9d7edf2adfc32082fa4df57"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#ace18ae4ef9d7edf2adfc32082fa4df57">default_style</a></td></tr>
+<tr class="separator:ace18ae4ef9d7edf2adfc32082fa4df57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad10a459c0ae192a8af606dad5aad2328"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#ad10a459c0ae192a8af606dad5aad2328">items</a> = InternalSpec(<a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#affd5093ea7b1977295f1b4e73671811f">_get_items</a>, <a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a7125f0eb9bafb783abec4794201580d5">_set_items</a>)</td></tr>
+<tr class="separator:ad10a459c0ae192a8af606dad5aad2328"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0b1352bf47ce2432634b74266635b4b"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#aa0b1352bf47ce2432634b74266635b4b">onitemselected</a></td></tr>
+<tr class="separator:aa0b1352bf47ce2432634b74266635b4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab31f29de145ec49095968a2489cd2c8e"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#ab31f29de145ec49095968a2489cd2c8e">onitemactivated</a></td></tr>
+<tr class="separator:ab31f29de145ec49095968a2489cd2c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb12d69680998414149b79285dc0be43"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#abb12d69680998414149b79285dc0be43">onitemcollapsed</a></td></tr>
+<tr class="separator:abb12d69680998414149b79285dc0be43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab92f950f2d49b2f450976eaa07e87838"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#ab92f950f2d49b2f450976eaa07e87838">onitemcollapsing</a></td></tr>
+<tr class="separator:ab92f950f2d49b2f450976eaa07e87838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11d40c8d52ed3dfdf3129acaa3e42667"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a11d40c8d52ed3dfdf3129acaa3e42667">onitemexpanded</a></td></tr>
+<tr class="separator:a11d40c8d52ed3dfdf3129acaa3e42667"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a473cd2507558192cf57735e203575a"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a5a473cd2507558192cf57735e203575a">onitemexpanding</a></td></tr>
+<tr class="separator:a5a473cd2507558192cf57735e203575a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Métodos privados</h2></td></tr>
+<tr class="memitem:affd5093ea7b1977295f1b4e73671811f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#affd5093ea7b1977295f1b4e73671811f">_get_items</a></td></tr>
+<tr class="separator:affd5093ea7b1977295f1b4e73671811f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7125f0eb9bafb783abec4794201580d5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a7125f0eb9bafb783abec4794201580d5">_set_items</a></td></tr>
+<tr class="separator:a7125f0eb9bafb783abec4794201580d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affd5093ea7b1977295f1b4e73671811f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#affd5093ea7b1977295f1b4e73671811f">_get_items</a></td></tr>
+<tr class="separator:affd5093ea7b1977295f1b4e73671811f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7125f0eb9bafb783abec4794201580d5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a7125f0eb9bafb783abec4794201580d5">_set_items</a></td></tr>
+<tr class="separator:a7125f0eb9bafb783abec4794201580d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:a7325e8b8dc6101f407f0bc525a76ee24"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a7325e8b8dc6101f407f0bc525a76ee24">_max_columns</a></td></tr>
+<tr class="separator:a7325e8b8dc6101f407f0bc525a76ee24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf7424585b5b3f034312c6e570f53b01"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#acf7424585b5b3f034312c6e570f53b01">_items</a></td></tr>
+<tr class="separator:acf7424585b5b3f034312c6e570f53b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Atributos privados estáticos</h2></td></tr>
+<tr class="memitem:a7cf2dceeeb72f64c49cdf15ab59c2fb9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a7cf2dceeeb72f64c49cdf15ab59c2fb9">_wx_class</a> = wx.TreeCtrl</td></tr>
+<tr class="separator:a7cf2dceeeb72f64c49cdf15ab59c2fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac834ddfc9f5ef3a30d4be50f0df82244"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#ac834ddfc9f5ef3a30d4be50f0df82244">_style</a> = wx.NO_FULL_REPAINT_ON_RESIZE|wx.CLIP_SIBLINGS</td></tr>
+<tr class="separator:ac834ddfc9f5ef3a30d4be50f0df82244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af44ac104a92a34c8c4fc10dd8c867726"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#af44ac104a92a34c8c4fc10dd8c867726">_image</a> = <a class="el" href="../../dc/d41/namespacegui_1_1images.html#a6197518df4aa2fc567e8d6e777f8e47b">images.tree_ctrl</a></td></tr>
+<tr class="separator:af44ac104a92a34c8c4fc10dd8c867726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00021">21</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="aebbb7f30c8409b0d6380702c4fec0ad5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.treeview.TreeView.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00028">28</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html#l00028">gui.controls.treeview.TreeView.__init__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_aebbb7f30c8409b0d6380702c4fec0ad5_icgraph.png" border="0" usemap="#da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_aebbb7f30c8409b0d6380702c4fec0ad5_icgraph" alt=""/></div>
+<map name="da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_aebbb7f30c8409b0d6380702c4fec0ad5_icgraph" id="da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_aebbb7f30c8409b0d6380702c4fec0ad5_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aebbb7f30c8409b0d6380702c4fec0ad5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.treeview.TreeView.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html#l00028">28</a> del archivo <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00028">gui.controls.treeview.TreeView.__init__()</a>, <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00031">gui.controls.treeview.TreeView._max_columns</a> y <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00109">gui.controls.listview.ListView._max_columns</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_aebbb7f30c8409b0d6380702c4fec0ad5_cgraph.png" border="0" usemap="#da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_aebbb7f30c8409b0d6380702c4fec0ad5_cgraph" alt=""/></div>
+<map name="da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_aebbb7f30c8409b0d6380702c4fec0ad5_cgraph" id="da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_aebbb7f30c8409b0d6380702c4fec0ad5_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="affd5093ea7b1977295f1b4e73671811f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.treeview.TreeView._get_items </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00042">42</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00054">gui.controls.treeview.TreeView._items</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00064">gui.controls.gridview.GridView._items</a> y <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00160">gui.controls.listview.ListView._items</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html#l00042">gui.controls.treeview.TreeView._get_items()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_affd5093ea7b1977295f1b4e73671811f_icgraph.png" border="0" usemap="#da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_affd5093ea7b1977295f1b4e73671811f_icgraph" alt=""/></div>
+<map name="da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_affd5093ea7b1977295f1b4e73671811f_icgraph" id="da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_affd5093ea7b1977295f1b4e73671811f_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="affd5093ea7b1977295f1b4e73671811f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.treeview.TreeView._get_items </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html#l00042">42</a> del archivo <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00042">gui.controls.treeview.TreeView._get_items()</a>, <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00054">gui.controls.treeview.TreeView._items</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00064">gui.controls.gridview.GridView._items</a> y <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00160">gui.controls.listview.ListView._items</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_affd5093ea7b1977295f1b4e73671811f_cgraph.png" border="0" usemap="#da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_affd5093ea7b1977295f1b4e73671811f_cgraph" alt=""/></div>
+<map name="da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_affd5093ea7b1977295f1b4e73671811f_cgraph" id="da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_affd5093ea7b1977295f1b4e73671811f_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7125f0eb9bafb783abec4794201580d5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.treeview.TreeView._set_items </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>model</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00045">45</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html#l00045">gui.controls.treeview.TreeView._set_items()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_a7125f0eb9bafb783abec4794201580d5_icgraph.png" border="0" usemap="#da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_a7125f0eb9bafb783abec4794201580d5_icgraph" alt=""/></div>
+<map name="da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_a7125f0eb9bafb783abec4794201580d5_icgraph" id="da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_a7125f0eb9bafb783abec4794201580d5_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7125f0eb9bafb783abec4794201580d5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.treeview.TreeView._set_items </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>model</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html#l00045">45</a> del archivo <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00054">gui.controls.treeview.TreeView._items</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00064">gui.controls.gridview.GridView._items</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00160">gui.controls.listview.ListView._items</a> y <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00045">gui.controls.treeview.TreeView._set_items()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_a7125f0eb9bafb783abec4794201580d5_cgraph.png" border="0" usemap="#da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_a7125f0eb9bafb783abec4794201580d5_cgraph" alt=""/></div>
+<map name="da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_a7125f0eb9bafb783abec4794201580d5_cgraph" id="da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_a7125f0eb9bafb783abec4794201580d5_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a25e0363ccf5f2a7347762da00b1435e2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.treeview.TreeView.clear </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html#l00036">36</a> del archivo <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00036">gui.controls.treeview.TreeView.clear()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_a25e0363ccf5f2a7347762da00b1435e2_cgraph.png" border="0" usemap="#da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_a25e0363ccf5f2a7347762da00b1435e2_cgraph" alt=""/></div>
+<map name="da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_a25e0363ccf5f2a7347762da00b1435e2_cgraph" id="da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_a25e0363ccf5f2a7347762da00b1435e2_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a25e0363ccf5f2a7347762da00b1435e2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.treeview.TreeView.clear </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00036">36</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html#l00090">gui.controls.treeview.TreeModel.__init__()</a> y <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html#l00036">gui.controls.treeview.TreeView.clear()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_a25e0363ccf5f2a7347762da00b1435e2_icgraph.png" border="0" usemap="#da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_a25e0363ccf5f2a7347762da00b1435e2_icgraph" alt=""/></div>
+<map name="da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_a25e0363ccf5f2a7347762da00b1435e2_icgraph" id="da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_a25e0363ccf5f2a7347762da00b1435e2_icgraph">
+<area shape="rect" id="node2" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a50e91b30385dd4679e3a863c8ab0ab35" title="gui.controls.treeview.Tree\lModel.__init__" alt="" coords="227,29,399,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abe4b1a4e0bcc9ad3b1d0805f74012920"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.treeview.TreeView.get_selected_items </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00039">39</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html#l00039">gui.controls.treeview.TreeView.get_selected_items()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_abe4b1a4e0bcc9ad3b1d0805f74012920_icgraph.png" border="0" usemap="#da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_abe4b1a4e0bcc9ad3b1d0805f74012920_icgraph" alt=""/></div>
+<map name="da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_abe4b1a4e0bcc9ad3b1d0805f74012920_icgraph" id="da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_abe4b1a4e0bcc9ad3b1d0805f74012920_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abe4b1a4e0bcc9ad3b1d0805f74012920"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.treeview.TreeView.get_selected_items </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html#l00039">39</a> del archivo <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00039">gui.controls.treeview.TreeView.get_selected_items()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_abe4b1a4e0bcc9ad3b1d0805f74012920_cgraph.png" border="0" usemap="#da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_abe4b1a4e0bcc9ad3b1d0805f74012920_cgraph" alt=""/></div>
+<map name="da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_abe4b1a4e0bcc9ad3b1d0805f74012920_cgraph" id="da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView_abe4b1a4e0bcc9ad3b1d0805f74012920_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="af44ac104a92a34c8c4fc10dd8c867726"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.treeview.TreeView._image = <a class="el" href="../../dc/d41/namespacegui_1_1images.html#a6197518df4aa2fc567e8d6e777f8e47b">images.tree_ctrl</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00026">26</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acf7424585b5b3f034312c6e570f53b01"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.treeview.TreeView._items</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00054">54</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00042">gui.controls.treeview.TreeView._get_items()</a> y <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html#l00045">gui.controls.treeview.TreeView._set_items()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7325e8b8dc6101f407f0bc525a76ee24"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.treeview.TreeView._max_columns</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00031">31</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py_source.html#l00028">gui.controls.treeview.TreeView.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac834ddfc9f5ef3a30d4be50f0df82244"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.treeview.TreeView._style = wx.NO_FULL_REPAINT_ON_RESIZE|wx.CLIP_SIBLINGS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00025">25</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d8/d46/gui_2font_8py_source.html#l00019">gui.font.Font.__init__()</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00054">gui.font.Font._get_style()</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00062">gui.font.Font._set_style()</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00112">gui.font.Font.description()</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00030">gui.font.Font.get_wx_font()</a> y <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00038">gui.font.Font.set_wx_font()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7cf2dceeeb72f64c49cdf15ab59c2fb9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.treeview.TreeView._wx_class = wx.TreeCtrl</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00024">24</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ace18ae4ef9d7edf2adfc32082fa4df57"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.treeview.TreeView.default_style</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= StyleSpec(wx.TR_DEFAULT_STYLE, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                doc=<span class="stringliteral">&quot;Closest to the defaults for the native control&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00066">66</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a495403be6d8f84f051d4a058fdecd4d7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.treeview.TreeView.has_buttons</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= StyleSpec(wx.TR_HAS_BUTTONS, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                doc=<span class="stringliteral">&quot;Show + and - buttons to the left of parent items.&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00056">56</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aadb29dbe214a0e4d2174bc9e5a9fb471"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.treeview.TreeView.hide_root</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= StyleSpec(wx.TR_HIDE_ROOT, default=<span class="keyword">False</span>,</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                        doc=<span class="stringliteral">&quot;Suppress the display of the root node&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00064">64</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad10a459c0ae192a8af606dad5aad2328"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.treeview.TreeView.items = InternalSpec(<a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#affd5093ea7b1977295f1b4e73671811f">_get_items</a>, <a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a7125f0eb9bafb783abec4794201580d5">_set_items</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00069">69</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00122">gui.controls.treeview.TreeModel.__call__()</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00331">gui.controls.listview.ListModel.__call__()</a> y <a class="el" href="../../dc/db6/gui_2html_2select_8py_source.html#l00008">gui.html.select.SingleSelectControl.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5505c2bc2a07126f84e72c73fec82be4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.treeview.TreeView.multiselect</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= StyleSpec(wx.TR_MULTIPLE, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                default=<span class="keyword">True</span>, doc=<span class="stringliteral">&quot;Allow multiple selection&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00062">62</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00070">gui.controls.listbox.ItemContainerControl._get_data_selection()</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00023">gui.controls.listbox.ItemContainerControl._get_selection()</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00052">gui.controls.listbox.ItemContainerControl._get_string_selection()</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00079">gui.controls.listbox.ItemContainerControl._set_data_selection()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1741a08def8c5a6685733ca73dbb7355"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.treeview.TreeView.no_lines</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= StyleSpec(wx.TR_NO_LINES, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                doc=<span class="stringliteral">&quot;Hide vertical level connectors&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00058">58</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab31f29de145ec49095968a2489cd2c8e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.treeview.TreeView.onitemactivated</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;item_activated&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                           binding=wx.EVT_TREE_ITEM_ACTIVATED, kind=TreeEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00074">74</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abb12d69680998414149b79285dc0be43"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.treeview.TreeView.onitemcollapsed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;item_collapsed&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                           binding=wx.EVT_TREE_ITEM_COLLAPSED, kind=TreeEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00076">76</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab92f950f2d49b2f450976eaa07e87838"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.treeview.TreeView.onitemcollapsing</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;item_collapsing&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                           binding=wx.EVT_TREE_ITEM_COLLAPSING, kind=TreeEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00078">78</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a11d40c8d52ed3dfdf3129acaa3e42667"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.treeview.TreeView.onitemexpanded</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;item_expanded&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                           binding=wx.EVT_TREE_ITEM_EXPANDED, kind=TreeEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00080">80</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5a473cd2507558192cf57735e203575a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.treeview.TreeView.onitemexpanding</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;list_expanding&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                           binding=wx.EVT_TREE_ITEM_EXPANDING, kind=TreeEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00082">82</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa0b1352bf47ce2432634b74266635b4b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.treeview.TreeView.onitemselected</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;item_selected&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                           binding=wx.EVT_TREE_SEL_CHANGED, kind=TreeEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00072">72</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6ed53d29144c8d3b5edcac35f6af3b01"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.treeview.TreeView.row_lines</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= StyleSpec(wx.TR_ROW_LINES, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                doc=<span class="stringliteral">&quot;Draw a contrasting border between displayed rows.&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00060">60</a> del archivo <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>build/lib.linux-x86_64-2.7/gui/controls/<a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html">treeview.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/dc4/namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="../../d7/d56/namespacegui_1_1controls.html">controls</a></li><li class="navelem"><a class="el" href="../../d0/dbd/namespacegui_1_1controls_1_1treeview.html">treeview</a></li><li class="navelem"><a class="el" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html">TreeView</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:48 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

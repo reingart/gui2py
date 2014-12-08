@@ -1,0 +1,915 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Referencia de la Clase gui.controls.notebook.TabPanel</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="#pub-static-attribs">Atributos públicos estáticos</a> &#124;
+<a href="#pri-methods">Métodos privados</a> &#124;
+<a href="#pri-static-attribs">Atributos privados estáticos</a> &#124;
+<a href="../../d1/d35/classgui_1_1controls_1_1notebook_1_1TabPanel-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase gui.controls.notebook.TabPanel</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagrama de herencias de gui.controls.notebook.TabPanel</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/d73/classgui_1_1controls_1_1notebook_1_1TabPanel__inherit__graph.png" border="0" usemap="#gui_8controls_8notebook_8TabPanel_inherit__map" alt="Inheritance graph"/></div>
+<map name="gui_8controls_8notebook_8TabPanel_inherit__map" id="gui_8controls_8notebook_8TabPanel_inherit__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración para gui.controls.notebook.TabPanel:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d98/classgui_1_1controls_1_1notebook_1_1TabPanel__coll__graph.png" border="0" usemap="#gui_8controls_8notebook_8TabPanel_coll__map" alt="Collaboration graph"/></div>
+<map name="gui_8controls_8notebook_8TabPanel_coll__map" id="gui_8controls_8notebook_8TabPanel_coll__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a4817dc7a2fa46461a3982722a3594446"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a4817dc7a2fa46461a3982722a3594446">__init__</a></td></tr>
+<tr class="separator:a4817dc7a2fa46461a3982722a3594446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a364c967e23e9ad1100e1ad7ff47a45a6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a364c967e23e9ad1100e1ad7ff47a45a6">destroy</a></td></tr>
+<tr class="separator:a364c967e23e9ad1100e1ad7ff47a45a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3005d686813c599a9bfe8d0b61b4b7f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#ad3005d686813c599a9bfe8d0b61b4b7f">resize</a></td></tr>
+<tr class="separator:ad3005d686813c599a9bfe8d0b61b4b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4817dc7a2fa46461a3982722a3594446"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a4817dc7a2fa46461a3982722a3594446">__init__</a></td></tr>
+<tr class="separator:a4817dc7a2fa46461a3982722a3594446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a364c967e23e9ad1100e1ad7ff47a45a6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a364c967e23e9ad1100e1ad7ff47a45a6">destroy</a></td></tr>
+<tr class="separator:a364c967e23e9ad1100e1ad7ff47a45a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3005d686813c599a9bfe8d0b61b4b7f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#ad3005d686813c599a9bfe8d0b61b4b7f">resize</a></td></tr>
+<tr class="separator:ad3005d686813c599a9bfe8d0b61b4b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:a8e983c95b89bffc3ebc1c65413631f5e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a8e983c95b89bffc3ebc1c65413631f5e">index</a></td></tr>
+<tr class="separator:a8e983c95b89bffc3ebc1c65413631f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Atributos públicos estáticos</h2></td></tr>
+<tr class="memitem:a31f28b913b1ef14b9fce4d60667cb2c1"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a31f28b913b1ef14b9fce4d60667cb2c1">index</a> = Spec(optional=False, default=&quot;&quot;, _name=&quot;_index&quot;, type='integer')</td></tr>
+<tr class="separator:a31f28b913b1ef14b9fce4d60667cb2c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27217d8e31d1d78fbb40ba110c008825"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a27217d8e31d1d78fbb40ba110c008825">text</a> = Spec(<a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#ad72b90459a0df16a15ae47a7fbc42064">_get_text</a>, <a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a930e0f066a9478993af6a8253b37301a">_set_text</a>, doc=&quot;Tab (page) caption&quot;, type='string')</td></tr>
+<tr class="separator:a27217d8e31d1d78fbb40ba110c008825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b9f6964c6d83c0552f3309ae5ab5bf6"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a2b9f6964c6d83c0552f3309ae5ab5bf6">selected</a> = Spec(<a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a903aa4ac1310ca48516ddeee854c3177">_get_selection</a>, <a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#aad7877ffe9437197dca66a4e6cd211c8">_set_selection</a>, type='boolean')</td></tr>
+<tr class="separator:a2b9f6964c6d83c0552f3309ae5ab5bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Métodos privados</h2></td></tr>
+<tr class="memitem:ad72b90459a0df16a15ae47a7fbc42064"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#ad72b90459a0df16a15ae47a7fbc42064">_get_text</a></td></tr>
+<tr class="separator:ad72b90459a0df16a15ae47a7fbc42064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a930e0f066a9478993af6a8253b37301a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a930e0f066a9478993af6a8253b37301a">_set_text</a></td></tr>
+<tr class="separator:a930e0f066a9478993af6a8253b37301a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a903aa4ac1310ca48516ddeee854c3177"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a903aa4ac1310ca48516ddeee854c3177">_get_selection</a></td></tr>
+<tr class="separator:a903aa4ac1310ca48516ddeee854c3177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad7877ffe9437197dca66a4e6cd211c8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#aad7877ffe9437197dca66a4e6cd211c8">_set_selection</a></td></tr>
+<tr class="separator:aad7877ffe9437197dca66a4e6cd211c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad72b90459a0df16a15ae47a7fbc42064"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#ad72b90459a0df16a15ae47a7fbc42064">_get_text</a></td></tr>
+<tr class="separator:ad72b90459a0df16a15ae47a7fbc42064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a930e0f066a9478993af6a8253b37301a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a930e0f066a9478993af6a8253b37301a">_set_text</a></td></tr>
+<tr class="separator:a930e0f066a9478993af6a8253b37301a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a903aa4ac1310ca48516ddeee854c3177"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a903aa4ac1310ca48516ddeee854c3177">_get_selection</a></td></tr>
+<tr class="separator:a903aa4ac1310ca48516ddeee854c3177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad7877ffe9437197dca66a4e6cd211c8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#aad7877ffe9437197dca66a4e6cd211c8">_set_selection</a></td></tr>
+<tr class="separator:aad7877ffe9437197dca66a4e6cd211c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Atributos privados estáticos</h2></td></tr>
+<tr class="memitem:a91975219b5c220a9e0b42ec3662d5a2c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a91975219b5c220a9e0b42ec3662d5a2c">_wx_class</a> = wx.Panel</td></tr>
+<tr class="separator:a91975219b5c220a9e0b42ec3662d5a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53af97bb7de77f8755a8dd1d8c6c2029"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a53af97bb7de77f8755a8dd1d8c6c2029">_registry</a> = <a class="el" href="../../d5/de5/namespacegui_1_1registry.html#ae0b3dc1cfebb2331220dc7ac7bd46a28">registry.MISC</a></td></tr>
+<tr class="separator:a53af97bb7de77f8755a8dd1d8c6c2029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00051">51</a> del archivo <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="a4817dc7a2fa46461a3982722a3594446"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.notebook.TabPanel.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00057">57</a> del archivo <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html#l00057">gui.controls.notebook.TabPanel.__init__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a4817dc7a2fa46461a3982722a3594446_icgraph.png" border="0" usemap="#df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a4817dc7a2fa46461a3982722a3594446_icgraph" alt=""/></div>
+<map name="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a4817dc7a2fa46461a3982722a3594446_icgraph" id="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a4817dc7a2fa46461a3982722a3594446_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4817dc7a2fa46461a3982722a3594446"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.notebook.TabPanel.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html#l00057">57</a> del archivo <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00057">gui.controls.notebook.TabPanel.__init__()</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00075">gui.controls.notebook.TabPanel.index</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00283">gui.controls.listview.ListColumn.index</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00368">gui.controls.gridview.GridColumn.index</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00563">gui.component.Component.index</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00104">gui.controls.notebook.TabPanel.resize()</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00847">gui.component.ControlSuper.resize()</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00130">gui.component.Component.wx_obj</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01043">gui.component.SubComponent.wx_obj</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a4817dc7a2fa46461a3982722a3594446_cgraph.png" border="0" usemap="#df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a4817dc7a2fa46461a3982722a3594446_cgraph" alt=""/></div>
+<map name="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a4817dc7a2fa46461a3982722a3594446_cgraph" id="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a4817dc7a2fa46461a3982722a3594446_cgraph">
+<area shape="rect" id="node2" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#ad3005d686813c599a9bfe8d0b61b4b7f" title="gui.controls.notebook.Tab\lPanel.resize" alt="" coords="254,13,426,54"/><area shape="rect" id="node3" href="../../d1/d9f/classgui_1_1component_1_1ControlSuper.html#aa777e42e418b9e9517dcd4aae5cf1430" title="gui.component.ControlSuper.resize" alt="" coords="227,79,453,105"/><area shape="rect" id="node4" href="../../d1/d9f/classgui_1_1component_1_1ControlSuper.html#aadd45821f352e5df10edc11a9e609105" title="gui.component.ControlSuper.\l_set_pos" alt="" coords="502,38,693,79"/><area shape="rect" id="node7" href="../../d1/d9f/classgui_1_1component_1_1ControlSuper.html#a79f0952c8c1e9e639e219c97944a1147" title="gui.component.ControlSuper.\l_set_size" alt="" coords="502,103,693,145"/><area shape="rect" id="node5" href="../../d1/d9f/classgui_1_1component_1_1ControlSuper.html#a9faae286a706388b11b9debdf4daf39a" title="gui.component.ControlSuper.\l_calc_dimension" alt="" coords="742,70,933,111"/><area shape="rect" id="node6" href="../../d1/d9f/classgui_1_1component_1_1ControlSuper.html#a7c87cb830ddcb27f667a466ad28c0a94" title="gui.component.ControlSuper.\l_get_pos" alt="" coords="742,5,933,46"/><area shape="rect" id="node8" href="../../d1/d9f/classgui_1_1component_1_1ControlSuper.html#ad712fca170ef6df1933a3601023075ba" title="gui.component.ControlSuper.\l_get_size" alt="" coords="742,135,933,177"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="a903aa4ac1310ca48516ddeee854c3177"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.notebook.TabPanel._get_selection </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00086">86</a> del archivo <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00075">gui.controls.notebook.TabPanel.index</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00283">gui.controls.listview.ListColumn.index</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00368">gui.controls.gridview.GridColumn.index</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00563">gui.component.Component.index</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html#l00086">gui.controls.notebook.TabPanel._get_selection()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a903aa4ac1310ca48516ddeee854c3177_icgraph.png" border="0" usemap="#df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a903aa4ac1310ca48516ddeee854c3177_icgraph" alt=""/></div>
+<map name="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a903aa4ac1310ca48516ddeee854c3177_icgraph" id="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a903aa4ac1310ca48516ddeee854c3177_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a903aa4ac1310ca48516ddeee854c3177"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.notebook.TabPanel._get_selection </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html#l00086">86</a> del archivo <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00086">gui.controls.notebook.TabPanel._get_selection()</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00075">gui.controls.notebook.TabPanel.index</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00283">gui.controls.listview.ListColumn.index</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00368">gui.controls.gridview.GridColumn.index</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00563">gui.component.Component.index</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a903aa4ac1310ca48516ddeee854c3177_cgraph.png" border="0" usemap="#df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a903aa4ac1310ca48516ddeee854c3177_cgraph" alt=""/></div>
+<map name="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a903aa4ac1310ca48516ddeee854c3177_cgraph" id="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a903aa4ac1310ca48516ddeee854c3177_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad72b90459a0df16a15ae47a7fbc42064"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.notebook.TabPanel._get_text </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00077">77</a> del archivo <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00075">gui.controls.notebook.TabPanel.index</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00283">gui.controls.listview.ListColumn.index</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00368">gui.controls.gridview.GridColumn.index</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00563">gui.component.Component.index</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html#l00077">gui.controls.notebook.TabPanel._get_text()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_ad72b90459a0df16a15ae47a7fbc42064_icgraph.png" border="0" usemap="#df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_ad72b90459a0df16a15ae47a7fbc42064_icgraph" alt=""/></div>
+<map name="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_ad72b90459a0df16a15ae47a7fbc42064_icgraph" id="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_ad72b90459a0df16a15ae47a7fbc42064_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad72b90459a0df16a15ae47a7fbc42064"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.notebook.TabPanel._get_text </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html#l00077">77</a> del archivo <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00077">gui.controls.notebook.TabPanel._get_text()</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00075">gui.controls.notebook.TabPanel.index</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00283">gui.controls.listview.ListColumn.index</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00368">gui.controls.gridview.GridColumn.index</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00563">gui.component.Component.index</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_ad72b90459a0df16a15ae47a7fbc42064_cgraph.png" border="0" usemap="#df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_ad72b90459a0df16a15ae47a7fbc42064_cgraph" alt=""/></div>
+<map name="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_ad72b90459a0df16a15ae47a7fbc42064_cgraph" id="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_ad72b90459a0df16a15ae47a7fbc42064_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aad7877ffe9437197dca66a4e6cd211c8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.notebook.TabPanel._set_selection </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>on</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00089">89</a> del archivo <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00075">gui.controls.notebook.TabPanel.index</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00283">gui.controls.listview.ListColumn.index</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00368">gui.controls.gridview.GridColumn.index</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00563">gui.component.Component.index</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html#l00089">gui.controls.notebook.TabPanel._set_selection()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_aad7877ffe9437197dca66a4e6cd211c8_icgraph.png" border="0" usemap="#df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_aad7877ffe9437197dca66a4e6cd211c8_icgraph" alt=""/></div>
+<map name="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_aad7877ffe9437197dca66a4e6cd211c8_icgraph" id="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_aad7877ffe9437197dca66a4e6cd211c8_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aad7877ffe9437197dca66a4e6cd211c8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.notebook.TabPanel._set_selection </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>on</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html#l00089">89</a> del archivo <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00089">gui.controls.notebook.TabPanel._set_selection()</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00075">gui.controls.notebook.TabPanel.index</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00283">gui.controls.listview.ListColumn.index</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00368">gui.controls.gridview.GridColumn.index</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00563">gui.component.Component.index</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_aad7877ffe9437197dca66a4e6cd211c8_cgraph.png" border="0" usemap="#df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_aad7877ffe9437197dca66a4e6cd211c8_cgraph" alt=""/></div>
+<map name="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_aad7877ffe9437197dca66a4e6cd211c8_cgraph" id="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_aad7877ffe9437197dca66a4e6cd211c8_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a930e0f066a9478993af6a8253b37301a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.notebook.TabPanel._set_text </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>new_text</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html#l00080">80</a> del archivo <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00080">gui.controls.notebook.TabPanel._set_text()</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00075">gui.controls.notebook.TabPanel.index</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00283">gui.controls.listview.ListColumn.index</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00368">gui.controls.gridview.GridColumn.index</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00563">gui.component.Component.index</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a930e0f066a9478993af6a8253b37301a_cgraph.png" border="0" usemap="#df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a930e0f066a9478993af6a8253b37301a_cgraph" alt=""/></div>
+<map name="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a930e0f066a9478993af6a8253b37301a_cgraph" id="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a930e0f066a9478993af6a8253b37301a_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a930e0f066a9478993af6a8253b37301a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.notebook.TabPanel._set_text </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>new_text</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00080">80</a> del archivo <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00075">gui.controls.notebook.TabPanel.index</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00283">gui.controls.listview.ListColumn.index</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00368">gui.controls.gridview.GridColumn.index</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00563">gui.component.Component.index</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html#l00080">gui.controls.notebook.TabPanel._set_text()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a930e0f066a9478993af6a8253b37301a_icgraph.png" border="0" usemap="#df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a930e0f066a9478993af6a8253b37301a_icgraph" alt=""/></div>
+<map name="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a930e0f066a9478993af6a8253b37301a_icgraph" id="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a930e0f066a9478993af6a8253b37301a_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a364c967e23e9ad1100e1ad7ff47a45a6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.notebook.TabPanel.destroy </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html#l00095">95</a> del archivo <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00095">gui.controls.notebook.TabPanel.destroy()</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00075">gui.controls.notebook.TabPanel.index</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00283">gui.controls.listview.ListColumn.index</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00368">gui.controls.gridview.GridColumn.index</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00563">gui.component.Component.index</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a364c967e23e9ad1100e1ad7ff47a45a6_cgraph.png" border="0" usemap="#df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a364c967e23e9ad1100e1ad7ff47a45a6_cgraph" alt=""/></div>
+<map name="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a364c967e23e9ad1100e1ad7ff47a45a6_cgraph" id="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a364c967e23e9ad1100e1ad7ff47a45a6_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a364c967e23e9ad1100e1ad7ff47a45a6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.notebook.TabPanel.destroy </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00095">95</a> del archivo <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00075">gui.controls.notebook.TabPanel.index</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00283">gui.controls.listview.ListColumn.index</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00368">gui.controls.gridview.GridColumn.index</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00563">gui.component.Component.index</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html#l00095">gui.controls.notebook.TabPanel.destroy()</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00475">gui.tools.designer.SelectionMarker.show()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a364c967e23e9ad1100e1ad7ff47a45a6_icgraph.png" border="0" usemap="#df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a364c967e23e9ad1100e1ad7ff47a45a6_icgraph" alt=""/></div>
+<map name="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a364c967e23e9ad1100e1ad7ff47a45a6_icgraph" id="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_a364c967e23e9ad1100e1ad7ff47a45a6_icgraph">
+<area shape="rect" id="node2" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a37ea66539ea5878bbd818dfd8bee05d8" title="gui.tools.designer.Selection\lMarker.show" alt="" coords="227,29,410,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad3005d686813c599a9bfe8d0b61b4b7f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.notebook.TabPanel.resize </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html#l00104">104</a> del archivo <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00104">gui.controls.notebook.TabPanel.resize()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_ad3005d686813c599a9bfe8d0b61b4b7f_cgraph.png" border="0" usemap="#df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_ad3005d686813c599a9bfe8d0b61b4b7f_cgraph" alt=""/></div>
+<map name="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_ad3005d686813c599a9bfe8d0b61b4b7f_cgraph" id="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_ad3005d686813c599a9bfe8d0b61b4b7f_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad3005d686813c599a9bfe8d0b61b4b7f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.notebook.TabPanel.resize </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00104">104</a> del archivo <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html#l00057">gui.controls.notebook.TabPanel.__init__()</a> y <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html#l00104">gui.controls.notebook.TabPanel.resize()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_ad3005d686813c599a9bfe8d0b61b4b7f_icgraph.png" border="0" usemap="#df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_ad3005d686813c599a9bfe8d0b61b4b7f_icgraph" alt=""/></div>
+<map name="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_ad3005d686813c599a9bfe8d0b61b4b7f_icgraph" id="df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel_ad3005d686813c599a9bfe8d0b61b4b7f_icgraph">
+<area shape="rect" id="node2" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a4817dc7a2fa46461a3982722a3594446" title="gui.controls.notebook.Tab\lPanel.__init__" alt="" coords="227,29,399,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="a53af97bb7de77f8755a8dd1d8c6c2029"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.notebook.TabPanel._registry = <a class="el" href="../../d5/de5/namespacegui_1_1registry.html#ae0b3dc1cfebb2331220dc7ac7bd46a28">registry.MISC</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00055">55</a> del archivo <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a91975219b5c220a9e0b42ec3662d5a2c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.notebook.TabPanel._wx_class = wx.Panel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00054">54</a> del archivo <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../da/d65/build_2lib_8linux-x86__64-2_87_2gui_2controls_2textbox_8py_source.html#l00030">gui.controls.textbox.TextBox.__init__()</a> y <a class="el" href="../../d1/def/gui_2controls_2panel_8py_source.html#l00066">gui.controls.panel.Panel.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8e983c95b89bffc3ebc1c65413631f5e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.notebook.TabPanel.index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00066">66</a> del archivo <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00413">gui.tools.designer.SelectionTag.__init__()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00470">gui.controls.gridview.GridRow.__setitem__()</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00416">gui.controls.listview.ListItem._is_selected()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00502">gui.controls.gridview.GridRow._is_selected()</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00419">gui.controls.listview.ListItem._select()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00505">gui.controls.gridview.GridRow._select()</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00424">gui.controls.listview.ListItem.ensure_visible()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00514">gui.controls.gridview.GridRow.ensure_visible()</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00427">gui.controls.listview.ListItem.focus()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00517">gui.controls.gridview.GridRow.focus()</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00428">gui.tools.designer.SelectionTag.motion()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a31f28b913b1ef14b9fce4d60667cb2c1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.notebook.TabPanel.index = Spec(optional=False, default=&quot;&quot;, _name=&quot;_index&quot;, type='integer')</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00075">75</a> del archivo <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d4/d80/gui_2controls_2notebook_8py_source.html#l00057">gui.controls.notebook.TabPanel.__init__()</a>, <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00413">gui.tools.designer.SelectionTag.__init__()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00470">gui.controls.gridview.GridRow.__setitem__()</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00086">gui.controls.notebook.TabPanel._get_selection()</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00077">gui.controls.notebook.TabPanel._get_text()</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00416">gui.controls.listview.ListItem._is_selected()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00502">gui.controls.gridview.GridRow._is_selected()</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00419">gui.controls.listview.ListItem._select()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00505">gui.controls.gridview.GridRow._select()</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00089">gui.controls.notebook.TabPanel._set_selection()</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00080">gui.controls.notebook.TabPanel._set_text()</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00095">gui.controls.notebook.TabPanel.destroy()</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00424">gui.controls.listview.ListItem.ensure_visible()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00514">gui.controls.gridview.GridRow.ensure_visible()</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00427">gui.controls.listview.ListItem.focus()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00517">gui.controls.gridview.GridRow.focus()</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00428">gui.tools.designer.SelectionTag.motion()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2b9f6964c6d83c0552f3309ae5ab5bf6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.notebook.TabPanel.selected = Spec(<a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a903aa4ac1310ca48516ddeee854c3177">_get_selection</a>, <a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#aad7877ffe9437197dca66a4e6cd211c8">_set_selection</a>, type='boolean')</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00093">93</a> del archivo <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a27217d8e31d1d78fbb40ba110c008825"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.notebook.TabPanel.text = Spec(<a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#ad72b90459a0df16a15ae47a7fbc42064">_get_text</a>, <a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a930e0f066a9478993af6a8253b37301a">_set_text</a>, doc=&quot;Tab (page) caption&quot;, type='string')</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00084">84</a> del archivo <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html">notebook.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d4/d6c/gui_2html_2label_8py_source.html#l00014">gui.html.label.FormLabel.__init__()</a>, <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00063">gui.html.input.FormTextInput.__init__()</a>, <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00125">gui.html.input.FormTextArea.__init__()</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00079">gui.html.input.FormTextInput.get_value()</a> y <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00140">gui.html.input.FormTextArea.get_value()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>build/lib.linux-x86_64-2.7/gui/controls/<a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html">notebook.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/dc4/namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="../../d7/d56/namespacegui_1_1controls.html">controls</a></li><li class="navelem"><a class="el" href="../../d6/d7c/namespacegui_1_1controls_1_1notebook.html">notebook</a></li><li class="navelem"><a class="el" href="../../df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html">TabPanel</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:48 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

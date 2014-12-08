@@ -1,0 +1,6 @@
+<map id="gui.html.form.FormTagHandler.create_control" name="gui.html.form.FormTagHandler.create_control">
+<area shape="rect" id="node2" href="$d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#abaf574047ef1c7ca918657183b98c842" title="gui.html.form.FormTagHandler.\lHandleINPUT" alt="" coords="293,29,496,70"/>
+<area shape="rect" id="node3" href="$d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#afa9fd4585a869cde27bc75267baefeb6" title="gui.html.form.FormTagHandler.\lHandleLABEL" alt="" coords="293,118,496,159"/>
+<area shape="rect" id="node4" href="$d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#afaf5980d5febf85d2746736e587f448a" title="gui.html.form.FormTagHandler.\lHandleSELECT" alt="" coords="293,207,496,249"/>
+<area shape="rect" id="node5" href="$d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a73f6837da61bb8b66984949da38c49ac" title="gui.html.form.FormTagHandler.\lHandleTEXTAREA" alt="" coords="293,297,496,338"/>
+</map>

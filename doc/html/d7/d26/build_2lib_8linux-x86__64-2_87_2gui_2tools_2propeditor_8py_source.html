@@ -1,0 +1,429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Fichero Fuente build/lib.linux-x86_64-2.7/gui/tools/propeditor.py</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">propeditor.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="../../d5/dbb/namespacegui_1_1tools_1_1propeditor.html">    1</a></span>&#160;<span class="comment">#!/usr/bin/python</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">&quot;Visual Property Editor (using wx PropertyGrid) of gui2py&#39;s components&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="../../d5/dbb/namespacegui_1_1tools_1_1propeditor.html#ac9239168fc8f229fe8b4335316b8d978">    6</a></span>&#160;__author__ = <span class="stringliteral">&quot;Mariano Reingart (reingart@gmail.com)&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../d5/dbb/namespacegui_1_1tools_1_1propeditor.html#af07274e1934ce5c9b771168234d40c78">    7</a></span>&#160;__copyright__ = <span class="stringliteral">&quot;Copyright (C) 2013- Mariano Reingart&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../d5/dbb/namespacegui_1_1tools_1_1propeditor.html#aca1e6e18cf98ecbd0c680b58fe17f7ea">    8</a></span>&#160;__license__ = <span class="stringliteral">&quot;LGPL 3.0&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"># some parts where inspired or borrowed from wxFormBuilders &amp; wxPython examples</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> sys, time, math, os, os.path</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> wx</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d5/dbb/namespacegui_1_1tools_1_1propeditor.html#a4b2ffcdbc325b5eb43394001de44fa43">   16</a></span>&#160;_ = wx.GetTranslation</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> wx.propgrid <span class="keyword">as</span> wxpg</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">from</span> <a class="code" href="../../d9/d90/namespacegui_1_1component.html">gui.component</a> <span class="keyword">import</span> InitSpec, StyleSpec, Spec, EventSpec, DimensionSpec</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">from</span> <a class="code" href="../../db/d8c/namespacegui_1_1font.html">gui.font</a> <span class="keyword">import</span> Font</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d5/dbb/namespacegui_1_1tools_1_1propeditor.html#ace0297ffe14b74d9029ad009d8deb079">   22</a></span>&#160;DEBUG = <span class="keyword">False</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html">PropertyEditorPanel</a>(wx.Panel):</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a11f563b24906b7e0d01a118cecb0e11b">   26</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a11f563b24906b7e0d01a118cecb0e11b">__init__</a>( self, parent, log ):</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        wx.Panel.__init__(self, parent, wx.ID_ANY)</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a47bc7c422e138484b3a350d4e8796c79">   28</a></span>&#160;        self.<a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a47bc7c422e138484b3a350d4e8796c79">log</a> = log</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ae3ea8480fa794b6eb236ed99d16aa0d9">   29</a></span>&#160;        self.<a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ae3ea8480fa794b6eb236ed99d16aa0d9">callback</a> = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a70adb4c5e376a473e5966a69411c1b14">   31</a></span>&#160;        self.<a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a70adb4c5e376a473e5966a69411c1b14">panel</a> = panel = wx.Panel(self, wx.ID_ANY)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        topsizer = wx.BoxSizer(wx.VERTICAL)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment"># Difference between using PropertyGridManager vs PropertyGrid is that</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment"># the manager supports multiple pages and a description box.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a4ef3ccbe24fbe5aed275a79ae164de58">   36</a></span>&#160;        self.<a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a4ef3ccbe24fbe5aed275a79ae164de58">pg</a> = pg = wxpg.PropertyGrid(panel,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        style=wxpg.PG_SPLITTER_AUTO_CENTER |</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                              wxpg.PG_AUTO_SORT |</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                              wxpg.PG_TOOLBAR)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="comment"># Show help as tooltips</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        pg.SetExtraStyle(wxpg.PG_EX_HELP_AS_TOOLTIPS)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        pg.Bind( wxpg.EVT_PG_CHANGED, self.<a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ac4e2b3d5f60c8e8f16041493fbd147ba">OnPropGridChange</a> )</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        pg.Bind( wxpg.EVT_PG_PAGE_CHANGED, self.<a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a1d530cbde84a701026d4c6595a25feb9">OnPropGridPageChange</a> )</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        pg.Bind( wxpg.EVT_PG_SELECTED, self.<a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#af029098c86d86aa8b737fa70991d8439">OnPropGridSelect</a> )</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        pg.Bind( wxpg.EVT_PG_RIGHT_CLICK, self.<a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a2451150d85f502ec2282337f4c6122d9">OnPropGridRightClick</a> )</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">##pg.AddPage( &quot;Page 1 - Testing All&quot; )</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="comment"># store the property grid for future reference</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        self.<a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a4ef3ccbe24fbe5aed275a79ae164de58">pg</a> = pg</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="comment"># load empty object (just draws categories)</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        self.<a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a461b88b3e37b51d4922e75cb7f661027">load_object</a>(<span class="keywordtype">None</span>)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment"># sizing stuff:        </span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        topsizer.Add(pg, 1, wx.EXPAND)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        panel.SetSizer(topsizer)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        topsizer.SetSizeHints(panel)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        sizer = wx.BoxSizer(wx.VERTICAL)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        sizer.Add(panel, 1, wx.EXPAND)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        self.SetSizer(sizer)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        self.SetAutoLayout(<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a461b88b3e37b51d4922e75cb7f661027">   66</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a461b88b3e37b51d4922e75cb7f661027">load_object</a>(self, obj, callback=None):</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        pg = self.<a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a4ef3ccbe24fbe5aed275a79ae164de58">pg</a>                    <span class="comment"># get the property grid reference</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        self.<a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ae3ea8480fa794b6eb236ed99d16aa0d9">callback</a> = callback        <span class="comment"># store the update method</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment"># delete all properties</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        pg.Clear()</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="comment"># clean references and aux structures</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        appended = set()</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ac47e4cdb7a54cc1ed4760f53c4f2aba3">   75</a></span>&#160;        self.<a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ac47e4cdb7a54cc1ed4760f53c4f2aba3">obj</a> = obj</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ae4513ae19dab474ea5219005064df25b">   76</a></span>&#160;        self.<a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ae4513ae19dab474ea5219005064df25b">groups</a> = {}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment"># loop on specs and append each property (categorized):</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">for</span> i, cat, class_ <span class="keywordflow">in</span> ((1, <span class="stringliteral">&#39;Init Specs&#39;</span>, InitSpec), </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                               (2, <span class="stringliteral">&#39;Dimension Specs&#39;</span>, DimensionSpec),</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                               (3, <span class="stringliteral">&#39;Style Specs&#39;</span>, StyleSpec), </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                               (5, <span class="stringliteral">&#39;Events&#39;</span>, EventSpec),</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                               (4, <span class="stringliteral">&#39;Basic Specs&#39;</span>, Spec),</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                              ): </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            pg.Append(wxpg.PropertyCategory(<span class="stringliteral">&quot;%s - %s&quot;</span> % (i, cat)))</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">if</span> obj <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">continue</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            specs = sorted(obj._meta.specs.items(), key=<span class="keyword">lambda</span> it: it[0])</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">for</span> name, spec <span class="keywordflow">in</span> specs:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;setting prop&quot;</span>, spec, class_, spec.type</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordflow">if</span> isinstance(spec, class_):</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                    prop = {<span class="stringliteral">&#39;string&#39;</span>: wxpg.StringProperty,</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                            <span class="stringliteral">&#39;integer&#39;</span>: wxpg.IntProperty,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                            <span class="stringliteral">&#39;float&#39;</span>: wxpg.FloatProperty,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                            <span class="stringliteral">&#39;boolean&#39;</span>: wxpg.BoolProperty,</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                            <span class="stringliteral">&#39;text&#39;</span>: wxpg.LongStringProperty,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                            <span class="stringliteral">&#39;code&#39;</span>: wxpg.LongStringProperty,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                            <span class="stringliteral">&#39;enum&#39;</span>: wxpg.EnumProperty,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                            <span class="stringliteral">&#39;edit_enum&#39;</span>: wxpg.EditEnumProperty,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                            <span class="stringliteral">&#39;expr&#39;</span>: wxpg.StringProperty,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                            <span class="stringliteral">&#39;array&#39;</span>: wxpg.ArrayStringProperty,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                            <span class="stringliteral">&#39;font&#39;</span>: wxpg.FontProperty,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                            <span class="stringliteral">&#39;image_file&#39;</span>: wxpg.ImageFileProperty,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                            <span class="stringliteral">&#39;colour&#39;</span>: wxpg.ColourProperty}.<a class="code" href="../../d9/d90/namespacegui_1_1component.html#a937836205f3a4daa11179df3fc58e3c9">get</a>(spec.type)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                    <span class="keywordflow">if</span> prop <span class="keywordflow">and</span> name <span class="keywordflow">not</span> <span class="keywordflow">in</span> appended:</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                        value = getattr(obj, name)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                        <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;name&quot;</span>, name, value</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                        <span class="keywordflow">if</span> spec.type == <span class="stringliteral">&quot;code&quot;</span> <span class="keywordflow">and</span> value <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                            value = <span class="stringliteral">&quot;&quot;</span> </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                        <span class="keywordflow">if</span> spec.type == <span class="stringliteral">&quot;boolean&quot;</span> <span class="keywordflow">and</span> value <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                            value = <span class="keyword">False</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                        <span class="keywordflow">if</span> spec.type == <span class="stringliteral">&quot;integer&quot;</span> <span class="keywordflow">and</span> value <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                            value = -1</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                        <span class="keywordflow">if</span> spec.type <span class="keywordflow">in</span> (<span class="stringliteral">&quot;string&quot;</span>, <span class="stringliteral">&quot;text&quot;</span>) <span class="keywordflow">and</span> value <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                            value = <span class="stringliteral">&quot;&quot;</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                        <span class="keywordflow">if</span> spec.type == <span class="stringliteral">&quot;expr&quot;</span>:</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                            value = repr(value)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                        <span class="keywordflow">if</span> spec.type == <span class="stringliteral">&quot;font&quot;</span>:</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                            <span class="keywordflow">if</span> value <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                                value = wx.NullFont</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                            <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                                value = value.get_wx_font()</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                        <span class="keywordflow">if</span> callable(value):</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                            <span class="comment"># event binded at runtime cannot be modified:</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                            value = str(value)</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                            readonly = <span class="keyword">True</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                            readonly = <span class="keyword">False</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                        <span class="keywordflow">if</span> spec.type == <span class="stringliteral">&quot;enum&quot;</span>:</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                            prop = prop(name, name, </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                           spec.mapping.keys(), </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                                           spec.mapping.values(),</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                           value=spec.mapping[value])</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                        <span class="keywordflow">elif</span> spec.type == <span class="stringliteral">&quot;edit_enum&quot;</span>:</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                            prop = prop(name, name, </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                                           spec.mapping.keys(), </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                                           range(len(spec.mapping.values())),</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                                           value=spec.mapping[value])</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                            <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                                prop = prop(name, value=value)</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                            <span class="keywordflow">except</span> Exception, e:</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                                <span class="keywordflow">print</span> <span class="stringliteral">&quot;CANNOT LOAD PROPERTY&quot;</span>, name, value, e</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                        </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                        prop.SetPyClientData(spec)</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                        appended.add(name)</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                        </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                        <span class="keywordflow">if</span> spec.group <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                            pg.Append(prop)</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                            <span class="keywordflow">if</span> readonly:</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                                pg.SetPropertyReadOnly(prop)</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                            <span class="keywordflow">if</span> spec.group <span class="keywordflow">in</span> self.<a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ae4513ae19dab474ea5219005064df25b">groups</a>:</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                                prop_parent = self.<a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ae4513ae19dab474ea5219005064df25b">groups</a>[spec.group]</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                            <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                                prop_parent = wxpg.StringProperty(spec.group,</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                        value=<span class="stringliteral">&quot;&lt;composed&gt;&quot;</span>)</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                                self.<a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ae4513ae19dab474ea5219005064df25b">groups</a>[spec.group] = prop_parent</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                pg.Append(prop_parent)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                pg.SetPropertyReadOnly(spec.group)</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                            pg.AppendIn(spec.group, prop)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                            pg.Collapse(spec.group)</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                            name = spec.group + <span class="stringliteral">&quot;.&quot;</span> + name</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                                          </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                        <span class="keywordflow">if</span> spec.type == <span class="stringliteral">&quot;boolean&quot;</span>:</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                            pg.SetPropertyAttribute(name, <span class="stringliteral">&quot;UseCheckbox&quot;</span>, <span class="keyword">True</span>)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                        doc = spec.__doc__ </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                        <span class="keywordflow">if</span> doc:</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                            pg.SetPropertyHelpString(name, doc)</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                        </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a6cdd91cff57400fad7a61b52fa63c886">  173</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a6cdd91cff57400fad7a61b52fa63c886">edit</a>(self, name=&quot;&quot;):</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="stringliteral">&quot;Programatically select a (default) property to start editing it&quot;</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="comment"># for more info see DoSelectAndEdit in propgrid.cpp</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">for</span> name <span class="keywordflow">in</span> (name, <span class="stringliteral">&quot;label&quot;</span>, <span class="stringliteral">&quot;value&quot;</span>, <span class="stringliteral">&quot;text&quot;</span>, <span class="stringliteral">&quot;title&quot;</span>, <span class="stringliteral">&quot;filename&quot;</span>, </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                           <span class="stringliteral">&quot;name&quot;</span>):</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            prop = self.pg.GetPropertyByName(name)</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <span class="keywordflow">if</span> prop <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                <span class="keywordflow">break</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        self.Parent.SetFocus()</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        self.Parent.Raise()</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        self.pg.SetFocus()</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="comment"># give time to the ui to show the prop grid and set focus:</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        wx.CallLater(250, self.<a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a8b5e4a77b933edb404831bd4b830fdb9">select</a>, prop.GetName())</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a8b5e4a77b933edb404831bd4b830fdb9">  187</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a8b5e4a77b933edb404831bd4b830fdb9">select</a>(self, name, flags=0):</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="stringliteral">&quot;Select a property (and start the editor)&quot;</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="comment"># do not call this directly from another window, use edit() instead</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="comment"># // wxPropertyGrid::DoSelectProperty flags (selFlags) -see propgrid.h-</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        wxPG_SEL_FOCUS=0x0001  <span class="comment"># Focuses to created editor</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        wxPG_SEL_FORCE=0x0002  <span class="comment"># Forces deletion and recreation of editor</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        flags |= wxPG_SEL_FOCUS <span class="comment"># | wxPG_SEL_FORCE</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        prop = self.pg.GetPropertyByName(name)</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        self.pg.SelectProperty(prop, flags)</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;selected!&quot;</span>, prop</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    </div>
+<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ac4e2b3d5f60c8e8f16041493fbd147ba">  198</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ac4e2b3d5f60c8e8f16041493fbd147ba">OnPropGridChange</a>(self, event):</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        p = event.GetProperty()</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;change!&quot;</span>, p</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">if</span> p:</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            name = p.GetName()</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            spec = p.GetPyClientData()</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keywordflow">if</span> spec <span class="keywordflow">and</span> <span class="stringliteral">&#39;enum&#39;</span> <span class="keywordflow">in</span> spec.type:</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                value = p.GetValueAsString()</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                value = p.GetValue()</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="comment">#self.log.write(u&#39;%s changed to &quot;%s&quot;\n&#39; % (p,p.GetValueAsString()))</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="comment"># if it a property child (parent.child), extract its name</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="keywordflow">if</span> <span class="stringliteral">&quot;.&quot;</span> <span class="keywordflow">in</span> name:</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                group, name = name.split(<span class="stringliteral">&quot;.&quot;</span>)</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> name <span class="keywordflow">in</span> self.<a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ae4513ae19dab474ea5219005064df25b">groups</a>:                </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                <span class="keywordflow">if</span> name == <span class="stringliteral">&#39;font&#39;</span>:  <span class="comment"># TODO: detect property type</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                    <span class="comment"># create a gui font from the wx.Font</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                    font = <a class="code" href="../../d4/ddc/classgui_1_1font_1_1Font.html">Font</a>()</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                    font.set_wx_font(value)</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                    value = font</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                <span class="comment"># expressions must be evaluated to store the python object</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                <span class="keywordflow">if</span> spec.type == <span class="stringliteral">&quot;expr&quot;</span>:</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                    value = eval(value)</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                <span class="comment"># re-create the wx_object with the new property value</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                <span class="comment"># (this is required at least to apply new styles and init specs)</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;changed&quot;</span>, self.obj.name</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                kwargs = {str(name): value}</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                wx.CallAfter(self.obj.rebuild,  **kwargs)</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                <span class="keywordflow">if</span> name == <span class="stringliteral">&#39;name&#39;</span>:</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                    wx.CallAfter(self.<a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ae3ea8480fa794b6eb236ed99d16aa0d9">callback</a>, **dict(name=self.obj.name))</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
+<div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#af029098c86d86aa8b737fa70991d8439">  229</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#af029098c86d86aa8b737fa70991d8439">OnPropGridSelect</a>(self, event):</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        p = event.GetProperty()</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keywordflow">if</span> p:</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            self.log.write(<span class="stringliteral">u&#39;%s selected\n&#39;</span> % (event.GetProperty().GetName()))</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            self.log.write(<span class="stringliteral">u&#39;Nothing selected\n&#39;</span>)</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
+<div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a5b63621fb015f3a7dcc850ca796ff679">  236</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a5b63621fb015f3a7dcc850ca796ff679">OnDeleteProperty</a>(self, event):</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        p = self.pg.GetSelectedProperty()</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keywordflow">if</span> p:</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            self.pg.DeleteProperty(p)</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            wx.MessageBox(<span class="stringliteral">&quot;First select a property to delete&quot;</span>)</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div>
+<div class="line"><a name="l00243"></a><span class="lineno"><a class="line" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a4c26660b87d2ac526abc3f21f211d212">  243</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a4c26660b87d2ac526abc3f21f211d212">OnReserved</a>(self, event):</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordflow">pass</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
+<div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a2451150d85f502ec2282337f4c6122d9">  246</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a2451150d85f502ec2282337f4c6122d9">OnPropGridRightClick</a>(self, event):</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        p = event.GetProperty()</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keywordflow">if</span> p:</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            self.log.write(<span class="stringliteral">u&#39;%s right clicked\n&#39;</span> % (event.GetProperty().GetName()))</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            self.log.write(<span class="stringliteral">u&#39;Nothing right clicked\n&#39;</span>)</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="comment">#self.obj.get_parent().Refresh()</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
+<div class="line"><a name="l00254"></a><span class="lineno"><a class="line" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a1d530cbde84a701026d4c6595a25feb9">  254</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a1d530cbde84a701026d4c6595a25feb9">OnPropGridPageChange</a>(self, event):</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        index = self.pg.GetSelectedPage()</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        self.log.write(<span class="stringliteral">&#39;Page Changed to \&#39;%s\&#39;\n&#39;</span> % (self.pg.GetPageName(index)))</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&#39;__main__&#39;</span>:</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keyword">import</span> sys,os</div>
+<div class="line"><a name="l00262"></a><span class="lineno"><a class="line" href="../../d5/dbb/namespacegui_1_1tools_1_1propeditor.html#a150c794ec788a0544a73f10dcfd200f5">  262</a></span>&#160;    app = wx.App()</div>
+<div class="line"><a name="l00263"></a><span class="lineno"><a class="line" href="../../d5/dbb/namespacegui_1_1tools_1_1propeditor.html#a60316c3fe2b349b34027d1ce9dd40cc2">  263</a></span>&#160;    f = wx.Frame(<span class="keywordtype">None</span>)</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keyword">from</span> <a class="code" href="../../d7/d56/namespacegui_1_1controls.html">gui.controls</a> <span class="keyword">import</span> Button, Label, TextBox, CheckBox, ListBox, ComboBox</div>
+<div class="line"><a name="l00266"></a><span class="lineno"><a class="line" href="../../d5/dbb/namespacegui_1_1tools_1_1propeditor.html#ada88851f67cb950896179e773f81a0e8">  266</a></span>&#160;    frame = wx.Frame(<span class="keywordtype">None</span>)</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="comment">#o = Button(frame, name=&quot;btnTest&quot;, label=&quot;click me!&quot;, default=True)</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="comment">#o = Label(frame, name=&quot;lblTest&quot;, alignment=&quot;right&quot;, size=(-1, 500), text=&quot;hello!&quot;)</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno"><a class="line" href="../../d5/dbb/namespacegui_1_1tools_1_1propeditor.html#af676eff50b3bbebf61bc531fc63da990">  269</a></span>&#160;    o = TextBox(frame, name=<span class="stringliteral">&quot;txtTest&quot;</span>, border=<span class="keyword">False</span>, text=<span class="stringliteral">&quot;hello world!&quot;</span>)</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="comment">#o = CheckBox(frame, name=&quot;chkTest&quot;, border=&#39;none&#39;, label=&quot;Check me!&quot;)</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="comment">#o = ListBox(frame, name=&quot;lstTest&quot;, border=&#39;none&#39;, </span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="comment">#            items={&#39;datum1&#39;: &#39;a&#39;, &#39;datum2&#39;:&#39;b&#39;, &#39;datum3&#39;:&#39;c&#39;},</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="comment">#            multiselect=&quot;--multiselect&quot; in sys.argv)</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="comment">#o = ComboBox(frame, name=&quot;cboTest&quot;,</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="comment">#            items={&#39;datum1&#39;: &#39;a&#39;, &#39;datum2&#39;:&#39;b&#39;, &#39;datum3&#39;:&#39;c&#39;},</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="comment">#            readonly=&#39;--readonly&#39; in sys.argv,</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="comment">#            )</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    frame.Show()</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;</div>
+<div class="line"><a name="l00280"></a><span class="lineno"><a class="line" href="../../d5/dbb/namespacegui_1_1tools_1_1propeditor.html#a9452a04c2f4d6d264851b36e0392d8ae">  280</a></span>&#160;    log = sys.stdout</div>
+<div class="line"><a name="l00281"></a><span class="lineno"><a class="line" href="../../d5/dbb/namespacegui_1_1tools_1_1propeditor.html#a3add1fb3a5cece3abef6e0067a961f27">  281</a></span>&#160;    w = <a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html">PropertyEditorPanel</a>(f, log)</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    w.load_object(o)</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    f.Show()</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    app.MainLoop()</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;</div>
+<div class="ttc" id="classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel_html_af029098c86d86aa8b737fa70991d8439"><div class="ttname"><a href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#af029098c86d86aa8b737fa70991d8439">gui.tools.propeditor.PropertyEditorPanel.OnPropGridSelect</a></div><div class="ttdeci">def OnPropGridSelect</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00229">propeditor.py:229</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel_html_ae4513ae19dab474ea5219005064df25b"><div class="ttname"><a href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ae4513ae19dab474ea5219005064df25b">gui.tools.propeditor.PropertyEditorPanel.groups</a></div><div class="ttdeci">groups</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00076">propeditor.py:76</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel_html_a4ef3ccbe24fbe5aed275a79ae164de58"><div class="ttname"><a href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a4ef3ccbe24fbe5aed275a79ae164de58">gui.tools.propeditor.PropertyEditorPanel.pg</a></div><div class="ttdeci">pg</div><div class="ttdoc">pg.AddPage( &quot;Page 1 - Testing All&quot; ) store the property grid for future reference ...</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00036">propeditor.py:36</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel_html_ac4e2b3d5f60c8e8f16041493fbd147ba"><div class="ttname"><a href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ac4e2b3d5f60c8e8f16041493fbd147ba">gui.tools.propeditor.PropertyEditorPanel.OnPropGridChange</a></div><div class="ttdeci">def OnPropGridChange</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00198">propeditor.py:198</a></div></div>
+<div class="ttc" id="namespacegui_1_1font_html"><div class="ttname"><a href="../../db/d8c/namespacegui_1_1font.html">gui.font</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00001">font.py:1</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel_html_ac47e4cdb7a54cc1ed4760f53c4f2aba3"><div class="ttname"><a href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ac47e4cdb7a54cc1ed4760f53c4f2aba3">gui.tools.propeditor.PropertyEditorPanel.obj</a></div><div class="ttdeci">obj</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00075">propeditor.py:75</a></div></div>
+<div class="ttc" id="classgui_1_1font_1_1Font_html"><div class="ttname"><a href="../../d4/ddc/classgui_1_1font_1_1Font.html">gui.font.Font</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00017">font.py:17</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel_html_a5b63621fb015f3a7dcc850ca796ff679"><div class="ttname"><a href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a5b63621fb015f3a7dcc850ca796ff679">gui.tools.propeditor.PropertyEditorPanel.OnDeleteProperty</a></div><div class="ttdeci">def OnDeleteProperty</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00236">propeditor.py:236</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel_html_a11f563b24906b7e0d01a118cecb0e11b"><div class="ttname"><a href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a11f563b24906b7e0d01a118cecb0e11b">gui.tools.propeditor.PropertyEditorPanel.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00026">propeditor.py:26</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel_html_a1d530cbde84a701026d4c6595a25feb9"><div class="ttname"><a href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a1d530cbde84a701026d4c6595a25feb9">gui.tools.propeditor.PropertyEditorPanel.OnPropGridPageChange</a></div><div class="ttdeci">def OnPropGridPageChange</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00254">propeditor.py:254</a></div></div>
+<div class="ttc" id="namespacegui_1_1component_html"><div class="ttname"><a href="../../d9/d90/namespacegui_1_1component.html">gui.component</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00001">component.py:1</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel_html"><div class="ttname"><a href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html">gui.tools.propeditor.PropertyEditorPanel</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00024">propeditor.py:24</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel_html_a2451150d85f502ec2282337f4c6122d9"><div class="ttname"><a href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a2451150d85f502ec2282337f4c6122d9">gui.tools.propeditor.PropertyEditorPanel.OnPropGridRightClick</a></div><div class="ttdeci">def OnPropGridRightClick</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00246">propeditor.py:246</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel_html_a47bc7c422e138484b3a350d4e8796c79"><div class="ttname"><a href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a47bc7c422e138484b3a350d4e8796c79">gui.tools.propeditor.PropertyEditorPanel.log</a></div><div class="ttdeci">log</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00028">propeditor.py:28</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel_html_a461b88b3e37b51d4922e75cb7f661027"><div class="ttname"><a href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a461b88b3e37b51d4922e75cb7f661027">gui.tools.propeditor.PropertyEditorPanel.load_object</a></div><div class="ttdeci">def load_object</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00066">propeditor.py:66</a></div></div>
+<div class="ttc" id="namespacegui_1_1controls_html"><div class="ttname"><a href="../../d7/d56/namespacegui_1_1controls.html">gui.controls</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/dbf/build_2lib_8linux-x86__64-2_87_2gui_2controls_2____init_____8py_source.html#l00001">__init__.py:1</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel_html_a4c26660b87d2ac526abc3f21f211d212"><div class="ttname"><a href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a4c26660b87d2ac526abc3f21f211d212">gui.tools.propeditor.PropertyEditorPanel.OnReserved</a></div><div class="ttdeci">def OnReserved</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00243">propeditor.py:243</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel_html_a8b5e4a77b933edb404831bd4b830fdb9"><div class="ttname"><a href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a8b5e4a77b933edb404831bd4b830fdb9">gui.tools.propeditor.PropertyEditorPanel.select</a></div><div class="ttdeci">def select</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00187">propeditor.py:187</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel_html_ae3ea8480fa794b6eb236ed99d16aa0d9"><div class="ttname"><a href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ae3ea8480fa794b6eb236ed99d16aa0d9">gui.tools.propeditor.PropertyEditorPanel.callback</a></div><div class="ttdeci">callback</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00029">propeditor.py:29</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel_html_a70adb4c5e376a473e5966a69411c1b14"><div class="ttname"><a href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a70adb4c5e376a473e5966a69411c1b14">gui.tools.propeditor.PropertyEditorPanel.panel</a></div><div class="ttdeci">panel</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00031">propeditor.py:31</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel_html_a6cdd91cff57400fad7a61b52fa63c886"><div class="ttname"><a href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a6cdd91cff57400fad7a61b52fa63c886">gui.tools.propeditor.PropertyEditorPanel.edit</a></div><div class="ttdeci">def edit</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00173">propeditor.py:173</a></div></div>
+<div class="ttc" id="namespacegui_1_1component_html_a937836205f3a4daa11179df3fc58e3c9"><div class="ttname"><a href="../../d9/d90/namespacegui_1_1component.html#a937836205f3a4daa11179df3fc58e3c9">gui.component.get</a></div><div class="ttdeci">def get</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01148">component.py:1148</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_96a7eeec1342994a7cb0d7fe7902ae74.html">build</a></li><li class="navelem"><a class="el" href="../../dir_3740601ea11ece1a00f9273977396bc4.html">lib.linux-x86_64-2.7</a></li><li class="navelem"><a class="el" href="../../dir_5bcb0661a26d4ce62009196be9ab2e39.html">gui</a></li><li class="navelem"><a class="el" href="../../dir_db0ce0c4ad9189174ab3b319d75f8add.html">tools</a></li><li class="navelem"><a class="el" href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py.html">propeditor.py</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:47 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

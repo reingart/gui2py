@@ -1,0 +1,708 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Referencia de la Clase gui.html.input.FormTextInput</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="#pri-static-attribs">Atributos privados estáticos</a> &#124;
+<a href="../../d2/d9d/classgui_1_1html_1_1input_1_1FormTextInput-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase gui.html.input.FormTextInput</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagrama de herencias de gui.html.input.FormTextInput</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/db2/classgui_1_1html_1_1input_1_1FormTextInput__inherit__graph.png" border="0" usemap="#gui_8html_8input_8FormTextInput_inherit__map" alt="Inheritance graph"/></div>
+<map name="gui_8html_8input_8FormTextInput_inherit__map" id="gui_8html_8input_8FormTextInput_inherit__map">
+<area shape="rect" id="node5" href="../../d6/d3a/classgui_1_1html_1_1input_1_1FormPasswordInput.html" title="gui.html.input.FormPassword\lInput" alt="" coords="17,246,209,287"/><area shape="rect" id="node3" href="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin.html" title="gui.html.input.FormControl\lMixin" alt="" coords="100,81,276,122"/></map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración para gui.html.input.FormTextInput:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/dc9/classgui_1_1html_1_1input_1_1FormTextInput__coll__graph.png" border="0" usemap="#gui_8html_8input_8FormTextInput_coll__map" alt="Collaboration graph"/></div>
+<map name="gui_8html_8input_8FormTextInput_coll__map" id="gui_8html_8input_8FormTextInput_coll__map">
+<area shape="rect" id="node3" href="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin.html" title="gui.html.input.FormControl\lMixin" alt="" coords="100,81,276,122"/></map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:abdbe4685d204fbb1df9a196fac529b73"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput.html#abdbe4685d204fbb1df9a196fac529b73">__init__</a></td></tr>
+<tr class="separator:abdbe4685d204fbb1df9a196fac529b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aded943ab785b1a1d04a6b6104bf03a56"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput.html#aded943ab785b1a1d04a6b6104bf03a56">get_value</a></td></tr>
+<tr class="separator:aded943ab785b1a1d04a6b6104bf03a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdbe4685d204fbb1df9a196fac529b73"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput.html#abdbe4685d204fbb1df9a196fac529b73">__init__</a></td></tr>
+<tr class="separator:abdbe4685d204fbb1df9a196fac529b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aded943ab785b1a1d04a6b6104bf03a56"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput.html#aded943ab785b1a1d04a6b6104bf03a56">get_value</a></td></tr>
+<tr class="separator:aded943ab785b1a1d04a6b6104bf03a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a577d35d1ee32ddca4788470248fb2bdc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin.html#a577d35d1ee32ddca4788470248fb2bdc">OnEnter</a></td></tr>
+<tr class="separator:a577d35d1ee32ddca4788470248fb2bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a577d35d1ee32ddca4788470248fb2bdc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin.html#a577d35d1ee32ddca4788470248fb2bdc">OnEnter</a></td></tr>
+<tr class="separator:a577d35d1ee32ddca4788470248fb2bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad643067c1c98032b3fcdcdd6a7d867f1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin.html#ad643067c1c98032b3fcdcdd6a7d867f1">OnClick</a></td></tr>
+<tr class="separator:ad643067c1c98032b3fcdcdd6a7d867f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad643067c1c98032b3fcdcdd6a7d867f1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin.html#ad643067c1c98032b3fcdcdd6a7d867f1">OnClick</a></td></tr>
+<tr class="separator:ad643067c1c98032b3fcdcdd6a7d867f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:ab573a47c04a4e0abfad63b3f2dbf5579"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput.html#ab573a47c04a4e0abfad63b3f2dbf5579">text</a></td></tr>
+<tr class="memdesc:ab573a47c04a4e0abfad63b3f2dbf5579"><td class="mdescLeft">&#160;</td><td class="mdescRight">style |= wx.TE_PROCESS_ENTER  <a href="#ab573a47c04a4e0abfad63b3f2dbf5579">Más...</a><br/></td></tr>
+<tr class="separator:ab573a47c04a4e0abfad63b3f2dbf5579"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54df29d6e840ca86599a6d84e7d8c4f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput.html#a54df29d6e840ca86599a6d84e7d8c4f6">size</a></td></tr>
+<tr class="separator:a54df29d6e840ca86599a6d84e7d8c4f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0392a7bc8e58477f465703821a9b0782"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput.html#a0392a7bc8e58477f465703821a9b0782">editable</a></td></tr>
+<tr class="separator:a0392a7bc8e58477f465703821a9b0782"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82ef5025ddb87a3dbb46a87375cca100"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin.html#a82ef5025ddb87a3dbb46a87375cca100">name</a></td></tr>
+<tr class="separator:a82ef5025ddb87a3dbb46a87375cca100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Atributos privados estáticos</h2></td></tr>
+<tr class="memitem:ace432f247fcdd1be4603ac8d6bbf4c8d"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput.html#ace432f247fcdd1be4603ac8d6bbf4c8d">__metaclass__</a> = <a class="el" href="../../dd/de2/namespacegui_1_1html_1_1input.html#aec59837535b3fa70b92673a4a0467710">TypeHandler</a>(&quot;TEXT&quot;)</td></tr>
+<tr class="separator:ace432f247fcdd1be4603ac8d6bbf4c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cb6e67db9d711241e4a262e21d0cbd5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput.html#a7cb6e67db9d711241e4a262e21d0cbd5">_registry</a> = <a class="el" href="../../d5/de5/namespacegui_1_1registry.html#a8f9ba27cffe41dc5efc1a82c409ad77b">registry.HTML</a></td></tr>
+<tr class="separator:a7cb6e67db9d711241e4a262e21d0cbd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00060">60</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="abdbe4685d204fbb1df9a196fac529b73"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.input.FormTextInput.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>form</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>tag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parser</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00063">63</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d6/da9/build_2lib_8linux-x86__64-2_87_2gui_2html_2____init_____8py_source.html#l00016">gui.html.GetParam()</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00063">gui.html.input.FormTextInput.__init__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput_abdbe4685d204fbb1df9a196fac529b73_cgraph.png" border="0" usemap="#d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput_abdbe4685d204fbb1df9a196fac529b73_cgraph" alt=""/></div>
+<map name="d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput_abdbe4685d204fbb1df9a196fac529b73_cgraph" id="d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput_abdbe4685d204fbb1df9a196fac529b73_cgraph">
+<area shape="rect" id="node2" href="../../d1/d9f/classgui_1_1component_1_1ControlSuper.html#a485519b5a8d351bbb3d79b893968cc11" title="gui.component.ControlSuper.get\l_char_width" alt="" coords="249,5,458,46"/><area shape="rect" id="node3" href="../../de/d77/namespacegui_1_1html.html#ad2a57a006615e76d51d1334fd477fd59" title="gui.html.GetParam" alt="" coords="288,71,419,97"/><area shape="rect" id="node4" href="../../df/d1e/classgui_1_1controls_1_1textbox_1_1TextBox.html#a2e025360c1ee4bed98920d83ab9e0db8" title="gui.controls.textbox.Text\lBox.set_max_length" alt="" coords="270,122,437,163"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput_abdbe4685d204fbb1df9a196fac529b73_icgraph.png" border="0" usemap="#d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput_abdbe4685d204fbb1df9a196fac529b73_icgraph" alt=""/></div>
+<map name="d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput_abdbe4685d204fbb1df9a196fac529b73_icgraph" id="d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput_abdbe4685d204fbb1df9a196fac529b73_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abdbe4685d204fbb1df9a196fac529b73"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.input.FormTextInput.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>form</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>tag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parser</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00063">63</a> del archivo <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00063">gui.html.input.FormTextInput.__init__()</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00078">gui.html.input.FormTextInput.editable</a>, <a class="el" href="../../da/d65/build_2lib_8linux-x86__64-2_87_2gui_2controls_2textbox_8py_source.html#l00229">gui.controls.textbox.TextBox.editable</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00867">gui.component.ControlSuper.get_char_width()</a>, <a class="el" href="../../d6/da9/build_2lib_8linux-x86__64-2_87_2gui_2html_2____init_____8py_source.html#l00016">gui.html.GetParam()</a>, <a class="el" href="../../da/d65/build_2lib_8linux-x86__64-2_87_2gui_2controls_2textbox_8py_source.html#l00118">gui.controls.textbox.TextBox.set_max_length()</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00054">gui.html.input.SubmitButton.size</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00076">gui.html.input.FormTextInput.size</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00130">gui.font.Font.size</a>, <a class="el" href="../../d6/df6/build_2lib_8linux-x86__64-2_87_2gui_2controls_2image_8py_source.html#l00177">gui.controls.image.Image.size</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00233">gui.graphic.Bitmap.size</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00876">gui.component.ControlSuper.size</a>, <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html#l00029">gui.controls.combobox.ComboBox.text</a>, <a class="el" href="../../d5/d23/build_2lib_8linux-x86__64-2_87_2gui_2controls_2label_8py_source.html#l00053">gui.controls.label.Label.text</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00069">gui.html.input.FormTextInput.text</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00084">gui.controls.notebook.TabPanel.text</a>, <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00165">gui.controls.treeview.TreeItem.text</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00187">gui.controls.listbox.ItemContainerControl.text</a>, <a class="el" href="../../da/d65/build_2lib_8linux-x86__64-2_87_2gui_2controls_2textbox_8py_source.html#l00232">gui.controls.textbox.TextBox.text</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00282">gui.controls.listview.ListColumn.text</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00367">gui.controls.gridview.GridColumn.text</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput_abdbe4685d204fbb1df9a196fac529b73_cgraph.png" border="0" usemap="#d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput_abdbe4685d204fbb1df9a196fac529b73_cgraph" alt=""/></div>
+<map name="d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput_abdbe4685d204fbb1df9a196fac529b73_cgraph" id="d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput_abdbe4685d204fbb1df9a196fac529b73_cgraph">
+<area shape="rect" id="node2" href="../../d1/d9f/classgui_1_1component_1_1ControlSuper.html#a485519b5a8d351bbb3d79b893968cc11" title="gui.component.ControlSuper.get\l_char_width" alt="" coords="249,5,458,46"/><area shape="rect" id="node3" href="../../de/d77/namespacegui_1_1html.html#ad2a57a006615e76d51d1334fd477fd59" title="gui.html.GetParam" alt="" coords="288,71,419,97"/><area shape="rect" id="node4" href="../../df/d1e/classgui_1_1controls_1_1textbox_1_1TextBox.html#a2e025360c1ee4bed98920d83ab9e0db8" title="gui.controls.textbox.Text\lBox.set_max_length" alt="" coords="270,122,437,163"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="aded943ab785b1a1d04a6b6104bf03a56"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.input.FormTextInput.get_value </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00079">79</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html#l00029">gui.controls.combobox.ComboBox.text</a>, <a class="el" href="../../d5/d23/build_2lib_8linux-x86__64-2_87_2gui_2controls_2label_8py_source.html#l00053">gui.controls.label.Label.text</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00069">gui.html.input.FormTextInput.text</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00084">gui.controls.notebook.TabPanel.text</a>, <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00165">gui.controls.treeview.TreeItem.text</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00187">gui.controls.listbox.ItemContainerControl.text</a>, <a class="el" href="../../da/d65/build_2lib_8linux-x86__64-2_87_2gui_2controls_2textbox_8py_source.html#l00232">gui.controls.textbox.TextBox.text</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00282">gui.controls.listview.ListColumn.text</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00367">gui.controls.gridview.GridColumn.text</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00079">gui.html.input.FormTextInput.get_value()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput_aded943ab785b1a1d04a6b6104bf03a56_icgraph.png" border="0" usemap="#d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput_aded943ab785b1a1d04a6b6104bf03a56_icgraph" alt=""/></div>
+<map name="d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput_aded943ab785b1a1d04a6b6104bf03a56_icgraph" id="d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput_aded943ab785b1a1d04a6b6104bf03a56_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aded943ab785b1a1d04a6b6104bf03a56"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.input.FormTextInput.get_value </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00079">79</a> del archivo <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00079">gui.html.input.FormTextInput.get_value()</a>, <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html#l00029">gui.controls.combobox.ComboBox.text</a>, <a class="el" href="../../d5/d23/build_2lib_8linux-x86__64-2_87_2gui_2controls_2label_8py_source.html#l00053">gui.controls.label.Label.text</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00069">gui.html.input.FormTextInput.text</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00084">gui.controls.notebook.TabPanel.text</a>, <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00165">gui.controls.treeview.TreeItem.text</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00187">gui.controls.listbox.ItemContainerControl.text</a>, <a class="el" href="../../da/d65/build_2lib_8linux-x86__64-2_87_2gui_2controls_2textbox_8py_source.html#l00232">gui.controls.textbox.TextBox.text</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00282">gui.controls.listview.ListColumn.text</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00367">gui.controls.gridview.GridColumn.text</a> y <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00012">gui.html.input.TypeHandler()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput_aded943ab785b1a1d04a6b6104bf03a56_cgraph.png" border="0" usemap="#d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput_aded943ab785b1a1d04a6b6104bf03a56_cgraph" alt=""/></div>
+<map name="d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput_aded943ab785b1a1d04a6b6104bf03a56_cgraph" id="d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput_aded943ab785b1a1d04a6b6104bf03a56_cgraph">
+<area shape="rect" id="node2" href="../../dd/de2/namespacegui_1_1html_1_1input.html#aec59837535b3fa70b92673a4a0467710" title="gui.html.input.TypeHandler" alt="" coords="264,36,443,63"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad643067c1c98032b3fcdcdd6a7d867f1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.input.FormControlMixin.OnClick </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00042">42</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00048">gui.html.input.SubmitButton.__init__()</a> y <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00042">gui.html.input.FormControlMixin.OnClick()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_ad643067c1c98032b3fcdcdd6a7d867f1_icgraph.png" border="0" usemap="#d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_ad643067c1c98032b3fcdcdd6a7d867f1_icgraph" alt=""/></div>
+<map name="d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_ad643067c1c98032b3fcdcdd6a7d867f1_icgraph" id="d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_ad643067c1c98032b3fcdcdd6a7d867f1_icgraph">
+<area shape="rect" id="node2" href="../../d2/d71/classgui_1_1html_1_1input_1_1SubmitButton.html#a0447d0e532dec8121c5d8595d9c11314" title="gui.html.input.SubmitButton.\l__init__" alt="" coords="229,29,416,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad643067c1c98032b3fcdcdd6a7d867f1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.input.FormControlMixin.OnClick </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00042">42</a> del archivo <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00042">gui.html.input.FormControlMixin.OnClick()</a> y <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00012">gui.html.input.TypeHandler()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_ad643067c1c98032b3fcdcdd6a7d867f1_cgraph.png" border="0" usemap="#d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_ad643067c1c98032b3fcdcdd6a7d867f1_cgraph" alt=""/></div>
+<map name="d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_ad643067c1c98032b3fcdcdd6a7d867f1_cgraph" id="d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_ad643067c1c98032b3fcdcdd6a7d867f1_cgraph">
+<area shape="rect" id="node2" href="../../dd/de2/namespacegui_1_1html_1_1input.html#aec59837535b3fa70b92673a4a0467710" title="gui.html.input.TypeHandler" alt="" coords="229,36,408,63"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a577d35d1ee32ddca4788470248fb2bdc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.input.FormControlMixin.OnEnter </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00040">40</a> del archivo <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00040">gui.html.input.FormControlMixin.OnEnter()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_a577d35d1ee32ddca4788470248fb2bdc_cgraph.png" border="0" usemap="#d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_a577d35d1ee32ddca4788470248fb2bdc_cgraph" alt=""/></div>
+<map name="d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_a577d35d1ee32ddca4788470248fb2bdc_cgraph" id="d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_a577d35d1ee32ddca4788470248fb2bdc_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a577d35d1ee32ddca4788470248fb2bdc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.input.FormControlMixin.OnEnter </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00040">40</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00040">gui.html.input.FormControlMixin.OnEnter()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_a577d35d1ee32ddca4788470248fb2bdc_icgraph.png" border="0" usemap="#d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_a577d35d1ee32ddca4788470248fb2bdc_icgraph" alt=""/></div>
+<map name="d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_a577d35d1ee32ddca4788470248fb2bdc_icgraph" id="d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_a577d35d1ee32ddca4788470248fb2bdc_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="ace432f247fcdd1be4603ac8d6bbf4c8d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.html.input.FormTextInput.__metaclass__ = <a class="el" href="../../dd/de2/namespacegui_1_1html_1_1input.html#aec59837535b3fa70b92673a4a0467710">TypeHandler</a>(&quot;TEXT&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00061">61</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7cb6e67db9d711241e4a262e21d0cbd5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.html.input.FormTextInput._registry = <a class="el" href="../../d5/de5/namespacegui_1_1registry.html#a8f9ba27cffe41dc5efc1a82c409ad77b">registry.HTML</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00062">62</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0392a7bc8e58477f465703821a9b0782"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.html.input.FormTextInput.editable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00078">78</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00063">gui.html.input.FormTextInput.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a82ef5025ddb87a3dbb46a87375cca100"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.html.input.FormControlMixin.name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00036">36</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00032">gui.html.input.FormControlMixin.__init__()</a> y <a class="el" href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00062">gui.spec.EventSpec.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a54df29d6e840ca86599a6d84e7d8c4f6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.html.input.FormTextInput.size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00076">76</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dc/db6/gui_2html_2select_8py_source.html#l00008">gui.html.select.SingleSelectControl.__init__()</a>, <a class="el" href="../../d4/d6c/gui_2html_2label_8py_source.html#l00014">gui.html.label.FormLabel.__init__()</a>, <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00063">gui.html.input.FormTextInput.__init__()</a> y <a class="el" href="../../d5/d23/build_2lib_8linux-x86__64-2_87_2gui_2controls_2label_8py_source.html#l00032">gui.controls.label.Label._set_text()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab573a47c04a4e0abfad63b3f2dbf5579"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.html.input.FormTextInput.text</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>style |= wx.TE_PROCESS_ENTER </p>
+<p>self.Bind(wx.EVT_TEXT_ENTER, self.OnEnter) </p>
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00069">69</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d4/d6c/gui_2html_2label_8py_source.html#l00014">gui.html.label.FormLabel.__init__()</a>, <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00063">gui.html.input.FormTextInput.__init__()</a>, <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00125">gui.html.input.FormTextArea.__init__()</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00079">gui.html.input.FormTextInput.get_value()</a> y <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00140">gui.html.input.FormTextArea.get_value()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>build/lib.linux-x86_64-2.7/gui/html/<a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/dc4/namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="../../de/d77/namespacegui_1_1html.html">html</a></li><li class="navelem"><a class="el" href="../../dd/de2/namespacegui_1_1html_1_1input.html">input</a></li><li class="navelem"><a class="el" href="../../d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput.html">FormTextInput</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:48 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

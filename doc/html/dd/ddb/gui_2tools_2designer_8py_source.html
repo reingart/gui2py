@@ -1,0 +1,958 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Fichero Fuente gui/tools/designer.py</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('dd/ddb/gui_2tools_2designer_8py_source.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">designer.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dd/ddb/gui_2tools_2designer_8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">#!/usr/bin/python</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">&quot;Visual in-place Layout Designer (point &amp; click interfase) of gui2py&#39;s windows&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;__author__ = <span class="stringliteral">&quot;Mariano Reingart (reingart@gmail.com)&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;__copyright__ = <span class="stringliteral">&quot;Copyright (C) 2013- Mariano Reingart&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;__license__ = <span class="stringliteral">&quot;LGPL 3.0&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"># some parts where inspired or borrowed from PythonCard, wxGlade or Boa et.al.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> wx</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> wx.lib.agw.supertooltip <span class="keyword">as</span> STT</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">from</span> .. <span class="keyword">import</span> images</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">from</span> ..component <span class="keyword">import</span> Control</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;DEBUG = <span class="keyword">False</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;GRID_SIZE = (10, 10)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;CURSOR_HAND = wx.CURSOR_HAND</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;CURSOR_MOVING = wx.CURSOR_RIGHT_ARROW</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;CURSOR_SIZING = wx.CURSOR_SIZENWSE</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">class </span>BasicDesigner:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="stringliteral">&quot;Simple point-and-click layout designer (supports move &amp; resize controls)&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aa1555d60319d014b07affc837c5f2dbd">   29</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aa1555d60319d014b07affc837c5f2dbd">__init__</a>(self, parent, inspector=None):</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a21be0ba86bcaa6ae12a96ffb66a47faa">parent</a> = parent</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a316585262d7ed22890206f11eab3cca7">current</a> = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a09103eaa17ddb6cad04098d9d4799e09">selection</a> = []</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aeb2ac7b44fb8d777254c0618d0b37e51">resizing</a> = <span class="keyword">False</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment"># bind all objects that can be controlled by this class</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        parent.designer = self</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ad244cf98af34097e633b2aedb666baf9">inspector</a> = inspector</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a3d228ecbd90ac2d2a2c4b5bd16db22ca">last_wx_obj</a> = <span class="keywordtype">None</span>     <span class="comment"># used to draw the resize handle</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#af3878d5edf4f9fefea378db6750999c8">onclose</a> = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a8fa8f2fcc07cfba06d32f0212041d90a">timestamp</a> = <span class="keywordtype">None</span>       <span class="comment"># used to track double clicks on MSW</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aba57a42564d5b254ca18a68dfeeeaed3">last_xy</a> = <span class="keywordtype">None</span>         <span class="comment"># last clicked position</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a8874c79a78fed38e98fdddf65aab1e05">overlay</a> = <span class="keywordtype">None</span>         <span class="comment"># wx.Overlay to draw a rubberband effect</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ab438e7b78dc9494cfb71315b358616e4">   43</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ab438e7b78dc9494cfb71315b358616e4">__call__</a>(self, evt):</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="stringliteral">&quot;Handler for EVT_MOUSE_EVENTS (binded in design mode)&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span> evt.IsCommandEvent():</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="comment"># menu clicked</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ad244cf98af34097e633b2aedb666baf9">inspector</a>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                wx_obj = evt.GetEventObject()</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">if</span> isinstance(wx_obj, wx.Frame):</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    wx_obj = wx_obj.GetMenuBar()    <span class="comment"># wx28/MSW</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                obj = wx_obj.obj.find(evt.GetId())</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                self.inspector.inspect(obj)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">elif</span> evt.GetEventType() == wx.EVT_PAINT.typeId:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            wx_obj = evt.GetEventObject()</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">if</span> isinstance(wx_obj, wx.Frame):</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a7b2047d29fef8e4b929bb816176214c2">draw_grid</a>(evt)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                evt.Skip()  <span class="comment"># call the default handler</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">elif</span> evt.GetEventType() == wx.EVT_SIZE.typeId:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="comment"># update the size in the propeditor (only for the top level window)</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            obj = evt.GetEventObject().obj</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> obj.get_parent():  </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                w, h = obj.size</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">if</span> w <span class="keywordflow">and</span> h:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    obj._width, obj._height = <span class="stringliteral">&quot;%spx&quot;</span> % w, <span class="stringliteral">&quot;%spx&quot;</span> % str(h)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    wx.CallAfter(self.inspector.inspect, obj)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="comment"># update the selection markers position (needed if using sizer!)</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordflow">for</span> obj <span class="keywordflow">in</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a09103eaa17ddb6cad04098d9d4799e09">selection</a>:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    wx.CallAfter(obj.sel_marker.update)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    <span class="keywordflow">if</span> obj.facade:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        wx.CallAfter(obj.facade.update)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            evt.Skip()  <span class="comment"># call the default handler</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">elif</span> evt.GetEventType() == wx.EVT_CLOSE.typeId:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="comment"># call the external close handler (useful to save)</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">if</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#af3878d5edf4f9fefea378db6750999c8">onclose</a>:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#af3878d5edf4f9fefea378db6750999c8">onclose</a>(evt, self):</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    evt.Veto()  <span class="comment"># if onclose returns False, close is ignored</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    evt.Skip() </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">elif</span> evt.GetEventType() == wx.EVT_KEY_DOWN.typeId:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ae6bd0af10b6e21d249814190b671afd3">key_press</a>(evt)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">elif</span> evt.GetEventType() == wx.EVT_KEY_UP.typeId:</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">if</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a09103eaa17ddb6cad04098d9d4799e09">selection</a> <span class="keywordflow">and</span> <span class="keywordflow">not</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a316585262d7ed22890206f11eab3cca7">current</a>:</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="comment"># update the position on the property Editor (last selected)</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                self.inspector.inspect(self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a09103eaa17ddb6cad04098d9d4799e09">selection</a>[-1])</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">elif</span> evt.GetEventType() == (wx.EVT_ENTER_WINDOW.typeId):</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            obj = getattr(evt.GetEventObject(), <span class="stringliteral">&quot;obj&quot;</span>)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="comment"># check if the control should be replaced with a &quot;facade&quot; fake image:</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">if</span> obj._meta.facade <span class="keywordflow">and</span> <span class="keywordflow">not</span> obj.facade <span class="keywordflow">and</span> obj.parent:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                obj.facade = Facade</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">elif</span> evt.GetEventType() == wx.EVT_LEFT_DOWN.typeId:</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="comment"># calculate time between clicks (is this a double click?)</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a8fa8f2fcc07cfba06d32f0212041d90a">timestamp</a> <span class="keywordflow">or</span> evt.Timestamp - self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a8fa8f2fcc07cfba06d32f0212041d90a">timestamp</a> &gt; 300 <span class="keywordflow">or</span> \</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                   self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aba57a42564d5b254ca18a68dfeeeaed3">last_xy</a> != wx.GetMousePosition():</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="comment"># no, process normal mouse click and store obj for later dclick</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a1bdaf6b80465efa4a0ce37c65620bfc0">mouse_down</a>(evt)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a678c487a73bb44c5edd58ce75f20b3b7">last_obj</a> = getattr(evt.GetEventObject(), <span class="stringliteral">&quot;obj&quot;</span>)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">elif</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ad244cf98af34097e633b2aedb666baf9">inspector</a>:</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="comment"># on dclick, inspect &amp; edit the default property (ie label)</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                wx.CallAfter(self.inspector.inspect, self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a678c487a73bb44c5edd58ce75f20b3b7">last_obj</a>, <span class="keyword">False</span>, <span class="keyword">True</span>)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a8fa8f2fcc07cfba06d32f0212041d90a">timestamp</a> = evt.Timestamp</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aba57a42564d5b254ca18a68dfeeeaed3">last_xy</a> = wx.GetMousePosition()</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">elif</span> evt.GetEventType() == wx.EVT_LEFT_UP.typeId:</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a7e2988071913c13b913a6557893a0be5">mouse_up</a>(evt)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">elif</span> evt.GetEventType() == wx.EVT_MOTION.typeId:</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="comment"># wait 250ms before EVT_LEFT_DOWN to prevent accidental moves</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">if</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a8fa8f2fcc07cfba06d32f0212041d90a">timestamp</a> <span class="keywordflow">and</span> evt.Timestamp - self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a8fa8f2fcc07cfba06d32f0212041d90a">timestamp</a> &gt; 250:</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0dcffe54c0f15a01d03fbe9054ce2065">mouse_move</a>(evt)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">elif</span> evt.GetEventType() == wx.EVT_RIGHT_DOWN.typeId <span class="keywordflow">and</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ad244cf98af34097e633b2aedb666baf9">inspector</a>:</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="comment"># on right click, inspect and pop up the context menu</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="comment"># do this after this event to prevent reference issues (deletions!)</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a316585262d7ed22890206f11eab3cca7">current</a> = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            wx.CallAfter(self.inspector.inspect, </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                         getattr(evt.GetEventObject(), <span class="stringliteral">&quot;obj&quot;</span>), <span class="keyword">True</span>, <span class="keyword">False</span>, </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                         wx.GetMousePosition())</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">pass</span> <span class="comment">#print &quot;UNKNOWN EVENT!&quot;, evt.GetEventType()</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="comment"># allow default behavior (set focus / tab change):</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">if</span> isinstance(evt.GetEventObject(), wx.Notebook):</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            evt.Skip()</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;       </div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a1bdaf6b80465efa4a0ce37c65620bfc0">  123</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a1bdaf6b80465efa4a0ce37c65620bfc0">mouse_down</a>(self, evt): </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="stringliteral">&quot;Get the selected object and store start position&quot;</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;down!&quot;</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">if</span> (<span class="keywordflow">not</span> evt.ControlDown() <span class="keywordflow">and</span> <span class="keywordflow">not</span> evt.ShiftDown()) <span class="keywordflow">or</span> evt.AltDown():</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keywordflow">for</span> obj <span class="keywordflow">in</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a09103eaa17ddb6cad04098d9d4799e09">selection</a>:</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                <span class="comment"># clear marker</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <span class="keywordflow">if</span> obj.sel_marker:</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                    obj.sel_marker.show(<span class="keyword">False</span>)</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                    obj.sel_marker.destroy()</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                    obj.sel_marker = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a09103eaa17ddb6cad04098d9d4799e09">selection</a> = []  <span class="comment"># clear previous selection</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        wx_obj = evt.GetEventObject()</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">if</span> wx_obj.Parent <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> evt.AltDown():</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> evt.AltDown():</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                evt.Skip()</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <span class="comment"># start the rubberband effect (multiple selection using the mouse) </span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a316585262d7ed22890206f11eab3cca7">current</a> = wx_obj</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a8874c79a78fed38e98fdddf65aab1e05">overlay</a> = wx.Overlay()</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#adcea83aeb6437827df7706156b6e89bc">pos</a> = evt.GetPosition() </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            self.parent.wx_obj.CaptureMouse()</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="comment">#if self.inspector and hasattr(wx_obj, &quot;obj&quot;):</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="comment">#    self.inspector.inspect(wx_obj.obj)  # inspect top level window</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="comment">#self.dclick = False</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="comment"># create the selection marker and assign it to the control</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            obj = wx_obj.obj</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a8874c79a78fed38e98fdddf65aab1e05">overlay</a> = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> wx_obj</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            sx, sy = wx_obj.ScreenToClient(wx_obj.GetPositionTuple())</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            dx, dy = wx_obj.ScreenToClient(wx.GetMousePosition())</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#adcea83aeb6437827df7706156b6e89bc">pos</a> = wx_obj.ScreenToClient(wx.GetMousePosition())</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aaa9e18460582b807dffa0bc3ab0ae089">start</a> = (sx - dx, sy - dy)</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a316585262d7ed22890206f11eab3cca7">current</a> = wx_obj</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;capture...&quot;</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="comment"># do not capture on TextCtrl, it will fail (blocking) at least in gtk</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="comment"># do not capture on wx.Notebook to allow selecting the tabs</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> isinstance(wx_obj, wx.Notebook):</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                self.parent.wx_obj.CaptureMouse()</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a556b6cf9d1f11a9d55238c6d24ea5d0a">select</a>(obj, keep_selection=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0dcffe54c0f15a01d03fbe9054ce2065">  165</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0dcffe54c0f15a01d03fbe9054ce2065">mouse_move</a>(self, evt):</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="stringliteral">&quot;Move the selected object&quot;</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;move!&quot;</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a316585262d7ed22890206f11eab3cca7">current</a> <span class="keywordflow">and</span> <span class="keywordflow">not</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a8874c79a78fed38e98fdddf65aab1e05">overlay</a>:</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            wx_obj = self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a316585262d7ed22890206f11eab3cca7">current</a></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            sx, sy = self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aaa9e18460582b807dffa0bc3ab0ae089">start</a></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            x, y = wx.GetMousePosition()</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="comment"># calculate the new position (this will overwrite relative dimensions):</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            x, y = (x + sx, y + sy)</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <span class="keywordflow">if</span> evt.ShiftDown():     <span class="comment"># snap to grid:</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                x = x / GRID_SIZE[0] * GRID_SIZE[0]</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                y = y / GRID_SIZE[1] * GRID_SIZE[1]</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            <span class="comment"># calculate the diff to use in the rest of the selected objects:</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            ox, oy = wx_obj.obj.pos</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            dx, dy = (x - ox), (y - oy)</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="comment"># move all selected objects:</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <span class="keywordflow">for</span> obj <span class="keywordflow">in</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a09103eaa17ddb6cad04098d9d4799e09">selection</a>:</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                x, y = obj.pos</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                x = x + dx</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                y = y + dy</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                obj.pos = (wx.Point(x, y))</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">elif</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a8874c79a78fed38e98fdddf65aab1e05">overlay</a>:</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            wx_obj = self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a316585262d7ed22890206f11eab3cca7">current</a></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            pos = evt.GetPosition()</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="comment"># convert to relative client coordinates of the containter:</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="keywordflow">if</span> evt.GetEventObject() != wx_obj:</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                pos = evt.GetEventObject().ClientToScreen(pos)  <span class="comment"># frame</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                pos = wx_obj.ScreenToClient(pos)                <span class="comment"># panel</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            rect = wx.RectPP(self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#adcea83aeb6437827df7706156b6e89bc">pos</a>, pos) </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="comment"># Draw the rubber-band rectangle using an overlay so it </span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="comment"># will manage keeping the rectangle and the former window </span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="comment"># contents separate. </span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            dc = wx.ClientDC(wx_obj) </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            odc = wx.DCOverlay(self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a8874c79a78fed38e98fdddf65aab1e05">overlay</a>, dc) </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            odc.Clear() </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            dc.SetPen(wx.Pen(<span class="stringliteral">&quot;blue&quot;</span>, 2)) </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <span class="keywordflow">if</span> <span class="stringliteral">&#39;wxMac&#39;</span> <span class="keywordflow">in</span> wx.PlatformInfo: </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                dc.SetBrush(wx.Brush(wx.Colour(0xC0, 0xC0, 0xC0, 0x80))) </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="keywordflow">else</span>: </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                dc.SetBrush(wx.TRANSPARENT_BRUSH) </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            dc.DrawRectangleRect(rect)</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            del odc <span class="comment"># work around a bug in the Python wrappers to make </span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                    <span class="comment"># sure the odc is destroyed before the dc is. </span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;</div>
+<div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#add691788f47e55d19b47313e5f3c3b68">  209</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#add691788f47e55d19b47313e5f3c3b68">do_resize</a>(self, evt, wx_obj, (n, w, s, e)):</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="stringliteral">&quot;Called by SelectionTag&quot;</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="comment"># calculate the pos (minus the offset, not in a panel like rw!)</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        pos = wx_obj.ScreenToClient(wx.GetMousePosition())</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        x, y = pos</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keywordflow">if</span> evt.ShiftDown():     <span class="comment"># snap to grid:</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            x = x / GRID_SIZE[0] * GRID_SIZE[0]</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            y = y / GRID_SIZE[1] * GRID_SIZE[1]</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        pos = wx.Point(x, y)</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aeb2ac7b44fb8d777254c0618d0b37e51">resizing</a> <span class="keywordflow">or</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aeb2ac7b44fb8d777254c0618d0b37e51">resizing</a> != (wx_obj, (n, w, s, e)):</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#adcea83aeb6437827df7706156b6e89bc">pos</a> = list(pos)                        <span class="comment"># store starting point</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aeb2ac7b44fb8d777254c0618d0b37e51">resizing</a> = (wx_obj, (n, w, s, e))      <span class="comment"># track obj and handle</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            delta = pos - self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#adcea83aeb6437827df7706156b6e89bc">pos</a> </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;RESIZING: n, w, s, e&quot;</span>, n, w, s, e</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="keywordflow">if</span> n <span class="keywordflow">or</span> w <span class="keywordflow">or</span> s <span class="keywordflow">or</span> e:</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                <span class="comment"># resize according the direction (n, w, s, e)</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                x = wx_obj.Position[0] + e * delta[0]</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                y = wx_obj.Position[1] + n * delta[1]</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                <span class="keywordflow">if</span> w <span class="keywordflow">or</span> e:</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                    <span class="keywordflow">if</span> <span class="keywordflow">not</span> isinstance(wx_obj, wx.TopLevelWindow):</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                        width = wx_obj.Size[0] + (w - e) * delta[0]</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                    <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                        width = wx_obj.ClientSize[0] + (w - e) * delta[0]</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                    width = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                <span class="keywordflow">if</span> n <span class="keywordflow">or</span> s:</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                    height = wx_obj.Size[1] + (s - n) * delta[1]</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                    height = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                <span class="comment"># just move</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                x = wx_obj.Position[0] + delta[0]</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                y = wx_obj.Position[1] + delta[1]</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                width = height = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            new_pos = (x, y)</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            new_size = (width, height)</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            <span class="keywordflow">if</span> new_size != wx_obj.GetSize() <span class="keywordflow">or</span> new_pos != wx_obj.GetPosition():</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                <span class="comment"># reset margins (TODO: avoid resizing recursion)</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                wx_obj.obj.margin_left = 0</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                wx_obj.obj.margin_right = 0</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                wx_obj.obj.margin_top = 0</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                wx_obj.obj.margin_bottom = 0</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                wx_obj.obj.pos = new_pos      <span class="comment"># update gui specs (position)</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                <span class="comment"># update gui specs (size), but do not alter default value</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                <span class="keywordflow">if</span> width <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> height <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                    wx_obj.obj.width = width</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                    wx_obj.obj.height = height</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                <span class="keywordflow">elif</span> width <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                    wx_obj.obj.width = width</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                <span class="keywordflow">elif</span> height <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                    wx_obj.obj.height = height</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                <span class="comment"># only update on sw for a smooth resize</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                <span class="keywordflow">if</span> w:</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                    self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#adcea83aeb6437827df7706156b6e89bc">pos</a>[0] = pos[0]        <span class="comment"># store new starting point</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                <span class="keywordflow">if</span> s:</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                    self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#adcea83aeb6437827df7706156b6e89bc">pos</a>[1] = pos[1]        <span class="comment"># store new starting point</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
+<div class="line"><a name="l00267"></a><span class="lineno"><a class="line" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a7e2988071913c13b913a6557893a0be5">  267</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a7e2988071913c13b913a6557893a0be5">mouse_up</a>(self, evt, wx_obj=None):</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="stringliteral">&quot;Release the selected object (pass a wx_obj if the event was captured)&quot;</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aeb2ac7b44fb8d777254c0618d0b37e51">resizing</a> = <span class="keyword">False</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a316585262d7ed22890206f11eab3cca7">current</a>: </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            wx_obj = self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a316585262d7ed22890206f11eab3cca7">current</a></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <span class="keywordflow">if</span> self.parent.wx_obj.HasCapture():</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                self.parent.wx_obj.ReleaseMouse()</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a316585262d7ed22890206f11eab3cca7">current</a> = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            <span class="keywordflow">if</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a8874c79a78fed38e98fdddf65aab1e05">overlay</a>:</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                <span class="comment"># When the mouse is released we reset the overlay and it </span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                <span class="comment"># restores the former content to the window. </span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                dc = wx.ClientDC(wx_obj)</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                odc = wx.DCOverlay(self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a8874c79a78fed38e98fdddf65aab1e05">overlay</a>, dc)</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                odc.Clear()</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                del odc</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                self.overlay.Reset()                </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a8874c79a78fed38e98fdddf65aab1e05">overlay</a> = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                pos = evt.GetPosition()</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                <span class="comment"># convert to relative client coordinates of the container:</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                <span class="keywordflow">if</span> evt.GetEventObject() != wx_obj:</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                    pos = evt.GetEventObject().ClientToScreen(pos)  <span class="comment"># frame</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                    pos = wx_obj.ScreenToClient(pos)                <span class="comment"># panel</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                <span class="comment"># finish the multiple selection using the mouse:</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                rect = wx.RectPP(self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#adcea83aeb6437827df7706156b6e89bc">pos</a>, pos)</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                <span class="keywordflow">for</span> obj <span class="keywordflow">in</span> wx_obj.obj:</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                    <span class="comment"># only check child controls (not menubar/statusbar)</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                    <span class="keywordflow">if</span> isinstance(obj, Control):</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                        obj_rect = obj.wx_obj.GetRect()</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                        <span class="keywordflow">if</span> rect.ContainsRect(obj_rect):</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                            self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a556b6cf9d1f11a9d55238c6d24ea5d0a">select</a>(obj, keep_selection=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#adcea83aeb6437827df7706156b6e89bc">pos</a> = <span class="keywordtype">None</span> </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ad244cf98af34097e633b2aedb666baf9">inspector</a> <span class="keywordflow">and</span> wx_obj:</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            self.inspector.inspect(wx_obj.obj)</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;SELECTION&quot;</span>, self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a09103eaa17ddb6cad04098d9d4799e09">selection</a></div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;</div>
+<div class="line"><a name="l00303"></a><span class="lineno"><a class="line" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ae6bd0af10b6e21d249814190b671afd3">  303</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ae6bd0af10b6e21d249814190b671afd3">key_press</a>(self, event):</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="stringliteral">&quot;support cursor keys to move components one pixel at a time&quot;</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        key = event.GetKeyCode()</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordflow">if</span> key <span class="keywordflow">in</span> (wx.WXK_LEFT, wx.WXK_UP, wx.WXK_RIGHT, wx.WXK_DOWN):</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            <span class="keywordflow">for</span> obj <span class="keywordflow">in</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a09103eaa17ddb6cad04098d9d4799e09">selection</a>:</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                x, y = obj.pos</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                <span class="keywordflow">if</span> event.ShiftDown():     <span class="comment"># snap to grid:t </span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                    <span class="comment"># for now I&#39;m only going to align to grid</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                    <span class="comment"># in the direction of the cursor movement </span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                    <span class="keywordflow">if</span> key == wx.WXK_LEFT:</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                        x = (x - GRID_SIZE[0]) / GRID_SIZE[0] * GRID_SIZE[0]</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                    <span class="keywordflow">elif</span> key == wx.WXK_RIGHT:</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                        x = (x + GRID_SIZE[0]) / GRID_SIZE[0] * GRID_SIZE[0]</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                    <span class="keywordflow">elif</span> key == wx.WXK_UP:</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                        y = (y - GRID_SIZE[1]) / GRID_SIZE[1] * GRID_SIZE[1]</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                    <span class="keywordflow">elif</span> key == wx.WXK_DOWN:</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                        y = (y + GRID_SIZE[1]) / GRID_SIZE[1] * GRID_SIZE[1]</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                    <span class="keywordflow">if</span> key == wx.WXK_LEFT:</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                        x = x - 1</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                    <span class="keywordflow">elif</span> key == wx.WXK_RIGHT:</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                        x = x + 1</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                    <span class="keywordflow">elif</span> key == wx.WXK_UP:</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                        y = y - 1</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                    <span class="keywordflow">elif</span> key == wx.WXK_DOWN:</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                        y = y + 1</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                obj.pos = (x, y)</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keywordflow">elif</span> key == wx.WXK_DELETE:</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0d504f42e52b760d035561560cd94dc6">delete</a>(event)</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="keywordflow">elif</span> key == wx.WXK_INSERT:</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0de31d5cce0a357648bd5c4aa08d437a">duplicate</a>(event)</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;KEY:&quot;</span>, key</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;</div>
+<div class="line"><a name="l00337"></a><span class="lineno"><a class="line" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0d504f42e52b760d035561560cd94dc6">  337</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0d504f42e52b760d035561560cd94dc6">delete</a>(self, event):</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="stringliteral">&quot;delete all of the selected objects&quot;</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="comment"># get the selected objects (if any)</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordflow">for</span> obj <span class="keywordflow">in</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a09103eaa17ddb6cad04098d9d4799e09">selection</a>:</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            <span class="keywordflow">if</span> obj:</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;deleting&quot;</span>, obj.name</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                obj.destroy()</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a09103eaa17ddb6cad04098d9d4799e09">selection</a> = []                         <span class="comment"># clean selection</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        self.inspector.load_object()                <span class="comment"># reload the tree        </span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;</div>
+<div class="line"><a name="l00347"></a><span class="lineno"><a class="line" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0de31d5cce0a357648bd5c4aa08d437a">  347</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0de31d5cce0a357648bd5c4aa08d437a">duplicate</a>(self, event):</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="stringliteral">&quot;create a copy of each selected object&quot;</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <span class="comment"># duplicate the selected objects (if any)</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        new_selection = []</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keywordflow">for</span> obj <span class="keywordflow">in</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a09103eaa17ddb6cad04098d9d4799e09">selection</a>:</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            <span class="keywordflow">if</span> obj:</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;duplicating&quot;</span>, obj.name</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                obj.sel_marker.destroy()</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                obj.sel_marker = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                obj2 = obj.duplicate()</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                obj2.sel_marker = <a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html">SelectionMarker</a>(obj2)</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                obj2.sel_marker.show(<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                new_selection.append(obj2)</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a09103eaa17ddb6cad04098d9d4799e09">selection</a> = new_selection              <span class="comment"># update with new obj&#39;s</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        self.inspector.load_object()                <span class="comment"># reload the tree</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;</div>
+<div class="line"><a name="l00363"></a><span class="lineno"><a class="line" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a556b6cf9d1f11a9d55238c6d24ea5d0a">  363</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a556b6cf9d1f11a9d55238c6d24ea5d0a">select</a>(self, obj, keep_selection=False):</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="comment"># if not keep old selection, unselect all current selected objs.</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> keep_selection:</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            <span class="keywordflow">while</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a09103eaa17ddb6cad04098d9d4799e09">selection</a>:</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                old_obj = self.selection.pop()</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                old_obj.sel_marker.destroy()</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                old_obj.sel_marker = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="comment"># check if it can be selected! (menu, statusbar, etc. cannot)</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordflow">if</span> hasattr(obj, <span class="stringliteral">&quot;sel_marker&quot;</span>):</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> obj.sel_marker:</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                obj.sel_marker = <a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html">SelectionMarker</a>(obj)</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                obj.sel_marker.show(<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            <span class="keywordflow">if</span> obj <span class="keywordflow">not</span> <span class="keywordflow">in</span> self.<a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a09103eaa17ddb6cad04098d9d4799e09">selection</a>:</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                self.selection.append(obj)</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;</div>
+<div class="line"><a name="l00378"></a><span class="lineno"><a class="line" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a7b2047d29fef8e4b929bb816176214c2">  378</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a7b2047d29fef8e4b929bb816176214c2">draw_grid</a>(self, event):</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        wx_obj = event.GetEventObject()</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        dc = wx.PaintDC(wx_obj)</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        brush = dc.GetBackground()</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        brush.SetColour(wx_obj.GetBackgroundColour())</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        dc.SetBackground(brush)</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="comment">#dc.Clear()</span></div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="comment"># should the color be settable by the user and then save</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="comment"># that in the prefs?</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        dc.SetPen(wx.Pen(<span class="stringliteral">&#39;black&#39;</span>, 1, wx.SOLID))</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        w, h = wx_obj.GetClientSize()</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        xgrid, ygrid = GRID_SIZE</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        nx = w / xgrid</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        ny = h / ygrid</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keywordflow">for</span> x <span class="keywordflow">in</span> range(1, nx + 1):</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            <span class="keywordflow">for</span> y <span class="keywordflow">in</span> range(1, ny + 1):</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                dc.DrawPoint(x * xgrid, y * ygrid)</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;</div>
+<div class="line"><a name="l00396"></a><span class="lineno"><a class="line" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a26d361b9d6c48439174f82aeca2e9bc3">  396</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a26d361b9d6c48439174f82aeca2e9bc3">OnLayoutNeeded</a>(self, evt):</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        self.parent.wx_obj.Layout()</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html">SelectionTag</a>(wx.Window):</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="stringliteral">&quot;small black squares that appear at the corners of the active widgets&quot;</span></div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    names = [<span class="stringliteral">&quot;top-left&quot;</span>, <span class="stringliteral">&quot;top-right&quot;</span>, <span class="stringliteral">&quot;bottom-right&quot;</span>, <span class="stringliteral">&quot;bottom-left&quot;</span>, </div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;             <span class="stringliteral">&quot;top&quot;</span>, <span class="stringliteral">&quot;right&quot;</span>, <span class="stringliteral">&quot;left&quot;</span>, <span class="stringliteral">&quot;bottom&quot;</span>, <span class="stringliteral">&quot;middle&quot;</span>]</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="comment"># map each size handle with cardinal points: (n, w, s, e)</span></div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    direction = [(1, 0, 0, 1), (1, 1, 0, 0), (0, 1, 1, 0), (0, 0, 1, 1),</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                 (1, 0, 0, 0), (0, 0, 0, 1), (0, 1, 0, 0), (0, 0, 1, 0), </div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                 (0, 0, 0, 0)]</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    cursors = [wx.CURSOR_SIZENWSE, wx.CURSOR_SIZENESW, wx.CURSOR_SIZENWSE, </div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;               wx.CURSOR_SIZENESW, wx.CURSOR_SIZENS, wx.CURSOR_SIZEWE, </div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;               wx.CURSOR_SIZEWE, wx.CURSOR_SIZENS, wx.CURSOR_SIZING]</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    </div>
+<div class="line"><a name="l00413"></a><span class="lineno"><a class="line" href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html#aaca85a7532a9f093db33cae652554bb4">  413</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html#aaca85a7532a9f093db33cae652554bb4">__init__</a>(self, parent, owner, pos=None, index=None, designer=None):</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        kwds = { <span class="stringliteral">&#39;size&#39;</span>: (7, 7) }</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="keywordflow">if</span> pos:</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;            kwds[<span class="stringliteral">&#39;position&#39;</span>] = pos</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        wx.Window.__init__(self, parent, -1, **kwds)</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        <span class="keywordflow">if</span> index &lt; 8:</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            self.SetBackgroundColour(wx.BLUE) <span class="comment">#wx.BLACK)</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        self.Hide()</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        self.Bind(wx.EVT_MOUSE_EVENTS, self.<a class="code" href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html#ab0199cbfbe01b0404ed3c56c83372a87">motion</a>)</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        self.<a class="code" href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html#abcc0f1d5db73a7ab033425e08489c014">designer</a> = designer</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        self.<a class="code" href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html#aa3dd0d56edda3e365eec9f38bdcfe141">owner</a> = owner</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        self.<a class="code" href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html#a7eb91c512a64e0303f243af89043a285">index</a> = index</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        self.SetCursor(wx.StockCursor(self.<a class="code" href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html#a823cf3417c590189f70c42676fa4e49c">cursors</a>[index]))</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        self.Raise()    <span class="comment"># put over all the other controls so it get the events!</span></div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    </div>
+<div class="line"><a name="l00428"></a><span class="lineno"><a class="line" href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html#ab0199cbfbe01b0404ed3c56c83372a87">  428</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html#ab0199cbfbe01b0404ed3c56c83372a87">motion</a>(self, evt):</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        <span class="keywordflow">if</span> evt.LeftDown():</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;            self.CaptureMouse()</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        <span class="keywordflow">if</span> evt.LeftIsDown():</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            self.designer.do_resize(evt, self.owner.wx_obj, self.<a class="code" href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html#a4966dcb0c08e0ec192bc8a1b91b0858c">direction</a>[self.<a class="code" href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html#a7eb91c512a64e0303f243af89043a285">index</a>])</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        <span class="keywordflow">elif</span> evt.LeftUp() <span class="keywordflow">and</span> self.HasCapture():</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;            self.ReleaseMouse()</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            <span class="comment"># signal the designer to refresh the object (mouse_up was captured!)</span></div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            self.designer.mouse_up(evt, self.owner.wx_obj)</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            </div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html">SelectionMarker</a>:</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    <span class="stringliteral">&quot;Collection of the 4 SelectionTagS for each widget&quot;</span></div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    </div>
+<div class="line"><a name="l00443"></a><span class="lineno"><a class="line" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#adeed60d0f5f81b42b2b4f7fc47a0939f">  443</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#adeed60d0f5f81b42b2b4f7fc47a0939f">__init__</a>(self, owner, visible=False):</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a7f0d88f8f186a66ae091641767d22311">visible</a> = visible</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a9b4e4404a4cd9a4b94d88a27c096e9d6">owner</a> = owner</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a100df7f9d278c059df7e8f668e0259fd">parent</a> = owner.wx_obj.GetParent()</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a4558f0856d7bae1327e342a09237073c">designer</a> = owner.designer</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        <span class="comment">##if wx.Platform == &#39;__WXMSW__&#39;: self.parent = owner.wx_obj</span></div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a4d474564bab268e9c05c50b675209599">tag_pos</a> = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;        self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a34991da74d6438e481c2661e3f41eae0">tags</a> = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;        <span class="comment">#self.tags = [ SelectionTag(self.parent) for i in range(4) ]</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;        self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a7fc319b435e00175890da5ee4b2b330a">update</a>()</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;        <span class="keywordflow">if</span> visible:</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;            <span class="keywordflow">for</span> t <span class="keywordflow">in</span> self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a34991da74d6438e481c2661e3f41eae0">tags</a>: t.Show()</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;</div>
+<div class="line"><a name="l00456"></a><span class="lineno"><a class="line" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a7fc319b435e00175890da5ee4b2b330a">  456</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a7fc319b435e00175890da5ee4b2b330a">update</a>(self, event=None):</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a9b4e4404a4cd9a4b94d88a27c096e9d6">owner</a> <span class="keywordflow">is</span> self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a100df7f9d278c059df7e8f668e0259fd">parent</a>: x, y = 0, 0</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;        <span class="keywordflow">else</span>: x, y = self.owner.wx_obj.GetPosition()</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        w, h = self.owner.wx_obj.GetClientSize()</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;        <span class="keyword">def </span>position(j):</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> j: <span class="keywordflow">return</span> x-8, y-8                       <span class="comment"># top-left</span></div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;            <span class="keywordflow">elif</span> j == 1: <span class="keywordflow">return</span> x + w + 1, y - 8            <span class="comment"># top-right</span></div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;            <span class="keywordflow">elif</span> j == 2: <span class="keywordflow">return</span> x + w + 1, y + h +1         <span class="comment"># bottom-right</span></div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;            <span class="keywordflow">elif</span> j == 3: <span class="keywordflow">return</span> x - 8, y + h                <span class="comment"># bottom-left</span></div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;            <span class="keywordflow">elif</span> j == 4: <span class="keywordflow">return</span> x + w/2 - 4, y - 8          <span class="comment"># top</span></div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;            <span class="keywordflow">elif</span> j == 5: <span class="keywordflow">return</span> x - 8, y + h/2 - 4          <span class="comment"># left</span></div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;            <span class="keywordflow">elif</span> j == 6: <span class="keywordflow">return</span> x + w + 1, y + h/2 - 3      <span class="comment"># right</span></div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;            <span class="keywordflow">elif</span> j == 7: <span class="keywordflow">return</span> x + w/2 - 4, y + h + 1      <span class="comment"># bottom</span></div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;            <span class="keywordflow">elif</span> j == 8: <span class="keywordflow">return</span> x + w/2 - 4, y + h/2 - 4    <span class="comment"># middle</span></div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;        self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a4d474564bab268e9c05c50b675209599">tag_pos</a> = [ position(i) <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(8) ]</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a7f0d88f8f186a66ae091641767d22311">visible</a> <span class="keywordflow">and</span> self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a100df7f9d278c059df7e8f668e0259fd">parent</a>:</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;            self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a5e7b632668683e7727d93195e23870dd">draw</a>()</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        <span class="keywordflow">if</span> event: event.Skip()</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;</div>
+<div class="line"><a name="l00475"></a><span class="lineno"><a class="line" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a37ea66539ea5878bbd818dfd8bee05d8">  475</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a37ea66539ea5878bbd818dfd8bee05d8">show</a>(self, visible):</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a7f0d88f8f186a66ae091641767d22311">visible</a> != visible:</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;            self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a7f0d88f8f186a66ae091641767d22311">visible</a> = visible</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;            <span class="keywordflow">if</span> self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a7f0d88f8f186a66ae091641767d22311">visible</a> <span class="keywordflow">and</span> self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a100df7f9d278c059df7e8f668e0259fd">parent</a>:</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;                self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a5e7b632668683e7727d93195e23870dd">draw</a>(visible)</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;            <span class="keywordflow">elif</span> self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a34991da74d6438e481c2661e3f41eae0">tags</a>:</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;                self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a4fb83941b0da89d3a4d7e295fefad91c">destroy</a>()</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;</div>
+<div class="line"><a name="l00483"></a><span class="lineno"><a class="line" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a5e7b632668683e7727d93195e23870dd">  483</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a5e7b632668683e7727d93195e23870dd">draw</a>(self, visible=False):</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a34991da74d6438e481c2661e3f41eae0">tags</a>:</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;            self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a34991da74d6438e481c2661e3f41eae0">tags</a> = []</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;            <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(8):</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                tag = <a class="code" href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html">SelectionTag</a>(self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a100df7f9d278c059df7e8f668e0259fd">parent</a>, self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a9b4e4404a4cd9a4b94d88a27c096e9d6">owner</a>, index=i,</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                                   designer=self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a4558f0856d7bae1327e342a09237073c">designer</a>)</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;                self.tags.append(tag)</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(8):</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;            self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a34991da74d6438e481c2661e3f41eae0">tags</a>[i].SetPosition(self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a4d474564bab268e9c05c50b675209599">tag_pos</a>[i])</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;            <span class="keywordflow">if</span> visible:</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a34991da74d6438e481c2661e3f41eae0">tags</a>[i].Show()</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;</div>
+<div class="line"><a name="l00495"></a><span class="lineno"><a class="line" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a4fb83941b0da89d3a4d7e295fefad91c">  495</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a4fb83941b0da89d3a4d7e295fefad91c">destroy</a>(self):</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a34991da74d6438e481c2661e3f41eae0">tags</a>:</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;            <span class="keywordflow">for</span> tag <span class="keywordflow">in</span> self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a34991da74d6438e481c2661e3f41eae0">tags</a>: tag.Destroy()</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;            self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a34991da74d6438e481c2661e3f41eae0">tags</a> = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;</div>
+<div class="line"><a name="l00500"></a><span class="lineno"><a class="line" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#adfbe0a95b86c0b724b39cd1f7c68d414">  500</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#adfbe0a95b86c0b724b39cd1f7c68d414">reparent</a>(self, parent):</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;        self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a100df7f9d278c059df7e8f668e0259fd">parent</a> = parent</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a34991da74d6438e481c2661e3f41eae0">tags</a>:</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;            <span class="keywordflow">for</span> tag <span class="keywordflow">in</span> self.<a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a34991da74d6438e481c2661e3f41eae0">tags</a>: tag.Reparent(parent)</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html">Facade</a>(wx.Window):</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    <span class="stringliteral">&quot;Sustitute a real control with its fake static superficial appearance&quot;</span></div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    <span class="comment"># this allows capture mouse events not exposed by DatePicker, ComboBox, etc.</span></div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#adeed60d0f5f81b42b2b4f7fc47a0939f">__init__</a>(self, parent, id=wx.ID_ANY, pos=wx.DefaultPosition,</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;           size=wx.Size(0, 0), style=0, name=<span class="stringliteral">&#39;fake&#39;</span>,</div>
+<div class="line"><a name="l00512"></a><span class="lineno"><a class="line" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a9f3fb479c1a4fd2bd78299a2cdce6d8f">  512</a></span>&#160;           obj=<span class="keywordtype">None</span>):</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;        wx.Window.__init__(self, parent, id, pos, size, style, name)</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;        self.<a class="code" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a523a4f141d48c2ef15a60f0aff01594d">obj</a> = obj              <span class="comment"># original control we&#39;re mimicking</span></div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        self.<a class="code" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#aa0f9129f3ca30ec345e44b8e92edf909">bmp</a> = <span class="keywordtype">None</span>             <span class="comment"># initial image to be shown as facade</span></div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        self.Hide()</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        self.Bind(wx.EVT_PAINT, self.<a class="code" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#abc6143a6e23419180dcc0df2d8704b52">on_paint</a>)</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;        wx.CallAfter(self.<a class="code" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a72b0f21887fb8b746ee99646b5d7c4a7">update</a>)        </div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;</div>
+<div class="line"><a name="l00520"></a><span class="lineno"><a class="line" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#abc6143a6e23419180dcc0df2d8704b52">  520</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#abc6143a6e23419180dcc0df2d8704b52">on_paint</a>(self, event):</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#aa0f9129f3ca30ec345e44b8e92edf909">bmp</a>:</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;            dc = wx.PaintDC(self)</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;            width, height = self.GetSize()</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;            bg = self.<a class="code" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#aa0f9129f3ca30ec345e44b8e92edf909">bmp</a></div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;            <span class="comment">#bg = wx.EmptyBitmap(width, height)</span></div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;            <span class="comment">#bg.LoadFile(&quot;test.bmp&quot;, wx.BITMAP_TYPE_BMP)</span></div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;            dc.DrawBitmap(bg, 0, 0)</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;            <span class="keywordflow">if</span> DEBUG:</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;                <span class="comment"># print a watermark to identify from the real object</span></div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;                font_face = self.GetFont()</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;                font_color = wx.Colour(255, 0, 0)</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;                dc.SetFont(font_face)</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;                dc.SetTextForeground(font_color)</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;                dc.DrawText(<span class="stringliteral">&quot;FACADE&quot;</span>, 0, 0)</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;</div>
+<div class="line"><a name="l00536"></a><span class="lineno"><a class="line" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a72b0f21887fb8b746ee99646b5d7c4a7">  536</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a72b0f21887fb8b746ee99646b5d7c4a7">update</a>(self):</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;        <span class="stringliteral">&quot;Adjust facade with the dimensions of the original object (and repaint)&quot;</span></div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;        x, y = self.obj.wx_obj.GetPosition()</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        w, h = self.obj.wx_obj.GetSize()</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        self.Hide()</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;        self.Move((x, y))</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;        self.SetSize((w, h))</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;        <span class="comment"># allow original control to repaint before taking the new snapshot image:</span></div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        wx.CallLater(200, self.<a class="code" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a163280d73dea67f87f5bc394b538a80c">refresh</a>)</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;</div>
+<div class="line"><a name="l00546"></a><span class="lineno"><a class="line" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a163280d73dea67f87f5bc394b538a80c">  546</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a163280d73dea67f87f5bc394b538a80c">refresh</a>(self):</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;        <span class="stringliteral">&quot;Capture the new control superficial image after an update&quot;</span></div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;        self.<a class="code" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#aa0f9129f3ca30ec345e44b8e92edf909">bmp</a> = self.obj.snapshot()</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;        <span class="comment"># change z-order to overlap controls (windows) and show the image:</span></div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;        self.Raise()</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        self.Show()</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        self.Refresh()</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;</div>
+<div class="line"><a name="l00554"></a><span class="lineno"><a class="line" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#ad36293db4c30fd0bc07cba793fb3fa03">  554</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#ad36293db4c30fd0bc07cba793fb3fa03">destroy</a>(self):</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;        self.Hide()</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;        self.Destroy()</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;<span class="keyword">def </span><a class="code" href="../../de/dbe/namespacegui_1_1tools_1_1designer.html#a314c9c9f68659941e8bbefc440057e92">save</a>(evt, designer):</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <span class="stringliteral">&quot;Basic save functionality: just replaces the gui code&quot;</span></div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    <span class="comment"># ask the user if we should save the changes:</span></div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    ok = gui.confirm(<span class="stringliteral">&quot;Save the changes?&quot;</span>, <span class="stringliteral">&quot;GUI2PY Designer&quot;</span>, </div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;                     cancel=<span class="keyword">True</span>, default=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    <span class="keywordflow">if</span> ok:</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        wx_obj = evt.GetEventObject()</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;        w = wx_obj.obj</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;        <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;            <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;saving...&quot;</span></div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;            <span class="comment"># make a backup:</span></div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;            fin = open(designer.filename, <span class="stringliteral">&quot;</span><span class="stringliteral">r&quot;)</span></div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;<span class="stringliteral">            fout = open(designer.filename + </span><span class="stringliteral">&quot;.bak&quot;</span>, <span class="stringliteral">&quot;w&quot;</span>)</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;            fout.write(fin.read())</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;            fout.close()</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;            fin.close()</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;            <span class="keywordflow">if</span> designer.filename.endswith(<span class="stringliteral">&quot;.rsrc.py&quot;</span>):</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;                <span class="comment"># serialize and save the resource</span></div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;                gui.save(designer.filename, [gui.dump(w)])</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;            <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;                <span class="comment"># reopen the files to proccess them</span></div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;                fin = open(designer.filename + <span class="stringliteral">&quot;.bak&quot;</span>, <span class="stringliteral">&quot;</span><span class="stringliteral">r&quot;)</span></div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;<span class="stringliteral">                fout = open(designer.filename, </span><span class="stringliteral">&quot;w&quot;</span>)</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;                copy = <span class="keyword">True</span></div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;                newlines = fin.newlines <span class="keywordflow">or</span> <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                <span class="keyword">def </span><a class="code" href="../../dc/d3b/namespacegui_1_1resource.html#afce7bbb3591b38711d0a1faf34854b5b">dump</a>(obj, indent=1):</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;                    <span class="stringliteral">&quot;recursive convert object to string&quot;</span></div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;                    <span class="keywordflow">for</span> ctl <span class="keywordflow">in</span> obj[:]:</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;                        write(ctl, indent)</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;                <span class="keyword">def </span>write(ctl, indent):</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;                    <span class="keywordflow">if</span> ctl[:]:</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;                        fout.write(<span class="stringliteral">&quot; &quot;</span> * indent * 4)</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                        fout.write(<span class="stringliteral">&quot;with %s:&quot;</span> % ctl.__repr__(parent=<span class="keywordtype">None</span>, indent=indent, context=<span class="keyword">True</span>))</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                        fout.write(newlines)</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;                        <a class="code" href="../../dc/d3b/namespacegui_1_1resource.html#afce7bbb3591b38711d0a1faf34854b5b">dump</a>(ctl, indent + 1)                </div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                    <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;                        fout.write(<span class="stringliteral">&quot; &quot;</span> * indent * 4)</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;                        fout.write(ctl.__repr__(parent=<span class="keywordtype">None</span>, indent=indent))</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;                        fout.write(newlines)</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                dumped = <span class="keyword">False</span></div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;                <span class="keywordflow">for</span> line <span class="keywordflow">in</span> fin:</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;                    <span class="keywordflow">if</span> line.startswith(<span class="stringliteral">&quot;# --- gui2py designer generated code starts ---&quot;</span>):</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;                        fout.write(line)</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;                        fout.write(newlines)</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;                        write(w, indent=0)</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;                        fout.write(newlines)</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;                        dumped = <span class="keyword">True</span></div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;                        copy = <span class="keyword">False</span></div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                    <span class="keywordflow">if</span> line.startswith(<span class="stringliteral">&quot;# --- gui2py designer generated code ends ---&quot;</span>):</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                        copy = <span class="keyword">True</span></div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;                    <span class="keywordflow">if</span> copy:</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                        fout.write(line)</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                        <span class="comment">#fout.write(&quot;\n\r&quot;)</span></div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;                <span class="keywordflow">if</span> <span class="keywordflow">not</span> dumped:</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;                    gui.alert(<span class="stringliteral">&quot;No valid # --- gui2py... delimiters! \n&quot;</span></div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;                              <span class="stringliteral">&quot;Unable to write down design code!&quot;</span>, </div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;                              <span class="stringliteral">&quot;Design not updated:&quot;</span>)</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;            fout.close()</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;            fin.close()</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;        <span class="keywordflow">except</span> Exception, e:</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;            <span class="keyword">import</span> traceback</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;            print(traceback.print_exc())</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;            ok = gui.confirm(<span class="stringliteral">&quot;Close anyway?\n%s&quot;</span> % str(e), <span class="stringliteral">&#39;Unable to save:&#39;</span>, </div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;                             ok=<span class="keyword">True</span>, cancel=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    <span class="keywordflow">if</span> ok <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;        wx.CallAfter(exit)    <span class="comment"># terminate the designer program</span></div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    <span class="keywordflow">return</span> ok                 <span class="comment"># ok to close and exit! </span></div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;<span class="comment"># show a nice and unostrusive welcome &amp; help</span></div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;    </div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;<span class="keyword">class </span><a class="code" href="../../d6/dc1/classgui_1_1tools_1_1designer_1_1CustomToolTipWindow.html">CustomToolTipWindow</a>(STT.ToolTipWindow):</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;</div>
+<div class="line"><a name="l00636"></a><span class="lineno"><a class="line" href="../../d6/dc1/classgui_1_1tools_1_1designer_1_1CustomToolTipWindow.html#ab96be9792d7f3166bf130c5555314b64">  636</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d6/dc1/classgui_1_1tools_1_1designer_1_1CustomToolTipWindow.html#ab96be9792d7f3166bf130c5555314b64">CalculateBestPosition</a>(self,widget):</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;        <span class="stringliteral">&quot;When dealing with a Top-Level window position it absolute lower-right&quot;</span></div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;        <span class="keywordflow">if</span> isinstance(widget, wx.Frame):</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;            screen = wx.ClientDisplayRect()[2:]</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;            left,top = widget.ClientToScreenXY(0,0)</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;            right,bottom = widget.ClientToScreenXY(*widget.GetClientRect()[2:])</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;            size = self.GetSize()</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;            xpos = right</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;            ypos = bottom - size[1]</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;            self.SetPosition((xpos,ypos))</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;            STT.ToolTipWindow.CalculateBestPosition(self, widget)</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;<span class="keyword">def </span><a class="code" href="../../de/dbe/namespacegui_1_1tools_1_1designer.html#a425f16fcb86817df473d6a105902373b">wellcome_tip</a>(wx_obj):</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    <span class="stringliteral">&quot;Show a tip message&quot;</span></div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;    </div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;    msg = (<span class="stringliteral">&quot;Close the main window to exit &amp; save.\n&quot;</span></div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;           <span class="stringliteral">&quot;Drag &amp; Drop / Click the controls from the ToolBox to create new ones.\n&quot;</span></div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;           <span class="stringliteral">&quot;Left click on the created controls to select them.\n&quot;</span></div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;           <span class="stringliteral">&quot;Double click to edit the default property.\n&quot;</span></div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;           <span class="stringliteral">&quot;Right click to pop-up the context menu.\n&quot;</span>)</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    <span class="comment"># create a super tool tip manager and set some styles</span></div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    stt = STT.SuperToolTip(msg)</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    stt.SetHeader(<span class="stringliteral">&quot;Welcome to gui2py designer!&quot;</span>)</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    stt.SetDrawHeaderLine(<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    stt.ApplyStyle(<span class="stringliteral">&quot;Office 2007 Blue&quot;</span>)</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    stt.SetDropShadow(<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    stt.SetHeaderBitmap(images.designer.GetBitmap())</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    stt.SetEndDelay(15000)                      <span class="comment"># hide in 15 s</span></div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    <span class="comment"># create a independent tip window, show/hide manually (avoid binding wx_obj)</span></div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;    tip = <a class="code" href="../../d6/dc1/classgui_1_1tools_1_1designer_1_1CustomToolTipWindow.html">CustomToolTipWindow</a>(wx_obj, stt)</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    tip.CalculateBestSize()</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    tip.CalculateBestPosition(wx_obj)</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    tip.DropShadow(stt.GetDropShadow())</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    <span class="keywordflow">if</span> stt.GetUseFade():</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;        show = <span class="keyword">lambda</span>: tip.StartAlpha(<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;        show = <span class="keyword">lambda</span>: tip.Show()</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    wx.CallLater(1000, show)           <span class="comment"># show the tip in 1 s</span></div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    wx.CallLater(30000, tip.Destroy)   <span class="comment"># disable the tip in 30 s</span></div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&#39;__main__&#39;</span>:</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    <span class="comment"># basic proof-of-concept visual gui designer</span></div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    </div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    <span class="keyword">import</span> sys,os</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    </div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <span class="comment">#    </span></div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    os.environ[<span class="stringliteral">&#39;UBUNTU_MENUPROXY&#39;</span>] = <span class="stringliteral">&#39;0&#39;</span></div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    app = wx.App(redirect=<span class="keywordtype">None</span>)    </div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <span class="comment"># import controls (fill the registry!)</span></div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    <span class="keyword">import</span> gui</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <span class="comment"># import tools used by the designer</span></div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="keyword">from</span> <a class="code" href="../../d4/d72/namespacegui_1_1tools_1_1inspector.html">gui.tools.inspector</a> <span class="keyword">import</span> InspectorPanel</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <span class="keyword">from</span> <a class="code" href="../../d5/dbb/namespacegui_1_1tools_1_1propeditor.html">gui.tools.propeditor</a> <span class="keyword">import</span> PropertyEditorPanel</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <span class="keyword">from</span> <a class="code" href="../../de/dbe/namespacegui_1_1tools_1_1designer.html">gui.tools.designer</a> <span class="keyword">import</span> BasicDesigner</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <span class="keyword">from</span> <a class="code" href="../../db/d4e/namespacegui_1_1tools_1_1toolbox.html">gui.tools.toolbox</a> <span class="keyword">import</span> ToolBox, ToolBoxDropTarget, set_drop_target</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <span class="comment"># create the windows and the property editor / inspector</span></div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    <span class="keywordflow">if</span> DEBUG:</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;        log = sys.stdout</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;        log = open(os.devnull, <span class="stringliteral">&#39;w&#39;</span>)</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        </div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    f1 = wx.Frame(<span class="keywordtype">None</span>, pos=(600, 25), size=(300, 300), title=<span class="stringliteral">&quot;GUI Inspector&quot;</span>)</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    f2 = wx.Frame(<span class="keywordtype">None</span>, pos=(600, 350), size=(300, 300), </div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;                        title=<span class="stringliteral">&quot;GUI Property Editor&quot;</span>)</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    propeditor = <a class="code" href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html">PropertyEditorPanel</a>(f2, log)</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    inspector = <a class="code" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html">InspectorPanel</a>(f1, propeditor, log)</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    </div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    <span class="comment"># create a toolbox </span></div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    frame = wx.Frame(<span class="keywordtype">None</span>, pos=(0, 25), size=(80, 600), title=<span class="stringliteral">&quot;GUI Toolbox&quot;</span>)</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    tb = <a class="code" href="../../df/d53/classgui_1_1tools_1_1toolbox_1_1ToolBox.html">ToolBox</a>(frame)</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <span class="keywordflow">if</span> len(sys.argv) &gt; 1:</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        filename = sys.argv[1]</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        <span class="comment"># let the user choose the file to edit:</span></div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        filename = gui.open_file(<span class="stringliteral">&quot;Select the file to edit&quot;</span>, <span class="stringliteral">&quot;.&quot;</span>, <span class="stringliteral">&quot;sample.pyw&quot;</span>)</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> filename:</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;            exit()</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    </div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    vars = {}</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    <span class="keywordflow">if</span> filename.endswith(<span class="stringliteral">&quot;.rsrc.py&quot;</span>):</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        <span class="comment"># load the resource file (do not bind the controller event handlers)</span></div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        objs = gui.load(filename=filename, controller=<span class="keyword">False</span>)</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;        <span class="comment"># exec a normal python file</span></div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;        execfile(filename, vars)</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;        root = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;        objs = vars.values()</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    <span class="keywordflow">for</span> value <span class="keywordflow">in</span> objs:</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> isinstance(value, gui.Window):</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;            <span class="keywordflow">continue</span></div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        root = value       <span class="comment"># TODO: support many windows</span></div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        <span class="comment"># load the window in the widget inspector</span></div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        inspector.load_object(root)</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;        <span class="comment"># associate the window with the designer: </span></div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        <span class="comment"># (override mouse events to allow moving and resizing)</span></div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;        designer = <a class="code" href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html">BasicDesigner</a>(root, inspector)</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        <span class="comment"># associate the window with the toolbox:</span></div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;        <span class="comment"># (this will allow to drop new controls on the window)</span></div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;        obj = root</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        <a class="code" href="../../db/d4e/namespacegui_1_1tools_1_1toolbox.html#a2e61b2d9a49e1d06836d805a18f095ab">set_drop_target</a>(root, root, designer, inspector)</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;        <span class="comment"># link the designer (context menu) and toolbox (tool click)</span></div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        inspector.set_designer(designer)</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;        tb.set_default_tlw(root, designer, inspector)</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        root.show()</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    <span class="keywordflow">if</span> root:</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;        designer.onclose = save </div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        designer.filename = filename</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;        </div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;        frame.Show()</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;        tb.Show()</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;        </div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;        <a class="code" href="../../de/dbe/namespacegui_1_1tools_1_1designer.html#a425f16fcb86817df473d6a105902373b">wellcome_tip</a>(root.wx_obj)</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;        f1.Move((root.pos[0] + root.size[0] + 50, 25))</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;        f2.Move((root.pos[0] + root.size[0] + 50, f1.Size[1] + 60))</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;        f1.Show()</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;        f2.Show()</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;        <span class="comment">##import wx.lib.inspection</span></div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;        <span class="comment">##wx.lib.inspection.InspectionTool().Show()</span></div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;        </div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;        app.MainLoop()</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;        gui.alert(<span class="stringliteral">&quot;No window to design!&quot;</span>)</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;</div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionMarker_html_a4558f0856d7bae1327e342a09237073c"><div class="ttname"><a href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a4558f0856d7bae1327e342a09237073c">gui.tools.designer.SelectionMarker.designer</a></div><div class="ttdeci">designer</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00447">designer.py:447</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionTag_html_a823cf3417c590189f70c42676fa4e49c"><div class="ttname"><a href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html#a823cf3417c590189f70c42676fa4e49c">gui.tools.designer.SelectionTag.cursors</a></div><div class="ttdeci">list cursors</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00409">designer.py:409</a></div></div>
+<div class="ttc" id="namespacegui_1_1tools_1_1propeditor_html"><div class="ttname"><a href="../../d5/dbb/namespacegui_1_1tools_1_1propeditor.html">gui.tools.propeditor</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00001">propeditor.py:1</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionTag_html_aaca85a7532a9f093db33cae652554bb4"><div class="ttname"><a href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html#aaca85a7532a9f093db33cae652554bb4">gui.tools.designer.SelectionTag.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00413">designer.py:413</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html">gui.tools.designer.BasicDesigner</a></div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00026">designer.py:26</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_aa1555d60319d014b07affc837c5f2dbd"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aa1555d60319d014b07affc837c5f2dbd">gui.tools.designer.BasicDesigner.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00029">designer.py:29</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionMarker_html_a34991da74d6438e481c2661e3f41eae0"><div class="ttname"><a href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a34991da74d6438e481c2661e3f41eae0">gui.tools.designer.SelectionMarker.tags</a></div><div class="ttdeci">tags</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00450">designer.py:450</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1CustomToolTipWindow_html_ab96be9792d7f3166bf130c5555314b64"><div class="ttname"><a href="../../d6/dc1/classgui_1_1tools_1_1designer_1_1CustomToolTipWindow.html#ab96be9792d7f3166bf130c5555314b64">gui.tools.designer.CustomToolTipWindow.CalculateBestPosition</a></div><div class="ttdeci">def CalculateBestPosition</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00636">designer.py:636</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionMarker_html_a100df7f9d278c059df7e8f668e0259fd"><div class="ttname"><a href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a100df7f9d278c059df7e8f668e0259fd">gui.tools.designer.SelectionMarker.parent</a></div><div class="ttdeci">parent</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00446">designer.py:446</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1Facade_html_aa0f9129f3ca30ec345e44b8e92edf909"><div class="ttname"><a href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#aa0f9129f3ca30ec345e44b8e92edf909">gui.tools.designer.Facade.bmp</a></div><div class="ttdeci">bmp</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00515">designer.py:515</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionTag_html_abcc0f1d5db73a7ab033425e08489c014"><div class="ttname"><a href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html#abcc0f1d5db73a7ab033425e08489c014">gui.tools.designer.SelectionTag.designer</a></div><div class="ttdeci">designer</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00422">designer.py:422</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorPanel_html"><div class="ttname"><a href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html">gui.tools.inspector.InspectorPanel</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00023">inspector.py:23</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_a8874c79a78fed38e98fdddf65aab1e05"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a8874c79a78fed38e98fdddf65aab1e05">gui.tools.designer.BasicDesigner.overlay</a></div><div class="ttdeci">overlay</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00041">designer.py:41</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionMarker_html_a7fc319b435e00175890da5ee4b2b330a"><div class="ttname"><a href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a7fc319b435e00175890da5ee4b2b330a">gui.tools.designer.SelectionMarker.update</a></div><div class="ttdeci">def update</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00456">designer.py:456</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionMarker_html_a9b4e4404a4cd9a4b94d88a27c096e9d6"><div class="ttname"><a href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a9b4e4404a4cd9a4b94d88a27c096e9d6">gui.tools.designer.SelectionMarker.owner</a></div><div class="ttdeci">owner</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00445">designer.py:445</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionMarker_html_a7f0d88f8f186a66ae091641767d22311"><div class="ttname"><a href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a7f0d88f8f186a66ae091641767d22311">gui.tools.designer.SelectionMarker.visible</a></div><div class="ttdeci">visible</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00444">designer.py:444</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionMarker_html"><div class="ttname"><a href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html">gui.tools.designer.SelectionMarker</a></div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00440">designer.py:440</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_add691788f47e55d19b47313e5f3c3b68"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#add691788f47e55d19b47313e5f3c3b68">gui.tools.designer.BasicDesigner.do_resize</a></div><div class="ttdeci">def do_resize</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00209">designer.py:209</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_a316585262d7ed22890206f11eab3cca7"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a316585262d7ed22890206f11eab3cca7">gui.tools.designer.BasicDesigner.current</a></div><div class="ttdeci">current</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00031">designer.py:31</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_a7e2988071913c13b913a6557893a0be5"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a7e2988071913c13b913a6557893a0be5">gui.tools.designer.BasicDesigner.mouse_up</a></div><div class="ttdeci">def mouse_up</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00267">designer.py:267</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel_html"><div class="ttname"><a href="../../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html">gui.tools.propeditor.PropertyEditorPanel</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d26/build_2lib_8linux-x86__64-2_87_2gui_2tools_2propeditor_8py_source.html#l00024">propeditor.py:24</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1Facade_html"><div class="ttname"><a href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html">gui.tools.designer.Facade</a></div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00506">designer.py:506</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionTag_html"><div class="ttname"><a href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html">gui.tools.designer.SelectionTag</a></div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00400">designer.py:400</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1Facade_html_ad36293db4c30fd0bc07cba793fb3fa03"><div class="ttname"><a href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#ad36293db4c30fd0bc07cba793fb3fa03">gui.tools.designer.Facade.destroy</a></div><div class="ttdeci">def destroy</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00554">designer.py:554</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_a21be0ba86bcaa6ae12a96ffb66a47faa"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a21be0ba86bcaa6ae12a96ffb66a47faa">gui.tools.designer.BasicDesigner.parent</a></div><div class="ttdeci">parent</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00030">designer.py:30</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_a0de31d5cce0a357648bd5c4aa08d437a"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0de31d5cce0a357648bd5c4aa08d437a">gui.tools.designer.BasicDesigner.duplicate</a></div><div class="ttdeci">def duplicate</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00347">designer.py:347</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionMarker_html_a5e7b632668683e7727d93195e23870dd"><div class="ttname"><a href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a5e7b632668683e7727d93195e23870dd">gui.tools.designer.SelectionMarker.draw</a></div><div class="ttdeci">def draw</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00483">designer.py:483</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionTag_html_ab0199cbfbe01b0404ed3c56c83372a87"><div class="ttname"><a href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html#ab0199cbfbe01b0404ed3c56c83372a87">gui.tools.designer.SelectionTag.motion</a></div><div class="ttdeci">def motion</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00428">designer.py:428</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_aeb2ac7b44fb8d777254c0618d0b37e51"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aeb2ac7b44fb8d777254c0618d0b37e51">gui.tools.designer.BasicDesigner.resizing</a></div><div class="ttdeci">resizing</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00033">designer.py:33</a></div></div>
+<div class="ttc" id="namespacegui_1_1tools_1_1designer_html_a314c9c9f68659941e8bbefc440057e92"><div class="ttname"><a href="../../de/dbe/namespacegui_1_1tools_1_1designer.html#a314c9c9f68659941e8bbefc440057e92">gui.tools.designer.save</a></div><div class="ttdeci">def save</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00559">designer.py:559</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_adcea83aeb6437827df7706156b6e89bc"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#adcea83aeb6437827df7706156b6e89bc">gui.tools.designer.BasicDesigner.pos</a></div><div class="ttdeci">pos</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00143">designer.py:143</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionMarker_html_a4fb83941b0da89d3a4d7e295fefad91c"><div class="ttname"><a href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a4fb83941b0da89d3a4d7e295fefad91c">gui.tools.designer.SelectionMarker.destroy</a></div><div class="ttdeci">def destroy</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00495">designer.py:495</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_ae6bd0af10b6e21d249814190b671afd3"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ae6bd0af10b6e21d249814190b671afd3">gui.tools.designer.BasicDesigner.key_press</a></div><div class="ttdeci">def key_press</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00303">designer.py:303</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1Facade_html_a523a4f141d48c2ef15a60f0aff01594d"><div class="ttname"><a href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a523a4f141d48c2ef15a60f0aff01594d">gui.tools.designer.Facade.obj</a></div><div class="ttdeci">obj</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00514">designer.py:514</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_a09103eaa17ddb6cad04098d9d4799e09"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a09103eaa17ddb6cad04098d9d4799e09">gui.tools.designer.BasicDesigner.selection</a></div><div class="ttdeci">selection</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00032">designer.py:32</a></div></div>
+<div class="ttc" id="namespacegui_1_1tools_1_1inspector_html"><div class="ttname"><a href="../../d4/d72/namespacegui_1_1tools_1_1inspector.html">gui.tools.inspector</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00001">inspector.py:1</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionMarker_html_adfbe0a95b86c0b724b39cd1f7c68d414"><div class="ttname"><a href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#adfbe0a95b86c0b724b39cd1f7c68d414">gui.tools.designer.SelectionMarker.reparent</a></div><div class="ttdeci">def reparent</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00500">designer.py:500</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_a0d504f42e52b760d035561560cd94dc6"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0d504f42e52b760d035561560cd94dc6">gui.tools.designer.BasicDesigner.delete</a></div><div class="ttdeci">def delete</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00337">designer.py:337</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_aaa9e18460582b807dffa0bc3ab0ae089"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aaa9e18460582b807dffa0bc3ab0ae089">gui.tools.designer.BasicDesigner.start</a></div><div class="ttdeci">start</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00156">designer.py:156</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_ab438e7b78dc9494cfb71315b358616e4"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ab438e7b78dc9494cfb71315b358616e4">gui.tools.designer.BasicDesigner.__call__</a></div><div class="ttdeci">def __call__</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00043">designer.py:43</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_a3d228ecbd90ac2d2a2c4b5bd16db22ca"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a3d228ecbd90ac2d2a2c4b5bd16db22ca">gui.tools.designer.BasicDesigner.last_wx_obj</a></div><div class="ttdeci">last_wx_obj</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00037">designer.py:37</a></div></div>
+<div class="ttc" id="namespacegui_1_1tools_1_1toolbox_html"><div class="ttname"><a href="../../db/d4e/namespacegui_1_1tools_1_1toolbox.html">gui.tools.toolbox</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00001">toolbox.py:1</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_af3878d5edf4f9fefea378db6750999c8"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#af3878d5edf4f9fefea378db6750999c8">gui.tools.designer.BasicDesigner.onclose</a></div><div class="ttdeci">onclose</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00038">designer.py:38</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_a26d361b9d6c48439174f82aeca2e9bc3"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a26d361b9d6c48439174f82aeca2e9bc3">gui.tools.designer.BasicDesigner.OnLayoutNeeded</a></div><div class="ttdeci">def OnLayoutNeeded</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00396">designer.py:396</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1Facade_html_a163280d73dea67f87f5bc394b538a80c"><div class="ttname"><a href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a163280d73dea67f87f5bc394b538a80c">gui.tools.designer.Facade.refresh</a></div><div class="ttdeci">def refresh</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00546">designer.py:546</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_a7b2047d29fef8e4b929bb816176214c2"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a7b2047d29fef8e4b929bb816176214c2">gui.tools.designer.BasicDesigner.draw_grid</a></div><div class="ttdeci">def draw_grid</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00378">designer.py:378</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1Facade_html_a72b0f21887fb8b746ee99646b5d7c4a7"><div class="ttname"><a href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a72b0f21887fb8b746ee99646b5d7c4a7">gui.tools.designer.Facade.update</a></div><div class="ttdeci">def update</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00536">designer.py:536</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionMarker_html_adeed60d0f5f81b42b2b4f7fc47a0939f"><div class="ttname"><a href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#adeed60d0f5f81b42b2b4f7fc47a0939f">gui.tools.designer.SelectionMarker.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00443">designer.py:443</a></div></div>
+<div class="ttc" id="namespacegui_1_1tools_1_1toolbox_html_a2e61b2d9a49e1d06836d805a18f095ab"><div class="ttname"><a href="../../db/d4e/namespacegui_1_1tools_1_1toolbox.html#a2e61b2d9a49e1d06836d805a18f095ab">gui.tools.toolbox.set_drop_target</a></div><div class="ttdeci">def set_drop_target</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00227">toolbox.py:227</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_aba57a42564d5b254ca18a68dfeeeaed3"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#aba57a42564d5b254ca18a68dfeeeaed3">gui.tools.designer.BasicDesigner.last_xy</a></div><div class="ttdeci">last_xy</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00040">designer.py:40</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_a8fa8f2fcc07cfba06d32f0212041d90a"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a8fa8f2fcc07cfba06d32f0212041d90a">gui.tools.designer.BasicDesigner.timestamp</a></div><div class="ttdeci">timestamp</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00039">designer.py:39</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionMarker_html_a4d474564bab268e9c05c50b675209599"><div class="ttname"><a href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a4d474564bab268e9c05c50b675209599">gui.tools.designer.SelectionMarker.tag_pos</a></div><div class="ttdeci">tag_pos</div><div class="ttdoc">if wx.Platform == &#39;WXMSW&#39;: self.parent = owner.wx_obj </div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00449">designer.py:449</a></div></div>
+<div class="ttc" id="namespacegui_1_1tools_1_1designer_html_a425f16fcb86817df473d6a105902373b"><div class="ttname"><a href="../../de/dbe/namespacegui_1_1tools_1_1designer.html#a425f16fcb86817df473d6a105902373b">gui.tools.designer.wellcome_tip</a></div><div class="ttdeci">def wellcome_tip</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00650">designer.py:650</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionTag_html_a7eb91c512a64e0303f243af89043a285"><div class="ttname"><a href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html#a7eb91c512a64e0303f243af89043a285">gui.tools.designer.SelectionTag.index</a></div><div class="ttdeci">index</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00424">designer.py:424</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1toolbox_1_1ToolBox_html"><div class="ttname"><a href="../../df/d53/classgui_1_1tools_1_1toolbox_1_1ToolBox.html">gui.tools.toolbox.ToolBox</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00031">toolbox.py:31</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_a1bdaf6b80465efa4a0ce37c65620bfc0"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a1bdaf6b80465efa4a0ce37c65620bfc0">gui.tools.designer.BasicDesigner.mouse_down</a></div><div class="ttdeci">def mouse_down</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00123">designer.py:123</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionTag_html_aa3dd0d56edda3e365eec9f38bdcfe141"><div class="ttname"><a href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html#aa3dd0d56edda3e365eec9f38bdcfe141">gui.tools.designer.SelectionTag.owner</a></div><div class="ttdeci">owner</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00423">designer.py:423</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionMarker_html_a37ea66539ea5878bbd818dfd8bee05d8"><div class="ttname"><a href="../../dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a37ea66539ea5878bbd818dfd8bee05d8">gui.tools.designer.SelectionMarker.show</a></div><div class="ttdeci">def show</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00475">designer.py:475</a></div></div>
+<div class="ttc" id="namespacegui_1_1resource_html_afce7bbb3591b38711d0a1faf34854b5b"><div class="ttname"><a href="../../dc/d3b/namespacegui_1_1resource.html#afce7bbb3591b38711d0a1faf34854b5b">gui.resource.dump</a></div><div class="ttdeci">def dump</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d2d/build_2lib_8linux-x86__64-2_87_2gui_2resource_8py_source.html#l00158">resource.py:158</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1Facade_html_abc6143a6e23419180dcc0df2d8704b52"><div class="ttname"><a href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#abc6143a6e23419180dcc0df2d8704b52">gui.tools.designer.Facade.on_paint</a></div><div class="ttdeci">def on_paint</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00520">designer.py:520</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_ad244cf98af34097e633b2aedb666baf9"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ad244cf98af34097e633b2aedb666baf9">gui.tools.designer.BasicDesigner.inspector</a></div><div class="ttdeci">inspector</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00036">designer.py:36</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_a556b6cf9d1f11a9d55238c6d24ea5d0a"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a556b6cf9d1f11a9d55238c6d24ea5d0a">gui.tools.designer.BasicDesigner.select</a></div><div class="ttdeci">def select</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00363">designer.py:363</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1CustomToolTipWindow_html"><div class="ttname"><a href="../../d6/dc1/classgui_1_1tools_1_1designer_1_1CustomToolTipWindow.html">gui.tools.designer.CustomToolTipWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00634">designer.py:634</a></div></div>
+<div class="ttc" id="namespacegui_1_1tools_1_1designer_html"><div class="ttname"><a href="../../de/dbe/namespacegui_1_1tools_1_1designer.html">gui.tools.designer</a></div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00001">designer.py:1</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_a0dcffe54c0f15a01d03fbe9054ce2065"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0dcffe54c0f15a01d03fbe9054ce2065">gui.tools.designer.BasicDesigner.mouse_move</a></div><div class="ttdeci">def mouse_move</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00165">designer.py:165</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1BasicDesigner_html_a678c487a73bb44c5edd58ce75f20b3b7"><div class="ttname"><a href="../../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a678c487a73bb44c5edd58ce75f20b3b7">gui.tools.designer.BasicDesigner.last_obj</a></div><div class="ttdeci">last_obj</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00098">designer.py:98</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1designer_1_1SelectionTag_html_a4966dcb0c08e0ec192bc8a1b91b0858c"><div class="ttname"><a href="../../d0/d5d/classgui_1_1tools_1_1designer_1_1SelectionTag.html#a4966dcb0c08e0ec192bc8a1b91b0858c">gui.tools.designer.SelectionTag.direction</a></div><div class="ttdeci">list direction</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00406">designer.py:406</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_be831313eee9167e67543a36aa74e60d.html">gui</a></li><li class="navelem"><a class="el" href="../../dir_53c845addcf54ccd5761a2e320502361.html">tools</a></li><li class="navelem"><a class="el" href="../../dd/ddb/gui_2tools_2designer_8py.html">designer.py</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:47 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

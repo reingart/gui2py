@@ -1,0 +1,771 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Referencia de la Clase gui.event.MouseEvent</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d1/d61/classgui_1_1event_1_1MouseEvent.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="#pub-static-attribs">Atributos públicos estáticos</a> &#124;
+<a href="../../df/d52/classgui_1_1event_1_1MouseEvent-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase gui.event.MouseEvent</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagrama de herencias de gui.event.MouseEvent</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d00/classgui_1_1event_1_1MouseEvent__inherit__graph.png" border="0" usemap="#gui_8event_8MouseEvent_inherit__map" alt="Inheritance graph"/></div>
+<map name="gui_8event_8MouseEvent_inherit__map" id="gui_8event_8MouseEvent_inherit__map">
+<area shape="rect" id="node3" href="../../da/d4a/classgui_1_1event_1_1HtmlCellEvent.html" title="gui.event.HtmlCellEvent" alt="" coords="5,155,168,181"/><area shape="rect" id="node2" href="../../d6/dcd/classgui_1_1event_1_1Event.html" title="gui.event.Event" alt="" coords="30,5,143,32"/></map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración para gui.event.MouseEvent:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d56/classgui_1_1event_1_1MouseEvent__coll__graph.png" border="0" usemap="#gui_8event_8MouseEvent_coll__map" alt="Collaboration graph"/></div>
+<map name="gui_8event_8MouseEvent_coll__map" id="gui_8event_8MouseEvent_coll__map">
+<area shape="rect" id="node2" href="../../d6/dcd/classgui_1_1event_1_1Event.html" title="gui.event.Event" alt="" coords="25,5,137,32"/></map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a1ba96b318d5ad68d29fe7c74aa040d81"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a1ba96b318d5ad68d29fe7c74aa040d81">__init__</a></td></tr>
+<tr class="separator:a1ba96b318d5ad68d29fe7c74aa040d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ba96b318d5ad68d29fe7c74aa040d81"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a1ba96b318d5ad68d29fe7c74aa040d81">__init__</a></td></tr>
+<tr class="separator:a1ba96b318d5ad68d29fe7c74aa040d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae36c52b5de580d3f33de8984def7a0a8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dcd/classgui_1_1event_1_1Event.html#ae36c52b5de580d3f33de8984def7a0a8">prevent_default</a></td></tr>
+<tr class="separator:ae36c52b5de580d3f33de8984def7a0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae36c52b5de580d3f33de8984def7a0a8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dcd/classgui_1_1event_1_1Event.html#ae36c52b5de580d3f33de8984def7a0a8">prevent_default</a></td></tr>
+<tr class="separator:ae36c52b5de580d3f33de8984def7a0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9787a9a648817cd9bdda5ad0ecee3ca4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dcd/classgui_1_1event_1_1Event.html#a9787a9a648817cd9bdda5ad0ecee3ca4">stop_propagation</a></td></tr>
+<tr class="separator:a9787a9a648817cd9bdda5ad0ecee3ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9787a9a648817cd9bdda5ad0ecee3ca4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dcd/classgui_1_1event_1_1Event.html#a9787a9a648817cd9bdda5ad0ecee3ca4">stop_propagation</a></td></tr>
+<tr class="separator:a9787a9a648817cd9bdda5ad0ecee3ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:acc7816fc36df14e19bd37dcfe4102134"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#acc7816fc36df14e19bd37dcfe4102134">x</a></td></tr>
+<tr class="separator:acc7816fc36df14e19bd37dcfe4102134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaefb2df4eba815aba58492c511c458bf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#aaefb2df4eba815aba58492c511c458bf">y</a></td></tr>
+<tr class="separator:aaefb2df4eba815aba58492c511c458bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40658a7d1e1bb225a425d3e4f49eb9f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a40658a7d1e1bb225a425d3e4f49eb9f8">alt_key</a></td></tr>
+<tr class="separator:a40658a7d1e1bb225a425d3e4f49eb9f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c9f0ae8c8155f5b55a948686d6b43f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a5c9f0ae8c8155f5b55a948686d6b43f0">ctrl_key</a></td></tr>
+<tr class="separator:a5c9f0ae8c8155f5b55a948686d6b43f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b057bf5af2ba67dadda3db1acf7be6f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a1b057bf5af2ba67dadda3db1acf7be6f">shift_key</a></td></tr>
+<tr class="separator:a1b057bf5af2ba67dadda3db1acf7be6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06a01af3f3b12caa14e218038177a75b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a06a01af3f3b12caa14e218038177a75b">meta_key</a></td></tr>
+<tr class="separator:a06a01af3f3b12caa14e218038177a75b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4f74539b460393299e711de32a1c346"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#ad4f74539b460393299e711de32a1c346">left_button</a></td></tr>
+<tr class="separator:ad4f74539b460393299e711de32a1c346"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af694c594db12fdc20d28f0fd47b760d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#af694c594db12fdc20d28f0fd47b760d1">right_button</a></td></tr>
+<tr class="separator:af694c594db12fdc20d28f0fd47b760d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d2e88c7cc88a61687f61509681fb7c2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a4d2e88c7cc88a61687f61509681fb7c2">middle_button</a></td></tr>
+<tr class="separator:a4d2e88c7cc88a61687f61509681fb7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7bd31a092c6d01479c80801edb7449b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#ac7bd31a092c6d01479c80801edb7449b">wheel_delta</a></td></tr>
+<tr class="separator:ac7bd31a092c6d01479c80801edb7449b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa05f6ec3afddaa591ac77a5a43e095e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dcd/classgui_1_1event_1_1Event.html#aa05f6ec3afddaa591ac77a5a43e095e6">wx_event</a></td></tr>
+<tr class="separator:aa05f6ec3afddaa591ac77a5a43e095e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9cf85bf065ddc8c77624b1ffae410d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dcd/classgui_1_1event_1_1Event.html#ab9cf85bf065ddc8c77624b1ffae410d9">target</a></td></tr>
+<tr class="separator:ab9cf85bf065ddc8c77624b1ffae410d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa713aa5c6d7825a1adcde34ac90edc84"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dcd/classgui_1_1event_1_1Event.html#aa713aa5c6d7825a1adcde34ac90edc84">timestamp</a></td></tr>
+<tr class="separator:aa713aa5c6d7825a1adcde34ac90edc84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5b0f41fd3d91117fc7450783ed32c9f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dcd/classgui_1_1event_1_1Event.html#af5b0f41fd3d91117fc7450783ed32c9f">name</a></td></tr>
+<tr class="separator:af5b0f41fd3d91117fc7450783ed32c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Atributos públicos estáticos</h2></td></tr>
+<tr class="memitem:aa085004d9c14698f5366d44bf3cb4cb8"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#aa085004d9c14698f5366d44bf3cb4cb8">names</a></td></tr>
+<tr class="separator:aa085004d9c14698f5366d44bf3cb4cb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b027960e910e9ce12d758a17712c353"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dcd/classgui_1_1event_1_1Event.html#a1b027960e910e9ce12d758a17712c353">cancel_default</a> = False</td></tr>
+<tr class="separator:a1b027960e910e9ce12d758a17712c353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00092">92</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="a1ba96b318d5ad68d29fe7c74aa040d81"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.event.MouseEvent.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>wx_event</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00098">98</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00098">gui.event.MouseEvent.__init__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d61/classgui_1_1event_1_1MouseEvent_a1ba96b318d5ad68d29fe7c74aa040d81_icgraph.png" border="0" usemap="#d1/d61/classgui_1_1event_1_1MouseEvent_a1ba96b318d5ad68d29fe7c74aa040d81_icgraph" alt=""/></div>
+<map name="d1/d61/classgui_1_1event_1_1MouseEvent_a1ba96b318d5ad68d29fe7c74aa040d81_icgraph" id="d1/d61/classgui_1_1event_1_1MouseEvent_a1ba96b318d5ad68d29fe7c74aa040d81_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1ba96b318d5ad68d29fe7c74aa040d81"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.event.MouseEvent.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>wx_event</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00098">98</a> del archivo <a class="el" href="../../db/de4/gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00098">gui.event.MouseEvent.__init__()</a>, <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00102">gui.event.MouseEvent.alt_key</a>, <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00103">gui.event.MouseEvent.ctrl_key</a>, <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00106">gui.event.MouseEvent.left_button</a>, <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00105">gui.event.MouseEvent.meta_key</a>, <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00108">gui.event.MouseEvent.middle_button</a>, <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00107">gui.event.MouseEvent.right_button</a>, <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00104">gui.event.MouseEvent.shift_key</a>, <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00110">gui.event.MouseEvent.wheel_delta</a>, <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00100">gui.event.MouseEvent.x</a> y <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00101">gui.event.MouseEvent.y</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d61/classgui_1_1event_1_1MouseEvent_a1ba96b318d5ad68d29fe7c74aa040d81_cgraph.png" border="0" usemap="#d1/d61/classgui_1_1event_1_1MouseEvent_a1ba96b318d5ad68d29fe7c74aa040d81_cgraph" alt=""/></div>
+<map name="d1/d61/classgui_1_1event_1_1MouseEvent_a1ba96b318d5ad68d29fe7c74aa040d81_cgraph" id="d1/d61/classgui_1_1event_1_1MouseEvent_a1ba96b318d5ad68d29fe7c74aa040d81_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="ae36c52b5de580d3f33de8984def7a0a8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.event.Event.prevent_default </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cancel</em> = <code>True</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00040">40</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00024">gui.event.Event.cancel_default</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00040">gui.event.Event.prevent_default()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/dcd/classgui_1_1event_1_1Event_ae36c52b5de580d3f33de8984def7a0a8_icgraph.png" border="0" usemap="#d6/dcd/classgui_1_1event_1_1Event_ae36c52b5de580d3f33de8984def7a0a8_icgraph" alt=""/></div>
+<map name="d6/dcd/classgui_1_1event_1_1Event_ae36c52b5de580d3f33de8984def7a0a8_icgraph" id="d6/dcd/classgui_1_1event_1_1Event_ae36c52b5de580d3f33de8984def7a0a8_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae36c52b5de580d3f33de8984def7a0a8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.event.Event.prevent_default </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cancel</em> = <code>True</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00040">40</a> del archivo <a class="el" href="../../db/de4/gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00024">gui.event.Event.cancel_default</a> y <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00040">gui.event.Event.prevent_default()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/dcd/classgui_1_1event_1_1Event_ae36c52b5de580d3f33de8984def7a0a8_cgraph.png" border="0" usemap="#d6/dcd/classgui_1_1event_1_1Event_ae36c52b5de580d3f33de8984def7a0a8_cgraph" alt=""/></div>
+<map name="d6/dcd/classgui_1_1event_1_1Event_ae36c52b5de580d3f33de8984def7a0a8_cgraph" id="d6/dcd/classgui_1_1event_1_1Event_ae36c52b5de580d3f33de8984def7a0a8_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9787a9a648817cd9bdda5ad0ecee3ca4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.event.Event.stop_propagation </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00044">44</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00044">gui.event.Event.stop_propagation()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/dcd/classgui_1_1event_1_1Event_a9787a9a648817cd9bdda5ad0ecee3ca4_icgraph.png" border="0" usemap="#d6/dcd/classgui_1_1event_1_1Event_a9787a9a648817cd9bdda5ad0ecee3ca4_icgraph" alt=""/></div>
+<map name="d6/dcd/classgui_1_1event_1_1Event_a9787a9a648817cd9bdda5ad0ecee3ca4_icgraph" id="d6/dcd/classgui_1_1event_1_1Event_a9787a9a648817cd9bdda5ad0ecee3ca4_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9787a9a648817cd9bdda5ad0ecee3ca4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.event.Event.stop_propagation </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00044">44</a> del archivo <a class="el" href="../../db/de4/gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00044">gui.event.Event.stop_propagation()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/dcd/classgui_1_1event_1_1Event_a9787a9a648817cd9bdda5ad0ecee3ca4_cgraph.png" border="0" usemap="#d6/dcd/classgui_1_1event_1_1Event_a9787a9a648817cd9bdda5ad0ecee3ca4_cgraph" alt=""/></div>
+<map name="d6/dcd/classgui_1_1event_1_1Event_a9787a9a648817cd9bdda5ad0ecee3ca4_cgraph" id="d6/dcd/classgui_1_1event_1_1Event_a9787a9a648817cd9bdda5ad0ecee3ca4_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="a40658a7d1e1bb225a425d3e4f49eb9f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.MouseEvent.alt_key</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00102">102</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00098">gui.event.MouseEvent.__init__()</a> y <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00118">gui.event.KeyEvent.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b027960e910e9ce12d758a17712c353"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.Event.cancel_default = False</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00024">24</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00040">gui.event.Event.prevent_default()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5c9f0ae8c8155f5b55a948686d6b43f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.MouseEvent.ctrl_key</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00103">103</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00098">gui.event.MouseEvent.__init__()</a> y <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00118">gui.event.KeyEvent.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad4f74539b460393299e711de32a1c346"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.MouseEvent.left_button</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00106">106</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00098">gui.event.MouseEvent.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a06a01af3f3b12caa14e218038177a75b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.MouseEvent.meta_key</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00105">105</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00098">gui.event.MouseEvent.__init__()</a> y <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00118">gui.event.KeyEvent.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4d2e88c7cc88a61687f61509681fb7c2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.MouseEvent.middle_button</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00108">108</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00098">gui.event.MouseEvent.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af5b0f41fd3d91117fc7450783ed32c9f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.Event.name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00038">38</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00026">gui.event.Event.__init__()</a>, <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00032">gui.html.input.FormControlMixin.__init__()</a>, <a class="el" href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00062">gui.spec.EventSpec.__init__()</a> y <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00061">gui.event.UIEvent.prevent_default()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa085004d9c14698f5366d44bf3cb4cb8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">list gui.event.MouseEvent.names</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= [<span class="stringliteral">&quot;click&quot;</span>, <span class="stringliteral">&quot;dblclick&quot;</span>, <span class="stringliteral">&quot;mousedown&quot;</span>, <span class="stringliteral">&quot;mousemove&quot;</span>,</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;            <span class="stringliteral">&quot;mouseout&quot;</span>, <span class="stringliteral">&quot;mouseover&quot;</span>, <span class="stringliteral">&quot;mouseup&quot;</span>, <span class="stringliteral">&quot;mousewheel&quot;</span>]</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00095">95</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af694c594db12fdc20d28f0fd47b760d1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.MouseEvent.right_button</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00107">107</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00098">gui.event.MouseEvent.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b057bf5af2ba67dadda3db1acf7be6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.MouseEvent.shift_key</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00104">104</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00098">gui.event.MouseEvent.__init__()</a> y <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00118">gui.event.KeyEvent.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab9cf85bf065ddc8c77624b1ffae410d9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.Event.target</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00033">33</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00026">gui.event.Event.__init__()</a>, <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00052">gui.event.UIEvent.__init__()</a> y <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00143">gui.event.HtmlLinkEvent.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa713aa5c6d7825a1adcde34ac90edc84"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.Event.timestamp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00034">34</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00043">gui.tools.designer.BasicDesigner.__call__()</a>, <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00026">gui.event.Event.__init__()</a> y <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00029">gui.tools.designer.BasicDesigner.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac7bd31a092c6d01479c80801edb7449b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.MouseEvent.wheel_delta</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00110">110</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00098">gui.event.MouseEvent.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa05f6ec3afddaa591ac77a5a43e095e6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.Event.wx_event</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00027">27</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00026">gui.event.Event.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acc7816fc36df14e19bd37dcfe4102134"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.MouseEvent.x</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00100">100</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00098">gui.event.MouseEvent.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaefb2df4eba815aba58492c511c458bf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.MouseEvent.y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00101">101</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00098">gui.event.MouseEvent.__init__()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>build/lib.linux-x86_64-2.7/gui/<a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/dc4/namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="../../d3/d6d/namespacegui_1_1event.html">event</a></li><li class="navelem"><a class="el" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html">MouseEvent</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:48 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

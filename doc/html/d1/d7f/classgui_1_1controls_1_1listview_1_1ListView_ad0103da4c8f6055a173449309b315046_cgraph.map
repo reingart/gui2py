@@ -1,0 +1,4 @@
+<map id="gui.controls.listview.ListView.insert_items" name="gui.controls.listview.ListView.insert_items">
+<area shape="rect" id="node2" href="$d1/d7f/classgui_1_1controls_1_1listview_1_1ListView.html#aee76d6e1ec5d8a4431d2b9120a3b0d82" title="gui.controls.listview.List\lView.get_count" alt="" coords="225,5,388,46"/>
+<area shape="rect" id="node3" href="$dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a4357802120a84ec4a88ae429e6bead7a" title="gui.controls.listbox.Item\lContainerControl.get_count" alt="" coords="216,70,397,111"/>
+</map>

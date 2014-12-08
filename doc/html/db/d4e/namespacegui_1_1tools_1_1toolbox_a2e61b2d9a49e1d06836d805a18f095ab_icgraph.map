@@ -1,0 +1,6 @@
+<map id="gui.tools.toolbox.set_drop_target" name="gui.tools.toolbox.set_drop_target">
+<area shape="rect" id="node2" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#af70ae5e60130d48df846d94df4c56c02" title="gui.tools.inspector.Inspector\lPanel.add_child" alt="" coords="221,29,408,70"/>
+<area shape="rect" id="node4" href="$d6/dc1/classgui_1_1tools_1_1designer_1_1CustomToolTipWindow.html#ab96be9792d7f3166bf130c5555314b64" title="gui.tools.designer.Custom\lToolTipWindow.CalculateBestPosition" alt="" coords="192,94,437,135"/>
+<area shape="rect" id="node5" href="$d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html#ae3135f53ae36813249c6e8caa7eec6b2" title="gui.tools.toolbox.ToolBox\lDropTarget.copy" alt="" coords="230,159,399,201"/>
+<area shape="rect" id="node3" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182" title="gui.tools.inspector.Inspector\lPanel.show_context_menu" alt="" coords="485,29,672,70"/>
+</map>

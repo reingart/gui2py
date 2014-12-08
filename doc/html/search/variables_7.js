@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['gauge',['gauge',['../dc/d41/namespacegui_1_1images.html#a381a61f3f585e6bdf46d5d299f09f59a',1,'gui::images']]],
+  ['genopt',['genopt',['../d7/daa/classext_1_1autosummary_1_1FakeDirective.html#a6ed06eef8499ff74695cc4c87a9a7ff5',1,'ext.autosummary.FakeDirective.genopt()'],['../dd/d3d/classext_1_1autosummary_1_1Autosummary.html#a4581a8a4121af704a4c60e2dbdbbb423',1,'ext.autosummary.Autosummary.genopt()']]],
+  ['get_5fstring_5fselection',['get_string_selection',['../df/d1e/classgui_1_1controls_1_1textbox_1_1TextBox.html#a40efb05cd98a17af5e056da69b1e2ced',1,'gui::controls::textbox::TextBox']]],
+  ['getbackgroundcolour',['GetBackgroundColour',['../d1/d13/classgui_1_1menu_1_1wx__Menu.html#aafafe2c0b566d44bdc0b242d1776602a',1,'gui.menu.wx_Menu.GetBackgroundColour()'],['../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#a9df01a993a5c7f6d301c31eb879314be',1,'gui.menu.wx_MenuBar.GetBackgroundColour()']]],
+  ['getfont',['GetFont',['../d1/d13/classgui_1_1menu_1_1wx__Menu.html#a15fb07c09e7c719d8fdd67b9ee575403',1,'gui.menu.wx_Menu.GetFont()'],['../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#a9438605e641f35184ca301beb0d54347',1,'gui.menu.wx_MenuBar.GetFont()']]],
+  ['getforegroundcolour',['GetForegroundColour',['../d1/de7/classgui_1_1menu_1_1wx__MenuItem.html#acb5e3f8cdb6adfedbd611ecf4fdcaa04',1,'gui.menu.wx_MenuItem.GetForegroundColour()'],['../d1/d13/classgui_1_1menu_1_1wx__Menu.html#ac5be8b0049c018f43e765b31bf6a865a',1,'gui.menu.wx_Menu.GetForegroundColour()'],['../dd/d79/classgui_1_1menu_1_1wx__MenuBar.html#aa0faf0d616cd391dfde80db36e2cb4d4',1,'gui.menu.wx_MenuBar.GetForegroundColour()']]],
+  ['getid',['GetId',['../d1/d13/classgui_1_1menu_1_1wx__Menu.html#a644944f8a7cca77ad2f3522c01b541a3',1,'gui::menu::wx_Menu']]],
+  ['getpositiontuple',['GetPositionTuple',['../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#ab6bc719367dbd38e1c074742f53aacc4',1,'gui::menu::wx_DummyWindow']]],
+  ['getsizetuple',['GetSizeTuple',['../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a69a297220f15bda7b3737423a3e88593',1,'gui::menu::wx_DummyWindow']]],
+  ['grid',['grid',['../dc/d41/namespacegui_1_1images.html#a8c65320bb065770b304ba627ddffbe01',1,'gui::images']]],
+  ['grid_5fsize',['GRID_SIZE',['../de/dbe/namespacegui_1_1tools_1_1designer.html#a6dd61cf6bfac73536efa073c9a9d2e00',1,'gui::tools::designer']]],
+  ['gridtablebase',['GridTableBase',['../d3/d2b/namespacegui_1_1controls_1_1gridview.html#afb47020f3a26181d6cc5f0d86241abba',1,'gui::controls::gridview']]],
+  ['grip',['grip',['../d4/d9b/classgui_1_1statusbar_1_1StatusBar.html#a99703b9ab89587ebcfec4a0dc774ad3c',1,'gui::statusbar::StatusBar']]],
+  ['group',['group',['../dd/dd2/classgui_1_1controls_1_1radiobutton_1_1RadioButton.html#a7eee6a310a3f3677c774807d318e4965',1,'gui.controls.radiobutton.RadioButton.group()'],['../db/de6/classgui_1_1spec_1_1Spec.html#aa2aea77eef499026308475078d78c0c2',1,'gui.spec.Spec.group()']]],
+  ['groups',['groups',['../db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ae4513ae19dab474ea5219005064df25b',1,'gui::tools::propeditor::PropertyEditorPanel']]],
+  ['gv',['gv',['../d3/d2b/namespacegui_1_1controls_1_1gridview.html#aed2f8124a1d7eaf2133a04624edad77c',1,'gui::controls::gridview']]]
+];

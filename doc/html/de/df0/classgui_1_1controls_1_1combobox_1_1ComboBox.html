@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Referencia de la Clase gui.controls.combobox.ComboBox</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('de/df0/classgui_1_1controls_1_1combobox_1_1ComboBox.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-attribs">Atributos públicos estáticos</a> &#124;
+<a href="#pri-static-attribs">Atributos privados estáticos</a> &#124;
+<a href="../../dc/dcc/classgui_1_1controls_1_1combobox_1_1ComboBox-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase gui.controls.combobox.ComboBox</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagrama de herencias de gui.controls.combobox.ComboBox</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/d6f/classgui_1_1controls_1_1combobox_1_1ComboBox__inherit__graph.png" border="0" usemap="#gui_8controls_8combobox_8ComboBox_inherit__map" alt="Inheritance graph"/></div>
+<map name="gui_8controls_8combobox_8ComboBox_inherit__map" id="gui_8controls_8combobox_8ComboBox_inherit__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración para gui.controls.combobox.ComboBox:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/dd0/classgui_1_1controls_1_1combobox_1_1ComboBox__coll__graph.png" border="0" usemap="#gui_8controls_8combobox_8ComboBox_coll__map" alt="Collaboration graph"/></div>
+<map name="gui_8controls_8combobox_8ComboBox_coll__map" id="gui_8controls_8combobox_8ComboBox_coll__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Atributos públicos estáticos</h2></td></tr>
+<tr class="memitem:a3f65f7c881b59c01bae359f0c169e9fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df0/classgui_1_1controls_1_1combobox_1_1ComboBox.html#a3f65f7c881b59c01bae359f0c169e9fe">multiselect</a> = False</td></tr>
+<tr class="separator:a3f65f7c881b59c01bae359f0c169e9fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98bcdff07bed381c1ec1b5fc21dd7405"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df0/classgui_1_1controls_1_1combobox_1_1ComboBox.html#a98bcdff07bed381c1ec1b5fc21dd7405">text</a></td></tr>
+<tr class="separator:a98bcdff07bed381c1ec1b5fc21dd7405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad699583156a147a9a491ddc03d86a6fa"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df0/classgui_1_1controls_1_1combobox_1_1ComboBox.html#ad699583156a147a9a491ddc03d86a6fa">readonly</a> = StyleSpec(wx.CB_READONLY, default=False)</td></tr>
+<tr class="separator:ad699583156a147a9a491ddc03d86a6fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aee08056d1a4f4fed00ab6734d406bc"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df0/classgui_1_1controls_1_1combobox_1_1ComboBox.html#a0aee08056d1a4f4fed00ab6734d406bc">onclick</a></td></tr>
+<tr class="separator:a0aee08056d1a4f4fed00ab6734d406bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae15b71d072fea7ecdc745612fd511bfa"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df0/classgui_1_1controls_1_1combobox_1_1ComboBox.html#ae15b71d072fea7ecdc745612fd511bfa">onchange</a> = EventSpec('change', binding=wx.EVT_TEXT, kind=FormEvent)</td></tr>
+<tr class="separator:ae15b71d072fea7ecdc745612fd511bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Atributos privados estáticos</h2></td></tr>
+<tr class="memitem:a00c54a1d896941edf7dd9e8d45c66c56"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df0/classgui_1_1controls_1_1combobox_1_1ComboBox.html#a00c54a1d896941edf7dd9e8d45c66c56">_wx_class</a> = wx.ComboBox</td></tr>
+<tr class="separator:a00c54a1d896941edf7dd9e8d45c66c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a923a60ed0ded037b830069a051aef2d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df0/classgui_1_1controls_1_1combobox_1_1ComboBox.html#a923a60ed0ded037b830069a051aef2d5">_style</a> = wx.CB_DROPDOWN|wx.NO_FULL_REPAINT_ON_RESIZE|wx.CLIP_SIBLINGS</td></tr>
+<tr class="separator:a923a60ed0ded037b830069a051aef2d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b6ba81737ba85b4b28cd06a2be1d258"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df0/classgui_1_1controls_1_1combobox_1_1ComboBox.html#a9b6ba81737ba85b4b28cd06a2be1d258">_image</a> = <a class="el" href="../../dc/d41/namespacegui_1_1images.html#a89ac6e578d27958f8c083cce2820d660">images.combobox</a></td></tr>
+<tr class="separator:a9b6ba81737ba85b4b28cd06a2be1d258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81f4185b69ec7bde91c9f284da89ab12"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df0/classgui_1_1controls_1_1combobox_1_1ComboBox.html#a81f4185b69ec7bde91c9f284da89ab12">_commandtype</a> = wx.wxEVT_COMMAND_COMBOBOX_SELECTED</td></tr>
+<tr class="separator:a81f4185b69ec7bde91c9f284da89ab12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html#l00019">19</a> del archivo <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html">combobox.py</a>.</p>
+</div><h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="a81f4185b69ec7bde91c9f284da89ab12"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.combobox.ComboBox._commandtype = wx.wxEVT_COMMAND_COMBOBOX_SELECTED</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html#l00025">25</a> del archivo <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html">combobox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00034">gui.controls.listbox.ItemContainerControl._set_selection()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b6ba81737ba85b4b28cd06a2be1d258"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.combobox.ComboBox._image = <a class="el" href="../../dc/d41/namespacegui_1_1images.html#a89ac6e578d27958f8c083cce2820d660">images.combobox</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html#l00024">24</a> del archivo <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html">combobox.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a923a60ed0ded037b830069a051aef2d5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.combobox.ComboBox._style = wx.CB_DROPDOWN|wx.NO_FULL_REPAINT_ON_RESIZE|wx.CLIP_SIBLINGS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html#l00023">23</a> del archivo <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html">combobox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d8/d46/gui_2font_8py_source.html#l00019">gui.font.Font.__init__()</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00054">gui.font.Font._get_style()</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00062">gui.font.Font._set_style()</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00112">gui.font.Font.description()</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00030">gui.font.Font.get_wx_font()</a> y <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00038">gui.font.Font.set_wx_font()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a00c54a1d896941edf7dd9e8d45c66c56"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.combobox.ComboBox._wx_class = wx.ComboBox</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html#l00022">22</a> del archivo <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html">combobox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../da/d65/build_2lib_8linux-x86__64-2_87_2gui_2controls_2textbox_8py_source.html#l00030">gui.controls.textbox.TextBox.__init__()</a> y <a class="el" href="../../d1/def/gui_2controls_2panel_8py_source.html#l00066">gui.controls.panel.Panel.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3f65f7c881b59c01bae359f0c169e9fe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.combobox.ComboBox.multiselect = False</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html#l00027">27</a> del archivo <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html">combobox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00070">gui.controls.listbox.ItemContainerControl._get_data_selection()</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00023">gui.controls.listbox.ItemContainerControl._get_selection()</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00052">gui.controls.listbox.ItemContainerControl._get_string_selection()</a> y <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00079">gui.controls.listbox.ItemContainerControl._set_data_selection()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae15b71d072fea7ecdc745612fd511bfa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.combobox.ComboBox.onchange = EventSpec('change', binding=wx.EVT_TEXT, kind=FormEvent)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html#l00036">36</a> del archivo <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html">combobox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00034">gui.controls.listbox.ItemContainerControl._set_selection()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0aee08056d1a4f4fed00ab6734d406bc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.combobox.ComboBox.onclick</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;click&#39;</span>, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                                   binding=wx.EVT_COMBOBOX, kind=FormEvent)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html#l00034">34</a> del archivo <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html">combobox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00048">gui.html.input.SubmitButton.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad699583156a147a9a491ddc03d86a6fa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.combobox.ComboBox.readonly = StyleSpec(wx.CB_READONLY, default=False)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html#l00032">32</a> del archivo <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html">combobox.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a98bcdff07bed381c1ec1b5fc21dd7405"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.combobox.ComboBox.text</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= InitSpec(<span class="keyword">lambda</span> self: self.wx_obj.GetValue(), </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                <span class="keyword">lambda</span> self, value: self.wx_obj.SetValue(value),</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                default=<span class="stringliteral">&quot;&quot;</span>, type=<span class="stringliteral">&quot;string&quot;</span>, _name=<span class="stringliteral">&quot;_value&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html#l00029">29</a> del archivo <a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html">combobox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d4/d6c/gui_2html_2label_8py_source.html#l00014">gui.html.label.FormLabel.__init__()</a>, <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00063">gui.html.input.FormTextInput.__init__()</a>, <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00125">gui.html.input.FormTextArea.__init__()</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00079">gui.html.input.FormTextInput.get_value()</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00140">gui.html.input.FormTextArea.get_value()</a> y <a class="el" href="../../d5/da6/gui_2controls_2listview_8py_source.html#l00244">gui.controls.listview.ListColumn.set_parent()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>build/lib.linux-x86_64-2.7/gui/controls/<a class="el" href="../../db/dcc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2combobox_8py_source.html">combobox.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/dc4/namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="../../d7/d56/namespacegui_1_1controls.html">controls</a></li><li class="navelem"><a class="el" href="../../d7/dfc/namespacegui_1_1controls_1_1combobox.html">combobox</a></li><li class="navelem"><a class="el" href="../../de/df0/classgui_1_1controls_1_1combobox_1_1ComboBox.html">ComboBox</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:47 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

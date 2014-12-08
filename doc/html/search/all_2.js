@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['b',['b',['../de/d4c/namespacegui_1_1controls_1_1button.html#a50ec1793e628a82852bf474742d2bbe4',1,'gui.controls.button.b()'],['../d3/dca/namespacegui_1_1controls_1_1line.html#a27c9f0a56dd7cec44384d092eda0eede',1,'gui.controls.line.b()'],['../da/df7/namespacegui_1_1controls_1_1panel.html#af7423718d5ed9a0cbe4bff04becd190a',1,'gui.controls.panel.b()'],['../dc/d82/namespacegui_1_1windows_1_1window.html#a69af02aba20b517e8cd2742328c3a183',1,'gui.windows.window.b()']]],
+  ['backgroundcolor',['backgroundColor',['../da/d31/classgui_1_1controls_1_1canvas_1_1Canvas.html#a6af9fc0090b1cebb6f038962975ccdbd',1,'gui::controls::canvas::Canvas']]],
+  ['basicdesigner',['BasicDesigner',['../de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html',1,'gui::tools::designer']]],
+  ['beginedit',['BeginEdit',['../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a069fed0de69c809b134e5916ba59d416',1,'gui.controls.gridview.ComboCellEditor.BeginEdit'],['../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a069fed0de69c809b134e5916ba59d416',1,'gui.controls.gridview.ComboCellEditor.BeginEdit']]],
+  ['bgcolor',['bgcolor',['../d7/d98/classgui_1_1component_1_1Component.html#a899136d1163a86e15e07266ad24e535e',1,'gui.component.Component.bgcolor()'],['../da/d31/classgui_1_1controls_1_1canvas_1_1Canvas.html#ad101798cbb426760e5d9f20947c08e7e',1,'gui.controls.canvas.Canvas.bgcolor()'],['../d8/d4e/classgui_1_1controls_1_1image_1_1Image.html#a06167192c0509c3aeea63dc786072b2a',1,'gui.controls.image.Image.bgcolor()']]],
+  ['bind',['Bind',['../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a973fe5769b473e1191d66ac27ad7ab1c',1,'gui.menu.wx_DummyWindow.Bind'],['../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a973fe5769b473e1191d66ac27ad7ab1c',1,'gui.menu.wx_DummyWindow.Bind']]],
+  ['bindings',['bindings',['../d0/d75/classgui_1_1spec_1_1EventSpec.html#a753cfcc96344b20aa69469e655de3a60',1,'gui::spec::EventSpec']]],
+  ['bitmap',['Bitmap',['../dd/d51/classgui_1_1graphic_1_1Bitmap.html',1,'gui::graphic']]],
+  ['bitmap',['bitmap',['../d8/d4e/classgui_1_1controls_1_1image_1_1Image.html#a17ca2f07ff8cd2eafdabd88436c167fb',1,'gui::controls::image::Image']]],
+  ['bitmap_5fto_5fpil',['bitmap_to_pil',['../d9/dbc/namespacegui_1_1graphic.html#a01c89e7e4a970b1919a538809ad0f766',1,'gui::graphic']]],
+  ['bitmap_5ftype',['bitmap_type',['../d9/dbc/namespacegui_1_1graphic.html#aa1280562147624262a72e3d2a417471e',1,'gui::graphic']]],
+  ['blit',['blit',['../da/d31/classgui_1_1controls_1_1canvas_1_1Canvas.html#a85eb7231178a3542a87eeac58c691c44',1,'gui.controls.canvas.Canvas.blit'],['../da/d31/classgui_1_1controls_1_1canvas_1_1Canvas.html#a85eb7231178a3542a87eeac58c691c44',1,'gui.controls.canvas.Canvas.blit']]],
+  ['bmp',['bmp',['../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#aa0f9129f3ca30ec345e44b8e92edf909',1,'gui::tools::designer::Facade']]],
+  ['border',['border',['../d1/d9f/classgui_1_1component_1_1ControlSuper.html#a997a754cce31f9724db1830332eccba4',1,'gui.component.ControlSuper.border()'],['../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a46647ea0ec27f1a82e5ea482ec3f900c',1,'gui.windows.window.Window.border()']]],
+  ['bring_5fto_5ffront',['bring_to_front',['../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a38800891c0c52108e8cd482023479fee',1,'gui.tools.inspector.InspectorPanel.bring_to_front'],['../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a38800891c0c52108e8cd482023479fee',1,'gui.tools.inspector.InspectorPanel.bring_to_front']]],
+  ['brushfillstylelist',['BrushFillStyleList',['../d0/ddd/namespacegui_1_1controls_1_1canvas.html#a2de1787828080b86ee7c2c61040f669c',1,'gui::controls::canvas']]],
+  ['build_5fcomponent',['build_component',['../dc/d3b/namespacegui_1_1resource.html#af1ed49eecce0033fea5730ff3371596d',1,'gui::resource']]],
+  ['build_5fdata_5fset',['build_data_set',['../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#a12c9c523698443426f810b58c73b42c4',1,'gui.html.form.HTMLForm.build_data_set'],['../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#a12c9c523698443426f810b58c73b42c4',1,'gui.html.form.HTMLForm.build_data_set']]],
+  ['build_5ftree',['build_tree',['../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a479b17cb17c30b70c1611a801c8e0dec',1,'gui.tools.inspector.InspectorPanel.build_tree'],['../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a479b17cb17c30b70c1611a801c8e0dec',1,'gui.tools.inspector.InspectorPanel.build_tree']]],
+  ['build_5fwindow',['build_window',['../dc/d3b/namespacegui_1_1resource.html#a6b87d93cdc5982ba3fa7c556abace033',1,'gui::resource']]],
+  ['button',['button',['../dc/d41/namespacegui_1_1images.html#ae46503eb3d0bc2cad7d6607e107fc239',1,'gui::images']]],
+  ['button',['Button',['../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html',1,'gui::controls::button']]],
+  ['button_2epy',['button.py',['../da/d8f/gui_2controls_2button_8py.html',1,'']]],
+  ['button_2epy',['button.py',['../d1/d58/build_2lib_8linux-x86__64-2_87_2gui_2controls_2button_8py.html',1,'']]]
+];

@@ -1,0 +1,10 @@
+<map id="gui.menu.wx_DummyWindow.GetSize" name="gui.menu.wx_DummyWindow.GetSize">
+<area shape="rect" id="node2" href="$d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#a15ff9f7bdc89f91339983daac58876a5" title="gui.flowsizer.FlowSizer.\l_calcSizeAndPos" alt="" coords="295,29,457,70"/>
+<area shape="rect" id="node3" href="$d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#a48a4b0a54f0ca60e55acdc6ee81f2234" title="gui.flowsizer.FlowSizer.\lCalcMin" alt="" coords="559,58,721,99"/>
+<area shape="rect" id="node4" href="$d6/dc1/classgui_1_1tools_1_1designer_1_1CustomToolTipWindow.html#ab96be9792d7f3166bf130c5555314b64" title="gui.tools.designer.Custom\lToolTipWindow.CalculateBestPosition" alt="" coords="253,170,499,211"/>
+<area shape="rect" id="node5" href="$d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#abc6143a6e23419180dcc0df2d8704b52" title="gui.tools.designer.Facade.on\l_paint" alt="" coords="281,259,471,301"/>
+<area shape="rect" id="node7" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a227e584bcd80cbfa76a17250f6be2709" title="gui.tools.inspector.Inspector\lPanel.OnSize" alt="" coords="283,349,469,390"/>
+<area shape="rect" id="node9" href="$d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#af8677638dedf61f644ef9db2a8f81ffb" title="gui.flowsizer.FlowSizer.\lRecalcSizes" alt="" coords="295,438,457,479"/>
+<area shape="rect" id="node6" href="$d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a9f3fb479c1a4fd2bd78299a2cdce6d8f" title="gui.tools.designer.Facade.\l__init__" alt="" coords="553,259,727,301"/>
+<area shape="rect" id="node8" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#abf4066bdb859fc8ca923d9a22f0ea546" title="gui.tools.inspector.Inspector\lPanel.__init__" alt="" coords="547,349,733,390"/>
+</map>

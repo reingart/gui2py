@@ -1,0 +1,10 @@
+<map id="gui.tools.inspector.InspectorPanel.do_unhighlight" name="gui.tools.inspector.InspectorPanel.do_unhighlight">
+<area shape="rect" id="node2" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ac369f3121aba776ff3001d45a317d1fc" title="gui.tools.inspector.Inspector\lPanel.do_highlight" alt="" coords="240,94,427,135"/>
+<area shape="rect" id="node3" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a93b4d530566190a084aa12590d02b310" title="gui.tools.inspector.Inspector\lPanel.highlight" alt="" coords="475,94,661,135"/>
+<area shape="rect" id="node4" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#aa47d66f67023fa6354981711d14429b8" title="gui.tools.inspector.Inspector\lPanel.OnSelect" alt="" coords="709,29,896,70"/>
+<area shape="rect" id="node6" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182" title="gui.tools.inspector.Inspector\lPanel.show_context_menu" alt="" coords="709,159,896,201"/>
+<area shape="rect" id="node5" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#abf4066bdb859fc8ca923d9a22f0ea546" title="gui.tools.inspector.Inspector\lPanel.__init__" alt="" coords="1179,75,1365,117"/>
+<area shape="rect" id="node7" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a09f420bcf22a03cb72b015c5d7c735e1" title="gui.tools.inspector.Inspector\lPanel.inspect" alt="" coords="944,179,1131,221"/>
+<area shape="rect" id="node9" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ab3e19cf3494aa1cc0c03f4dea519c416" title="gui.tools.inspector.Inspector\lPanel.OnRightUp" alt="" coords="944,90,1131,131"/>
+<area shape="rect" id="node8" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#af70ae5e60130d48df846d94df4c56c02" title="gui.tools.inspector.Inspector\lPanel.add_child" alt="" coords="1179,194,1365,235"/>
+</map>

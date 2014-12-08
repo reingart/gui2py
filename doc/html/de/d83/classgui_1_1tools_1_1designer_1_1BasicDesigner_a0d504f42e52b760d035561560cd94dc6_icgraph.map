@@ -1,0 +1,5 @@
+<map id="gui.tools.designer.BasicDesigner.delete" name="gui.tools.designer.BasicDesigner.delete">
+<area shape="rect" id="node2" href="$de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ae6bd0af10b6e21d249814190b671afd3" title="gui.tools.designer.Basic\lDesigner.key_press" alt="" coords="229,29,390,70"/>
+<area shape="rect" id="node4" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182" title="gui.tools.inspector.Inspector\lPanel.show_context_menu" alt="" coords="216,94,403,135"/>
+<area shape="rect" id="node3" href="$de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ab438e7b78dc9494cfb71315b358616e4" title="gui.tools.designer.Basic\lDesigner.__call__" alt="" coords="451,29,613,70"/>
+</map>

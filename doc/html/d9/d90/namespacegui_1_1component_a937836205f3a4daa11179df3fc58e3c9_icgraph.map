@@ -1,0 +1,10 @@
+<map id="gui.component.get" name="gui.component.get">
+<area shape="rect" id="node2" href="$d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aef8a50d43a190a5b3828b123e46af74c" title="gui.controls.gridview.Grid\lTable.GetRawValue" alt="" coords="211,29,381,70"/>
+<area shape="rect" id="node3" href="$d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a82d0ed1526c8ff2af4bd176f7251563a" title="gui.controls.gridview.Grid\lTable.GetValue" alt="" coords="211,118,381,159"/>
+<area shape="rect" id="node5" href="$db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a461b88b3e37b51d4922e75cb7f661027" title="gui.tools.propeditor.Property\lEditorPanel.load_object" alt="" coords="203,183,389,225"/>
+<area shape="rect" id="node6" href="$db/d2a/namespacegui_1_1tools_1_1migrate.html#a99e7090ba256725cd82aab6af012633f" title="gui.tools.migrate.migrate\l_control" alt="" coords="213,249,379,290"/>
+<area shape="rect" id="node7" href="$db/d2a/namespacegui_1_1tools_1_1migrate.html#a2f266b6edde32bf783445aa0355a0b5d" title="gui.tools.migrate.migrate\l_window" alt="" coords="457,278,623,319"/>
+<area shape="rect" id="node8" href="$d7/d98/classgui_1_1component_1_1Component.html#ad146f1473fa23139699d793758a6aaee" title="gui.component.Component.set\l_parent" alt="" coords="196,366,396,407"/>
+<area shape="rect" id="node9" href="$dc/d07/classgui_1_1component_1_1SubComponent.html#abbd0beed5e2f9ca4c85c159aa2336fd2" title="gui.component.SubComponent.set\l_parent" alt="" coords="185,431,407,473"/>
+<area shape="rect" id="node4" href="$df/d1e/classgui_1_1controls_1_1textbox_1_1TextBox.html#af0f315931cc806307ab01f45e611cadf" title="gui.controls.textbox.Text\lBox.get_string" alt="" coords="457,118,623,159"/>
+</map>

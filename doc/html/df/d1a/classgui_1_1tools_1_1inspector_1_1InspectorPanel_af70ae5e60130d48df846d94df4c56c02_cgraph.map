@@ -1,0 +1,17 @@
+<map id="gui.tools.inspector.InspectorPanel.add_child" name="gui.tools.inspector.InspectorPanel.add_child">
+<area shape="rect" id="node2" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a09f420bcf22a03cb72b015c5d7c735e1" title="gui.tools.inspector.Inspector\lPanel.inspect" alt="" coords="240,123,427,165"/>
+<area shape="rect" id="node16" href="$db/d4e/namespacegui_1_1tools_1_1toolbox.html#a2e61b2d9a49e1d06836d805a18f095ab" title="gui.tools.toolbox.set\l_drop_target" alt="" coords="264,189,403,230"/>
+<area shape="rect" id="node3" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#acd3321153d346058fb9d100b47824cec" title="gui.tools.inspector.Inspector\lPanel.activate_item" alt="" coords="475,85,661,126"/>
+<area shape="rect" id="node12" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182" title="gui.tools.inspector.Inspector\lPanel.show_context_menu" alt="" coords="475,163,661,205"/>
+<area shape="rect" id="node4" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a59c1ce8f0b5d976ea5bb7c1442824af6" title="gui.tools.inspector.Inspector\lPanel.update" alt="" coords="724,5,911,46"/>
+<area shape="rect" id="node5" href="$dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a7fc319b435e00175890da5ee4b2b330a" title="gui.tools.designer.Selection\lMarker.update" alt="" coords="726,70,909,111"/>
+<area shape="rect" id="node7" href="$d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a72b0f21887fb8b746ee99646b5d7c4a7" title="gui.tools.designer.Facade.update" alt="" coords="710,136,925,163"/>
+<area shape="rect" id="node6" href="$dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a5e7b632668683e7727d93195e23870dd" title="gui.tools.designer.Selection\lMarker.draw" alt="" coords="997,19,1179,61"/>
+<area shape="rect" id="node8" href="$da/d31/classgui_1_1controls_1_1canvas_1_1Canvas.html#a10087fa35fd33fd2f3237e23ee7421a3" title="gui.controls.canvas.Canvas.refresh" alt="" coords="974,85,1202,112"/>
+<area shape="rect" id="node9" href="$d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a163280d73dea67f87f5bc394b538a80c" title="gui.tools.designer.Facade.refresh" alt="" coords="981,136,1195,163"/>
+<area shape="rect" id="node11" href="$da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#adae2e18973709734aeae837dd3ad8feb" title="gui.controls.gridview.Combo\lCellEditor.SetSize" alt="" coords="995,187,1181,229"/>
+<area shape="rect" id="node10" href="$da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a25499840cdbef32ef2f196860318787c" title="gui.controls.gridview.Combo\lCellEditor.Show" alt="" coords="1251,129,1437,170"/>
+<area shape="rect" id="node13" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a93b4d530566190a084aa12590d02b310" title="gui.tools.inspector.Inspector\lPanel.highlight" alt="" coords="724,190,911,231"/>
+<area shape="rect" id="node14" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ac369f3121aba776ff3001d45a317d1fc" title="gui.tools.inspector.Inspector\lPanel.do_highlight" alt="" coords="995,253,1181,294"/>
+<area shape="rect" id="node15" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5f95eb72313bd1c93bfbedfc1fb3a75e" title="gui.tools.inspector.Inspector\lPanel.do_unhighlight" alt="" coords="1251,253,1437,294"/>
+</map>

@@ -1,0 +1,2571 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Referencia de la Clase gui.controls.gridview.GridTable</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="#properties">Propiedades</a> &#124;
+<a href="#pri-methods">Métodos privados</a> &#124;
+<a href="#pri-attribs">Atributos privados</a> &#124;
+<a href="../../dc/dec/classgui_1_1controls_1_1gridview_1_1GridTable-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase gui.controls.gridview.GridTable</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagrama de herencias de gui.controls.gridview.GridTable</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/de1/classgui_1_1controls_1_1gridview_1_1GridTable__inherit__graph.png" border="0" usemap="#gui_8controls_8gridview_8GridTable_inherit__map" alt="Inheritance graph"/></div>
+<map name="gui_8controls_8gridview_8GridTable_inherit__map" id="gui_8controls_8gridview_8GridTable_inherit__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración para gui.controls.gridview.GridTable:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/d91/classgui_1_1controls_1_1gridview_1_1GridTable__coll__graph.png" border="0" usemap="#gui_8controls_8gridview_8GridTable_coll__map" alt="Collaboration graph"/></div>
+<map name="gui_8controls_8gridview_8GridTable_coll__map" id="gui_8controls_8gridview_8GridTable_coll__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a95530e209d5680a7fcfadc395df4bd1f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a95530e209d5680a7fcfadc395df4bd1f">__init__</a></td></tr>
+<tr class="separator:a95530e209d5680a7fcfadc395df4bd1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec1545dc706480437884fe5226e59458"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aec1545dc706480437884fe5226e59458">GetNumberCols</a></td></tr>
+<tr class="separator:aec1545dc706480437884fe5226e59458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dbcddc020afb70011a7754895a7988e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a7dbcddc020afb70011a7754895a7988e">GetNumberRows</a></td></tr>
+<tr class="separator:a7dbcddc020afb70011a7754895a7988e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae719e4dbb12a962079db8209e97d584b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#ae719e4dbb12a962079db8209e97d584b">GetColLabelValue</a></td></tr>
+<tr class="separator:ae719e4dbb12a962079db8209e97d584b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f1e6702d418906cb444039b7e6b7442"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a3f1e6702d418906cb444039b7e6b7442">GetRowLabelValue</a></td></tr>
+<tr class="separator:a3f1e6702d418906cb444039b7e6b7442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82d0ed1526c8ff2af4bd176f7251563a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a82d0ed1526c8ff2af4bd176f7251563a">GetValue</a></td></tr>
+<tr class="separator:a82d0ed1526c8ff2af4bd176f7251563a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef8a50d43a190a5b3828b123e46af74c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aef8a50d43a190a5b3828b123e46af74c">GetRawValue</a></td></tr>
+<tr class="separator:aef8a50d43a190a5b3828b123e46af74c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf9ba197425ade671eb69696527bc580"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#abf9ba197425ade671eb69696527bc580">SetValue</a></td></tr>
+<tr class="separator:abf9ba197425ade671eb69696527bc580"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6469a12e5c12c3d2019fe64900aae792"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a6469a12e5c12c3d2019fe64900aae792">SetRawValue</a></td></tr>
+<tr class="separator:a6469a12e5c12c3d2019fe64900aae792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a731b2a0d8eaad9ba4fdacc962250b002"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a731b2a0d8eaad9ba4fdacc962250b002">IsEmptyCell</a></td></tr>
+<tr class="separator:a731b2a0d8eaad9ba4fdacc962250b002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58fee9ee2b3e4a740711ff4d2b60b91c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a58fee9ee2b3e4a740711ff4d2b60b91c">GetTypeName</a></td></tr>
+<tr class="separator:a58fee9ee2b3e4a740711ff4d2b60b91c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02d4786ebc777b5167b0208f1af2923d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a02d4786ebc777b5167b0208f1af2923d">CanGetValueAs</a></td></tr>
+<tr class="separator:a02d4786ebc777b5167b0208f1af2923d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a849167e652d184348c838402375f9ac3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a849167e652d184348c838402375f9ac3">CanSetValueAs</a></td></tr>
+<tr class="separator:a849167e652d184348c838402375f9ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ceca9f18caabddff7a40bfbbdac7d55"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8ceca9f18caabddff7a40bfbbdac7d55">InsertCols</a></td></tr>
+<tr class="separator:a8ceca9f18caabddff7a40bfbbdac7d55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3d3c13db875b0edc129f545c8231194"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#ac3d3c13db875b0edc129f545c8231194">AppendCols</a></td></tr>
+<tr class="separator:ac3d3c13db875b0edc129f545c8231194"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9888cfe4f606659d74b1f0df16d797b0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a9888cfe4f606659d74b1f0df16d797b0">DeleteCols</a></td></tr>
+<tr class="separator:a9888cfe4f606659d74b1f0df16d797b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedf892465769115e6b86997d2fd1a92c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aedf892465769115e6b86997d2fd1a92c">InsertRows</a></td></tr>
+<tr class="separator:aedf892465769115e6b86997d2fd1a92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca17abc8a8ef61c82212b0ae4dd30a29"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aca17abc8a8ef61c82212b0ae4dd30a29">AppendRows</a></td></tr>
+<tr class="separator:aca17abc8a8ef61c82212b0ae4dd30a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3737b47992f7e42bf3789292c7219a7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#ad3737b47992f7e42bf3789292c7219a7">DeleteRows</a></td></tr>
+<tr class="separator:ad3737b47992f7e42bf3789292c7219a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b7b589585e218c8ecaa21389f6c5a1f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a5b7b589585e218c8ecaa21389f6c5a1f">ResetView</a></td></tr>
+<tr class="separator:a5b7b589585e218c8ecaa21389f6c5a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb04002eecdd3330dd6e645fd1f84862"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#acb04002eecdd3330dd6e645fd1f84862">UpdateValues</a></td></tr>
+<tr class="separator:acb04002eecdd3330dd6e645fd1f84862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3e025fecaecbb1dd957d761241541a9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#ab3e025fecaecbb1dd957d761241541a9">SortColumn</a></td></tr>
+<tr class="separator:ab3e025fecaecbb1dd957d761241541a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95530e209d5680a7fcfadc395df4bd1f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a95530e209d5680a7fcfadc395df4bd1f">__init__</a></td></tr>
+<tr class="separator:a95530e209d5680a7fcfadc395df4bd1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec1545dc706480437884fe5226e59458"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aec1545dc706480437884fe5226e59458">GetNumberCols</a></td></tr>
+<tr class="separator:aec1545dc706480437884fe5226e59458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dbcddc020afb70011a7754895a7988e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a7dbcddc020afb70011a7754895a7988e">GetNumberRows</a></td></tr>
+<tr class="separator:a7dbcddc020afb70011a7754895a7988e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae719e4dbb12a962079db8209e97d584b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#ae719e4dbb12a962079db8209e97d584b">GetColLabelValue</a></td></tr>
+<tr class="separator:ae719e4dbb12a962079db8209e97d584b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f1e6702d418906cb444039b7e6b7442"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a3f1e6702d418906cb444039b7e6b7442">GetRowLabelValue</a></td></tr>
+<tr class="separator:a3f1e6702d418906cb444039b7e6b7442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82d0ed1526c8ff2af4bd176f7251563a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a82d0ed1526c8ff2af4bd176f7251563a">GetValue</a></td></tr>
+<tr class="separator:a82d0ed1526c8ff2af4bd176f7251563a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef8a50d43a190a5b3828b123e46af74c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aef8a50d43a190a5b3828b123e46af74c">GetRawValue</a></td></tr>
+<tr class="separator:aef8a50d43a190a5b3828b123e46af74c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf9ba197425ade671eb69696527bc580"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#abf9ba197425ade671eb69696527bc580">SetValue</a></td></tr>
+<tr class="separator:abf9ba197425ade671eb69696527bc580"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6469a12e5c12c3d2019fe64900aae792"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a6469a12e5c12c3d2019fe64900aae792">SetRawValue</a></td></tr>
+<tr class="separator:a6469a12e5c12c3d2019fe64900aae792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a731b2a0d8eaad9ba4fdacc962250b002"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a731b2a0d8eaad9ba4fdacc962250b002">IsEmptyCell</a></td></tr>
+<tr class="separator:a731b2a0d8eaad9ba4fdacc962250b002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58fee9ee2b3e4a740711ff4d2b60b91c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a58fee9ee2b3e4a740711ff4d2b60b91c">GetTypeName</a></td></tr>
+<tr class="separator:a58fee9ee2b3e4a740711ff4d2b60b91c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02d4786ebc777b5167b0208f1af2923d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a02d4786ebc777b5167b0208f1af2923d">CanGetValueAs</a></td></tr>
+<tr class="separator:a02d4786ebc777b5167b0208f1af2923d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a849167e652d184348c838402375f9ac3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a849167e652d184348c838402375f9ac3">CanSetValueAs</a></td></tr>
+<tr class="separator:a849167e652d184348c838402375f9ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ceca9f18caabddff7a40bfbbdac7d55"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8ceca9f18caabddff7a40bfbbdac7d55">InsertCols</a></td></tr>
+<tr class="separator:a8ceca9f18caabddff7a40bfbbdac7d55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3d3c13db875b0edc129f545c8231194"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#ac3d3c13db875b0edc129f545c8231194">AppendCols</a></td></tr>
+<tr class="separator:ac3d3c13db875b0edc129f545c8231194"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9888cfe4f606659d74b1f0df16d797b0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a9888cfe4f606659d74b1f0df16d797b0">DeleteCols</a></td></tr>
+<tr class="separator:a9888cfe4f606659d74b1f0df16d797b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedf892465769115e6b86997d2fd1a92c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aedf892465769115e6b86997d2fd1a92c">InsertRows</a></td></tr>
+<tr class="separator:aedf892465769115e6b86997d2fd1a92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca17abc8a8ef61c82212b0ae4dd30a29"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aca17abc8a8ef61c82212b0ae4dd30a29">AppendRows</a></td></tr>
+<tr class="separator:aca17abc8a8ef61c82212b0ae4dd30a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3737b47992f7e42bf3789292c7219a7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#ad3737b47992f7e42bf3789292c7219a7">DeleteRows</a></td></tr>
+<tr class="separator:ad3737b47992f7e42bf3789292c7219a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b7b589585e218c8ecaa21389f6c5a1f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a5b7b589585e218c8ecaa21389f6c5a1f">ResetView</a></td></tr>
+<tr class="separator:a5b7b589585e218c8ecaa21389f6c5a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb04002eecdd3330dd6e645fd1f84862"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#acb04002eecdd3330dd6e645fd1f84862">UpdateValues</a></td></tr>
+<tr class="separator:acb04002eecdd3330dd6e645fd1f84862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3e025fecaecbb1dd957d761241541a9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#ab3e025fecaecbb1dd957d761241541a9">SortColumn</a></td></tr>
+<tr class="separator:ab3e025fecaecbb1dd957d761241541a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:aa8087db179777806231572178f69e1a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aa8087db179777806231572178f69e1a5">wx_grid</a></td></tr>
+<tr class="separator:aa8087db179777806231572178f69e1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54f8af95c896e39514c04f4fe15b2edb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a54f8af95c896e39514c04f4fe15b2edb">plugins</a></td></tr>
+<tr class="separator:a54f8af95c896e39514c04f4fe15b2edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Propiedades</h2></td></tr>
+<tr class="memitem:aef24894c8e0047ff59532c3aa03359a4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aef24894c8e0047ff59532c3aa03359a4">columns</a> = property(lambda self: self.wx_grid.obj.columns)</td></tr>
+<tr class="separator:aef24894c8e0047ff59532c3aa03359a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb53cbdae17bb3346ba11f69887d0148"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#acb53cbdae17bb3346ba11f69887d0148">data</a> = property(lambda self: self.wx_grid.obj.items)</td></tr>
+<tr class="separator:acb53cbdae17bb3346ba11f69887d0148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Métodos privados</h2></td></tr>
+<tr class="memitem:a8f38eb56264218bd4100fef177b1c5a3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8f38eb56264218bd4100fef177b1c5a3">_updateColAttrs</a></td></tr>
+<tr class="separator:a8f38eb56264218bd4100fef177b1c5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f38eb56264218bd4100fef177b1c5a3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8f38eb56264218bd4100fef177b1c5a3">_updateColAttrs</a></td></tr>
+<tr class="separator:a8f38eb56264218bd4100fef177b1c5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:aced7039cbf795760dadb91a6562bdfb0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aced7039cbf795760dadb91a6562bdfb0">_rows</a></td></tr>
+<tr class="separator:aced7039cbf795760dadb91a6562bdfb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a171c43e06d1736dd5eb314dee16b6576"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a171c43e06d1736dd5eb314dee16b6576">_cols</a></td></tr>
+<tr class="separator:a171c43e06d1736dd5eb314dee16b6576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accc2963111c98b528791f589ef3697a0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#accc2963111c98b528791f589ef3697a0">_row_label</a></td></tr>
+<tr class="separator:accc2963111c98b528791f589ef3697a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00133">133</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="a95530e209d5680a7fcfadc395df4bd1f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>wx_grid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>plugins</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00136">136</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00136">gui.controls.gridview.GridTable.__init__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a95530e209d5680a7fcfadc395df4bd1f_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a95530e209d5680a7fcfadc395df4bd1f_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a95530e209d5680a7fcfadc395df4bd1f_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a95530e209d5680a7fcfadc395df4bd1f_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a95530e209d5680a7fcfadc395df4bd1f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>wx_grid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>plugins</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00136">136</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00136">gui.controls.gridview.GridTable.__init__()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00145">gui.controls.gridview.GridTable._cols</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00146">gui.controls.gridview.GridTable._row_label</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00144">gui.controls.gridview.GridTable._rows</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00141">gui.controls.gridview.GridTable.plugins</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">gui.controls.gridview.GridTable.wx_grid</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a95530e209d5680a7fcfadc395df4bd1f_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a95530e209d5680a7fcfadc395df4bd1f_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a95530e209d5680a7fcfadc395df4bd1f_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a95530e209d5680a7fcfadc395df4bd1f_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="a8f38eb56264218bd4100fef177b1c5a3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable._updateColAttrs </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>grid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00298">298</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00298">gui.controls.gridview.GridTable._updateColAttrs()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00258">gui.controls.gridview.GridTable.ResetView()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a8f38eb56264218bd4100fef177b1c5a3_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a8f38eb56264218bd4100fef177b1c5a3_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a8f38eb56264218bd4100fef177b1c5a3_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a8f38eb56264218bd4100fef177b1c5a3_icgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a5b7b589585e218c8ecaa21389f6c5a1f" title="gui.controls.gridview.Grid\lTable.ResetView" alt="" coords="225,253,394,294"/><area shape="rect" id="node3" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8ceca9f18caabddff7a40bfbbdac7d55" title="gui.controls.gridview.Grid\lTable.InsertCols" alt="" coords="443,29,613,70"/><area shape="rect" id="node4" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#ac3d3c13db875b0edc129f545c8231194" title="gui.controls.gridview.Grid\lTable.AppendCols" alt="" coords="443,118,613,159"/><area shape="rect" id="node5" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a9888cfe4f606659d74b1f0df16d797b0" title="gui.controls.gridview.Grid\lTable.DeleteCols" alt="" coords="443,207,613,249"/><area shape="rect" id="node6" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aedf892465769115e6b86997d2fd1a92c" title="gui.controls.gridview.Grid\lTable.InsertRows" alt="" coords="443,297,613,338"/><area shape="rect" id="node7" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aca17abc8a8ef61c82212b0ae4dd30a29" title="gui.controls.gridview.Grid\lTable.AppendRows" alt="" coords="443,386,613,427"/><area shape="rect" id="node8" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#ad3737b47992f7e42bf3789292c7219a7" title="gui.controls.gridview.Grid\lTable.DeleteRows" alt="" coords="443,475,613,517"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8f38eb56264218bd4100fef177b1c5a3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable._updateColAttrs </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>grid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00298">298</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00298">gui.controls.gridview.GridTable._updateColAttrs()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a8f38eb56264218bd4100fef177b1c5a3_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a8f38eb56264218bd4100fef177b1c5a3_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a8f38eb56264218bd4100fef177b1c5a3_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a8f38eb56264218bd4100fef177b1c5a3_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac3d3c13db875b0edc129f545c8231194"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.AppendCols </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00238">238</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00238">gui.controls.gridview.GridTable.AppendCols()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00258">gui.controls.gridview.GridTable.ResetView()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">gui.controls.gridview.GridTable.wx_grid</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ac3d3c13db875b0edc129f545c8231194_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ac3d3c13db875b0edc129f545c8231194_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ac3d3c13db875b0edc129f545c8231194_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ac3d3c13db875b0edc129f545c8231194_cgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a5b7b589585e218c8ecaa21389f6c5a1f" title="gui.controls.gridview.Grid\lTable.ResetView" alt="" coords="225,103,394,145"/><area shape="rect" id="node3" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a7dbcddc020afb70011a7754895a7988e" title="gui.controls.gridview.Grid\lTable.GetNumberRows" alt="" coords="443,5,613,46"/><area shape="rect" id="node4" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aec1545dc706480437884fe5226e59458" title="gui.controls.gridview.Grid\lTable.GetNumberCols" alt="" coords="443,70,613,111"/><area shape="rect" id="node5" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#acb04002eecdd3330dd6e645fd1f84862" title="gui.controls.gridview.Grid\lTable.UpdateValues" alt="" coords="443,135,613,177"/><area shape="rect" id="node6" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8f38eb56264218bd4100fef177b1c5a3" title="gui.controls.gridview.Grid\lTable._updateColAttrs" alt="" coords="443,201,613,242"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac3d3c13db875b0edc129f545c8231194"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.AppendCols </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00238">238</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00258">gui.controls.gridview.GridTable.ResetView()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">gui.controls.gridview.GridTable.wx_grid</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00238">gui.controls.gridview.GridTable.AppendCols()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ac3d3c13db875b0edc129f545c8231194_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ac3d3c13db875b0edc129f545c8231194_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ac3d3c13db875b0edc129f545c8231194_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ac3d3c13db875b0edc129f545c8231194_cgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a5b7b589585e218c8ecaa21389f6c5a1f" title="gui.controls.gridview.Grid\lTable.ResetView" alt="" coords="225,103,394,145"/><area shape="rect" id="node3" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a7dbcddc020afb70011a7754895a7988e" title="gui.controls.gridview.Grid\lTable.GetNumberRows" alt="" coords="443,5,613,46"/><area shape="rect" id="node4" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aec1545dc706480437884fe5226e59458" title="gui.controls.gridview.Grid\lTable.GetNumberCols" alt="" coords="443,70,613,111"/><area shape="rect" id="node5" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#acb04002eecdd3330dd6e645fd1f84862" title="gui.controls.gridview.Grid\lTable.UpdateValues" alt="" coords="443,135,613,177"/><area shape="rect" id="node6" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8f38eb56264218bd4100fef177b1c5a3" title="gui.controls.gridview.Grid\lTable._updateColAttrs" alt="" coords="443,201,613,242"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ac3d3c13db875b0edc129f545c8231194_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ac3d3c13db875b0edc129f545c8231194_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ac3d3c13db875b0edc129f545c8231194_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ac3d3c13db875b0edc129f545c8231194_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aca17abc8a8ef61c82212b0ae4dd30a29"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.AppendRows </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00250">250</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00250">gui.controls.gridview.GridTable.AppendRows()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00258">gui.controls.gridview.GridTable.ResetView()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">gui.controls.gridview.GridTable.wx_grid</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aca17abc8a8ef61c82212b0ae4dd30a29_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aca17abc8a8ef61c82212b0ae4dd30a29_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aca17abc8a8ef61c82212b0ae4dd30a29_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aca17abc8a8ef61c82212b0ae4dd30a29_cgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a5b7b589585e218c8ecaa21389f6c5a1f" title="gui.controls.gridview.Grid\lTable.ResetView" alt="" coords="225,103,394,145"/><area shape="rect" id="node3" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a7dbcddc020afb70011a7754895a7988e" title="gui.controls.gridview.Grid\lTable.GetNumberRows" alt="" coords="443,5,613,46"/><area shape="rect" id="node4" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aec1545dc706480437884fe5226e59458" title="gui.controls.gridview.Grid\lTable.GetNumberCols" alt="" coords="443,70,613,111"/><area shape="rect" id="node5" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#acb04002eecdd3330dd6e645fd1f84862" title="gui.controls.gridview.Grid\lTable.UpdateValues" alt="" coords="443,135,613,177"/><area shape="rect" id="node6" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8f38eb56264218bd4100fef177b1c5a3" title="gui.controls.gridview.Grid\lTable._updateColAttrs" alt="" coords="443,201,613,242"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aca17abc8a8ef61c82212b0ae4dd30a29"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.AppendRows </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00250">250</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00258">gui.controls.gridview.GridTable.ResetView()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">gui.controls.gridview.GridTable.wx_grid</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00250">gui.controls.gridview.GridTable.AppendRows()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aca17abc8a8ef61c82212b0ae4dd30a29_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aca17abc8a8ef61c82212b0ae4dd30a29_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aca17abc8a8ef61c82212b0ae4dd30a29_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aca17abc8a8ef61c82212b0ae4dd30a29_cgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a5b7b589585e218c8ecaa21389f6c5a1f" title="gui.controls.gridview.Grid\lTable.ResetView" alt="" coords="225,103,394,145"/><area shape="rect" id="node3" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a7dbcddc020afb70011a7754895a7988e" title="gui.controls.gridview.Grid\lTable.GetNumberRows" alt="" coords="443,5,613,46"/><area shape="rect" id="node4" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aec1545dc706480437884fe5226e59458" title="gui.controls.gridview.Grid\lTable.GetNumberCols" alt="" coords="443,70,613,111"/><area shape="rect" id="node5" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#acb04002eecdd3330dd6e645fd1f84862" title="gui.controls.gridview.Grid\lTable.UpdateValues" alt="" coords="443,135,613,177"/><area shape="rect" id="node6" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8f38eb56264218bd4100fef177b1c5a3" title="gui.controls.gridview.Grid\lTable._updateColAttrs" alt="" coords="443,201,613,242"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aca17abc8a8ef61c82212b0ae4dd30a29_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aca17abc8a8ef61c82212b0ae4dd30a29_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aca17abc8a8ef61c82212b0ae4dd30a29_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aca17abc8a8ef61c82212b0ae4dd30a29_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a02d4786ebc777b5167b0208f1af2923d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.CanGetValueAs </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>type_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00224">224</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00224">gui.controls.gridview.GridTable.CanGetValueAs()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a02d4786ebc777b5167b0208f1af2923d_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a02d4786ebc777b5167b0208f1af2923d_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a02d4786ebc777b5167b0208f1af2923d_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a02d4786ebc777b5167b0208f1af2923d_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a02d4786ebc777b5167b0208f1af2923d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.CanGetValueAs </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>type_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00224">224</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00224">gui.controls.gridview.GridTable.CanGetValueAs()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00231">gui.controls.gridview.GridTable.CanSetValueAs()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a02d4786ebc777b5167b0208f1af2923d_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a02d4786ebc777b5167b0208f1af2923d_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a02d4786ebc777b5167b0208f1af2923d_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a02d4786ebc777b5167b0208f1af2923d_icgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a849167e652d184348c838402375f9ac3" title="gui.controls.gridview.Grid\lTable.CanSetValueAs" alt="" coords="225,29,394,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a849167e652d184348c838402375f9ac3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.CanSetValueAs </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>type_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00231">231</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00224">gui.controls.gridview.GridTable.CanGetValueAs()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00231">gui.controls.gridview.GridTable.CanSetValueAs()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a849167e652d184348c838402375f9ac3_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a849167e652d184348c838402375f9ac3_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a849167e652d184348c838402375f9ac3_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a849167e652d184348c838402375f9ac3_cgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a02d4786ebc777b5167b0208f1af2923d" title="gui.controls.gridview.Grid\lTable.CanGetValueAs" alt="" coords="225,5,394,46"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a849167e652d184348c838402375f9ac3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.CanSetValueAs </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>type_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00231">231</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00224">gui.controls.gridview.GridTable.CanGetValueAs()</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00231">gui.controls.gridview.GridTable.CanSetValueAs()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a849167e652d184348c838402375f9ac3_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a849167e652d184348c838402375f9ac3_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a849167e652d184348c838402375f9ac3_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a849167e652d184348c838402375f9ac3_cgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a02d4786ebc777b5167b0208f1af2923d" title="gui.controls.gridview.Grid\lTable.CanGetValueAs" alt="" coords="225,5,394,46"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a849167e652d184348c838402375f9ac3_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a849167e652d184348c838402375f9ac3_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a849167e652d184348c838402375f9ac3_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a849167e652d184348c838402375f9ac3_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9888cfe4f606659d74b1f0df16d797b0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.DeleteCols </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00242">242</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00242">gui.controls.gridview.GridTable.DeleteCols()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00258">gui.controls.gridview.GridTable.ResetView()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">gui.controls.gridview.GridTable.wx_grid</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a9888cfe4f606659d74b1f0df16d797b0_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a9888cfe4f606659d74b1f0df16d797b0_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a9888cfe4f606659d74b1f0df16d797b0_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a9888cfe4f606659d74b1f0df16d797b0_cgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a5b7b589585e218c8ecaa21389f6c5a1f" title="gui.controls.gridview.Grid\lTable.ResetView" alt="" coords="225,103,394,145"/><area shape="rect" id="node3" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a7dbcddc020afb70011a7754895a7988e" title="gui.controls.gridview.Grid\lTable.GetNumberRows" alt="" coords="443,5,613,46"/><area shape="rect" id="node4" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aec1545dc706480437884fe5226e59458" title="gui.controls.gridview.Grid\lTable.GetNumberCols" alt="" coords="443,70,613,111"/><area shape="rect" id="node5" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#acb04002eecdd3330dd6e645fd1f84862" title="gui.controls.gridview.Grid\lTable.UpdateValues" alt="" coords="443,135,613,177"/><area shape="rect" id="node6" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8f38eb56264218bd4100fef177b1c5a3" title="gui.controls.gridview.Grid\lTable._updateColAttrs" alt="" coords="443,201,613,242"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9888cfe4f606659d74b1f0df16d797b0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.DeleteCols </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00242">242</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00258">gui.controls.gridview.GridTable.ResetView()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">gui.controls.gridview.GridTable.wx_grid</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00242">gui.controls.gridview.GridTable.DeleteCols()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a9888cfe4f606659d74b1f0df16d797b0_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a9888cfe4f606659d74b1f0df16d797b0_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a9888cfe4f606659d74b1f0df16d797b0_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a9888cfe4f606659d74b1f0df16d797b0_cgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a5b7b589585e218c8ecaa21389f6c5a1f" title="gui.controls.gridview.Grid\lTable.ResetView" alt="" coords="225,103,394,145"/><area shape="rect" id="node3" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a7dbcddc020afb70011a7754895a7988e" title="gui.controls.gridview.Grid\lTable.GetNumberRows" alt="" coords="443,5,613,46"/><area shape="rect" id="node4" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aec1545dc706480437884fe5226e59458" title="gui.controls.gridview.Grid\lTable.GetNumberCols" alt="" coords="443,70,613,111"/><area shape="rect" id="node5" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#acb04002eecdd3330dd6e645fd1f84862" title="gui.controls.gridview.Grid\lTable.UpdateValues" alt="" coords="443,135,613,177"/><area shape="rect" id="node6" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8f38eb56264218bd4100fef177b1c5a3" title="gui.controls.gridview.Grid\lTable._updateColAttrs" alt="" coords="443,201,613,242"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a9888cfe4f606659d74b1f0df16d797b0_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a9888cfe4f606659d74b1f0df16d797b0_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a9888cfe4f606659d74b1f0df16d797b0_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a9888cfe4f606659d74b1f0df16d797b0_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad3737b47992f7e42bf3789292c7219a7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.DeleteRows </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00254">254</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00258">gui.controls.gridview.GridTable.ResetView()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">gui.controls.gridview.GridTable.wx_grid</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00254">gui.controls.gridview.GridTable.DeleteRows()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ad3737b47992f7e42bf3789292c7219a7_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ad3737b47992f7e42bf3789292c7219a7_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ad3737b47992f7e42bf3789292c7219a7_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ad3737b47992f7e42bf3789292c7219a7_cgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a5b7b589585e218c8ecaa21389f6c5a1f" title="gui.controls.gridview.Grid\lTable.ResetView" alt="" coords="225,103,394,145"/><area shape="rect" id="node3" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a7dbcddc020afb70011a7754895a7988e" title="gui.controls.gridview.Grid\lTable.GetNumberRows" alt="" coords="443,5,613,46"/><area shape="rect" id="node4" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aec1545dc706480437884fe5226e59458" title="gui.controls.gridview.Grid\lTable.GetNumberCols" alt="" coords="443,70,613,111"/><area shape="rect" id="node5" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#acb04002eecdd3330dd6e645fd1f84862" title="gui.controls.gridview.Grid\lTable.UpdateValues" alt="" coords="443,135,613,177"/><area shape="rect" id="node6" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8f38eb56264218bd4100fef177b1c5a3" title="gui.controls.gridview.Grid\lTable._updateColAttrs" alt="" coords="443,201,613,242"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ad3737b47992f7e42bf3789292c7219a7_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ad3737b47992f7e42bf3789292c7219a7_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ad3737b47992f7e42bf3789292c7219a7_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ad3737b47992f7e42bf3789292c7219a7_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad3737b47992f7e42bf3789292c7219a7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.DeleteRows </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00254">254</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00254">gui.controls.gridview.GridTable.DeleteRows()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00258">gui.controls.gridview.GridTable.ResetView()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">gui.controls.gridview.GridTable.wx_grid</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ad3737b47992f7e42bf3789292c7219a7_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ad3737b47992f7e42bf3789292c7219a7_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ad3737b47992f7e42bf3789292c7219a7_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ad3737b47992f7e42bf3789292c7219a7_cgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a5b7b589585e218c8ecaa21389f6c5a1f" title="gui.controls.gridview.Grid\lTable.ResetView" alt="" coords="225,103,394,145"/><area shape="rect" id="node3" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a7dbcddc020afb70011a7754895a7988e" title="gui.controls.gridview.Grid\lTable.GetNumberRows" alt="" coords="443,5,613,46"/><area shape="rect" id="node4" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aec1545dc706480437884fe5226e59458" title="gui.controls.gridview.Grid\lTable.GetNumberCols" alt="" coords="443,70,613,111"/><area shape="rect" id="node5" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#acb04002eecdd3330dd6e645fd1f84862" title="gui.controls.gridview.Grid\lTable.UpdateValues" alt="" coords="443,135,613,177"/><area shape="rect" id="node6" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8f38eb56264218bd4100fef177b1c5a3" title="gui.controls.gridview.Grid\lTable._updateColAttrs" alt="" coords="443,201,613,242"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae719e4dbb12a962079db8209e97d584b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.GetColLabelValue </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00164">164</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00164">gui.controls.gridview.GridTable.GetColLabelValue()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ae719e4dbb12a962079db8209e97d584b_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ae719e4dbb12a962079db8209e97d584b_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ae719e4dbb12a962079db8209e97d584b_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ae719e4dbb12a962079db8209e97d584b_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae719e4dbb12a962079db8209e97d584b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.GetColLabelValue </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00164">164</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00164">gui.controls.gridview.GridTable.GetColLabelValue()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ae719e4dbb12a962079db8209e97d584b_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ae719e4dbb12a962079db8209e97d584b_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ae719e4dbb12a962079db8209e97d584b_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ae719e4dbb12a962079db8209e97d584b_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aec1545dc706480437884fe5226e59458"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.GetNumberCols </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00152">152</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00152">gui.controls.gridview.GridTable.GetNumberCols()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">gui.controls.gridview.GridTable.wx_grid</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aec1545dc706480437884fe5226e59458_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aec1545dc706480437884fe5226e59458_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aec1545dc706480437884fe5226e59458_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aec1545dc706480437884fe5226e59458_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aec1545dc706480437884fe5226e59458"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.GetNumberCols </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00152">152</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">gui.controls.gridview.GridTable.wx_grid</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00152">gui.controls.gridview.GridTable.GetNumberCols()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00258">gui.controls.gridview.GridTable.ResetView()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aec1545dc706480437884fe5226e59458_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aec1545dc706480437884fe5226e59458_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aec1545dc706480437884fe5226e59458_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aec1545dc706480437884fe5226e59458_icgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a5b7b589585e218c8ecaa21389f6c5a1f" title="gui.controls.gridview.Grid\lTable.ResetView" alt="" coords="225,253,394,294"/><area shape="rect" id="node3" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8ceca9f18caabddff7a40bfbbdac7d55" title="gui.controls.gridview.Grid\lTable.InsertCols" alt="" coords="443,29,613,70"/><area shape="rect" id="node4" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#ac3d3c13db875b0edc129f545c8231194" title="gui.controls.gridview.Grid\lTable.AppendCols" alt="" coords="443,118,613,159"/><area shape="rect" id="node5" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a9888cfe4f606659d74b1f0df16d797b0" title="gui.controls.gridview.Grid\lTable.DeleteCols" alt="" coords="443,207,613,249"/><area shape="rect" id="node6" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aedf892465769115e6b86997d2fd1a92c" title="gui.controls.gridview.Grid\lTable.InsertRows" alt="" coords="443,297,613,338"/><area shape="rect" id="node7" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aca17abc8a8ef61c82212b0ae4dd30a29" title="gui.controls.gridview.Grid\lTable.AppendRows" alt="" coords="443,386,613,427"/><area shape="rect" id="node8" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#ad3737b47992f7e42bf3789292c7219a7" title="gui.controls.gridview.Grid\lTable.DeleteRows" alt="" coords="443,475,613,517"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7dbcddc020afb70011a7754895a7988e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.GetNumberRows </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00158">158</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00150">gui.controls.gridview.GridTable.data</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">gui.controls.gridview.GridTable.wx_grid</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00158">gui.controls.gridview.GridTable.GetNumberRows()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00258">gui.controls.gridview.GridTable.ResetView()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a7dbcddc020afb70011a7754895a7988e_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a7dbcddc020afb70011a7754895a7988e_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a7dbcddc020afb70011a7754895a7988e_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a7dbcddc020afb70011a7754895a7988e_icgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a5b7b589585e218c8ecaa21389f6c5a1f" title="gui.controls.gridview.Grid\lTable.ResetView" alt="" coords="225,253,394,294"/><area shape="rect" id="node3" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8ceca9f18caabddff7a40bfbbdac7d55" title="gui.controls.gridview.Grid\lTable.InsertCols" alt="" coords="443,29,613,70"/><area shape="rect" id="node4" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#ac3d3c13db875b0edc129f545c8231194" title="gui.controls.gridview.Grid\lTable.AppendCols" alt="" coords="443,118,613,159"/><area shape="rect" id="node5" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a9888cfe4f606659d74b1f0df16d797b0" title="gui.controls.gridview.Grid\lTable.DeleteCols" alt="" coords="443,207,613,249"/><area shape="rect" id="node6" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aedf892465769115e6b86997d2fd1a92c" title="gui.controls.gridview.Grid\lTable.InsertRows" alt="" coords="443,297,613,338"/><area shape="rect" id="node7" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aca17abc8a8ef61c82212b0ae4dd30a29" title="gui.controls.gridview.Grid\lTable.AppendRows" alt="" coords="443,386,613,427"/><area shape="rect" id="node8" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#ad3737b47992f7e42bf3789292c7219a7" title="gui.controls.gridview.Grid\lTable.DeleteRows" alt="" coords="443,475,613,517"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7dbcddc020afb70011a7754895a7988e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.GetNumberRows </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00158">158</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00150">gui.controls.gridview.GridTable.data</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00158">gui.controls.gridview.GridTable.GetNumberRows()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">gui.controls.gridview.GridTable.wx_grid</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a7dbcddc020afb70011a7754895a7988e_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a7dbcddc020afb70011a7754895a7988e_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a7dbcddc020afb70011a7754895a7988e_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a7dbcddc020afb70011a7754895a7988e_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aef8a50d43a190a5b3828b123e46af74c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.GetRawValue </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00179">179</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00150">gui.controls.gridview.GridTable.data</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01148">gui.component.get()</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00179">gui.controls.gridview.GridTable.GetRawValue()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aef8a50d43a190a5b3828b123e46af74c_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aef8a50d43a190a5b3828b123e46af74c_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aef8a50d43a190a5b3828b123e46af74c_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aef8a50d43a190a5b3828b123e46af74c_cgraph">
+<area shape="rect" id="node2" href="../../d9/d90/namespacegui_1_1component.html#a937836205f3a4daa11179df3fc58e3c9" title="gui.component.get" alt="" coords="225,36,354,63"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aef8a50d43a190a5b3828b123e46af74c_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aef8a50d43a190a5b3828b123e46af74c_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aef8a50d43a190a5b3828b123e46af74c_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aef8a50d43a190a5b3828b123e46af74c_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aef8a50d43a190a5b3828b123e46af74c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.GetRawValue </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00179">179</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00150">gui.controls.gridview.GridTable.data</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01148">gui.component.get()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00179">gui.controls.gridview.GridTable.GetRawValue()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aef8a50d43a190a5b3828b123e46af74c_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aef8a50d43a190a5b3828b123e46af74c_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aef8a50d43a190a5b3828b123e46af74c_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aef8a50d43a190a5b3828b123e46af74c_cgraph">
+<area shape="rect" id="node2" href="../../d9/d90/namespacegui_1_1component.html#a937836205f3a4daa11179df3fc58e3c9" title="gui.component.get" alt="" coords="225,36,354,63"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3f1e6702d418906cb444039b7e6b7442"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.GetRowLabelValue </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00167">167</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00146">gui.controls.gridview.GridTable._row_label</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00167">gui.controls.gridview.GridTable.GetRowLabelValue()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a3f1e6702d418906cb444039b7e6b7442_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a3f1e6702d418906cb444039b7e6b7442_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a3f1e6702d418906cb444039b7e6b7442_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a3f1e6702d418906cb444039b7e6b7442_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3f1e6702d418906cb444039b7e6b7442"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.GetRowLabelValue </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00167">167</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00146">gui.controls.gridview.GridTable._row_label</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00167">gui.controls.gridview.GridTable.GetRowLabelValue()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a3f1e6702d418906cb444039b7e6b7442_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a3f1e6702d418906cb444039b7e6b7442_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a3f1e6702d418906cb444039b7e6b7442_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a3f1e6702d418906cb444039b7e6b7442_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a58fee9ee2b3e4a740711ff4d2b60b91c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.GetTypeName </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00208">208</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00208">gui.controls.gridview.GridTable.GetTypeName()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a58fee9ee2b3e4a740711ff4d2b60b91c_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a58fee9ee2b3e4a740711ff4d2b60b91c_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a58fee9ee2b3e4a740711ff4d2b60b91c_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a58fee9ee2b3e4a740711ff4d2b60b91c_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a58fee9ee2b3e4a740711ff4d2b60b91c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.GetTypeName </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00208">208</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00208">gui.controls.gridview.GridTable.GetTypeName()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a58fee9ee2b3e4a740711ff4d2b60b91c_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a58fee9ee2b3e4a740711ff4d2b60b91c_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a58fee9ee2b3e4a740711ff4d2b60b91c_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a58fee9ee2b3e4a740711ff4d2b60b91c_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a82d0ed1526c8ff2af4bd176f7251563a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.GetValue </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00170">170</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00150">gui.controls.gridview.GridTable.data</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01148">gui.component.get()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00170">gui.controls.gridview.GridTable.GetValue()</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../da/d65/build_2lib_8linux-x86__64-2_87_2gui_2controls_2textbox_8py_source.html#l00196">gui.controls.textbox.TextBox.get_string()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a82d0ed1526c8ff2af4bd176f7251563a_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a82d0ed1526c8ff2af4bd176f7251563a_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a82d0ed1526c8ff2af4bd176f7251563a_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a82d0ed1526c8ff2af4bd176f7251563a_cgraph">
+<area shape="rect" id="node2" href="../../d9/d90/namespacegui_1_1component.html#a937836205f3a4daa11179df3fc58e3c9" title="gui.component.get" alt="" coords="225,12,354,39"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a82d0ed1526c8ff2af4bd176f7251563a_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a82d0ed1526c8ff2af4bd176f7251563a_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a82d0ed1526c8ff2af4bd176f7251563a_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a82d0ed1526c8ff2af4bd176f7251563a_icgraph">
+<area shape="rect" id="node2" href="../../df/d1e/classgui_1_1controls_1_1textbox_1_1TextBox.html#af0f315931cc806307ab01f45e611cadf" title="gui.controls.textbox.Text\lBox.get_string" alt="" coords="225,29,391,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a82d0ed1526c8ff2af4bd176f7251563a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.GetValue </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00170">170</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00150">gui.controls.gridview.GridTable.data</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l01148">gui.component.get()</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../da/d65/build_2lib_8linux-x86__64-2_87_2gui_2controls_2textbox_8py_source.html#l00196">gui.controls.textbox.TextBox.get_string()</a> y <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00170">gui.controls.gridview.GridTable.GetValue()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a82d0ed1526c8ff2af4bd176f7251563a_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a82d0ed1526c8ff2af4bd176f7251563a_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a82d0ed1526c8ff2af4bd176f7251563a_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a82d0ed1526c8ff2af4bd176f7251563a_cgraph">
+<area shape="rect" id="node2" href="../../d9/d90/namespacegui_1_1component.html#a937836205f3a4daa11179df3fc58e3c9" title="gui.component.get" alt="" coords="225,12,354,39"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a82d0ed1526c8ff2af4bd176f7251563a_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a82d0ed1526c8ff2af4bd176f7251563a_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a82d0ed1526c8ff2af4bd176f7251563a_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a82d0ed1526c8ff2af4bd176f7251563a_icgraph">
+<area shape="rect" id="node2" href="../../df/d1e/classgui_1_1controls_1_1textbox_1_1TextBox.html#af0f315931cc806307ab01f45e611cadf" title="gui.controls.textbox.Text\lBox.get_string" alt="" coords="225,29,391,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8ceca9f18caabddff7a40bfbbdac7d55"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.InsertCols </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00234">234</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00234">gui.controls.gridview.GridTable.InsertCols()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00258">gui.controls.gridview.GridTable.ResetView()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">gui.controls.gridview.GridTable.wx_grid</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a8ceca9f18caabddff7a40bfbbdac7d55_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a8ceca9f18caabddff7a40bfbbdac7d55_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a8ceca9f18caabddff7a40bfbbdac7d55_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a8ceca9f18caabddff7a40bfbbdac7d55_cgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a5b7b589585e218c8ecaa21389f6c5a1f" title="gui.controls.gridview.Grid\lTable.ResetView" alt="" coords="225,103,394,145"/><area shape="rect" id="node3" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a7dbcddc020afb70011a7754895a7988e" title="gui.controls.gridview.Grid\lTable.GetNumberRows" alt="" coords="443,5,613,46"/><area shape="rect" id="node4" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aec1545dc706480437884fe5226e59458" title="gui.controls.gridview.Grid\lTable.GetNumberCols" alt="" coords="443,70,613,111"/><area shape="rect" id="node5" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#acb04002eecdd3330dd6e645fd1f84862" title="gui.controls.gridview.Grid\lTable.UpdateValues" alt="" coords="443,135,613,177"/><area shape="rect" id="node6" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8f38eb56264218bd4100fef177b1c5a3" title="gui.controls.gridview.Grid\lTable._updateColAttrs" alt="" coords="443,201,613,242"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8ceca9f18caabddff7a40bfbbdac7d55"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.InsertCols </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00234">234</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00258">gui.controls.gridview.GridTable.ResetView()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">gui.controls.gridview.GridTable.wx_grid</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00234">gui.controls.gridview.GridTable.InsertCols()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a8ceca9f18caabddff7a40bfbbdac7d55_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a8ceca9f18caabddff7a40bfbbdac7d55_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a8ceca9f18caabddff7a40bfbbdac7d55_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a8ceca9f18caabddff7a40bfbbdac7d55_cgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a5b7b589585e218c8ecaa21389f6c5a1f" title="gui.controls.gridview.Grid\lTable.ResetView" alt="" coords="225,103,394,145"/><area shape="rect" id="node3" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a7dbcddc020afb70011a7754895a7988e" title="gui.controls.gridview.Grid\lTable.GetNumberRows" alt="" coords="443,5,613,46"/><area shape="rect" id="node4" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aec1545dc706480437884fe5226e59458" title="gui.controls.gridview.Grid\lTable.GetNumberCols" alt="" coords="443,70,613,111"/><area shape="rect" id="node5" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#acb04002eecdd3330dd6e645fd1f84862" title="gui.controls.gridview.Grid\lTable.UpdateValues" alt="" coords="443,135,613,177"/><area shape="rect" id="node6" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8f38eb56264218bd4100fef177b1c5a3" title="gui.controls.gridview.Grid\lTable._updateColAttrs" alt="" coords="443,201,613,242"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a8ceca9f18caabddff7a40bfbbdac7d55_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a8ceca9f18caabddff7a40bfbbdac7d55_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a8ceca9f18caabddff7a40bfbbdac7d55_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a8ceca9f18caabddff7a40bfbbdac7d55_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aedf892465769115e6b86997d2fd1a92c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.InsertRows </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00246">246</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00246">gui.controls.gridview.GridTable.InsertRows()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00258">gui.controls.gridview.GridTable.ResetView()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">gui.controls.gridview.GridTable.wx_grid</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aedf892465769115e6b86997d2fd1a92c_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aedf892465769115e6b86997d2fd1a92c_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aedf892465769115e6b86997d2fd1a92c_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aedf892465769115e6b86997d2fd1a92c_cgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a5b7b589585e218c8ecaa21389f6c5a1f" title="gui.controls.gridview.Grid\lTable.ResetView" alt="" coords="225,103,394,145"/><area shape="rect" id="node3" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a7dbcddc020afb70011a7754895a7988e" title="gui.controls.gridview.Grid\lTable.GetNumberRows" alt="" coords="443,5,613,46"/><area shape="rect" id="node4" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aec1545dc706480437884fe5226e59458" title="gui.controls.gridview.Grid\lTable.GetNumberCols" alt="" coords="443,70,613,111"/><area shape="rect" id="node5" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#acb04002eecdd3330dd6e645fd1f84862" title="gui.controls.gridview.Grid\lTable.UpdateValues" alt="" coords="443,135,613,177"/><area shape="rect" id="node6" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8f38eb56264218bd4100fef177b1c5a3" title="gui.controls.gridview.Grid\lTable._updateColAttrs" alt="" coords="443,201,613,242"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aedf892465769115e6b86997d2fd1a92c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.InsertRows </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00246">246</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00258">gui.controls.gridview.GridTable.ResetView()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">gui.controls.gridview.GridTable.wx_grid</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00246">gui.controls.gridview.GridTable.InsertRows()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aedf892465769115e6b86997d2fd1a92c_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aedf892465769115e6b86997d2fd1a92c_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aedf892465769115e6b86997d2fd1a92c_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aedf892465769115e6b86997d2fd1a92c_cgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a5b7b589585e218c8ecaa21389f6c5a1f" title="gui.controls.gridview.Grid\lTable.ResetView" alt="" coords="225,103,394,145"/><area shape="rect" id="node3" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a7dbcddc020afb70011a7754895a7988e" title="gui.controls.gridview.Grid\lTable.GetNumberRows" alt="" coords="443,5,613,46"/><area shape="rect" id="node4" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aec1545dc706480437884fe5226e59458" title="gui.controls.gridview.Grid\lTable.GetNumberCols" alt="" coords="443,70,613,111"/><area shape="rect" id="node5" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#acb04002eecdd3330dd6e645fd1f84862" title="gui.controls.gridview.Grid\lTable.UpdateValues" alt="" coords="443,135,613,177"/><area shape="rect" id="node6" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8f38eb56264218bd4100fef177b1c5a3" title="gui.controls.gridview.Grid\lTable._updateColAttrs" alt="" coords="443,201,613,242"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aedf892465769115e6b86997d2fd1a92c_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aedf892465769115e6b86997d2fd1a92c_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aedf892465769115e6b86997d2fd1a92c_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_aedf892465769115e6b86997d2fd1a92c_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a731b2a0d8eaad9ba4fdacc962250b002"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.IsEmptyCell </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00201">201</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00150">gui.controls.gridview.GridTable.data</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00201">gui.controls.gridview.GridTable.IsEmptyCell()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a731b2a0d8eaad9ba4fdacc962250b002_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a731b2a0d8eaad9ba4fdacc962250b002_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a731b2a0d8eaad9ba4fdacc962250b002_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a731b2a0d8eaad9ba4fdacc962250b002_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a731b2a0d8eaad9ba4fdacc962250b002"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.IsEmptyCell </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00201">201</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00150">gui.controls.gridview.GridTable.data</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00201">gui.controls.gridview.GridTable.IsEmptyCell()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a731b2a0d8eaad9ba4fdacc962250b002_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a731b2a0d8eaad9ba4fdacc962250b002_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a731b2a0d8eaad9ba4fdacc962250b002_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a731b2a0d8eaad9ba4fdacc962250b002_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5b7b589585e218c8ecaa21389f6c5a1f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.ResetView </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>grid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00258">258</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00145">gui.controls.gridview.GridTable._cols</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00144">gui.controls.gridview.GridTable._rows</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00298">gui.controls.gridview.GridTable._updateColAttrs()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00152">gui.controls.gridview.GridTable.GetNumberCols()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00158">gui.controls.gridview.GridTable.GetNumberRows()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00258">gui.controls.gridview.GridTable.ResetView()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00291">gui.controls.gridview.GridTable.UpdateValues()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a5b7b589585e218c8ecaa21389f6c5a1f_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a5b7b589585e218c8ecaa21389f6c5a1f_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a5b7b589585e218c8ecaa21389f6c5a1f_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a5b7b589585e218c8ecaa21389f6c5a1f_cgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8f38eb56264218bd4100fef177b1c5a3" title="gui.controls.gridview.Grid\lTable._updateColAttrs" alt="" coords="225,5,394,46"/><area shape="rect" id="node3" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aec1545dc706480437884fe5226e59458" title="gui.controls.gridview.Grid\lTable.GetNumberCols" alt="" coords="225,70,394,111"/><area shape="rect" id="node4" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a7dbcddc020afb70011a7754895a7988e" title="gui.controls.gridview.Grid\lTable.GetNumberRows" alt="" coords="225,135,394,177"/><area shape="rect" id="node5" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#acb04002eecdd3330dd6e645fd1f84862" title="gui.controls.gridview.Grid\lTable.UpdateValues" alt="" coords="225,201,394,242"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5b7b589585e218c8ecaa21389f6c5a1f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.ResetView </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>grid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00258">258</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00145">gui.controls.gridview.GridTable._cols</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00144">gui.controls.gridview.GridTable._rows</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00298">gui.controls.gridview.GridTable._updateColAttrs()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00152">gui.controls.gridview.GridTable.GetNumberCols()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00158">gui.controls.gridview.GridTable.GetNumberRows()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00291">gui.controls.gridview.GridTable.UpdateValues()</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00238">gui.controls.gridview.GridTable.AppendCols()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00250">gui.controls.gridview.GridTable.AppendRows()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00242">gui.controls.gridview.GridTable.DeleteCols()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00254">gui.controls.gridview.GridTable.DeleteRows()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00234">gui.controls.gridview.GridTable.InsertCols()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00246">gui.controls.gridview.GridTable.InsertRows()</a> y <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00258">gui.controls.gridview.GridTable.ResetView()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a5b7b589585e218c8ecaa21389f6c5a1f_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a5b7b589585e218c8ecaa21389f6c5a1f_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a5b7b589585e218c8ecaa21389f6c5a1f_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a5b7b589585e218c8ecaa21389f6c5a1f_cgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8f38eb56264218bd4100fef177b1c5a3" title="gui.controls.gridview.Grid\lTable._updateColAttrs" alt="" coords="225,5,394,46"/><area shape="rect" id="node3" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aec1545dc706480437884fe5226e59458" title="gui.controls.gridview.Grid\lTable.GetNumberCols" alt="" coords="225,70,394,111"/><area shape="rect" id="node4" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a7dbcddc020afb70011a7754895a7988e" title="gui.controls.gridview.Grid\lTable.GetNumberRows" alt="" coords="225,135,394,177"/><area shape="rect" id="node5" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#acb04002eecdd3330dd6e645fd1f84862" title="gui.controls.gridview.Grid\lTable.UpdateValues" alt="" coords="225,201,394,242"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a5b7b589585e218c8ecaa21389f6c5a1f_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a5b7b589585e218c8ecaa21389f6c5a1f_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a5b7b589585e218c8ecaa21389f6c5a1f_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a5b7b589585e218c8ecaa21389f6c5a1f_icgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#ac3d3c13db875b0edc129f545c8231194" title="gui.controls.gridview.Grid\lTable.AppendCols" alt="" coords="225,29,394,70"/><area shape="rect" id="node3" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aca17abc8a8ef61c82212b0ae4dd30a29" title="gui.controls.gridview.Grid\lTable.AppendRows" alt="" coords="225,118,394,159"/><area shape="rect" id="node4" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a9888cfe4f606659d74b1f0df16d797b0" title="gui.controls.gridview.Grid\lTable.DeleteCols" alt="" coords="225,207,394,249"/><area shape="rect" id="node5" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#ad3737b47992f7e42bf3789292c7219a7" title="gui.controls.gridview.Grid\lTable.DeleteRows" alt="" coords="225,297,394,338"/><area shape="rect" id="node6" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8ceca9f18caabddff7a40bfbbdac7d55" title="gui.controls.gridview.Grid\lTable.InsertCols" alt="" coords="225,386,394,427"/><area shape="rect" id="node7" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aedf892465769115e6b86997d2fd1a92c" title="gui.controls.gridview.Grid\lTable.InsertRows" alt="" coords="225,475,394,517"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6469a12e5c12c3d2019fe64900aae792"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.SetRawValue </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00198">198</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00150">gui.controls.gridview.GridTable.data</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00198">gui.controls.gridview.GridTable.SetRawValue()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a6469a12e5c12c3d2019fe64900aae792_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a6469a12e5c12c3d2019fe64900aae792_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a6469a12e5c12c3d2019fe64900aae792_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a6469a12e5c12c3d2019fe64900aae792_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6469a12e5c12c3d2019fe64900aae792"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.SetRawValue </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00198">198</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00150">gui.controls.gridview.GridTable.data</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00198">gui.controls.gridview.GridTable.SetRawValue()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a6469a12e5c12c3d2019fe64900aae792_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a6469a12e5c12c3d2019fe64900aae792_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a6469a12e5c12c3d2019fe64900aae792_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_a6469a12e5c12c3d2019fe64900aae792_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abf9ba197425ade671eb69696527bc580"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.SetValue </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00182">182</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00150">gui.controls.gridview.GridTable.data</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00182">gui.controls.gridview.GridTable.SetValue()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_abf9ba197425ade671eb69696527bc580_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_abf9ba197425ade671eb69696527bc580_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_abf9ba197425ade671eb69696527bc580_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_abf9ba197425ade671eb69696527bc580_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abf9ba197425ade671eb69696527bc580"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.SetValue </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00182">182</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00150">gui.controls.gridview.GridTable.data</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00182">gui.controls.gridview.GridTable.SetValue()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_abf9ba197425ade671eb69696527bc580_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_abf9ba197425ade671eb69696527bc580_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_abf9ba197425ade671eb69696527bc580_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_abf9ba197425ade671eb69696527bc580_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab3e025fecaecbb1dd957d761241541a9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.SortColumn </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00313">313</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00150">gui.controls.gridview.GridTable.data</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00313">gui.controls.gridview.GridTable.SortColumn()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ab3e025fecaecbb1dd957d761241541a9_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ab3e025fecaecbb1dd957d761241541a9_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ab3e025fecaecbb1dd957d761241541a9_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ab3e025fecaecbb1dd957d761241541a9_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab3e025fecaecbb1dd957d761241541a9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.SortColumn </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00313">313</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00085">gui.controls.gridview.GridView.columns</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">gui.controls.gridview.GridTable.columns</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00150">gui.controls.gridview.GridTable.data</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00313">gui.controls.gridview.GridTable.SortColumn()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ab3e025fecaecbb1dd957d761241541a9_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ab3e025fecaecbb1dd957d761241541a9_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ab3e025fecaecbb1dd957d761241541a9_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_ab3e025fecaecbb1dd957d761241541a9_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="acb04002eecdd3330dd6e645fd1f84862"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.UpdateValues </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>grid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00291">291</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00258">gui.controls.gridview.GridTable.ResetView()</a> y <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00291">gui.controls.gridview.GridTable.UpdateValues()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_acb04002eecdd3330dd6e645fd1f84862_icgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_acb04002eecdd3330dd6e645fd1f84862_icgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_acb04002eecdd3330dd6e645fd1f84862_icgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_acb04002eecdd3330dd6e645fd1f84862_icgraph">
+<area shape="rect" id="node2" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a5b7b589585e218c8ecaa21389f6c5a1f" title="gui.controls.gridview.Grid\lTable.ResetView" alt="" coords="225,253,394,294"/><area shape="rect" id="node3" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#ac3d3c13db875b0edc129f545c8231194" title="gui.controls.gridview.Grid\lTable.AppendCols" alt="" coords="443,29,613,70"/><area shape="rect" id="node4" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aca17abc8a8ef61c82212b0ae4dd30a29" title="gui.controls.gridview.Grid\lTable.AppendRows" alt="" coords="443,118,613,159"/><area shape="rect" id="node5" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a9888cfe4f606659d74b1f0df16d797b0" title="gui.controls.gridview.Grid\lTable.DeleteCols" alt="" coords="443,207,613,249"/><area shape="rect" id="node6" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#ad3737b47992f7e42bf3789292c7219a7" title="gui.controls.gridview.Grid\lTable.DeleteRows" alt="" coords="443,297,613,338"/><area shape="rect" id="node7" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a8ceca9f18caabddff7a40bfbbdac7d55" title="gui.controls.gridview.Grid\lTable.InsertCols" alt="" coords="443,386,613,427"/><area shape="rect" id="node8" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#aedf892465769115e6b86997d2fd1a92c" title="gui.controls.gridview.Grid\lTable.InsertRows" alt="" coords="443,475,613,517"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="acb04002eecdd3330dd6e645fd1f84862"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.GridTable.UpdateValues </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>grid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00291">291</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00291">gui.controls.gridview.GridTable.UpdateValues()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_acb04002eecdd3330dd6e645fd1f84862_cgraph.png" border="0" usemap="#d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_acb04002eecdd3330dd6e645fd1f84862_cgraph" alt=""/></div>
+<map name="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_acb04002eecdd3330dd6e645fd1f84862_cgraph" id="d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable_acb04002eecdd3330dd6e645fd1f84862_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="a171c43e06d1736dd5eb314dee16b6576"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.gridview.GridTable._cols</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00145">145</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00136">gui.controls.gridview.GridTable.__init__()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00258">gui.controls.gridview.GridTable.ResetView()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="accc2963111c98b528791f589ef3697a0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.gridview.GridTable._row_label</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00146">146</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00136">gui.controls.gridview.GridTable.__init__()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00167">gui.controls.gridview.GridTable.GetRowLabelValue()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aced7039cbf795760dadb91a6562bdfb0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.gridview.GridTable._rows</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00144">144</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00136">gui.controls.gridview.GridTable.__init__()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00258">gui.controls.gridview.GridTable.ResetView()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a54f8af95c896e39514c04f4fe15b2edb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.gridview.GridTable.plugins</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00141">141</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00136">gui.controls.gridview.GridTable.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa8087db179777806231572178f69e1a5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.gridview.GridTable.wx_grid</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">140</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00136">gui.controls.gridview.GridTable.__init__()</a>, <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00524">gui.controls.gridview.ComboCellEditor.__init__()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00238">gui.controls.gridview.GridTable.AppendCols()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00250">gui.controls.gridview.GridTable.AppendRows()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00614">gui.controls.gridview.ComboCellEditor.Clone()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00242">gui.controls.gridview.GridTable.DeleteCols()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00254">gui.controls.gridview.GridTable.DeleteRows()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00152">gui.controls.gridview.GridTable.GetNumberCols()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00158">gui.controls.gridview.GridTable.GetNumberRows()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00234">gui.controls.gridview.GridTable.InsertCols()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00246">gui.controls.gridview.GridTable.InsertRows()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de propiedades</h2>
+<a class="anchor" id="aef24894c8e0047ff59532c3aa03359a4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.gridview.GridTable.columns = property(lambda self: self.wx_grid.obj.columns)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00149">149</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00298">gui.controls.gridview.GridTable._updateColAttrs()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00224">gui.controls.gridview.GridTable.CanGetValueAs()</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00179">gui.controls.listview.ListView.clear_all()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00164">gui.controls.gridview.GridTable.GetColLabelValue()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00152">gui.controls.gridview.GridTable.GetNumberCols()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00179">gui.controls.gridview.GridTable.GetRawValue()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00208">gui.controls.gridview.GridTable.GetTypeName()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00170">gui.controls.gridview.GridTable.GetValue()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00201">gui.controls.gridview.GridTable.IsEmptyCell()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00198">gui.controls.gridview.GridTable.SetRawValue()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00182">gui.controls.gridview.GridTable.SetValue()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00313">gui.controls.gridview.GridTable.SortColumn()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acb53cbdae17bb3346ba11f69887d0148"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.gridview.GridTable.data = property(lambda self: self.wx_grid.obj.items)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00150">150</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/dbe/gui_2html_2form_8py_source.html#l00017">gui.html.form.FormSubmitEvent.__init__()</a>, <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00086">gui.event.SubmitEvent.__init__()</a>, <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00142">gui.tools.toolbox.ToolBoxDropTarget.__init__()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00158">gui.controls.gridview.GridTable.GetNumberRows()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00179">gui.controls.gridview.GridTable.GetRawValue()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00170">gui.controls.gridview.GridTable.GetValue()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00201">gui.controls.gridview.GridTable.IsEmptyCell()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00198">gui.controls.gridview.GridTable.SetRawValue()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00182">gui.controls.gridview.GridTable.SetValue()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00313">gui.controls.gridview.GridTable.SortColumn()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>build/lib.linux-x86_64-2.7/gui/controls/<a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/dc4/namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="../../d7/d56/namespacegui_1_1controls.html">controls</a></li><li class="navelem"><a class="el" href="../../d3/d2b/namespacegui_1_1controls_1_1gridview.html">gridview</a></li><li class="navelem"><a class="el" href="../../d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html">GridTable</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:47 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

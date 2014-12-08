@@ -1,0 +1,676 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Referencia de la Clase gui.flowsizer.FlowSizer</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="#pri-methods">Métodos privados</a> &#124;
+<a href="../../d5/dba/classgui_1_1flowsizer_1_1FlowSizer-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase gui.flowsizer.FlowSizer</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagrama de herencias de gui.flowsizer.FlowSizer</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/dfb/classgui_1_1flowsizer_1_1FlowSizer__inherit__graph.png" border="0" usemap="#gui_8flowsizer_8FlowSizer_inherit__map" alt="Inheritance graph"/></div>
+<map name="gui_8flowsizer_8FlowSizer_inherit__map" id="gui_8flowsizer_8FlowSizer_inherit__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración para gui.flowsizer.FlowSizer:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d19/classgui_1_1flowsizer_1_1FlowSizer__coll__graph.png" border="0" usemap="#gui_8flowsizer_8FlowSizer_coll__map" alt="Collaboration graph"/></div>
+<map name="gui_8flowsizer_8FlowSizer_coll__map" id="gui_8flowsizer_8FlowSizer_coll__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:ab7a365cc5b32225e38679f6a6dbbdd1f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#ab7a365cc5b32225e38679f6a6dbbdd1f">__init__</a></td></tr>
+<tr class="separator:ab7a365cc5b32225e38679f6a6dbbdd1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48a4b0a54f0ca60e55acdc6ee81f2234"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#a48a4b0a54f0ca60e55acdc6ee81f2234">CalcMin</a></td></tr>
+<tr class="separator:a48a4b0a54f0ca60e55acdc6ee81f2234"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8677638dedf61f644ef9db2a8f81ffb"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#af8677638dedf61f644ef9db2a8f81ffb">RecalcSizes</a></td></tr>
+<tr class="separator:af8677638dedf61f644ef9db2a8f81ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a741d34d437af73fef0945719234895de"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#a741d34d437af73fef0945719234895de">SetItemBounds</a></td></tr>
+<tr class="separator:a741d34d437af73fef0945719234895de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7a365cc5b32225e38679f6a6dbbdd1f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#ab7a365cc5b32225e38679f6a6dbbdd1f">__init__</a></td></tr>
+<tr class="separator:ab7a365cc5b32225e38679f6a6dbbdd1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48a4b0a54f0ca60e55acdc6ee81f2234"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#a48a4b0a54f0ca60e55acdc6ee81f2234">CalcMin</a></td></tr>
+<tr class="separator:a48a4b0a54f0ca60e55acdc6ee81f2234"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8677638dedf61f644ef9db2a8f81ffb"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#af8677638dedf61f644ef9db2a8f81ffb">RecalcSizes</a></td></tr>
+<tr class="separator:af8677638dedf61f644ef9db2a8f81ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a741d34d437af73fef0945719234895de"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#a741d34d437af73fef0945719234895de">SetItemBounds</a></td></tr>
+<tr class="separator:a741d34d437af73fef0945719234895de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:a799d8a194c868d6782a77f2e0edce286"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#a799d8a194c868d6782a77f2e0edce286">snp</a></td></tr>
+<tr class="separator:a799d8a194c868d6782a77f2e0edce286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0ece5001798c6efe82b5c20e4bae168"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#ae0ece5001798c6efe82b5c20e4bae168">minHSpace</a></td></tr>
+<tr class="separator:ae0ece5001798c6efe82b5c20e4bae168"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf7f7e037485b352c3675522ae4e07c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#abf7f7e037485b352c3675522ae4e07c5">minVSpace</a></td></tr>
+<tr class="separator:abf7f7e037485b352c3675522ae4e07c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Métodos privados</h2></td></tr>
+<tr class="memitem:a15ff9f7bdc89f91339983daac58876a5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#a15ff9f7bdc89f91339983daac58876a5">_calcSizeAndPos</a></td></tr>
+<tr class="separator:a15ff9f7bdc89f91339983daac58876a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15ff9f7bdc89f91339983daac58876a5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#a15ff9f7bdc89f91339983daac58876a5">_calcSizeAndPos</a></td></tr>
+<tr class="separator:a15ff9f7bdc89f91339983daac58876a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00013">13</a> del archivo <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html">flowsizer.py</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="ab7a365cc5b32225e38679f6a6dbbdd1f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.flowsizer.FlowSizer.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>minHSpace</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>minVSpace</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00014">14</a> del archivo <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html">flowsizer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d9/d51/gui_2flowsizer_8py_source.html#l00014">gui.flowsizer.FlowSizer.__init__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer_ab7a365cc5b32225e38679f6a6dbbdd1f_icgraph.png" border="0" usemap="#d3/d22/classgui_1_1flowsizer_1_1FlowSizer_ab7a365cc5b32225e38679f6a6dbbdd1f_icgraph" alt=""/></div>
+<map name="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_ab7a365cc5b32225e38679f6a6dbbdd1f_icgraph" id="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_ab7a365cc5b32225e38679f6a6dbbdd1f_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab7a365cc5b32225e38679f6a6dbbdd1f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.flowsizer.FlowSizer.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>minHSpace</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>minVSpace</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/d51/gui_2flowsizer_8py_source.html#l00014">14</a> del archivo <a class="el" href="../../d9/d51/gui_2flowsizer_8py_source.html">flowsizer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00014">gui.flowsizer.FlowSizer.__init__()</a>, <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00017">gui.flowsizer.FlowSizer.minHSpace</a>, <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00018">gui.flowsizer.FlowSizer.minVSpace</a> y <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00016">gui.flowsizer.FlowSizer.snp</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer_ab7a365cc5b32225e38679f6a6dbbdd1f_cgraph.png" border="0" usemap="#d3/d22/classgui_1_1flowsizer_1_1FlowSizer_ab7a365cc5b32225e38679f6a6dbbdd1f_cgraph" alt=""/></div>
+<map name="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_ab7a365cc5b32225e38679f6a6dbbdd1f_cgraph" id="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_ab7a365cc5b32225e38679f6a6dbbdd1f_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="a15ff9f7bdc89f91339983daac58876a5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.flowsizer.FlowSizer._calcSizeAndPos </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00020">20</a> del archivo <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html">flowsizer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00041">gui.menu.wx_DummyWindow.GetSize()</a>, <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00017">gui.flowsizer.FlowSizer.minHSpace</a> y <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00016">gui.flowsizer.FlowSizer.snp</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d9/d51/gui_2flowsizer_8py_source.html#l00020">gui.flowsizer.FlowSizer._calcSizeAndPos()</a> y <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00036">gui.flowsizer.FlowSizer.CalcMin()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a15ff9f7bdc89f91339983daac58876a5_cgraph.png" border="0" usemap="#d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a15ff9f7bdc89f91339983daac58876a5_cgraph" alt=""/></div>
+<map name="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a15ff9f7bdc89f91339983daac58876a5_cgraph" id="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a15ff9f7bdc89f91339983daac58876a5_cgraph">
+<area shape="rect" id="node2" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a1efa7b3e015e4fbd86c252f3e1840b92" title="gui.menu.wx_DummyWindow.\lGetSize" alt="" coords="216,29,416,70"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a15ff9f7bdc89f91339983daac58876a5_icgraph.png" border="0" usemap="#d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a15ff9f7bdc89f91339983daac58876a5_icgraph" alt=""/></div>
+<map name="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a15ff9f7bdc89f91339983daac58876a5_icgraph" id="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a15ff9f7bdc89f91339983daac58876a5_icgraph">
+<area shape="rect" id="node2" href="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#a48a4b0a54f0ca60e55acdc6ee81f2234" title="gui.flowsizer.FlowSizer.\lCalcMin" alt="" coords="217,29,378,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a15ff9f7bdc89f91339983daac58876a5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.flowsizer.FlowSizer._calcSizeAndPos </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/d51/gui_2flowsizer_8py_source.html#l00020">20</a> del archivo <a class="el" href="../../d9/d51/gui_2flowsizer_8py_source.html">flowsizer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00020">gui.flowsizer.FlowSizer._calcSizeAndPos()</a>, <a class="el" href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00041">gui.menu.wx_DummyWindow.GetSize()</a>, <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00017">gui.flowsizer.FlowSizer.minHSpace</a> y <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00016">gui.flowsizer.FlowSizer.snp</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a15ff9f7bdc89f91339983daac58876a5_cgraph.png" border="0" usemap="#d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a15ff9f7bdc89f91339983daac58876a5_cgraph" alt=""/></div>
+<map name="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a15ff9f7bdc89f91339983daac58876a5_cgraph" id="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a15ff9f7bdc89f91339983daac58876a5_cgraph">
+<area shape="rect" id="node2" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a1efa7b3e015e4fbd86c252f3e1840b92" title="gui.menu.wx_DummyWindow.\lGetSize" alt="" coords="216,29,416,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a48a4b0a54f0ca60e55acdc6ee81f2234"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.flowsizer.FlowSizer.CalcMin </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00036">36</a> del archivo <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html">flowsizer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00020">gui.flowsizer.FlowSizer._calcSizeAndPos()</a>, <a class="el" href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00041">gui.menu.wx_DummyWindow.GetSize()</a>, <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00017">gui.flowsizer.FlowSizer.minHSpace</a>, <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00018">gui.flowsizer.FlowSizer.minVSpace</a> y <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00016">gui.flowsizer.FlowSizer.snp</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d9/d51/gui_2flowsizer_8py_source.html#l00036">gui.flowsizer.FlowSizer.CalcMin()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a48a4b0a54f0ca60e55acdc6ee81f2234_cgraph.png" border="0" usemap="#d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a48a4b0a54f0ca60e55acdc6ee81f2234_cgraph" alt=""/></div>
+<map name="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a48a4b0a54f0ca60e55acdc6ee81f2234_cgraph" id="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a48a4b0a54f0ca60e55acdc6ee81f2234_cgraph">
+<area shape="rect" id="node2" href="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#a15ff9f7bdc89f91339983daac58876a5" title="gui.flowsizer.FlowSizer.\l_calcSizeAndPos" alt="" coords="217,5,378,46"/><area shape="rect" id="node3" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a1efa7b3e015e4fbd86c252f3e1840b92" title="gui.menu.wx_DummyWindow.\lGetSize" alt="" coords="427,34,627,75"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a48a4b0a54f0ca60e55acdc6ee81f2234_icgraph.png" border="0" usemap="#d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a48a4b0a54f0ca60e55acdc6ee81f2234_icgraph" alt=""/></div>
+<map name="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a48a4b0a54f0ca60e55acdc6ee81f2234_icgraph" id="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a48a4b0a54f0ca60e55acdc6ee81f2234_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a48a4b0a54f0ca60e55acdc6ee81f2234"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.flowsizer.FlowSizer.CalcMin </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/d51/gui_2flowsizer_8py_source.html#l00036">36</a> del archivo <a class="el" href="../../d9/d51/gui_2flowsizer_8py_source.html">flowsizer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00020">gui.flowsizer.FlowSizer._calcSizeAndPos()</a>, <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00036">gui.flowsizer.FlowSizer.CalcMin()</a>, <a class="el" href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00041">gui.menu.wx_DummyWindow.GetSize()</a>, <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00017">gui.flowsizer.FlowSizer.minHSpace</a>, <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00018">gui.flowsizer.FlowSizer.minVSpace</a> y <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00016">gui.flowsizer.FlowSizer.snp</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a48a4b0a54f0ca60e55acdc6ee81f2234_cgraph.png" border="0" usemap="#d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a48a4b0a54f0ca60e55acdc6ee81f2234_cgraph" alt=""/></div>
+<map name="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a48a4b0a54f0ca60e55acdc6ee81f2234_cgraph" id="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a48a4b0a54f0ca60e55acdc6ee81f2234_cgraph">
+<area shape="rect" id="node2" href="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#a15ff9f7bdc89f91339983daac58876a5" title="gui.flowsizer.FlowSizer.\l_calcSizeAndPos" alt="" coords="217,5,378,46"/><area shape="rect" id="node3" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a1efa7b3e015e4fbd86c252f3e1840b92" title="gui.menu.wx_DummyWindow.\lGetSize" alt="" coords="427,34,627,75"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af8677638dedf61f644ef9db2a8f81ffb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.flowsizer.FlowSizer.RecalcSizes </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/d51/gui_2flowsizer_8py_source.html#l00051">51</a> del archivo <a class="el" href="../../d9/d51/gui_2flowsizer_8py_source.html">flowsizer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00041">gui.menu.wx_DummyWindow.GetSize()</a>, <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00018">gui.flowsizer.FlowSizer.minVSpace</a>, <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00051">gui.flowsizer.FlowSizer.RecalcSizes()</a>, <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00065">gui.flowsizer.FlowSizer.SetItemBounds()</a> y <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00016">gui.flowsizer.FlowSizer.snp</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer_af8677638dedf61f644ef9db2a8f81ffb_cgraph.png" border="0" usemap="#d3/d22/classgui_1_1flowsizer_1_1FlowSizer_af8677638dedf61f644ef9db2a8f81ffb_cgraph" alt=""/></div>
+<map name="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_af8677638dedf61f644ef9db2a8f81ffb_cgraph" id="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_af8677638dedf61f644ef9db2a8f81ffb_cgraph">
+<area shape="rect" id="node2" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a1efa7b3e015e4fbd86c252f3e1840b92" title="gui.menu.wx_DummyWindow.\lGetSize" alt="" coords="216,5,416,46"/><area shape="rect" id="node3" href="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#a741d34d437af73fef0945719234895de" title="gui.flowsizer.FlowSizer.\lSetItemBounds" alt="" coords="235,70,397,111"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af8677638dedf61f644ef9db2a8f81ffb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.flowsizer.FlowSizer.RecalcSizes </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00051">51</a> del archivo <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html">flowsizer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00041">gui.menu.wx_DummyWindow.GetSize()</a>, <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00018">gui.flowsizer.FlowSizer.minVSpace</a>, <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00065">gui.flowsizer.FlowSizer.SetItemBounds()</a> y <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00016">gui.flowsizer.FlowSizer.snp</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d9/d51/gui_2flowsizer_8py_source.html#l00051">gui.flowsizer.FlowSizer.RecalcSizes()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer_af8677638dedf61f644ef9db2a8f81ffb_cgraph.png" border="0" usemap="#d3/d22/classgui_1_1flowsizer_1_1FlowSizer_af8677638dedf61f644ef9db2a8f81ffb_cgraph" alt=""/></div>
+<map name="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_af8677638dedf61f644ef9db2a8f81ffb_cgraph" id="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_af8677638dedf61f644ef9db2a8f81ffb_cgraph">
+<area shape="rect" id="node2" href="../../d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a1efa7b3e015e4fbd86c252f3e1840b92" title="gui.menu.wx_DummyWindow.\lGetSize" alt="" coords="216,5,416,46"/><area shape="rect" id="node3" href="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#a741d34d437af73fef0945719234895de" title="gui.flowsizer.FlowSizer.\lSetItemBounds" alt="" coords="235,70,397,111"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer_af8677638dedf61f644ef9db2a8f81ffb_icgraph.png" border="0" usemap="#d3/d22/classgui_1_1flowsizer_1_1FlowSizer_af8677638dedf61f644ef9db2a8f81ffb_icgraph" alt=""/></div>
+<map name="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_af8677638dedf61f644ef9db2a8f81ffb_icgraph" id="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_af8677638dedf61f644ef9db2a8f81ffb_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a741d34d437af73fef0945719234895de"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.flowsizer.FlowSizer.SetItemBounds </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00065">65</a> del archivo <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html">flowsizer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00051">gui.flowsizer.FlowSizer.RecalcSizes()</a> y <a class="el" href="../../d9/d51/gui_2flowsizer_8py_source.html#l00065">gui.flowsizer.FlowSizer.SetItemBounds()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a741d34d437af73fef0945719234895de_icgraph.png" border="0" usemap="#d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a741d34d437af73fef0945719234895de_icgraph" alt=""/></div>
+<map name="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a741d34d437af73fef0945719234895de_icgraph" id="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a741d34d437af73fef0945719234895de_icgraph">
+<area shape="rect" id="node2" href="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html#af8677638dedf61f644ef9db2a8f81ffb" title="gui.flowsizer.FlowSizer.\lRecalcSizes" alt="" coords="217,29,378,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a741d34d437af73fef0945719234895de"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.flowsizer.FlowSizer.SetItemBounds </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d9/d51/gui_2flowsizer_8py_source.html#l00065">65</a> del archivo <a class="el" href="../../d9/d51/gui_2flowsizer_8py_source.html">flowsizer.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00065">gui.flowsizer.FlowSizer.SetItemBounds()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a741d34d437af73fef0945719234895de_cgraph.png" border="0" usemap="#d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a741d34d437af73fef0945719234895de_cgraph" alt=""/></div>
+<map name="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a741d34d437af73fef0945719234895de_cgraph" id="d3/d22/classgui_1_1flowsizer_1_1FlowSizer_a741d34d437af73fef0945719234895de_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="ae0ece5001798c6efe82b5c20e4bae168"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.flowsizer.FlowSizer.minHSpace</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00017">17</a> del archivo <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html">flowsizer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d9/d51/gui_2flowsizer_8py_source.html#l00014">gui.flowsizer.FlowSizer.__init__()</a>, <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00020">gui.flowsizer.FlowSizer._calcSizeAndPos()</a> y <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00036">gui.flowsizer.FlowSizer.CalcMin()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abf7f7e037485b352c3675522ae4e07c5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.flowsizer.FlowSizer.minVSpace</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00018">18</a> del archivo <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html">flowsizer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d9/d51/gui_2flowsizer_8py_source.html#l00014">gui.flowsizer.FlowSizer.__init__()</a>, <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00036">gui.flowsizer.FlowSizer.CalcMin()</a> y <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00051">gui.flowsizer.FlowSizer.RecalcSizes()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a799d8a194c868d6782a77f2e0edce286"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.flowsizer.FlowSizer.snp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00016">16</a> del archivo <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html">flowsizer.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d9/d51/gui_2flowsizer_8py_source.html#l00014">gui.flowsizer.FlowSizer.__init__()</a>, <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00020">gui.flowsizer.FlowSizer._calcSizeAndPos()</a>, <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00036">gui.flowsizer.FlowSizer.CalcMin()</a> y <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00051">gui.flowsizer.FlowSizer.RecalcSizes()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>build/lib.linux-x86_64-2.7/gui/<a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html">flowsizer.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/dc4/namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="../../d4/db9/namespacegui_1_1flowsizer.html">flowsizer</a></li><li class="navelem"><a class="el" href="../../d3/d22/classgui_1_1flowsizer_1_1FlowSizer.html">FlowSizer</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:48 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

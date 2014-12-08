@@ -1,0 +1,7 @@
+<map id="gui.controls.textbox.TextBox.clear_selection" name="gui.controls.textbox.TextBox.clear_selection">
+<area shape="rect" id="node2" href="$df/d1e/classgui_1_1controls_1_1textbox_1_1TextBox.html#a0fbc3aef906418a805d019fb43b53988" title="gui.controls.textbox.Text\lBox.can_cut" alt="" coords="222,5,389,46"/>
+<area shape="rect" id="node3" href="$df/d1e/classgui_1_1controls_1_1textbox_1_1TextBox.html#af2a2f28146a919a7397ba46e1bfa4b7e" title="gui.controls.textbox.Text\lBox.get_insertion_point" alt="" coords="222,70,389,111"/>
+<area shape="rect" id="node4" href="$df/d1e/classgui_1_1controls_1_1textbox_1_1TextBox.html#af0cb0e01416f8245201dc767d77ce9fa" title="gui.controls.textbox.Text\lBox.replace" alt="" coords="222,135,389,177"/>
+<area shape="rect" id="node5" href="$df/d1e/classgui_1_1controls_1_1textbox_1_1TextBox.html#abe8e925ecc2df5560686eb5cec1a18b1" title="gui.controls.textbox.Text\lBox.replace_selection" alt="" coords="222,201,389,242"/>
+<area shape="rect" id="node6" href="$df/dd6/classgui_1_1controls_1_1listbox_1_1ItemContainerControlSelectEvent.html#a276346aa70a6c156db89b6e410f2c9c6" title="gui.controls.listbox.Item\lContainerControlSelectEvent.Get\lSelection" alt="" coords="437,193,653,249"/>
+</map>

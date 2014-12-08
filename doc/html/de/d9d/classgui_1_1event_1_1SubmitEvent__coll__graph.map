@@ -1,0 +1,5 @@
+<map id="gui.event.SubmitEvent" name="gui.event.SubmitEvent">
+<area shape="rect" id="node2" href="$d7/d87/classgui_1_1event_1_1FormEvent.html" title="gui.event.FormEvent" alt="" coords="10,155,152,181"/>
+<area shape="rect" id="node3" href="$d1/df1/classgui_1_1event_1_1UIEvent.html" title="gui.event.UIEvent" alt="" coords="18,80,144,107"/>
+<area shape="rect" id="node4" href="$d6/dcd/classgui_1_1event_1_1Event.html" title="gui.event.Event" alt="" coords="25,5,137,32"/>
+</map>

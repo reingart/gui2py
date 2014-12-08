@@ -1,0 +1,27 @@
+var classgui_1_1menu_1_1wx__DummyWindow =
+[
+    [ "__init__", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a90648cdbad4cc4d5b8b997fceba2845a", null ],
+    [ "__init__", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a90648cdbad4cc4d5b8b997fceba2845a", null ],
+    [ "Bind", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a973fe5769b473e1191d66ac27ad7ab1c", null ],
+    [ "Bind", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a973fe5769b473e1191d66ac27ad7ab1c", null ],
+    [ "Dummy", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#ab9335c0fa7509d9bb44a6198e9425b2a", null ],
+    [ "Dummy", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#ab9335c0fa7509d9bb44a6198e9425b2a", null ],
+    [ "GetCharHeight", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a572612e1440d5fb3fe5194bbdda549b2", null ],
+    [ "GetCharHeight", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a572612e1440d5fb3fe5194bbdda549b2", null ],
+    [ "GetCharWidth", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#af632fe2c7c7083bd5503c4d07b8f7d7f", null ],
+    [ "GetCharWidth", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#af632fe2c7c7083bd5503c4d07b8f7d7f", null ],
+    [ "GetParent", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#adccd4ae16e792c6d4e4f2865613d3b29", null ],
+    [ "GetParent", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#adccd4ae16e792c6d4e4f2865613d3b29", null ],
+    [ "GetSize", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a1efa7b3e015e4fbd86c252f3e1840b92", null ],
+    [ "GetSize", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a1efa7b3e015e4fbd86c252f3e1840b92", null ],
+    [ "Reparent", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a1a88d9a9f0d0271b0f5f25efdd7c523d", null ],
+    [ "Reparent", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a1a88d9a9f0d0271b0f5f25efdd7c523d", null ],
+    [ "Unbind", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a0fddd3fc6f679233ec3946aa4a1a03f0", null ],
+    [ "Unbind", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a0fddd3fc6f679233ec3946aa4a1a03f0", null ],
+    [ "GetPositionTuple", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#ab6bc719367dbd38e1c074742f53aacc4", null ],
+    [ "GetSizeTuple", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a69a297220f15bda7b3737423a3e88593", null ],
+    [ "IsShown", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#ad6809588c037bd74c1bca028d01c0d99", null ],
+    [ "parent", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a928f0d58beb93f5b88ea00a9fa1033f3", null ],
+    [ "SetClientSize", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a437f0e66f21b3465bf4f3322a4b9ec47", null ],
+    [ "Show", "d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#ad41a7d7716bfd72d497653ab2b1c6b16", null ]
+];

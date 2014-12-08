@@ -1,0 +1,14 @@
+<map id="gui.component.Component.get_parent" name="gui.component.Component.get_parent">
+<area shape="rect" id="node2" href="$d7/d98/classgui_1_1component_1_1Component.html#a311db6e15161ccbe876a1ff7662ba2a2" title="gui.component.Component.\l_get_parent_name" alt="" coords="279,120,462,162"/>
+<area shape="rect" id="node10" href="$d7/d98/classgui_1_1component_1_1Component.html#a2a4e1ce9390e14e18785d56086a422c5" title="gui.component.Component.duplicate" alt="" coords="253,220,488,246"/>
+<area shape="rect" id="node3" href="$d7/d98/classgui_1_1component_1_1Component.html#aef1d100fe1c668847583366148620873" title="gui.component.Component.\l_get_fully_qualified_name" alt="" coords="538,54,721,95"/>
+<area shape="rect" id="node9" href="$d7/d98/classgui_1_1component_1_1Component.html#a9410e5de2d11e2deea2b761b86500c48" title="gui.component.Component.\l_set_drop_target" alt="" coords="538,120,721,162"/>
+<area shape="rect" id="node4" href="$d7/d98/classgui_1_1component_1_1Component.html#a8840a9ac7832fd8ceffe76fa78c3395b" title="gui.component.Component.\l__init__" alt="" coords="1046,7,1229,48"/>
+<area shape="rect" id="node5" href="$d7/d98/classgui_1_1component_1_1Component.html#af746236f93baeb6dffa429d430be6728" title="gui.component.Component.\l_set_name" alt="" coords="793,52,975,94"/>
+<area shape="rect" id="node6" href="$d7/d98/classgui_1_1component_1_1Component.html#a878dfade57f994abd7b7df40bad3505f" title="gui.component.Component.destroy" alt="" coords="771,142,997,169"/>
+<area shape="rect" id="node7" href="$d7/d98/classgui_1_1component_1_1Component.html#af3df42fd86675ecdea82dc1338542649" title="gui.component.Component.\l__del__" alt="" coords="1046,115,1229,156"/>
+<area shape="rect" id="node8" href="$dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a37ea66539ea5878bbd818dfd8bee05d8" title="gui.tools.designer.Selection\lMarker.show" alt="" coords="1046,204,1229,246"/>
+<area shape="rect" id="node11" href="$de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ae6bd0af10b6e21d249814190b671afd3" title="gui.tools.designer.Basic\lDesigner.key_press" alt="" coords="549,212,710,254"/>
+<area shape="rect" id="node13" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182" title="gui.tools.inspector.Inspector\lPanel.show_context_menu" alt="" coords="536,278,723,319"/>
+<area shape="rect" id="node12" href="$de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ab438e7b78dc9494cfb71315b358616e4" title="gui.tools.designer.Basic\lDesigner.__call__" alt="" coords="803,218,965,259"/>
+</map>

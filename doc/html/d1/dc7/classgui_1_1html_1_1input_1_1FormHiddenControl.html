@@ -1,0 +1,803 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Referencia de la Clase gui.html.input.FormHiddenControl</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="#pri-static-attribs">Atributos privados estáticos</a> &#124;
+<a href="../../db/def/classgui_1_1html_1_1input_1_1FormHiddenControl-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase gui.html.input.FormHiddenControl</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagrama de herencias de gui.html.input.FormHiddenControl</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/d2c/classgui_1_1html_1_1input_1_1FormHiddenControl__inherit__graph.png" border="0" usemap="#gui_8html_8input_8FormHiddenControl_inherit__map" alt="Inheritance graph"/></div>
+<map name="gui_8html_8input_8FormHiddenControl_inherit__map" id="gui_8html_8input_8FormHiddenControl_inherit__map">
+<area shape="rect" id="node3" href="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin.html" title="gui.html.input.FormControl\lMixin" alt="" coords="141,81,317,122"/></map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración para gui.html.input.FormHiddenControl:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/def/classgui_1_1html_1_1input_1_1FormHiddenControl__coll__graph.png" border="0" usemap="#gui_8html_8input_8FormHiddenControl_coll__map" alt="Collaboration graph"/></div>
+<map name="gui_8html_8input_8FormHiddenControl_coll__map" id="gui_8html_8input_8FormHiddenControl_coll__map">
+<area shape="rect" id="node3" href="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin.html" title="gui.html.input.FormControl\lMixin" alt="" coords="141,81,317,122"/></map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:ae1b9120c19f9f57b15de1c509dea5866"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl.html#ae1b9120c19f9f57b15de1c509dea5866">__init__</a></td></tr>
+<tr class="separator:ae1b9120c19f9f57b15de1c509dea5866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca861bc31ac8678b5b444747483f68b9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl.html#aca861bc31ac8678b5b444747483f68b9">get_value</a></td></tr>
+<tr class="separator:aca861bc31ac8678b5b444747483f68b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1a0342020e50ebcbecb2240928f6ee3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl.html#ae1a0342020e50ebcbecb2240928f6ee3">disable</a></td></tr>
+<tr class="separator:ae1a0342020e50ebcbecb2240928f6ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94e5771b1ad7facd726bfc4490562945"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl.html#a94e5771b1ad7facd726bfc4490562945">is_enabled</a></td></tr>
+<tr class="separator:a94e5771b1ad7facd726bfc4490562945"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1b9120c19f9f57b15de1c509dea5866"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl.html#ae1b9120c19f9f57b15de1c509dea5866">__init__</a></td></tr>
+<tr class="separator:ae1b9120c19f9f57b15de1c509dea5866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca861bc31ac8678b5b444747483f68b9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl.html#aca861bc31ac8678b5b444747483f68b9">get_value</a></td></tr>
+<tr class="separator:aca861bc31ac8678b5b444747483f68b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1a0342020e50ebcbecb2240928f6ee3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl.html#ae1a0342020e50ebcbecb2240928f6ee3">disable</a></td></tr>
+<tr class="separator:ae1a0342020e50ebcbecb2240928f6ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94e5771b1ad7facd726bfc4490562945"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl.html#a94e5771b1ad7facd726bfc4490562945">is_enabled</a></td></tr>
+<tr class="separator:a94e5771b1ad7facd726bfc4490562945"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a577d35d1ee32ddca4788470248fb2bdc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin.html#a577d35d1ee32ddca4788470248fb2bdc">OnEnter</a></td></tr>
+<tr class="separator:a577d35d1ee32ddca4788470248fb2bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a577d35d1ee32ddca4788470248fb2bdc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin.html#a577d35d1ee32ddca4788470248fb2bdc">OnEnter</a></td></tr>
+<tr class="separator:a577d35d1ee32ddca4788470248fb2bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad643067c1c98032b3fcdcdd6a7d867f1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin.html#ad643067c1c98032b3fcdcdd6a7d867f1">OnClick</a></td></tr>
+<tr class="separator:ad643067c1c98032b3fcdcdd6a7d867f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad643067c1c98032b3fcdcdd6a7d867f1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin.html#ad643067c1c98032b3fcdcdd6a7d867f1">OnClick</a></td></tr>
+<tr class="separator:ad643067c1c98032b3fcdcdd6a7d867f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:a273940b3e077c46282a6daae05fa9461"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl.html#a273940b3e077c46282a6daae05fa9461">value</a></td></tr>
+<tr class="separator:a273940b3e077c46282a6daae05fa9461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bbd80c2f6e12c6cbe2103d0340fe3d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl.html#a9bbd80c2f6e12c6cbe2103d0340fe3d2">enabled</a></td></tr>
+<tr class="separator:a9bbd80c2f6e12c6cbe2103d0340fe3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82ef5025ddb87a3dbb46a87375cca100"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin.html#a82ef5025ddb87a3dbb46a87375cca100">name</a></td></tr>
+<tr class="separator:a82ef5025ddb87a3dbb46a87375cca100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Atributos privados estáticos</h2></td></tr>
+<tr class="memitem:adc5664d07e9188e0764290e3a0e81fc2"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl.html#adc5664d07e9188e0764290e3a0e81fc2">__metaclass__</a> = <a class="el" href="../../dd/de2/namespacegui_1_1html_1_1input.html#aec59837535b3fa70b92673a4a0467710">TypeHandler</a>(&quot;HIDDEN&quot;)</td></tr>
+<tr class="separator:adc5664d07e9188e0764290e3a0e81fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f05ad98f009db0a32dfcf8ecaacf2cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl.html#a8f05ad98f009db0a32dfcf8ecaacf2cd">_registry</a> = <a class="el" href="../../d5/de5/namespacegui_1_1registry.html#a8f9ba27cffe41dc5efc1a82c409ad77b">registry.HTML</a></td></tr>
+<tr class="separator:a8f05ad98f009db0a32dfcf8ecaacf2cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00107">107</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="ae1b9120c19f9f57b15de1c509dea5866"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.input.FormHiddenControl.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>form</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>tag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parser</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00110">110</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00110">gui.html.input.FormHiddenControl.__init__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_ae1b9120c19f9f57b15de1c509dea5866_icgraph.png" border="0" usemap="#d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_ae1b9120c19f9f57b15de1c509dea5866_icgraph" alt=""/></div>
+<map name="d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_ae1b9120c19f9f57b15de1c509dea5866_icgraph" id="d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_ae1b9120c19f9f57b15de1c509dea5866_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae1b9120c19f9f57b15de1c509dea5866"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.input.FormHiddenControl.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>form</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>tag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parser</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00110">110</a> del archivo <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00110">gui.html.input.FormHiddenControl.__init__()</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00114">gui.html.input.FormHiddenControl.enabled</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00550">gui.component.Component.enabled</a>, <a class="el" href="../../d6/da9/build_2lib_8linux-x86__64-2_87_2gui_2html_2____init_____8py_source.html#l00016">gui.html.GetParam()</a>, <a class="el" href="../../df/ddd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2checkbox_8py_source.html#l00025">gui.controls.checkbox.CheckBox.value</a>, <a class="el" href="../../d5/de5/build_2lib_8linux-x86__64-2_87_2gui_2controls_2radiobutton_8py_source.html#l00032">gui.controls.radiobutton.RadioButton.value</a>, <a class="el" href="../../d7/d2a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gauge_8py_source.html#l00034">gui.controls.gauge.Gauge.value</a>, <a class="el" href="../../d3/d89/build_2lib_8linux-x86__64-2_87_2gui_2controls_2slider_8py_source.html#l00044">gui.controls.slider.Slider.value</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00099">gui.html.input.FormCheckbox.value</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00113">gui.html.input.FormHiddenControl.value</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00189">gui.controls.listbox.ItemContainerControl.value</a> y <a class="el" href="../../da/d65/build_2lib_8linux-x86__64-2_87_2gui_2controls_2textbox_8py_source.html#l00233">gui.controls.textbox.TextBox.value</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_ae1b9120c19f9f57b15de1c509dea5866_cgraph.png" border="0" usemap="#d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_ae1b9120c19f9f57b15de1c509dea5866_cgraph" alt=""/></div>
+<map name="d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_ae1b9120c19f9f57b15de1c509dea5866_cgraph" id="d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_ae1b9120c19f9f57b15de1c509dea5866_cgraph">
+<area shape="rect" id="node2" href="../../de/d77/namespacegui_1_1html.html#ad2a57a006615e76d51d1334fd477fd59" title="gui.html.GetParam" alt="" coords="229,36,360,63"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="ae1a0342020e50ebcbecb2240928f6ee3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.input.FormHiddenControl.disable </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00117">117</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00114">gui.html.input.FormHiddenControl.enabled</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00550">gui.component.Component.enabled</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00117">gui.html.input.FormHiddenControl.disable()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_ae1a0342020e50ebcbecb2240928f6ee3_icgraph.png" border="0" usemap="#d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_ae1a0342020e50ebcbecb2240928f6ee3_icgraph" alt=""/></div>
+<map name="d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_ae1a0342020e50ebcbecb2240928f6ee3_icgraph" id="d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_ae1a0342020e50ebcbecb2240928f6ee3_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae1a0342020e50ebcbecb2240928f6ee3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.input.FormHiddenControl.disable </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00117">117</a> del archivo <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00117">gui.html.input.FormHiddenControl.disable()</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00114">gui.html.input.FormHiddenControl.enabled</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00550">gui.component.Component.enabled</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_ae1a0342020e50ebcbecb2240928f6ee3_cgraph.png" border="0" usemap="#d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_ae1a0342020e50ebcbecb2240928f6ee3_cgraph" alt=""/></div>
+<map name="d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_ae1a0342020e50ebcbecb2240928f6ee3_cgraph" id="d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_ae1a0342020e50ebcbecb2240928f6ee3_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aca861bc31ac8678b5b444747483f68b9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.input.FormHiddenControl.get_value </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00115">115</a> del archivo <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00115">gui.html.input.FormHiddenControl.get_value()</a>, <a class="el" href="../../df/ddd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2checkbox_8py_source.html#l00025">gui.controls.checkbox.CheckBox.value</a>, <a class="el" href="../../d5/de5/build_2lib_8linux-x86__64-2_87_2gui_2controls_2radiobutton_8py_source.html#l00032">gui.controls.radiobutton.RadioButton.value</a>, <a class="el" href="../../d7/d2a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gauge_8py_source.html#l00034">gui.controls.gauge.Gauge.value</a>, <a class="el" href="../../d3/d89/build_2lib_8linux-x86__64-2_87_2gui_2controls_2slider_8py_source.html#l00044">gui.controls.slider.Slider.value</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00099">gui.html.input.FormCheckbox.value</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00113">gui.html.input.FormHiddenControl.value</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00189">gui.controls.listbox.ItemContainerControl.value</a> y <a class="el" href="../../da/d65/build_2lib_8linux-x86__64-2_87_2gui_2controls_2textbox_8py_source.html#l00233">gui.controls.textbox.TextBox.value</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_aca861bc31ac8678b5b444747483f68b9_cgraph.png" border="0" usemap="#d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_aca861bc31ac8678b5b444747483f68b9_cgraph" alt=""/></div>
+<map name="d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_aca861bc31ac8678b5b444747483f68b9_cgraph" id="d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_aca861bc31ac8678b5b444747483f68b9_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aca861bc31ac8678b5b444747483f68b9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.input.FormHiddenControl.get_value </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00115">115</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../df/ddd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2checkbox_8py_source.html#l00025">gui.controls.checkbox.CheckBox.value</a>, <a class="el" href="../../d5/de5/build_2lib_8linux-x86__64-2_87_2gui_2controls_2radiobutton_8py_source.html#l00032">gui.controls.radiobutton.RadioButton.value</a>, <a class="el" href="../../d7/d2a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gauge_8py_source.html#l00034">gui.controls.gauge.Gauge.value</a>, <a class="el" href="../../d3/d89/build_2lib_8linux-x86__64-2_87_2gui_2controls_2slider_8py_source.html#l00044">gui.controls.slider.Slider.value</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00099">gui.html.input.FormCheckbox.value</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00113">gui.html.input.FormHiddenControl.value</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00189">gui.controls.listbox.ItemContainerControl.value</a> y <a class="el" href="../../da/d65/build_2lib_8linux-x86__64-2_87_2gui_2controls_2textbox_8py_source.html#l00233">gui.controls.textbox.TextBox.value</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00115">gui.html.input.FormHiddenControl.get_value()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_aca861bc31ac8678b5b444747483f68b9_icgraph.png" border="0" usemap="#d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_aca861bc31ac8678b5b444747483f68b9_icgraph" alt=""/></div>
+<map name="d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_aca861bc31ac8678b5b444747483f68b9_icgraph" id="d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_aca861bc31ac8678b5b444747483f68b9_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a94e5771b1ad7facd726bfc4490562945"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.input.FormHiddenControl.is_enabled </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00119">119</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00114">gui.html.input.FormHiddenControl.enabled</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00550">gui.component.Component.enabled</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00119">gui.html.input.FormHiddenControl.is_enabled()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_a94e5771b1ad7facd726bfc4490562945_icgraph.png" border="0" usemap="#d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_a94e5771b1ad7facd726bfc4490562945_icgraph" alt=""/></div>
+<map name="d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_a94e5771b1ad7facd726bfc4490562945_icgraph" id="d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_a94e5771b1ad7facd726bfc4490562945_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a94e5771b1ad7facd726bfc4490562945"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.input.FormHiddenControl.is_enabled </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00119">119</a> del archivo <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00114">gui.html.input.FormHiddenControl.enabled</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00550">gui.component.Component.enabled</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00119">gui.html.input.FormHiddenControl.is_enabled()</a> y <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00012">gui.html.input.TypeHandler()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_a94e5771b1ad7facd726bfc4490562945_cgraph.png" border="0" usemap="#d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_a94e5771b1ad7facd726bfc4490562945_cgraph" alt=""/></div>
+<map name="d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_a94e5771b1ad7facd726bfc4490562945_cgraph" id="d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl_a94e5771b1ad7facd726bfc4490562945_cgraph">
+<area shape="rect" id="node2" href="../../dd/de2/namespacegui_1_1html_1_1input.html#aec59837535b3fa70b92673a4a0467710" title="gui.html.input.TypeHandler" alt="" coords="229,36,408,63"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad643067c1c98032b3fcdcdd6a7d867f1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.input.FormControlMixin.OnClick </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00042">42</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00048">gui.html.input.SubmitButton.__init__()</a> y <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00042">gui.html.input.FormControlMixin.OnClick()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_ad643067c1c98032b3fcdcdd6a7d867f1_icgraph.png" border="0" usemap="#d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_ad643067c1c98032b3fcdcdd6a7d867f1_icgraph" alt=""/></div>
+<map name="d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_ad643067c1c98032b3fcdcdd6a7d867f1_icgraph" id="d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_ad643067c1c98032b3fcdcdd6a7d867f1_icgraph">
+<area shape="rect" id="node2" href="../../d2/d71/classgui_1_1html_1_1input_1_1SubmitButton.html#a0447d0e532dec8121c5d8595d9c11314" title="gui.html.input.SubmitButton.\l__init__" alt="" coords="229,29,416,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad643067c1c98032b3fcdcdd6a7d867f1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.input.FormControlMixin.OnClick </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00042">42</a> del archivo <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00042">gui.html.input.FormControlMixin.OnClick()</a> y <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00012">gui.html.input.TypeHandler()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_ad643067c1c98032b3fcdcdd6a7d867f1_cgraph.png" border="0" usemap="#d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_ad643067c1c98032b3fcdcdd6a7d867f1_cgraph" alt=""/></div>
+<map name="d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_ad643067c1c98032b3fcdcdd6a7d867f1_cgraph" id="d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_ad643067c1c98032b3fcdcdd6a7d867f1_cgraph">
+<area shape="rect" id="node2" href="../../dd/de2/namespacegui_1_1html_1_1input.html#aec59837535b3fa70b92673a4a0467710" title="gui.html.input.TypeHandler" alt="" coords="229,36,408,63"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a577d35d1ee32ddca4788470248fb2bdc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.input.FormControlMixin.OnEnter </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00040">40</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00040">gui.html.input.FormControlMixin.OnEnter()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_a577d35d1ee32ddca4788470248fb2bdc_icgraph.png" border="0" usemap="#d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_a577d35d1ee32ddca4788470248fb2bdc_icgraph" alt=""/></div>
+<map name="d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_a577d35d1ee32ddca4788470248fb2bdc_icgraph" id="d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_a577d35d1ee32ddca4788470248fb2bdc_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a577d35d1ee32ddca4788470248fb2bdc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.input.FormControlMixin.OnEnter </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00040">40</a> del archivo <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00040">gui.html.input.FormControlMixin.OnEnter()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_a577d35d1ee32ddca4788470248fb2bdc_cgraph.png" border="0" usemap="#d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_a577d35d1ee32ddca4788470248fb2bdc_cgraph" alt=""/></div>
+<map name="d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_a577d35d1ee32ddca4788470248fb2bdc_cgraph" id="d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin_a577d35d1ee32ddca4788470248fb2bdc_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="adc5664d07e9188e0764290e3a0e81fc2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.html.input.FormHiddenControl.__metaclass__ = <a class="el" href="../../dd/de2/namespacegui_1_1html_1_1input.html#aec59837535b3fa70b92673a4a0467710">TypeHandler</a>(&quot;HIDDEN&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00108">108</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8f05ad98f009db0a32dfcf8ecaacf2cd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.html.input.FormHiddenControl._registry = <a class="el" href="../../d5/de5/namespacegui_1_1registry.html#a8f9ba27cffe41dc5efc1a82c409ad77b">registry.HTML</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00109">109</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9bbd80c2f6e12c6cbe2103d0340fe3d2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.html.input.FormHiddenControl.enabled</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00114">114</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00110">gui.html.input.FormHiddenControl.__init__()</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00117">gui.html.input.FormHiddenControl.disable()</a> y <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00119">gui.html.input.FormHiddenControl.is_enabled()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a82ef5025ddb87a3dbb46a87375cca100"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.html.input.FormControlMixin.name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00036">36</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00032">gui.html.input.FormControlMixin.__init__()</a> y <a class="el" href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00062">gui.spec.EventSpec.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a273940b3e077c46282a6daae05fa9461"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.html.input.FormHiddenControl.value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00113">113</a> del archivo <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00110">gui.html.input.FormHiddenControl.__init__()</a> y <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00115">gui.html.input.FormHiddenControl.get_value()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>build/lib.linux-x86_64-2.7/gui/html/<a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html">input.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/dc4/namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="../../de/d77/namespacegui_1_1html.html">html</a></li><li class="navelem"><a class="el" href="../../dd/de2/namespacegui_1_1html_1_1input.html">input</a></li><li class="navelem"><a class="el" href="../../d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl.html">FormHiddenControl</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:48 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

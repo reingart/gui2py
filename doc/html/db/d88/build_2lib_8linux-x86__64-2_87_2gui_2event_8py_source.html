@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Fichero Fuente build/lib.linux-x86_64-2.7/gui/event.py</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">event.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="../../d3/d6d/namespacegui_1_1event.html">    1</a></span>&#160;<span class="comment">#!/usr/bin/python</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">&quot;gui2py&#39;s Event Model (encapsulates wx.Event)&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="../../d3/d6d/namespacegui_1_1event.html#a04892d55c5d60fd296c3b0f5c3e97553">    6</a></span>&#160;__author__ = <span class="stringliteral">&quot;Mariano Reingart (reingart@gmail.com)&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../d3/d6d/namespacegui_1_1event.html#a132a653b978b291e3d0bab29d950b8db">    7</a></span>&#160;__copyright__ = <span class="stringliteral">&quot;Copyright (C) 2013- Mariano Reingart&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../d3/d6d/namespacegui_1_1event.html#ae12fa862d2fed6f8944e094ac3d2d0ea">    8</a></span>&#160;__license__ = <span class="stringliteral">&quot;LGPL 3.0&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"># Initial implementation was inspired on PythonCard&#39;s event module, altought</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"># it was almost completely discarded and re-written from scratch to make it</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"># simpler and mimic web (html/javascript) event models</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"># References</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"># https://developer.mozilla.org/en-US/docs/Mozilla_event_reference</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"># http://wxpython.org/docs/api/wx.Event-class.html</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> time</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d6/dcd/classgui_1_1event_1_1Event.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d6/dcd/classgui_1_1event_1_1Event.html">Event</a>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="stringliteral">&quot;Generic Event Object: holds actual event data (created by EventHandler)&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d6/dcd/classgui_1_1event_1_1Event.html#a1b027960e910e9ce12d758a17712c353">   24</a></span>&#160;    cancel_default = <span class="keyword">False</span> <span class="comment"># flag to avoid default (generic) handlers</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d6/dcd/classgui_1_1event_1_1Event.html#ae684c40a2482a72de3e92c967f8d2928">   26</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d6/dcd/classgui_1_1event_1_1Event.html#ae684c40a2482a72de3e92c967f8d2928">__init__</a>(self, name=&quot;&quot;, wx_event=None):</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d6/dcd/classgui_1_1event_1_1Event.html#aa05f6ec3afddaa591ac77a5a43e095e6">   27</a></span>&#160;        self.<a class="code" href="../../d6/dcd/classgui_1_1event_1_1Event.html#aa05f6ec3afddaa591ac77a5a43e095e6">wx_event</a> = wx_event</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment"># retrieve wxPython event properties:</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        wx_obj = self.wx_event.GetEventObject()</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment"># look for gui object (compound control with wx childs controls)</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">while</span> wx_obj <span class="keywordflow">and</span> <span class="keywordflow">not</span> hasattr(wx_obj, <span class="stringliteral">&quot;obj&quot;</span>):</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            wx_obj = wx_obj.Parent</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d6/dcd/classgui_1_1event_1_1Event.html#ab9cf85bf065ddc8c77624b1ffae410d9">   33</a></span>&#160;        self.<a class="code" href="../../d6/dcd/classgui_1_1event_1_1Event.html#ab9cf85bf065ddc8c77624b1ffae410d9">target</a> = wx_obj.obj <span class="keywordflow">if</span> wx_obj <span class="keywordflow">else</span> <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d6/dcd/classgui_1_1event_1_1Event.html#aa713aa5c6d7825a1adcde34ac90edc84">   34</a></span>&#160;        self.<a class="code" href="../../d6/dcd/classgui_1_1event_1_1Event.html#aa713aa5c6d7825a1adcde34ac90edc84">timestamp</a> = wx_event.GetTimestamp()</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment"># check if timestamp (wx report it only for mouse or keyboard)</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.<a class="code" href="../../d6/dcd/classgui_1_1event_1_1Event.html#aa713aa5c6d7825a1adcde34ac90edc84">timestamp</a>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            self.<a class="code" href="../../d6/dcd/classgui_1_1event_1_1Event.html#aa713aa5c6d7825a1adcde34ac90edc84">timestamp</a> = time.time()  <span class="comment"># create a new timestamp if not given</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d6/dcd/classgui_1_1event_1_1Event.html#af5b0f41fd3d91117fc7450783ed32c9f">   38</a></span>&#160;        self.<a class="code" href="../../d6/dcd/classgui_1_1event_1_1Event.html#af5b0f41fd3d91117fc7450783ed32c9f">name</a> = name                  <span class="comment"># name (type), i.e.: &quot;click&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../d6/dcd/classgui_1_1event_1_1Event.html#ae36c52b5de580d3f33de8984def7a0a8">   40</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d6/dcd/classgui_1_1event_1_1Event.html#ae36c52b5de580d3f33de8984def7a0a8">prevent_default</a>(self, cancel=True):</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        self.wx_event.Skip(<span class="keywordflow">not</span> cancel)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        self.<a class="code" href="../../d6/dcd/classgui_1_1event_1_1Event.html#a1b027960e910e9ce12d758a17712c353">cancel_default</a> = cancel</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="../../d6/dcd/classgui_1_1event_1_1Event.html#a9787a9a648817cd9bdda5ad0ecee3ca4">   44</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d6/dcd/classgui_1_1event_1_1Event.html#a9787a9a648817cd9bdda5ad0ecee3ca4">stop_propagation</a>(self):</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        self.wx_event.StopPropagation()</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html">   48</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html">UIEvent</a>(<a class="code" href="../../d6/dcd/classgui_1_1event_1_1Event.html">Event</a>):</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="stringliteral">&quot;General -window- related events (detail can hold additional data)&quot;</span>   </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html#a71196cdd476608df8bf95511b3ee8cf1">   50</a></span>&#160;    names = [<span class="stringliteral">&quot;load&quot;</span>, <span class="stringliteral">&quot;resize&quot;</span>, <span class="stringliteral">&quot;scroll&quot;</span>, <span class="stringliteral">&quot;paint&quot;</span>, <span class="stringliteral">&quot;unload&quot;</span>]</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html#ac107105d6b365d1e63d270ed288a27a9">   52</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html#ac107105d6b365d1e63d270ed288a27a9">__init__</a>(self, name, detail=None, wx_event=None):</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        Event.__init__(self, name, wx_event)</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html#a5838701ef548e9008a64155b3ed34a93">   54</a></span>&#160;        self.<a class="code" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html#a5838701ef548e9008a64155b3ed34a93">detail</a> = detail</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment"># get the top level window:</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        obj = self.<a class="code" href="../../d6/dcd/classgui_1_1event_1_1Event.html#ab9cf85bf065ddc8c77624b1ffae410d9">target</a></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">while</span> obj <span class="keywordflow">and</span> obj.parent:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            obj = obj.get_parent()</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html#ae25da693c57b2891f3742661e62695cb">   59</a></span>&#160;        self.<a class="code" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html#ae25da693c57b2891f3742661e62695cb">window</a> = obj</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html#a36799712c90a876bc9a11a51ea7b34cc">   61</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html#a36799712c90a876bc9a11a51ea7b34cc">prevent_default</a>(self):</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html#a83e33b88fed9d81c2698c6c1043fcad0">   62</a></span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../d6/dcd/classgui_1_1event_1_1Event.html#af5b0f41fd3d91117fc7450783ed32c9f">name</a> == <span class="stringliteral">&#39;unload&#39;</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">if</span> self.wx_event.CanVeto():</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                self.wx_event.Veto()</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordflow">raise</span> RuntimeError(<span class="stringliteral">&quot;Cannot Veto!&quot;</span>)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            Event.prevent_default(self)     <span class="comment"># call default implementation</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../d4/dde/classgui_1_1event_1_1FocusEvent.html">   71</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/dde/classgui_1_1event_1_1FocusEvent.html">FocusEvent</a>(<a class="code" href="../../d6/dcd/classgui_1_1event_1_1Event.html">Event</a>):</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="stringliteral">&quot;Focus related events&quot;</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../d4/dde/classgui_1_1event_1_1FocusEvent.html#a71834cc5877cb53b8d4c7ced1f7f7ad4">   74</a></span>&#160;    names = [<span class="stringliteral">&quot;focus&quot;</span>, <span class="stringliteral">&quot;blur&quot;</span>]</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../d7/d87/classgui_1_1event_1_1FormEvent.html">   77</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/d87/classgui_1_1event_1_1FormEvent.html">FormEvent</a>(<a class="code" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html">UIEvent</a>):</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="stringliteral">&quot;Form HTML-like events &quot;</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    </div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="../../d7/d87/classgui_1_1event_1_1FormEvent.html#a335c7e9b6bc168621410f3e0116173c1">   80</a></span>&#160;    names = [<span class="stringliteral">&quot;select&quot;</span>, <span class="stringliteral">&quot;change&quot;</span>, <span class="stringliteral">&quot;reset&quot;</span>, <span class="stringliteral">&quot;submit&quot;</span>, <span class="stringliteral">&quot;invalid&quot;</span>]</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="../../d7/d87/classgui_1_1event_1_1FormEvent.html#a51789edc72922889babd235187a32548">   81</a></span>&#160;    cancel_default = <span class="keyword">True</span> <span class="comment"># command events should not escalate</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="../../d0/d57/classgui_1_1event_1_1SubmitEvent.html">   84</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/d57/classgui_1_1event_1_1SubmitEvent.html">SubmitEvent</a>(<a class="code" href="../../d7/d87/classgui_1_1event_1_1FormEvent.html">FormEvent</a>):</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="stringliteral">&quot;Form submission handler (includes HTML form data and field contents)&quot;</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../d0/d57/classgui_1_1event_1_1SubmitEvent.html#a3b427f49133ed033322b0977b36557b1">   86</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d0/d57/classgui_1_1event_1_1SubmitEvent.html#a3b427f49133ed033322b0977b36557b1">__init__</a>(self, name, wx_event=None):</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        Event.__init__(self, name, wx_event)</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="../../d0/d57/classgui_1_1event_1_1SubmitEvent.html#ac71bf5a7cf422f6a6ad279ad22572415">   88</a></span>&#160;        self.<a class="code" href="../../d0/d57/classgui_1_1event_1_1SubmitEvent.html#ac71bf5a7cf422f6a6ad279ad22572415">form</a> = wx_event.form</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="../../d0/d57/classgui_1_1event_1_1SubmitEvent.html#a1fb490e70afbf70d29bf6b287720db01">   89</a></span>&#160;        self.<a class="code" href="../../d0/d57/classgui_1_1event_1_1SubmitEvent.html#a1fb490e70afbf70d29bf6b287720db01">data</a> = wx_event.data</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html">   92</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html">MouseEvent</a>(<a class="code" href="../../d6/dcd/classgui_1_1event_1_1Event.html">Event</a>):</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="stringliteral">&quot;Mouse related events (wrapper for wx.MouseEvent)&quot;</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#aa085004d9c14698f5366d44bf3cb4cb8">   95</a></span>&#160;    names = [<span class="stringliteral">&quot;click&quot;</span>, <span class="stringliteral">&quot;dblclick&quot;</span>, <span class="stringliteral">&quot;mousedown&quot;</span>, <span class="stringliteral">&quot;mousemove&quot;</span>,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="stringliteral">&quot;mouseout&quot;</span>, <span class="stringliteral">&quot;mouseover&quot;</span>, <span class="stringliteral">&quot;mouseup&quot;</span>, <span class="stringliteral">&quot;mousewheel&quot;</span>]</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a1ba96b318d5ad68d29fe7c74aa040d81">   98</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a1ba96b318d5ad68d29fe7c74aa040d81">__init__</a>(self, name, wx_event=None):</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        Event.__init__(self, name, wx_event)</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#acc7816fc36df14e19bd37dcfe4102134">  100</a></span>&#160;        self.<a class="code" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#acc7816fc36df14e19bd37dcfe4102134">x</a> = wx_event.GetX()</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#aaefb2df4eba815aba58492c511c458bf">  101</a></span>&#160;        self.<a class="code" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#aaefb2df4eba815aba58492c511c458bf">y</a> = wx_event.GetY()</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a40658a7d1e1bb225a425d3e4f49eb9f8">  102</a></span>&#160;        self.<a class="code" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a40658a7d1e1bb225a425d3e4f49eb9f8">alt_key</a> = wx_event.AltDown()</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a5c9f0ae8c8155f5b55a948686d6b43f0">  103</a></span>&#160;        self.<a class="code" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a5c9f0ae8c8155f5b55a948686d6b43f0">ctrl_key</a> = wx_event.ControlDown()</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a1b057bf5af2ba67dadda3db1acf7be6f">  104</a></span>&#160;        self.<a class="code" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a1b057bf5af2ba67dadda3db1acf7be6f">shift_key</a> = wx_event.ShiftDown()</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a06a01af3f3b12caa14e218038177a75b">  105</a></span>&#160;        self.<a class="code" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a06a01af3f3b12caa14e218038177a75b">meta_key</a> = wx_event.MetaDown()</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#ad4f74539b460393299e711de32a1c346">  106</a></span>&#160;        self.<a class="code" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#ad4f74539b460393299e711de32a1c346">left_button</a> = wx_event.LeftIsDown()</div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#af694c594db12fdc20d28f0fd47b760d1">  107</a></span>&#160;        self.<a class="code" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#af694c594db12fdc20d28f0fd47b760d1">right_button</a> = wx_event.RightIsDown()</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a4d2e88c7cc88a61687f61509681fb7c2">  108</a></span>&#160;        self.<a class="code" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a4d2e88c7cc88a61687f61509681fb7c2">middle_button</a> = wx_event.MiddleIsDown()</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">if</span> name==<span class="stringliteral">&quot;mousewheel&quot;</span>:</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#ac7bd31a092c6d01479c80801edb7449b">  110</a></span>&#160;            self.<a class="code" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#ac7bd31a092c6d01479c80801edb7449b">wheel_delta</a> = wx_event.GetWheelDelta()</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html">  112</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html">KeyEvent</a>(<a class="code" href="../../d6/dcd/classgui_1_1event_1_1Event.html">Event</a>):</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="stringliteral">&quot;Keyboard related event (wrapper for wx.KeyEvent)&quot;</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment"># only sent to the widget that currently has the keyboard focus</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    </div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#a9f1658d228608e158b2d03d49df6d228">  116</a></span>&#160;    names = <span class="stringliteral">&quot;onkeypress&quot;</span>, <span class="stringliteral">&quot;onkeydown&quot;</span>, <span class="stringliteral">&quot;onkeyup&quot;</span>,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    </div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#ae5e9ec97b9eb271f52b3a8b7e10ff8ac">  118</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#ae5e9ec97b9eb271f52b3a8b7e10ff8ac">__init__</a>(self, name, wx_event=None):</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        Event.__init__(self, name, wx_event)</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#a7c910218999ce3999ec65e3e5220165d">  120</a></span>&#160;        self.<a class="code" href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#a7c910218999ce3999ec65e3e5220165d">ctrl_key</a> = wx_event.ControlDown()</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#a7dcaee6038a71d78916cb8645ce3b015">  121</a></span>&#160;        self.<a class="code" href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#a7dcaee6038a71d78916cb8645ce3b015">shift_key</a> = wx_event.ShiftDown()</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#a74ebbddc07f7341cbdc54ecc896455ba">  122</a></span>&#160;        self.<a class="code" href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#a74ebbddc07f7341cbdc54ecc896455ba">alt_key</a> = wx_event.AltDown()</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#af99ce00a37c92aa6e17122fc4ebe18c7">  123</a></span>&#160;        self.<a class="code" href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#af99ce00a37c92aa6e17122fc4ebe18c7">meta_key</a> = wx_event.MetaDown()</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#a8d437ceea655f5a6a5823be0e58de33b">  124</a></span>&#160;        self.<a class="code" href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#a8d437ceea655f5a6a5823be0e58de33b">key</a> = wx_event.KeyCode                   <span class="comment"># virtual key code value</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#a4a125f9ac2ec8825448e9f3e90214767">  125</a></span>&#160;        self.<a class="code" href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#a4a125f9ac2ec8825448e9f3e90214767">char</a> = unichr(wx_event.GetUnicodeKey())  <span class="comment"># Unicode character</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        </div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="../../d5/d51/classgui_1_1event_1_1TimingEvent.html">  128</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d5/d51/classgui_1_1event_1_1TimingEvent.html">TimingEvent</a>(<a class="code" href="../../d6/dcd/classgui_1_1event_1_1Event.html">Event</a>):</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="stringliteral">&quot;Time interval events&quot;</span>   </div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="../../d5/d51/classgui_1_1event_1_1TimingEvent.html#a6642df948e6eb176e82cc0c62b55040e">  130</a></span>&#160;    names = [<span class="stringliteral">&quot;idle&quot;</span>, <span class="stringliteral">&quot;timer&quot;</span>]</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="../../d5/d51/classgui_1_1event_1_1TimingEvent.html#a9928355de0656ca16124e351ea79339b">  132</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d5/d51/classgui_1_1event_1_1TimingEvent.html#a9928355de0656ca16124e351ea79339b">__init__</a>(self, interval=None, wx_event=None):</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        Event.__init__(self, wx_event)</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="../../d5/d51/classgui_1_1event_1_1TimingEvent.html#a238add7e65046f907500e2412623d59b">  134</a></span>&#160;        self.<a class="code" href="../../d5/d51/classgui_1_1event_1_1TimingEvent.html#a238add7e65046f907500e2412623d59b">interval</a> = interval</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="../../d5/d51/classgui_1_1event_1_1TimingEvent.html#aa03c69e4537337c9c5ea02fa1158d07f">  136</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d5/d51/classgui_1_1event_1_1TimingEvent.html#aa03c69e4537337c9c5ea02fa1158d07f">request_more</a>(self):</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">pass</span>        <span class="comment">#wx.RequestMore(needMore=True)</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="../../d9/dd2/classgui_1_1event_1_1HtmlLinkEvent.html">  140</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/dd2/classgui_1_1event_1_1HtmlLinkEvent.html">HtmlLinkEvent</a>(<a class="code" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html">UIEvent</a>):</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="stringliteral">&quot;Html hyperlink click event (href and target)&quot;</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    </div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="../../d9/dd2/classgui_1_1event_1_1HtmlLinkEvent.html#a40e4bcf4e9fcfc17e2dee360ff764d13">  143</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/dd2/classgui_1_1event_1_1HtmlLinkEvent.html#a40e4bcf4e9fcfc17e2dee360ff764d13">__init__</a>(self, name, detail=None, wx_event=None):</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        UIEvent.__init__(self, name, wx_event=wx_event, </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                         detail=wx_event.GetLinkInfo().GetHtmlCell())</div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="../../d9/dd2/classgui_1_1event_1_1HtmlLinkEvent.html#a17103d9687293d6efb26f870f51efc62">  146</a></span>&#160;        self.<a class="code" href="../../d9/dd2/classgui_1_1event_1_1HtmlLinkEvent.html#a17103d9687293d6efb26f870f51efc62">href</a> = wx_event.GetLinkInfo().GetHref()</div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="../../d9/dd2/classgui_1_1event_1_1HtmlLinkEvent.html#a52a76bd45dac888b4fa3123bd3773bb3">  147</a></span>&#160;        self.<a class="code" href="../../d6/dcd/classgui_1_1event_1_1Event.html#ab9cf85bf065ddc8c77624b1ffae410d9">target</a> = wx_event.GetLinkInfo().GetTarget()</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        </div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="../../da/d4a/classgui_1_1event_1_1HtmlCellEvent.html">  150</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../da/d4a/classgui_1_1event_1_1HtmlCellEvent.html">HtmlCellEvent</a>(<a class="code" href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html">MouseEvent</a>):</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="stringliteral">&quot;Html Cell click / hover events&quot;</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    </div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="../../da/d4a/classgui_1_1event_1_1HtmlCellEvent.html#a12a38accf3fb0c590b13635bb33838bd">  153</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/d4a/classgui_1_1event_1_1HtmlCellEvent.html#a12a38accf3fb0c590b13635bb33838bd">__init__</a>(self, name, detail=None, wx_event=None):</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        MouseEvent.__init__(self, name, wx_event.GetMouseEvent())</div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="../../da/d4a/classgui_1_1event_1_1HtmlCellEvent.html#a9dbfac30fe103b5d246f2f59ba3bafc6">  155</a></span>&#160;        self.<a class="code" href="../../da/d4a/classgui_1_1event_1_1HtmlCellEvent.html#a9dbfac30fe103b5d246f2f59ba3bafc6">detail</a> = wx_event.GetCell()</div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="../../da/d4a/classgui_1_1event_1_1HtmlCellEvent.html#a2a72d32e21a32035f8ddf25dc5c14e9e">  156</a></span>&#160;        self.<a class="code" href="../../da/d4a/classgui_1_1event_1_1HtmlCellEvent.html#a2a72d32e21a32035f8ddf25dc5c14e9e">point</a> = wx_event.GetPoint()</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="../../d3/d0f/classgui_1_1event_1_1HtmlCtrlClickEvent.html">  159</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d0f/classgui_1_1event_1_1HtmlCtrlClickEvent.html">HtmlCtrlClickEvent</a>(<a class="code" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html">UIEvent</a>):</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="stringliteral">&quot;Html Control click &quot;</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    </div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="../../d3/d0f/classgui_1_1event_1_1HtmlCtrlClickEvent.html#a5acde1d031f1ebd6c9b057416075189d">  162</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d3/d0f/classgui_1_1event_1_1HtmlCtrlClickEvent.html#a5acde1d031f1ebd6c9b057416075189d">__init__</a>(self, name, detail=None, wx_event=None):</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        UIEvent.__init__(self, name, wx_event=wx_event, </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                         detail=wx_event.ctrl)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="../../df/d6d/classgui_1_1event_1_1TreeEvent.html">  167</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../df/d6d/classgui_1_1event_1_1TreeEvent.html">TreeEvent</a>(<a class="code" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html">UIEvent</a>):</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="stringliteral">&quot;Tree Control events (detail has the selected/extended/collapsed item)&quot;</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    </div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="../../df/d6d/classgui_1_1event_1_1TreeEvent.html#a62ef8a5c9c28abe2098b89ba01ab355f">  170</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d6d/classgui_1_1event_1_1TreeEvent.html#a62ef8a5c9c28abe2098b89ba01ab355f">__init__</a>(self, name, detail=None, wx_event=None):</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        wx_tree = wx_event.GetEventObject()</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        model = wx_tree.obj.items</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        wx_item = wx_event.GetItem()</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> wx_item.IsOk():</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            wx_item = wx_tree.GetSelection()</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        UIEvent.__init__(self, name, wx_event=wx_event, </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                         detail=model(wx_item))</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="../../db/d09/classgui_1_1event_1_1GridEvent.html">  180</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d09/classgui_1_1event_1_1GridEvent.html">GridEvent</a>(<a class="code" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html">UIEvent</a>):</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="stringliteral">&quot;Grid Control events (mouse, size, edit, etc.)&quot;</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    </div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="../../db/d09/classgui_1_1event_1_1GridEvent.html#a545c1089f4b86557e300d54378f59e64">  183</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/d09/classgui_1_1event_1_1GridEvent.html#a545c1089f4b86557e300d54378f59e64">__init__</a>(self, name, detail=None, wx_event=None):</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        wx_grid = wx_event.GetEventObject()</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        model = wx_grid.obj.items</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="../../db/d09/classgui_1_1event_1_1GridEvent.html#acf2536a9a03c7437d08c15d8050e61a4">  187</a></span>&#160;            self.<a class="code" href="../../db/d09/classgui_1_1event_1_1GridEvent.html#acf2536a9a03c7437d08c15d8050e61a4">row</a> = wx_event.GetRow()</div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="../../db/d09/classgui_1_1event_1_1GridEvent.html#a578eae5eb60a63ea408cd59d34b18ecb">  188</a></span>&#160;            self.<a class="code" href="../../db/d09/classgui_1_1event_1_1GridEvent.html#a578eae5eb60a63ea408cd59d34b18ecb">col</a> = wx_event.GetCol()</div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="../../db/d09/classgui_1_1event_1_1GridEvent.html#a70ccf1bd688c0df4002d437f21e52fdd">  189</a></span>&#160;            self.<a class="code" href="../../db/d09/classgui_1_1event_1_1GridEvent.html#a70ccf1bd688c0df4002d437f21e52fdd">position</a> = wx_event.GetPosition()</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">except</span>:</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="keywordflow">pass</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        UIEvent.__init__(self, name, wx_event=wx_event, </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                         detail=model[self.<a class="code" href="../../db/d09/classgui_1_1event_1_1GridEvent.html#acf2536a9a03c7437d08c15d8050e61a4">row</a>][self.<a class="code" href="../../db/d09/classgui_1_1event_1_1GridEvent.html#a578eae5eb60a63ea408cd59d34b18ecb">col</a>])</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
+<div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="../../d3/d6d/namespacegui_1_1event.html#ad0db3912a98f5b8faf02e0f3aa161c52">  196</a></span>&#160;WIDGET_EVENTS = MouseEvent, FocusEvent, TimingEvent</div>
+<div class="ttc" id="classgui_1_1event_1_1FormEvent_html"><div class="ttname"><a href="../../d7/d87/classgui_1_1event_1_1FormEvent.html">gui.event.FormEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00077">event.py:77</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1KeyEvent_html_a74ebbddc07f7341cbdc54ecc896455ba"><div class="ttname"><a href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#a74ebbddc07f7341cbdc54ecc896455ba">gui.event.KeyEvent.alt_key</a></div><div class="ttdeci">alt_key</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00122">event.py:122</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1KeyEvent_html_a7c910218999ce3999ec65e3e5220165d"><div class="ttname"><a href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#a7c910218999ce3999ec65e3e5220165d">gui.event.KeyEvent.ctrl_key</a></div><div class="ttdeci">ctrl_key</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00120">event.py:120</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1UIEvent_html_ac107105d6b365d1e63d270ed288a27a9"><div class="ttname"><a href="../../d1/df1/classgui_1_1event_1_1UIEvent.html#ac107105d6b365d1e63d270ed288a27a9">gui.event.UIEvent.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00052">event.py:52</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1GridEvent_html_a545c1089f4b86557e300d54378f59e64"><div class="ttname"><a href="../../db/d09/classgui_1_1event_1_1GridEvent.html#a545c1089f4b86557e300d54378f59e64">gui.event.GridEvent.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00183">event.py:183</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1MouseEvent_html_a06a01af3f3b12caa14e218038177a75b"><div class="ttname"><a href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a06a01af3f3b12caa14e218038177a75b">gui.event.MouseEvent.meta_key</a></div><div class="ttdeci">meta_key</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00105">event.py:105</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1UIEvent_html_ae25da693c57b2891f3742661e62695cb"><div class="ttname"><a href="../../d1/df1/classgui_1_1event_1_1UIEvent.html#ae25da693c57b2891f3742661e62695cb">gui.event.UIEvent.window</a></div><div class="ttdeci">window</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00059">event.py:59</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1MouseEvent_html_a4d2e88c7cc88a61687f61509681fb7c2"><div class="ttname"><a href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a4d2e88c7cc88a61687f61509681fb7c2">gui.event.MouseEvent.middle_button</a></div><div class="ttdeci">middle_button</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00108">event.py:108</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1KeyEvent_html"><div class="ttname"><a href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html">gui.event.KeyEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00112">event.py:112</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1SubmitEvent_html"><div class="ttname"><a href="../../d0/d57/classgui_1_1event_1_1SubmitEvent.html">gui.event.SubmitEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00084">event.py:84</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1Event_html_aa713aa5c6d7825a1adcde34ac90edc84"><div class="ttname"><a href="../../d6/dcd/classgui_1_1event_1_1Event.html#aa713aa5c6d7825a1adcde34ac90edc84">gui.event.Event.timestamp</a></div><div class="ttdeci">timestamp</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00034">event.py:34</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1MouseEvent_html_a5c9f0ae8c8155f5b55a948686d6b43f0"><div class="ttname"><a href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a5c9f0ae8c8155f5b55a948686d6b43f0">gui.event.MouseEvent.ctrl_key</a></div><div class="ttdeci">ctrl_key</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00103">event.py:103</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1FocusEvent_html"><div class="ttname"><a href="../../d4/dde/classgui_1_1event_1_1FocusEvent.html">gui.event.FocusEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00071">event.py:71</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1TimingEvent_html_a9928355de0656ca16124e351ea79339b"><div class="ttname"><a href="../../d5/d51/classgui_1_1event_1_1TimingEvent.html#a9928355de0656ca16124e351ea79339b">gui.event.TimingEvent.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00132">event.py:132</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1TreeEvent_html_a62ef8a5c9c28abe2098b89ba01ab355f"><div class="ttname"><a href="../../df/d6d/classgui_1_1event_1_1TreeEvent.html#a62ef8a5c9c28abe2098b89ba01ab355f">gui.event.TreeEvent.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00170">event.py:170</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1KeyEvent_html_ae5e9ec97b9eb271f52b3a8b7e10ff8ac"><div class="ttname"><a href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#ae5e9ec97b9eb271f52b3a8b7e10ff8ac">gui.event.KeyEvent.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00118">event.py:118</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1TreeEvent_html"><div class="ttname"><a href="../../df/d6d/classgui_1_1event_1_1TreeEvent.html">gui.event.TreeEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00167">event.py:167</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1UIEvent_html_a5838701ef548e9008a64155b3ed34a93"><div class="ttname"><a href="../../d1/df1/classgui_1_1event_1_1UIEvent.html#a5838701ef548e9008a64155b3ed34a93">gui.event.UIEvent.detail</a></div><div class="ttdeci">detail</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00054">event.py:54</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1Event_html"><div class="ttname"><a href="../../d6/dcd/classgui_1_1event_1_1Event.html">gui.event.Event</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00021">event.py:21</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1Event_html_ae684c40a2482a72de3e92c967f8d2928"><div class="ttname"><a href="../../d6/dcd/classgui_1_1event_1_1Event.html#ae684c40a2482a72de3e92c967f8d2928">gui.event.Event.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00026">event.py:26</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1GridEvent_html_a70ccf1bd688c0df4002d437f21e52fdd"><div class="ttname"><a href="../../db/d09/classgui_1_1event_1_1GridEvent.html#a70ccf1bd688c0df4002d437f21e52fdd">gui.event.GridEvent.position</a></div><div class="ttdeci">position</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00189">event.py:189</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1HtmlCellEvent_html"><div class="ttname"><a href="../../da/d4a/classgui_1_1event_1_1HtmlCellEvent.html">gui.event.HtmlCellEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00150">event.py:150</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1MouseEvent_html_a1ba96b318d5ad68d29fe7c74aa040d81"><div class="ttname"><a href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a1ba96b318d5ad68d29fe7c74aa040d81">gui.event.MouseEvent.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00098">event.py:98</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1MouseEvent_html_af694c594db12fdc20d28f0fd47b760d1"><div class="ttname"><a href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#af694c594db12fdc20d28f0fd47b760d1">gui.event.MouseEvent.right_button</a></div><div class="ttdeci">right_button</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00107">event.py:107</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1HtmlCellEvent_html_a2a72d32e21a32035f8ddf25dc5c14e9e"><div class="ttname"><a href="../../da/d4a/classgui_1_1event_1_1HtmlCellEvent.html#a2a72d32e21a32035f8ddf25dc5c14e9e">gui.event.HtmlCellEvent.point</a></div><div class="ttdeci">point</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00156">event.py:156</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1MouseEvent_html_a1b057bf5af2ba67dadda3db1acf7be6f"><div class="ttname"><a href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a1b057bf5af2ba67dadda3db1acf7be6f">gui.event.MouseEvent.shift_key</a></div><div class="ttdeci">shift_key</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00104">event.py:104</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1Event_html_a1b027960e910e9ce12d758a17712c353"><div class="ttname"><a href="../../d6/dcd/classgui_1_1event_1_1Event.html#a1b027960e910e9ce12d758a17712c353">gui.event.Event.cancel_default</a></div><div class="ttdeci">cancel_default</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00024">event.py:24</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1MouseEvent_html"><div class="ttname"><a href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html">gui.event.MouseEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00092">event.py:92</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1HtmlLinkEvent_html"><div class="ttname"><a href="../../d9/dd2/classgui_1_1event_1_1HtmlLinkEvent.html">gui.event.HtmlLinkEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00140">event.py:140</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1SubmitEvent_html_a3b427f49133ed033322b0977b36557b1"><div class="ttname"><a href="../../d0/d57/classgui_1_1event_1_1SubmitEvent.html#a3b427f49133ed033322b0977b36557b1">gui.event.SubmitEvent.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00086">event.py:86</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1MouseEvent_html_ac7bd31a092c6d01479c80801edb7449b"><div class="ttname"><a href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#ac7bd31a092c6d01479c80801edb7449b">gui.event.MouseEvent.wheel_delta</a></div><div class="ttdeci">wheel_delta</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00110">event.py:110</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1KeyEvent_html_a7dcaee6038a71d78916cb8645ce3b015"><div class="ttname"><a href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#a7dcaee6038a71d78916cb8645ce3b015">gui.event.KeyEvent.shift_key</a></div><div class="ttdeci">shift_key</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00121">event.py:121</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1GridEvent_html_a578eae5eb60a63ea408cd59d34b18ecb"><div class="ttname"><a href="../../db/d09/classgui_1_1event_1_1GridEvent.html#a578eae5eb60a63ea408cd59d34b18ecb">gui.event.GridEvent.col</a></div><div class="ttdeci">col</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00188">event.py:188</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1TimingEvent_html"><div class="ttname"><a href="../../d5/d51/classgui_1_1event_1_1TimingEvent.html">gui.event.TimingEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00128">event.py:128</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1MouseEvent_html_aaefb2df4eba815aba58492c511c458bf"><div class="ttname"><a href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#aaefb2df4eba815aba58492c511c458bf">gui.event.MouseEvent.y</a></div><div class="ttdeci">y</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00101">event.py:101</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1SubmitEvent_html_a1fb490e70afbf70d29bf6b287720db01"><div class="ttname"><a href="../../d0/d57/classgui_1_1event_1_1SubmitEvent.html#a1fb490e70afbf70d29bf6b287720db01">gui.event.SubmitEvent.data</a></div><div class="ttdeci">data</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00089">event.py:89</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1Event_html_aa05f6ec3afddaa591ac77a5a43e095e6"><div class="ttname"><a href="../../d6/dcd/classgui_1_1event_1_1Event.html#aa05f6ec3afddaa591ac77a5a43e095e6">gui.event.Event.wx_event</a></div><div class="ttdeci">wx_event</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00027">event.py:27</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1HtmlCtrlClickEvent_html_a5acde1d031f1ebd6c9b057416075189d"><div class="ttname"><a href="../../d3/d0f/classgui_1_1event_1_1HtmlCtrlClickEvent.html#a5acde1d031f1ebd6c9b057416075189d">gui.event.HtmlCtrlClickEvent.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00162">event.py:162</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1KeyEvent_html_a8d437ceea655f5a6a5823be0e58de33b"><div class="ttname"><a href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#a8d437ceea655f5a6a5823be0e58de33b">gui.event.KeyEvent.key</a></div><div class="ttdeci">key</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00124">event.py:124</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1HtmlLinkEvent_html_a40e4bcf4e9fcfc17e2dee360ff764d13"><div class="ttname"><a href="../../d9/dd2/classgui_1_1event_1_1HtmlLinkEvent.html#a40e4bcf4e9fcfc17e2dee360ff764d13">gui.event.HtmlLinkEvent.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00143">event.py:143</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1Event_html_ab9cf85bf065ddc8c77624b1ffae410d9"><div class="ttname"><a href="../../d6/dcd/classgui_1_1event_1_1Event.html#ab9cf85bf065ddc8c77624b1ffae410d9">gui.event.Event.target</a></div><div class="ttdeci">target</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00033">event.py:33</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1UIEvent_html"><div class="ttname"><a href="../../d1/df1/classgui_1_1event_1_1UIEvent.html">gui.event.UIEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00048">event.py:48</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1Event_html_ae36c52b5de580d3f33de8984def7a0a8"><div class="ttname"><a href="../../d6/dcd/classgui_1_1event_1_1Event.html#ae36c52b5de580d3f33de8984def7a0a8">gui.event.Event.prevent_default</a></div><div class="ttdeci">def prevent_default</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00040">event.py:40</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1MouseEvent_html_ad4f74539b460393299e711de32a1c346"><div class="ttname"><a href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#ad4f74539b460393299e711de32a1c346">gui.event.MouseEvent.left_button</a></div><div class="ttdeci">left_button</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00106">event.py:106</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1TimingEvent_html_a238add7e65046f907500e2412623d59b"><div class="ttname"><a href="../../d5/d51/classgui_1_1event_1_1TimingEvent.html#a238add7e65046f907500e2412623d59b">gui.event.TimingEvent.interval</a></div><div class="ttdeci">interval</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00134">event.py:134</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1GridEvent_html"><div class="ttname"><a href="../../db/d09/classgui_1_1event_1_1GridEvent.html">gui.event.GridEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00180">event.py:180</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1KeyEvent_html_a4a125f9ac2ec8825448e9f3e90214767"><div class="ttname"><a href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#a4a125f9ac2ec8825448e9f3e90214767">gui.event.KeyEvent.char</a></div><div class="ttdeci">char</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00125">event.py:125</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1KeyEvent_html_af99ce00a37c92aa6e17122fc4ebe18c7"><div class="ttname"><a href="../../d0/d6f/classgui_1_1event_1_1KeyEvent.html#af99ce00a37c92aa6e17122fc4ebe18c7">gui.event.KeyEvent.meta_key</a></div><div class="ttdeci">meta_key</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00123">event.py:123</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1TimingEvent_html_aa03c69e4537337c9c5ea02fa1158d07f"><div class="ttname"><a href="../../d5/d51/classgui_1_1event_1_1TimingEvent.html#aa03c69e4537337c9c5ea02fa1158d07f">gui.event.TimingEvent.request_more</a></div><div class="ttdeci">def request_more</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00136">event.py:136</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1HtmlLinkEvent_html_a17103d9687293d6efb26f870f51efc62"><div class="ttname"><a href="../../d9/dd2/classgui_1_1event_1_1HtmlLinkEvent.html#a17103d9687293d6efb26f870f51efc62">gui.event.HtmlLinkEvent.href</a></div><div class="ttdeci">href</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00146">event.py:146</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1Event_html_a9787a9a648817cd9bdda5ad0ecee3ca4"><div class="ttname"><a href="../../d6/dcd/classgui_1_1event_1_1Event.html#a9787a9a648817cd9bdda5ad0ecee3ca4">gui.event.Event.stop_propagation</a></div><div class="ttdeci">def stop_propagation</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00044">event.py:44</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1HtmlCtrlClickEvent_html"><div class="ttname"><a href="../../d3/d0f/classgui_1_1event_1_1HtmlCtrlClickEvent.html">gui.event.HtmlCtrlClickEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00159">event.py:159</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1HtmlCellEvent_html_a9dbfac30fe103b5d246f2f59ba3bafc6"><div class="ttname"><a href="../../da/d4a/classgui_1_1event_1_1HtmlCellEvent.html#a9dbfac30fe103b5d246f2f59ba3bafc6">gui.event.HtmlCellEvent.detail</a></div><div class="ttdeci">detail</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00155">event.py:155</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1HtmlCellEvent_html_a12a38accf3fb0c590b13635bb33838bd"><div class="ttname"><a href="../../da/d4a/classgui_1_1event_1_1HtmlCellEvent.html#a12a38accf3fb0c590b13635bb33838bd">gui.event.HtmlCellEvent.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00153">event.py:153</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1MouseEvent_html_a40658a7d1e1bb225a425d3e4f49eb9f8"><div class="ttname"><a href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#a40658a7d1e1bb225a425d3e4f49eb9f8">gui.event.MouseEvent.alt_key</a></div><div class="ttdeci">alt_key</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00102">event.py:102</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1Event_html_af5b0f41fd3d91117fc7450783ed32c9f"><div class="ttname"><a href="../../d6/dcd/classgui_1_1event_1_1Event.html#af5b0f41fd3d91117fc7450783ed32c9f">gui.event.Event.name</a></div><div class="ttdeci">name</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00038">event.py:38</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1GridEvent_html_acf2536a9a03c7437d08c15d8050e61a4"><div class="ttname"><a href="../../db/d09/classgui_1_1event_1_1GridEvent.html#acf2536a9a03c7437d08c15d8050e61a4">gui.event.GridEvent.row</a></div><div class="ttdeci">row</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00187">event.py:187</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1MouseEvent_html_acc7816fc36df14e19bd37dcfe4102134"><div class="ttname"><a href="../../d1/d61/classgui_1_1event_1_1MouseEvent.html#acc7816fc36df14e19bd37dcfe4102134">gui.event.MouseEvent.x</a></div><div class="ttdeci">x</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00100">event.py:100</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1UIEvent_html_a36799712c90a876bc9a11a51ea7b34cc"><div class="ttname"><a href="../../d1/df1/classgui_1_1event_1_1UIEvent.html#a36799712c90a876bc9a11a51ea7b34cc">gui.event.UIEvent.prevent_default</a></div><div class="ttdeci">def prevent_default</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00061">event.py:61</a></div></div>
+<div class="ttc" id="classgui_1_1event_1_1SubmitEvent_html_ac71bf5a7cf422f6a6ad279ad22572415"><div class="ttname"><a href="../../d0/d57/classgui_1_1event_1_1SubmitEvent.html#ac71bf5a7cf422f6a6ad279ad22572415">gui.event.SubmitEvent.form</a></div><div class="ttdeci">form</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00088">event.py:88</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_96a7eeec1342994a7cb0d7fe7902ae74.html">build</a></li><li class="navelem"><a class="el" href="../../dir_3740601ea11ece1a00f9273977396bc4.html">lib.linux-x86_64-2.7</a></li><li class="navelem"><a class="el" href="../../dir_5bcb0661a26d4ce62009196be9ab2e39.html">gui</a></li><li class="navelem"><a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py.html">event.py</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:47 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

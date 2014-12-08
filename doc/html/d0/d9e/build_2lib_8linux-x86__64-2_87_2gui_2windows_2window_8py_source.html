@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Fichero Fuente build/lib.linux-x86_64-2.7/gui/windows/window.py</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d0/d9e/build_2lib_8linux-x86__64-2_87_2gui_2windows_2window_8py_source.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">window.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d0/d9e/build_2lib_8linux-x86__64-2_87_2gui_2windows_2window_8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="../../dc/d82/namespacegui_1_1windows_1_1window.html">    1</a></span>&#160;<span class="comment">#!/usr/bin/python</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">&quot;gui2py&#39;s generic Top Level Window (uses wx.Frame)&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="../../dc/d82/namespacegui_1_1windows_1_1window.html#a611344e2b3d1f5b05a9b9255fb587225">    6</a></span>&#160;__author__ = <span class="stringliteral">&quot;Mariano Reingart (reingart@gmail.com)&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../dc/d82/namespacegui_1_1windows_1_1window.html#a7f9b20f73ef6f4465847b625af97d39c">    7</a></span>&#160;__copyright__ = <span class="stringliteral">&quot;Copyright (C) 2013- Mariano Reingart&quot;</span>  <span class="comment"># where applicable</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"># Initial implementation was based on PythonCard&#39;s model.Background component, </span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"># but redesigned and overhauled a lot (specs renamed, events refactorized, etc.)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> wx</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">from</span> ..component <span class="keyword">import</span> Component, ControlSuper, ImageBackgroundMixin, SizerMixin</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">from</span> ..spec <span class="keyword">import</span> Spec, InitSpec, EventSpec, StyleSpec, InternalSpec</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">from</span> ..event <span class="keyword">import</span> UIEvent</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">from</span> .. <span class="keyword">import</span> registry</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">from</span> .. <span class="keyword">import</span> images</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html">Window</a>(ControlSuper, ImageBackgroundMixin, SizerMixin):</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="stringliteral">&quot;A window that contains controls&quot;</span> </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment"># in PythonCard model.Background</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a8682fcba47e31d4a17b60b1304fc08c9">   24</a></span>&#160;    _wx_class = wx.Frame</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a7615dd9f70576752eecc810bc0ce4dc5">   25</a></span>&#160;    _style = wx.NO_FULL_REPAINT_ON_RESIZE</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a68c30ff7c3528421f1d59be7a510b83e">   26</a></span>&#160;    _registry = registry.WINDOWS</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a42c94083cf55f56fe33e01a74b5c3b9c">   27</a></span>&#160;    _image = images.frame</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a37142f547e6b8a1a81203061157c971b">   29</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a37142f547e6b8a1a81203061157c971b">__init__</a>(self, parent=None, **kwargs):</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="stringliteral">&quot;Initialize this instance.&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="comment"># sane defaults (do not overwrite them if rebuilding):</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> hasattr(self, <span class="stringliteral">&quot;_menubar&quot;</span>):</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a5ca2c8e494568505bd168e890f44d5a8">   34</a></span>&#160;            self.<a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a5ca2c8e494568505bd168e890f44d5a8">_menubar</a> = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a7ec0b8ad2c54f903e38cbae744911bfe">   35</a></span>&#160;            self.<a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a7ec0b8ad2c54f903e38cbae744911bfe">_statusbar</a> = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment"># call generic component initialization:</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        ControlSuper.__init__(self, parent, **kwargs)</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a7c547c6bc765c2b284d61d9dd4f0df5c">   39</a></span>&#160;        self.<a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a7c547c6bc765c2b284d61d9dd4f0df5c">app</a> = wx.GetApp()</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="comment"># AJT 20.11.2001</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment"># Add icon creation</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="comment">#self._setIcon(aBgRsrc)</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="comment"># 2001-11-08</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="comment"># hack to preserve the statusbar text</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">#if self.statusbar is not None and self.menubar is not None:</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment">#    wx.EVT_MENU_HIGHLIGHT_ALL(self, self.menu_highlight)</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> parent <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            self.app.SetTopWindow(self.wx_obj)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        wx.CallAfter(self.wx_obj.InitDialog)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        wx.CallAfter(self.wx_obj.Layout)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment"># 2001-11-08</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment"># hack to keep the statusbar text from being wiped out</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a113e5fb5a585b927d13cce4c7416cef4">   58</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a113e5fb5a585b927d13cce4c7416cef4">menu_highlight</a>(self, event):</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        self.statusbar.text = self.statusbar.text</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a1c6134d0c1520e89ee1591d7648d253e">   61</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a1c6134d0c1520e89ee1591d7648d253e">_set_statusbar</a>(self, bar=None):</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        self.wx_obj.SetStatusBar(bar <span class="keywordflow">and</span> bar.wx_obj <span class="keywordflow">or</span> <span class="keywordtype">None</span>)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a7ec0b8ad2c54f903e38cbae744911bfe">_statusbar</a> <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> self.<a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a7ec0b8ad2c54f903e38cbae744911bfe">_statusbar</a> != bar:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            self._statusbar.destroy()</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="comment"># the statusbar changes the window size</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="comment"># so this will for it back</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="comment">#self.SetSize(self.GetSizeTuple())</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            self.wx_obj.Fit()</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        self.<a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a7ec0b8ad2c54f903e38cbae744911bfe">_statusbar</a> = bar</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a782eb7100faf50430ba60b36fb7e4eb1">   71</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a782eb7100faf50430ba60b36fb7e4eb1">_set_menubar</a>(self, bar=None):</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        self.wx_obj.SetMenuBar(bar <span class="keywordflow">and</span> bar.wx_obj <span class="keywordflow">or</span> <span class="keywordtype">None</span>)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a5ca2c8e494568505bd168e890f44d5a8">_menubar</a> <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span> <span class="keywordflow">and</span> self.<a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a5ca2c8e494568505bd168e890f44d5a8">_menubar</a> != bar:</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            self._menubar.destroy()</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            self.wx_obj.Fit()</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        self.<a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a5ca2c8e494568505bd168e890f44d5a8">_menubar</a> = bar            </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a0c17b16b47873fc989330c274300bd98">   78</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a0c17b16b47873fc989330c274300bd98">_set_icon</a>(self, icon=None):</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Set icon based on resource values&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span> icon <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                wx_icon = wx.Icon(icon, wx.BITMAP_TYPE_ICO)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                self.wx_obj.SetIcon(wx_icon)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">except</span>:</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keywordflow">pass</span>            </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment"># # KEA 2002-07-09</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment"># # make sure wxSTC text, bitmaps, etc. aren&#39;t lost</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment"># # when the app exits</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment"># def OnDestroy(self, evt):</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment"># # KEA 2004-04-16</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="comment"># # stopLogging prevents the OleFlushClipboard message</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="comment"># # from being displayed at the console when the app quits</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="comment"># if self == evt.GetEventObject():</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="comment"># stopLogging = wx.LogNull()</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="comment"># wx.TheClipboard.Flush()</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="comment"># del stopLogging</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="comment"># evt.Skip()</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment"># # KEA 2004-04-24</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment"># # this doesn&#39;t appear to be hooked to an event</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment"># # did the binding get deleted or did we just</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment"># # never decide whether we wanted to have a separate</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment"># # event to denote exiting the app versus calling close</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment"># # on the main background to quit the app?!</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment"># def OnExit(self, evt):</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="comment"># self.close(True)</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment"># # KEA 2001-07-31</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment"># # we may want to put this someplace else, but we do need access</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment"># # to the componenet list</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment"># def findFocus(self):</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="comment"># # the wxPython widget that has focus</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="comment"># widgetWX = wx.Window_FindFocus()</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="comment"># if widgetWX is None:</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="comment"># return None</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="comment"># else:</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="comment"># for widget in self.component.itervalues():</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="comment"># if widgetWX == widget:</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    <span class="comment"># return widget</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="comment"># # is this even possible? focus in another window maybe?</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="comment"># return None</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#ad63c2fc4fc1614096623f3aa15174167">  124</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#ad63c2fc4fc1614096623f3aa15174167">show</a>(self, value=True, modal=None):</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="stringliteral">&quot;Display or hide the window, optionally disabling all other windows&quot;</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        self.wx_obj.Show(value)</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">if</span> modal:</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="comment"># disable all top level windows of this application (MakeModal)</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            disabler = wx.WindowDisabler(self.wx_obj)</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="comment"># create an event loop to stop execution </span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            eventloop = wx.EventLoop()</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keyword">def </span>on_close_modal(evt):</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                evt.Skip()</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                eventloop.Exit()</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            self.wx_obj.Bind(wx.EVT_CLOSE, on_close_modal)</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="comment"># start the event loop to wait user interaction </span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            eventloop.Run()</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="comment"># reenable the windows disabled and return control to the caller</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            del disabler</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a6eba165af25642417fc74ad8a451677c">  141</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a6eba165af25642417fc74ad8a451677c">fit</a>(self):</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="stringliteral">&quot;Sizes the window so that it fits around its subwindows&quot;</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        self.wx_obj.Fit()</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        </div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a92de2df72f5f9d96dba81db3ec1e4d42">  145</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a92de2df72f5f9d96dba81db3ec1e4d42">layout</a>(self):</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="stringliteral">&quot;Invokes the layout algorithm for this window&quot;</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        self.wx_obj.Layout()</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        </div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a8148eb058588110eb7a153f8d59565cc">  149</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a8148eb058588110eb7a153f8d59565cc">close</a>(self):</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="stringliteral">&quot;Generates a event whose handler usually tries to close the window&quot;</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        self.wx_obj.Close()</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    </div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#af9f2e297019860304262fd231874fadc">  153</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#af9f2e297019860304262fd231874fadc">rebuild</a>(self, *args, **kwargs):</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="comment"># detach the menubar (if any) so it can be auto re-attached later</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        self.wx_obj.SetMenuBar(<span class="keywordtype">None</span>)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a5ca2c8e494568505bd168e890f44d5a8">_menubar</a>:</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            self._menubar.set_parent(<span class="keywordtype">None</span>)    <span class="comment"># just in case</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="comment"># statusbar needs special care:</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a7ec0b8ad2c54f903e38cbae744911bfe">_statusbar</a>:</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            self.wx_obj.SetStatusBar(<span class="keywordtype">None</span>)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            self._statusbar.set_parent(<span class="keywordtype">None</span>)    <span class="comment"># just in case</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        ControlSuper.rebuild(self, *args, **kwargs)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="comment"># re attach statusbar/menubar</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a7ec0b8ad2c54f903e38cbae744911bfe">_statusbar</a>:</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            self._statusbar.set_parent(self)</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a5ca2c8e494568505bd168e890f44d5a8">_menubar</a>:</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            self._menubar.set_parent(self)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="comment"># non-inherited properties:</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#ad203fbdacb341f0ad7860caf571abeb4">  171</a></span>&#160;    title = InitSpec(<span class="keyword">lambda</span> self: self.wx_obj.GetTitle(), </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                     <span class="keyword">lambda</span> self, value: self.wx_obj.SetTitle(value),</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                     optional=<span class="keyword">False</span>, default=<span class="stringliteral">&quot;&quot;</span>, type=<span class="stringliteral">&quot;string&quot;</span>)</div>
+<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#ae824f6e70e5ee988070bb32c985991e6">  174</a></span>&#160;    maximized = Spec(<span class="keyword">lambda</span> self: self.wx_obj.IsMaximized(), </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                     <span class="keyword">lambda</span> self, value: self.wx_obj.Maximize(value),</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                     doc=<span class="stringliteral">&quot;whether the window is maximized&quot;</span>, </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                     default=<span class="keyword">False</span>, type=<span class="stringliteral">&quot;boolean&quot;</span>) </div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#ac930c8bc9657340827716f0f820452f7">  178</a></span>&#160;    minimized = Spec(<span class="keyword">lambda</span> self: self.wx_obj.IsIconized(), </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                     <span class="keyword">lambda</span> self, value: self.wx_obj.Iconize(value), </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                     doc=<span class="stringliteral">&quot;whether the window is minimized&quot;</span>, </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                     default=<span class="keyword">False</span>,type=<span class="stringliteral">&quot;boolean&quot;</span>) </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="comment"># styles:</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#adc750c0616a69c15450d8e627e643f89">  184</a></span>&#160;    caption = StyleSpec(wx.CAPTION, doc=<span class="stringliteral">&quot;Puts a caption (title)&quot;</span>, default=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#afe63ef4fe1da010eb74db0da1d69afda">  185</a></span>&#160;    minimize_box = StyleSpec(wx.MINIMIZE_BOX, doc=<span class="stringliteral">&quot;Displays a minimize box&quot;</span>, </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                        default=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#ac247bc9f2dbdc14b975d6aedc018e549">  187</a></span>&#160;    maximize_box = StyleSpec(wx.MAXIMIZE_BOX, doc=<span class="stringliteral">&quot;Displays a maximize box&quot;</span>,</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                        default=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a7ef088312080c1d678600d898406b6aa">  189</a></span>&#160;    close_box = StyleSpec(wx.CLOSE_BOX, doc=<span class="stringliteral">&quot;Displays a close box&quot;</span>,</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                          default=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#abe824729cb96c62cebc7276c8841b175">  191</a></span>&#160;    stay_on_top = StyleSpec(wx.STAY_ON_TOP, doc=<span class="stringliteral">&quot;Stay on top of all windows&quot;</span>)</div>
+<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a1fe3f94be7ee0b0447c431c3f718b6d7">  192</a></span>&#160;    system_menu = StyleSpec(wx.SYSTEM_MENU, doc=<span class="stringliteral">&quot;Displays a system menu&quot;</span>,</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                            default=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a66ebf7eb2557bd9cb3249b2ca4ea1c1f">  194</a></span>&#160;    resizable = StyleSpec(wx.RESIZE_BORDER, doc=<span class="stringliteral">&quot;Allow resize&quot;</span>)</div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#ad8b7a9b7b37152b2c25385cf0d7529cc">  195</a></span>&#160;    tool_window = StyleSpec(wx.FRAME_TOOL_WINDOW, doc=<span class="stringliteral">&quot;Small titlebar&quot;</span>)</div>
+<div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a659d30f8c591a0c14b7ee6ca5f714c55">  196</a></span>&#160;    no_taskbar = StyleSpec(wx.FRAME_NO_TASKBAR, doc=<span class="stringliteral">&quot;Not appear in the taskbar&quot;</span>)</div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#aa656720122f251a63652d95723e06408">  197</a></span>&#160;    float_on_parent = StyleSpec(wx.FRAME_FLOAT_ON_PARENT, </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                        doc=<span class="stringliteral">&quot;Always be on top of its parent (parent=None)&quot;</span>)</div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#ad3feb3c3462580bfaef4e7875d14c6f6">  199</a></span>&#160;    shaped = StyleSpec(wx.FRAME_SHAPED, doc=<span class="stringliteral">&quot;Allow shape change (set_shape)&quot;</span>)</div>
+<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a46647ea0ec27f1a82e5ea482ec3f900c">  200</a></span>&#160;    border = ControlSuper.border</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment"># ex_metal wx.FRAME_EX_METAL  # On Mac OS X, frames with this style will be </span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                        <span class="comment">#shown with a metallic look. This is an extra style.</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
+<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a49b700eeb6ecd715815bab7ae40bbf94">  204</a></span>&#160;    menubar = InternalSpec(<span class="keyword">lambda</span> self: self.<a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a5ca2c8e494568505bd168e890f44d5a8">_menubar</a>,</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                   <span class="keyword">lambda</span> self, value: self.<a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a782eb7100faf50430ba60b36fb7e4eb1">_set_menubar</a>(value), default=<span class="keywordtype">None</span>,</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                   doc=<span class="stringliteral">&quot;Tells the frame to show the given menu bar&quot;</span>)</div>
+<div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#aa26c0c5a9282c3b638458d658495549c">  207</a></span>&#160;    statusbar = InternalSpec(<span class="keyword">lambda</span> self: self.<a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a7ec0b8ad2c54f903e38cbae744911bfe">_statusbar</a>,</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                   <span class="keyword">lambda</span> self, value: self.<a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a1c6134d0c1520e89ee1591d7648d253e">_set_statusbar</a>(value), default=<span class="keywordtype">None</span>,</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                   doc=<span class="stringliteral">&quot;Associates a status bar with the frame.&quot;</span>)</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="comment"># events:</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#ac089c64774689d66426e2e857fce76a4">  212</a></span>&#160;    onload = EventSpec(<span class="stringliteral">&#39;load&#39;</span>, binding=wx.EVT_INIT_DIALOG, kind=UIEvent)</div>
+<div class="line"><a name="l00213"></a><span class="lineno"><a class="line" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#ab02cd4b4ed800759984056dbd5a00136">  213</a></span>&#160;    onunload = EventSpec(<span class="stringliteral">&#39;unload&#39;</span>, binding=wx.EVT_CLOSE, kind=UIEvent)</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="comment">##wx.EVT_WINDOW_DESTROY(self, self.OnDestroy)</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment"># update metadata for the add context menu at the designer:</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;Window._meta.valid_children = [ctr <span class="keywordflow">for</span> ctr <span class="keywordflow">in</span> registry.CONTROLS.values()</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                                 <span class="keywordflow">if</span> ctr._image]   <span class="comment"># TODO: better filter</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;Window._meta.container = <span class="keyword">True</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="comment"># basic test until proper unit_test</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keyword">from</span> ..controls <span class="keyword">import</span> Button</div>
+<div class="line"><a name="l00227"></a><span class="lineno"><a class="line" href="../../dc/d82/namespacegui_1_1windows_1_1window.html#acee1aeb0d6f8d2bd0d70b4f944437f82">  227</a></span>&#160;    app = wx.App(redirect=<span class="keyword">False</span>)</div>
+<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="../../dc/d82/namespacegui_1_1windows_1_1window.html#a8f516b9c76bfc14451f594381f77fbbb">  228</a></span>&#160;    w = <a class="code" href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html">Window</a>(title=<span class="stringliteral">&quot;hello world&quot;</span>, name=<span class="stringliteral">&quot;frmTest&quot;</span>, tool_window=<span class="keyword">False</span>, </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;               resizable=<span class="keyword">True</span>, visible=<span class="keyword">False</span>)</div>
+<div class="line"><a name="l00230"></a><span class="lineno"><a class="line" href="../../dc/d82/namespacegui_1_1windows_1_1window.html#a69af02aba20b517e8cd2742328c3a183">  230</a></span>&#160;    b = Button(parent=w, name=<span class="stringliteral">&quot;btnTest&quot;</span>, label=<span class="stringliteral">&quot;click me!&quot;</span>, default=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keyword">assert</span> w.get_parent() <span class="keywordflow">is</span> <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keyword">assert</span> w.name == <span class="stringliteral">&quot;frmTest&quot;</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordflow">print</span> <span class="stringliteral">&quot;style&quot;</span>, w._style</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keyword">assert</span> w.title == <span class="stringliteral">&quot;hello world&quot;</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="comment"># assign some event handlers:</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    w.onload = <span class="stringliteral">&quot;print &#39;load&#39;, event.timestamp&quot;</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    w.onunload = <span class="stringliteral">&quot;print &#39;unload&#39;, event.timestamp; event.prevent_default()&quot;</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    w.onblur = w.onfocus = <span class="keyword">lambda</span> event: pprint(event.name)</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="comment"># remove an event handler:</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="comment">#w.onfocus = None</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    w.show()</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    app.MainLoop()</div>
+<div class="ttc" id="classgui_1_1windows_1_1window_1_1Window_html_a782eb7100faf50430ba60b36fb7e4eb1"><div class="ttname"><a href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a782eb7100faf50430ba60b36fb7e4eb1">gui.windows.window.Window._set_menubar</a></div><div class="ttdeci">def _set_menubar</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9e/build_2lib_8linux-x86__64-2_87_2gui_2windows_2window_8py_source.html#l00071">window.py:71</a></div></div>
+<div class="ttc" id="classgui_1_1windows_1_1window_1_1Window_html_a37142f547e6b8a1a81203061157c971b"><div class="ttname"><a href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a37142f547e6b8a1a81203061157c971b">gui.windows.window.Window.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9e/build_2lib_8linux-x86__64-2_87_2gui_2windows_2window_8py_source.html#l00029">window.py:29</a></div></div>
+<div class="ttc" id="classgui_1_1windows_1_1window_1_1Window_html_a113e5fb5a585b927d13cce4c7416cef4"><div class="ttname"><a href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a113e5fb5a585b927d13cce4c7416cef4">gui.windows.window.Window.menu_highlight</a></div><div class="ttdeci">def menu_highlight</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9e/build_2lib_8linux-x86__64-2_87_2gui_2windows_2window_8py_source.html#l00058">window.py:58</a></div></div>
+<div class="ttc" id="classgui_1_1windows_1_1window_1_1Window_html_a92de2df72f5f9d96dba81db3ec1e4d42"><div class="ttname"><a href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a92de2df72f5f9d96dba81db3ec1e4d42">gui.windows.window.Window.layout</a></div><div class="ttdeci">def layout</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9e/build_2lib_8linux-x86__64-2_87_2gui_2windows_2window_8py_source.html#l00145">window.py:145</a></div></div>
+<div class="ttc" id="classgui_1_1windows_1_1window_1_1Window_html_a5ca2c8e494568505bd168e890f44d5a8"><div class="ttname"><a href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a5ca2c8e494568505bd168e890f44d5a8">gui.windows.window.Window._menubar</a></div><div class="ttdeci">_menubar</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9e/build_2lib_8linux-x86__64-2_87_2gui_2windows_2window_8py_source.html#l00034">window.py:34</a></div></div>
+<div class="ttc" id="classgui_1_1windows_1_1window_1_1Window_html_ad63c2fc4fc1614096623f3aa15174167"><div class="ttname"><a href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#ad63c2fc4fc1614096623f3aa15174167">gui.windows.window.Window.show</a></div><div class="ttdeci">def show</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9e/build_2lib_8linux-x86__64-2_87_2gui_2windows_2window_8py_source.html#l00124">window.py:124</a></div></div>
+<div class="ttc" id="classgui_1_1windows_1_1window_1_1Window_html_a0c17b16b47873fc989330c274300bd98"><div class="ttname"><a href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a0c17b16b47873fc989330c274300bd98">gui.windows.window.Window._set_icon</a></div><div class="ttdeci">def _set_icon</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9e/build_2lib_8linux-x86__64-2_87_2gui_2windows_2window_8py_source.html#l00078">window.py:78</a></div></div>
+<div class="ttc" id="classgui_1_1windows_1_1window_1_1Window_html"><div class="ttname"><a href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html">gui.windows.window.Window</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9e/build_2lib_8linux-x86__64-2_87_2gui_2windows_2window_8py_source.html#l00021">window.py:21</a></div></div>
+<div class="ttc" id="classgui_1_1windows_1_1window_1_1Window_html_a6eba165af25642417fc74ad8a451677c"><div class="ttname"><a href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a6eba165af25642417fc74ad8a451677c">gui.windows.window.Window.fit</a></div><div class="ttdeci">def fit</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9e/build_2lib_8linux-x86__64-2_87_2gui_2windows_2window_8py_source.html#l00141">window.py:141</a></div></div>
+<div class="ttc" id="classgui_1_1windows_1_1window_1_1Window_html_a8148eb058588110eb7a153f8d59565cc"><div class="ttname"><a href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a8148eb058588110eb7a153f8d59565cc">gui.windows.window.Window.close</a></div><div class="ttdeci">def close</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9e/build_2lib_8linux-x86__64-2_87_2gui_2windows_2window_8py_source.html#l00149">window.py:149</a></div></div>
+<div class="ttc" id="classgui_1_1windows_1_1window_1_1Window_html_a7ec0b8ad2c54f903e38cbae744911bfe"><div class="ttname"><a href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a7ec0b8ad2c54f903e38cbae744911bfe">gui.windows.window.Window._statusbar</a></div><div class="ttdeci">_statusbar</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9e/build_2lib_8linux-x86__64-2_87_2gui_2windows_2window_8py_source.html#l00035">window.py:35</a></div></div>
+<div class="ttc" id="classgui_1_1windows_1_1window_1_1Window_html_a1c6134d0c1520e89ee1591d7648d253e"><div class="ttname"><a href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a1c6134d0c1520e89ee1591d7648d253e">gui.windows.window.Window._set_statusbar</a></div><div class="ttdeci">def _set_statusbar</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9e/build_2lib_8linux-x86__64-2_87_2gui_2windows_2window_8py_source.html#l00061">window.py:61</a></div></div>
+<div class="ttc" id="classgui_1_1windows_1_1window_1_1Window_html_a7c547c6bc765c2b284d61d9dd4f0df5c"><div class="ttname"><a href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#a7c547c6bc765c2b284d61d9dd4f0df5c">gui.windows.window.Window.app</a></div><div class="ttdeci">app</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9e/build_2lib_8linux-x86__64-2_87_2gui_2windows_2window_8py_source.html#l00039">window.py:39</a></div></div>
+<div class="ttc" id="classgui_1_1windows_1_1window_1_1Window_html_af9f2e297019860304262fd231874fadc"><div class="ttname"><a href="../../d1/de8/classgui_1_1windows_1_1window_1_1Window.html#af9f2e297019860304262fd231874fadc">gui.windows.window.Window.rebuild</a></div><div class="ttdeci">def rebuild</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d9e/build_2lib_8linux-x86__64-2_87_2gui_2windows_2window_8py_source.html#l00153">window.py:153</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_96a7eeec1342994a7cb0d7fe7902ae74.html">build</a></li><li class="navelem"><a class="el" href="../../dir_3740601ea11ece1a00f9273977396bc4.html">lib.linux-x86_64-2.7</a></li><li class="navelem"><a class="el" href="../../dir_5bcb0661a26d4ce62009196be9ab2e39.html">gui</a></li><li class="navelem"><a class="el" href="../../dir_489ca11bf75d01d347698ac8c11f47a3.html">windows</a></li><li class="navelem"><a class="el" href="../../d0/d9e/build_2lib_8linux-x86__64-2_87_2gui_2windows_2window_8py.html">window.py</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:47 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<map id="gui.tools.designer.BasicDesigner.__call__" name="gui.tools.designer.BasicDesigner.__call__">
+<area shape="rect" id="node2" href="$de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a7b2047d29fef8e4b929bb816176214c2" title="gui.tools.designer.Basic\lDesigner.draw_grid" alt="" coords="217,70,378,111"/>
+<area shape="rect" id="node3" href="$de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#ae6bd0af10b6e21d249814190b671afd3" title="gui.tools.designer.Basic\lDesigner.key_press" alt="" coords="217,135,378,177"/>
+<area shape="rect" id="node11" href="$de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a1bdaf6b80465efa4a0ce37c65620bfc0" title="gui.tools.designer.Basic\lDesigner.mouse_down" alt="" coords="217,201,378,242"/>
+<area shape="rect" id="node12" href="$de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0dcffe54c0f15a01d03fbe9054ce2065" title="gui.tools.designer.Basic\lDesigner.mouse_move" alt="" coords="217,266,378,307"/>
+<area shape="rect" id="node13" href="$de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a7e2988071913c13b913a6557893a0be5" title="gui.tools.designer.Basic\lDesigner.mouse_up" alt="" coords="217,331,378,373"/>
+<area shape="rect" id="node4" href="$dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ab57819669de9197abc515734d64e6d73" title="gui.controls.listbox.Item\lContainerControl.delete" alt="" coords="463,5,625,46"/>
+<area shape="rect" id="node6" href="$d1/d7f/classgui_1_1controls_1_1listview_1_1ListView.html#ad038ccaf2043329eba4ed80311a4a1b8" title="gui.controls.listview.List\lView.delete" alt="" coords="463,70,625,111"/>
+<area shape="rect" id="node7" href="$de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0d504f42e52b760d035561560cd94dc6" title="gui.tools.designer.Basic\lDesigner.delete" alt="" coords="463,135,625,177"/>
+<area shape="rect" id="node8" href="$d7/d98/classgui_1_1component_1_1Component.html#a2a4e1ce9390e14e18785d56086a422c5" title="gui.component.Component.duplicate" alt="" coords="427,201,661,228"/>
+<area shape="rect" id="node10" href="$de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0de31d5cce0a357648bd5c4aa08d437a" title="gui.tools.designer.Basic\lDesigner.duplicate" alt="" coords="463,253,625,294"/>
+<area shape="rect" id="node5" href="$dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a427f981a0aea5188e0d3e857257c602b" title="gui.controls.listbox.Item\lContainerControl.get_data" alt="" coords="722,5,897,46"/>
+<area shape="rect" id="node9" href="$d7/d98/classgui_1_1component_1_1Component.html#a22d66b10bb4fbe00b4d237c42dae1264" title="gui.component.Component.get\l_parent" alt="" coords="709,194,909,235"/>
+<area shape="rect" id="node14" href="$de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a556b6cf9d1f11a9d55238c6d24ea5d0a" title="gui.tools.designer.Basic\lDesigner.select" alt="" coords="463,331,625,373"/>
+</map>

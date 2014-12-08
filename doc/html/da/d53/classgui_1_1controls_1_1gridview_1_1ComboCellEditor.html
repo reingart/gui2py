@@ -1,0 +1,1527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Referencia de la Clase gui.controls.gridview.ComboCellEditor</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="#pri-attribs">Atributos privados</a> &#124;
+<a href="../../dd/d59/classgui_1_1controls_1_1gridview_1_1ComboCellEditor-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase gui.controls.gridview.ComboCellEditor</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagrama de herencias de gui.controls.gridview.ComboCellEditor</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/dc3/classgui_1_1controls_1_1gridview_1_1ComboCellEditor__inherit__graph.png" border="0" usemap="#gui_8controls_8gridview_8ComboCellEditor_inherit__map" alt="Inheritance graph"/></div>
+<map name="gui_8controls_8gridview_8ComboCellEditor_inherit__map" id="gui_8controls_8gridview_8ComboCellEditor_inherit__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración para gui.controls.gridview.ComboCellEditor:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d9f/classgui_1_1controls_1_1gridview_1_1ComboCellEditor__coll__graph.png" border="0" usemap="#gui_8controls_8gridview_8ComboCellEditor_coll__map" alt="Collaboration graph"/></div>
+<map name="gui_8controls_8gridview_8ComboCellEditor_coll__map" id="gui_8controls_8gridview_8ComboCellEditor_coll__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:acede90a2f84f3f3b9667e64a2e49da02"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#acede90a2f84f3f3b9667e64a2e49da02">__init__</a></td></tr>
+<tr class="separator:acede90a2f84f3f3b9667e64a2e49da02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02d0e93cb1c0a64b77584b745e87f0e2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a02d0e93cb1c0a64b77584b745e87f0e2">Create</a></td></tr>
+<tr class="separator:a02d0e93cb1c0a64b77584b745e87f0e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a199a84e3a27147974ffe932b4cc2c3ee"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a199a84e3a27147974ffe932b4cc2c3ee">OnChange</a></td></tr>
+<tr class="separator:a199a84e3a27147974ffe932b4cc2c3ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adae2e18973709734aeae837dd3ad8feb"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#adae2e18973709734aeae837dd3ad8feb">SetSize</a></td></tr>
+<tr class="separator:adae2e18973709734aeae837dd3ad8feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25499840cdbef32ef2f196860318787c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a25499840cdbef32ef2f196860318787c">Show</a></td></tr>
+<tr class="separator:a25499840cdbef32ef2f196860318787c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39b3fc3bae749e44c80543f1db3abd1c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a39b3fc3bae749e44c80543f1db3abd1c">PaintBackground</a></td></tr>
+<tr class="separator:a39b3fc3bae749e44c80543f1db3abd1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a069fed0de69c809b134e5916ba59d416"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a069fed0de69c809b134e5916ba59d416">BeginEdit</a></td></tr>
+<tr class="separator:a069fed0de69c809b134e5916ba59d416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65362a0f78bc9b9d23ddabd13d731cb6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a65362a0f78bc9b9d23ddabd13d731cb6">EndEdit</a></td></tr>
+<tr class="separator:a65362a0f78bc9b9d23ddabd13d731cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d9e168978bcffb9c7808877d909aa78"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a1d9e168978bcffb9c7808877d909aa78">ApplyEdit</a></td></tr>
+<tr class="separator:a1d9e168978bcffb9c7808877d909aa78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae03acbf5ef4496cd63de436865c1ff57"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#ae03acbf5ef4496cd63de436865c1ff57">Reset</a></td></tr>
+<tr class="separator:ae03acbf5ef4496cd63de436865c1ff57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20026795aee619c4c6cc121833046e8a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a20026795aee619c4c6cc121833046e8a">IsAcceptedKey</a></td></tr>
+<tr class="separator:a20026795aee619c4c6cc121833046e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a448781f8024cfa6309e1a00edf933714"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a448781f8024cfa6309e1a00edf933714">StartingKey</a></td></tr>
+<tr class="separator:a448781f8024cfa6309e1a00edf933714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70aa6bdf0e01270c3847077084a41bd1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a70aa6bdf0e01270c3847077084a41bd1">StartingClick</a></td></tr>
+<tr class="separator:a70aa6bdf0e01270c3847077084a41bd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33c674f2e4ba5585d361212707685a00"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a33c674f2e4ba5585d361212707685a00">Destroy</a></td></tr>
+<tr class="separator:a33c674f2e4ba5585d361212707685a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab55211c451a58d49e8356c0bab18057"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#aab55211c451a58d49e8356c0bab18057">Clone</a></td></tr>
+<tr class="separator:aab55211c451a58d49e8356c0bab18057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acede90a2f84f3f3b9667e64a2e49da02"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#acede90a2f84f3f3b9667e64a2e49da02">__init__</a></td></tr>
+<tr class="separator:acede90a2f84f3f3b9667e64a2e49da02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02d0e93cb1c0a64b77584b745e87f0e2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a02d0e93cb1c0a64b77584b745e87f0e2">Create</a></td></tr>
+<tr class="separator:a02d0e93cb1c0a64b77584b745e87f0e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a199a84e3a27147974ffe932b4cc2c3ee"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a199a84e3a27147974ffe932b4cc2c3ee">OnChange</a></td></tr>
+<tr class="separator:a199a84e3a27147974ffe932b4cc2c3ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adae2e18973709734aeae837dd3ad8feb"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#adae2e18973709734aeae837dd3ad8feb">SetSize</a></td></tr>
+<tr class="separator:adae2e18973709734aeae837dd3ad8feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25499840cdbef32ef2f196860318787c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a25499840cdbef32ef2f196860318787c">Show</a></td></tr>
+<tr class="separator:a25499840cdbef32ef2f196860318787c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39b3fc3bae749e44c80543f1db3abd1c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a39b3fc3bae749e44c80543f1db3abd1c">PaintBackground</a></td></tr>
+<tr class="separator:a39b3fc3bae749e44c80543f1db3abd1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a069fed0de69c809b134e5916ba59d416"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a069fed0de69c809b134e5916ba59d416">BeginEdit</a></td></tr>
+<tr class="separator:a069fed0de69c809b134e5916ba59d416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65362a0f78bc9b9d23ddabd13d731cb6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a65362a0f78bc9b9d23ddabd13d731cb6">EndEdit</a></td></tr>
+<tr class="separator:a65362a0f78bc9b9d23ddabd13d731cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d9e168978bcffb9c7808877d909aa78"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a1d9e168978bcffb9c7808877d909aa78">ApplyEdit</a></td></tr>
+<tr class="separator:a1d9e168978bcffb9c7808877d909aa78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae03acbf5ef4496cd63de436865c1ff57"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#ae03acbf5ef4496cd63de436865c1ff57">Reset</a></td></tr>
+<tr class="separator:ae03acbf5ef4496cd63de436865c1ff57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20026795aee619c4c6cc121833046e8a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a20026795aee619c4c6cc121833046e8a">IsAcceptedKey</a></td></tr>
+<tr class="separator:a20026795aee619c4c6cc121833046e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a448781f8024cfa6309e1a00edf933714"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a448781f8024cfa6309e1a00edf933714">StartingKey</a></td></tr>
+<tr class="separator:a448781f8024cfa6309e1a00edf933714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70aa6bdf0e01270c3847077084a41bd1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a70aa6bdf0e01270c3847077084a41bd1">StartingClick</a></td></tr>
+<tr class="separator:a70aa6bdf0e01270c3847077084a41bd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33c674f2e4ba5585d361212707685a00"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a33c674f2e4ba5585d361212707685a00">Destroy</a></td></tr>
+<tr class="separator:a33c674f2e4ba5585d361212707685a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab55211c451a58d49e8356c0bab18057"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#aab55211c451a58d49e8356c0bab18057">Clone</a></td></tr>
+<tr class="separator:aab55211c451a58d49e8356c0bab18057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:af96d2550eeba453d324a49957c5b06b2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#af96d2550eeba453d324a49957c5b06b2">wx_grid</a></td></tr>
+<tr class="separator:af96d2550eeba453d324a49957c5b06b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ef9cbcec9a6099dfab70cd071cecbc8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a2ef9cbcec9a6099dfab70cd071cecbc8">startValue</a></td></tr>
+<tr class="separator:a2ef9cbcec9a6099dfab70cd071cecbc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atributos privados</h2></td></tr>
+<tr class="memitem:aa8dc484cdc517811b1b7393e00e323f5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#aa8dc484cdc517811b1b7393e00e323f5">_tc</a></td></tr>
+<tr class="separator:aa8dc484cdc517811b1b7393e00e323f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00521">521</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="acede90a2f84f3f3b9667e64a2e49da02"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>wx_grid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00524">524</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00524">gui.controls.gridview.ComboCellEditor.__init__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_acede90a2f84f3f3b9667e64a2e49da02_icgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_acede90a2f84f3f3b9667e64a2e49da02_icgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_acede90a2f84f3f3b9667e64a2e49da02_icgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_acede90a2f84f3f3b9667e64a2e49da02_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="acede90a2f84f3f3b9667e64a2e49da02"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>wx_grid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00524">524</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00524">gui.controls.gridview.ComboCellEditor.__init__()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">gui.controls.gridview.GridTable.wx_grid</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00526">gui.controls.gridview.ComboCellEditor.wx_grid</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_acede90a2f84f3f3b9667e64a2e49da02_cgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_acede90a2f84f3f3b9667e64a2e49da02_cgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_acede90a2f84f3f3b9667e64a2e49da02_cgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_acede90a2f84f3f3b9667e64a2e49da02_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="a1d9e168978bcffb9c7808877d909aa78"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.ApplyEdit </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>grid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00572">572</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00553">gui.controls.gridview.ComboCellEditor.startValue</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00572">gui.controls.gridview.ComboCellEditor.ApplyEdit()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a1d9e168978bcffb9c7808877d909aa78_icgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a1d9e168978bcffb9c7808877d909aa78_icgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a1d9e168978bcffb9c7808877d909aa78_icgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a1d9e168978bcffb9c7808877d909aa78_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1d9e168978bcffb9c7808877d909aa78"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.ApplyEdit </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>grid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00572">572</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00572">gui.controls.gridview.ComboCellEditor.ApplyEdit()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00553">gui.controls.gridview.ComboCellEditor.startValue</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a1d9e168978bcffb9c7808877d909aa78_cgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a1d9e168978bcffb9c7808877d909aa78_cgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a1d9e168978bcffb9c7808877d909aa78_cgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a1d9e168978bcffb9c7808877d909aa78_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a069fed0de69c809b134e5916ba59d416"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.BeginEdit </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>grid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00551">551</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a069fed0de69c809b134e5916ba59d416"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.BeginEdit </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>grid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00551">551</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aab55211c451a58d49e8356c0bab18057"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.Clone </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00614">614</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">gui.controls.gridview.GridTable.wx_grid</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00526">gui.controls.gridview.ComboCellEditor.wx_grid</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00614">gui.controls.gridview.ComboCellEditor.Clone()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_aab55211c451a58d49e8356c0bab18057_icgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_aab55211c451a58d49e8356c0bab18057_icgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_aab55211c451a58d49e8356c0bab18057_icgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_aab55211c451a58d49e8356c0bab18057_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aab55211c451a58d49e8356c0bab18057"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.Clone </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00614">614</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00614">gui.controls.gridview.ComboCellEditor.Clone()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00652">gui.controls.gridview.update()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00140">gui.controls.gridview.GridTable.wx_grid</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00526">gui.controls.gridview.ComboCellEditor.wx_grid</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_aab55211c451a58d49e8356c0bab18057_cgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_aab55211c451a58d49e8356c0bab18057_cgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_aab55211c451a58d49e8356c0bab18057_cgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_aab55211c451a58d49e8356c0bab18057_cgraph">
+<area shape="rect" id="node2" href="../../d3/d2b/namespacegui_1_1controls_1_1gridview.html#af98fe99e73d22e5c2fc69e7670bafc48" title="gui.controls.gridview.update" alt="" coords="240,36,424,63"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a02d0e93cb1c0a64b77584b745e87f0e2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.Create </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evtHandler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00528">528</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00528">gui.controls.gridview.ComboCellEditor.Create()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a02d0e93cb1c0a64b77584b745e87f0e2_icgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a02d0e93cb1c0a64b77584b745e87f0e2_icgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a02d0e93cb1c0a64b77584b745e87f0e2_icgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a02d0e93cb1c0a64b77584b745e87f0e2_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a02d0e93cb1c0a64b77584b745e87f0e2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.Create </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evtHandler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00528">528</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00530">gui.controls.gridview.ComboCellEditor._tc</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00528">gui.controls.gridview.ComboCellEditor.Create()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00536">gui.controls.gridview.ComboCellEditor.OnChange()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a02d0e93cb1c0a64b77584b745e87f0e2_cgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a02d0e93cb1c0a64b77584b745e87f0e2_cgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a02d0e93cb1c0a64b77584b745e87f0e2_cgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a02d0e93cb1c0a64b77584b745e87f0e2_cgraph">
+<area shape="rect" id="node2" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a199a84e3a27147974ffe932b4cc2c3ee" title="gui.controls.gridview.Combo\lCellEditor.OnChange" alt="" coords="240,29,427,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a33c674f2e4ba5585d361212707685a00"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.Destroy </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00610">610</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00554">gui.tools.designer.Facade.destroy()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a33c674f2e4ba5585d361212707685a00_icgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a33c674f2e4ba5585d361212707685a00_icgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a33c674f2e4ba5585d361212707685a00_icgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a33c674f2e4ba5585d361212707685a00_icgraph">
+<area shape="rect" id="node2" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#ad36293db4c30fd0bc07cba793fb3fa03" title="gui.tools.designer.Facade.destroy" alt="" coords="240,29,459,56"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a33c674f2e4ba5585d361212707685a00"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.Destroy </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00610">610</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00554">gui.tools.designer.Facade.destroy()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a33c674f2e4ba5585d361212707685a00_icgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a33c674f2e4ba5585d361212707685a00_icgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a33c674f2e4ba5585d361212707685a00_icgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a33c674f2e4ba5585d361212707685a00_icgraph">
+<area shape="rect" id="node2" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#ad36293db4c30fd0bc07cba793fb3fa03" title="gui.tools.designer.Facade.destroy" alt="" coords="240,29,459,56"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a65362a0f78bc9b9d23ddabd13d731cb6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.EndEdit </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>grid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>val</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00560">560</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00560">gui.controls.gridview.ComboCellEditor.EndEdit()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00553">gui.controls.gridview.ComboCellEditor.startValue</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a65362a0f78bc9b9d23ddabd13d731cb6_cgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a65362a0f78bc9b9d23ddabd13d731cb6_cgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a65362a0f78bc9b9d23ddabd13d731cb6_cgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a65362a0f78bc9b9d23ddabd13d731cb6_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a65362a0f78bc9b9d23ddabd13d731cb6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.EndEdit </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>row</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>col</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>grid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>val</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00560">560</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00553">gui.controls.gridview.ComboCellEditor.startValue</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00560">gui.controls.gridview.ComboCellEditor.EndEdit()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a65362a0f78bc9b9d23ddabd13d731cb6_icgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a65362a0f78bc9b9d23ddabd13d731cb6_icgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a65362a0f78bc9b9d23ddabd13d731cb6_icgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a65362a0f78bc9b9d23ddabd13d731cb6_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a20026795aee619c4c6cc121833046e8a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.IsAcceptedKey </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00584">584</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00584">gui.controls.gridview.ComboCellEditor.IsAcceptedKey()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a20026795aee619c4c6cc121833046e8a_icgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a20026795aee619c4c6cc121833046e8a_icgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a20026795aee619c4c6cc121833046e8a_icgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a20026795aee619c4c6cc121833046e8a_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a20026795aee619c4c6cc121833046e8a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.IsAcceptedKey </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00584">584</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00584">gui.controls.gridview.ComboCellEditor.IsAcceptedKey()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a20026795aee619c4c6cc121833046e8a_cgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a20026795aee619c4c6cc121833046e8a_cgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a20026795aee619c4c6cc121833046e8a_cgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a20026795aee619c4c6cc121833046e8a_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a199a84e3a27147974ffe932b4cc2c3ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.OnChange </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00536">536</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00528">gui.controls.gridview.ComboCellEditor.Create()</a> y <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00536">gui.controls.gridview.ComboCellEditor.OnChange()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a199a84e3a27147974ffe932b4cc2c3ee_icgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a199a84e3a27147974ffe932b4cc2c3ee_icgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a199a84e3a27147974ffe932b4cc2c3ee_icgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a199a84e3a27147974ffe932b4cc2c3ee_icgraph">
+<area shape="rect" id="node2" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a02d0e93cb1c0a64b77584b745e87f0e2" title="gui.controls.gridview.Combo\lCellEditor.Create" alt="" coords="240,29,427,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a199a84e3a27147974ffe932b4cc2c3ee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.OnChange </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00536">536</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00536">gui.controls.gridview.ComboCellEditor.OnChange()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a199a84e3a27147974ffe932b4cc2c3ee_cgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a199a84e3a27147974ffe932b4cc2c3ee_cgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a199a84e3a27147974ffe932b4cc2c3ee_cgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a199a84e3a27147974ffe932b4cc2c3ee_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a39b3fc3bae749e44c80543f1db3abd1c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.PaintBackground </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>rect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>attr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00548">548</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00548">gui.controls.gridview.ComboCellEditor.PaintBackground()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a39b3fc3bae749e44c80543f1db3abd1c_cgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a39b3fc3bae749e44c80543f1db3abd1c_cgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a39b3fc3bae749e44c80543f1db3abd1c_cgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a39b3fc3bae749e44c80543f1db3abd1c_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a39b3fc3bae749e44c80543f1db3abd1c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.PaintBackground </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>dc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>rect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>attr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00548">548</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00548">gui.controls.gridview.ComboCellEditor.PaintBackground()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a39b3fc3bae749e44c80543f1db3abd1c_icgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a39b3fc3bae749e44c80543f1db3abd1c_icgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a39b3fc3bae749e44c80543f1db3abd1c_icgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a39b3fc3bae749e44c80543f1db3abd1c_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae03acbf5ef4496cd63de436865c1ff57"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.Reset </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00579">579</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00553">gui.controls.gridview.ComboCellEditor.startValue</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00579">gui.controls.gridview.ComboCellEditor.Reset()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_ae03acbf5ef4496cd63de436865c1ff57_icgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_ae03acbf5ef4496cd63de436865c1ff57_icgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_ae03acbf5ef4496cd63de436865c1ff57_icgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_ae03acbf5ef4496cd63de436865c1ff57_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae03acbf5ef4496cd63de436865c1ff57"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.Reset </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00579">579</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00579">gui.controls.gridview.ComboCellEditor.Reset()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00553">gui.controls.gridview.ComboCellEditor.startValue</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_ae03acbf5ef4496cd63de436865c1ff57_cgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_ae03acbf5ef4496cd63de436865c1ff57_cgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_ae03acbf5ef4496cd63de436865c1ff57_cgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_ae03acbf5ef4496cd63de436865c1ff57_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="adae2e18973709734aeae837dd3ad8feb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.SetSize </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>rect</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00539">539</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00539">gui.controls.gridview.ComboCellEditor.SetSize()</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00075">gui.flowsizer.ColorPanel.__init__()</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00536">gui.tools.designer.Facade.update()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_adae2e18973709734aeae837dd3ad8feb_cgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_adae2e18973709734aeae837dd3ad8feb_cgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_adae2e18973709734aeae837dd3ad8feb_cgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_adae2e18973709734aeae837dd3ad8feb_cgraph">
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_adae2e18973709734aeae837dd3ad8feb_icgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_adae2e18973709734aeae837dd3ad8feb_icgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_adae2e18973709734aeae837dd3ad8feb_icgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_adae2e18973709734aeae837dd3ad8feb_icgraph">
+<area shape="rect" id="node2" href="../../d4/df3/classgui_1_1flowsizer_1_1ColorPanel.html#a08264627eca3dbc9942c996788d04b7c" title="gui.flowsizer.ColorPanel.\l__init__" alt="" coords="265,29,431,70"/><area shape="rect" id="node3" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a72b0f21887fb8b746ee99646b5d7c4a7" title="gui.tools.designer.Facade.update" alt="" coords="241,119,455,145"/><area shape="rect" id="node4" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a9f3fb479c1a4fd2bd78299a2cdce6d8f" title="gui.tools.designer.Facade.\l__init__" alt="" coords="510,66,685,107"/><area shape="rect" id="node5" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#acd3321153d346058fb9d100b47824cec" title="gui.tools.inspector.Inspector\lPanel.activate_item" alt="" coords="504,155,691,197"/><area shape="rect" id="node6" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a09f420bcf22a03cb72b015c5d7c735e1" title="gui.tools.inspector.Inspector\lPanel.inspect" alt="" coords="739,110,925,151"/><area shape="rect" id="node9" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ad6bb08719cc2b1a43893b693ff7b2008" title="gui.tools.inspector.Inspector\lPanel.OnActivate" alt="" coords="739,199,925,241"/><area shape="rect" id="node7" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#af70ae5e60130d48df846d94df4c56c02" title="gui.tools.inspector.Inspector\lPanel.add_child" alt="" coords="973,110,1160,151"/><area shape="rect" id="node8" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182" title="gui.tools.inspector.Inspector\lPanel.show_context_menu" alt="" coords="1208,110,1395,151"/><area shape="rect" id="node10" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#abf4066bdb859fc8ca923d9a22f0ea546" title="gui.tools.inspector.Inspector\lPanel.__init__" alt="" coords="973,199,1160,241"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="adae2e18973709734aeae837dd3ad8feb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.SetSize </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>rect</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00539">539</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d1/d54/build_2lib_8linux-x86__64-2_87_2gui_2flowsizer_8py_source.html#l00075">gui.flowsizer.ColorPanel.__init__()</a>, <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00539">gui.controls.gridview.ComboCellEditor.SetSize()</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00536">gui.tools.designer.Facade.update()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_adae2e18973709734aeae837dd3ad8feb_icgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_adae2e18973709734aeae837dd3ad8feb_icgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_adae2e18973709734aeae837dd3ad8feb_icgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_adae2e18973709734aeae837dd3ad8feb_icgraph">
+<area shape="rect" id="node2" href="../../d4/df3/classgui_1_1flowsizer_1_1ColorPanel.html#a08264627eca3dbc9942c996788d04b7c" title="gui.flowsizer.ColorPanel.\l__init__" alt="" coords="265,29,431,70"/><area shape="rect" id="node3" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a72b0f21887fb8b746ee99646b5d7c4a7" title="gui.tools.designer.Facade.update" alt="" coords="241,119,455,145"/><area shape="rect" id="node4" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a9f3fb479c1a4fd2bd78299a2cdce6d8f" title="gui.tools.designer.Facade.\l__init__" alt="" coords="510,66,685,107"/><area shape="rect" id="node5" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#acd3321153d346058fb9d100b47824cec" title="gui.tools.inspector.Inspector\lPanel.activate_item" alt="" coords="504,155,691,197"/><area shape="rect" id="node6" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a09f420bcf22a03cb72b015c5d7c735e1" title="gui.tools.inspector.Inspector\lPanel.inspect" alt="" coords="739,110,925,151"/><area shape="rect" id="node9" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ad6bb08719cc2b1a43893b693ff7b2008" title="gui.tools.inspector.Inspector\lPanel.OnActivate" alt="" coords="739,199,925,241"/><area shape="rect" id="node7" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#af70ae5e60130d48df846d94df4c56c02" title="gui.tools.inspector.Inspector\lPanel.add_child" alt="" coords="973,110,1160,151"/><area shape="rect" id="node8" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182" title="gui.tools.inspector.Inspector\lPanel.show_context_menu" alt="" coords="1208,110,1395,151"/><area shape="rect" id="node10" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#abf4066bdb859fc8ca923d9a22f0ea546" title="gui.tools.inspector.Inspector\lPanel.__init__" alt="" coords="973,199,1160,241"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a25499840cdbef32ef2f196860318787c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.Show </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>show</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>attr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00544">544</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00544">gui.controls.gridview.ComboCellEditor.Show()</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00546">gui.tools.designer.Facade.refresh()</a> y <a class="el" href="../../d7/d02/build_2lib_8linux-x86__64-2_87_2gui_2tools_2debug_8py_source.html#l00028">gui.tools.debug.Shell.show()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a25499840cdbef32ef2f196860318787c_cgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a25499840cdbef32ef2f196860318787c_cgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a25499840cdbef32ef2f196860318787c_cgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a25499840cdbef32ef2f196860318787c_cgraph">
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a25499840cdbef32ef2f196860318787c_icgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a25499840cdbef32ef2f196860318787c_icgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a25499840cdbef32ef2f196860318787c_icgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a25499840cdbef32ef2f196860318787c_icgraph">
+<area shape="rect" id="node2" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a163280d73dea67f87f5bc394b538a80c" title="gui.tools.designer.Facade.refresh" alt="" coords="241,57,455,84"/><area shape="rect" id="node11" href="../../d9/db0/classgui_1_1tools_1_1debug_1_1Shell.html#af89b196822ab9298c9d44d17abb46d17" title="gui.tools.debug.Shell.show" alt="" coords="259,132,437,159"/><area shape="rect" id="node3" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a72b0f21887fb8b746ee99646b5d7c4a7" title="gui.tools.designer.Facade.update" alt="" coords="505,57,719,84"/><area shape="rect" id="node4" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a9f3fb479c1a4fd2bd78299a2cdce6d8f" title="gui.tools.designer.Facade.\l__init__" alt="" coords="774,5,949,46"/><area shape="rect" id="node5" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#acd3321153d346058fb9d100b47824cec" title="gui.tools.inspector.Inspector\lPanel.activate_item" alt="" coords="768,94,955,135"/><area shape="rect" id="node6" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a09f420bcf22a03cb72b015c5d7c735e1" title="gui.tools.inspector.Inspector\lPanel.inspect" alt="" coords="1003,49,1189,90"/><area shape="rect" id="node9" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ad6bb08719cc2b1a43893b693ff7b2008" title="gui.tools.inspector.Inspector\lPanel.OnActivate" alt="" coords="1003,138,1189,179"/><area shape="rect" id="node7" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#af70ae5e60130d48df846d94df4c56c02" title="gui.tools.inspector.Inspector\lPanel.add_child" alt="" coords="1237,49,1424,90"/><area shape="rect" id="node8" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182" title="gui.tools.inspector.Inspector\lPanel.show_context_menu" alt="" coords="1472,49,1659,90"/><area shape="rect" id="node10" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#abf4066bdb859fc8ca923d9a22f0ea546" title="gui.tools.inspector.Inspector\lPanel.__init__" alt="" coords="1237,138,1424,179"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a25499840cdbef32ef2f196860318787c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.Show </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>show</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>attr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00544">544</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00546">gui.tools.designer.Facade.refresh()</a>, <a class="el" href="../../d7/d02/build_2lib_8linux-x86__64-2_87_2gui_2tools_2debug_8py_source.html#l00028">gui.tools.debug.Shell.show()</a> y <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00544">gui.controls.gridview.ComboCellEditor.Show()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a25499840cdbef32ef2f196860318787c_icgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a25499840cdbef32ef2f196860318787c_icgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a25499840cdbef32ef2f196860318787c_icgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a25499840cdbef32ef2f196860318787c_icgraph">
+<area shape="rect" id="node2" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a163280d73dea67f87f5bc394b538a80c" title="gui.tools.designer.Facade.refresh" alt="" coords="241,57,455,84"/><area shape="rect" id="node11" href="../../d9/db0/classgui_1_1tools_1_1debug_1_1Shell.html#af89b196822ab9298c9d44d17abb46d17" title="gui.tools.debug.Shell.show" alt="" coords="259,132,437,159"/><area shape="rect" id="node3" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a72b0f21887fb8b746ee99646b5d7c4a7" title="gui.tools.designer.Facade.update" alt="" coords="505,57,719,84"/><area shape="rect" id="node4" href="../../d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a9f3fb479c1a4fd2bd78299a2cdce6d8f" title="gui.tools.designer.Facade.\l__init__" alt="" coords="774,5,949,46"/><area shape="rect" id="node5" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#acd3321153d346058fb9d100b47824cec" title="gui.tools.inspector.Inspector\lPanel.activate_item" alt="" coords="768,94,955,135"/><area shape="rect" id="node6" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a09f420bcf22a03cb72b015c5d7c735e1" title="gui.tools.inspector.Inspector\lPanel.inspect" alt="" coords="1003,49,1189,90"/><area shape="rect" id="node9" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ad6bb08719cc2b1a43893b693ff7b2008" title="gui.tools.inspector.Inspector\lPanel.OnActivate" alt="" coords="1003,138,1189,179"/><area shape="rect" id="node7" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#af70ae5e60130d48df846d94df4c56c02" title="gui.tools.inspector.Inspector\lPanel.add_child" alt="" coords="1237,49,1424,90"/><area shape="rect" id="node8" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182" title="gui.tools.inspector.Inspector\lPanel.show_context_menu" alt="" coords="1472,49,1659,90"/><area shape="rect" id="node10" href="../../df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#abf4066bdb859fc8ca923d9a22f0ea546" title="gui.tools.inspector.Inspector\lPanel.__init__" alt="" coords="1237,138,1424,179"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a70aa6bdf0e01270c3847077084a41bd1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.StartingClick </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00607">607</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00607">gui.controls.gridview.ComboCellEditor.StartingClick()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a70aa6bdf0e01270c3847077084a41bd1_cgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a70aa6bdf0e01270c3847077084a41bd1_cgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a70aa6bdf0e01270c3847077084a41bd1_cgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a70aa6bdf0e01270c3847077084a41bd1_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a70aa6bdf0e01270c3847077084a41bd1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.StartingClick </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00607">607</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00607">gui.controls.gridview.ComboCellEditor.StartingClick()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a70aa6bdf0e01270c3847077084a41bd1_icgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a70aa6bdf0e01270c3847077084a41bd1_icgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a70aa6bdf0e01270c3847077084a41bd1_icgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a70aa6bdf0e01270c3847077084a41bd1_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a448781f8024cfa6309e1a00edf933714"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.StartingKey </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00591">591</a> del archivo <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00591">gui.controls.gridview.ComboCellEditor.StartingKey()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a448781f8024cfa6309e1a00edf933714_cgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a448781f8024cfa6309e1a00edf933714_cgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a448781f8024cfa6309e1a00edf933714_cgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a448781f8024cfa6309e1a00edf933714_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a448781f8024cfa6309e1a00edf933714"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.gridview.ComboCellEditor.StartingKey </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00591">591</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00591">gui.controls.gridview.ComboCellEditor.StartingKey()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a448781f8024cfa6309e1a00edf933714_icgraph.png" border="0" usemap="#da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a448781f8024cfa6309e1a00edf933714_icgraph" alt=""/></div>
+<map name="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a448781f8024cfa6309e1a00edf933714_icgraph" id="da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor_a448781f8024cfa6309e1a00edf933714_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="aa8dc484cdc517811b1b7393e00e323f5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.gridview.ComboCellEditor._tc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00530">530</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00528">gui.controls.gridview.ComboCellEditor.Create()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2ef9cbcec9a6099dfab70cd071cecbc8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.gridview.ComboCellEditor.startValue</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00553">553</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00572">gui.controls.gridview.ComboCellEditor.ApplyEdit()</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00560">gui.controls.gridview.ComboCellEditor.EndEdit()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00579">gui.controls.gridview.ComboCellEditor.Reset()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af96d2550eeba453d324a49957c5b06b2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.gridview.ComboCellEditor.wx_grid</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00526">526</a> del archivo <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d3/d07/gui_2controls_2gridview_8py_source.html#l00524">gui.controls.gridview.ComboCellEditor.__init__()</a> y <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00614">gui.controls.gridview.ComboCellEditor.Clone()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>build/lib.linux-x86_64-2.7/gui/controls/<a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html">gridview.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/dc4/namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="../../d7/d56/namespacegui_1_1controls.html">controls</a></li><li class="navelem"><a class="el" href="../../d3/d2b/namespacegui_1_1controls_1_1gridview.html">gridview</a></li><li class="navelem"><a class="el" href="../../da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html">ComboCellEditor</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:47 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

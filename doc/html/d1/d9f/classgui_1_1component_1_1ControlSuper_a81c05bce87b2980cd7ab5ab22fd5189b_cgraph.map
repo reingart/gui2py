@@ -1,0 +1,14 @@
+<map id="gui.component.ControlSuper.get_char_height" name="gui.component.ControlSuper.get_char_height">
+<area shape="rect" id="node2" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#a7d5ce0fc0165e6c410ce84e1cfad021e" title="gui.component.ControlSuper.\l_get_margin" alt="" coords="265,5,455,46"/>
+<area shape="rect" id="node3" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#a5d8a866e98fee78e792a4a821ad2ba8c" title="gui.component.ControlSuper.\l_set_height" alt="" coords="522,129,713,170"/>
+<area shape="rect" id="node7" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#affbafdf05c45ddd850c9ee6f6ac067e6" title="gui.component.ControlSuper.\l_set_left" alt="" coords="522,311,713,353"/>
+<area shape="rect" id="node10" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#a17fb25dd4c1b68f28fc239d2ab5d3e0c" title="gui.component.ControlSuper.\l_set_margin" alt="" coords="265,187,455,229"/>
+<area shape="rect" id="node12" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#abaa2cd80a892a4933aea479a7a97c093" title="gui.component.ControlSuper.\l_set_top" alt="" coords="522,246,713,287"/>
+<area shape="rect" id="node13" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#a2e83ac3b6fe325c0ec3dc76b9b6cbc73" title="gui.component.ControlSuper.\l_set_width" alt="" coords="265,70,455,111"/>
+<area shape="rect" id="node4" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#a79f0952c8c1e9e639e219c97944a1147" title="gui.component.ControlSuper.\l_set_size" alt="" coords="779,129,970,170"/>
+<area shape="rect" id="node5" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#a9faae286a706388b11b9debdf4daf39a" title="gui.component.ControlSuper.\l_calc_dimension" alt="" coords="1019,187,1210,229"/>
+<area shape="rect" id="node6" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#ad712fca170ef6df1933a3601023075ba" title="gui.component.ControlSuper.\l_get_size" alt="" coords="1019,122,1210,163"/>
+<area shape="rect" id="node8" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#aadd45821f352e5df10edc11a9e609105" title="gui.component.ControlSuper.\l_set_pos" alt="" coords="779,246,970,287"/>
+<area shape="rect" id="node9" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#a7c87cb830ddcb27f667a466ad28c0a94" title="gui.component.ControlSuper.\l_get_pos" alt="" coords="1019,253,1210,294"/>
+<area shape="rect" id="node11" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#aa777e42e418b9e9517dcd4aae5cf1430" title="gui.component.ControlSuper.resize" alt="" coords="504,195,731,221"/>
+</map>

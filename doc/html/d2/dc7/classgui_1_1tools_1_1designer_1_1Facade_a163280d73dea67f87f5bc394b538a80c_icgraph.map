@@ -1,0 +1,10 @@
+<map id="gui.tools.designer.Facade.refresh" name="gui.tools.designer.Facade.refresh">
+<area shape="rect" id="node2" href="$d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a72b0f21887fb8b746ee99646b5d7c4a7" title="gui.tools.designer.Facade.update" alt="" coords="270,57,485,84"/>
+<area shape="rect" id="node3" href="$d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a9f3fb479c1a4fd2bd78299a2cdce6d8f" title="gui.tools.designer.Facade.\l__init__" alt="" coords="539,5,714,46"/>
+<area shape="rect" id="node4" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#acd3321153d346058fb9d100b47824cec" title="gui.tools.inspector.Inspector\lPanel.activate_item" alt="" coords="533,94,720,135"/>
+<area shape="rect" id="node5" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a09f420bcf22a03cb72b015c5d7c735e1" title="gui.tools.inspector.Inspector\lPanel.inspect" alt="" coords="768,49,955,90"/>
+<area shape="rect" id="node8" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ad6bb08719cc2b1a43893b693ff7b2008" title="gui.tools.inspector.Inspector\lPanel.OnActivate" alt="" coords="768,138,955,179"/>
+<area shape="rect" id="node6" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#af70ae5e60130d48df846d94df4c56c02" title="gui.tools.inspector.Inspector\lPanel.add_child" alt="" coords="1003,49,1189,90"/>
+<area shape="rect" id="node7" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182" title="gui.tools.inspector.Inspector\lPanel.show_context_menu" alt="" coords="1237,49,1424,90"/>
+<area shape="rect" id="node9" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#abf4066bdb859fc8ca923d9a22f0ea546" title="gui.tools.inspector.Inspector\lPanel.__init__" alt="" coords="1003,138,1189,179"/>
+</map>

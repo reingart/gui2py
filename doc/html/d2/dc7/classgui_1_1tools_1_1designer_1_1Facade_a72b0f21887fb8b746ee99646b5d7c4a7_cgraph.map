@@ -1,0 +1,6 @@
+<map id="gui.tools.designer.Facade.update" name="gui.tools.designer.Facade.update">
+<area shape="rect" id="node2" href="$da/d31/classgui_1_1controls_1_1canvas_1_1Canvas.html#a10087fa35fd33fd2f3237e23ee7421a3" title="gui.controls.canvas.Canvas.refresh" alt="" coords="270,5,498,32"/>
+<area shape="rect" id="node3" href="$d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a163280d73dea67f87f5bc394b538a80c" title="gui.tools.designer.Facade.refresh" alt="" coords="277,56,491,83"/>
+<area shape="rect" id="node5" href="$da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#adae2e18973709734aeae837dd3ad8feb" title="gui.controls.gridview.Combo\lCellEditor.SetSize" alt="" coords="291,107,477,149"/>
+<area shape="rect" id="node4" href="$da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a25499840cdbef32ef2f196860318787c" title="gui.controls.gridview.Combo\lCellEditor.Show" alt="" coords="547,49,733,90"/>
+</map>

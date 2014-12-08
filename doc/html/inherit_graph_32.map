@@ -1,0 +1,21 @@
+<map id="Representación gráfica de la clase" name="Representación gráfica de la clase">
+<area shape="rect" id="node2" href="$d2/d71/classgui_1_1html_1_1input_1_1SubmitButton.html" title="gui.html.input.SubmitButton" alt="" coords="382,237,565,264"/>
+<area shape="rect" id="node4" href="$db/d75/classgui_1_1html_1_1input_1_1FormCheckbox.html" title="gui.html.input.FormCheckbox" alt="" coords="377,347,570,373"/>
+<area shape="rect" id="node6" href="$d7/d98/classgui_1_1component_1_1Component.html" title="gui.component.Component" alt="" coords="131,56,309,83"/>
+<area shape="rect" id="node9" href="$d4/d3f/classgui_1_1component_1_1DesignerMixin.html" title="gui.component.DesignerMixin" alt="" coords="123,5,317,32"/>
+<area shape="rect" id="node10" href="$dc/dbd/classgui_1_1component_1_1ImageBackgroundMixin.html" title="gui.component.ImageBackground\lMixin" alt="" coords="112,310,328,351"/>
+<area shape="rect" id="node11" href="$d1/d96/classgui_1_1component_1_1SizerMixin.html" title="gui.component.SizerMixin" alt="" coords="134,376,306,403"/>
+<area shape="rect" id="node12" href="$dc/d07/classgui_1_1component_1_1SubComponent.html" title="gui.component.SubComponent" alt="" coords="119,595,321,621"/>
+<area shape="rect" id="node13" href="$dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html" title="gui.controls.treeview.TreeItem" alt="" coords="121,645,319,672"/>
+<area shape="rect" id="node14" href="$d4/ddc/classgui_1_1font_1_1Font.html" title="gui.font.Font" alt="" coords="173,696,267,723"/>
+<area shape="rect" id="node15" href="$d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html" title="gui.html.form.HTMLForm" alt="" coords="136,747,304,773"/>
+<area shape="rect" id="node16" href="$d8/dbe/classgui_1_1html_1_1input_1_1FormControlMixin.html" title="gui.html.input.FormControl\lMixin" alt="" coords="132,427,308,469"/>
+<area shape="rect" id="node21" href="$de/de5/classgui_1_1resource_1_1Controller.html" title="gui.resource.Controller" alt="" coords="143,107,297,133"/>
+<area shape="rect" id="node22" href="$d7/dde/classgui_1_1resource_1_1PythonCardWrapper.html" title="gui.resource.PythonCardWrapper" alt="" coords="113,157,327,184"/>
+<area shape="rect" id="node7" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html" title="gui.component.ControlSuper" alt="" coords="380,31,567,57"/>
+<area shape="rect" id="node8" href="$d3/dd2/classgui_1_1component_1_1Control.html" title="gui.component.Control" alt="" coords="638,31,791,57"/>
+<area shape="rect" id="node17" href="$d1/dc7/classgui_1_1html_1_1input_1_1FormHiddenControl.html" title="gui.html.input.FormHidden\lControl" alt="" coords="386,427,561,469"/>
+<area shape="rect" id="node18" href="$d8/d6a/classgui_1_1html_1_1input_1_1FormTextArea.html" title="gui.html.input.FormTextArea" alt="" coords="380,544,567,571"/>
+<area shape="rect" id="node19" href="$d5/d0a/classgui_1_1html_1_1input_1_1FormTextInput.html" title="gui.html.input.FormTextInput" alt="" coords="379,493,568,520"/>
+<area shape="rect" id="node20" href="$d6/d3a/classgui_1_1html_1_1input_1_1FormPasswordInput.html" title="gui.html.input.FormPassword\lInput" alt="" coords="619,486,811,527"/>
+</map>

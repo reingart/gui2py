@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Fichero Fuente gui/tools/debug.py</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d0/d99/gui_2tools_2debug_8py_source.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">debug.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d0/d99/gui_2tools_2debug_8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">#!/usr/bin/python</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">&quot;Shell, Namespace viewer and other debugging facilities&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;__author__ = <span class="stringliteral">&quot;Mariano Reingart (reingart@gmail.com)&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;__copyright__ = <span class="stringliteral">&quot;Copyright (C) 2013- Mariano Reingart&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;__license__ = <span class="stringliteral">&quot;LGPL 3.0&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"># inspired byPythonCard debug module, but completely rewritten</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> wx</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> wx.py</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;TOOL_WINDOW_STYLE = wx.DEFAULT_FRAME_STYLE | wx.FRAME_NO_TASKBAR</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">class </span>Shell(wx.Frame):</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d9/db0/classgui_1_1tools_1_1debug_1_1Shell.html#ac6d0f3c72922dd82ae269059c5d659d4">   23</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/db0/classgui_1_1tools_1_1debug_1_1Shell.html#ac6d0f3c72922dd82ae269059c5d659d4">__init__</a>(self, parent=None, title=&quot;shell&quot;, intro=&quot;welcome to gui2py!&quot;):</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        pos = size = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        wx.Frame.__init__(self, parent, -1, title, pos, size, TOOL_WINDOW_STYLE)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        self.<a class="code" href="../../d9/db0/classgui_1_1tools_1_1debug_1_1Shell.html#aa26b5ce2c234af892f11f71c7f7696a0">sh</a> = wx.py.shell.Shell(self, -1, introText=intro)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../d9/db0/classgui_1_1tools_1_1debug_1_1Shell.html#af89b196822ab9298c9d44d17abb46d17">   28</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/db0/classgui_1_1tools_1_1debug_1_1Shell.html#af89b196822ab9298c9d44d17abb46d17">show</a>(self):</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        self.Show(<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&#39;__main__&#39;</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">import</span> gui</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="../../d7/dc4/namespacegui.html#a17214c5e97e02ca30a4c68dd8709edb3">gui.shell</a>()</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="../../d7/dc4/namespacegui.html#ad55534492693bbb1a8050f1082cd737d">gui.main_loop</a>()</div>
+<div class="ttc" id="classgui_1_1tools_1_1debug_1_1Shell_html_aa26b5ce2c234af892f11f71c7f7696a0"><div class="ttname"><a href="../../d9/db0/classgui_1_1tools_1_1debug_1_1Shell.html#aa26b5ce2c234af892f11f71c7f7696a0">gui.tools.debug.Shell.sh</a></div><div class="ttdeci">sh</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d02/build_2lib_8linux-x86__64-2_87_2gui_2tools_2debug_8py_source.html#l00026">debug.py:26</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1debug_1_1Shell_html_ac6d0f3c72922dd82ae269059c5d659d4"><div class="ttname"><a href="../../d9/db0/classgui_1_1tools_1_1debug_1_1Shell.html#ac6d0f3c72922dd82ae269059c5d659d4">gui.tools.debug.Shell.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d02/build_2lib_8linux-x86__64-2_87_2gui_2tools_2debug_8py_source.html#l00023">debug.py:23</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1debug_1_1Shell_html_af89b196822ab9298c9d44d17abb46d17"><div class="ttname"><a href="../../d9/db0/classgui_1_1tools_1_1debug_1_1Shell.html#af89b196822ab9298c9d44d17abb46d17">gui.tools.debug.Shell.show</a></div><div class="ttdeci">def show</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d02/build_2lib_8linux-x86__64-2_87_2gui_2tools_2debug_8py_source.html#l00028">debug.py:28</a></div></div>
+<div class="ttc" id="namespacegui_html_ad55534492693bbb1a8050f1082cd737d"><div class="ttname"><a href="../../d7/dc4/namespacegui.html#ad55534492693bbb1a8050f1082cd737d">gui.main_loop</a></div><div class="ttdeci">main_loop</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dbb/build_2lib_8linux-x86__64-2_87_2gui_2____init_____8py_source.html#l00047">__init__.py:47</a></div></div>
+<div class="ttc" id="namespacegui_html_a17214c5e97e02ca30a4c68dd8709edb3"><div class="ttname"><a href="../../d7/dc4/namespacegui.html#a17214c5e97e02ca30a4c68dd8709edb3">gui.shell</a></div><div class="ttdeci">def shell</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/dbb/build_2lib_8linux-x86__64-2_87_2gui_2____init_____8py_source.html#l00064">__init__.py:64</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_be831313eee9167e67543a36aa74e60d.html">gui</a></li><li class="navelem"><a class="el" href="../../dir_53c845addcf54ccd5761a2e320502361.html">tools</a></li><li class="navelem"><a class="el" href="../../d0/d99/gui_2tools_2debug_8py.html">debug.py</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:47 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

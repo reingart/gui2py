@@ -1,0 +1,5 @@
+<map id="gui.component.ImageBackgroundMixin._set_image" name="gui.component.ImageBackgroundMixin._set_image">
+<area shape="rect" id="node2" href="$dc/dbd/classgui_1_1component_1_1ImageBackgroundMixin.html#a8d80cee10635db3cce6c6d93cfdd6dca" title="gui.component.ImageBackground\lMixin.__on_destroy" alt="" coords="269,5,485,46"/>
+<area shape="rect" id="node3" href="$dc/dbd/classgui_1_1component_1_1ImageBackgroundMixin.html#a2b71254b22fcd5f9583415b0dd497db8" title="gui.component.ImageBackground\lMixin.__on_erase_background" alt="" coords="269,70,485,111"/>
+<area shape="rect" id="node4" href="$dc/dbd/classgui_1_1component_1_1ImageBackgroundMixin.html#ada7ece201bb2583a5f02f579271b51ca" title="gui.component.ImageBackground\lMixin.__tile_background" alt="" coords="533,70,749,111"/>
+</map>

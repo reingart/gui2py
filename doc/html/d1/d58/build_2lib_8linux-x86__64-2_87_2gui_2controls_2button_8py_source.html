@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Fichero Fuente build/lib.linux-x86_64-2.7/gui/controls/button.py</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d1/d58/build_2lib_8linux-x86__64-2_87_2gui_2controls_2button_8py_source.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">button.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d1/d58/build_2lib_8linux-x86__64-2_87_2gui_2controls_2button_8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="../../de/d4c/namespacegui_1_1controls_1_1button.html">    1</a></span>&#160;<span class="comment">#!/usr/bin/python</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">&quot;gui2py&#39;s Button control (uses wx.Button and wx.BitmapButton)&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="../../de/d4c/namespacegui_1_1controls_1_1button.html#a5118fabb2e4738b99c943403bdb1636e">    6</a></span>&#160;__author__ = <span class="stringliteral">&quot;Mariano Reingart (reingart@gmail.com)&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../de/d4c/namespacegui_1_1controls_1_1button.html#a3c6183f58c2bf9ba15a04b2a78898f79">    7</a></span>&#160;__copyright__ = <span class="stringliteral">&quot;Copyright (C) 2013- Mariano Reingart&quot;</span>  <span class="comment"># where applicable</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"># Initial implementation was based on PythonCard&#39;s Button component, </span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"># but redesigned and overhauled a lot (specs renamed, events refactorized, etc.)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> wx</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">from</span> ..event <span class="keyword">import</span> FormEvent</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">from</span> ..component <span class="keyword">import</span> Control, Spec, EventSpec, InitSpec, StyleSpec</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">from</span> .image <span class="keyword">import</span> Image</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">from</span> .. <span class="keyword">import</span> images </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html">Button</a>(Image):</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="stringliteral">&quot;A simple push-button with a label (or image)&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#a08ad64c3b4447dba88c1c0f820779de9">   21</a></span>&#160;    _wx_class = wx.Button</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#ac98535b86737393cf2340b3d9aab7eee">   22</a></span>&#160;    _image = images.button</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#a32c7002dda9b3ed9b347ba402ea98346">   24</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#a32c7002dda9b3ed9b347ba402ea98346">__init__</a>(self, parent=None, **kwargs):</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">if</span> <span class="stringliteral">&#39;filename&#39;</span> <span class="keywordflow">in</span> kwargs <span class="keywordflow">and</span> kwargs[<span class="stringliteral">&#39;filename&#39;</span>]:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            self.<a class="code" href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#a08ad64c3b4447dba88c1c0f820779de9">_wx_class</a> = wx_BitmapButton</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            kwargs[<span class="stringliteral">&#39;label&#39;</span>] = <span class="stringliteral">&#39;&#39;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="comment">##if &#39;border&#39; in kwargs and kwargs[&#39;border&#39;] == &#39;default&#39;:</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="comment">##  kwargs[&#39;border&#39;] = &#39;none&#39;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="comment">##  kwargs[&#39;auto_redraw&#39;] = True # Windows specific ?!</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="comment"># TODO: refactor for Disabled, Focus, Hover, Selected bitmap support</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment"># Use the common image contructor (TODO: ImageMixin!)</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        Image.__init__(self, parent, **kwargs)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#a4497a8a7c22d901c4f6dabafaa897b99">   36</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#a4497a8a7c22d901c4f6dabafaa897b99">_getDefault</a>(self):</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">#return self == self._parent.GetDefaultItem()</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="comment"># KEA 2002-03-26</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="comment"># for some reason wxDialog doesn&#39;t have a</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment"># GetDefaultItem and SetDefaultItem</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#af324fa34710a27a1bc134c8934e06135">_default</a></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#a6c8e6399649a8b3c50d99e63de6cab4e">   43</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#a6c8e6399649a8b3c50d99e63de6cab4e">_setDefault</a>(self, aBoolean):</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#af324fa34710a27a1bc134c8934e06135">   44</a></span>&#160;        self.<a class="code" href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#af324fa34710a27a1bc134c8934e06135">_default</a> = aBoolean</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">if</span> aBoolean:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            self.wx_obj.SetDefault()</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#a8bf6d02c838a921330d39a4ca4872ae7">   48</a></span>&#160;    default = Spec(_getDefault, _setDefault, default=<span class="keyword">False</span>, type=<span class="stringliteral">&quot;boolean&quot;</span>)</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#a279bdb1aa298dbde928cbfd18ec496ba">   49</a></span>&#160;    label = InitSpec(<span class="keyword">lambda</span> self: self.wx_obj.GetLabel(), </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                     <span class="keyword">lambda</span> self, label: self.wx_obj.SetLabel(label),</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                     optional=<span class="keyword">False</span>, default=<span class="stringliteral">&#39;Button&#39;</span>, type=<span class="stringliteral">&quot;string&quot;</span>, </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                     doc=<span class="stringliteral">&quot;text to show as caption&quot;</span>)</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#ae8c10955b47e72b235568274414ba371">   53</a></span>&#160;    auto_redraw = StyleSpec(wx.BU_AUTODRAW, default=<span class="keyword">False</span>,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        doc=<span class="stringliteral">&quot;drawn automatically using bitmap only, providing a 3D-look border&quot;</span>)</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#a635cd7e8d564215dab7618f1f1c71573">   55</a></span>&#160;    exact_fit = StyleSpec(wx.BU_EXACTFIT, default=<span class="keyword">False</span>,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        doc=<span class="stringliteral">&quot;small as possible instead of standard size (which is the default)&quot;</span>)</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#ad5ad92966a66e4642f0ab38cfa247228">   57</a></span>&#160;    onclick = EventSpec(<span class="stringliteral">&#39;click&#39;</span>, binding=wx.EVT_BUTTON, kind=FormEvent)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../d9/ddb/classgui_1_1controls_1_1button_1_1wx__BitmapButton.html">   60</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/ddb/classgui_1_1controls_1_1button_1_1wx__BitmapButton.html">wx_BitmapButton</a>(wx.BitmapButton):</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../d9/ddb/classgui_1_1controls_1_1button_1_1wx__BitmapButton.html#a4fcd154b373da62a1801456356c73adc">   62</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/ddb/classgui_1_1controls_1_1button_1_1wx__BitmapButton.html#a4fcd154b373da62a1801456356c73adc">__init__</a>(self, *args, **kwargs):</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="comment"># remove label as for bitmap button, it is a image (bitmap)</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">if</span> <span class="stringliteral">&#39;label&#39;</span> <span class="keywordflow">in</span> kwargs:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            del kwargs[<span class="stringliteral">&#39;label&#39;</span>]</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        wx.BitmapButton.__init__(self, *args, **kwargs)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment"># WORKAROUND: 2.8 has no SetBitmap: </span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span> wx.VERSION &lt; (2, 9):</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="../../d9/ddb/classgui_1_1controls_1_1button_1_1wx__BitmapButton.html#a7274f5a1168be54d1b4cc06d1f86b5b2">   70</a></span>&#160;        <span class="keyword">def </span><a class="code" href="../../d9/ddb/classgui_1_1controls_1_1button_1_1wx__BitmapButton.html#a7274f5a1168be54d1b4cc06d1f86b5b2">SetBitmap</a>(self, bitmap):</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            self.SetBitmapLabel(bitmap)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment"># basic test until unit_test</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../de/d4c/namespacegui_1_1controls_1_1button.html#aabdb38b289aeb27d4cff84d22bf38dd8">   76</a></span>&#160;    app = wx.App(redirect=<span class="keyword">False</span>)</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../de/d4c/namespacegui_1_1controls_1_1button.html#aadb225891fa9301651752cc4762300b4">   77</a></span>&#160;    frame = wx.Frame(<span class="keywordtype">None</span>)</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../de/d4c/namespacegui_1_1controls_1_1button.html#a50ec1793e628a82852bf474742d2bbe4">   78</a></span>&#160;    b = <a class="code" href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html">Button</a>(frame, name=<span class="stringliteral">&quot;btnTest&quot;</span>, label=<span class="stringliteral">&quot;click me!&quot;</span>, default=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">assert</span> b.get_parent() <span class="keywordflow">is</span> frame</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">assert</span> b.name == <span class="stringliteral">&quot;btnTest&quot;</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">assert</span> b.default == <span class="keyword">True</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">assert</span> b.label == <span class="stringliteral">&quot;click me!&quot;</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment"># assign some event handlers:</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    b.onclick = <span class="stringliteral">&quot;print event.timestamp; event.prevent_default()&quot;</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    b.onblur = b.onfocus = <span class="keyword">lambda</span> event: pprint(event.name)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment"># remove an event handler:</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    b.onblur = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    frame.Show()</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    app.MainLoop()</div>
+<div class="ttc" id="classgui_1_1controls_1_1button_1_1wx__BitmapButton_html_a7274f5a1168be54d1b4cc06d1f86b5b2"><div class="ttname"><a href="../../d9/ddb/classgui_1_1controls_1_1button_1_1wx__BitmapButton.html#a7274f5a1168be54d1b4cc06d1f86b5b2">gui.controls.button.wx_BitmapButton.SetBitmap</a></div><div class="ttdeci">def SetBitmap</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d58/build_2lib_8linux-x86__64-2_87_2gui_2controls_2button_8py_source.html#l00070">button.py:70</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1button_1_1wx__BitmapButton_html"><div class="ttname"><a href="../../d9/ddb/classgui_1_1controls_1_1button_1_1wx__BitmapButton.html">gui.controls.button.wx_BitmapButton</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d58/build_2lib_8linux-x86__64-2_87_2gui_2controls_2button_8py_source.html#l00060">button.py:60</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1button_1_1Button_html_a32c7002dda9b3ed9b347ba402ea98346"><div class="ttname"><a href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#a32c7002dda9b3ed9b347ba402ea98346">gui.controls.button.Button.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d58/build_2lib_8linux-x86__64-2_87_2gui_2controls_2button_8py_source.html#l00024">button.py:24</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1button_1_1wx__BitmapButton_html_a4fcd154b373da62a1801456356c73adc"><div class="ttname"><a href="../../d9/ddb/classgui_1_1controls_1_1button_1_1wx__BitmapButton.html#a4fcd154b373da62a1801456356c73adc">gui.controls.button.wx_BitmapButton.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d58/build_2lib_8linux-x86__64-2_87_2gui_2controls_2button_8py_source.html#l00062">button.py:62</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1button_1_1Button_html_af324fa34710a27a1bc134c8934e06135"><div class="ttname"><a href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#af324fa34710a27a1bc134c8934e06135">gui.controls.button.Button._default</a></div><div class="ttdeci">_default</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d58/build_2lib_8linux-x86__64-2_87_2gui_2controls_2button_8py_source.html#l00044">button.py:44</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1button_1_1Button_html_a08ad64c3b4447dba88c1c0f820779de9"><div class="ttname"><a href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#a08ad64c3b4447dba88c1c0f820779de9">gui.controls.button.Button._wx_class</a></div><div class="ttdeci">_wx_class</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d58/build_2lib_8linux-x86__64-2_87_2gui_2controls_2button_8py_source.html#l00021">button.py:21</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1button_1_1Button_html_a6c8e6399649a8b3c50d99e63de6cab4e"><div class="ttname"><a href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#a6c8e6399649a8b3c50d99e63de6cab4e">gui.controls.button.Button._setDefault</a></div><div class="ttdeci">def _setDefault</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d58/build_2lib_8linux-x86__64-2_87_2gui_2controls_2button_8py_source.html#l00043">button.py:43</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1button_1_1Button_html"><div class="ttname"><a href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html">gui.controls.button.Button</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d58/build_2lib_8linux-x86__64-2_87_2gui_2controls_2button_8py_source.html#l00019">button.py:19</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1button_1_1Button_html_a4497a8a7c22d901c4f6dabafaa897b99"><div class="ttname"><a href="../../dd/d6f/classgui_1_1controls_1_1button_1_1Button.html#a4497a8a7c22d901c4f6dabafaa897b99">gui.controls.button.Button._getDefault</a></div><div class="ttdeci">def _getDefault</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d58/build_2lib_8linux-x86__64-2_87_2gui_2controls_2button_8py_source.html#l00036">button.py:36</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_96a7eeec1342994a7cb0d7fe7902ae74.html">build</a></li><li class="navelem"><a class="el" href="../../dir_3740601ea11ece1a00f9273977396bc4.html">lib.linux-x86_64-2.7</a></li><li class="navelem"><a class="el" href="../../dir_5bcb0661a26d4ce62009196be9ab2e39.html">gui</a></li><li class="navelem"><a class="el" href="../../dir_4c91e8b673aaef7bf66ef8a4b005b30e.html">controls</a></li><li class="navelem"><a class="el" href="../../d1/d58/build_2lib_8linux-x86__64-2_87_2gui_2controls_2button_8py.html">button.py</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:47 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

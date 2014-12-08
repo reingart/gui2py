@@ -1,0 +1,15 @@
+<map id="gui.tools.inspector.InspectorPanel.inspect" name="gui.tools.inspector.InspectorPanel.inspect">
+<area shape="rect" id="node2" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#acd3321153d346058fb9d100b47824cec" title="gui.tools.inspector.Inspector\lPanel.activate_item" alt="" coords="240,85,427,126"/>
+<area shape="rect" id="node11" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182" title="gui.tools.inspector.Inspector\lPanel.show_context_menu" alt="" coords="240,163,427,205"/>
+<area shape="rect" id="node3" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a59c1ce8f0b5d976ea5bb7c1442824af6" title="gui.tools.inspector.Inspector\lPanel.update" alt="" coords="489,5,676,46"/>
+<area shape="rect" id="node4" href="$dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a7fc319b435e00175890da5ee4b2b330a" title="gui.tools.designer.Selection\lMarker.update" alt="" coords="491,70,674,111"/>
+<area shape="rect" id="node6" href="$d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a72b0f21887fb8b746ee99646b5d7c4a7" title="gui.tools.designer.Facade.update" alt="" coords="475,136,690,163"/>
+<area shape="rect" id="node5" href="$dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a5e7b632668683e7727d93195e23870dd" title="gui.tools.designer.Selection\lMarker.draw" alt="" coords="762,19,945,61"/>
+<area shape="rect" id="node7" href="$da/d31/classgui_1_1controls_1_1canvas_1_1Canvas.html#a10087fa35fd33fd2f3237e23ee7421a3" title="gui.controls.canvas.Canvas.refresh" alt="" coords="739,85,967,112"/>
+<area shape="rect" id="node8" href="$d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a163280d73dea67f87f5bc394b538a80c" title="gui.tools.designer.Facade.refresh" alt="" coords="746,136,961,163"/>
+<area shape="rect" id="node10" href="$da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#adae2e18973709734aeae837dd3ad8feb" title="gui.controls.gridview.Combo\lCellEditor.SetSize" alt="" coords="760,187,947,229"/>
+<area shape="rect" id="node9" href="$da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a25499840cdbef32ef2f196860318787c" title="gui.controls.gridview.Combo\lCellEditor.Show" alt="" coords="1016,129,1203,170"/>
+<area shape="rect" id="node12" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a93b4d530566190a084aa12590d02b310" title="gui.tools.inspector.Inspector\lPanel.highlight" alt="" coords="489,190,676,231"/>
+<area shape="rect" id="node13" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ac369f3121aba776ff3001d45a317d1fc" title="gui.tools.inspector.Inspector\lPanel.do_highlight" alt="" coords="760,253,947,294"/>
+<area shape="rect" id="node14" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5f95eb72313bd1c93bfbedfc1fb3a75e" title="gui.tools.inspector.Inspector\lPanel.do_unhighlight" alt="" coords="1016,253,1203,294"/>
+</map>

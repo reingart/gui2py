@@ -1,0 +1,8 @@
+<map id="gui.tools.propeditor.PropertyEditorPanel.__init__" name="gui.tools.propeditor.PropertyEditorPanel.__init__">
+<area shape="rect" id="node2" href="$db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a461b88b3e37b51d4922e75cb7f661027" title="gui.tools.propeditor.Property\lEditorPanel.load_object" alt="" coords="266,5,451,46"/>
+<area shape="rect" id="node3" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a3d9133aa613f3f891a20f8f044dcf4df" title="gui.tools.inspector.Inspector\lPanel.load_object" alt="" coords="265,70,452,111"/>
+<area shape="rect" id="node4" href="$db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#ac4e2b3d5f60c8e8f16041493fbd147ba" title="gui.tools.propeditor.Property\lEditorPanel.OnPropGridChange" alt="" coords="255,135,462,177"/>
+<area shape="rect" id="node5" href="$db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a1d530cbde84a701026d4c6595a25feb9" title="gui.tools.propeditor.Property\lEditorPanel.OnPropGridPageChange" alt="" coords="241,201,477,242"/>
+<area shape="rect" id="node6" href="$db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a2451150d85f502ec2282337f4c6122d9" title="gui.tools.propeditor.Property\lEditorPanel.OnPropGridRightClick" alt="" coords="247,266,470,307"/>
+<area shape="rect" id="node7" href="$db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#af029098c86d86aa8b737fa70991d8439" title="gui.tools.propeditor.Property\lEditorPanel.OnPropGridSelect" alt="" coords="259,331,458,373"/>
+</map>

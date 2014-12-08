@@ -1,0 +1,11 @@
+<map id="gui.controls.gridview.ComboCellEditor.SetSize" name="gui.controls.gridview.ComboCellEditor.SetSize">
+<area shape="rect" id="node2" href="$d4/df3/classgui_1_1flowsizer_1_1ColorPanel.html#a08264627eca3dbc9942c996788d04b7c" title="gui.flowsizer.ColorPanel.\l__init__" alt="" coords="265,29,431,70"/>
+<area shape="rect" id="node3" href="$d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a72b0f21887fb8b746ee99646b5d7c4a7" title="gui.tools.designer.Facade.update" alt="" coords="241,119,455,145"/>
+<area shape="rect" id="node4" href="$d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a9f3fb479c1a4fd2bd78299a2cdce6d8f" title="gui.tools.designer.Facade.\l__init__" alt="" coords="510,66,685,107"/>
+<area shape="rect" id="node5" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#acd3321153d346058fb9d100b47824cec" title="gui.tools.inspector.Inspector\lPanel.activate_item" alt="" coords="504,155,691,197"/>
+<area shape="rect" id="node6" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a09f420bcf22a03cb72b015c5d7c735e1" title="gui.tools.inspector.Inspector\lPanel.inspect" alt="" coords="739,110,925,151"/>
+<area shape="rect" id="node9" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ad6bb08719cc2b1a43893b693ff7b2008" title="gui.tools.inspector.Inspector\lPanel.OnActivate" alt="" coords="739,199,925,241"/>
+<area shape="rect" id="node7" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#af70ae5e60130d48df846d94df4c56c02" title="gui.tools.inspector.Inspector\lPanel.add_child" alt="" coords="973,110,1160,151"/>
+<area shape="rect" id="node8" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182" title="gui.tools.inspector.Inspector\lPanel.show_context_menu" alt="" coords="1208,110,1395,151"/>
+<area shape="rect" id="node10" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#abf4066bdb859fc8ca923d9a22f0ea546" title="gui.tools.inspector.Inspector\lPanel.__init__" alt="" coords="973,199,1160,241"/>
+</map>

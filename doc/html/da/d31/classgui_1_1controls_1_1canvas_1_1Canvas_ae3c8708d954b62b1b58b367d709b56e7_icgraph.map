@@ -1,0 +1,7 @@
+<map id="gui.controls.canvas.Canvas.clear" name="gui.controls.canvas.Canvas.clear">
+<area shape="rect" id="node2" href="$da/d31/classgui_1_1controls_1_1canvas_1_1Canvas.html#a44648c60a682419411d7e64095cc924e" title="gui.controls.canvas.Canvas.\l__init__" alt="" coords="270,5,458,46"/>
+<area shape="rect" id="node3" href="$d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a50e91b30385dd4679e3a863c8ab0ab35" title="gui.controls.treeview.Tree\lModel.__init__" alt="" coords="278,70,450,111"/>
+<area shape="rect" id="node4" href="$d8/d7f/classgui_1_1controls_1_1listview_1_1ListModel.html#a5a3a13ee75f11a6babf8699f9e124d83" title="gui.controls.listview.List\lModel.__init__" alt="" coords="283,135,445,177"/>
+<area shape="rect" id="node5" href="$db/db7/classgui_1_1controls_1_1gridview_1_1GridModel.html#ae0fc78a27cd017f93f6a662995607b2e" title="gui.controls.gridview.Grid\lModel.__init__" alt="" coords="279,201,449,242"/>
+<area shape="rect" id="node6" href="$d1/d7f/classgui_1_1controls_1_1listview_1_1ListView.html#a0afe6c0297ea2256fdb51ff322fc49be" title="gui.controls.listview.List\lView.clear_all" alt="" coords="283,290,445,331"/>
+</map>

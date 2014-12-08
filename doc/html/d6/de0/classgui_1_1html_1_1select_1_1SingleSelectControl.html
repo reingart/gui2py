@@ -1,0 +1,428 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Referencia de la Clase gui.html.select.SingleSelectControl</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="../../d2/d3b/classgui_1_1html_1_1select_1_1SingleSelectControl-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase gui.html.select.SingleSelectControl</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagrama de herencias de gui.html.select.SingleSelectControl</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d00/classgui_1_1html_1_1select_1_1SingleSelectControl__inherit__graph.png" border="0" usemap="#gui_8html_8select_8SingleSelectControl_inherit__map" alt="Inheritance graph"/></div>
+<map name="gui_8html_8select_8SingleSelectControl_inherit__map" id="gui_8html_8select_8SingleSelectControl_inherit__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración para gui.html.select.SingleSelectControl:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d56/classgui_1_1html_1_1select_1_1SingleSelectControl__coll__graph.png" border="0" usemap="#gui_8html_8select_8SingleSelectControl_coll__map" alt="Collaboration graph"/></div>
+<map name="gui_8html_8select_8SingleSelectControl_coll__map" id="gui_8html_8select_8SingleSelectControl_coll__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a6b844e7526782885def9b8d5451d9561"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl.html#a6b844e7526782885def9b8d5451d9561">__init__</a></td></tr>
+<tr class="separator:a6b844e7526782885def9b8d5451d9561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf7853e50d9eb1cd8be0e64e710ccde5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl.html#abf7853e50d9eb1cd8be0e64e710ccde5">get_value</a></td></tr>
+<tr class="separator:abf7853e50d9eb1cd8be0e64e710ccde5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b844e7526782885def9b8d5451d9561"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl.html#a6b844e7526782885def9b8d5451d9561">__init__</a></td></tr>
+<tr class="separator:a6b844e7526782885def9b8d5451d9561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf7853e50d9eb1cd8be0e64e710ccde5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl.html#abf7853e50d9eb1cd8be0e64e710ccde5">get_value</a></td></tr>
+<tr class="separator:abf7853e50d9eb1cd8be0e64e710ccde5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:ad568756df500f558339f48400e9ba5e7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl.html#ad568756df500f558339f48400e9ba5e7">items</a></td></tr>
+<tr class="separator:ad568756df500f558339f48400e9ba5e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33edbd8890a2b791daf546507cc9db32"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl.html#a33edbd8890a2b791daf546507cc9db32">selection</a></td></tr>
+<tr class="separator:a33edbd8890a2b791daf546507cc9db32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb7ce7ee03b0d95338c1d83cdf341af4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl.html#aeb7ce7ee03b0d95338c1d83cdf341af4">size</a></td></tr>
+<tr class="separator:aeb7ce7ee03b0d95338c1d83cdf341af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00007">7</a> del archivo <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html">select.py</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="a6b844e7526782885def9b8d5451d9561"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.select.SingleSelectControl.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>form</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>tag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parser</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>option_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00008">8</a> del archivo <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html">select.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d6/da9/build_2lib_8linux-x86__64-2_87_2gui_2html_2____init_____8py_source.html#l00016">gui.html.GetParam()</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dc/db6/gui_2html_2select_8py_source.html#l00008">gui.html.select.SingleSelectControl.__init__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl_a6b844e7526782885def9b8d5451d9561_cgraph.png" border="0" usemap="#d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl_a6b844e7526782885def9b8d5451d9561_cgraph" alt=""/></div>
+<map name="d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl_a6b844e7526782885def9b8d5451d9561_cgraph" id="d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl_a6b844e7526782885def9b8d5451d9561_cgraph">
+<area shape="rect" id="node2" href="../../de/d77/namespacegui_1_1html.html#ad2a57a006615e76d51d1334fd477fd59" title="gui.html.GetParam" alt="" coords="237,36,368,63"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl_a6b844e7526782885def9b8d5451d9561_icgraph.png" border="0" usemap="#d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl_a6b844e7526782885def9b8d5451d9561_icgraph" alt=""/></div>
+<map name="d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl_a6b844e7526782885def9b8d5451d9561_icgraph" id="d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl_a6b844e7526782885def9b8d5451d9561_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6b844e7526782885def9b8d5451d9561"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.select.SingleSelectControl.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>form</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>tag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parser</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>option_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dc/db6/gui_2html_2select_8py_source.html#l00008">8</a> del archivo <a class="el" href="../../dc/db6/gui_2html_2select_8py_source.html">select.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00008">gui.html.select.SingleSelectControl.__init__()</a>, <a class="el" href="../../d6/da9/build_2lib_8linux-x86__64-2_87_2gui_2html_2____init_____8py_source.html#l00016">gui.html.GetParam()</a>, <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00020">gui.html.select.SingleSelectControl.items</a>, <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00069">gui.controls.treeview.TreeView.items</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00087">gui.controls.gridview.GridView.items</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00184">gui.controls.listbox.ItemContainerControl.items</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00207">gui.controls.listview.ListView.items</a>, <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00021">gui.html.select.SingleSelectControl.selection</a>, <a class="el" href="../../d4/ddc/build_2lib_8linux-x86__64-2_87_2gui_2controls_2notebook_8py_source.html#l00038">gui.controls.notebook.Notebook.selection</a>, <a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00185">gui.controls.listbox.ItemContainerControl.selection</a>, <a class="el" href="../../d4/d29/build_2lib_8linux-x86__64-2_87_2gui_2html_2label_8py_source.html#l00019">gui.html.label.FormLabel.size</a>, <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00022">gui.html.select.SingleSelectControl.size</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00054">gui.html.input.SubmitButton.size</a>, <a class="el" href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00076">gui.html.input.FormTextInput.size</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00130">gui.font.Font.size</a>, <a class="el" href="../../d6/df6/build_2lib_8linux-x86__64-2_87_2gui_2controls_2image_8py_source.html#l00177">gui.controls.image.Image.size</a>, <a class="el" href="../../df/ddf/build_2lib_8linux-x86__64-2_87_2gui_2graphic_8py_source.html#l00233">gui.graphic.Bitmap.size</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00876">gui.component.ControlSuper.size</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl_a6b844e7526782885def9b8d5451d9561_cgraph.png" border="0" usemap="#d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl_a6b844e7526782885def9b8d5451d9561_cgraph" alt=""/></div>
+<map name="d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl_a6b844e7526782885def9b8d5451d9561_cgraph" id="d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl_a6b844e7526782885def9b8d5451d9561_cgraph">
+<area shape="rect" id="node2" href="../../de/d77/namespacegui_1_1html.html#ad2a57a006615e76d51d1334fd477fd59" title="gui.html.GetParam" alt="" coords="237,36,368,63"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="abf7853e50d9eb1cd8be0e64e710ccde5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.select.SingleSelectControl.get_value </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00024">24</a> del archivo <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html">select.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dc/db6/gui_2html_2select_8py_source.html#l00024">gui.html.select.SingleSelectControl.get_value()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl_abf7853e50d9eb1cd8be0e64e710ccde5_icgraph.png" border="0" usemap="#d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl_abf7853e50d9eb1cd8be0e64e710ccde5_icgraph" alt=""/></div>
+<map name="d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl_abf7853e50d9eb1cd8be0e64e710ccde5_icgraph" id="d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl_abf7853e50d9eb1cd8be0e64e710ccde5_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abf7853e50d9eb1cd8be0e64e710ccde5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.html.select.SingleSelectControl.get_value </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../dc/db6/gui_2html_2select_8py_source.html#l00024">24</a> del archivo <a class="el" href="../../dc/db6/gui_2html_2select_8py_source.html">select.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00024">gui.html.select.SingleSelectControl.get_value()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl_abf7853e50d9eb1cd8be0e64e710ccde5_cgraph.png" border="0" usemap="#d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl_abf7853e50d9eb1cd8be0e64e710ccde5_cgraph" alt=""/></div>
+<map name="d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl_abf7853e50d9eb1cd8be0e64e710ccde5_cgraph" id="d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl_abf7853e50d9eb1cd8be0e64e710ccde5_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="ad568756df500f558339f48400e9ba5e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.html.select.SingleSelectControl.items</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00020">20</a> del archivo <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html">select.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00122">gui.controls.treeview.TreeModel.__call__()</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00331">gui.controls.listview.ListModel.__call__()</a> y <a class="el" href="../../dc/db6/gui_2html_2select_8py_source.html#l00008">gui.html.select.SingleSelectControl.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a33edbd8890a2b791daf546507cc9db32"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.html.select.SingleSelectControl.selection</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00021">21</a> del archivo <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html">select.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00043">gui.tools.designer.BasicDesigner.__call__()</a>, <a class="el" href="../../dc/db6/gui_2html_2select_8py_source.html#l00008">gui.html.select.SingleSelectControl.__init__()</a>, <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00029">gui.tools.designer.BasicDesigner.__init__()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00337">gui.tools.designer.BasicDesigner.delete()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00347">gui.tools.designer.BasicDesigner.duplicate()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00303">gui.tools.designer.BasicDesigner.key_press()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00123">gui.tools.designer.BasicDesigner.mouse_down()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00165">gui.tools.designer.BasicDesigner.mouse_move()</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00267">gui.tools.designer.BasicDesigner.mouse_up()</a> y <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00363">gui.tools.designer.BasicDesigner.select()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb7ce7ee03b0d95338c1d83cdf341af4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.html.select.SingleSelectControl.size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html#l00022">22</a> del archivo <a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html">select.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../dc/db6/gui_2html_2select_8py_source.html#l00008">gui.html.select.SingleSelectControl.__init__()</a> y <a class="el" href="../../d5/d23/build_2lib_8linux-x86__64-2_87_2gui_2controls_2label_8py_source.html#l00032">gui.controls.label.Label._set_text()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>build/lib.linux-x86_64-2.7/gui/html/<a class="el" href="../../d1/d94/build_2lib_8linux-x86__64-2_87_2gui_2html_2select_8py_source.html">select.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/dc4/namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="../../de/d77/namespacegui_1_1html.html">html</a></li><li class="navelem"><a class="el" href="../../dc/d04/namespacegui_1_1html_1_1select.html">select</a></li><li class="navelem"><a class="el" href="../../d6/de0/classgui_1_1html_1_1select_1_1SingleSelectControl.html">SingleSelectControl</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:48 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Fichero Fuente build/lib.linux-x86_64-2.7/gui/controls/listbox.py</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">listbox.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="../../db/d1b/namespacegui_1_1controls_1_1listbox.html">    1</a></span>&#160;<span class="comment">#!/usr/bin/python</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">&quot;gui2py&#39;s basic ListBox control (uses wx.ListBox), defines ItemContainerControl&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="../../db/d1b/namespacegui_1_1controls_1_1listbox.html#adddab19c6093f765d9bdf499fe916b7f">    6</a></span>&#160;__author__ = <span class="stringliteral">&quot;Mariano Reingart (reingart@gmail.com)&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../db/d1b/namespacegui_1_1controls_1_1listbox.html#ab51c464e46151c593732302ab86933a2">    7</a></span>&#160;__copyright__ = <span class="stringliteral">&quot;Copyright (C) 2013- Mariano Reingart&quot;</span>  <span class="comment"># where applicable</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"># Initial implementation was based on PythonCard&#39;s List component, </span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"># but redesigned and overhauled a lot (specs renamed, events refactorized, etc.)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> wx</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">from</span> ..event <span class="keyword">import</span> FormEvent</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">from</span> ..component <span class="keyword">import</span> Control, Spec, EventSpec, StyleSpec</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">from</span> .. <span class="keyword">import</span> images </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html">ItemContainerControl</a>(Control):</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="stringliteral">&quot;Interface for all controls that have string subitems wich may be selected&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment"># internally, uses _items_dict to map strings to client data</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#af9db3118be0429d792fc31db70953760">   23</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#af9db3118be0429d792fc31db70953760">_get_selection</a>(self):</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="stringliteral">&quot;Returns the index of the selected item (list for multiselect) or None&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">if</span> self.multiselect:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">return</span> self.wx_obj.GetSelections()</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            sel = self.wx_obj.GetSelection()</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">if</span> sel == wx.NOT_FOUND:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <span class="keywordflow">return</span> <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">return</span> sel</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a5aee8c135654698918e4f50743e07674">   34</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a5aee8c135654698918e4f50743e07674">_set_selection</a>(self, index, dummy=False):</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="stringliteral">&quot;Sets the item at index &#39;n&#39; to be the selected item.&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment"># only change selection if index is None and not dummy:</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">if</span> index <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            self.wx_obj.SetSelection(-1)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            self.wx_obj.SetValue(<span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            self.wx_obj.SetSelection(index)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment"># send a programmatically event (not issued by wx)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        wx_event = <a class="code" href="../../df/dd6/classgui_1_1controls_1_1listbox_1_1ItemContainerControlSelectEvent.html">ItemContainerControlSelectEvent</a>(self._commandtype,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                                   index, self.wx_obj)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">if</span> hasattr(self, <span class="stringliteral">&quot;onchange&quot;</span>) <span class="keywordflow">and</span> self.onchange:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="comment"># TODO: fix (should work but it doesn&#39;t):</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="comment">## wx.PostEvent(self.wx_obj, wx_evt)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="comment"># WORKAROUND:</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            event = FormEvent(name=<span class="stringliteral">&quot;change&quot;</span>, wx_event=wx_event)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            self.onchange(event)    <span class="comment"># this will fail if the action is a simple string</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#aef5f99c6a490b753765c603b30ba3a21">   52</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#aef5f99c6a490b753765c603b30ba3a21">_get_string_selection</a>(self):</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="stringliteral">&quot;Returns the label of the selected item or an empty string if none&quot;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">if</span> self.multiselect:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">return</span> [self.wx_obj.GetString(i) <span class="keywordflow">for</span> i <span class="keywordflow">in</span> </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    self.wx_obj.GetSelections()]</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">return</span> self.wx_obj.GetStringSelection()</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a17ceb87197a716503d087ce1332e3ce4">   60</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a17ceb87197a716503d087ce1332e3ce4">_set_string_selection</a>(self, s):</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment"># an arg of None or empty string will remove the selection</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> s <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> s == <span class="stringliteral">&#39;&#39;</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            self.<a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a5aee8c135654698918e4f50743e07674">_set_selection</a>(-1)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            ok = self.wx_obj.SetStringSelection(s)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">if</span> ok:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                index = self.wx_obj.GetStringSelection()</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                self.<a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a5aee8c135654698918e4f50743e07674">_set_selection</a>(index, dummy=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ab4bba146d6a67a7744b4bccd58b8f99e">   70</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ab4bba146d6a67a7744b4bccd58b8f99e">_get_data_selection</a>(self):</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span> self.multiselect:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">return</span> [self.wx_obj.GetClientData(i) <span class="keywordflow">for</span> i <span class="keywordflow">in</span> </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    self.wx_obj.GetSelections() <span class="keywordflow">if</span> i&gt;=0]</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            i = self.wx_obj.GetSelection()</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">if</span> i &gt;= 0:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordflow">return</span> self.wx_obj.GetClientData(i)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a9c878879493f6073920bd9abb6f5d261">   79</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a9c878879493f6073920bd9abb6f5d261">_set_data_selection</a>(self, data):</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="comment"># an arg of None or empty string will remove the selection</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">if</span> data <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            self.<a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a5aee8c135654698918e4f50743e07674">_set_selection</a>(-1)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> self.multiselect:</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                data = [data]</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">elif</span> <span class="keywordflow">not</span> isinstance(data, (tuple, list)):</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&quot;data must be a list of values!&quot;</span>)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">for</span> datum <span class="keywordflow">in</span> data:</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                s = self.<a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a63f05853ae6521b79f3cb6e7e74ab964">_items_dict</a>[datum]</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                i = self.wx_obj.FindString(s)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                self.<a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a5aee8c135654698918e4f50743e07674">_set_selection</a>(i)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a0ea66103916c438708a36228c1125484">   93</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a0ea66103916c438708a36228c1125484">_get_items</a>(self):</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        items = []</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(self.wx_obj.GetCount()):</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            items.append(self.wx_obj.GetString(i))</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">return</span> items</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a299a50f37b7338f43900602089f7aacd">   99</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a299a50f37b7338f43900602089f7aacd">_set_items</a>(self, a_iter):</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="stringliteral">&quot;Clear and set the strings (and data if any) in the control from a list&quot;</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a63f05853ae6521b79f3cb6e7e74ab964">  102</a></span>&#160;        self.<a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a63f05853ae6521b79f3cb6e7e74ab964">_items_dict</a> = {}</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> a_iter:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            string_list = []</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            data_list = []</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">elif</span> <span class="keywordflow">not</span> isinstance(a_iter, (tuple, list, dict)):</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&quot;items must be an iterable&quot;</span>)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">elif</span> isinstance(a_iter, dict):</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="comment"># use keys as data, values as label strings</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            self.<a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a63f05853ae6521b79f3cb6e7e74ab964">_items_dict</a> = a_iter</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            string_list = a_iter.values()</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            data_list = a_iter.keys()</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">elif</span> isinstance(a_iter[0], (tuple, list)) <span class="keywordflow">and</span> len(a_iter[0]) == 2:</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="comment"># like the dict, but ordered</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            self.<a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a63f05853ae6521b79f3cb6e7e74ab964">_items_dict</a> = dict(a_iter)</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            data_list, string_list = zip(*a_iter)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="comment"># use the same strings as data</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            string_list = a_iter</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            data_list = a_iter</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="comment"># set the strings</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        self.wx_obj.SetItems(string_list)</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="comment"># set the associated data</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">for</span> i, data <span class="keywordflow">in</span> enumerate(data_list):</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            self.<a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ac09915963fa529543df1bee65f80f039">set_data</a>(i, data)</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ac09915963fa529543df1bee65f80f039">  128</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ac09915963fa529543df1bee65f80f039">set_data</a>(self, n, data):</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="stringliteral">&quot;Associate the given client data with the item at position n.&quot;</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        self.wx_obj.SetClientData(n, data)</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="comment"># reverse association:</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        self.<a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a63f05853ae6521b79f3cb6e7e74ab964">_items_dict</a>[data] = self.<a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a2118c2e24f32f9e28f4525f809cbea44">get_string</a>(n)</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a427f981a0aea5188e0d3e857257c602b">  134</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a427f981a0aea5188e0d3e857257c602b">get_data</a>(self, n):</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="stringliteral">&quot;Returns the client data associated with the given item, (if any.)&quot;</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">return</span> self.wx_obj.GetClientData(n)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a9feabda46de5ea49e998427253791751">  138</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a9feabda46de5ea49e998427253791751">append</a>(self, a_string, data=None):</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="stringliteral">&quot;Adds the item to the control, associating the given data if not None.&quot;</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        self.wx_obj.Append(a_string, data)</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="comment"># reverse association:</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        self.<a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a63f05853ae6521b79f3cb6e7e74ab964">_items_dict</a>[data] = a_string        </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a8cd3010ec50b3e7c91db2e0f57fef34c">  144</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a8cd3010ec50b3e7c91db2e0f57fef34c">append_items</a>(self, a_list):</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="stringliteral">&quot;Apend several items at once to the control.&quot;</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        self.wx_obj.AppendItems(a_list)</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#af60a13fdd6777f47b2fa5b11a9c653bf">  148</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#af60a13fdd6777f47b2fa5b11a9c653bf">clear</a>(self):</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="stringliteral">&quot;Removes all items from the control.&quot;</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        self.wx_obj.Clear()</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        self.<a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a63f05853ae6521b79f3cb6e7e74ab964">_items_dict</a> = {}</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ab57819669de9197abc515734d64e6d73">  153</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ab57819669de9197abc515734d64e6d73">delete</a>(self, a_position):</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="stringliteral">&quot;Deletes the item at the zero-based index &#39;n&#39; from the control.&quot;</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        self.wx_obj.Delete(a_position)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        data = self.<a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a427f981a0aea5188e0d3e857257c602b">get_data</a>()</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">if</span> data <span class="keywordflow">in</span> self.<a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a63f05853ae6521b79f3cb6e7e74ab964">_items_dict</a>:</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            del self.<a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a63f05853ae6521b79f3cb6e7e74ab964">_items_dict</a>[data]</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ac99ccbe5d08fd0763677b653ce1e7a1d">  160</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ac99ccbe5d08fd0763677b653ce1e7a1d">find_string</a>(self, a_string):</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="stringliteral">&quot;Finds an item whose label matches the given string&quot;</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">return</span> self.wx_obj.FindString(a_string)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a2118c2e24f32f9e28f4525f809cbea44">  164</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a2118c2e24f32f9e28f4525f809cbea44">get_string</a>(self, a_position):</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="stringliteral">&quot;Returns the label of the item with the given index.&quot;</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">return</span> self.wx_obj.GetString(a_position)</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a1fe74c538432a4c34e4ae93d82f16d05">  168</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a1fe74c538432a4c34e4ae93d82f16d05">set_string</a>(self, n, a_string):</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="stringliteral">&quot;Sets the label for the given item.&quot;</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        self.wx_obj.SetString( n, a_string )</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a4357802120a84ec4a88ae429e6bead7a">  172</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a4357802120a84ec4a88ae429e6bead7a">get_count</a>(self):</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="stringliteral">&quot;Returns the number of items in the control.&quot;</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">return</span> self.wx_obj.GetCount()</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment"># KEA was getSelected</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a0271d3303b4e3937b4a7173de87704fb">  177</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a0271d3303b4e3937b4a7173de87704fb">is_selected</a>(self, a_position):</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Determines whether an item is selected.</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="stringliteral">        a_position is the zero-based item index</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="stringliteral">        Returns True if the given item is selected, False otherwise.</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="stringliteral">        &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keywordflow">return</span> self.wx_obj.IsSelected(a_position)        </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        </div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#aef43e3b88061626b1f5b628c462ff9c2">  184</a></span>&#160;    items = Spec(_get_items, _set_items, type=<span class="stringliteral">&quot;array&quot;</span>)</div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a509844046739692415f5a208bf553deb">  185</a></span>&#160;    selection = Spec(_get_selection, _set_selection, type=<span class="stringliteral">&quot;integer&quot;</span>,</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                     doc=<span class="stringliteral">&quot;Index of the selected item&quot;</span>)</div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a32cd77648015aeef0dc56b54b7f15ee2">  187</a></span>&#160;    text = Spec(_get_string_selection, _set_string_selection,</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                type=<span class="stringliteral">&quot;string&quot;</span>, doc=<span class="stringliteral">&quot;Selected text string&quot;</span>)</div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a1dc477ee3b97232b6f8ba5abb32d4616">  189</a></span>&#160;    value = Spec(_get_data_selection, _set_data_selection, </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                 doc=<span class="stringliteral">&quot;Selected data (actual python object)&quot;</span>)</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html">  193</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html">ListBox</a>(<a class="code" href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html">ItemContainerControl</a>):</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="stringliteral">&quot;A list that only allows a single item (or multiple items) to be selected.&quot;</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    </div>
+<div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html#ad474aa0e18d31519db4913645d12b860">  196</a></span>&#160;    _wx_class = wx.ListBox</div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html#aee2e4c1edc308ee6bf998db99a8d28fe">  197</a></span>&#160;    _style = wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS</div>
+<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html#a57b798d7c01b5528cd8e7106cff1628b">  198</a></span>&#160;    _image = images.listbox</div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html#af2ec8847f4d54d62eb29c7e647fc099d">  199</a></span>&#160;    _commandtype = wx.wxEVT_COMMAND_LISTBOX_SELECTED</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html#a9688f9caf1109157669eb90166982cc6">  201</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html#a9688f9caf1109157669eb90166982cc6">insert_items</a>(self, aList, aPosition):</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        self.wx_obj.InsertItems(a_list, a_position)</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
+<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html#ac27ad4e487a71604d984cda4c0c12a87">  204</a></span>&#160;    multiselect = StyleSpec({<span class="keyword">True</span>: wx.LB_EXTENDED, <span class="keyword">False</span>: wx.LB_SINGLE}, </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                            default=<span class="keyword">False</span>)</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;</div>
+<div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html#a990a7a698a0cfb20e1b0f933eb9d391e">  207</a></span>&#160;    onclick = onselect = EventSpec(<span class="stringliteral">&#39;click&#39;</span>, </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                                   binding=wx.EVT_LISTBOX, kind=FormEvent)</div>
+<div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html#a3af9fc81a1b25df33be6c3de28a357eb">  209</a></span>&#160;    ondblclick = EventSpec(<span class="stringliteral">&#39;dblclick&#39;</span>, </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                                   binding=wx.EVT_LISTBOX_DCLICK, kind=FormEvent)</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
+<div class="line"><a name="l00213"></a><span class="lineno"><a class="line" href="../../df/dd6/classgui_1_1controls_1_1listbox_1_1ItemContainerControlSelectEvent.html">  213</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../df/dd6/classgui_1_1controls_1_1listbox_1_1ItemContainerControlSelectEvent.html">ItemContainerControlSelectEvent</a>(wx.PyCommandEvent):</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="stringliteral">    Because calling SetSelection programmatically does not fire EVT_COMBOBOX</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="stringliteral">    events, the derived control has to do it itself.</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno"><a class="line" href="../../df/dd6/classgui_1_1controls_1_1listbox_1_1ItemContainerControlSelectEvent.html#ae1b8c1bc551f503f407c2d3fd5274aa6">  218</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/dd6/classgui_1_1controls_1_1listbox_1_1ItemContainerControlSelectEvent.html#ae1b8c1bc551f503f407c2d3fd5274aa6">__init__</a>(self, command_type, selection=0, wx_obj=None):</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        wx.PyCommandEvent.__init__(self, command_type)<span class="comment">#, wx_obj.GetId())</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno"><a class="line" href="../../df/dd6/classgui_1_1controls_1_1listbox_1_1ItemContainerControlSelectEvent.html#a309fa7a99cad49dbd790af07947d9afc">  220</a></span>&#160;        self.<a class="code" href="../../df/dd6/classgui_1_1controls_1_1listbox_1_1ItemContainerControlSelectEvent.html#a309fa7a99cad49dbd790af07947d9afc">__selection</a> = selection</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        self.SetEventObject(wx_obj)</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;</div>
+<div class="line"><a name="l00223"></a><span class="lineno"><a class="line" href="../../df/dd6/classgui_1_1controls_1_1listbox_1_1ItemContainerControlSelectEvent.html#a276346aa70a6c156db89b6e410f2c9c6">  223</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/dd6/classgui_1_1controls_1_1listbox_1_1ItemContainerControlSelectEvent.html#a276346aa70a6c156db89b6e410f2c9c6">GetSelection</a>(self):</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="stringliteral">&quot;&quot;&quot;Retrieve the value of the control at the time</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="stringliteral">        this event was generated.&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="../../df/dd6/classgui_1_1controls_1_1listbox_1_1ItemContainerControlSelectEvent.html#a309fa7a99cad49dbd790af07947d9afc">__selection</a></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keyword">import</span> sys</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="comment"># basic test until unit_test</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno"><a class="line" href="../../db/d1b/namespacegui_1_1controls_1_1listbox.html#ae5ef9fa9ace65ef41c4dec0f09a61cc5">  232</a></span>&#160;    app = wx.App(redirect=<span class="keyword">False</span>)</div>
+<div class="line"><a name="l00233"></a><span class="lineno"><a class="line" href="../../db/d1b/namespacegui_1_1controls_1_1listbox.html#a28fce0df3711fb75ae7f8e19a254e596">  233</a></span>&#160;    frame = wx.Frame(<span class="keywordtype">None</span>)</div>
+<div class="line"><a name="l00234"></a><span class="lineno"><a class="line" href="../../db/d1b/namespacegui_1_1controls_1_1listbox.html#aa75fea1f01cc800e177999dc9b55046e">  234</a></span>&#160;    c = <a class="code" href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html">ListBox</a>(frame, name=<span class="stringliteral">&quot;lstTest&quot;</span>, border=<span class="stringliteral">&#39;none&#39;</span>, </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                items={<span class="stringliteral">&#39;datum1&#39;</span>: <span class="stringliteral">&#39;a&#39;</span>, <span class="stringliteral">&#39;datum2&#39;</span>:<span class="stringliteral">&#39;b&#39;</span>, <span class="stringliteral">&#39;datum3&#39;</span>:<span class="stringliteral">&#39;c&#39;</span>},</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                multiselect=<span class="stringliteral">&quot;--multiselect&quot;</span> <span class="keywordflow">in</span> sys.argv)</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    c.append(<span class="stringliteral">&quot;d&quot;</span>)</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    c.append(<span class="stringliteral">&quot;e&quot;</span>, <span class="stringliteral">&quot;datum1&quot;</span>)</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    c.data_selection = <span class="stringliteral">&quot;datum2&quot;</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="comment"># assign some event handlers:</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    c.onclick = <span class="keyword">lambda</span> event: pprint(<span class="stringliteral">&quot;selection: %s&quot;</span> % str(event.target.selection))</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    c.ondblclick = <span class="keyword">lambda</span> event: pprint(</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="stringliteral">&quot;text: %s value: %s&quot;</span> % </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        (str(event.target.text), str(event.target.value)))</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    frame.Show()</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    app.MainLoop()</div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html_af9db3118be0429d792fc31db70953760"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#af9db3118be0429d792fc31db70953760">gui.controls.listbox.ItemContainerControl._get_selection</a></div><div class="ttdeci">def _get_selection</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00023">listbox.py:23</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html_a4357802120a84ec4a88ae429e6bead7a"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a4357802120a84ec4a88ae429e6bead7a">gui.controls.listbox.ItemContainerControl.get_count</a></div><div class="ttdeci">def get_count</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00172">listbox.py:172</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html_a63f05853ae6521b79f3cb6e7e74ab964"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a63f05853ae6521b79f3cb6e7e74ab964">gui.controls.listbox.ItemContainerControl._items_dict</a></div><div class="ttdeci">_items_dict</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00102">listbox.py:102</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControlSelectEvent_html_ae1b8c1bc551f503f407c2d3fd5274aa6"><div class="ttname"><a href="../../df/dd6/classgui_1_1controls_1_1listbox_1_1ItemContainerControlSelectEvent.html#ae1b8c1bc551f503f407c2d3fd5274aa6">gui.controls.listbox.ItemContainerControlSelectEvent.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00218">listbox.py:218</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html_ab4bba146d6a67a7744b4bccd58b8f99e"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ab4bba146d6a67a7744b4bccd58b8f99e">gui.controls.listbox.ItemContainerControl._get_data_selection</a></div><div class="ttdeci">def _get_data_selection</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00070">listbox.py:70</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html_a427f981a0aea5188e0d3e857257c602b"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a427f981a0aea5188e0d3e857257c602b">gui.controls.listbox.ItemContainerControl.get_data</a></div><div class="ttdeci">def get_data</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00134">listbox.py:134</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html_a8cd3010ec50b3e7c91db2e0f57fef34c"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a8cd3010ec50b3e7c91db2e0f57fef34c">gui.controls.listbox.ItemContainerControl.append_items</a></div><div class="ttdeci">def append_items</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00144">listbox.py:144</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html_a1fe74c538432a4c34e4ae93d82f16d05"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a1fe74c538432a4c34e4ae93d82f16d05">gui.controls.listbox.ItemContainerControl.set_string</a></div><div class="ttdeci">def set_string</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00168">listbox.py:168</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html_a5aee8c135654698918e4f50743e07674"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a5aee8c135654698918e4f50743e07674">gui.controls.listbox.ItemContainerControl._set_selection</a></div><div class="ttdeci">def _set_selection</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00034">listbox.py:34</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html_a2118c2e24f32f9e28f4525f809cbea44"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a2118c2e24f32f9e28f4525f809cbea44">gui.controls.listbox.ItemContainerControl.get_string</a></div><div class="ttdeci">def get_string</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00164">listbox.py:164</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html_ac09915963fa529543df1bee65f80f039"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ac09915963fa529543df1bee65f80f039">gui.controls.listbox.ItemContainerControl.set_data</a></div><div class="ttdeci">def set_data</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00128">listbox.py:128</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControlSelectEvent_html_a276346aa70a6c156db89b6e410f2c9c6"><div class="ttname"><a href="../../df/dd6/classgui_1_1controls_1_1listbox_1_1ItemContainerControlSelectEvent.html#a276346aa70a6c156db89b6e410f2c9c6">gui.controls.listbox.ItemContainerControlSelectEvent.GetSelection</a></div><div class="ttdeci">def GetSelection</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00223">listbox.py:223</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ListBox_html_a9688f9caf1109157669eb90166982cc6"><div class="ttname"><a href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html#a9688f9caf1109157669eb90166982cc6">gui.controls.listbox.ListBox.insert_items</a></div><div class="ttdeci">def insert_items</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00201">listbox.py:201</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html_a0ea66103916c438708a36228c1125484"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a0ea66103916c438708a36228c1125484">gui.controls.listbox.ItemContainerControl._get_items</a></div><div class="ttdeci">def _get_items</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00093">listbox.py:93</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html">gui.controls.listbox.ItemContainerControl</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00018">listbox.py:18</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ListBox_html"><div class="ttname"><a href="../../d3/d7a/classgui_1_1controls_1_1listbox_1_1ListBox.html">gui.controls.listbox.ListBox</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00193">listbox.py:193</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html_a0271d3303b4e3937b4a7173de87704fb"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a0271d3303b4e3937b4a7173de87704fb">gui.controls.listbox.ItemContainerControl.is_selected</a></div><div class="ttdeci">def is_selected</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00177">listbox.py:177</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html_af60a13fdd6777f47b2fa5b11a9c653bf"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#af60a13fdd6777f47b2fa5b11a9c653bf">gui.controls.listbox.ItemContainerControl.clear</a></div><div class="ttdeci">def clear</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00148">listbox.py:148</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html_a9feabda46de5ea49e998427253791751"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a9feabda46de5ea49e998427253791751">gui.controls.listbox.ItemContainerControl.append</a></div><div class="ttdeci">def append</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00138">listbox.py:138</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html_ab57819669de9197abc515734d64e6d73"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ab57819669de9197abc515734d64e6d73">gui.controls.listbox.ItemContainerControl.delete</a></div><div class="ttdeci">def delete</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00153">listbox.py:153</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControlSelectEvent_html"><div class="ttname"><a href="../../df/dd6/classgui_1_1controls_1_1listbox_1_1ItemContainerControlSelectEvent.html">gui.controls.listbox.ItemContainerControlSelectEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00213">listbox.py:213</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html_aef5f99c6a490b753765c603b30ba3a21"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#aef5f99c6a490b753765c603b30ba3a21">gui.controls.listbox.ItemContainerControl._get_string_selection</a></div><div class="ttdeci">def _get_string_selection</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00052">listbox.py:52</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControlSelectEvent_html_a309fa7a99cad49dbd790af07947d9afc"><div class="ttname"><a href="../../df/dd6/classgui_1_1controls_1_1listbox_1_1ItemContainerControlSelectEvent.html#a309fa7a99cad49dbd790af07947d9afc">gui.controls.listbox.ItemContainerControlSelectEvent.__selection</a></div><div class="ttdeci">__selection</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00220">listbox.py:220</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html_a299a50f37b7338f43900602089f7aacd"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a299a50f37b7338f43900602089f7aacd">gui.controls.listbox.ItemContainerControl._set_items</a></div><div class="ttdeci">def _set_items</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00099">listbox.py:99</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html_a17ceb87197a716503d087ce1332e3ce4"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a17ceb87197a716503d087ce1332e3ce4">gui.controls.listbox.ItemContainerControl._set_string_selection</a></div><div class="ttdeci">def _set_string_selection</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00060">listbox.py:60</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html_a9c878879493f6073920bd9abb6f5d261"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a9c878879493f6073920bd9abb6f5d261">gui.controls.listbox.ItemContainerControl._set_data_selection</a></div><div class="ttdeci">def _set_data_selection</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00079">listbox.py:79</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1listbox_1_1ItemContainerControl_html_ac99ccbe5d08fd0763677b653ce1e7a1d"><div class="ttname"><a href="../../dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ac99ccbe5d08fd0763677b653ce1e7a1d">gui.controls.listbox.ItemContainerControl.find_string</a></div><div class="ttdeci">def find_string</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py_source.html#l00160">listbox.py:160</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_96a7eeec1342994a7cb0d7fe7902ae74.html">build</a></li><li class="navelem"><a class="el" href="../../dir_3740601ea11ece1a00f9273977396bc4.html">lib.linux-x86_64-2.7</a></li><li class="navelem"><a class="el" href="../../dir_5bcb0661a26d4ce62009196be9ab2e39.html">gui</a></li><li class="navelem"><a class="el" href="../../dir_4c91e8b673aaef7bf66ef8a4b005b30e.html">controls</a></li><li class="navelem"><a class="el" href="../../d9/daa/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listbox_8py.html">listbox.py</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:47 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Fichero Fuente build/lib.linux-x86_64-2.7/gui/spec.py</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">spec.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="../../d6/d14/namespacegui_1_1spec.html">    1</a></span>&#160;<span class="comment">#!/usr/bin/python</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">&quot;gui2py&#39;s Specifications (properties) model to encapsulate wx object attributes&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="../../d6/d14/namespacegui_1_1spec.html#a3e9385be7726e2223994e39e393c3019">    6</a></span>&#160;__author__ = <span class="stringliteral">&quot;Mariano Reingart (reingart@gmail.com)&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../d6/d14/namespacegui_1_1spec.html#a0c255e9a69336559566fa167d8b28bf1">    7</a></span>&#160;__copyright__ = <span class="stringliteral">&quot;Copyright (C) 2013- Mariano Reingart&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../d6/d14/namespacegui_1_1spec.html#a318cf54ea6b08191c51f2af262470e48">    8</a></span>&#160;__license__ = <span class="stringliteral">&quot;LGPL 3.0&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"># Initial implementation was inspired on PythonCard&#39;s spec module, altought</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"># it was almost completely discarded and re-written from scratch to make it</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"># simpler and more pythonic (similar to Django&#39;s models)</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> wx</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">from</span> .event <span class="keyword">import</span> FocusEvent, MouseEvent, KeyEvent</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">from</span> .font <span class="keyword">import</span> Font</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">from</span> . <span class="keyword">import</span> registry</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d6/d14/namespacegui_1_1spec.html#a5cd770e510fca07bf06aaaae21487a7b">   20</a></span>&#160;DEBUG = <span class="keyword">False</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d6/d14/namespacegui_1_1spec.html#a4d2c947ead89c209dba4b925e95f5074">   21</a></span>&#160;DEF_ORDER_COUNTER = 0       <span class="comment"># used to init spec in definition order</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d6/d14/namespacegui_1_1spec.html#ad1f3ef0ef656a8378773dccd5e79ceff">   23</a></span>&#160;<span class="keyword">def </span><a class="code" href="../../d6/d14/namespacegui_1_1spec.html#ad1f3ef0ef656a8378773dccd5e79ceff">new_id</a>(id=None):</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span> id <span class="keywordflow">is</span> <span class="keywordtype">None</span> <span class="keywordflow">or</span> id == -1:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">return</span> wx.NewId()</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> id</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../db/de6/classgui_1_1spec_1_1Spec.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/de6/classgui_1_1spec_1_1Spec.html">Spec</a>(property):</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="stringliteral">&quot;Spec contains meta type information about components&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">def </span><a class="code" href="../../db/de6/classgui_1_1spec_1_1Spec.html#aee497c0c6b8f42b2ffcd02c23494e7a5">__init__</a>(self, fget=None, fset=None, fdel=None, doc=None, group=None,</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../db/de6/classgui_1_1spec_1_1Spec.html#aee497c0c6b8f42b2ffcd02c23494e7a5">   34</a></span>&#160;                 optional=<span class="keyword">True</span>, default=<span class="keywordtype">None</span>, mapping=<span class="keywordtype">None</span>, type=<span class="stringliteral">&quot;&quot;</span>, _name=<span class="stringliteral">&quot;&quot;</span>):</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">if</span> fget <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordflow">if</span> <span class="keywordflow">not</span> mapping:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                fget = <span class="keyword">lambda</span> obj: getattr(obj, _name)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                fset = <span class="keyword">lambda</span> obj, value: setattr(obj, _name, value)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="comment"># enums (mapping) stores value internally and returns its key</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                rev_mapping = dict([(v, k) <span class="keywordflow">for</span> k, v <span class="keywordflow">in</span> mapping.items()])</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                fget = <span class="keyword">lambda</span> obj: rev_mapping[getattr(obj, _name)]</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                fset = <span class="keyword">lambda</span> obj, value: setattr(obj, _name, mapping[value] </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                                <span class="keywordflow">if</span> value <span class="keywordflow">in</span> mapping <span class="keywordflow">else</span> value)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        property.__init__(self, fget, fset, fdel, doc)</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../db/de6/classgui_1_1spec_1_1Spec.html#a1f8313180640bf3ea0a80c3969991900">   46</a></span>&#160;        self.<a class="code" href="../../db/de6/classgui_1_1spec_1_1Spec.html#a1f8313180640bf3ea0a80c3969991900">optional</a> = optional</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../db/de6/classgui_1_1spec_1_1Spec.html#a93e0538e3d8312ce66046f43865b9f10">   47</a></span>&#160;        self.<a class="code" href="../../db/de6/classgui_1_1spec_1_1Spec.html#a93e0538e3d8312ce66046f43865b9f10">default</a> = default</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../db/de6/classgui_1_1spec_1_1Spec.html#a3249021defa77fef1778d7657703fbbe">   48</a></span>&#160;        self.<a class="code" href="../../db/de6/classgui_1_1spec_1_1Spec.html#a3249021defa77fef1778d7657703fbbe">mapping</a> = mapping</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="../../db/de6/classgui_1_1spec_1_1Spec.html#a041a2635c1d98aea0db795875534d7c1">   49</a></span>&#160;        self.<a class="code" href="../../db/de6/classgui_1_1spec_1_1Spec.html#a041a2635c1d98aea0db795875534d7c1">read_only</a> = fset <span class="keywordflow">is</span> <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="../../db/de6/classgui_1_1spec_1_1Spec.html#a2731feef6dd4298ad6c94fab6de24d13">   50</a></span>&#160;        self.<a class="code" href="../../db/de6/classgui_1_1spec_1_1Spec.html#a2731feef6dd4298ad6c94fab6de24d13">type</a> = type</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../db/de6/classgui_1_1spec_1_1Spec.html#a88fef7abdb4d84f19babb40c5039e886">   51</a></span>&#160;        self.<a class="code" href="../../db/de6/classgui_1_1spec_1_1Spec.html#a88fef7abdb4d84f19babb40c5039e886">_name</a> = _name              <span class="comment"># internal name (usually, wx kwargs one)</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../db/de6/classgui_1_1spec_1_1Spec.html#a60541a67c24531a399d9e1628af8c1d4">   52</a></span>&#160;        self.<a class="code" href="../../db/de6/classgui_1_1spec_1_1Spec.html#a60541a67c24531a399d9e1628af8c1d4">__doc__</a> = doc</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../db/de6/classgui_1_1spec_1_1Spec.html#aa2aea77eef499026308475078d78c0c2">   53</a></span>&#160;        self.<a class="code" href="../../db/de6/classgui_1_1spec_1_1Spec.html#aa2aea77eef499026308475078d78c0c2">group</a> = group              <span class="comment"># parent for tree-like struc (propedit)</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">global</span> DEF_ORDER_COUNTER</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        DEF_ORDER_COUNTER += 1</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="../../db/de6/classgui_1_1spec_1_1Spec.html#a85aa14f1355e3b8cacb5fba8aae635b4">   56</a></span>&#160;        self.<a class="code" href="../../db/de6/classgui_1_1spec_1_1Spec.html#a85aa14f1355e3b8cacb5fba8aae635b4">order</a> = DEF_ORDER_COUNTER</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../d0/d75/classgui_1_1spec_1_1EventSpec.html">   59</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/d75/classgui_1_1spec_1_1EventSpec.html">EventSpec</a>(<a class="code" href="../../db/de6/classgui_1_1spec_1_1Spec.html">Spec</a>):</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="stringliteral">&quot;Generic Event Handler: maps a wx.Event to a gui.Event&quot;</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../d0/d75/classgui_1_1spec_1_1EventSpec.html#ae7bb69dd0f71157f3d2fb7775a5c3db5">   62</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d0/d75/classgui_1_1spec_1_1EventSpec.html#ae7bb69dd0f71157f3d2fb7775a5c3db5">__init__</a>(self, event_name, binding, kind, doc=None):</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        getter = <span class="keyword">lambda</span> obj: getattr(obj, <span class="stringliteral">&quot;_&quot;</span> + event_name)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">def </span>setter(obj, action):</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="comment"># check if there is an event binded previously:</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">if</span> hasattr(obj, <span class="stringliteral">&quot;_&quot;</span> + event_name):</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="comment"># disconnect the previous binded events</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">for</span> binding <span class="keywordflow">in</span> self.<a class="code" href="../../d0/d75/classgui_1_1spec_1_1EventSpec.html#a753cfcc96344b20aa69469e655de3a60">bindings</a>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    obj.wx_obj.Unbind(binding)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">if</span> action:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="comment"># create the event_handler for this action</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keyword">def </span>handler(wx_event):</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    event = self.<a class="code" href="../../d0/d75/classgui_1_1spec_1_1EventSpec.html#a2a44734f8a6e035d46001d4ac53190b8">kind</a>(name=self.<a class="code" href="../../d0/d75/classgui_1_1spec_1_1EventSpec.html#a0c54ad073906fc378ce8bb27f6bbeb0c">name</a>, wx_event=wx_event)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    <span class="keywordflow">if</span> isinstance(action, basestring):</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        <span class="comment"># execute the user function with the event as context:</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        exec action <span class="keywordflow">in</span> {<span class="stringliteral">&#39;event&#39;</span>: event, </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                        <span class="stringliteral">&#39;window&#39;</span>: event.target.get_parent()}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    <span class="keywordflow">else</span>: </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                        action(event)   <span class="comment"># just call the user function</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    <span class="comment"># check if default (generic) event handlers are allowed:</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    <span class="keywordflow">if</span> <span class="keywordflow">not</span> event.cancel_default:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                        wx_event.Skip()</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="comment"># connect the new action to the event:</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordflow">for</span> binding <span class="keywordflow">in</span> self.<a class="code" href="../../d0/d75/classgui_1_1spec_1_1EventSpec.html#a753cfcc96344b20aa69469e655de3a60">bindings</a>:</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    obj.wx_obj.Bind(binding, handler)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="comment"># store the event handler</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            setattr(obj, <span class="stringliteral">&quot;_&quot;</span> + event_name, action)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        Spec.__init__(self, getter, setter, doc=doc, type=<span class="stringliteral">&quot;code&quot;</span>)</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="../../d0/d75/classgui_1_1spec_1_1EventSpec.html#a0c54ad073906fc378ce8bb27f6bbeb0c">   90</a></span>&#160;        self.<a class="code" href="../../d0/d75/classgui_1_1spec_1_1EventSpec.html#a0c54ad073906fc378ce8bb27f6bbeb0c">name</a> = event_name</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> isinstance(binding, (list, tuple)):</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            binding = (binding, )   <span class="comment"># make it an iterable</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="../../d0/d75/classgui_1_1spec_1_1EventSpec.html#a753cfcc96344b20aa69469e655de3a60">   93</a></span>&#160;        self.<a class="code" href="../../d0/d75/classgui_1_1spec_1_1EventSpec.html#a753cfcc96344b20aa69469e655de3a60">bindings</a> = binding  <span class="comment"># wx.Event object</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="../../d0/d75/classgui_1_1spec_1_1EventSpec.html#a2a44734f8a6e035d46001d4ac53190b8">   94</a></span>&#160;        self.<a class="code" href="../../d0/d75/classgui_1_1spec_1_1EventSpec.html#a2a44734f8a6e035d46001d4ac53190b8">kind</a> = kind                <span class="comment"># Event class</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="../../d1/d52/classgui_1_1spec_1_1InitSpec.html">   97</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/d52/classgui_1_1spec_1_1InitSpec.html">InitSpec</a>(<a class="code" href="../../db/de6/classgui_1_1spec_1_1Spec.html">Spec</a>):</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="stringliteral">&quot;Spec that is used in wx object instantiation (__init__)&quot;</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="../../d9/dc8/classgui_1_1spec_1_1DimensionSpec.html">  101</a></span>&#160;<span class="keyword">class </span>DimensionSpec(Spec):</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="stringliteral">&quot;Special Spec to manage position and size&quot;</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="../../d0/dd2/classgui_1_1spec_1_1InternalSpec.html">  105</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/dd2/classgui_1_1spec_1_1InternalSpec.html">InternalSpec</a>(<a class="code" href="../../db/de6/classgui_1_1spec_1_1Spec.html">Spec</a>):</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="stringliteral">&quot;Special Spec to manage designer and other internal handlers&quot;</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment"># use only for handlers that must automatically rebound on rebuild</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="../../d1/dec/classgui_1_1spec_1_1StyleSpec.html">  110</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/dec/classgui_1_1spec_1_1StyleSpec.html">StyleSpec</a>(<a class="code" href="../../db/de6/classgui_1_1spec_1_1Spec.html">Spec</a>):</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="stringliteral">&quot;Generic style specification to map wx windows styles to properties&quot;</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="../../d1/dec/classgui_1_1spec_1_1StyleSpec.html#ace9e80fc117b7baa6e1dcf2d34f3d5d1">  113</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/dec/classgui_1_1spec_1_1StyleSpec.html#ace9e80fc117b7baa6e1dcf2d34f3d5d1">__init__</a>(self, wx_style_map, doc=None, default=False):</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="comment"># wx_style_map should be a dict ({&#39;left&#39;:wx.ALIGN_CENTER})</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> isinstance(wx_style_map, dict):</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="comment"># for boolean styles, convert it to a dict:</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="../../d1/dec/classgui_1_1spec_1_1StyleSpec.html#a6c5653f8b835ad415c4499cf7a30e9ef">  117</a></span>&#160;            self.<a class="code" href="../../d1/dec/classgui_1_1spec_1_1StyleSpec.html#a6c5653f8b835ad415c4499cf7a30e9ef">wx_style_map</a> = {<span class="keyword">True</span>: wx_style_map, <span class="keyword">False</span>: 0}</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            self.<a class="code" href="../../d1/dec/classgui_1_1spec_1_1StyleSpec.html#a6c5653f8b835ad415c4499cf7a30e9ef">wx_style_map</a> = wx_style_map</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">if</span> <span class="stringliteral">&#39;True&#39;</span> <span class="keywordflow">in</span> self.<a class="code" href="../../d1/dec/classgui_1_1spec_1_1StyleSpec.html#a6c5653f8b835ad415c4499cf7a30e9ef">wx_style_map</a> <span class="keywordflow">and</span> <span class="keywordflow">not</span> <span class="stringliteral">&#39;False&#39;</span> <span class="keywordflow">in</span> self.<a class="code" href="../../d1/dec/classgui_1_1spec_1_1StyleSpec.html#a6c5653f8b835ad415c4499cf7a30e9ef">wx_style_map</a>:</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            self.<a class="code" href="../../d1/dec/classgui_1_1spec_1_1StyleSpec.html#a6c5653f8b835ad415c4499cf7a30e9ef">wx_style_map</a>[<span class="keyword">False</span>] = 0    <span class="comment"># sane default</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keyword">def </span>getter(obj): </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="comment"># reverse search the prop value for the wx_style:</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            wx_value = getattr(obj, <span class="stringliteral">&quot;_style&quot;</span>)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            zero = <span class="keywordtype">None</span>     <span class="comment"># key when not setted (zero value)</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keywordflow">for</span> key, value <span class="keywordflow">in</span> self.wx_style_map.items():</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                <span class="keywordflow">if</span> wx_value &amp; value:</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                    <span class="keywordflow">return</span> key</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                <span class="keywordflow">elif</span> <span class="keywordflow">not</span> value:</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                    zero = key</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keywordflow">return</span> zero</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keyword">def </span>setter(obj, value):</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="keywordflow">if</span> value <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&quot;this style spec is mandatory!&quot;</span>)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="keywordflow">if</span> value <span class="keywordflow">not</span> <span class="keywordflow">in</span> self.<a class="code" href="../../d1/dec/classgui_1_1spec_1_1StyleSpec.html#a6c5653f8b835ad415c4499cf7a30e9ef">wx_style_map</a> \</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                 <span class="keywordflow">and</span> <span class="keywordflow">not</span> value <span class="keywordflow">in</span> self.wx_style_map.values():</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                <span class="keywordflow">raise</span> ValueError(<span class="stringliteral">&quot;%s is not a valid value!&quot;</span> % value)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <span class="comment"># convert the value to the wx style (if not already converted)</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <span class="keywordflow">if</span> value <span class="keywordflow">in</span> self.<a class="code" href="../../d1/dec/classgui_1_1spec_1_1StyleSpec.html#a6c5653f8b835ad415c4499cf7a30e9ef">wx_style_map</a>:</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;new value&quot;</span>, value, self.<a class="code" href="../../d1/dec/classgui_1_1spec_1_1StyleSpec.html#a6c5653f8b835ad415c4499cf7a30e9ef">wx_style_map</a>[value]</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                value = self.<a class="code" href="../../d1/dec/classgui_1_1spec_1_1StyleSpec.html#a6c5653f8b835ad415c4499cf7a30e9ef">wx_style_map</a>[value]</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="comment"># clean posible styles</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;current style&quot;</span>, obj._style</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keywordflow">for</span> reset_value <span class="keywordflow">in</span> self.wx_style_map.values():</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                obj._style &amp;= ~ reset_value</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;cleaned style&quot;</span>, obj._style</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            obj._style |= value</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <span class="keywordflow">if</span> obj.wx_obj:</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                <span class="comment"># fset is ignored by now, if object was created throw and error:</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                obj.wx_obj.SetWindowStyle(obj._style)          </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                <span class="keywordflow">if</span> DEBUG: <span class="keywordflow">print</span> <span class="stringliteral">&quot;changed style!! to &quot;</span>, obj._style</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                <span class="comment">#raise AttributeError(&quot;style is read-only!&quot;)</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="comment"># select the property editor: </span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">if</span> <span class="keyword">True</span> <span class="keywordflow">in</span> self.<a class="code" href="../../d1/dec/classgui_1_1spec_1_1StyleSpec.html#a6c5653f8b835ad415c4499cf7a30e9ef">wx_style_map</a>:</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            type_ = <span class="stringliteral">&#39;boolean&#39;</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            type_ = <span class="stringliteral">&#39;enum&#39;</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        Spec.__init__(self, getter, setter, doc=doc, default=default, </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                      mapping=self.<a class="code" href="../../d1/dec/classgui_1_1spec_1_1StyleSpec.html#a6c5653f8b835ad415c4499cf7a30e9ef">wx_style_map</a>, type=type_)</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="ttc" id="classgui_1_1spec_1_1Spec_html_aa2aea77eef499026308475078d78c0c2"><div class="ttname"><a href="../../db/de6/classgui_1_1spec_1_1Spec.html#aa2aea77eef499026308475078d78c0c2">gui.spec.Spec.group</a></div><div class="ttdeci">group</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00053">spec.py:53</a></div></div>
+<div class="ttc" id="classgui_1_1spec_1_1Spec_html"><div class="ttname"><a href="../../db/de6/classgui_1_1spec_1_1Spec.html">gui.spec.Spec</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00030">spec.py:30</a></div></div>
+<div class="ttc" id="classgui_1_1spec_1_1Spec_html_a85aa14f1355e3b8cacb5fba8aae635b4"><div class="ttname"><a href="../../db/de6/classgui_1_1spec_1_1Spec.html#a85aa14f1355e3b8cacb5fba8aae635b4">gui.spec.Spec.order</a></div><div class="ttdeci">order</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00056">spec.py:56</a></div></div>
+<div class="ttc" id="classgui_1_1spec_1_1StyleSpec_html"><div class="ttname"><a href="../../d1/dec/classgui_1_1spec_1_1StyleSpec.html">gui.spec.StyleSpec</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00110">spec.py:110</a></div></div>
+<div class="ttc" id="classgui_1_1spec_1_1EventSpec_html_a0c54ad073906fc378ce8bb27f6bbeb0c"><div class="ttname"><a href="../../d0/d75/classgui_1_1spec_1_1EventSpec.html#a0c54ad073906fc378ce8bb27f6bbeb0c">gui.spec.EventSpec.name</a></div><div class="ttdeci">name</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00090">spec.py:90</a></div></div>
+<div class="ttc" id="classgui_1_1spec_1_1EventSpec_html_a753cfcc96344b20aa69469e655de3a60"><div class="ttname"><a href="../../d0/d75/classgui_1_1spec_1_1EventSpec.html#a753cfcc96344b20aa69469e655de3a60">gui.spec.EventSpec.bindings</a></div><div class="ttdeci">bindings</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00093">spec.py:93</a></div></div>
+<div class="ttc" id="classgui_1_1spec_1_1EventSpec_html_a2a44734f8a6e035d46001d4ac53190b8"><div class="ttname"><a href="../../d0/d75/classgui_1_1spec_1_1EventSpec.html#a2a44734f8a6e035d46001d4ac53190b8">gui.spec.EventSpec.kind</a></div><div class="ttdeci">kind</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00094">spec.py:94</a></div></div>
+<div class="ttc" id="classgui_1_1spec_1_1Spec_html_a60541a67c24531a399d9e1628af8c1d4"><div class="ttname"><a href="../../db/de6/classgui_1_1spec_1_1Spec.html#a60541a67c24531a399d9e1628af8c1d4">gui.spec.Spec.__doc__</a></div><div class="ttdeci">__doc__</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00052">spec.py:52</a></div></div>
+<div class="ttc" id="classgui_1_1spec_1_1Spec_html_a93e0538e3d8312ce66046f43865b9f10"><div class="ttname"><a href="../../db/de6/classgui_1_1spec_1_1Spec.html#a93e0538e3d8312ce66046f43865b9f10">gui.spec.Spec.default</a></div><div class="ttdeci">default</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00047">spec.py:47</a></div></div>
+<div class="ttc" id="classgui_1_1spec_1_1InternalSpec_html"><div class="ttname"><a href="../../d0/dd2/classgui_1_1spec_1_1InternalSpec.html">gui.spec.InternalSpec</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00105">spec.py:105</a></div></div>
+<div class="ttc" id="classgui_1_1spec_1_1EventSpec_html"><div class="ttname"><a href="../../d0/d75/classgui_1_1spec_1_1EventSpec.html">gui.spec.EventSpec</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00059">spec.py:59</a></div></div>
+<div class="ttc" id="classgui_1_1spec_1_1Spec_html_a2731feef6dd4298ad6c94fab6de24d13"><div class="ttname"><a href="../../db/de6/classgui_1_1spec_1_1Spec.html#a2731feef6dd4298ad6c94fab6de24d13">gui.spec.Spec.type</a></div><div class="ttdeci">type</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00050">spec.py:50</a></div></div>
+<div class="ttc" id="classgui_1_1spec_1_1EventSpec_html_ae7bb69dd0f71157f3d2fb7775a5c3db5"><div class="ttname"><a href="../../d0/d75/classgui_1_1spec_1_1EventSpec.html#ae7bb69dd0f71157f3d2fb7775a5c3db5">gui.spec.EventSpec.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00062">spec.py:62</a></div></div>
+<div class="ttc" id="classgui_1_1spec_1_1Spec_html_a88fef7abdb4d84f19babb40c5039e886"><div class="ttname"><a href="../../db/de6/classgui_1_1spec_1_1Spec.html#a88fef7abdb4d84f19babb40c5039e886">gui.spec.Spec._name</a></div><div class="ttdeci">_name</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00051">spec.py:51</a></div></div>
+<div class="ttc" id="classgui_1_1spec_1_1Spec_html_a3249021defa77fef1778d7657703fbbe"><div class="ttname"><a href="../../db/de6/classgui_1_1spec_1_1Spec.html#a3249021defa77fef1778d7657703fbbe">gui.spec.Spec.mapping</a></div><div class="ttdeci">mapping</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00048">spec.py:48</a></div></div>
+<div class="ttc" id="classgui_1_1spec_1_1Spec_html_aee497c0c6b8f42b2ffcd02c23494e7a5"><div class="ttname"><a href="../../db/de6/classgui_1_1spec_1_1Spec.html#aee497c0c6b8f42b2ffcd02c23494e7a5">gui.spec.Spec.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00034">spec.py:34</a></div></div>
+<div class="ttc" id="classgui_1_1spec_1_1Spec_html_a041a2635c1d98aea0db795875534d7c1"><div class="ttname"><a href="../../db/de6/classgui_1_1spec_1_1Spec.html#a041a2635c1d98aea0db795875534d7c1">gui.spec.Spec.read_only</a></div><div class="ttdeci">read_only</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00049">spec.py:49</a></div></div>
+<div class="ttc" id="classgui_1_1spec_1_1StyleSpec_html_a6c5653f8b835ad415c4499cf7a30e9ef"><div class="ttname"><a href="../../d1/dec/classgui_1_1spec_1_1StyleSpec.html#a6c5653f8b835ad415c4499cf7a30e9ef">gui.spec.StyleSpec.wx_style_map</a></div><div class="ttdeci">wx_style_map</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00117">spec.py:117</a></div></div>
+<div class="ttc" id="classgui_1_1spec_1_1InitSpec_html"><div class="ttname"><a href="../../d1/d52/classgui_1_1spec_1_1InitSpec.html">gui.spec.InitSpec</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00097">spec.py:97</a></div></div>
+<div class="ttc" id="classgui_1_1spec_1_1Spec_html_a1f8313180640bf3ea0a80c3969991900"><div class="ttname"><a href="../../db/de6/classgui_1_1spec_1_1Spec.html#a1f8313180640bf3ea0a80c3969991900">gui.spec.Spec.optional</a></div><div class="ttdeci">optional</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00046">spec.py:46</a></div></div>
+<div class="ttc" id="namespacegui_1_1spec_html_ad1f3ef0ef656a8378773dccd5e79ceff"><div class="ttname"><a href="../../d6/d14/namespacegui_1_1spec.html#ad1f3ef0ef656a8378773dccd5e79ceff">gui.spec.new_id</a></div><div class="ttdeci">def new_id</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00023">spec.py:23</a></div></div>
+<div class="ttc" id="classgui_1_1spec_1_1StyleSpec_html_ace9e80fc117b7baa6e1dcf2d34f3d5d1"><div class="ttname"><a href="../../d1/dec/classgui_1_1spec_1_1StyleSpec.html#ace9e80fc117b7baa6e1dcf2d34f3d5d1">gui.spec.StyleSpec.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00113">spec.py:113</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_96a7eeec1342994a7cb0d7fe7902ae74.html">build</a></li><li class="navelem"><a class="el" href="../../dir_3740601ea11ece1a00f9273977396bc4.html">lib.linux-x86_64-2.7</a></li><li class="navelem"><a class="el" href="../../dir_5bcb0661a26d4ce62009196be9ab2e39.html">gui</a></li><li class="navelem"><a class="el" href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py.html">spec.py</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:47 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

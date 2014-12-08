@@ -1,0 +1,12 @@
+<map id="gui.tools.designer.Facade.__init__" name="gui.tools.designer.Facade.__init__">
+<area shape="rect" id="node2" href="$d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a973fe5769b473e1191d66ac27ad7ab1c" title="gui.menu.wx_DummyWindow.Bind" alt="" coords="229,5,456,32"/>
+<area shape="rect" id="node3" href="$d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#abc6143a6e23419180dcc0df2d8704b52" title="gui.tools.designer.Facade.on\l_paint" alt="" coords="248,57,437,98"/>
+<area shape="rect" id="node5" href="$dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a7fc319b435e00175890da5ee4b2b330a" title="gui.tools.designer.Selection\lMarker.update" alt="" coords="251,122,434,163"/>
+<area shape="rect" id="node7" href="$d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a72b0f21887fb8b746ee99646b5d7c4a7" title="gui.tools.designer.Facade.update" alt="" coords="235,224,450,251"/>
+<area shape="rect" id="node4" href="$d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a1efa7b3e015e4fbd86c252f3e1840b92" title="gui.menu.wx_DummyWindow.\lGetSize" alt="" coords="519,57,719,98"/>
+<area shape="rect" id="node6" href="$dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a5e7b632668683e7727d93195e23870dd" title="gui.tools.designer.Selection\lMarker.draw" alt="" coords="527,122,710,163"/>
+<area shape="rect" id="node8" href="$da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#adae2e18973709734aeae837dd3ad8feb" title="gui.controls.gridview.Combo\lCellEditor.SetSize" alt="" coords="525,187,712,229"/>
+<area shape="rect" id="node9" href="$da/d31/classgui_1_1controls_1_1canvas_1_1Canvas.html#a10087fa35fd33fd2f3237e23ee7421a3" title="gui.controls.canvas.Canvas.refresh" alt="" coords="505,253,733,280"/>
+<area shape="rect" id="node10" href="$d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a163280d73dea67f87f5bc394b538a80c" title="gui.tools.designer.Facade.refresh" alt="" coords="511,304,726,331"/>
+<area shape="rect" id="node11" href="$da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a25499840cdbef32ef2f196860318787c" title="gui.controls.gridview.Combo\lCellEditor.Show" alt="" coords="781,297,968,338"/>
+</map>

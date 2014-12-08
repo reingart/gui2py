@@ -1,0 +1,9 @@
+<map id="gui.tools.designer.BasicDesigner.key_press" name="gui.tools.designer.BasicDesigner.key_press">
+<area shape="rect" id="node2" href="$d1/d7f/classgui_1_1controls_1_1listview_1_1ListView.html#ad038ccaf2043329eba4ed80311a4a1b8" title="gui.controls.listview.List\lView.delete" alt="" coords="252,5,415,46"/>
+<area shape="rect" id="node3" href="$dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#ab57819669de9197abc515734d64e6d73" title="gui.controls.listbox.Item\lContainerControl.delete" alt="" coords="253,70,414,111"/>
+<area shape="rect" id="node5" href="$de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0d504f42e52b760d035561560cd94dc6" title="gui.tools.designer.Basic\lDesigner.delete" alt="" coords="253,135,414,177"/>
+<area shape="rect" id="node6" href="$d7/d98/classgui_1_1component_1_1Component.html#a2a4e1ce9390e14e18785d56086a422c5" title="gui.component.Component.duplicate" alt="" coords="216,201,451,228"/>
+<area shape="rect" id="node8" href="$de/d83/classgui_1_1tools_1_1designer_1_1BasicDesigner.html#a0de31d5cce0a357648bd5c4aa08d437a" title="gui.tools.designer.Basic\lDesigner.duplicate" alt="" coords="253,253,414,294"/>
+<area shape="rect" id="node4" href="$dc/db7/classgui_1_1controls_1_1listbox_1_1ItemContainerControl.html#a427f981a0aea5188e0d3e857257c602b" title="gui.controls.listbox.Item\lContainerControl.get_data" alt="" coords="511,70,686,111"/>
+<area shape="rect" id="node7" href="$d7/d98/classgui_1_1component_1_1Component.html#a22d66b10bb4fbe00b4d237c42dae1264" title="gui.component.Component.get\l_parent" alt="" coords="499,194,699,235"/>
+</map>

@@ -1,0 +1,736 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Referencia de la Clase gui.event.GridEvent</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('db/d09/classgui_1_1event_1_1GridEvent.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="#pub-static-attribs">Atributos públicos estáticos</a> &#124;
+<a href="../../da/d94/classgui_1_1event_1_1GridEvent-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase gui.event.GridEvent</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagrama de herencias de gui.event.GridEvent</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d62/classgui_1_1event_1_1GridEvent__inherit__graph.png" border="0" usemap="#gui_8event_8GridEvent_inherit__map" alt="Inheritance graph"/></div>
+<map name="gui_8event_8GridEvent_inherit__map" id="gui_8event_8GridEvent_inherit__map">
+<area shape="rect" id="node2" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html" title="gui.event.UIEvent" alt="" coords="10,80,136,107"/><area shape="rect" id="node3" href="../../d6/dcd/classgui_1_1event_1_1Event.html" title="gui.event.Event" alt="" coords="17,5,129,32"/></map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración para gui.event.GridEvent:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/d52/classgui_1_1event_1_1GridEvent__coll__graph.png" border="0" usemap="#gui_8event_8GridEvent_coll__map" alt="Collaboration graph"/></div>
+<map name="gui_8event_8GridEvent_coll__map" id="gui_8event_8GridEvent_coll__map">
+<area shape="rect" id="node2" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html" title="gui.event.UIEvent" alt="" coords="10,80,136,107"/><area shape="rect" id="node3" href="../../d6/dcd/classgui_1_1event_1_1Event.html" title="gui.event.Event" alt="" coords="17,5,129,32"/></map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a545c1089f4b86557e300d54378f59e64"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d09/classgui_1_1event_1_1GridEvent.html#a545c1089f4b86557e300d54378f59e64">__init__</a></td></tr>
+<tr class="separator:a545c1089f4b86557e300d54378f59e64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a545c1089f4b86557e300d54378f59e64"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d09/classgui_1_1event_1_1GridEvent.html#a545c1089f4b86557e300d54378f59e64">__init__</a></td></tr>
+<tr class="separator:a545c1089f4b86557e300d54378f59e64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36799712c90a876bc9a11a51ea7b34cc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html#a36799712c90a876bc9a11a51ea7b34cc">prevent_default</a></td></tr>
+<tr class="separator:a36799712c90a876bc9a11a51ea7b34cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36799712c90a876bc9a11a51ea7b34cc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html#a36799712c90a876bc9a11a51ea7b34cc">prevent_default</a></td></tr>
+<tr class="separator:a36799712c90a876bc9a11a51ea7b34cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae36c52b5de580d3f33de8984def7a0a8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dcd/classgui_1_1event_1_1Event.html#ae36c52b5de580d3f33de8984def7a0a8">prevent_default</a></td></tr>
+<tr class="separator:ae36c52b5de580d3f33de8984def7a0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9787a9a648817cd9bdda5ad0ecee3ca4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dcd/classgui_1_1event_1_1Event.html#a9787a9a648817cd9bdda5ad0ecee3ca4">stop_propagation</a></td></tr>
+<tr class="separator:a9787a9a648817cd9bdda5ad0ecee3ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9787a9a648817cd9bdda5ad0ecee3ca4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dcd/classgui_1_1event_1_1Event.html#a9787a9a648817cd9bdda5ad0ecee3ca4">stop_propagation</a></td></tr>
+<tr class="separator:a9787a9a648817cd9bdda5ad0ecee3ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:acf2536a9a03c7437d08c15d8050e61a4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d09/classgui_1_1event_1_1GridEvent.html#acf2536a9a03c7437d08c15d8050e61a4">row</a></td></tr>
+<tr class="separator:acf2536a9a03c7437d08c15d8050e61a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a578eae5eb60a63ea408cd59d34b18ecb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d09/classgui_1_1event_1_1GridEvent.html#a578eae5eb60a63ea408cd59d34b18ecb">col</a></td></tr>
+<tr class="separator:a578eae5eb60a63ea408cd59d34b18ecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70ccf1bd688c0df4002d437f21e52fdd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d09/classgui_1_1event_1_1GridEvent.html#a70ccf1bd688c0df4002d437f21e52fdd">position</a></td></tr>
+<tr class="separator:a70ccf1bd688c0df4002d437f21e52fdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5838701ef548e9008a64155b3ed34a93"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html#a5838701ef548e9008a64155b3ed34a93">detail</a></td></tr>
+<tr class="separator:a5838701ef548e9008a64155b3ed34a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae25da693c57b2891f3742661e62695cb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html#ae25da693c57b2891f3742661e62695cb">window</a></td></tr>
+<tr class="separator:ae25da693c57b2891f3742661e62695cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83e33b88fed9d81c2698c6c1043fcad0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html#a83e33b88fed9d81c2698c6c1043fcad0">name</a></td></tr>
+<tr class="separator:a83e33b88fed9d81c2698c6c1043fcad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa05f6ec3afddaa591ac77a5a43e095e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dcd/classgui_1_1event_1_1Event.html#aa05f6ec3afddaa591ac77a5a43e095e6">wx_event</a></td></tr>
+<tr class="separator:aa05f6ec3afddaa591ac77a5a43e095e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9cf85bf065ddc8c77624b1ffae410d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dcd/classgui_1_1event_1_1Event.html#ab9cf85bf065ddc8c77624b1ffae410d9">target</a></td></tr>
+<tr class="separator:ab9cf85bf065ddc8c77624b1ffae410d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa713aa5c6d7825a1adcde34ac90edc84"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dcd/classgui_1_1event_1_1Event.html#aa713aa5c6d7825a1adcde34ac90edc84">timestamp</a></td></tr>
+<tr class="separator:aa713aa5c6d7825a1adcde34ac90edc84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Atributos públicos estáticos</h2></td></tr>
+<tr class="memitem:a71196cdd476608df8bf95511b3ee8cf1"><td class="memItemLeft" align="right" valign="top">list&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/df1/classgui_1_1event_1_1UIEvent.html#a71196cdd476608df8bf95511b3ee8cf1">names</a> = [&quot;load&quot;, &quot;resize&quot;, &quot;scroll&quot;, &quot;paint&quot;, &quot;unload&quot;]</td></tr>
+<tr class="separator:a71196cdd476608df8bf95511b3ee8cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b027960e910e9ce12d758a17712c353"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dcd/classgui_1_1event_1_1Event.html#a1b027960e910e9ce12d758a17712c353">cancel_default</a> = False</td></tr>
+<tr class="separator:a1b027960e910e9ce12d758a17712c353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00180">180</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="a545c1089f4b86557e300d54378f59e64"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.event.GridEvent.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>detail</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>wx_event</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00183">183</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00183">gui.event.GridEvent.__init__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d09/classgui_1_1event_1_1GridEvent_a545c1089f4b86557e300d54378f59e64_icgraph.png" border="0" usemap="#db/d09/classgui_1_1event_1_1GridEvent_a545c1089f4b86557e300d54378f59e64_icgraph" alt=""/></div>
+<map name="db/d09/classgui_1_1event_1_1GridEvent_a545c1089f4b86557e300d54378f59e64_icgraph" id="db/d09/classgui_1_1event_1_1GridEvent_a545c1089f4b86557e300d54378f59e64_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a545c1089f4b86557e300d54378f59e64"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.event.GridEvent.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>detail</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>wx_event</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00183">183</a> del archivo <a class="el" href="../../db/de4/gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00183">gui.event.GridEvent.__init__()</a>, <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00188">gui.event.GridEvent.col</a>, <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00189">gui.event.GridEvent.position</a> y <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00187">gui.event.GridEvent.row</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d09/classgui_1_1event_1_1GridEvent_a545c1089f4b86557e300d54378f59e64_cgraph.png" border="0" usemap="#db/d09/classgui_1_1event_1_1GridEvent_a545c1089f4b86557e300d54378f59e64_cgraph" alt=""/></div>
+<map name="db/d09/classgui_1_1event_1_1GridEvent_a545c1089f4b86557e300d54378f59e64_cgraph" id="db/d09/classgui_1_1event_1_1GridEvent_a545c1089f4b86557e300d54378f59e64_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="ae36c52b5de580d3f33de8984def7a0a8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.event.Event.prevent_default </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cancel</em> = <code>True</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00040">40</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00024">gui.event.Event.cancel_default</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00040">gui.event.Event.prevent_default()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/dcd/classgui_1_1event_1_1Event_ae36c52b5de580d3f33de8984def7a0a8_icgraph.png" border="0" usemap="#d6/dcd/classgui_1_1event_1_1Event_ae36c52b5de580d3f33de8984def7a0a8_icgraph" alt=""/></div>
+<map name="d6/dcd/classgui_1_1event_1_1Event_ae36c52b5de580d3f33de8984def7a0a8_icgraph" id="d6/dcd/classgui_1_1event_1_1Event_ae36c52b5de580d3f33de8984def7a0a8_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a36799712c90a876bc9a11a51ea7b34cc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.event.UIEvent.prevent_default </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00061">61</a> del archivo <a class="el" href="../../db/de4/gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00038">gui.event.Event.name</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00042">gui.component.ComponentMeta.name</a>, <a class="el" href="../../df/dd4/build_2lib_8linux-x86__64-2_87_2gui_2controls_2listview_8py_source.html#l00281">gui.controls.listview.ListColumn.name</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00366">gui.controls.gridview.GridColumn.name</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00546">gui.component.Component.name</a> y <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00061">gui.event.UIEvent.prevent_default()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/df1/classgui_1_1event_1_1UIEvent_a36799712c90a876bc9a11a51ea7b34cc_cgraph.png" border="0" usemap="#d1/df1/classgui_1_1event_1_1UIEvent_a36799712c90a876bc9a11a51ea7b34cc_cgraph" alt=""/></div>
+<map name="d1/df1/classgui_1_1event_1_1UIEvent_a36799712c90a876bc9a11a51ea7b34cc_cgraph" id="d1/df1/classgui_1_1event_1_1UIEvent_a36799712c90a876bc9a11a51ea7b34cc_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a36799712c90a876bc9a11a51ea7b34cc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.event.UIEvent.prevent_default </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00061">61</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00061">gui.event.UIEvent.prevent_default()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/df1/classgui_1_1event_1_1UIEvent_a36799712c90a876bc9a11a51ea7b34cc_icgraph.png" border="0" usemap="#d1/df1/classgui_1_1event_1_1UIEvent_a36799712c90a876bc9a11a51ea7b34cc_icgraph" alt=""/></div>
+<map name="d1/df1/classgui_1_1event_1_1UIEvent_a36799712c90a876bc9a11a51ea7b34cc_icgraph" id="d1/df1/classgui_1_1event_1_1UIEvent_a36799712c90a876bc9a11a51ea7b34cc_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9787a9a648817cd9bdda5ad0ecee3ca4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.event.Event.stop_propagation </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00044">44</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00044">gui.event.Event.stop_propagation()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/dcd/classgui_1_1event_1_1Event_a9787a9a648817cd9bdda5ad0ecee3ca4_icgraph.png" border="0" usemap="#d6/dcd/classgui_1_1event_1_1Event_a9787a9a648817cd9bdda5ad0ecee3ca4_icgraph" alt=""/></div>
+<map name="d6/dcd/classgui_1_1event_1_1Event_a9787a9a648817cd9bdda5ad0ecee3ca4_icgraph" id="d6/dcd/classgui_1_1event_1_1Event_a9787a9a648817cd9bdda5ad0ecee3ca4_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9787a9a648817cd9bdda5ad0ecee3ca4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.event.Event.stop_propagation </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00044">44</a> del archivo <a class="el" href="../../db/de4/gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00044">gui.event.Event.stop_propagation()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/dcd/classgui_1_1event_1_1Event_a9787a9a648817cd9bdda5ad0ecee3ca4_cgraph.png" border="0" usemap="#d6/dcd/classgui_1_1event_1_1Event_a9787a9a648817cd9bdda5ad0ecee3ca4_cgraph" alt=""/></div>
+<map name="d6/dcd/classgui_1_1event_1_1Event_a9787a9a648817cd9bdda5ad0ecee3ca4_cgraph" id="d6/dcd/classgui_1_1event_1_1Event_a9787a9a648817cd9bdda5ad0ecee3ca4_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="a1b027960e910e9ce12d758a17712c353"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.Event.cancel_default = False</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00024">24</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00040">gui.event.Event.prevent_default()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a578eae5eb60a63ea408cd59d34b18ecb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.GridEvent.col</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00188">188</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00183">gui.event.GridEvent.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5838701ef548e9008a64155b3ed34a93"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.UIEvent.detail</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00054">54</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00052">gui.event.UIEvent.__init__()</a> y <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00153">gui.event.HtmlCellEvent.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a83e33b88fed9d81c2698c6c1043fcad0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.UIEvent.name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00062">62</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00032">gui.html.input.FormControlMixin.__init__()</a> y <a class="el" href="../../d9/df2/build_2lib_8linux-x86__64-2_87_2gui_2spec_8py_source.html#l00062">gui.spec.EventSpec.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a71196cdd476608df8bf95511b3ee8cf1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">list gui.event.UIEvent.names = [&quot;load&quot;, &quot;resize&quot;, &quot;scroll&quot;, &quot;paint&quot;, &quot;unload&quot;]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00050">50</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a70ccf1bd688c0df4002d437f21e52fdd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.GridEvent.position</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00189">189</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00183">gui.event.GridEvent.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acf2536a9a03c7437d08c15d8050e61a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.GridEvent.row</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00187">187</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00183">gui.event.GridEvent.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab9cf85bf065ddc8c77624b1ffae410d9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.Event.target</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00033">33</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00026">gui.event.Event.__init__()</a>, <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00052">gui.event.UIEvent.__init__()</a> y <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00143">gui.event.HtmlLinkEvent.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa713aa5c6d7825a1adcde34ac90edc84"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.Event.timestamp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00034">34</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00043">gui.tools.designer.BasicDesigner.__call__()</a>, <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00026">gui.event.Event.__init__()</a> y <a class="el" href="../../dd/ddb/gui_2tools_2designer_8py_source.html#l00029">gui.tools.designer.BasicDesigner.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae25da693c57b2891f3742661e62695cb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.UIEvent.window</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00059">59</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00052">gui.event.UIEvent.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa05f6ec3afddaa591ac77a5a43e095e6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.event.Event.wx_event</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00027">27</a> del archivo <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../db/de4/gui_2event_8py_source.html#l00026">gui.event.Event.__init__()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>build/lib.linux-x86_64-2.7/gui/<a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html">event.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/dc4/namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="../../d3/d6d/namespacegui_1_1event.html">event</a></li><li class="navelem"><a class="el" href="../../db/d09/classgui_1_1event_1_1GridEvent.html">GridEvent</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:48 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

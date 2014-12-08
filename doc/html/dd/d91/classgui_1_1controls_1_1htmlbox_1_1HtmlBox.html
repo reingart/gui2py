@@ -1,0 +1,1374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Referencia de la Clase gui.controls.htmlbox.HtmlBox</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="#pub-static-attribs">Atributos públicos estáticos</a> &#124;
+<a href="#pri-methods">Métodos privados</a> &#124;
+<a href="#pri-static-attribs">Atributos privados estáticos</a> &#124;
+<a href="../../d6/dbb/classgui_1_1controls_1_1htmlbox_1_1HtmlBox-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase gui.controls.htmlbox.HtmlBox</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagrama de herencias de gui.controls.htmlbox.HtmlBox</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d3d/classgui_1_1controls_1_1htmlbox_1_1HtmlBox__inherit__graph.png" border="0" usemap="#gui_8controls_8htmlbox_8HtmlBox_inherit__map" alt="Inheritance graph"/></div>
+<map name="gui_8controls_8htmlbox_8HtmlBox_inherit__map" id="gui_8controls_8htmlbox_8HtmlBox_inherit__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración para gui.controls.htmlbox.HtmlBox:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d02/classgui_1_1controls_1_1htmlbox_1_1HtmlBox__coll__graph.png" border="0" usemap="#gui_8controls_8htmlbox_8HtmlBox_coll__map" alt="Collaboration graph"/></div>
+<map name="gui_8controls_8htmlbox_8HtmlBox_coll__map" id="gui_8controls_8htmlbox_8HtmlBox_coll__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a2d5d2e79ecd99d1828d75e9602cb8929"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a2d5d2e79ecd99d1828d75e9602cb8929">__init__</a></td></tr>
+<tr class="separator:a2d5d2e79ecd99d1828d75e9602cb8929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a170ceb90428364405ab897e4e05166"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a0a170ceb90428364405ab897e4e05166">OnLinkClicked</a></td></tr>
+<tr class="separator:a0a170ceb90428364405ab897e4e05166"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a598ba0d449ae05ecf87f05022334e20d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a598ba0d449ae05ecf87f05022334e20d">OnSetTitle</a></td></tr>
+<tr class="separator:a598ba0d449ae05ecf87f05022334e20d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3d9c7e317ca8005b55eab72842015f0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#af3d9c7e317ca8005b55eab72842015f0">OnCellMouseHover</a></td></tr>
+<tr class="separator:af3d9c7e317ca8005b55eab72842015f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dea163cdf95be3dc648ef64c432f880"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a9dea163cdf95be3dc648ef64c432f880">OnCellClicked</a></td></tr>
+<tr class="separator:a9dea163cdf95be3dc648ef64c432f880"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92ea7d7b55128c94488ff4e8bf625c0c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a92ea7d7b55128c94488ff4e8bf625c0c">set_page</a></td></tr>
+<tr class="separator:a92ea7d7b55128c94488ff4e8bf625c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4e86bf4372d9e392b413ef3f9676af9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#aa4e86bf4372d9e392b413ef3f9676af9">load_page</a></td></tr>
+<tr class="separator:aa4e86bf4372d9e392b413ef3f9676af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac32342f9fe73a547497120c8c2cc3bcb"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#ac32342f9fe73a547497120c8c2cc3bcb">load_file</a></td></tr>
+<tr class="separator:ac32342f9fe73a547497120c8c2cc3bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b64b14db8f0cd531869f561f965d06d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a1b64b14db8f0cd531869f561f965d06d">write</a></td></tr>
+<tr class="separator:a1b64b14db8f0cd531869f561f965d06d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d5d2e79ecd99d1828d75e9602cb8929"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a2d5d2e79ecd99d1828d75e9602cb8929">__init__</a></td></tr>
+<tr class="separator:a2d5d2e79ecd99d1828d75e9602cb8929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a170ceb90428364405ab897e4e05166"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a0a170ceb90428364405ab897e4e05166">OnLinkClicked</a></td></tr>
+<tr class="separator:a0a170ceb90428364405ab897e4e05166"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a598ba0d449ae05ecf87f05022334e20d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a598ba0d449ae05ecf87f05022334e20d">OnSetTitle</a></td></tr>
+<tr class="separator:a598ba0d449ae05ecf87f05022334e20d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3d9c7e317ca8005b55eab72842015f0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#af3d9c7e317ca8005b55eab72842015f0">OnCellMouseHover</a></td></tr>
+<tr class="separator:af3d9c7e317ca8005b55eab72842015f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dea163cdf95be3dc648ef64c432f880"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a9dea163cdf95be3dc648ef64c432f880">OnCellClicked</a></td></tr>
+<tr class="separator:a9dea163cdf95be3dc648ef64c432f880"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92ea7d7b55128c94488ff4e8bf625c0c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a92ea7d7b55128c94488ff4e8bf625c0c">set_page</a></td></tr>
+<tr class="separator:a92ea7d7b55128c94488ff4e8bf625c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4e86bf4372d9e392b413ef3f9676af9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#aa4e86bf4372d9e392b413ef3f9676af9">load_page</a></td></tr>
+<tr class="separator:aa4e86bf4372d9e392b413ef3f9676af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac32342f9fe73a547497120c8c2cc3bcb"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#ac32342f9fe73a547497120c8c2cc3bcb">load_file</a></td></tr>
+<tr class="separator:ac32342f9fe73a547497120c8c2cc3bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b64b14db8f0cd531869f561f965d06d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a1b64b14db8f0cd531869f561f965d06d">write</a></td></tr>
+<tr class="separator:a1b64b14db8f0cd531869f561f965d06d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:a32331784cb46502bcacc811622e033cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a32331784cb46502bcacc811622e033cd">design</a></td></tr>
+<tr class="separator:a32331784cb46502bcacc811622e033cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Atributos públicos estáticos</h2></td></tr>
+<tr class="memitem:a74d7ac03d413af0659d3da5fcf19bdd6"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a74d7ac03d413af0659d3da5fcf19bdd6">location</a> = Spec(<a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a3748310d2d339542ed81c00091c97db9">_get_location</a>, <a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#aa4e86bf4372d9e392b413ef3f9676af9">load_page</a>, doc=&quot;URL currently loaded&quot;)</td></tr>
+<tr class="separator:a74d7ac03d413af0659d3da5fcf19bdd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95765a789de5e55ca678640a88beab0b"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a95765a789de5e55ca678640a88beab0b">no_selection</a></td></tr>
+<tr class="separator:a95765a789de5e55ca678640a88beab0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a094c87a3c3924e3c72121ae6fcfe40f8"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a094c87a3c3924e3c72121ae6fcfe40f8">scrollbars</a></td></tr>
+<tr class="separator:a094c87a3c3924e3c72121ae6fcfe40f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b87b3e8fc6caed539daf527ac40fbaf"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a6b87b3e8fc6caed539daf527ac40fbaf">oncellclick</a></td></tr>
+<tr class="separator:a6b87b3e8fc6caed539daf527ac40fbaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e0a86dd39e535d228d27c5b312441eb"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a3e0a86dd39e535d228d27c5b312441eb">oncellhover</a></td></tr>
+<tr class="separator:a3e0a86dd39e535d228d27c5b312441eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f8a54031ed193da94adf41e95dce795"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a8f8a54031ed193da94adf41e95dce795">onlinkclick</a></td></tr>
+<tr class="separator:a8f8a54031ed193da94adf41e95dce795"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a372fc20f993bb90c8de36fced1c5365a"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a372fc20f993bb90c8de36fced1c5365a">onclick</a></td></tr>
+<tr class="separator:a372fc20f993bb90c8de36fced1c5365a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcdfff9f7c41033a3be0652c613db611"><td class="memItemLeft" align="right" valign="top">tuple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#afcdfff9f7c41033a3be0652c613db611">onsubmit</a></td></tr>
+<tr class="separator:afcdfff9f7c41033a3be0652c613db611"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Métodos privados</h2></td></tr>
+<tr class="memitem:a3748310d2d339542ed81c00091c97db9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a3748310d2d339542ed81c00091c97db9">_get_location</a></td></tr>
+<tr class="separator:a3748310d2d339542ed81c00091c97db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3748310d2d339542ed81c00091c97db9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a3748310d2d339542ed81c00091c97db9">_get_location</a></td></tr>
+<tr class="separator:a3748310d2d339542ed81c00091c97db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Atributos privados estáticos</h2></td></tr>
+<tr class="memitem:a96a0bc734faa0a24c8ecd3b31e44d0c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a96a0bc734faa0a24c8ecd3b31e44d0c7">_wx_class</a> = wx.html.HtmlWindow</td></tr>
+<tr class="separator:a96a0bc734faa0a24c8ecd3b31e44d0c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf5c1abdbeca2308f7be5ec7e86b26ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#abf5c1abdbeca2308f7be5ec7e86b26ad">_style</a> = wx.html.HW_DEFAULT_STYLE|wx.TAB_TRAVERSAL</td></tr>
+<tr class="separator:abf5c1abdbeca2308f7be5ec7e86b26ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a621e22bb88a3d83bfee1d86e64dc27ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a621e22bb88a3d83bfee1d86e64dc27ac">_image</a> = <a class="el" href="../../dc/d41/namespacegui_1_1images.html#a04c0158bb429077a6acf4f32bc401a62">images.html</a></td></tr>
+<tr class="separator:a621e22bb88a3d83bfee1d86e64dc27ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00026">26</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="a2d5d2e79ecd99d1828d75e9602cb8929"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.htmlbox.HtmlBox.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>design</em> = <code>False</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00033">33</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00033">gui.controls.htmlbox.HtmlBox.__init__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a2d5d2e79ecd99d1828d75e9602cb8929_icgraph.png" border="0" usemap="#dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a2d5d2e79ecd99d1828d75e9602cb8929_icgraph" alt=""/></div>
+<map name="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a2d5d2e79ecd99d1828d75e9602cb8929_icgraph" id="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a2d5d2e79ecd99d1828d75e9602cb8929_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a2d5d2e79ecd99d1828d75e9602cb8929"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.htmlbox.HtmlBox.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>design</em> = <code>False</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kwargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00033">33</a> del archivo <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00033">gui.controls.htmlbox.HtmlBox.__init__()</a> y <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00034">gui.controls.htmlbox.HtmlBox.design</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a2d5d2e79ecd99d1828d75e9602cb8929_cgraph.png" border="0" usemap="#dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a2d5d2e79ecd99d1828d75e9602cb8929_cgraph" alt=""/></div>
+<map name="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a2d5d2e79ecd99d1828d75e9602cb8929_cgraph" id="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a2d5d2e79ecd99d1828d75e9602cb8929_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="a3748310d2d339542ed81c00091c97db9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.htmlbox.HtmlBox._get_location </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00060">60</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00060">gui.controls.htmlbox.HtmlBox._get_location()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a3748310d2d339542ed81c00091c97db9_icgraph.png" border="0" usemap="#dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a3748310d2d339542ed81c00091c97db9_icgraph" alt=""/></div>
+<map name="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a3748310d2d339542ed81c00091c97db9_icgraph" id="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a3748310d2d339542ed81c00091c97db9_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3748310d2d339542ed81c00091c97db9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.htmlbox.HtmlBox._get_location </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00060">60</a> del archivo <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00060">gui.controls.htmlbox.HtmlBox._get_location()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a3748310d2d339542ed81c00091c97db9_cgraph.png" border="0" usemap="#dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a3748310d2d339542ed81c00091c97db9_cgraph" alt=""/></div>
+<map name="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a3748310d2d339542ed81c00091c97db9_cgraph" id="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a3748310d2d339542ed81c00091c97db9_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac32342f9fe73a547497120c8c2cc3bcb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.htmlbox.HtmlBox.load_file </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>filename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00075">75</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../de/d21/gui_2graphic_8py_source.html#l00104">gui.graphic.Bitmap.__init__()</a> y <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00075">gui.controls.htmlbox.HtmlBox.load_file()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_ac32342f9fe73a547497120c8c2cc3bcb_icgraph.png" border="0" usemap="#dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_ac32342f9fe73a547497120c8c2cc3bcb_icgraph" alt=""/></div>
+<map name="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_ac32342f9fe73a547497120c8c2cc3bcb_icgraph" id="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_ac32342f9fe73a547497120c8c2cc3bcb_icgraph">
+<area shape="rect" id="node2" href="../../dd/d51/classgui_1_1graphic_1_1Bitmap.html#a8e9f6cda9714a0ad72432850d7faef6b" title="gui.graphic.Bitmap.\l__init__" alt="" coords="225,29,359,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac32342f9fe73a547497120c8c2cc3bcb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.htmlbox.HtmlBox.load_file </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>filename</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00075">75</a> del archivo <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00075">gui.controls.htmlbox.HtmlBox.load_file()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_ac32342f9fe73a547497120c8c2cc3bcb_cgraph.png" border="0" usemap="#dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_ac32342f9fe73a547497120c8c2cc3bcb_cgraph" alt=""/></div>
+<map name="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_ac32342f9fe73a547497120c8c2cc3bcb_cgraph" id="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_ac32342f9fe73a547497120c8c2cc3bcb_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa4e86bf4372d9e392b413ef3f9676af9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.htmlbox.HtmlBox.load_page </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>location</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00067">67</a> del archivo <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00067">gui.controls.htmlbox.HtmlBox.load_page()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_aa4e86bf4372d9e392b413ef3f9676af9_cgraph.png" border="0" usemap="#dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_aa4e86bf4372d9e392b413ef3f9676af9_cgraph" alt=""/></div>
+<map name="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_aa4e86bf4372d9e392b413ef3f9676af9_cgraph" id="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_aa4e86bf4372d9e392b413ef3f9676af9_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa4e86bf4372d9e392b413ef3f9676af9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.htmlbox.HtmlBox.load_page </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>location</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00067">67</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00067">gui.controls.htmlbox.HtmlBox.load_page()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_aa4e86bf4372d9e392b413ef3f9676af9_icgraph.png" border="0" usemap="#dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_aa4e86bf4372d9e392b413ef3f9676af9_icgraph" alt=""/></div>
+<map name="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_aa4e86bf4372d9e392b413ef3f9676af9_icgraph" id="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_aa4e86bf4372d9e392b413ef3f9676af9_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9dea163cdf95be3dc648ef64c432f880"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.htmlbox.HtmlBox.OnCellClicked </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cell</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00053">53</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00053">gui.controls.htmlbox.HtmlBox.OnCellClicked()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a9dea163cdf95be3dc648ef64c432f880_icgraph.png" border="0" usemap="#dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a9dea163cdf95be3dc648ef64c432f880_icgraph" alt=""/></div>
+<map name="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a9dea163cdf95be3dc648ef64c432f880_icgraph" id="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a9dea163cdf95be3dc648ef64c432f880_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9dea163cdf95be3dc648ef64c432f880"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.htmlbox.HtmlBox.OnCellClicked </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cell</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>evt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00053">53</a> del archivo <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00053">gui.controls.htmlbox.HtmlBox.OnCellClicked()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a9dea163cdf95be3dc648ef64c432f880_cgraph.png" border="0" usemap="#dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a9dea163cdf95be3dc648ef64c432f880_cgraph" alt=""/></div>
+<map name="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a9dea163cdf95be3dc648ef64c432f880_cgraph" id="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a9dea163cdf95be3dc648ef64c432f880_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af3d9c7e317ca8005b55eab72842015f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.htmlbox.HtmlBox.OnCellMouseHover </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cell</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00049">49</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00049">gui.controls.htmlbox.HtmlBox.OnCellMouseHover()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_af3d9c7e317ca8005b55eab72842015f0_icgraph.png" border="0" usemap="#dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_af3d9c7e317ca8005b55eab72842015f0_icgraph" alt=""/></div>
+<map name="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_af3d9c7e317ca8005b55eab72842015f0_icgraph" id="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_af3d9c7e317ca8005b55eab72842015f0_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af3d9c7e317ca8005b55eab72842015f0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.htmlbox.HtmlBox.OnCellMouseHover </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cell</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00049">49</a> del archivo <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00049">gui.controls.htmlbox.HtmlBox.OnCellMouseHover()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_af3d9c7e317ca8005b55eab72842015f0_cgraph.png" border="0" usemap="#dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_af3d9c7e317ca8005b55eab72842015f0_cgraph" alt=""/></div>
+<map name="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_af3d9c7e317ca8005b55eab72842015f0_cgraph" id="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_af3d9c7e317ca8005b55eab72842015f0_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0a170ceb90428364405ab897e4e05166"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.htmlbox.HtmlBox.OnLinkClicked </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>linkinfo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00041">41</a> del archivo <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00041">gui.controls.htmlbox.HtmlBox.OnLinkClicked()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a0a170ceb90428364405ab897e4e05166_cgraph.png" border="0" usemap="#dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a0a170ceb90428364405ab897e4e05166_cgraph" alt=""/></div>
+<map name="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a0a170ceb90428364405ab897e4e05166_cgraph" id="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a0a170ceb90428364405ab897e4e05166_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a0a170ceb90428364405ab897e4e05166"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.htmlbox.HtmlBox.OnLinkClicked </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>linkinfo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00041">41</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00041">gui.controls.htmlbox.HtmlBox.OnLinkClicked()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a0a170ceb90428364405ab897e4e05166_icgraph.png" border="0" usemap="#dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a0a170ceb90428364405ab897e4e05166_icgraph" alt=""/></div>
+<map name="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a0a170ceb90428364405ab897e4e05166_icgraph" id="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a0a170ceb90428364405ab897e4e05166_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a598ba0d449ae05ecf87f05022334e20d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.htmlbox.HtmlBox.OnSetTitle </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>title</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00045">45</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00045">gui.controls.htmlbox.HtmlBox.OnSetTitle()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a598ba0d449ae05ecf87f05022334e20d_icgraph.png" border="0" usemap="#dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a598ba0d449ae05ecf87f05022334e20d_icgraph" alt=""/></div>
+<map name="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a598ba0d449ae05ecf87f05022334e20d_icgraph" id="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a598ba0d449ae05ecf87f05022334e20d_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a598ba0d449ae05ecf87f05022334e20d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.htmlbox.HtmlBox.OnSetTitle </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>title</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00045">45</a> del archivo <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00045">gui.controls.htmlbox.HtmlBox.OnSetTitle()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a598ba0d449ae05ecf87f05022334e20d_cgraph.png" border="0" usemap="#dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a598ba0d449ae05ecf87f05022334e20d_cgraph" alt=""/></div>
+<map name="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a598ba0d449ae05ecf87f05022334e20d_cgraph" id="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a598ba0d449ae05ecf87f05022334e20d_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a92ea7d7b55128c94488ff4e8bf625c0c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.htmlbox.HtmlBox.set_page </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>source</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00063">63</a> del archivo <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00063">gui.controls.htmlbox.HtmlBox.set_page()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a92ea7d7b55128c94488ff4e8bf625c0c_cgraph.png" border="0" usemap="#dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a92ea7d7b55128c94488ff4e8bf625c0c_cgraph" alt=""/></div>
+<map name="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a92ea7d7b55128c94488ff4e8bf625c0c_cgraph" id="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a92ea7d7b55128c94488ff4e8bf625c0c_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a92ea7d7b55128c94488ff4e8bf625c0c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.htmlbox.HtmlBox.set_page </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>source</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00063">63</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00063">gui.controls.htmlbox.HtmlBox.set_page()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a92ea7d7b55128c94488ff4e8bf625c0c_icgraph.png" border="0" usemap="#dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a92ea7d7b55128c94488ff4e8bf625c0c_icgraph" alt=""/></div>
+<map name="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a92ea7d7b55128c94488ff4e8bf625c0c_icgraph" id="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a92ea7d7b55128c94488ff4e8bf625c0c_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b64b14db8f0cd531869f561f965d06d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.htmlbox.HtmlBox.write </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>source</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00079">79</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00079">gui.controls.htmlbox.HtmlBox.write()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a1b64b14db8f0cd531869f561f965d06d_icgraph.png" border="0" usemap="#dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a1b64b14db8f0cd531869f561f965d06d_icgraph" alt=""/></div>
+<map name="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a1b64b14db8f0cd531869f561f965d06d_icgraph" id="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a1b64b14db8f0cd531869f561f965d06d_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b64b14db8f0cd531869f561f965d06d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.controls.htmlbox.HtmlBox.write </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>source</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00079">79</a> del archivo <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00113">gui.controls.htmlbox.on_cell()</a>, <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00108">gui.controls.htmlbox.on_click()</a> y <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00079">gui.controls.htmlbox.HtmlBox.write()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a1b64b14db8f0cd531869f561f965d06d_cgraph.png" border="0" usemap="#dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a1b64b14db8f0cd531869f561f965d06d_cgraph" alt=""/></div>
+<map name="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a1b64b14db8f0cd531869f561f965d06d_cgraph" id="dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox_a1b64b14db8f0cd531869f561f965d06d_cgraph">
+<area shape="rect" id="node2" href="../../d6/dde/namespacegui_1_1controls_1_1htmlbox.html#a354bf005e7cf8d1b1b6feff86f6910fa" title="gui.controls.htmlbox.on_cell" alt="" coords="224,7,408,33"/><area shape="rect" id="node3" href="../../d6/dde/namespacegui_1_1controls_1_1htmlbox.html#a9f1fb0d7a373b99f0f465e1cedefd1dd" title="gui.controls.htmlbox.on\l_click" alt="" coords="237,58,395,99"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="a621e22bb88a3d83bfee1d86e64dc27ac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.htmlbox.HtmlBox._image = <a class="el" href="../../dc/d41/namespacegui_1_1images.html#a04c0158bb429077a6acf4f32bc401a62">images.html</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00031">31</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abf5c1abdbeca2308f7be5ec7e86b26ad"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.htmlbox.HtmlBox._style = wx.html.HW_DEFAULT_STYLE|wx.TAB_TRAVERSAL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00030">30</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d8/d46/gui_2font_8py_source.html#l00019">gui.font.Font.__init__()</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00054">gui.font.Font._get_style()</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00062">gui.font.Font._set_style()</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00112">gui.font.Font.description()</a>, <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00030">gui.font.Font.get_wx_font()</a> y <a class="el" href="../../dc/d1e/build_2lib_8linux-x86__64-2_87_2gui_2font_8py_source.html#l00038">gui.font.Font.set_wx_font()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a96a0bc734faa0a24c8ecd3b31e44d0c7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.htmlbox.HtmlBox._wx_class = wx.html.HtmlWindow</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00029">29</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../da/d65/build_2lib_8linux-x86__64-2_87_2gui_2controls_2textbox_8py_source.html#l00030">gui.controls.textbox.TextBox.__init__()</a> y <a class="el" href="../../d1/def/gui_2controls_2panel_8py_source.html#l00066">gui.controls.panel.Panel.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a32331784cb46502bcacc811622e033cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.controls.htmlbox.HtmlBox.design</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00034">34</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/de1/gui_2controls_2htmlbox_8py_source.html#l00033">gui.controls.htmlbox.HtmlBox.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a74d7ac03d413af0659d3da5fcf19bdd6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.htmlbox.HtmlBox.location = Spec(<a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#a3748310d2d339542ed81c00091c97db9">_get_location</a>, <a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html#aa4e86bf4372d9e392b413ef3f9676af9">load_page</a>, doc=&quot;URL currently loaded&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00084">84</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a95765a789de5e55ca678640a88beab0b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.htmlbox.HtmlBox.no_selection</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= StyleSpec(wx.html.HW_NO_SELECTION, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                             doc=<span class="stringliteral">&quot;Don’t allow the user to select text.&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00087">87</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6b87b3e8fc6caed539daf527ac40fbaf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.htmlbox.HtmlBox.oncellclick</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;click&#39;</span>, binding=wx.html.EVT_HTML_CELL_CLICKED, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                        kind=HtmlCellEvent, doc=<span class="stringliteral">&quot;An cell was clicked&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00094">94</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3e0a86dd39e535d228d27c5b312441eb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.htmlbox.HtmlBox.oncellhover</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;hover&#39;</span>, binding=wx.html.EVT_HTML_CELL_HOVER, </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                        kind=HtmlCellEvent, doc=<span class="stringliteral">&quot;The mouse passed over a cell&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00096">96</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a372fc20f993bb90c8de36fced1c5365a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.htmlbox.HtmlBox.onclick</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;click&#39;</span>, binding=HTML_CTRL_CLICK,</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                        kind=SubmitEvent, doc=<span class="stringliteral">&quot;A control was clicked&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00100">100</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d5/db1/gui_2html_2input_8py_source.html#l00048">gui.html.input.SubmitButton.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8f8a54031ed193da94adf41e95dce795"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.htmlbox.HtmlBox.onlinkclick</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;link&#39;</span>, binding=wx.html.EVT_HTML_LINK_CLICKED,</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                        kind=HtmlLinkEvent, doc=<span class="stringliteral">&quot;An hyperlink was clicked&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00098">98</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afcdfff9f7c41033a3be0652c613db611"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.htmlbox.HtmlBox.onsubmit</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= EventSpec(<span class="stringliteral">&#39;submit&#39;</span>, binding=EVT_FORM_SUBMIT,</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                        kind=SubmitEvent, doc=<span class="stringliteral">&quot;A form was submitted&quot;</span>)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00102">102</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a094c87a3c3924e3c72121ae6fcfe40f8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tuple gui.controls.htmlbox.HtmlBox.scrollbars</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= StyleSpec({<span class="keyword">False</span>: wx.html.HW_SCROLLBAR_NEVER,</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                            <span class="keyword">True</span>: wx.html.HW_SCROLLBAR_AUTO},</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                            doc=<span class="stringliteral">&quot;Control how to display scrollbars&quot;</span>,)</div>
+</div><!-- fragment -->
+<p>Definición en la línea <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html#l00089">89</a> del archivo <a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>build/lib.linux-x86_64-2.7/gui/controls/<a class="el" href="../../d6/df1/build_2lib_8linux-x86__64-2_87_2gui_2controls_2htmlbox_8py_source.html">htmlbox.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/dc4/namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="../../d7/d56/namespacegui_1_1controls.html">controls</a></li><li class="navelem"><a class="el" href="../../d6/dde/namespacegui_1_1controls_1_1htmlbox.html">htmlbox</a></li><li class="navelem"><a class="el" href="../../dd/d91/classgui_1_1controls_1_1htmlbox_1_1HtmlBox.html">HtmlBox</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:47 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

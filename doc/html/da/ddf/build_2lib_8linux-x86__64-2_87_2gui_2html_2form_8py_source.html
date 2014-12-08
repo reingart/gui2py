@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Fichero Fuente build/lib.linux-x86_64-2.7/gui/html/form.py</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">form.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="../../de/d49/namespacegui_1_1html_1_1form.html">    1</a></span>&#160;<span class="keyword">import</span> wx</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">import</span> wx.html</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">from</span> . <span class="keyword">import</span> GetParam</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../de/d49/namespacegui_1_1html_1_1form.html#a9199f3f1132052cf50810894d54a375f">    7</a></span>&#160;FormSubmitEventType = wx.NewEventType()</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../de/d49/namespacegui_1_1html_1_1form.html#affa76db03084df3b8b080cee97e254c0">    9</a></span>&#160;EVT_FORM_SUBMIT = wx.PyEventBinder(FormSubmitEventType)</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../de/d36/classgui_1_1html_1_1form_1_1FormSubmitEvent.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/d36/classgui_1_1html_1_1form_1_1FormSubmitEvent.html">FormSubmitEvent</a>(wx.PyEvent):</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="stringliteral">        Event indication a form was submitted.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="stringliteral">        form is the form object being submitted</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="stringliteral">        args is a dict of form arguments</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="stringliteral">    &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../de/d36/classgui_1_1html_1_1form_1_1FormSubmitEvent.html#a911404245b029ab1d5fb0b14ff26bb24">   17</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../de/d36/classgui_1_1html_1_1form_1_1FormSubmitEvent.html#a911404245b029ab1d5fb0b14ff26bb24">__init__</a>(self, form, data):</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        wx.PyEvent.__init__(self)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        self.SetEventType(FormSubmitEventType)</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../de/d36/classgui_1_1html_1_1form_1_1FormSubmitEvent.html#ad4077f0d49a9803cf742a4b2c63051c4">   20</a></span>&#160;        self.<a class="code" href="../../de/d36/classgui_1_1html_1_1form_1_1FormSubmitEvent.html#ad4077f0d49a9803cf742a4b2c63051c4">form</a> = form</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../de/d36/classgui_1_1html_1_1form_1_1FormSubmitEvent.html#a46d1b3343213a0e31bc34910016bdc7c">   21</a></span>&#160;        self.<a class="code" href="../../de/d36/classgui_1_1html_1_1form_1_1FormSubmitEvent.html#a46d1b3343213a0e31bc34910016bdc7c">data</a> = data</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html">HTMLForm</a>(object):</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#a8933fac6d2614b8ab76d5ecdd789f6e3">   24</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#a8933fac6d2614b8ab76d5ecdd789f6e3">__init__</a>(self, tag, container):</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#a9aab327dde0cfbf7f2f5a0c6937d5e55">   25</a></span>&#160;        self.<a class="code" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#a9aab327dde0cfbf7f2f5a0c6937d5e55">container</a> = container</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#af99e4caae774d8a6d3153f645532826f">   26</a></span>&#160;        self.<a class="code" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#af99e4caae774d8a6d3153f645532826f">fields</a> = []</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#aa78f31478417e35db32dc515b448ba4e">   27</a></span>&#160;        self.<a class="code" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#aa78f31478417e35db32dc515b448ba4e">action</a> = <a class="code" href="../../de/d77/namespacegui_1_1html.html#ad2a57a006615e76d51d1334fd477fd59">GetParam</a>(tag, <span class="stringliteral">&quot;ACTION&quot;</span>, default=<span class="keywordtype">None</span>)</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#a633dd3a21d703e0edcdbf2e38a2c3376">   28</a></span>&#160;        self.<a class="code" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#a633dd3a21d703e0edcdbf2e38a2c3376">method</a> = <a class="code" href="../../de/d77/namespacegui_1_1html.html#ad2a57a006615e76d51d1334fd477fd59">GetParam</a>(tag, <span class="stringliteral">&quot;METHOD&quot;</span>, <span class="stringliteral">&quot;GET&quot;</span>)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span> self.<a class="code" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#a633dd3a21d703e0edcdbf2e38a2c3376">method</a> <span class="keywordflow">not</span> <span class="keywordflow">in</span> (<span class="stringliteral">&quot;GET&quot;</span>, <span class="stringliteral">&quot;POST&quot;</span>):</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            self.<a class="code" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#a633dd3a21d703e0edcdbf2e38a2c3376">method</a> = <span class="stringliteral">&quot;GET&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#a5f75f2a86b2cc677ed847c267a7142c0">   32</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#a5f75f2a86b2cc677ed847c267a7142c0">hit_submit_button</a>(self):</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">from</span> . <span class="keyword">import</span> input</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">for</span> field <span class="keywordflow">in</span> self.<a class="code" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#af99e4caae774d8a6d3153f645532826f">fields</a>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">if</span> isinstance(field, <a class="code" href="../../d2/d71/classgui_1_1html_1_1input_1_1SubmitButton.html">input.SubmitButton</a>):</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                field.OnClick(<span class="keywordtype">None</span>)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="keywordflow">return</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#ae4f22de69dd7df19b39c2599b62d2dba">   39</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#ae4f22de69dd7df19b39c2599b62d2dba">submit</a>(self, btn=None):</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="stringliteral">&quot;Process form submission&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        data = self.<a class="code" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#a12c9c523698443426f810b58c73b42c4">build_data_set</a>()</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span> btn <span class="keywordflow">and</span> btn.name:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            data[btn.name] = btn.name</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        evt = <a class="code" href="../../de/d36/classgui_1_1html_1_1form_1_1FormSubmitEvent.html">FormSubmitEvent</a>(self, data)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        self.container.ProcessEvent(evt)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#a12c9c523698443426f810b58c73b42c4">   47</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#a12c9c523698443426f810b58c73b42c4">build_data_set</a>(self):</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="stringliteral">&quot;Construct a sequence of name/value pairs from controls&quot;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        data = {}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">for</span> field <span class="keywordflow">in</span> self.<a class="code" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#af99e4caae774d8a6d3153f645532826f">fields</a>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">if</span> field.name:<span class="comment"># and field.enabled: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                val = field.get_value()</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordflow">if</span> val <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                    <span class="keywordflow">continue</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordflow">elif</span> isinstance(val, unicode):</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    <span class="comment"># web2py string processing</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    <span class="comment"># requires utf-8 encoded text</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    val = val.encode(<span class="stringliteral">&quot;utf-8&quot;</span>)                    </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                data[field.name] = val</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> data</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html">   64</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html">FormTagHandler</a>(wx.html.HtmlWinTagHandler):</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#ae1eed20be633fb8d87ec5883b7fc7854">   65</a></span>&#160;    typeregister = {}</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment"># static inner form tag attribute names</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a96932f38e6680511dd849b5a87cb2a72">   68</a></span>&#160;    attributes = [<span class="stringliteral">&quot;href&quot;</span>, <span class="stringliteral">&quot;value&quot;</span>, <span class="stringliteral">&quot;class&quot;</span>, <span class="stringliteral">&quot;onclick&quot;</span>,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                  <span class="stringliteral">&quot;type&quot;</span>, <span class="stringliteral">&quot;name&quot;</span>, <span class="stringliteral">&quot;id&quot;</span>, <span class="stringliteral">&quot;src&quot;</span>, <span class="stringliteral">&quot;action&quot;</span>,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                  <span class="stringliteral">&quot;method&quot;</span>]</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    @classmethod</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a34c1b4ceb7e8ed8237d12e7ac27653a6">   73</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a34c1b4ceb7e8ed8237d12e7ac27653a6">register_type</a>(klass, type, control_class):</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        klass.typeregister[type] = control_class</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#ae72687b645fa5ee2ebe73d0ee16f3af3">   76</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#ae72687b645fa5ee2ebe73d0ee16f3af3">__init__</a>(self):</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a32f94618442bd8a60a9805cd74dabded">   77</a></span>&#160;        self.<a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a32f94618442bd8a60a9805cd74dabded">form</a> = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a1256ede3823694de644a7f088edbbe49">   78</a></span>&#160;        self.<a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a1256ede3823694de644a7f088edbbe49">control_padding</a> = 2    <span class="comment"># this should be disabled inside tables</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        wx.html.HtmlWinTagHandler.__init__(self)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#ac8deb0a83e23afd277cb4b264cfa11b8">   81</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#ac8deb0a83e23afd277cb4b264cfa11b8">GetSupportedTags</a>(self):</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;FORM,INPUT,TEXTAREA,SELECT,OPTION,LABEL&quot;</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#afca5782d7b2283d563a61e911b9559d2">   84</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#afca5782d7b2283d563a61e911b9559d2">HandleTag</a>(self, tag):</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">try</span>:</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            handler = getattr(self, <span class="stringliteral">&quot;Handle&quot;</span>+tag.GetName().upper())</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">return</span> handler(tag)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">except</span>:</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keyword">import</span> traceback</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            traceback.print_exc()</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a375978b960d9248a9240a241ead0d3e9">   92</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a375978b960d9248a9240a241ead0d3e9">HandleFORM</a>(self, tag):</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        self.<a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a32f94618442bd8a60a9805cd74dabded">form</a> = <a class="code" href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html">HTMLForm</a>(tag, self.GetParser().GetWindowInterface().GetHTMLWindow())</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="comment"># to use the current container (same line) do:</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="comment">##self.cell = self.GetParser().GetContainer()</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment"># to create a sibling container (same level) current one must be closed:</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">##self.GetParser().CloseContainer()</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="comment"># create a new child container (if current was not closed):</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#af06623c7ac0f44c4756d30032e8042ae">   99</a></span>&#160;        self.<a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#af06623c7ac0f44c4756d30032e8042ae">cell</a> = self.GetParser().OpenContainer()</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="comment"># experimental highlight (to view final layout), sadly BR resets this</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        self.GetParser().SetActualColor(<span class="stringliteral">&quot;gray&quot;</span>)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        self.GetParser().GetContainer().InsertCell(wx.html.HtmlColourCell(<span class="stringliteral">&quot;gray&quot;</span>))</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="comment"># Alignment does not work here (BR fault), so it is set in create_control</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="comment">##self.cell.SetAlignVer(wx.html.HTML_ALIGN_TOP)</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        self.ParseInner(tag)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        self.GetParser().CloseContainer()</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="comment"># OpenContainer and CloseContainer calls should be the same quantity</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="comment">##self.GetParser().OpenContainer()</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        self.<a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a32f94618442bd8a60a9805cd74dabded">form</a> = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#ab490c4dde818ba8ae8bda72e79940704">  110</a></span>&#160;        self.<a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#ab490c4dde818ba8ae8bda72e79940704">option_list</a> = []</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">True</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    </div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#abaf574047ef1c7ca918657183b98c842">  113</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#abaf574047ef1c7ca918657183b98c842">HandleINPUT</a>(self, tag):</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">if</span> tag.HasParam(<span class="stringliteral">&quot;type&quot;</span>):</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            ttype = tag.GetParam(<span class="stringliteral">&quot;type&quot;</span>).upper()</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            ttype = <span class="stringliteral">&quot;TEXT&quot;</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        klass = self.<a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#ae1eed20be633fb8d87ec5883b7fc7854">typeregister</a>[ttype]</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        self.<a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#aa3bd76ff8f5db6b71bb700c9bd49a38c">create_control</a>(klass, tag)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">False</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        </div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a73f6837da61bb8b66984949da38c49ac">  122</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a73f6837da61bb8b66984949da38c49ac">HandleTEXTAREA</a>(self, tag):</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        klass = self.<a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#ae1eed20be633fb8d87ec5883b7fc7854">typeregister</a>[<span class="stringliteral">&quot;TEXTAREA&quot;</span>]</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        self.<a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#aa3bd76ff8f5db6b71bb700c9bd49a38c">create_control</a>(klass, tag)</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="comment">#Don&#39;t actually call ParseInner, but lie and said we did.</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="comment">#This should skip us ahead to the next tag, and let us </span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="comment">#retrieve the text verbatem from the text area</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">True</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    </div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#afaf5980d5febf85d2746736e587f448a">  130</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#afaf5980d5febf85d2746736e587f448a">HandleSELECT</a>(self, tag):</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">if</span> tag.HasParam(<span class="stringliteral">&quot;MULTIPLE&quot;</span>):</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keywordflow">pass</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keyword">from</span> .select <span class="keyword">import</span> SingleSelectControl</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        self.<a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#ab490c4dde818ba8ae8bda72e79940704">option_list</a> = []</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="comment">#gather any/all nested options</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        self.ParseInner(tag)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        self.<a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#aa3bd76ff8f5db6b71bb700c9bd49a38c">create_control</a>(SingleSelectControl, tag,</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                            option_list=self.<a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#ab490c4dde818ba8ae8bda72e79940704">option_list</a>,)</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        self.<a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#ab490c4dde818ba8ae8bda72e79940704">option_list</a> = []</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">True</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        </div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#aa51dcd4a8a6d31dde6f0964380b2c14d">  142</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#aa51dcd4a8a6d31dde6f0964380b2c14d">HandleOPTION</a>(self, tag):</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        self.option_list.append(tag)</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">True</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    </div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#afa9fd4585a869cde27bc75267baefeb6">  146</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#afa9fd4585a869cde27bc75267baefeb6">HandleLABEL</a>(self, tag):</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keyword">from</span> .label <span class="keyword">import</span> FormLabel</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        klass = FormLabel</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        self.<a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#aa3bd76ff8f5db6b71bb700c9bd49a38c">create_control</a>(klass, tag)</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="comment">#Don&#39;t actually call ParseInner, but lie and said we did.</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="comment">#This should skip us ahead to the next tag, and let us </span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="comment">#retrieve the text verbatem from the text area</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">True</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    </div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#aa3bd76ff8f5db6b71bb700c9bd49a38c">  155</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#aa3bd76ff8f5db6b71bb700c9bd49a38c">create_control</a>(self, klass, tag, **kwargs):</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        parent = self.GetParser().GetWindowInterface().GetHTMLWindow()</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="comment"># create a panel for sizing:</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        panel = wx.Panel(parent)</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="comment"># instantiate the actual control:</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        control = klass(panel, self.<a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a32f94618442bd8a60a9805cd74dabded">form</a>, tag, self.GetParser(), **kwargs)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">if</span> hasattr(control, <span class="stringliteral">&quot;wx_obj&quot;</span>):</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            object = control.wx_obj</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            object = control  <span class="comment"># remove!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        self.<a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#abbe6cc476ab089d75d772d3c08bc61a7">setObjectTag</a>(object, tag)</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="comment"># if it isn&#39;t a window (i.e. OPTION), do not add it to the html cell</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> isinstance(object, wx.Window):</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="keywordflow">return</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="comment"># create a sizer to fit the control with some padding</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        box = wx.BoxSizer(wx.HORIZONTAL)</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        box.Add(object, 1, wx.ALL, self.<a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a1256ede3823694de644a7f088edbbe49">control_padding</a>)</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        panel.SetSizer(box)</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        panel.Fit()</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="comment"># get floatwidth</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">if</span> tag.HasParam(<span class="stringliteral">&quot;WIDTH&quot;</span>):</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            w = tag.GetParam(<span class="stringliteral">&quot;WIDTH&quot;</span>)</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            <span class="keywordflow">if</span> w[-1] == <span class="stringliteral">&#39;%&#39;</span>:</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                w = int(w[:-1], 0)</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                w = int(w)</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            w = -1</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        cell = self.GetParser().GetContainer()</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="comment"># middle-align controls (affects the whole line, up to the FORM)</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        cell.SetAlignVer(wx.html.HTML_ALIGN_CENTER)</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="comment"># if no float width, don&#39;t use -1 as it seems to break layout</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">if</span> w &gt; 0:</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            wcell = wx.html.HtmlWidgetCell(panel, w)   <span class="comment"># w should be int!</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            wcell = wx.html.HtmlWidgetCell(panel)</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        cell.InsertCell(wcell)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#abbe6cc476ab089d75d772d3c08bc61a7">  193</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#abbe6cc476ab089d75d772d3c08bc61a7">setObjectTag</a>(self, object, tag):</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="stringliteral">&quot;&quot;&quot; Add a tag attribute to the wx window &quot;&quot;&quot;</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        object._attributes = {}</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        object._name = tag.GetName().lower()</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordflow">for</span> name <span class="keywordflow">in</span> self.<a class="code" href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a96932f38e6680511dd849b5a87cb2a72">attributes</a>:</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            object._attributes[<span class="stringliteral">&quot;_%s&quot;</span> % name] = tag.GetParam(name)</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keywordflow">if</span> object._attributes[<span class="stringliteral">&quot;_%s&quot;</span> % name] == <span class="stringliteral">&quot;&quot;</span>:</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                object._attributes[<span class="stringliteral">&quot;_%s&quot;</span> % name] = <span class="keywordtype">None</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;wx.html.HtmlWinParser_AddTagHandler(FormTagHandler)</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormTagHandler_html_af06623c7ac0f44c4756d30032e8042ae"><div class="ttname"><a href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#af06623c7ac0f44c4756d30032e8042ae">gui.html.form.FormTagHandler.cell</a></div><div class="ttdeci">cell</div><div class="ttdoc">self.cell = self.GetParser().GetContainer() to create a sibling container (same level) current one mu...</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00099">form.py:99</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1input_1_1SubmitButton_html"><div class="ttname"><a href="../../d2/d71/classgui_1_1html_1_1input_1_1SubmitButton.html">gui.html.input.SubmitButton</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d69/build_2lib_8linux-x86__64-2_87_2gui_2html_2input_8py_source.html#l00045">input.py:45</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1HTMLForm_html_a9aab327dde0cfbf7f2f5a0c6937d5e55"><div class="ttname"><a href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#a9aab327dde0cfbf7f2f5a0c6937d5e55">gui.html.form.HTMLForm.container</a></div><div class="ttdeci">container</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00025">form.py:25</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1HTMLForm_html_a633dd3a21d703e0edcdbf2e38a2c3376"><div class="ttname"><a href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#a633dd3a21d703e0edcdbf2e38a2c3376">gui.html.form.HTMLForm.method</a></div><div class="ttdeci">method</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00028">form.py:28</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormTagHandler_html_a34c1b4ceb7e8ed8237d12e7ac27653a6"><div class="ttname"><a href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a34c1b4ceb7e8ed8237d12e7ac27653a6">gui.html.form.FormTagHandler.register_type</a></div><div class="ttdeci">def register_type</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00073">form.py:73</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1HTMLForm_html_ae4f22de69dd7df19b39c2599b62d2dba"><div class="ttname"><a href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#ae4f22de69dd7df19b39c2599b62d2dba">gui.html.form.HTMLForm.submit</a></div><div class="ttdeci">def submit</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00039">form.py:39</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1HTMLForm_html_aa78f31478417e35db32dc515b448ba4e"><div class="ttname"><a href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#aa78f31478417e35db32dc515b448ba4e">gui.html.form.HTMLForm.action</a></div><div class="ttdeci">action</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00027">form.py:27</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormTagHandler_html_ae72687b645fa5ee2ebe73d0ee16f3af3"><div class="ttname"><a href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#ae72687b645fa5ee2ebe73d0ee16f3af3">gui.html.form.FormTagHandler.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00076">form.py:76</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormTagHandler_html_ac8deb0a83e23afd277cb4b264cfa11b8"><div class="ttname"><a href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#ac8deb0a83e23afd277cb4b264cfa11b8">gui.html.form.FormTagHandler.GetSupportedTags</a></div><div class="ttdeci">def GetSupportedTags</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00081">form.py:81</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1HTMLForm_html_a8933fac6d2614b8ab76d5ecdd789f6e3"><div class="ttname"><a href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#a8933fac6d2614b8ab76d5ecdd789f6e3">gui.html.form.HTMLForm.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00024">form.py:24</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormSubmitEvent_html_a46d1b3343213a0e31bc34910016bdc7c"><div class="ttname"><a href="../../de/d36/classgui_1_1html_1_1form_1_1FormSubmitEvent.html#a46d1b3343213a0e31bc34910016bdc7c">gui.html.form.FormSubmitEvent.data</a></div><div class="ttdeci">data</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00021">form.py:21</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormSubmitEvent_html_a911404245b029ab1d5fb0b14ff26bb24"><div class="ttname"><a href="../../de/d36/classgui_1_1html_1_1form_1_1FormSubmitEvent.html#a911404245b029ab1d5fb0b14ff26bb24">gui.html.form.FormSubmitEvent.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00017">form.py:17</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormTagHandler_html_aa51dcd4a8a6d31dde6f0964380b2c14d"><div class="ttname"><a href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#aa51dcd4a8a6d31dde6f0964380b2c14d">gui.html.form.FormTagHandler.HandleOPTION</a></div><div class="ttdeci">def HandleOPTION</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00142">form.py:142</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormTagHandler_html_afca5782d7b2283d563a61e911b9559d2"><div class="ttname"><a href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#afca5782d7b2283d563a61e911b9559d2">gui.html.form.FormTagHandler.HandleTag</a></div><div class="ttdeci">def HandleTag</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00084">form.py:84</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormTagHandler_html_a73f6837da61bb8b66984949da38c49ac"><div class="ttname"><a href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a73f6837da61bb8b66984949da38c49ac">gui.html.form.FormTagHandler.HandleTEXTAREA</a></div><div class="ttdeci">def HandleTEXTAREA</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00122">form.py:122</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormTagHandler_html_a375978b960d9248a9240a241ead0d3e9"><div class="ttname"><a href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a375978b960d9248a9240a241ead0d3e9">gui.html.form.FormTagHandler.HandleFORM</a></div><div class="ttdeci">def HandleFORM</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00092">form.py:92</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormTagHandler_html_ae1eed20be633fb8d87ec5883b7fc7854"><div class="ttname"><a href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#ae1eed20be633fb8d87ec5883b7fc7854">gui.html.form.FormTagHandler.typeregister</a></div><div class="ttdeci">dictionary typeregister</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00065">form.py:65</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormTagHandler_html_ab490c4dde818ba8ae8bda72e79940704"><div class="ttname"><a href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#ab490c4dde818ba8ae8bda72e79940704">gui.html.form.FormTagHandler.option_list</a></div><div class="ttdeci">option_list</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00110">form.py:110</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormTagHandler_html_afa9fd4585a869cde27bc75267baefeb6"><div class="ttname"><a href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#afa9fd4585a869cde27bc75267baefeb6">gui.html.form.FormTagHandler.HandleLABEL</a></div><div class="ttdeci">def HandleLABEL</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00146">form.py:146</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormTagHandler_html_a96932f38e6680511dd849b5a87cb2a72"><div class="ttname"><a href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a96932f38e6680511dd849b5a87cb2a72">gui.html.form.FormTagHandler.attributes</a></div><div class="ttdeci">list attributes</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00068">form.py:68</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormTagHandler_html_a1256ede3823694de644a7f088edbbe49"><div class="ttname"><a href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a1256ede3823694de644a7f088edbbe49">gui.html.form.FormTagHandler.control_padding</a></div><div class="ttdeci">control_padding</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00078">form.py:78</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1HTMLForm_html_af99e4caae774d8a6d3153f645532826f"><div class="ttname"><a href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#af99e4caae774d8a6d3153f645532826f">gui.html.form.HTMLForm.fields</a></div><div class="ttdeci">fields</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00026">form.py:26</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormTagHandler_html_abbe6cc476ab089d75d772d3c08bc61a7"><div class="ttname"><a href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#abbe6cc476ab089d75d772d3c08bc61a7">gui.html.form.FormTagHandler.setObjectTag</a></div><div class="ttdeci">def setObjectTag</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00193">form.py:193</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormTagHandler_html_afaf5980d5febf85d2746736e587f448a"><div class="ttname"><a href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#afaf5980d5febf85d2746736e587f448a">gui.html.form.FormTagHandler.HandleSELECT</a></div><div class="ttdeci">def HandleSELECT</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00130">form.py:130</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormTagHandler_html"><div class="ttname"><a href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html">gui.html.form.FormTagHandler</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00064">form.py:64</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1HTMLForm_html_a5f75f2a86b2cc677ed847c267a7142c0"><div class="ttname"><a href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#a5f75f2a86b2cc677ed847c267a7142c0">gui.html.form.HTMLForm.hit_submit_button</a></div><div class="ttdeci">def hit_submit_button</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00032">form.py:32</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1HTMLForm_html_a12c9c523698443426f810b58c73b42c4"><div class="ttname"><a href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html#a12c9c523698443426f810b58c73b42c4">gui.html.form.HTMLForm.build_data_set</a></div><div class="ttdeci">def build_data_set</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00047">form.py:47</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1HTMLForm_html"><div class="ttname"><a href="../../d3/d0a/classgui_1_1html_1_1form_1_1HTMLForm.html">gui.html.form.HTMLForm</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00023">form.py:23</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormTagHandler_html_abaf574047ef1c7ca918657183b98c842"><div class="ttname"><a href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#abaf574047ef1c7ca918657183b98c842">gui.html.form.FormTagHandler.HandleINPUT</a></div><div class="ttdeci">def HandleINPUT</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00113">form.py:113</a></div></div>
+<div class="ttc" id="namespacegui_1_1html_html_ad2a57a006615e76d51d1334fd477fd59"><div class="ttname"><a href="../../de/d77/namespacegui_1_1html.html#ad2a57a006615e76d51d1334fd477fd59">gui.html.GetParam</a></div><div class="ttdeci">def GetParam</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/da9/build_2lib_8linux-x86__64-2_87_2gui_2html_2____init_____8py_source.html#l00016">__init__.py:16</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormTagHandler_html_a32f94618442bd8a60a9805cd74dabded"><div class="ttname"><a href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#a32f94618442bd8a60a9805cd74dabded">gui.html.form.FormTagHandler.form</a></div><div class="ttdeci">form</div><div class="ttdoc">self.cell.SetAlignVer(wx.html.HTML_ALIGN_TOP) </div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00077">form.py:77</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormSubmitEvent_html"><div class="ttname"><a href="../../de/d36/classgui_1_1html_1_1form_1_1FormSubmitEvent.html">gui.html.form.FormSubmitEvent</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00011">form.py:11</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormSubmitEvent_html_ad4077f0d49a9803cf742a4b2c63051c4"><div class="ttname"><a href="../../de/d36/classgui_1_1html_1_1form_1_1FormSubmitEvent.html#ad4077f0d49a9803cf742a4b2c63051c4">gui.html.form.FormSubmitEvent.form</a></div><div class="ttdeci">form</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00020">form.py:20</a></div></div>
+<div class="ttc" id="classgui_1_1html_1_1form_1_1FormTagHandler_html_aa3bd76ff8f5db6b71bb700c9bd49a38c"><div class="ttname"><a href="../../d1/dc3/classgui_1_1html_1_1form_1_1FormTagHandler.html#aa3bd76ff8f5db6b71bb700c9bd49a38c">gui.html.form.FormTagHandler.create_control</a></div><div class="ttdeci">def create_control</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00155">form.py:155</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_96a7eeec1342994a7cb0d7fe7902ae74.html">build</a></li><li class="navelem"><a class="el" href="../../dir_3740601ea11ece1a00f9273977396bc4.html">lib.linux-x86_64-2.7</a></li><li class="navelem"><a class="el" href="../../dir_5bcb0661a26d4ce62009196be9ab2e39.html">gui</a></li><li class="navelem"><a class="el" href="../../dir_b0178fca016d9761e76d39146196aebb.html">html</a></li><li class="navelem"><a class="el" href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py.html">form.py</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:47 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

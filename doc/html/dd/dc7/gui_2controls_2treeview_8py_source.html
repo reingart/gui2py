@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Fichero Fuente gui/controls/treeview.py</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('dd/dc7/gui_2controls_2treeview_8py_source.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">treeview.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dd/dc7/gui_2controls_2treeview_8py.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">#!/usr/bin/python</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"># -*- coding: utf-8 -*-</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="stringliteral">&quot;gui2py&#39;s Tree Model-View-Controller control (uses wx.TreeCtrl)&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;__author__ = <span class="stringliteral">&quot;Mariano Reingart (reingart@gmail.com)&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;__copyright__ = <span class="stringliteral">&quot;Copyright (C) 2013- Mariano Reingart&quot;</span>  <span class="comment"># where applicable</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"># Initial implementation was based on PythonCard&#39;s Tree component, </span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"># but redesigned and overhauled a lot (specs renamed, events refactorized, etc.)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"># Note: pythoncard version was trivial, Model and View code are completely new</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> wx</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">from</span> ..event <span class="keyword">import</span> TreeEvent</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">from</span> ..component <span class="keyword">import</span> Control, SubComponent</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">from</span> ..spec <span class="keyword">import</span> Spec, EventSpec, InitSpec, StyleSpec, InternalSpec</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">from</span> .listbox <span class="keyword">import</span> ItemContainerControl</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">from</span> .. <span class="keyword">import</span> images </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">class </span>TreeView(Control):</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="stringliteral">&quot;A tree (wx.TreeCtrl)&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    _wx_class = wx.TreeCtrl</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    _style = wx.NO_FULL_REPAINT_ON_RESIZE | wx.CLIP_SIBLINGS</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    _image = images.tree_ctrl</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#aebbb7f30c8409b0d6380702c4fec0ad5">   28</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#aebbb7f30c8409b0d6380702c4fec0ad5">__init__</a>(self, parent=None, **kwargs):</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="comment"># default sane values (if not init&#39;ed previously):</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> hasattr(self, <span class="stringliteral">&quot;_items&quot;</span>):</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            self.<a class="code" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a7325e8b8dc6101f407f0bc525a76ee24">_max_columns</a> = 99</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        Control.__init__(self, parent, **kwargs)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment"># Emulate some listBox methods</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a25e0363ccf5f2a7347762da00b1435e2">   36</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a25e0363ccf5f2a7347762da00b1435e2">clear</a>(self):</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        self._items.clear()</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#abe4b1a4e0bcc9ad3b1d0805f74012920">   39</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#abe4b1a4e0bcc9ad3b1d0805f74012920">get_selected_items</a>(self):</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> [it <span class="keywordflow">for</span> it <span class="keywordflow">in</span> self.nodes <span class="keywordflow">if</span> it.selected]</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#affd5093ea7b1977295f1b4e73671811f">   42</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#affd5093ea7b1977295f1b4e73671811f">_get_items</a>(self):</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#acf7424585b5b3f034312c6e570f53b01">_items</a></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a7125f0eb9bafb783abec4794201580d5">   45</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a7125f0eb9bafb783abec4794201580d5">_set_items</a>(self, model=None):</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span> model <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            model = <a class="code" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html">TreeModel</a>(self)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">elif</span> <span class="keywordflow">not</span> isinstance(model, (TreeModel, )):</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">raise</span> AttributeError(<span class="stringliteral">&quot;unsupported type, TreeMoel expected&quot;</span>)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="comment"># TODO: rebuild the wx tree items</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">pass</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        self.<a class="code" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#acf7424585b5b3f034312c6e570f53b01">_items</a> = model</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    has_buttons = StyleSpec(wx.TR_HAS_BUTTONS, </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                doc=<span class="stringliteral">&quot;Show + and - buttons to the left of parent items.&quot;</span>)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    no_lines = StyleSpec(wx.TR_NO_LINES, </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                doc=<span class="stringliteral">&quot;Hide vertical level connectors&quot;</span>)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    row_lines = StyleSpec(wx.TR_ROW_LINES, </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                doc=<span class="stringliteral">&quot;Draw a contrasting border between displayed rows.&quot;</span>)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    multiselect = StyleSpec(wx.TR_MULTIPLE, </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                default=<span class="keyword">True</span>, doc=<span class="stringliteral">&quot;Allow multiple selection&quot;</span>)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    hide_root = StyleSpec(wx.TR_HIDE_ROOT, default=<span class="keyword">False</span>,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        doc=<span class="stringliteral">&quot;Suppress the display of the root node&quot;</span>)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    default_style = StyleSpec(wx.TR_DEFAULT_STYLE, </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                doc=<span class="stringliteral">&quot;Closest to the defaults for the native control&quot;</span>)    </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    items = InternalSpec(_get_items, _set_items)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;   </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment"># events:</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    onitemselected = EventSpec(<span class="stringliteral">&#39;item_selected&#39;</span>, </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                           binding=wx.EVT_TREE_SEL_CHANGED, kind=TreeEvent)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    onitemactivated = EventSpec(<span class="stringliteral">&#39;item_activated&#39;</span>, </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                           binding=wx.EVT_TREE_ITEM_ACTIVATED, kind=TreeEvent)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    onitemcollapsed = EventSpec(<span class="stringliteral">&#39;item_collapsed&#39;</span>, </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                           binding=wx.EVT_TREE_ITEM_COLLAPSED, kind=TreeEvent)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    onitemcollapsing = EventSpec(<span class="stringliteral">&#39;item_collapsing&#39;</span>, </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                           binding=wx.EVT_TREE_ITEM_COLLAPSING, kind=TreeEvent)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    onitemexpanded = EventSpec(<span class="stringliteral">&#39;item_expanded&#39;</span>, </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                           binding=wx.EVT_TREE_ITEM_EXPANDED, kind=TreeEvent)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    onitemexpanding = EventSpec(<span class="stringliteral">&#39;list_expanding&#39;</span>, </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                           binding=wx.EVT_TREE_ITEM_EXPANDING, kind=TreeEvent)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html">TreeModel</a>(dict):</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="stringliteral">&quot;TreeView Items (nodes) model map {wx item data: TreeItem}&quot;</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a50e91b30385dd4679e3a863c8ab0ab35">   90</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a50e91b30385dd4679e3a863c8ab0ab35">__init__</a>(self, _tree_view):</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        self.<a class="code" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#acf11316e726d052678218321f1e24c29">_tree_view</a> = _tree_view</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        self.<a class="code" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a2ed9384d84c8459001ac53c50b318b3e">clear</a>()</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a934d800668f77bcfce97d1a17bf2ba0c">   94</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a934d800668f77bcfce97d1a17bf2ba0c">__setitem__</a>(self, key, kwargs):</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        self.<a class="code" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#aef7f8446267227e5143965799b79358f">add</a>(key, kwargs)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#aef7f8446267227e5143965799b79358f">   97</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#aef7f8446267227e5143965799b79358f">add</a>(self, parent=None, text=&quot;&quot;, key=None):</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">if</span> key <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            key = self.<a class="code" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a880ad58984e30b0d8fe852ac75233d71">_new_key</a>()</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="comment"># create the wx item</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">if</span> parent <span class="keywordflow">is</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            wx_item = self._tree_view.wx_obj.AddRoot(text)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            wx_item = self._tree_view.wx_obj.AppendItem(parent.wx_item, text)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="comment"># associate the key so we can look for it in the future (ie, __iter__)</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        data = wx.TreeItemData(key)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        self._tree_view.wx_obj.SetItemData(wx_item, data)</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="comment"># create the new item </span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        item = <a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html">TreeItem</a>(self, key, wx_item, parent)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        dict.__setitem__(self, key, item)   <span class="comment"># add the key/value to the dict</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">return</span> item</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a86a15ea64d2b34f88676ab30ef194f3b">  118</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a86a15ea64d2b34f88676ab30ef194f3b">__delitem__</a>(self, it):</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        dict.__delitem__(self, it)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        self._tree_view.wx_obj.DeleteItem(it)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#ae27fe401131c0e56d7f53a435dda3e7b">  122</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#ae27fe401131c0e56d7f53a435dda3e7b">__call__</a>(self, wx_item=None):</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="stringliteral">&quot;Look for a item based on the wx_item or return a key/value pair&quot;</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">if</span> wx_item <span class="keywordflow">is</span> <span class="keywordflow">not</span> <span class="keywordtype">None</span>:</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            key = self._tree_view.wx_obj.GetPyData(wx_item)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <span class="keywordflow">return</span> self[key]</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordflow">return</span> self.items()  <span class="comment"># shortcut!</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                </div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a497f8ed75c421db5853ea905d0c04a77">  130</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a497f8ed75c421db5853ea905d0c04a77">__iter__</a>(self):</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="stringliteral">&quot;Return a iterable for all the nodes&quot;</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="comment"># This is not really useful except to perform global actions</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="comment"># (i.e., reseting the selection of all items)</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="comment"># use TreeItem.__iter__ to browse the nodes hierarchy</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">return</span> self.itervalues()</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a2ed9384d84c8459001ac53c50b318b3e">  137</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a2ed9384d84c8459001ac53c50b318b3e">clear</a>(self):</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="stringliteral">&quot;Remove all items and reset internal structures&quot;</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        dict.clear(self)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        self.<a class="code" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a7689cc6662df5d74362d8e50970de75d">_key</a> = 0</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordflow">if</span> hasattr(self.<a class="code" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#acf11316e726d052678218321f1e24c29">_tree_view</a>, <span class="stringliteral">&quot;wx_obj&quot;</span>):</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            self._tree_view.wx_obj.DeleteAllItems()</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a880ad58984e30b0d8fe852ac75233d71">  144</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a880ad58984e30b0d8fe852ac75233d71">_new_key</a>(self):</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="stringliteral">&quot;Create a unique key for this list control (currently: just a counter)&quot;</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        self.<a class="code" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a7689cc6662df5d74362d8e50970de75d">_key</a> += 1</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">return</span> self.<a class="code" href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a7689cc6662df5d74362d8e50970de75d">_key</a></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html">TreeItem</a>(object):</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="stringliteral">&quot;Represents a item node in the TreeModel&quot;</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#abbbfda41c7891bac3b6be24ab9d40796">  153</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#abbbfda41c7891bac3b6be24ab9d40796">__init__</a>(self, _tree_model, key, wx_item, parent_node):</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        self.<a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#ae307dde3a3099fbe36e21bb5313bcfea">_tree_model</a> = _tree_model</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        self.<a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a5c7e2ff3c15ff24fc98d5695f2235fe5">key</a> = key                      <span class="comment"># key used in model</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        self.<a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#aeb60417fe768e836a392fccefa7e090b">parent</a> = parent_node</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        self.<a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a2d9dfd2cc5c7996fdff372598794a4ad">wx_item</a> = wx_item              <span class="comment"># TreeItemId returned by Add/Append</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a231814f9209a25cddefcd3b6074a48e4">  159</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a231814f9209a25cddefcd3b6074a48e4">_get_text</a>(self):</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">return</span> self._tree_model._tree_view.wx_obj.GetItemText(self.<a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a2d9dfd2cc5c7996fdff372598794a4ad">wx_item</a>)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a9eb581e240a4c0715c4112cb26e8529c">  162</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a9eb581e240a4c0715c4112cb26e8529c">_set_text</a>(self, new_text):</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">return</span> self._tree_model._tree_view.wx_obj.SetItemText(self.<a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a2d9dfd2cc5c7996fdff372598794a4ad">wx_item</a>, new_text)</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    text = property(_get_text, _set_text, doc=<span class="stringliteral">&quot;Get or change the item label&quot;</span>)</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;       </div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a6ee08f53c727fc3be303fd4db96b1e03">  167</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a6ee08f53c727fc3be303fd4db96b1e03">_is_selected</a>(self):</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">return</span> self._tree_model._tree_view.wx_obj.IsSelected(self.<a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a2d9dfd2cc5c7996fdff372598794a4ad">wx_item</a>)</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    </div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a63f33d5c6e145886db157587f71be81d">  170</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a63f33d5c6e145886db157587f71be81d">_select</a>(self, on):</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        self._tree_model._tree_view.wx_obj.SelectItem(self.<a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a2d9dfd2cc5c7996fdff372598794a4ad">wx_item</a>, on)</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    selected = property(_is_selected, _select)</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#afac130fff700e2ae40bedaceacb86910">  175</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#afac130fff700e2ae40bedaceacb86910">ensure_visible</a>(self):</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        self._tree_model._tree_view.wx_obj.EnsureVisible(self.<a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a2d9dfd2cc5c7996fdff372598794a4ad">wx_item</a>)</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        </div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#aebfb37891951d37475407196539353b7">  178</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#aebfb37891951d37475407196539353b7">focus</a>(self):</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        self._tree_model._tree_view.wx_obj.SetFocusedItem(self.<a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a2d9dfd2cc5c7996fdff372598794a4ad">wx_item</a>)</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#aa814e5fffe6be0906ede9d76133c9089">  181</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#aa814e5fffe6be0906ede9d76133c9089">get_children_count</a>(self):</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keywordflow">return</span> self._tree_model._tree_view.wx_obj.GetChildrenCount(self.<a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a2d9dfd2cc5c7996fdff372598794a4ad">wx_item</a>)</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    </div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#aeab3f6c01c30dfb57015fd0575451cac">  184</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#aeab3f6c01c30dfb57015fd0575451cac">set_has_children</a>(self, has_children=True):</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="stringliteral">&quot;Force appearance of the button next to the item&quot;</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="comment"># This is useful to allow the user to expand the items which don&#39;t have</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="comment"># any children now, but instead adding them only when needed, thus </span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="comment"># minimizing memory usage and loading time.</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        self._tree_model._tree_view.wx_obj.SetItemHasChildren(self.<a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a2d9dfd2cc5c7996fdff372598794a4ad">wx_item</a>, </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                                                              has_children)</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
+<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a5f9f8e8da70186dec819b833b917af3a">  192</a></span>&#160;    <span class="keyword">def </span><a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a5f9f8e8da70186dec819b833b917af3a">__iter__</a>(self):</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="stringliteral">&quot;look for children and convert them to TreeItem if any&quot;</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        tree = self._tree_model._tree_view.wx_obj</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        wx_item, cookie = tree.GetFirstChild(self.<a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a2d9dfd2cc5c7996fdff372598794a4ad">wx_item</a>)</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">if</span> wx_item.IsOk():</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            key = tree.GetPyData(wx_item)</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="keywordflow">yield</span> self.<a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#ae307dde3a3099fbe36e21bb5313bcfea">_tree_model</a>[key]</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keywordflow">while</span> <span class="keyword">True</span>:</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                wx_item, cookie = tree.GetNextChild(self.<a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a2d9dfd2cc5c7996fdff372598794a4ad">wx_item</a>, cookie)</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                <span class="keywordflow">if</span> <span class="keywordflow">not</span> wx_item.IsOk():</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                    <span class="keywordflow">break</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                key = tree.GetPyData(wx_item)</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                <span class="keywordflow">yield</span> self.<a class="code" href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#ae307dde3a3099fbe36e21bb5313bcfea">_tree_model</a>[key]</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="keywordflow">if</span> __name__ == <span class="stringliteral">&quot;__main__&quot;</span>:</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keyword">import</span> sys</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="comment"># basic test until unit_test</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keyword">import</span> gui</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    app = wx.App(redirect=<span class="keyword">False</span>)    </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    w = gui.Window(title=<span class="stringliteral">&quot;hello world&quot;</span>, name=<span class="stringliteral">&quot;frmTest&quot;</span>, tool_window=<span class="keyword">False</span>, </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;               resizable=<span class="keyword">True</span>, visible=<span class="keyword">False</span>, pos=(180, 0))</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    tv = <a class="code" href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html">TreeView</a>(w, name=<span class="stringliteral">&quot;treeview&quot;</span>, has_buttons=<span class="keyword">True</span>, default_style=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    root = tv.items.add(text=<span class="stringliteral">&quot;Root&quot;</span>)</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    child1 = tv.items.add(parent=root, text=<span class="stringliteral">&quot;Child 1&quot;</span>)</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    child2 = tv.items.add(parent=root, text=<span class="stringliteral">&quot;Child 2&quot;</span>)</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    child3 = tv.items.add(parent=root, text=<span class="stringliteral">&quot;Child 3&quot;</span>)</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    child11 = tv.items.add(parent=child1, text=<span class="stringliteral">&quot;Child 11&quot;</span>)</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    child11.ensure_visible()</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    child2.set_has_children()</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keyword">def </span><a class="code" href="../../d0/dbd/namespacegui_1_1controls_1_1treeview.html#af3dbb0413d1397e85a7203f1f57c739b">expand_item</a>(event):</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="stringliteral">&quot;lazy evaluation example: virtually add children at runtime&quot;</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> event.detail.get_children_count():</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(5):</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                it = tv.items.add(parent=event.detail, text=<span class="stringliteral">&quot;lazy child %s&quot;</span> % i)</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                it.set_has_children()  <span class="comment"># allow to lazy expand this child too</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="comment"># assign some event handlers:</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    tv.onitemexpanding = expand_item</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    tv.onitemselected = <span class="stringliteral">&quot;print &#39;selected TreeItem:&#39;, event.detail.text&quot;</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    w.show()</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="comment"># basic tests:</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="comment"># iterate on the root node:</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">for</span> i, nodx <span class="keywordflow">in</span> enumerate(root):</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keyword">assert</span> nodx.text == <span class="stringliteral">&quot;Child %s&quot;</span> % (i + 1)</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        nodx.text = <span class="stringliteral">&quot;hello %s&quot;</span> % i</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keyword">assert</span> nodx.text == <span class="stringliteral">&quot;hello %s&quot;</span> % i</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordflow">if</span> i == 0:</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="keyword">assert</span> nodx.get_children_count() == 1</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keyword">assert</span> root.get_children_count() == 4</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keyword">from</span> <a class="code" href="../../d4/d72/namespacegui_1_1tools_1_1inspector.html">gui.tools.inspector</a> <span class="keyword">import</span> InspectorTool</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <a class="code" href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html">InspectorTool</a>().show(w)</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    app.MainLoop()</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;</div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeItem_html_a2d9dfd2cc5c7996fdff372598794a4ad"><div class="ttname"><a href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a2d9dfd2cc5c7996fdff372598794a4ad">gui.controls.treeview.TreeItem.wx_item</a></div><div class="ttdeci">wx_item</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00157">treeview.py:157</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeItem_html_a63f33d5c6e145886db157587f71be81d"><div class="ttname"><a href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a63f33d5c6e145886db157587f71be81d">gui.controls.treeview.TreeItem._select</a></div><div class="ttdeci">def _select</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00170">treeview.py:170</a></div></div>
+<div class="ttc" id="namespacegui_1_1controls_1_1treeview_html_af3dbb0413d1397e85a7203f1f57c739b"><div class="ttname"><a href="../../d0/dbd/namespacegui_1_1controls_1_1treeview.html#af3dbb0413d1397e85a7203f1f57c739b">gui.controls.treeview.expand_item</a></div><div class="ttdeci">def expand_item</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00225">treeview.py:225</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeItem_html_aeab3f6c01c30dfb57015fd0575451cac"><div class="ttname"><a href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#aeab3f6c01c30dfb57015fd0575451cac">gui.controls.treeview.TreeItem.set_has_children</a></div><div class="ttdeci">def set_has_children</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00184">treeview.py:184</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeView_html_a7325e8b8dc6101f407f0bc525a76ee24"><div class="ttname"><a href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a7325e8b8dc6101f407f0bc525a76ee24">gui.controls.treeview.TreeView._max_columns</a></div><div class="ttdeci">_max_columns</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00031">treeview.py:31</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeView_html_a7125f0eb9bafb783abec4794201580d5"><div class="ttname"><a href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a7125f0eb9bafb783abec4794201580d5">gui.controls.treeview.TreeView._set_items</a></div><div class="ttdeci">def _set_items</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00045">treeview.py:45</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeModel_html_a50e91b30385dd4679e3a863c8ab0ab35"><div class="ttname"><a href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a50e91b30385dd4679e3a863c8ab0ab35">gui.controls.treeview.TreeModel.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00090">treeview.py:90</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeItem_html_a5c7e2ff3c15ff24fc98d5695f2235fe5"><div class="ttname"><a href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a5c7e2ff3c15ff24fc98d5695f2235fe5">gui.controls.treeview.TreeItem.key</a></div><div class="ttdeci">key</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00155">treeview.py:155</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeItem_html_afac130fff700e2ae40bedaceacb86910"><div class="ttname"><a href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#afac130fff700e2ae40bedaceacb86910">gui.controls.treeview.TreeItem.ensure_visible</a></div><div class="ttdeci">def ensure_visible</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00175">treeview.py:175</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeView_html"><div class="ttname"><a href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html">gui.controls.treeview.TreeView</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00021">treeview.py:21</a></div></div>
+<div class="ttc" id="classgui_1_1tools_1_1inspector_1_1InspectorTool_html"><div class="ttname"><a href="../../df/da2/classgui_1_1tools_1_1inspector_1_1InspectorTool.html">gui.tools.inspector.InspectorTool</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00281">inspector.py:281</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeItem_html_aebfb37891951d37475407196539353b7"><div class="ttname"><a href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#aebfb37891951d37475407196539353b7">gui.controls.treeview.TreeItem.focus</a></div><div class="ttdeci">def focus</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00178">treeview.py:178</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeModel_html_aef7f8446267227e5143965799b79358f"><div class="ttname"><a href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#aef7f8446267227e5143965799b79358f">gui.controls.treeview.TreeModel.add</a></div><div class="ttdeci">def add</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00097">treeview.py:97</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeModel_html_a7689cc6662df5d74362d8e50970de75d"><div class="ttname"><a href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a7689cc6662df5d74362d8e50970de75d">gui.controls.treeview.TreeModel._key</a></div><div class="ttdeci">_key</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00140">treeview.py:140</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeItem_html_aeb60417fe768e836a392fccefa7e090b"><div class="ttname"><a href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#aeb60417fe768e836a392fccefa7e090b">gui.controls.treeview.TreeItem.parent</a></div><div class="ttdeci">parent</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00156">treeview.py:156</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeItem_html_a231814f9209a25cddefcd3b6074a48e4"><div class="ttname"><a href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a231814f9209a25cddefcd3b6074a48e4">gui.controls.treeview.TreeItem._get_text</a></div><div class="ttdeci">def _get_text</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00159">treeview.py:159</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeModel_html_acf11316e726d052678218321f1e24c29"><div class="ttname"><a href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#acf11316e726d052678218321f1e24c29">gui.controls.treeview.TreeModel._tree_view</a></div><div class="ttdeci">_tree_view</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00091">treeview.py:91</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeItem_html_a5f9f8e8da70186dec819b833b917af3a"><div class="ttname"><a href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a5f9f8e8da70186dec819b833b917af3a">gui.controls.treeview.TreeItem.__iter__</a></div><div class="ttdeci">def __iter__</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00192">treeview.py:192</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeItem_html_abbbfda41c7891bac3b6be24ab9d40796"><div class="ttname"><a href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#abbbfda41c7891bac3b6be24ab9d40796">gui.controls.treeview.TreeItem.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00153">treeview.py:153</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeModel_html"><div class="ttname"><a href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html">gui.controls.treeview.TreeModel</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00087">treeview.py:87</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeModel_html_a86a15ea64d2b34f88676ab30ef194f3b"><div class="ttname"><a href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a86a15ea64d2b34f88676ab30ef194f3b">gui.controls.treeview.TreeModel.__delitem__</a></div><div class="ttdeci">def __delitem__</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00118">treeview.py:118</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeModel_html_a934d800668f77bcfce97d1a17bf2ba0c"><div class="ttname"><a href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a934d800668f77bcfce97d1a17bf2ba0c">gui.controls.treeview.TreeModel.__setitem__</a></div><div class="ttdeci">def __setitem__</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00094">treeview.py:94</a></div></div>
+<div class="ttc" id="namespacegui_1_1tools_1_1inspector_html"><div class="ttname"><a href="../../d4/d72/namespacegui_1_1tools_1_1inspector.html">gui.tools.inspector</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00001">inspector.py:1</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeItem_html_ae307dde3a3099fbe36e21bb5313bcfea"><div class="ttname"><a href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#ae307dde3a3099fbe36e21bb5313bcfea">gui.controls.treeview.TreeItem._tree_model</a></div><div class="ttdeci">_tree_model</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00154">treeview.py:154</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeModel_html_a880ad58984e30b0d8fe852ac75233d71"><div class="ttname"><a href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a880ad58984e30b0d8fe852ac75233d71">gui.controls.treeview.TreeModel._new_key</a></div><div class="ttdeci">def _new_key</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00144">treeview.py:144</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeView_html_acf7424585b5b3f034312c6e570f53b01"><div class="ttname"><a href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#acf7424585b5b3f034312c6e570f53b01">gui.controls.treeview.TreeView._items</a></div><div class="ttdeci">_items</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00054">treeview.py:54</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeItem_html_a6ee08f53c727fc3be303fd4db96b1e03"><div class="ttname"><a href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a6ee08f53c727fc3be303fd4db96b1e03">gui.controls.treeview.TreeItem._is_selected</a></div><div class="ttdeci">def _is_selected</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00167">treeview.py:167</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeView_html_affd5093ea7b1977295f1b4e73671811f"><div class="ttname"><a href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#affd5093ea7b1977295f1b4e73671811f">gui.controls.treeview.TreeView._get_items</a></div><div class="ttdeci">def _get_items</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00042">treeview.py:42</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeModel_html_ae27fe401131c0e56d7f53a435dda3e7b"><div class="ttname"><a href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#ae27fe401131c0e56d7f53a435dda3e7b">gui.controls.treeview.TreeModel.__call__</a></div><div class="ttdeci">def __call__</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00122">treeview.py:122</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeItem_html_aa814e5fffe6be0906ede9d76133c9089"><div class="ttname"><a href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#aa814e5fffe6be0906ede9d76133c9089">gui.controls.treeview.TreeItem.get_children_count</a></div><div class="ttdeci">def get_children_count</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00181">treeview.py:181</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeItem_html_a9eb581e240a4c0715c4112cb26e8529c"><div class="ttname"><a href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html#a9eb581e240a4c0715c4112cb26e8529c">gui.controls.treeview.TreeItem._set_text</a></div><div class="ttdeci">def _set_text</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00162">treeview.py:162</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeModel_html_a2ed9384d84c8459001ac53c50b318b3e"><div class="ttname"><a href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a2ed9384d84c8459001ac53c50b318b3e">gui.controls.treeview.TreeModel.clear</a></div><div class="ttdeci">def clear</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00137">treeview.py:137</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeView_html_a25e0363ccf5f2a7347762da00b1435e2"><div class="ttname"><a href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#a25e0363ccf5f2a7347762da00b1435e2">gui.controls.treeview.TreeView.clear</a></div><div class="ttdeci">def clear</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00036">treeview.py:36</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeItem_html"><div class="ttname"><a href="../../dd/d6d/classgui_1_1controls_1_1treeview_1_1TreeItem.html">gui.controls.treeview.TreeItem</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00150">treeview.py:150</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeView_html_abe4b1a4e0bcc9ad3b1d0805f74012920"><div class="ttname"><a href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#abe4b1a4e0bcc9ad3b1d0805f74012920">gui.controls.treeview.TreeView.get_selected_items</a></div><div class="ttdeci">def get_selected_items</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00039">treeview.py:39</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeView_html_aebbb7f30c8409b0d6380702c4fec0ad5"><div class="ttname"><a href="../../da/dd2/classgui_1_1controls_1_1treeview_1_1TreeView.html#aebbb7f30c8409b0d6380702c4fec0ad5">gui.controls.treeview.TreeView.__init__</a></div><div class="ttdeci">def __init__</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00028">treeview.py:28</a></div></div>
+<div class="ttc" id="classgui_1_1controls_1_1treeview_1_1TreeModel_html_a497f8ed75c421db5853ea905d0c04a77"><div class="ttname"><a href="../../d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a497f8ed75c421db5853ea905d0c04a77">gui.controls.treeview.TreeModel.__iter__</a></div><div class="ttdeci">def __iter__</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dfd/build_2lib_8linux-x86__64-2_87_2gui_2controls_2treeview_8py_source.html#l00130">treeview.py:130</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_be831313eee9167e67543a36aa74e60d.html">gui</a></li><li class="navelem"><a class="el" href="../../dir_c9134ecc933fd451a588b777913cb500.html">controls</a></li><li class="navelem"><a class="el" href="../../dd/dc7/gui_2controls_2treeview_8py.html">treeview.py</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:47 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<map id="gui.component.ControlSuper.resize" name="gui.component.ControlSuper.resize">
+<area shape="rect" id="node2" href="$df/d86/classgui_1_1controls_1_1notebook_1_1TabPanel.html#a4817dc7a2fa46461a3982722a3594446" title="gui.controls.notebook.Tab\lPanel.__init__" alt="" coords="290,5,462,46"/>
+<area shape="rect" id="node3" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#ace3b877725a11c910667016dc2781748" title="gui.component.ControlSuper.\l__init__" alt="" coords="281,70,471,111"/>
+<area shape="rect" id="node4" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#a17fb25dd4c1b68f28fc239d2ab5d3e0c" title="gui.component.ControlSuper.\l_set_margin" alt="" coords="281,159,471,201"/>
+<area shape="rect" id="node5" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#a81c05bce87b2980cd7ab5ab22fd5189b" title="gui.component.ControlSuper.get\l_char_height" alt="" coords="521,159,730,201"/>
+<area shape="rect" id="node6" href="$d8/d6a/classgui_1_1html_1_1input_1_1FormTextArea.html#aaa6a45e5e9a6348b6625092ab4247e55" title="gui.html.input.FormTextArea.\l__init__" alt="" coords="779,159,970,201"/>
+</map>

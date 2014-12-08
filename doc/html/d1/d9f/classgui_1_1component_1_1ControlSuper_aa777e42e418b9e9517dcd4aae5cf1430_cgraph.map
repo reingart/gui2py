@@ -1,0 +1,7 @@
+<map id="gui.component.ControlSuper.resize" name="gui.component.ControlSuper.resize">
+<area shape="rect" id="node2" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#aadd45821f352e5df10edc11a9e609105" title="gui.component.ControlSuper.\l_set_pos" alt="" coords="281,38,471,79"/>
+<area shape="rect" id="node5" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#a79f0952c8c1e9e639e219c97944a1147" title="gui.component.ControlSuper.\l_set_size" alt="" coords="281,103,471,145"/>
+<area shape="rect" id="node3" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#a9faae286a706388b11b9debdf4daf39a" title="gui.component.ControlSuper.\l_calc_dimension" alt="" coords="521,70,711,111"/>
+<area shape="rect" id="node4" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#a7c87cb830ddcb27f667a466ad28c0a94" title="gui.component.ControlSuper.\l_get_pos" alt="" coords="521,5,711,46"/>
+<area shape="rect" id="node6" href="$d1/d9f/classgui_1_1component_1_1ControlSuper.html#ad712fca170ef6df1933a3601023075ba" title="gui.component.ControlSuper.\l_get_size" alt="" coords="521,135,711,177"/>
+</map>

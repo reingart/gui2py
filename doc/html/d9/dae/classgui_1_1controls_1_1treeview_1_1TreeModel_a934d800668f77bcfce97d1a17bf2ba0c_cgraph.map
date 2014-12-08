@@ -1,0 +1,8 @@
+<map id="gui.controls.treeview.TreeModel.__setitem__" name="gui.controls.treeview.TreeModel.__setitem__">
+<area shape="rect" id="node2" href="$d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#aef7f8446267227e5143965799b79358f" title="gui.controls.treeview.Tree\lModel.add" alt="" coords="227,70,399,111"/>
+<area shape="rect" id="node5" href="$d8/d7f/classgui_1_1controls_1_1listview_1_1ListModel.html#a592c196116530a743f66295e7324046c" title="gui.controls.listview.List\lModel.add" alt="" coords="232,135,395,177"/>
+<area shape="rect" id="node3" href="$d8/d7f/classgui_1_1controls_1_1listview_1_1ListModel.html#a63c994627bcb951456f987350fd9dccd" title="gui.controls.listview.List\lModel._new_key" alt="" coords="453,70,616,111"/>
+<area shape="rect" id="node4" href="$d9/dae/classgui_1_1controls_1_1treeview_1_1TreeModel.html#a880ad58984e30b0d8fe852ac75233d71" title="gui.controls.treeview.Tree\lModel._new_key" alt="" coords="449,5,621,46"/>
+<area shape="rect" id="node6" href="$d8/d7f/classgui_1_1controls_1_1listview_1_1ListModel.html#a422d19fd7cea2896293867dbf10ac916" title="gui.controls.listview.List\lModel._insert" alt="" coords="453,135,616,177"/>
+<area shape="rect" id="node7" href="$d8/d7f/classgui_1_1controls_1_1listview_1_1ListModel.html#a27ece9d19a94340515fd40a5360f9fc8" title="gui.controls.listview.List\lModel._update" alt="" coords="453,201,616,242"/>
+</map>

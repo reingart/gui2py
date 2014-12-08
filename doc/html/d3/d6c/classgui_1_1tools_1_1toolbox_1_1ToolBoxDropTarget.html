@@ -1,0 +1,909 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>gui2py: Referencia de la Clase gui.tools.toolbox.ToolBoxDropTarget</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../edit.gif"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">gui2py
+   &#160;<span id="projectnumber">0.9.3</span>
+   </div>
+   <div id="projectbrief">Interfaz de desarrollo de aplicaciones graficas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="../../index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="../../namespaces.html"><span>Paquetes</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Clases</span></a></li>
+      <li><a href="../../files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="../../search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="../../annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
+      <li><a href="../../classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="../../inherits.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
+      <li><a href="../../functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html','../../');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Propiedades</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="../../d0/d2f/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referencia de la Clase gui.tools.toolbox.ToolBoxDropTarget</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagrama de herencias de gui.tools.toolbox.ToolBoxDropTarget</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d4c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget__inherit__graph.png" border="0" usemap="#gui_8tools_8toolbox_8ToolBoxDropTarget_inherit__map" alt="Inheritance graph"/></div>
+<map name="gui_8tools_8toolbox_8ToolBoxDropTarget_inherit__map" id="gui_8tools_8toolbox_8ToolBoxDropTarget_inherit__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración para gui.tools.toolbox.ToolBoxDropTarget:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d5/d3b/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget__coll__graph.png" border="0" usemap="#gui_8tools_8toolbox_8ToolBoxDropTarget_coll__map" alt="Collaboration graph"/></div>
+<map name="gui_8tools_8toolbox_8ToolBoxDropTarget_coll__map" id="gui_8tools_8toolbox_8ToolBoxDropTarget_coll__map">
+</map>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">significado de colores y flechas</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a21b0e87f1575762eac9c6b4b56227b46"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html#a21b0e87f1575762eac9c6b4b56227b46">__init__</a></td></tr>
+<tr class="separator:a21b0e87f1575762eac9c6b4b56227b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a249e0ad6c42cb1f1bb52873d11e0f603"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html#a249e0ad6c42cb1f1bb52873d11e0f603">OnEnter</a></td></tr>
+<tr class="separator:a249e0ad6c42cb1f1bb52873d11e0f603"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af001666aae43777ecec0408da1217faf"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html#af001666aae43777ecec0408da1217faf">OnLeave</a></td></tr>
+<tr class="separator:af001666aae43777ecec0408da1217faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81b38aab33b17c43ad3912c8b0038685"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html#a81b38aab33b17c43ad3912c8b0038685">OnDrop</a></td></tr>
+<tr class="separator:a81b38aab33b17c43ad3912c8b0038685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4408c210133fa96bb5d91fbe42c7154"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html#ae4408c210133fa96bb5d91fbe42c7154">OnDragOver</a></td></tr>
+<tr class="separator:ae4408c210133fa96bb5d91fbe42c7154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67b2cbade8d7e607c339e25ae61650ca"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html#a67b2cbade8d7e607c339e25ae61650ca">OnData</a></td></tr>
+<tr class="separator:a67b2cbade8d7e607c339e25ae61650ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3135f53ae36813249c6e8caa7eec6b2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html#ae3135f53ae36813249c6e8caa7eec6b2">copy</a></td></tr>
+<tr class="separator:ae3135f53ae36813249c6e8caa7eec6b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21b0e87f1575762eac9c6b4b56227b46"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html#a21b0e87f1575762eac9c6b4b56227b46">__init__</a></td></tr>
+<tr class="separator:a21b0e87f1575762eac9c6b4b56227b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a249e0ad6c42cb1f1bb52873d11e0f603"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html#a249e0ad6c42cb1f1bb52873d11e0f603">OnEnter</a></td></tr>
+<tr class="separator:a249e0ad6c42cb1f1bb52873d11e0f603"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af001666aae43777ecec0408da1217faf"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html#af001666aae43777ecec0408da1217faf">OnLeave</a></td></tr>
+<tr class="separator:af001666aae43777ecec0408da1217faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81b38aab33b17c43ad3912c8b0038685"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html#a81b38aab33b17c43ad3912c8b0038685">OnDrop</a></td></tr>
+<tr class="separator:a81b38aab33b17c43ad3912c8b0038685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4408c210133fa96bb5d91fbe42c7154"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html#ae4408c210133fa96bb5d91fbe42c7154">OnDragOver</a></td></tr>
+<tr class="separator:ae4408c210133fa96bb5d91fbe42c7154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67b2cbade8d7e607c339e25ae61650ca"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html#a67b2cbade8d7e607c339e25ae61650ca">OnData</a></td></tr>
+<tr class="separator:a67b2cbade8d7e607c339e25ae61650ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3135f53ae36813249c6e8caa7eec6b2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html#ae3135f53ae36813249c6e8caa7eec6b2">copy</a></td></tr>
+<tr class="separator:ae3135f53ae36813249c6e8caa7eec6b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:ac2cc747bbdaee507971d8ec02acc9f25"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html#ac2cc747bbdaee507971d8ec02acc9f25">dv</a></td></tr>
+<tr class="separator:ac2cc747bbdaee507971d8ec02acc9f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed72dee747df0ffbf61057dc95276867"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html#aed72dee747df0ffbf61057dc95276867">root</a></td></tr>
+<tr class="separator:aed72dee747df0ffbf61057dc95276867"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f44337af845da50bfb55c1d6323af21"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html#a8f44337af845da50bfb55c1d6323af21">designer</a></td></tr>
+<tr class="separator:a8f44337af845da50bfb55c1d6323af21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf792db8ba43dc30924441ae4264a846"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html#acf792db8ba43dc30924441ae4264a846">inspector</a></td></tr>
+<tr class="separator:acf792db8ba43dc30924441ae4264a846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21b2c14ed65936390979a19322aa7caa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html#a21b2c14ed65936390979a19322aa7caa">data</a></td></tr>
+<tr class="separator:a21b2c14ed65936390979a19322aa7caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock">
+<p>Definición en la línea <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00139">139</a> del archivo <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html">toolbox.py</a>.</p>
+</div><h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a class="anchor" id="a21b0e87f1575762eac9c6b4b56227b46"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.toolbox.ToolBoxDropTarget.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>designer</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>inspector</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00142">142</a> del archivo <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html">toolbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00142">gui.tools.toolbox.ToolBoxDropTarget.__init__()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a21b0e87f1575762eac9c6b4b56227b46_icgraph.png" border="0" usemap="#d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a21b0e87f1575762eac9c6b4b56227b46_icgraph" alt=""/></div>
+<map name="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a21b0e87f1575762eac9c6b4b56227b46_icgraph" id="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a21b0e87f1575762eac9c6b4b56227b46_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a21b0e87f1575762eac9c6b4b56227b46"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.toolbox.ToolBoxDropTarget.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>designer</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>inspector</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00142">142</a> del archivo <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html">toolbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00142">gui.tools.toolbox.ToolBoxDropTarget.__init__()</a>, <a class="el" href="../../da/ddf/build_2lib_8linux-x86__64-2_87_2gui_2html_2form_8py_source.html#l00021">gui.html.form.FormSubmitEvent.data</a>, <a class="el" href="../../db/d88/build_2lib_8linux-x86__64-2_87_2gui_2event_8py_source.html#l00089">gui.event.SubmitEvent.data</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00150">gui.tools.toolbox.ToolBoxDropTarget.data</a>, <a class="el" href="../../dd/d5a/build_2lib_8linux-x86__64-2_87_2gui_2controls_2gridview_8py_source.html#l00150">gui.controls.gridview.GridTable.data</a>, <a class="el" href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00027">gui.tools.inspector.InspectorPanel.designer</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00135">gui.tools.toolbox.ToolBox.designer</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00146">gui.tools.toolbox.ToolBoxDropTarget.designer</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00422">gui.tools.designer.SelectionTag.designer</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00447">gui.tools.designer.SelectionMarker.designer</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00622">gui.component.DesignerMixin.designer</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00144">gui.tools.toolbox.ToolBoxDropTarget.dv</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00036">gui.tools.designer.BasicDesigner.inspector</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00039">gui.tools.toolbox.ToolBox.inspector</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00147">gui.tools.toolbox.ToolBoxDropTarget.inspector</a>, <a class="el" href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00291">gui.tools.inspector.InspectorTool.inspector</a>, <a class="el" href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00081">gui.tools.inspector.InspectorPanel.root</a> y <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00145">gui.tools.toolbox.ToolBoxDropTarget.root</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a21b0e87f1575762eac9c6b4b56227b46_cgraph.png" border="0" usemap="#d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a21b0e87f1575762eac9c6b4b56227b46_cgraph" alt=""/></div>
+<map name="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a21b0e87f1575762eac9c6b4b56227b46_cgraph" id="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a21b0e87f1575762eac9c6b4b56227b46_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a class="anchor" id="ae3135f53ae36813249c6e8caa7eec6b2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.toolbox.ToolBoxDropTarget.copy </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00219">219</a> del archivo <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html">toolbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00027">gui.tools.inspector.InspectorPanel.designer</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00135">gui.tools.toolbox.ToolBox.designer</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00146">gui.tools.toolbox.ToolBoxDropTarget.designer</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00422">gui.tools.designer.SelectionTag.designer</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00447">gui.tools.designer.SelectionMarker.designer</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00622">gui.component.DesignerMixin.designer</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00144">gui.tools.toolbox.ToolBoxDropTarget.dv</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00036">gui.tools.designer.BasicDesigner.inspector</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00039">gui.tools.toolbox.ToolBox.inspector</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00147">gui.tools.toolbox.ToolBoxDropTarget.inspector</a>, <a class="el" href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00291">gui.tools.inspector.InspectorTool.inspector</a>, <a class="el" href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00081">gui.tools.inspector.InspectorPanel.root</a> y <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00145">gui.tools.toolbox.ToolBoxDropTarget.root</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00219">gui.tools.toolbox.ToolBoxDropTarget.copy()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_ae3135f53ae36813249c6e8caa7eec6b2_icgraph.png" border="0" usemap="#d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_ae3135f53ae36813249c6e8caa7eec6b2_icgraph" alt=""/></div>
+<map name="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_ae3135f53ae36813249c6e8caa7eec6b2_icgraph" id="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_ae3135f53ae36813249c6e8caa7eec6b2_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae3135f53ae36813249c6e8caa7eec6b2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.toolbox.ToolBoxDropTarget.copy </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00219">219</a> del archivo <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html">toolbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00219">gui.tools.toolbox.ToolBoxDropTarget.copy()</a>, <a class="el" href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00027">gui.tools.inspector.InspectorPanel.designer</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00135">gui.tools.toolbox.ToolBox.designer</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00146">gui.tools.toolbox.ToolBoxDropTarget.designer</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00422">gui.tools.designer.SelectionTag.designer</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00447">gui.tools.designer.SelectionMarker.designer</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00622">gui.component.DesignerMixin.designer</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00144">gui.tools.toolbox.ToolBoxDropTarget.dv</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00036">gui.tools.designer.BasicDesigner.inspector</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00039">gui.tools.toolbox.ToolBox.inspector</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00147">gui.tools.toolbox.ToolBoxDropTarget.inspector</a>, <a class="el" href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00291">gui.tools.inspector.InspectorTool.inspector</a>, <a class="el" href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00081">gui.tools.inspector.InspectorPanel.root</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00145">gui.tools.toolbox.ToolBoxDropTarget.root</a> y <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00227">gui.tools.toolbox.set_drop_target()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_ae3135f53ae36813249c6e8caa7eec6b2_cgraph.png" border="0" usemap="#d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_ae3135f53ae36813249c6e8caa7eec6b2_cgraph" alt=""/></div>
+<map name="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_ae3135f53ae36813249c6e8caa7eec6b2_cgraph" id="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_ae3135f53ae36813249c6e8caa7eec6b2_cgraph">
+<area shape="rect" id="node2" href="../../db/d4e/namespacegui_1_1tools_1_1toolbox.html#a2e61b2d9a49e1d06836d805a18f095ab" title="gui.tools.toolbox.set\l_drop_target" alt="" coords="224,29,363,70"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a67b2cbade8d7e607c339e25ae61650ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.toolbox.ToolBoxDropTarget.OnData </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00182">182</a> del archivo <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html">toolbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00027">gui.tools.inspector.InspectorPanel.designer</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00135">gui.tools.toolbox.ToolBox.designer</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00146">gui.tools.toolbox.ToolBoxDropTarget.designer</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00422">gui.tools.designer.SelectionTag.designer</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00447">gui.tools.designer.SelectionMarker.designer</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00622">gui.component.DesignerMixin.designer</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00144">gui.tools.toolbox.ToolBoxDropTarget.dv</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00036">gui.tools.designer.BasicDesigner.inspector</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00039">gui.tools.toolbox.ToolBox.inspector</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00147">gui.tools.toolbox.ToolBoxDropTarget.inspector</a>, <a class="el" href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00291">gui.tools.inspector.InspectorTool.inspector</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00182">gui.tools.toolbox.ToolBoxDropTarget.OnData()</a>, <a class="el" href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00081">gui.tools.inspector.InspectorPanel.root</a> y <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00145">gui.tools.toolbox.ToolBoxDropTarget.root</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a67b2cbade8d7e607c339e25ae61650ca_cgraph.png" border="0" usemap="#d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a67b2cbade8d7e607c339e25ae61650ca_cgraph" alt=""/></div>
+<map name="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a67b2cbade8d7e607c339e25ae61650ca_cgraph" id="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a67b2cbade8d7e607c339e25ae61650ca_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a67b2cbade8d7e607c339e25ae61650ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.toolbox.ToolBoxDropTarget.OnData </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00182">182</a> del archivo <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html">toolbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00027">gui.tools.inspector.InspectorPanel.designer</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00135">gui.tools.toolbox.ToolBox.designer</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00146">gui.tools.toolbox.ToolBoxDropTarget.designer</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00422">gui.tools.designer.SelectionTag.designer</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00447">gui.tools.designer.SelectionMarker.designer</a>, <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00622">gui.component.DesignerMixin.designer</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00144">gui.tools.toolbox.ToolBoxDropTarget.dv</a>, <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00036">gui.tools.designer.BasicDesigner.inspector</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00039">gui.tools.toolbox.ToolBox.inspector</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00147">gui.tools.toolbox.ToolBoxDropTarget.inspector</a>, <a class="el" href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00291">gui.tools.inspector.InspectorTool.inspector</a>, <a class="el" href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00081">gui.tools.inspector.InspectorPanel.root</a> y <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00145">gui.tools.toolbox.ToolBoxDropTarget.root</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00182">gui.tools.toolbox.ToolBoxDropTarget.OnData()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a67b2cbade8d7e607c339e25ae61650ca_icgraph.png" border="0" usemap="#d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a67b2cbade8d7e607c339e25ae61650ca_icgraph" alt=""/></div>
+<map name="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a67b2cbade8d7e607c339e25ae61650ca_icgraph" id="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a67b2cbade8d7e607c339e25ae61650ca_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae4408c210133fa96bb5d91fbe42c7154"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.toolbox.ToolBoxDropTarget.OnDragOver </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00165">165</a> del archivo <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html">toolbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00036">gui.tools.designer.BasicDesigner.inspector</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00039">gui.tools.toolbox.ToolBox.inspector</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00147">gui.tools.toolbox.ToolBoxDropTarget.inspector</a>, <a class="el" href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00291">gui.tools.inspector.InspectorTool.inspector</a> y <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00165">gui.tools.toolbox.ToolBoxDropTarget.OnDragOver()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_ae4408c210133fa96bb5d91fbe42c7154_cgraph.png" border="0" usemap="#d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_ae4408c210133fa96bb5d91fbe42c7154_cgraph" alt=""/></div>
+<map name="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_ae4408c210133fa96bb5d91fbe42c7154_cgraph" id="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_ae4408c210133fa96bb5d91fbe42c7154_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae4408c210133fa96bb5d91fbe42c7154"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.toolbox.ToolBoxDropTarget.OnDragOver </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00165">165</a> del archivo <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html">toolbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../de/d5a/build_2lib_8linux-x86__64-2_87_2gui_2tools_2designer_8py_source.html#l00036">gui.tools.designer.BasicDesigner.inspector</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00039">gui.tools.toolbox.ToolBox.inspector</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00147">gui.tools.toolbox.ToolBoxDropTarget.inspector</a> y <a class="el" href="../../d7/da5/build_2lib_8linux-x86__64-2_87_2gui_2tools_2inspector_8py_source.html#l00291">gui.tools.inspector.InspectorTool.inspector</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00165">gui.tools.toolbox.ToolBoxDropTarget.OnDragOver()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_ae4408c210133fa96bb5d91fbe42c7154_icgraph.png" border="0" usemap="#d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_ae4408c210133fa96bb5d91fbe42c7154_icgraph" alt=""/></div>
+<map name="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_ae4408c210133fa96bb5d91fbe42c7154_icgraph" id="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_ae4408c210133fa96bb5d91fbe42c7154_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a81b38aab33b17c43ad3912c8b0038685"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.toolbox.ToolBoxDropTarget.OnDrop </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00161">161</a> del archivo <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html">toolbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00161">gui.tools.toolbox.ToolBoxDropTarget.OnDrop()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a81b38aab33b17c43ad3912c8b0038685_cgraph.png" border="0" usemap="#d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a81b38aab33b17c43ad3912c8b0038685_cgraph" alt=""/></div>
+<map name="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a81b38aab33b17c43ad3912c8b0038685_cgraph" id="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a81b38aab33b17c43ad3912c8b0038685_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a81b38aab33b17c43ad3912c8b0038685"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.toolbox.ToolBoxDropTarget.OnDrop </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00161">161</a> del archivo <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html">toolbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00161">gui.tools.toolbox.ToolBoxDropTarget.OnDrop()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a81b38aab33b17c43ad3912c8b0038685_icgraph.png" border="0" usemap="#d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a81b38aab33b17c43ad3912c8b0038685_icgraph" alt=""/></div>
+<map name="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a81b38aab33b17c43ad3912c8b0038685_icgraph" id="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a81b38aab33b17c43ad3912c8b0038685_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a249e0ad6c42cb1f1bb52873d11e0f603"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.toolbox.ToolBoxDropTarget.OnEnter </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00154">154</a> del archivo <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html">toolbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00154">gui.tools.toolbox.ToolBoxDropTarget.OnEnter()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a249e0ad6c42cb1f1bb52873d11e0f603_cgraph.png" border="0" usemap="#d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a249e0ad6c42cb1f1bb52873d11e0f603_cgraph" alt=""/></div>
+<map name="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a249e0ad6c42cb1f1bb52873d11e0f603_cgraph" id="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a249e0ad6c42cb1f1bb52873d11e0f603_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a249e0ad6c42cb1f1bb52873d11e0f603"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.toolbox.ToolBoxDropTarget.OnEnter </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00154">154</a> del archivo <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html">toolbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00154">gui.tools.toolbox.ToolBoxDropTarget.OnEnter()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a249e0ad6c42cb1f1bb52873d11e0f603_icgraph.png" border="0" usemap="#d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a249e0ad6c42cb1f1bb52873d11e0f603_icgraph" alt=""/></div>
+<map name="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a249e0ad6c42cb1f1bb52873d11e0f603_icgraph" id="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_a249e0ad6c42cb1f1bb52873d11e0f603_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af001666aae43777ecec0408da1217faf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.toolbox.ToolBoxDropTarget.OnLeave </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00158">158</a> del archivo <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html">toolbox.py</a>.</p>
+
+<p>Hace referencia a <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00158">gui.tools.toolbox.ToolBoxDropTarget.OnLeave()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas para esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_af001666aae43777ecec0408da1217faf_cgraph.png" border="0" usemap="#d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_af001666aae43777ecec0408da1217faf_cgraph" alt=""/></div>
+<map name="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_af001666aae43777ecec0408da1217faf_cgraph" id="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_af001666aae43777ecec0408da1217faf_cgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af001666aae43777ecec0408da1217faf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def gui.tools.toolbox.ToolBoxDropTarget.OnLeave </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00158">158</a> del archivo <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html">toolbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00158">gui.tools.toolbox.ToolBoxDropTarget.OnLeave()</a>.</p>
+
+<p><div class="dynheader">
+Gráfico de llamadas a esta función:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_af001666aae43777ecec0408da1217faf_icgraph.png" border="0" usemap="#d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_af001666aae43777ecec0408da1217faf_icgraph" alt=""/></div>
+<map name="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_af001666aae43777ecec0408da1217faf_icgraph" id="d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget_af001666aae43777ecec0408da1217faf_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a class="anchor" id="a21b2c14ed65936390979a19322aa7caa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.tools.toolbox.ToolBoxDropTarget.data</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00150">150</a> del archivo <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html">toolbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00142">gui.tools.toolbox.ToolBoxDropTarget.__init__()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8f44337af845da50bfb55c1d6323af21"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.tools.toolbox.ToolBoxDropTarget.designer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00146">146</a> del archivo <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html">toolbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00142">gui.tools.toolbox.ToolBoxDropTarget.__init__()</a>, <a class="el" href="../../d4/dd3/build_2lib_8linux-x86__64-2_87_2gui_2menu_8py_source.html#l00304">gui.menu.MenuBar.__init__()</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00219">gui.tools.toolbox.ToolBoxDropTarget.copy()</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00182">gui.tools.toolbox.ToolBoxDropTarget.OnData()</a> y <a class="el" href="../../d2/d08/build_2lib_8linux-x86__64-2_87_2gui_2component_8py_source.html#l00298">gui.component.Component.reindex()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac2cc747bbdaee507971d8ec02acc9f25"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.tools.toolbox.ToolBoxDropTarget.dv</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00144">144</a> del archivo <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html">toolbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00142">gui.tools.toolbox.ToolBoxDropTarget.__init__()</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00219">gui.tools.toolbox.ToolBoxDropTarget.copy()</a> y <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00182">gui.tools.toolbox.ToolBoxDropTarget.OnData()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acf792db8ba43dc30924441ae4264a846"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.tools.toolbox.ToolBoxDropTarget.inspector</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00147">147</a> del archivo <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html">toolbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00142">gui.tools.toolbox.ToolBoxDropTarget.__init__()</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00219">gui.tools.toolbox.ToolBoxDropTarget.copy()</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00182">gui.tools.toolbox.ToolBoxDropTarget.OnData()</a> y <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00165">gui.tools.toolbox.ToolBoxDropTarget.OnDragOver()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aed72dee747df0ffbf61057dc95276867"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gui.tools.toolbox.ToolBoxDropTarget.root</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definición en la línea <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00145">145</a> del archivo <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html">toolbox.py</a>.</p>
+
+<p>Referenciado por <a class="el" href="../../d2/d1b/gui_2tools_2toolbox_8py_source.html#l00142">gui.tools.toolbox.ToolBoxDropTarget.__init__()</a>, <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00219">gui.tools.toolbox.ToolBoxDropTarget.copy()</a> y <a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html#l00182">gui.tools.toolbox.ToolBoxDropTarget.OnData()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>build/lib.linux-x86_64-2.7/gui/tools/<a class="el" href="../../d5/d40/build_2lib_8linux-x86__64-2_87_2gui_2tools_2toolbox_8py_source.html">toolbox.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d7/dc4/namespacegui.html">gui</a></li><li class="navelem"><a class="el" href="../../d3/da2/namespacegui_1_1tools.html">tools</a></li><li class="navelem"><a class="el" href="../../db/d4e/namespacegui_1_1tools_1_1toolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="../../d3/d6c/classgui_1_1tools_1_1toolbox_1_1ToolBoxDropTarget.html">ToolBoxDropTarget</a></li>
+    <li class="footer">Generado el Domingo, 7 de Diciembre de 2014 18:59:48 para gui2py por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

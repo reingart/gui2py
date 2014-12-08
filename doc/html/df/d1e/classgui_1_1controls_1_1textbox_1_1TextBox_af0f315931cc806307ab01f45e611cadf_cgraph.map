@@ -1,0 +1,6 @@
+<map id="gui.controls.textbox.TextBox.get_string" name="gui.controls.textbox.TextBox.get_string">
+<area shape="rect" id="node2" href="$d2/d57/classgui_1_1controls_1_1gridview_1_1GridTable.html#a82d0ed1526c8ff2af4bd176f7251563a" title="gui.controls.gridview.Grid\lTable.GetValue" alt="" coords="230,5,399,46"/>
+<area shape="rect" id="node4" href="$d1/d1c/classgui_1_1controls_1_1textbox_1_1wx__masked__TextCtrl.html#a66ac87464fce721ca4e8e6fb1b4c0173" title="gui.controls.textbox.wx\l_masked_TextCtrl.GetValue" alt="" coords="221,70,408,111"/>
+<area shape="rect" id="node5" href="$d2/d3a/classgui_1_1controls_1_1textbox_1_1wx__DatePickerCtrl.html#a877b0b6b04dd682f96ae0f942f25482f" title="gui.controls.textbox.wx\l_DatePickerCtrl.GetValue" alt="" coords="228,135,401,177"/>
+<area shape="rect" id="node3" href="$d9/d90/namespacegui_1_1component.html#a937836205f3a4daa11179df3fc58e3c9" title="gui.component.get" alt="" coords="457,12,586,39"/>
+</map>

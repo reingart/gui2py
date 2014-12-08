@@ -1,0 +1,4 @@
+<map id="gui.tools.inspector.InspectorPanel.load_object" name="gui.tools.inspector.InspectorPanel.load_object">
+<area shape="rect" id="node2" href="$db/d9d/classgui_1_1tools_1_1propeditor_1_1PropertyEditorPanel.html#a11f563b24906b7e0d01a118cecb0e11b" title="gui.tools.propeditor.Property\lEditorPanel.__init__" alt="" coords="241,5,426,46"/>
+<area shape="rect" id="node3" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182" title="gui.tools.inspector.Inspector\lPanel.show_context_menu" alt="" coords="240,70,427,111"/>
+</map>

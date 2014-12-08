@@ -1,0 +1,21 @@
+<map id="gui.tools.inspector.InspectorPanel.__init__" name="gui.tools.inspector.InspectorPanel.__init__">
+<area shape="rect" id="node2" href="$d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a973fe5769b473e1191d66ac27ad7ab1c" title="gui.menu.wx_DummyWindow.Bind" alt="" coords="240,63,467,89"/>
+<area shape="rect" id="node3" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ad6bb08719cc2b1a43893b693ff7b2008" title="gui.tools.inspector.Inspector\lPanel.OnActivate" alt="" coords="260,114,447,155"/>
+<area shape="rect" id="node13" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ab3e19cf3494aa1cc0c03f4dea519c416" title="gui.tools.inspector.Inspector\lPanel.OnRightUp" alt="" coords="260,179,447,221"/>
+<area shape="rect" id="node18" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#aa47d66f67023fa6354981711d14429b8" title="gui.tools.inspector.Inspector\lPanel.OnSelect" alt="" coords="521,242,708,283"/>
+<area shape="rect" id="node19" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a227e584bcd80cbfa76a17250f6be2709" title="gui.tools.inspector.Inspector\lPanel.OnSize" alt="" coords="260,302,447,343"/>
+<area shape="rect" id="node4" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#acd3321153d346058fb9d100b47824cec" title="gui.tools.inspector.Inspector\lPanel.activate_item" alt="" coords="521,111,708,153"/>
+<area shape="rect" id="node5" href="$dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a7fc319b435e00175890da5ee4b2b330a" title="gui.tools.designer.Selection\lMarker.update" alt="" coords="779,27,962,69"/>
+<area shape="rect" id="node7" href="$d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a72b0f21887fb8b746ee99646b5d7c4a7" title="gui.tools.designer.Facade.update" alt="" coords="763,119,978,145"/>
+<area shape="rect" id="node12" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a59c1ce8f0b5d976ea5bb7c1442824af6" title="gui.tools.inspector.Inspector\lPanel.update" alt="" coords="777,170,964,211"/>
+<area shape="rect" id="node6" href="$dd/d96/classgui_1_1tools_1_1designer_1_1SelectionMarker.html#a5e7b632668683e7727d93195e23870dd" title="gui.tools.designer.Selection\lMarker.draw" alt="" coords="1050,5,1233,46"/>
+<area shape="rect" id="node8" href="$da/d31/classgui_1_1controls_1_1canvas_1_1Canvas.html#a10087fa35fd33fd2f3237e23ee7421a3" title="gui.controls.canvas.Canvas.refresh" alt="" coords="1027,71,1255,97"/>
+<area shape="rect" id="node9" href="$d2/dc7/classgui_1_1tools_1_1designer_1_1Facade.html#a163280d73dea67f87f5bc394b538a80c" title="gui.tools.designer.Facade.refresh" alt="" coords="1034,121,1249,148"/>
+<area shape="rect" id="node11" href="$da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#adae2e18973709734aeae837dd3ad8feb" title="gui.controls.gridview.Combo\lCellEditor.SetSize" alt="" coords="1048,173,1235,214"/>
+<area shape="rect" id="node10" href="$da/d53/classgui_1_1controls_1_1gridview_1_1ComboCellEditor.html#a25499840cdbef32ef2f196860318787c" title="gui.controls.gridview.Combo\lCellEditor.Show" alt="" coords="1304,114,1491,155"/>
+<area shape="rect" id="node14" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5a270e6ded4480804a4a62899a88e182" title="gui.tools.inspector.Inspector\lPanel.show_context_menu" alt="" coords="521,177,708,218"/>
+<area shape="rect" id="node15" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a93b4d530566190a084aa12590d02b310" title="gui.tools.inspector.Inspector\lPanel.highlight" alt="" coords="777,239,964,281"/>
+<area shape="rect" id="node16" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#ac369f3121aba776ff3001d45a317d1fc" title="gui.tools.inspector.Inspector\lPanel.do_highlight" alt="" coords="1048,239,1235,281"/>
+<area shape="rect" id="node17" href="$df/d1a/classgui_1_1tools_1_1inspector_1_1InspectorPanel.html#a5f95eb72313bd1c93bfbedfc1fb3a75e" title="gui.tools.inspector.Inspector\lPanel.do_unhighlight" alt="" coords="1304,239,1491,281"/>
+<area shape="rect" id="node20" href="$d4/d13/classgui_1_1menu_1_1wx__DummyWindow.html#a1efa7b3e015e4fbd86c252f3e1840b92" title="gui.menu.wx_DummyWindow.\lGetSize" alt="" coords="515,307,715,349"/>
+</map>
