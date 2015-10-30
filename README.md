@@ -21,10 +21,10 @@ Installation Instructions:
 You need at least [wxPython 2.9.4](http://www.wxpython.org/download.php) to use the development tools, as they depends 
 on the latest features added to wxWidgets.
 
-Download & uncompress the [source code zip archive](https://code.google.com/p/gui2py/downloads), or check out the 
-mercurial repository:
+Download & uncompress the [source code zip archive](https://github.com/reingart/gui2py/archive/master.zip),
+or check out the git repository using mercurial [hg-git](http://hg-git.github.io/) (or git directly):
 
-    hg clone https://code.google.com/p/gui2py/ 
+    hg clone git+https://github.com/reingart/gui2py.git
     cd gui2py
     python setup.py install
 
