@@ -20,7 +20,7 @@ import gui
 
 gui.Window(name='mywin', title=u'gui2py sizers demo', resizable=True, 
            height='585px', left='180', top='24', width='327px', 
-           bgcolor=u'#E0E0E0', image='', sizer=True, tiled=True, )
+           bgcolor=u'#E0E0E0', image='', sizer="wrap", tiled=True, )
 gui.Button(label=u'Button 1', name='button_109_132', sizer_border=4, 
            width='45%', parent='mywin', )
 gui.Button(label=u'Button 2', name='button_172_226', sizer_border=4, 

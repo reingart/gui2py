@@ -634,16 +634,22 @@ class DesignerMixin(object):
                               type='internal')
 
 
+SIZERS_MAP = {'wrap': wx_WrapSizer,
+              'flexgrid': wx.FlexGridSizer,
+              'gridbag': wx.GridBagSizer,
+              'none': None, }
+
+
 class SizerMixin(object):
     "Automatic layout & sizing support"
 
     __metaclass__ = ComponentBase
 
-    def _set_sizer(self, enabled):
-        if DEBUG: print "set sizer", enabled, self._meta.name        
-        if enabled:
+    def _set_sizer(self, sizer):
+        if DEBUG: print "set sizer", sizer, self._meta.name        
+        if sizer:
             # create a new sizer (flow / fluid) layout (requires wxPython 2.9)
-            self._sizer = wx_WrapSizer()
+            self._sizer = SIZERS_MAP[sizer]()
             self.wx_obj.SetSizer(self._sizer)
             # add all the children to the sizer (in case we're on design time):
             for child in self:
@@ -655,9 +661,10 @@ class SizerMixin(object):
 
     def _get_sizer(self):
         if hasattr(self, "_sizer"):
-            return True
+            return [k for k, v in SIZERS_MAP.items() 
+                    if v == self._sizer.__class__][0]
         else:
-            return False
+            return None
 
     def _sizer_add(self, child):
         "called when adding a control to the window"
@@ -677,7 +684,8 @@ class SizerMixin(object):
     sizer = DimensionSpec(lambda self: self._get_sizer(), 
                  lambda self, value: self._set_sizer(value), group="sizer",
                  doc="use an automatic flow layout mechanism (wx.WrapSizer)", 
-                 type='boolean', default=False)
+                 mapping=dict([(k, id(v)) for k, v in SIZERS_MAP.items()]),
+                 type='enum', default='none')
 
 
    
