@@ -218,8 +218,8 @@ class PropertyEditorPanel(wx.Panel):
             #self.log.write(u'%s changed to "%s"\n' % (p,p.GetValueAsString()))
             # if it a property child (parent.child), extract its name
             if "." in name:
-                group, name = name.split(".")
-            if not name in self.groups:                
+                name = name[name.rindex(".") + 1:]
+            if spec and not name in self.groups:                
                 if name == 'font':  # TODO: detect property type
                     # create a gui font from the wx.Font
                     font = Font()
