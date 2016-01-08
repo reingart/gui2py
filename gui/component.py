@@ -676,8 +676,13 @@ class SizerMixin(object):
                 border = child.sizer_border
             flags = wx.ALL
             if child.sizer_align:
-                flags |= child._sizer_align 
-            self._sizer.Add(child.wx_obj, 0, flags, border)
+                flags |= child._sizer_align
+            if 'grid' in self.sizer:
+                self._sizer.Add(child.wx_obj, flag=flags, border=border, 
+                                pos=(child.sizer_row, child.sizer_col), 
+                                span=(child.sizer_rowspan, child.sizer_colspan))
+            else:
+                self._sizer.Add(child.wx_obj, 0, flags, border)
 
 
     sizer = DimensionSpec(lambda self: self._get_sizer(), 
@@ -945,6 +950,19 @@ class Control(ControlSuper):
             default='left', _name="_sizer_align", type="enum", group="sizer",
             doc="alignment within the space allotted to it by the sizer")
 
+    sizer_col = DimensionSpec(_name="_sizer_col", default=0, 
+            type="integer", group="sizer.pos",
+            doc="Column index (postion) for the item in the virtual Grid Sizer")
+    sizer_row = DimensionSpec(_name="_sizer_row", default=0, 
+            type="integer", group="sizer.pos",
+            doc="Row index (postion) for the item in the virtual Grid Sizer")
+
+    sizer_colspan = DimensionSpec(_name="_sizer_colspan", default=1, 
+            type="integer", group="sizer.span",
+            doc="Columns that the item occupies one cell in each direction")
+    sizer_rowspan = DimensionSpec(_name="_sizer_rowpan", default=1, 
+            type="integer", group="sizer.span",
+            doc="Row that the item occupies one cell in each direction")
 
 
 class ImageBackgroundMixin(object):
