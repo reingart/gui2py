@@ -49,6 +49,12 @@ mywin['panel']['record'].set_sizer_grow_col(1, 1)
 
 if __name__ == "__main__":
     
+    # example to add programmatically a field (controls) at runtime
+    
+    with mywin['panel']['record']:
+        gui.Label(name='l_zid', sizer_row=3, sizer_col=0, text=u'ID', )
+        gui.TextBox(name='zip', sizer_row=3, sizer_col=1, value=u'1688', )
+        
     mywin.show()
     
     gui.main_loop()
