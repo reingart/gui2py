@@ -151,14 +151,24 @@ class PropertyEditorPanel(wx.Panel):
                             if readonly:
                                 pg.SetPropertyReadOnly(prop)
                         else:
-                            if spec.group in self.groups:
-                                prop_parent = self.groups[spec.group]
-                            else:
-                                prop_parent = wxpg.StringProperty(spec.group,
-                                        value="<composed>")
-                                self.groups[spec.group] = prop_parent
-                                pg.Append(prop_parent)
-                                pg.SetPropertyReadOnly(spec.group)
+                            # create a group hierachy (wxpg uses dot notation)
+                            group = ""
+                            prop_parent = None
+                            for grp in spec.group.split("."):
+                                prev_group = group              # ancestor
+                                group += ("." if group else "") + grp   # path
+                                if group in self.groups:
+                                    prop_parent = self.groups[group]
+                                else:
+                                    prop_group = wxpg.StringProperty(grp,
+                                            value="<composed>")
+                                    if not prop_parent:
+                                        pg.Append(prop_group)
+                                    else:
+                                        pg.AppendIn(prev_group, prop_group)                                    
+                                    prop_parent = prop_group
+                                    self.groups[group] = prop_parent
+                                    pg.SetPropertyReadOnly(group)
                             pg.AppendIn(spec.group, prop)
                             pg.Collapse(spec.group)
                             name = spec.group + "." + name
