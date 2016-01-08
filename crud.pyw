@@ -18,7 +18,7 @@ import gui
 
 # --- gui2py designer generated code starts ---
 
-with gui.Window(name='mywin', title=u'gui2py sizers demo', resizable=True, 
+with gui.Window(name='mywin', title=u'gui2py CRUD demo', resizable=True, 
                 height='585px', left='180', sizer='wrap', top='24', 
                 width='327px', bgcolor=u'#E0E0E0', image='', tiled=True, ):
     with gui.Panel(name='panel',  sizer='wrap', width="100%", height="100%"):
