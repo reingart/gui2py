@@ -670,11 +670,10 @@ class SizerMixin(object):
         "called when adding a control to the window"
         if self.sizer:
             if DEBUG: print "adding to sizer:", child.name
-            # TODO: determine the combination of sides (wx.ALL now)
             border = None
             if not border:
                 border = child.sizer_border
-            flags = wx.ALL
+            flags = child._sizer_flags
             if child.sizer_align:
                 flags |= child._sizer_align
             if child.sizer_expand:
@@ -958,6 +957,17 @@ class Control(ControlSuper):
                                     'bottom': wx.ALIGN_BOTTOM, }, 
             default='left', _name="_sizer_align", type="enum", group="sizer",
             doc="alignment within the space allotted to it by the sizer")
+
+    sizer_flags = DimensionSpec(mapping={'left': wx.LEFT, 
+                                         'top': wx.TOP,
+                                         'right': wx.RIGHT,
+                                         'bottom': wx.BOTTOM,
+                                         'all': wx.ALL, 
+                                         'horiz': wx.LEFT | wx.RIGHT,
+                                         'vert': wx.TOP | wx.BOTTOM,
+                                         }, 
+            default='all', _name="_sizer_flags", type="enum", group="sizer",
+            doc="Side(s) of the sizer item that the border width will apply to")
 
     sizer_expand = DimensionSpec(_name="_sizer_expand", 
             default=False, type='boolean', group="sizer",
