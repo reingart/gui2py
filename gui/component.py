@@ -637,7 +637,7 @@ class DesignerMixin(object):
 SIZERS_MAP = {'wrap': wx_WrapSizer,
               'flexgrid': wx.FlexGridSizer,
               'gridbag': wx.GridBagSizer,
-              'none': None, }
+              '': None, }
 
 
 class SizerMixin(object):
@@ -689,7 +689,7 @@ class SizerMixin(object):
                  lambda self, value: self._set_sizer(value), group="sizer",
                  doc="use an automatic flow layout mechanism (wx.WrapSizer)", 
                  mapping=dict([(k, id(v)) for k, v in SIZERS_MAP.items()]),
-                 type='enum', default='none')
+                 type='enum', default='')
 
 
    
