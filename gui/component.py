@@ -671,8 +671,7 @@ class SizerMixin(object):
         if self.sizer:
             if DEBUG: print "adding to sizer:", child.name
             # TODO: determine the combination of sides (wx.ALL now)
-            border = max(child.margin_left, child.margin_right,
-                         child.margin_top, child.margin_bottom)
+            border = None
             if not border:
                 border = child.sizer_border
             flags = wx.ALL
@@ -764,12 +763,10 @@ class ControlSuper(DesignerMixin, Component):
         x, y = self._get_pos()
         # calculate actual position (auto, relative or absolute)
         if point[0] is not None:
-            x = self._calc_dimension(point[0], parent_size[0], font_width) \
-                    + self.margin_left
+            x = self._calc_dimension(point[0], parent_size[0], font_width)
             self._left = str(point[0])
         if point[1] is not None:
-            y = self._calc_dimension(point[1], parent_size[1], font_height) \
-                    + self.margin_top
+            y = self._calc_dimension(point[1], parent_size[1], font_height)
             self._top = str(point[1])
         # actually move the object
         self.wx_obj.Move((x, y))
@@ -810,13 +807,11 @@ class ControlSuper(DesignerMixin, Component):
         prev_size = self._get_size()
         # calculate actual position (auto, relative or absolute)
         if size[0] is not None:
-            w = self._calc_dimension(size[0], parent_size[0], font_width) \
-                    - self.margin_left - self.margin_right
+            w = self._calc_dimension(size[0], parent_size[0], font_width)
         else:
             w = prev_size[0]
         if size[1] is not None:
-            h = self._calc_dimension(size[1], parent_size[1], font_height) \
-                    - self.margin_top - self.margin_bottom
+            h = self._calc_dimension(size[1], parent_size[1], font_height)
         else:
             h = prev_size[1]
         # on windows set the client size (ignore title bar)
@@ -898,18 +893,6 @@ class ControlSuper(DesignerMixin, Component):
     top = DimensionSpec(lambda self: self._top, 
                            lambda self, value: self._set_top(value),
                            default="", type="string", group="position")
-    margin_left = DimensionSpec(lambda self: self._get_margin(0), 
-                           lambda self, value: self._set_margin(value, 0),
-                           default=0, type="integer", group="margin")
-    margin_top = DimensionSpec(lambda self: self._get_margin(1), 
-                           lambda self, value: self._set_margin(value, 1),
-                           default=0, type="integer", group="margin")
-    margin_right = DimensionSpec(lambda self: self._get_margin(2), 
-                           lambda self, value: self._set_margin(value, 2),
-                           default=0, type="integer", group="margin")
-    margin_bottom = DimensionSpec(lambda self: self._get_margin(3),
-                           lambda self, value: self._set_margin(value, 3),
-                           default=0, type="integer", group="margin")
 
     border = StyleSpec({'default': wx.BORDER_DEFAULT,
                         'simple': wx.BORDER_SIMPLE,
