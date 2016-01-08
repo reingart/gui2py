@@ -677,6 +677,8 @@ class SizerMixin(object):
             flags = wx.ALL
             if child.sizer_align:
                 flags |= child._sizer_align
+            if child.sizer_expand:
+                flags |= wx.EXPAND
             if 'grid' in self.sizer:
                 self._sizer.Add(child.wx_obj, flag=flags, border=border, 
                                 pos=(child.sizer_row, child.sizer_col), 
@@ -684,6 +686,13 @@ class SizerMixin(object):
             else:
                 self._sizer.Add(child.wx_obj, 0, flags, border)
 
+    def set_sizer_grow_row(self, row=-1, proportion=0):
+        if row >= 0:
+            self._sizer.AddGrowableRow(row, proportion)
+
+    def set_sizer_grow_col(self, col=-1, proportion=0):
+        if col >= 0:
+            self._sizer.AddGrowableCol(col, proportion)
 
     sizer = DimensionSpec(lambda self: self._get_sizer(), 
                  lambda self, value: self._set_sizer(value), group="sizer",
@@ -949,6 +958,10 @@ class Control(ControlSuper):
                                     'bottom': wx.ALIGN_BOTTOM, }, 
             default='left', _name="_sizer_align", type="enum", group="sizer",
             doc="alignment within the space allotted to it by the sizer")
+
+    sizer_expand = DimensionSpec(_name="_sizer_expand", 
+            default=False, type='boolean', group="sizer",
+            doc="The item will be expanded to fill the space allotted to it")
 
     sizer_col = DimensionSpec(_name="_sizer_col", default=0, 
             type="integer", group="sizer.pos",
