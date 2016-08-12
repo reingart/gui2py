@@ -131,7 +131,7 @@ class PropertyEditorPanel(wx.Panel):
                             prop = prop(name, name, 
                                            spec.mapping.keys(), 
                                            spec.mapping.values(),
-                                           value=spec.mapping[value])
+                                           value=spec.mapping.get(value, 0))
                         elif spec.type == "edit_enum":
                             prop = prop(name, name, 
                                            spec.mapping.keys(), 
