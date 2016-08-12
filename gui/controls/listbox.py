@@ -36,7 +36,9 @@ class ItemContainerControl(Control):
         # only change selection if index is None and not dummy:
         if index is None:
             self.wx_obj.SetSelection(-1)
-            self.wx_obj.SetValue("")
+            # clean up text if control supports it:
+            if hasattr(self.wx_obj, "SetValue"):
+                self.wx_obj.SetValue("")
         else:
             self.wx_obj.SetSelection(index)
         # send a programmatically event (not issued by wx)
