@@ -13,7 +13,7 @@ import wx
 
 from ..component import Component, ControlSuper, ImageBackgroundMixin, SizerMixin
 from ..spec import Spec, InitSpec, EventSpec, StyleSpec, InternalSpec
-from ..event import UIEvent
+from ..event import UIEvent, TimingEvent
 from .. import registry
 from .. import images
 
@@ -211,6 +211,7 @@ class Window(ControlSuper, ImageBackgroundMixin, SizerMixin):
     # events:
     onload = EventSpec('load', binding=wx.EVT_INIT_DIALOG, kind=UIEvent)
     onunload = EventSpec('unload', binding=wx.EVT_CLOSE, kind=UIEvent)
+    onidle = EventSpec('idle', binding=wx.EVT_IDLE, kind=TimingEvent)
     ##wx.EVT_WINDOW_DESTROY(self, self.OnDestroy)
 
 

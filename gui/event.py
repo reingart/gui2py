@@ -129,8 +129,8 @@ class TimingEvent(Event):
     "Time interval events"   
     names = ["idle", "timer"]
 
-    def __init__(self, interval=None, wx_event=None):
-        Event.__init__(self, wx_event)
+    def __init__(self, name, interval=None, wx_event=None):
+        Event.__init__(self, name, wx_event)
         self.interval = interval
 
     def request_more(self):
