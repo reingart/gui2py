@@ -374,7 +374,14 @@ class ListModel(dict):
                 continue
             text = self[key][col.name]
             if not isinstance(text, basestring):
-                text = col.represent(text)
+                try:
+                    if isinstance(col.represent, basestring):
+                        text = col.represent % text
+                    else:
+                        text = col.represent(text)
+                except:
+                    raise RuntimeError("Cannot represent key %s text %s fn %s"
+                                        % (key, text, col.represent))
             self._list_view.wx_obj.SetStringItem(index, col.index, text)
 
     def clear(self):
