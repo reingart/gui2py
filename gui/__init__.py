@@ -32,6 +32,8 @@ from .dialog import alert, prompt, confirm, select_font, select_color, \
                     open_file, save_file, choose_directory, \
                     single_choice, multiple_choice, find
 
+from .timer import Timer
+
 #from . import tools
 
 import os

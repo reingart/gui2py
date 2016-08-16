@@ -212,6 +212,7 @@ class Window(ControlSuper, ImageBackgroundMixin, SizerMixin):
     onload = EventSpec('load', binding=wx.EVT_INIT_DIALOG, kind=UIEvent)
     onunload = EventSpec('unload', binding=wx.EVT_CLOSE, kind=UIEvent)
     onidle = EventSpec('idle', binding=wx.EVT_IDLE, kind=TimingEvent)
+    ontimer = EventSpec('timer', binding=wx.EVT_TIMER, kind=TimingEvent)
     ##wx.EVT_WINDOW_DESTROY(self, self.OnDestroy)
 
 
