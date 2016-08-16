@@ -134,7 +134,7 @@ class TimingEvent(Event):
         self.interval = interval
 
     def request_more(self):
-        pass        #wx.RequestMore(needMore=True)
+        self.wx_event.RequestMore(needMore=True)
 
 
 class HtmlLinkEvent(UIEvent):
