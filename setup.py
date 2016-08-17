@@ -13,15 +13,12 @@ WIN_DEFAULT_COMMAND = "install"
 APPLICATION_NAME = "gui2py"
 
 from distutils.core import setup
+import setuptools
 import os, sys
 
 # get the package version (add py3k if needed)
 import gui
 version = gui.__version__
-if sys.version_info > (3, ):
-    version += "-py3k"
-else:
-    version += "-py2x"
 
 # append install on windows
 if len(sys.argv) == 1 and sys.platform.startswith("win"):
@@ -32,8 +29,8 @@ setup(name=APPLICATION_NAME,
       description="gui2py framework",
       author="Mariano Reingart",
       author_email="reingart@gmail.com",
-      url='http://code.google.com/p/gui2py',
-      download_url="http://gui2py.googlecode.com/files/gui2py-%s.zip" % gui.__version__,
+      url='https://github.com/reingart/gui2py',
+      download_url="https://github.com/reingart/gui2py/archive/master.zip",
       classifiers = [
         "Development Status :: 3 - Alpha",
         "Environment :: MacOS X",
@@ -75,6 +72,7 @@ setup(name=APPLICATION_NAME,
       #package_dir={'gui': 'gui', 'gui.tools': 'gui/tools'},
       #scripts=["install-pythoncard.py"],
       license="LGPLv3",
+      use_2to3=True,
      )
 
 # End of setup.py
