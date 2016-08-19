@@ -338,6 +338,9 @@ class Component(object):
         del self._children_list[self._children_list.index(self._children_dict[name])]
         del self._children_dict[name]
 
+    def __contains__(self, name):
+        return name in self._children_dict
+
     # context manager methods (with statement currently used to stack parents)
 
     def __enter__(self):
