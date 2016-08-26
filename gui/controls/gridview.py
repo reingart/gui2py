@@ -426,8 +426,8 @@ class GridModel(list):
         self._grid_view.wx_obj.AppendRows(numRows=1)
         
     def __setitem__(self, pos, value):
-        if isinstance(values, dict):
-            row = GridRow(self, **values)
+        if isinstance(value, dict):
+            row = GridRow(self, **value)
         else:
             row = GridRow(self, *value)
         list.__setitem__(self, pos, row)
