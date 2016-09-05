@@ -74,7 +74,11 @@ class wx_ListCtrl(wx.ListCtrl, ColumnSorterMixin, ListCtrlAutoWidthMixin):
         # first, look at our internal dict:
         wx_data = self._wx_data_map[py_data]
         # do the real search at the wx control:
-        return self.FindItemData(start, wx_data)
+        if wx.VERSION < (3, 0, 0) or 'classic' in wx.version():
+            data = self.FindItemData(start, wx_data)
+        else:
+            data = self.FindItem(start, wx_data)
+        return data
 
     def DeleteItem(self, item):
         "Remove the item from the list and unset the related data"
@@ -363,7 +367,10 @@ class ListModel(dict):
                 else:
                     self._list_view.wx_obj.InsertItem(index, text)
             else:
-                self._list_view.wx_obj.SetStringItem(index, col.index, text)
+                if wx.VERSION < (3, 0, 0) or 'classic' in wx.version():
+                    self._list_view.wx_obj.SetStringItem(index, col.index, text)
+                else:
+                    self._list_view.wx_obj.SetItem(index, col.index, text)
         # update internal data, used by ColumnSorterMixin
         self._list_view.wx_obj.SetPyData(index, key)
     
@@ -382,7 +389,10 @@ class ListModel(dict):
                 except:
                     raise RuntimeError("Cannot represent key %s text %s fn %s"
                                         % (key, text, col.represent))
-            self._list_view.wx_obj.SetStringItem(index, col.index, text)
+            if wx.VERSION < (3, 0, 0) or 'classic' in wx.version():
+                self._list_view.wx_obj.SetStringItem(index, col.index, text)
+            else:
+                self._list_view.wx_obj.SetItem(index, col.index, text)
 
     def clear(self):
         "Remove all items and reset internal structures"
