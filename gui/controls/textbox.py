@@ -29,10 +29,13 @@ class TextBox(Control):
 
     def __init__(self, *args, **kwargs):
         # if mask is given, create a masked control
+        # (formatting codes only supported in masked TextCtrl)
         if 'mask' in kwargs and kwargs['mask']:
-            if all([(ch in ("#", ".")) for ch in kwargs['mask']]):
+            fmt =  kwargs.get("format")
+            mask = kwargs['mask']
+            if all([(ch in ("#", ".")) for ch in mask]) and not fmt:
                 self._wx_class = wx_masked_NumCtrl
-            elif kwargs['mask'] == 'date':
+            elif kwargs['mask'] == 'date' and not fmt:
                 self._wx_class = wx_DatePickerCtrl
             else:
                 self._wx_class = wx_masked_TextCtrl
@@ -240,6 +243,8 @@ class TextBox(Control):
 
     mask = InitSpec(_get_mask, _set_mask, type='string', default=None, 
                     doc="template to control allowed user input")
+    format = InitSpec(None, None, type='string', default=None,
+                      _name="_formatcodes", doc="internal format code")
 
 
 class wx_masked_TextCtrl(masked.TextCtrl):
@@ -295,6 +300,8 @@ class wx_masked_NumCtrl(masked.NumCtrl):
         #groupDigits = False,
         #min = None,
         #max = None,
+        if "formatcodes" in kwargs:
+            del kwargs["formatcodes"]
         masked.NumCtrl.__init__(self, *args, **kwargs)
 
     def GetMask(self):
